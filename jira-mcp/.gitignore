@@ -1,0 +1,24 @@
+# Environment and secrets
+.env
+credentials.json
+token.json
+
+# Encrypted data store
+.data/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# OS files
+.DS_Store
+
+# IDE
+.idea/
+.vscode/

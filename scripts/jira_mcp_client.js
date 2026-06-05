@@ -22,7 +22,7 @@ function readStdin() {
 }
 
 function defaultMcpDir() {
-  return path.resolve(__dirname, '../../../../..', 'tools/omio-mcp-servers/omio-jira-mcp');
+  return path.resolve(__dirname, '..', 'jira-mcp');
 }
 
 async function main() {
