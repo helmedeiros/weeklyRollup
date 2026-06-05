@@ -203,13 +203,13 @@ class FixtureJiraAdapter(JiraAdapter):
 
 
 class JiraMcpAdapter(JiraAdapter):
-    """Jira adapter backed by the local Omio Jira MCP server credentials."""
+    """Jira adapter backed by the bundled Jira MCP server credentials."""
 
     def __init__(self, mcp_dir: str | Path | None = None):
         self.mcp_dir = Path(
             mcp_dir
             or os.environ.get("JIRA_MCP_DIR")
-            or Path(__file__).resolve().parents[5] / "tools/omio-mcp-servers/omio-jira-mcp"
+            or Path(__file__).resolve().parent.parent / "jira-mcp"
         )
         self.client_script = Path(__file__).resolve().parent / "jira_mcp_client.js"
         if not self.client_script.exists():
@@ -328,7 +328,7 @@ def collect_jira_snapshot(
     target_date: date,
     jira_adapter: JiraAdapter,
     *,
-    source: str = "omio-jira-mcp",
+    source: str = "jira-mcp",
 ) -> dict[str, Any]:
     """Collect all Jira data needed by the deterministic rollup phase."""
 
@@ -2421,11 +2421,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--jira-fixture", help="Fixture JSON for --jira-source fixture")
     parser.add_argument("--jira-snapshot", help="Data snapshot JSON for --jira-source snapshot")
-    parser.add_argument("--jira-mcp-dir", help="Path to local omio-jira-mcp checkout for --jira-source mcp")
+    parser.add_argument("--jira-mcp-dir", help="Path to a local jira-mcp checkout for --jira-source mcp (defaults to the in-tree jira-mcp/)")
     parser.add_argument(
         "--collect-jira-snapshot-only",
         action="store_true",
-        help="Collect data-snapshot-<date>.json through omio-jira-mcp and exit before rollup rendering",
+        help="Collect data-snapshot-<date>.json through the Jira MCP and exit before rollup rendering",
     )
     parser.add_argument(
         "--sheet-source",
@@ -2471,7 +2471,7 @@ def jira_adapter_from_args(
         return FixtureJiraAdapter.from_data(snapshot), snapshot
 
     live_adapter = JiraMcpAdapter(args.jira_mcp_dir)
-    snapshot = collect_jira_snapshot(config, target, live_adapter, source="omio-jira-mcp")
+    snapshot = collect_jira_snapshot(config, target, live_adapter, source="jira-mcp")
     return FixtureJiraAdapter.from_data(snapshot), snapshot
 
 

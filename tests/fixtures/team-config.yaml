@@ -3,7 +3,7 @@ team:
   name: "Test Team"
   timezone: "Europe/Prague"
 jira:
-  base_url: "https://omio.atlassian.net"
+  base_url: "https://example.atlassian.net"
   board_id: "42"
   project_key: "TEST"
   epic_issue_type: "Epic"

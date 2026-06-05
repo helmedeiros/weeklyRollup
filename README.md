@@ -41,8 +41,8 @@ real Sheet/Drive IDs. They are ignored by `.gitignore`.
 For live Jira runs, use any Jira source that can provide the normalized mission
 snapshot shape: epics, labels, DRI, due date, status, comments, progress, and
 the linked OKR field/property when available. The bundled `--jira-source mcp`
-adapter uses the Omio Jira MCP checkout and is recommended when issue
-properties or Omio-specific fields are needed. If another Jira connector is
+adapter uses the in-tree `jira-mcp/` server and is recommended when issue
+properties or tenant-specific fields are needed. If another Jira connector is
 already authenticated, collect the same snapshot shape with that connector and
 run the deterministic phase with `--jira-source snapshot`.
 
@@ -97,7 +97,7 @@ Preflight guardrail: before any live Jira, Sheet, or email run, validate that
 the requested team's config exists and matches the requested team. Do not use
 `config/example-team.yaml` or another team's local config for a named team run.
 
-Live run with the bundled Omio Jira MCP adapter. This first collects Jira data
+Live run with the bundled Jira MCP adapter. This first collects Jira data
 into `data-snapshot-YYYY-MM-DD.json`, then runs the deterministic
 parser/renderer from that snapshot:
 

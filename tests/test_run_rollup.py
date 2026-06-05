@@ -1174,7 +1174,7 @@ class RunRollupTest(unittest.TestCase):
             self.config,
             target_date=__import__("datetime").date(2026, 6, 5),
             jira_adapter=FixtureJiraAdapter(self.jira_fixture),
-            source="test-omio-jira-mcp",
+            source="test-jira-mcp",
         )
 
         result = run_rollup(
@@ -1185,7 +1185,7 @@ class RunRollupTest(unittest.TestCase):
             jira_snapshot=snapshot,
         )
 
-        self.assertEqual(snapshot["source"], "test-omio-jira-mcp")
+        self.assertEqual(snapshot["source"], "test-jira-mcp")
         self.assertEqual(snapshot["month_label"], "mission-june-2026")
         self.assertEqual([mission["key"] for mission in snapshot["missions"]], ["TEST-1", "TEST-2"])
         self.assertIn("comments", snapshot["missions"][0])
@@ -1599,7 +1599,7 @@ class RunRollupTest(unittest.TestCase):
                 self.config,
                 target_date=__import__("datetime").date(2026, 6, 5),
                 jira_adapter=FixtureJiraAdapter(self.jira_fixture),
-                source="test-omio-jira-mcp",
+                source="test-jira-mcp",
             )
             result = run_rollup(
                 self.config,
@@ -1618,7 +1618,7 @@ class RunRollupTest(unittest.TestCase):
             self.assertIn("email_mime", result["output_files"])
             self.assertIn("gmail_raw_draft_request", result["output_files"])
             snapshot_file = json.loads(Path(result["output_files"]["data_snapshot"]).read_text(encoding="utf-8"))
-            self.assertEqual(snapshot_file["source"], "test-omio-jira-mcp")
+            self.assertEqual(snapshot_file["source"], "test-jira-mcp")
             result_file = json.loads(Path(result["output_files"]["result_json"]).read_text(encoding="utf-8"))
             self.assertEqual(result_file["jira_snapshot"]["mission_count"], 2)
             raw_request = json.loads(Path(result["output_files"]["gmail_raw_draft_request"]).read_text(encoding="utf-8"))
@@ -1636,7 +1636,7 @@ class RunRollupTest(unittest.TestCase):
     def test_child_issue_progress_source_does_not_use_time_tracking_progress(self):
         config = {
             "jira": {
-                "base_url": "https://omio.atlassian.net",
+                "base_url": "https://example.atlassian.net",
                 "fields": {
                     "dri": {"field_id": "assignee"},
                     "due_date": {"field_id": "duedate"},

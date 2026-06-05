@@ -58,7 +58,7 @@ or from this repository folder: `skills/mission-weekly-rollup`.
 2. Run the orchestrator with any capable Jira source. The normalized Jira data
    must include epics, labels, DRI, due date, status, comments, progress, and
    the linked OKR field/property when available. The bundled `--jira-source mcp`
-   adapter uses Omio Jira MCP; use `--jira-source snapshot` when another
+   adapter uses the bundled in-tree `jira-mcp/`; use `--jira-source snapshot` when another
    authenticated Jira route has already collected the same snapshot shape:
    `python3 scripts/run_rollup.py --config config/<team>.yaml --expect-team-id <team-id> --date <YYYY-MM-DD> --jira-source mcp --sheet-source mcp-plan --email-source raw-mime-plan --output-dir output/<team>-week-<N>`
    To make the MCP retrieval phase explicit, first run
@@ -125,7 +125,7 @@ For test runs without live systems, use:
 
 ## Adapter Modes
 
-- Jira `mcp`: uses the configured Omio Jira MCP checkout.
+- Jira `mcp`: uses the in-tree `jira-mcp/` server bundled with this project.
 - Jira `snapshot`: reads a previously collected `data-snapshot-YYYY-MM-DD.json`
   with no live Jira calls; use this for other authenticated Jira routes that can
   provide the normalized snapshot shape.

@@ -4,7 +4,7 @@ team:
   timezone: "Europe/Prague"
 
 jira:
-  base_url: "https://omio.atlassian.net"
+  base_url: "https://your-tenant.atlassian.net"
   board_id: "123"
   project_key: "ABC"
   epic_issue_type: "Epic"
