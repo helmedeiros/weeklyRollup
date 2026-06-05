@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Local pre-push gate. Mirrors what GitHub Actions enforces so a push only
+# leaves your machine when all quality gates are green.
+#
+# Activate once per clone with:
+#   git config core.hooksPath scripts/hooks
+#
+# Skip in emergencies with `git push --no-verify`, but the CI will still
+# block the change at the PR level.
+
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+# 1. Python unit tests.
+if [ -x ".venv/bin/python" ]; then
+  PYTHON=.venv/bin/python
+else
+  PYTHON=python3
+fi
+echo "[pre-push] python unit tests"
+"$PYTHON" -m unittest discover -s tests
+
+# 2. Validate the bundled example team config (the only config tracked in git).
+echo "[pre-push] validate example-team config"
+"$PYTHON" scripts/validate_config.py config/example-team.yaml
+
+# 3. jira-mcp jest suite, if Node is on the PATH.
+if command -v node >/dev/null 2>&1; then
+  echo "[pre-push] jira-mcp jest"
+  (cd jira-mcp && npm test --silent -- --ci)
+else
+  echo "[pre-push] node not on PATH; skipping jira-mcp jest"
+fi
+
+echo "[pre-push] all gates green"
