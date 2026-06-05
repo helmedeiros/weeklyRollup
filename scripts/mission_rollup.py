@@ -133,6 +133,11 @@ SECTION_ALIASES = {
         "shipped",
         "shipped this week",
         "progress",
+        "progress update",
+        "weekly progress",
+        "weekly progress update",
+        "this week s progress",
+        "discovery progress update",
     },
     "plan": {
         "plan",

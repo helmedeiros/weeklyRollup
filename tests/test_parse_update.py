@@ -387,6 +387,19 @@ class AdfEmojiTest(unittest.TestCase):
         self.assertTrue(parsed.template_valid)
         self.assertEqual(parsed.status, STATUS_YELLOW)
 
+    def test_progress_update_heading_maps_to_done(self):
+        parsed = parse_update(
+            "Status: \U0001f7e1\n"
+            "Discovery Progress Update\n"
+            "Reviewed mission brief and aligned with enabler teams.\n"
+            "Target for next week: Confirm available signals.\n"
+            "Blockers / Risks: Dataset not confirmed yet.",
+            optional_sections=["blockers"],
+        )
+        self.assertTrue(parsed.template_valid)
+        self.assertEqual(parsed.status, STATUS_YELLOW)
+        self.assertIn("Reviewed mission brief", parsed.done_this_week)
+
     def test_adf_mention_node_yields_text(self):
         adf = {
             "type": "doc",
