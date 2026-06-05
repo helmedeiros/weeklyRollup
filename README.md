@@ -179,6 +179,38 @@ draft. If a raw-MIME-capable route is available, use
 When `--output-dir` is not provided, the JSON result still includes
 `draft_email.subject`, `draft_email.text_body`, and `draft_email.html_body`.
 
+## Write A DRI Weekly Update
+
+Interactive helper to compose a template-valid DRI weekly update and post it
+as a Jira comment via the bundled Jira MCP. Useful when you are covering for
+an out-of-office DRI, or when a DRI wants a guided way to land a valid
+template on the Epic.
+
+```bash
+python3 scripts/write_dri_update.py \
+  --config config/<your-team-local>.yaml \
+  --expect-team-id <team-id> \
+  --date YYYY-MM-DD
+```
+
+What happens:
+
+1. The script lists the team's Epics for this month's mission label, each
+   tagged `[missing]`, `[malformed]`, or `[valid <emoji>]` so you can see at a
+   glance which still need an update.
+2. After you pick an Epic, the script prompts for the status (Green / Yellow /
+   Red, accepts the emoji or the word) and opens `$EDITOR` for each of
+   `Done this week`, `Target for next week`, and `Blockers / Risks`.
+3. The collected content is validated against the same `parse_update`
+   template the rollup uses. If anything is missing or off, the editors loop
+   back so you can fix it.
+4. After a `y` confirmation, the comment is posted via the Jira MCP. The
+   author is whichever user is authenticated in `jira-mcp/.data/store.enc`;
+   when that user is not the Epic assignee the rollup will tag the update as
+   a cover-author comment.
+
+Set `$EDITOR` (or `$VISUAL`) to your preferred editor; defaults to `vi`.
+
 ## Metrics
 
 Each run includes a `metrics` object in `rollup-result.json` and mirrors the key
