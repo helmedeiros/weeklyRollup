@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mission Weekly Rollup"
+  short_description: "Weekly Engineer-Owned Mission rollup workflow"
+  default_prompt: "Use $mission-weekly-rollup to generate the weekly mission rollup, update the team sheet, and prepare the EM review email."

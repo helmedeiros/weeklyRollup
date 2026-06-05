@@ -1,0 +1,41 @@
+{
+  "history_tabs": [
+    {
+      "name": "Week 22",
+      "values": [
+        [
+          "Mission key",
+          "Mission name",
+          "Mission URL",
+          "DRI",
+          "Status",
+          "Jira progress %",
+          "Due date",
+          "Due date movement",
+          "Done this week",
+          "Plan for next week",
+          "Blockers / risks",
+          "Missing update?",
+          "DRI comment",
+          "Hygiene issues"
+        ],
+        [
+          "TEST-2",
+          "Partner cancellation investigation",
+          "https://omio.atlassian.net/browse/TEST-2",
+          "Grace Hopper",
+          "Missing",
+          "10%",
+          "2026-06-25",
+          "no",
+          "",
+          "",
+          "",
+          "yes",
+          "",
+          "Missing weekly DRI update"
+        ]
+      ]
+    }
+  ]
+}

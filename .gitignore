@@ -1,0 +1,9 @@
+.env
+.tokens/
+output/
+__pycache__/
+*.pyc
+
+# Local team configs can contain real email addresses and team-specific values.
+config/delivery_*.yaml
+config/*local*.yaml

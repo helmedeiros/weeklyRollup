@@ -1,0 +1,20 @@
+[
+  {
+    "id": "valid-1500",
+    "created": "2026-06-04T15:00:00+02:00",
+    "author": {
+      "accountId": "ada-account",
+      "displayName": "Ada Lovelace"
+    },
+    "body": "Status: Green\nDone this week: Merged checkout validation PR.\nNext week: Ship controlled rollout.\nBlockers: none"
+  },
+  {
+    "id": "typo-1600",
+    "created": "2026-06-04T16:00:00+02:00",
+    "author": {
+      "accountId": "ada-account",
+      "displayName": "Ada Lovelace"
+    },
+    "body": "fixed typo above"
+  }
+]

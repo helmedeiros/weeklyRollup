@@ -1,0 +1,75 @@
+team:
+  id: "example-team"
+  name: "Example Team"
+  timezone: "Europe/Prague"
+
+jira:
+  base_url: "https://omio.atlassian.net"
+  board_id: "123"
+  project_key: "ABC"
+  epic_issue_type: "Epic"
+  mission_label_pattern: "mission-{month}-{year}"
+
+  fields:
+    dri:
+      field_id: "assignee"
+    due_date:
+      field_id: "duedate"
+    linked_okr:
+      source: "issue_property"
+      property_key: "okr"
+      path: "value.parentId"
+      field_id: ""
+    progress:
+      source: "child_issue_progress"
+      field_id: ""
+    status:
+      field_id: "status"
+
+  done_statuses:
+    - "Done"
+    - "Closed"
+
+weekly_update:
+  window:
+    start_day: "monday"
+    start_time: "00:00"
+    cutoff_day: "friday"
+    cutoff_time: "17:00"
+
+  validation:
+    require_template_match: true
+    minimum_score: 3
+    optional_sections:
+      - "blockers"
+    allow_section_aliases: true
+    allow_unstructured_if_confident: false
+    no_update_red_after_weeks: 2
+
+previous_month_spillover:
+  enabled: true
+  include_if_status_not_in_done_statuses: true
+
+run_history:
+  enabled: true
+  tab_name: "_Run History"
+
+sheet:
+  folder_id: "1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK"
+  file_name_pattern: "{team_name} - Mission Execution Updates"
+  tab_name_pattern: "Week {iso_week}"
+  create_tab_if_missing: true
+  mode: "replace_week_tab"
+
+email:
+  create_draft_only: true
+  from_address: "em@example.com"
+  to:
+    - "mission-report@example.com"
+  cc: []
+  bcc: []
+  subject_pattern: "Weekly Mission Update - {team_name} - Week {iso_week}"
+  preview_to: "em@example.com"
+  greeting: "Hi"
+  signoff: "Kind Regards"
+  signoff_name: "Engineering Manager"

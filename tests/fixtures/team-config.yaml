@@ -1,0 +1,50 @@
+team:
+  id: "test-team"
+  name: "Test Team"
+  timezone: "Europe/Prague"
+jira:
+  base_url: "https://omio.atlassian.net"
+  board_id: "42"
+  project_key: "TEST"
+  epic_issue_type: "Epic"
+  mission_label_pattern: "mission-{month}-{year}"
+  fields:
+    dri:
+      source: "assignee"
+      field_id: "assignee"
+    due_date:
+      field_id: "duedate"
+    linked_okr:
+      field_id: "customfield_10000"
+    progress:
+      field_id: ""
+    status:
+      field_id: "status"
+  done_statuses:
+    - "Done"
+weekly_update:
+  window:
+    start_day: "monday"
+    start_time: "00:00"
+    cutoff_day: "friday"
+    cutoff_time: "17:00"
+  validation:
+    require_template_match: true
+    minimum_score: 4
+    allow_section_aliases: true
+    allow_unstructured_if_confident: false
+    no_update_red_after_weeks: 2
+sheet:
+  folder_id: "1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK"
+  file_name_pattern: "{team_name} - Mission Execution Updates"
+  tab_name_pattern: "Week {iso_week}"
+  create_tab_if_missing: true
+  mode: "replace_week_tab"
+email:
+  create_draft_only: true
+  to:
+    - "mission-report@example.com"
+  cc:
+    - "reviewer@example.com"
+  bcc: []
+  subject_pattern: "Weekly Mission Update - {team_name} - Week {iso_week}"

@@ -1,0 +1,109 @@
+{
+  "missions": [
+    {
+      "key": "TEST-1",
+      "project_key": "TEST",
+      "board_id": "42",
+      "issue_type": "Epic",
+      "labels": ["mission-june-2026"],
+      "summary": "Checkout refund automation",
+      "dri": {
+        "accountId": "ada-account",
+        "displayName": "Ada Lovelace"
+      },
+      "due_date": "2026-06-30",
+      "progress": 0.5,
+      "linked_okr": "KR-123",
+      "status": "In Progress",
+      "comments": [
+        {
+          "id": "test-1-valid",
+          "created": "2026-06-04T15:00:00+02:00",
+          "author": {
+            "accountId": "ada-account",
+            "displayName": "Ada Lovelace"
+          },
+          "body": "Status: Green\nDone this week: Merged checkout validation PR.\nTarget for next week: Roll out to 10%.\nBlockers / Risks: none"
+        }
+      ]
+    },
+    {
+      "key": "TEST-2",
+      "project_key": "TEST",
+      "board_id": "42",
+      "issue_type": "Epic",
+      "labels": ["mission-june-2026"],
+      "summary": "Partner cancellation investigation",
+      "dri": {
+        "accountId": "grace-account",
+        "displayName": "Grace Hopper"
+      },
+      "due_date": "2026-06-30",
+      "progress": "25%",
+      "linked_okr": "",
+      "status": "In Progress",
+      "comments": [
+        {
+          "id": "pm-update",
+          "created": "2026-06-04T15:00:00+02:00",
+          "author": {
+            "accountId": "pm-account",
+            "displayName": "Product Manager"
+          },
+          "body": "Status: Green\nDone this week: PM update only.\nNext week: Continue.\nBlockers: none"
+        }
+      ]
+    },
+    {
+      "key": "TEST-OLD",
+      "project_key": "TEST",
+      "board_id": "42",
+      "issue_type": "Epic",
+      "labels": ["mission-may-2026"],
+      "summary": "Previous month mission",
+      "dri": {
+        "accountId": "ada-account",
+        "displayName": "Ada Lovelace"
+      },
+      "due_date": "2026-05-30",
+      "progress": "100%",
+      "linked_okr": "KR-OLD",
+      "status": "Done",
+      "comments": []
+    },
+    {
+      "key": "OTHER-1",
+      "project_key": "OTHER",
+      "board_id": "42",
+      "issue_type": "Epic",
+      "labels": ["mission-june-2026"],
+      "summary": "Wrong project mission",
+      "dri": {
+        "accountId": "ada-account",
+        "displayName": "Ada Lovelace"
+      },
+      "due_date": "2026-06-30",
+      "progress": "10%",
+      "linked_okr": "KR-OTHER",
+      "status": "In Progress",
+      "comments": []
+    },
+    {
+      "key": "TEST-BOARD",
+      "project_key": "TEST",
+      "board_id": "99",
+      "issue_type": "Epic",
+      "labels": ["mission-june-2026"],
+      "summary": "Wrong board mission",
+      "dri": {
+        "accountId": "ada-account",
+        "displayName": "Ada Lovelace"
+      },
+      "due_date": "2026-06-30",
+      "progress": "10%",
+      "linked_okr": "KR-BOARD",
+      "status": "In Progress",
+      "comments": []
+    }
+  ]
+}
