@@ -632,6 +632,12 @@ def _adf_to_text(node: Any) -> str:
         return str(node.get("text", ""))
     if node_type == "hardBreak":
         return "\n"
+    if node_type == "emoji":
+        attrs = node.get("attrs", {}) or {}
+        return str(attrs.get("text") or attrs.get("shortName") or "")
+    if node_type == "mention":
+        attrs = node.get("attrs", {}) or {}
+        return str(attrs.get("text") or attrs.get("displayName") or "")
     content = _adf_to_text(node.get("content", []))
     if node_type in {"paragraph", "heading", "listItem"}:
         return content + "\n"

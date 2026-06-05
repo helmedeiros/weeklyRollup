@@ -9,6 +9,7 @@ from mission_rollup import (  # noqa: E402
     STATUS_GREEN,
     STATUS_RED,
     STATUS_YELLOW,
+    comment_body_to_text,
     evaluate_hygiene,
     extract_blockers,
     parse_update,
@@ -348,6 +349,65 @@ class ParseUpdateTest(unittest.TestCase):
             issue_by_message["Delayed carryover mission still open"]["severity"],
             "yellow",
         )
+
+
+class AdfEmojiTest(unittest.TestCase):
+    def test_adf_emoji_node_yields_character(self):
+        adf = {
+            "type": "doc",
+            "version": 1,
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {"type": "text", "text": "Status: "},
+                        {
+                            "type": "emoji",
+                            "attrs": {
+                                "shortName": ":yellow_circle:",
+                                "id": "1f7e1",
+                                "text": "\U0001f7e1",
+                            },
+                        },
+                    ],
+                },
+                {
+                    "type": "paragraph",
+                    "content": [{"type": "text", "text": "Done this week: shipped."}],
+                },
+                {
+                    "type": "paragraph",
+                    "content": [{"type": "text", "text": "Target for next week: validate."}],
+                },
+            ],
+        }
+        text = comment_body_to_text(adf)
+        self.assertIn("\U0001f7e1", text)
+        parsed = parse_update(text, optional_sections=["blockers"])
+        self.assertTrue(parsed.template_valid)
+        self.assertEqual(parsed.status, STATUS_YELLOW)
+
+    def test_adf_mention_node_yields_text(self):
+        adf = {
+            "type": "doc",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {"type": "text", "text": "Talked to "},
+                        {
+                            "type": "mention",
+                            "attrs": {
+                                "id": "abc",
+                                "text": "@Helio",
+                                "displayName": "Helio",
+                            },
+                        },
+                    ],
+                }
+            ],
+        }
+        self.assertIn("@Helio", comment_body_to_text(adf))
 
 
 if __name__ == "__main__":
