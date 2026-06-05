@@ -779,6 +779,11 @@ def run_rollup(
     hygiene_issues: list[dict[str, str]] = []
 
     parse_options = parse_update_options(get_path(config, "weekly_update.validation", {}))
+    cover_emails = [
+        str(addr).strip()
+        for addr in get_path(config, "weekly_update.cover_authors", []) or []
+        if str(addr).strip()
+    ]
     for mission in sorted(missions, key=lambda item: str(item.get("key", ""))):
         try:
             apply_issue_property_fields(mission, config, jira_adapter)
@@ -804,6 +809,7 @@ def run_rollup(
             window_start,
             window_end,
             parse_options=parse_options,
+            cover_emails=cover_emails,
         )
         parsed = selection.parsed_update
         mission_key = str(mission.get("key", ""))
@@ -904,6 +910,16 @@ def run_rollup(
             is_not_started=mission_not_started,
             start_signal_seen=start_signal_seen,
         )
+        if selection.cover_author and selection.selected_comment is not None:
+            cover_name = (
+                selection.selected_comment.get("author", {}).get("displayName")
+                or selection.selected_comment.get("author", {}).get("emailAddress")
+                or "cover author"
+            )
+            issues.append({
+                "severity": "info",
+                "message": f"Weekly update by cover author {cover_name} (DRI: {display_dri(mission.get('dri'))})",
+            })
         blockers = (
             apply_blocker_history(
                 extract_blockers(

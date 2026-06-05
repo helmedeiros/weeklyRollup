@@ -244,6 +244,7 @@ class CommentSelection:
     missing_update: bool
     malformed_update_seen: bool
     rejection_reasons: list[str] = field(default_factory=list)
+    cover_author: bool = False
 
 
 class ConfigError(ValueError):
@@ -820,6 +821,7 @@ def find_latest_valid_dri_comment(
     window_end: datetime,
     *,
     parse_options: dict[str, Any] | None = None,
+    cover_emails: list[str] | None = None,
 ) -> CommentSelection:
     """Select the latest valid DRI weekly update from Jira comments."""
 
@@ -840,7 +842,7 @@ def find_latest_valid_dri_comment(
         if not body.strip():
             rejection_reasons.append(f"{comment_id}: empty body")
             continue
-        if not author_matches(comment.get("author", {}), dri):
+        if not author_matches(comment.get("author", {}), dri, cover_emails):
             rejection_reasons.append(f"{comment_id}: author is not DRI")
             continue
         created = parse_jira_datetime(comment.get("created") or comment.get("updated"))
@@ -870,12 +872,14 @@ def find_latest_valid_dri_comment(
 
     valid_candidates.sort(key=lambda candidate: candidate[0], reverse=True)
     _, selected_comment, parsed = valid_candidates[0]
+    selected_is_cover = not _author_is_dri(selected_comment.get("author", {}), dri)
     return CommentSelection(
         selected_comment=selected_comment,
         parsed_update=parsed,
         missing_update=False,
         malformed_update_seen=False,
         rejection_reasons=rejection_reasons,
+        cover_author=selected_is_cover,
     )
 
 
@@ -916,7 +920,17 @@ def parse_jira_datetime(value: Any) -> datetime | None:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=ZoneInfo("UTC"))
 
 
-def author_matches(author: dict[str, Any], dri: dict[str, Any] | None) -> bool:
+def author_matches(
+    author: dict[str, Any],
+    dri: dict[str, Any] | None,
+    cover_emails: list[str] | None = None,
+) -> bool:
+    if _author_is_dri(author, dri):
+        return True
+    return _author_is_cover(author, cover_emails)
+
+
+def _author_is_dri(author: dict[str, Any], dri: dict[str, Any] | None) -> bool:
     if not dri:
         return False
     author_account_id = _first_value(author, "accountId", "account_id", "jira_account_id")
@@ -936,6 +950,18 @@ def author_matches(author: dict[str, Any], dri: dict[str, Any] | None) -> bool:
         _first_value(dri, "displayName", "display_name", "jira_display_name", "name")
     )
     return bool(author_name and dri_name and author_name == dri_name)
+
+
+def _author_is_cover(author: dict[str, Any], cover_emails: list[str] | None) -> bool:
+    if not cover_emails:
+        return False
+    author_email = normalize_identity(_first_value(author, "emailAddress", "email"))
+    if not author_email:
+        return False
+    for cover in cover_emails:
+        if normalize_identity(cover) == author_email:
+            return True
+    return False
 
 
 def _first_value(data: dict[str, Any], *keys: str) -> Any:

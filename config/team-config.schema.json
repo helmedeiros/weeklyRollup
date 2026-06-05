@@ -48,6 +48,13 @@
       "required": ["window", "validation"],
       "additionalProperties": false,
       "properties": {
+        "cover_authors": {
+          "type": "array",
+          "description": "Emails allowed to write weekly mission updates on behalf of the DRI (e.g. EM cover when the DRI is out). Matched case-insensitively against comment.author.emailAddress.",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true,
+          "default": []
+        },
         "window": {
           "type": "object",
           "required": ["start_day", "start_time", "cutoff_day", "cutoff_time"],

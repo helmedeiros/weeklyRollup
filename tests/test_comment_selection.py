@@ -67,6 +67,79 @@ class CommentSelectionTest(unittest.TestCase):
         self.assertTrue(selection.missing_update)
         self.assertIn("author is not DRI", selection.rejection_reasons[0])
 
+    def test_cover_author_accepted_when_dri_did_not_comment(self):
+        comments = [
+            {
+                "id": "em-cover",
+                "created": "2026-06-04T15:00:00+02:00",
+                "author": {
+                    "accountId": "em-account",
+                    "displayName": "Helio Medeiros",
+                    "emailAddress": "helio.medeiros@omio.com",
+                },
+                "body": valid_body(),
+            }
+        ]
+
+        selection = find_latest_valid_dri_comment(
+            comments,
+            DRI,
+            WINDOW_START,
+            WINDOW_END,
+            cover_emails=["helio.medeiros@omio.com"],
+        )
+
+        self.assertFalse(selection.missing_update)
+        self.assertTrue(selection.cover_author)
+        self.assertEqual(selection.selected_comment["id"], "em-cover")
+        self.assertEqual(selection.parsed_update.status, STATUS_GREEN)
+
+    def test_cover_author_match_is_case_insensitive(self):
+        comments = [
+            {
+                "id": "em-cover-upper",
+                "created": "2026-06-04T15:00:00+02:00",
+                "author": {
+                    "accountId": "em-account",
+                    "displayName": "Helio Medeiros",
+                    "emailAddress": "Helio.Medeiros@Omio.com",
+                },
+                "body": valid_body(),
+            }
+        ]
+
+        selection = find_latest_valid_dri_comment(
+            comments,
+            DRI,
+            WINDOW_START,
+            WINDOW_END,
+            cover_emails=["helio.medeiros@omio.com"],
+        )
+
+        self.assertFalse(selection.missing_update)
+        self.assertTrue(selection.cover_author)
+
+    def test_dri_comment_does_not_flag_cover_author(self):
+        comments = [
+            {
+                "id": "dri-comment",
+                "created": "2026-06-04T10:00:00+02:00",
+                "author": DRI,
+                "body": valid_body(),
+            }
+        ]
+
+        selection = find_latest_valid_dri_comment(
+            comments,
+            DRI,
+            WINDOW_START,
+            WINDOW_END,
+            cover_emails=["helio.medeiros@omio.com"],
+        )
+
+        self.assertFalse(selection.missing_update)
+        self.assertFalse(selection.cover_author)
+
     def test_outside_weekly_window_does_not_count(self):
         comments = [
             {
