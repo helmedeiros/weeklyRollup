@@ -299,6 +299,16 @@ class JiraMcpAdapter(JiraAdapter):
                 break
         return comments
 
+    def add_comment(self, issue_key: str, body: dict[str, Any]) -> dict[str, Any]:
+        """Post a comment to an Epic via the bundled Jira MCP. Body must be ADF."""
+        return self._call(
+            {
+                "operation": "addComment",
+                "issueKey": str(issue_key),
+                "body": body,
+            }
+        )
+
     def _call(self, payload: dict[str, Any]) -> dict[str, Any]:
         request_payload = {**payload, "mcpDir": str(self.mcp_dir)}
         try:

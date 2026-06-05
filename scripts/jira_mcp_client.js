@@ -74,6 +74,19 @@ async function main() {
     return;
   }
 
+  if (input.operation === 'addComment') {
+    if (!input.body || typeof input.body !== 'object') {
+      throw new Error('addComment requires an ADF body object');
+    }
+    const result = await jira.request(
+      'POST',
+      `/issue/${encodeURIComponent(input.issueKey)}/comment`,
+      { body: input.body },
+    );
+    console.log(JSON.stringify(result));
+    return;
+  }
+
   throw new Error(`Unsupported operation: ${input.operation}`);
 }
 
