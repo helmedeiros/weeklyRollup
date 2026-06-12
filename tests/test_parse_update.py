@@ -387,6 +387,29 @@ class AdfEmojiTest(unittest.TestCase):
         self.assertTrue(parsed.template_valid)
         self.assertEqual(parsed.status, STATUS_YELLOW)
 
+    def test_planned_for_next_week_heading_maps_to_plan(self):
+        # Regression: Madhura's update wrote "Planned For Next Week" as a heading
+        # without a colon. The plan section was absorbed into done and the
+        # update was marked malformed.
+        parsed = parse_update(
+            "Status: On Track\n"
+            "Done This Week\n"
+            "Aligned with Data on the input-file ticket.\n"
+            "Built an agent to identify reachable users.\n"
+            "Planned For Next Week\n"
+            "Review recommendations with CRM and fine-tune the decision logic.\n"
+            "Coordinate with CRM to set up campaigns.\n"
+            "Blockers / Risks\n"
+            "Next week is short; CRM review may slip.",
+            optional_sections=["blockers"],
+        )
+        self.assertTrue(parsed.template_valid)
+        self.assertEqual(parsed.status, STATUS_GREEN)
+        self.assertIn("Aligned with Data", parsed.done_this_week)
+        self.assertNotIn("Planned For Next Week", parsed.done_this_week)
+        self.assertIn("Review recommendations", parsed.plan_for_next_week)
+        self.assertIn("CRM review may slip", parsed.blockers_risks)
+
     def test_progress_update_heading_maps_to_done(self):
         parsed = parse_update(
             "Status: \U0001f7e1\n"
