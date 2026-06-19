@@ -629,6 +629,23 @@ def comment_body_to_text(body: Any) -> str:
     return str(body)
 
 
+_JIRA_BROWSE_RE = re.compile(r"/browse/([A-Z][A-Z0-9_]+-\d+)\b")
+
+
+def _short_card_label(url: str) -> str:
+    """Render a Jira/Confluence smart-card URL as a short readable token.
+
+    Jira issue URLs render as the issue key (ACTIN-757). Other URLs return
+    empty so the caller falls back to the raw URL.
+    """
+    if not url:
+        return ""
+    match = _JIRA_BROWSE_RE.search(url)
+    if match:
+        return match.group(1)
+    return ""
+
+
 def _adf_to_text(node: Any) -> str:
     if isinstance(node, str):
         return node
@@ -647,6 +664,10 @@ def _adf_to_text(node: Any) -> str:
     if node_type == "mention":
         attrs = node.get("attrs", {}) or {}
         return str(attrs.get("text") or attrs.get("displayName") or "")
+    if node_type in {"inlineCard", "blockCard", "embedCard"}:
+        attrs = node.get("attrs", {}) or {}
+        url = str(attrs.get("url") or "")
+        return _short_card_label(url) or url
     content = _adf_to_text(node.get("content", []))
     if node_type in {"paragraph", "heading", "listItem"}:
         return content + "\n"

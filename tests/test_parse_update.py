@@ -423,6 +423,38 @@ class AdfEmojiTest(unittest.TestCase):
         self.assertEqual(parsed.status, STATUS_YELLOW)
         self.assertIn("Reviewed mission brief", parsed.done_this_week)
 
+    def test_adf_inline_card_yields_jira_issue_key(self):
+        adf = {
+            "type": "doc",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {"type": "text", "text": "Switched focus to "},
+                        {
+                            "type": "inlineCard",
+                            "attrs": {"url": "https://example.atlassian.net/browse/ACTIN-757"},
+                        },
+                        {"type": "text", "text": " this week."},
+                    ],
+                }
+            ],
+        }
+        self.assertIn("Switched focus to ACTIN-757 this week.", comment_body_to_text(adf))
+
+    def test_adf_inline_card_non_jira_url_falls_back_to_url(self):
+        adf = {
+            "type": "paragraph",
+            "content": [
+                {"type": "text", "text": "see "},
+                {
+                    "type": "inlineCard",
+                    "attrs": {"url": "https://example.com/page"},
+                },
+            ],
+        }
+        self.assertIn("https://example.com/page", comment_body_to_text(adf))
+
     def test_adf_mention_node_yields_text(self):
         adf = {
             "type": "doc",
