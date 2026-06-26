@@ -167,7 +167,8 @@
         "to": {
           "type": "array",
           "minItems": 1,
-          "items": { "type": "string" }
+          "items": { "type": "string" },
+          "default": ["missions@omio.com"]
         },
         "from_address": { "type": "string" },
         "cc": {
