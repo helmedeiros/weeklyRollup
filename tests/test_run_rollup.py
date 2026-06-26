@@ -17,10 +17,13 @@ from run_rollup import (  # noqa: E402
     RollupAdapterError,
     apply_issue_property_fields,
     child_issue_progress,
+    child_issue_start_signal_seen,
     collect_jira_snapshot,
     due_date_change_status,
     due_date_movement_label,
     field_value,
+    mission_start_signal_seen,
+    mission_status_categories,
     normalize_jira_issue,
     normalize_jira_progress,
     run_rollup,
@@ -1736,6 +1739,71 @@ class RunRollupTest(unittest.TestCase):
         apply_issue_property_fields(mission, config, FixtureJiraAdapter(self.jira_fixture))
 
         self.assertEqual(mission["linked_okr"], "")
+
+
+class StartSignalTest(unittest.TestCase):
+    def test_child_in_progress_counts_as_start_signal(self):
+        mission = {
+            "children": [
+                {
+                    "fields": {
+                        "issuetype": {"subtask": False},
+                        "status": {"statusCategory": {"key": "indeterminate", "name": "In Progress"}},
+                    }
+                }
+            ]
+        }
+        self.assertTrue(child_issue_start_signal_seen(mission))
+        self.assertTrue(mission_start_signal_seen(mission, None))
+
+    def test_child_done_counts_as_start_signal(self):
+        mission = {
+            "children": [
+                {
+                    "fields": {
+                        "issuetype": {"subtask": False},
+                        "status": {"statusCategory": {"key": "done", "name": "Done"}},
+                    }
+                }
+            ]
+        }
+        self.assertTrue(child_issue_start_signal_seen(mission))
+
+    def test_subtask_children_are_ignored(self):
+        mission = {
+            "children": [
+                {
+                    "fields": {
+                        "issuetype": {"subtask": True},
+                        "status": {"statusCategory": {"key": "indeterminate", "name": "In Progress"}},
+                    }
+                }
+            ]
+        }
+        self.assertFalse(child_issue_start_signal_seen(mission))
+
+    def test_to_do_children_are_not_start_signal(self):
+        mission = {
+            "children": [
+                {
+                    "fields": {
+                        "issuetype": {"subtask": False},
+                        "status": {"statusCategory": {"key": "new", "name": "To Do"}},
+                    }
+                }
+            ]
+        }
+        self.assertFalse(child_issue_start_signal_seen(mission))
+        self.assertFalse(mission_start_signal_seen(mission, None))
+
+    def test_mission_status_categories_aggregates_paths(self):
+        mission = {
+            "status_category": "in progress",
+            "status": {"statusCategory": {"key": "indeterminate", "name": "In Progress"}},
+        }
+        cats = mission_status_categories(mission)
+        self.assertIn("in progress", cats)
+        self.assertIn("indeterminate", cats)
 
 
 if __name__ == "__main__":

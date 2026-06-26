@@ -1330,7 +1330,7 @@ def mission_start_signal_seen(
 ) -> bool:
     if parsed_update is not None or malformed_update_seen:
         return True
-    return mission_progress_started(mission.get("progress"))
+    return mission_progress_started(mission.get("progress")) or child_issue_start_signal_seen(mission)
 
 
 def mission_progress_started(progress: Any) -> bool:
@@ -2216,6 +2216,58 @@ def status_is_done(status: Any, done_statuses: set[str]) -> bool:
 
 def normalize_status_name(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "").strip().lower())
+
+
+def status_category_values(status: Any) -> list[Any]:
+    """Return all available statusCategory key/name values on a Jira status payload."""
+    if not isinstance(status, dict):
+        return []
+    values: list[Any] = []
+    for path in (
+        "statusCategory.key",
+        "statusCategory.name",
+        "category.key",
+        "category.name",
+        "status.statusCategory.key",
+        "status.statusCategory.name",
+        "fields.status.statusCategory.key",
+        "fields.status.statusCategory.name",
+    ):
+        value = get_path(status, path)
+        if value not in (None, ""):
+            values.append(value)
+    return values
+
+
+def mission_status_categories(mission_or_status: Any) -> set[str]:
+    """Normalised set of Jira status categories for a mission or status payload."""
+    categories: set[str] = set()
+    if isinstance(mission_or_status, dict):
+        explicit = mission_or_status.get("status_category")
+        if explicit:
+            categories.add(normalize_status_name(explicit))
+        status = mission_or_status.get("status", mission_or_status)
+    else:
+        status = mission_or_status
+    categories.update(normalize_status_name(value) for value in status_category_values(status))
+    return categories
+
+
+def child_issue_start_signal_seen(mission: dict[str, Any]) -> bool:
+    """A non-subtask child in an in-progress/done category is a start signal."""
+    for child in mission.get("children", []) or []:
+        if not isinstance(child, dict):
+            continue
+        fields = child.get("fields", child)
+        if not isinstance(fields, dict):
+            continue
+        if get_path(fields, "issuetype.subtask") is True:
+            continue
+        status = fields.get("status")
+        categories = mission_status_categories(status)
+        if "done" in categories or "indeterminate" in categories or "in progress" in categories:
+            return True
+    return False
 
 
 def normalize_jira_issue(issue: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
