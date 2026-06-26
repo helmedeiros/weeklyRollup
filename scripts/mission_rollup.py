@@ -1013,6 +1013,18 @@ def normalize_identity(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value).strip().lower())
 
 
+_OPS_MISSION_RE = re.compile(r"\b(?:ops|ops stream|operational|operational stream)\b")
+
+
+def mission_exempt_from_linked_okr(mission: dict[str, Any]) -> bool:
+    """Operational/KTLO missions are not expected to link to an OKR."""
+    text = " ".join(
+        str(mission.get(key) or "")
+        for key in ("name", "summary", "mission", "title")
+    )
+    return bool(_OPS_MISSION_RE.search(normalize_identity(text)))
+
+
 def evaluate_hygiene(
     mission: dict[str, Any],
     config: dict[str, Any],
@@ -1049,7 +1061,7 @@ def evaluate_hygiene(
     if not is_done and history_available and stale_weeks >= stale_threshold and stale_weeks > 0:
         issues.append({"severity": "red", "message": f"No update in {stale_weeks} weeks"})
 
-    if not mission.get("linked_okr"):
+    if not mission.get("linked_okr") and not mission_exempt_from_linked_okr(mission):
         issues.append({"severity": "yellow", "message": "Missing linked OKR"})
     if missing_update and not is_done:
         issues.append({"severity": "yellow", "message": "Missing weekly DRI update"})

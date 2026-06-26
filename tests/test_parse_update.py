@@ -318,6 +318,49 @@ class ParseUpdateTest(unittest.TestCase):
             [issue["message"] for issue in issues],
         )
 
+    def test_ops_mission_exempt_from_missing_linked_okr(self):
+        # Ops / KTLO missions are not expected to link to an OKR; per upstream
+        # functional spec, they are exempt from the "Missing linked OKR" yellow.
+        config = {
+            "team": {},
+            "weekly_update": {"validation": {"no_update_red_after_weeks": 2}},
+            "previous_month_spillover": {"enabled": False},
+        }
+        parsed = parse_update(
+            "Status: Green\nDone: ran.\nPlan: tomorrow.\nBlockers: none",
+            optional_sections=["blockers"],
+        )
+        for ops_name in ("Ops Stream sustaining work", "Funnel operational support", "OPS — KTLO bucket"):
+            with self.subTest(name=ops_name):
+                mission = {
+                    "name": ops_name,
+                    "dri": {"accountId": "x", "displayName": "Eng"},
+                    "due_date": "2026-06-30",
+                    "linked_okr": "",
+                }
+                issues = evaluate_hygiene(mission, config, parsed, missing_update=False)
+                messages = [i["message"] for i in issues]
+                self.assertNotIn("Missing linked OKR", messages, messages)
+
+    def test_non_ops_mission_still_flags_missing_linked_okr(self):
+        config = {
+            "team": {},
+            "weekly_update": {"validation": {"no_update_red_after_weeks": 2}},
+            "previous_month_spillover": {"enabled": False},
+        }
+        parsed = parse_update(
+            "Status: Green\nDone: ran.\nPlan: tomorrow.\nBlockers: none",
+            optional_sections=["blockers"],
+        )
+        mission = {
+            "name": "Improve user Opt-In rates",
+            "dri": {"accountId": "x", "displayName": "Eng"},
+            "due_date": "2026-06-30",
+            "linked_okr": "",
+        }
+        issues = evaluate_hygiene(mission, config, parsed, missing_update=False)
+        self.assertIn("Missing linked OKR", [i["message"] for i in issues])
+
     def test_hygiene_flags_open_delayed_carryover_mission(self):
         config = {
             "team": {},
