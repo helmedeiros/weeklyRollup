@@ -269,6 +269,7 @@ class Blocker:
     owner: str = ""
     days_open: str = ""
     first_seen_week: str = ""
+    kind: str = ""  # "risk", "blocker", or "" (legacy combined)
 
 
 @dataclass(frozen=True)
@@ -923,8 +924,13 @@ def extract_blockers(
     mission: str,
     dri: str,
     status: str,
+    kind: str = "",
 ) -> list[Blocker]:
-    """Split the blockers section into blocker rows."""
+    """Split the blockers section into blocker rows.
+
+    `kind` carries the section heading classification ("risk" / "blocker" /
+    "") through to each Blocker so the email renderer can label rows.
+    """
 
     blockers: list[Blocker] = []
     for item in blocker_items(blockers_text):
@@ -940,6 +946,7 @@ def extract_blockers(
                 text=item,
                 owner=owner,
                 days_open=days_open,
+                kind=kind,
             )
         )
     return blockers
@@ -1582,6 +1589,13 @@ def build_template_blocker_rows(blockers: list[dict[str, str]]) -> list[dict[str
     rows = []
     for blocker in blockers:
         style = blocker_theme(str(blocker.get("status", "")))
+        kind = str(blocker.get("kind", "") or "").lower()
+        if kind == "risk":
+            kind_label = "Risk"
+        elif kind == "blocker":
+            kind_label = "Blocker"
+        else:
+            kind_label = ""
         rows.append(
             {
                 "mission": str(blocker.get("mission", "")),
@@ -1589,6 +1603,8 @@ def build_template_blocker_rows(blockers: list[dict[str, str]]) -> list[dict[str
                 "dri": str(blocker.get("dri", "")),
                 "owner": str(blocker.get("owner", "") or "Unassigned"),
                 "days_open": str(blocker.get("days_open", "") or "Not provided"),
+                "kind": kind,
+                "kind_label": kind_label,
                 "style": style,
             }
         )
@@ -1876,9 +1892,11 @@ def render_text_email(
         for blocker in blockers:
             owner = blocker.get("owner", "") or "Unassigned"
             days_open = blocker.get("days_open", "") or "Not provided"
+            kind = str(blocker.get("kind", "") or "").lower()
+            kind_prefix = "[Risk] " if kind == "risk" else ("[Blocker] " if kind == "blocker" else "")
             lines.extend(
                 [
-                    f"- {blocker.get('mission', '')}: {blocker.get('text', '')}",
+                    f"- {kind_prefix}{blocker.get('mission', '')}: {blocker.get('text', '')}",
                     f"  DRI: {blocker.get('dri', '')} | Owner: {owner} | Days open: {days_open}",
                 ]
             )

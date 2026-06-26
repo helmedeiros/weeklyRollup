@@ -930,21 +930,55 @@ def run_rollup(
                 "severity": "info",
                 "message": f"Weekly update by cover author {cover_name} (DRI: {display_dri(mission.get('dri'))})",
             })
-        blockers = (
-            apply_blocker_history(
-                extract_blockers(
+        if parsed:
+            mission_label = str(mission.get("name") or mission.get("summary") or mission.get("key") or "")
+            dri_label = display_dri(mission.get("dri"))
+            raw_blockers: list = []
+            if parsed.risks or parsed.blockers:
+                if parsed.risks:
+                    raw_blockers.extend(
+                        extract_blockers(
+                            parsed.risks,
+                            mission=mission_label,
+                            dri=dri_label,
+                            status=effective_status,
+                            kind="risk",
+                        )
+                    )
+                if parsed.blockers:
+                    raw_blockers.extend(
+                        extract_blockers(
+                            parsed.blockers,
+                            mission=mission_label,
+                            dri=dri_label,
+                            status=effective_status,
+                            kind="blocker",
+                        )
+                    )
+                if parsed.combined_risks_blockers:
+                    raw_blockers.extend(
+                        extract_blockers(
+                            parsed.combined_risks_blockers,
+                            mission=mission_label,
+                            dri=dri_label,
+                            status=effective_status,
+                        )
+                    )
+            else:
+                raw_blockers = extract_blockers(
                     parsed.blockers_risks,
-                    mission=str(mission.get("name") or mission.get("summary") or mission.get("key") or ""),
-                    dri=display_dri(mission.get("dri")),
+                    mission=mission_label,
+                    dri=dri_label,
                     status=effective_status,
-                ),
+                )
+            blockers = apply_blocker_history(
+                raw_blockers,
                 history,
                 mission_key=mission_key,
                 current_week=iso_week,
             )
-            if parsed
-            else []
-        )
+        else:
+            blockers = []
         sheet_rows.append(
             mission_to_sheet_row(
                 mission,
