@@ -141,6 +141,9 @@ SECTION_ALIASES = {
     },
     "plan": {
         "plan",
+        "plans",
+        "next",
+        "next up",
         "next week",
         "target next week",
         "target for next week",

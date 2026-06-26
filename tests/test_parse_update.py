@@ -430,6 +430,20 @@ class AdfEmojiTest(unittest.TestCase):
         self.assertTrue(parsed.template_valid)
         self.assertEqual(parsed.status, STATUS_YELLOW)
 
+    def test_bare_next_heading_maps_to_plan(self):
+        # Regression: Thiago/Gabriel wrote a "Next" bare-label heading; without
+        # this alias the plan section was empty and the update was malformed.
+        parsed = parse_update(
+            "Status\n\U0001F7E2\n"
+            "Done this week\nShipped the experiment branch.\n"
+            "Next\nTest in production. Turn the flag on Monday.\n"
+            "Blocker\nDeployment slot still pending.",
+            optional_sections=["blockers"],
+        )
+        self.assertTrue(parsed.template_valid)
+        self.assertEqual(parsed.status, STATUS_GREEN)
+        self.assertIn("Test in production", parsed.plan_for_next_week)
+
     def test_planned_for_next_week_heading_maps_to_plan(self):
         # Regression: Madhura's update wrote "Planned For Next Week" as a heading
         # without a colon. The plan section was absorbed into done and the
