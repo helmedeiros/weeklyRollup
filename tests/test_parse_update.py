@@ -430,6 +430,49 @@ class AdfEmojiTest(unittest.TestCase):
         self.assertTrue(parsed.template_valid)
         self.assertEqual(parsed.status, STATUS_YELLOW)
 
+    def test_separate_risks_and_blockers_headings_populate_independently(self):
+        parsed = parse_update(
+            "Status: Yellow\n"
+            "Done this week: shipped.\n"
+            "Plan for next week: monitor.\n"
+            "Blockers:\nDeployment slot pending owner.\n"
+            "Risks:\nLate translation may slip the rollout."
+        )
+        self.assertTrue(parsed.template_valid)
+        self.assertIn("Deployment slot pending owner", parsed.blockers)
+        self.assertNotIn("Deployment slot", parsed.risks)
+        self.assertIn("Late translation", parsed.risks)
+        self.assertNotIn("Late translation", parsed.blockers)
+        # Legacy combined field retains everything the section produced
+        self.assertIn("Deployment slot pending owner", parsed.blockers_risks)
+        self.assertIn("Late translation", parsed.blockers_risks)
+
+    def test_legacy_combined_blockers_risks_heading_still_works(self):
+        parsed = parse_update(
+            "Status: Yellow\n"
+            "Done this week: shipped.\n"
+            "Plan for next week: monitor.\n"
+            "Blockers / Risks: Late translation may slip the rollout."
+        )
+        self.assertTrue(parsed.template_valid)
+        self.assertEqual(parsed.risks, "")
+        self.assertEqual(parsed.blockers, "")
+        self.assertIn("Late translation", parsed.combined_risks_blockers)
+        self.assertIn("Late translation", parsed.blockers_risks)
+
+    def test_explicit_none_values_clear_risk_blocker_fields(self):
+        for none_value in ("none", "No blockers", "n/a", "nothing", "-", "no risks currently"):
+            with self.subTest(value=none_value):
+                parsed = parse_update(
+                    "Status: Green\n"
+                    "Done this week: shipped.\n"
+                    "Plan for next week: monitor.\n"
+                    f"Risks: {none_value}\n"
+                    f"Blockers: {none_value}"
+                )
+                self.assertEqual(parsed.risks, "", f"risks not cleared for {none_value!r}")
+                self.assertEqual(parsed.blockers, "", f"blockers not cleared for {none_value!r}")
+
     def test_bare_next_heading_maps_to_plan(self):
         # Regression: Thiago/Gabriel wrote a "Next" bare-label heading; without
         # this alias the plan section was empty and the update was malformed.

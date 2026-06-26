@@ -186,17 +186,38 @@ REQUIRED_SECTIONS = ("status", "done", "plan", "blockers")
 OPTIONAL_SECTIONS = ("blockers",)
 
 NONE_VALUES = {
+    "",
     "none",
+    "none currently",
+    "none right now",
     "no",
     "no blockers",
     "no blocker",
+    "no blocker currently",
+    "no blockers currently",
+    "no blocker right now",
+    "no blockers right now",
     "no risks",
     "no risk",
+    "no risk currently",
+    "no risks currently",
+    "no risk right now",
+    "no risks right now",
+    "no material blocker identified",
+    "no material blockers identified",
+    "no material risk identified",
+    "no material risks identified",
+    "no issues",
+    "no issue",
+    "no dependencies",
+    "no dependency",
     "no active blockers",
     "no active risks",
     "n/a",
     "na",
     "not applicable",
+    "nothing",
+    "absent",
     "-",
 }
 
@@ -232,6 +253,9 @@ class ParsedUpdate:
     blockers_risks: str
     template_valid: bool
     score: int
+    risks: str = ""
+    blockers: str = ""
+    combined_risks_blockers: str = ""
     missing_sections: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
 
@@ -562,29 +586,75 @@ def parse_update(
     allow_unstructured_if_confident: bool = False,
     optional_sections: list[str] | tuple[str, ...] | None = None,
 ) -> ParsedUpdate:
-    """Parse a weekly DRI update into the configured semantic sections."""
+    """Parse a weekly DRI update into the configured semantic sections.
+
+    The parser keeps the legacy combined `blockers_risks` value for backward
+    compatibility, and also tracks whether each line came from a `Risks:`
+    heading, a `Blockers:` heading, or a legacy combined `Blockers / Risks`
+    heading, so callers can render them separately when both are populated.
+    """
 
     del allow_section_aliases, allow_unstructured_if_confident
     text = comment_body_to_text(body)
-    sections = {section: [] for section in REQUIRED_SECTIONS}
+    sections: dict[str, list[str]] = {section: [] for section in REQUIRED_SECTIONS}
+    risk_lines: list[str] = []
+    blocker_lines: list[str] = []
+    combined_lines: list[str] = []
     current_section: str | None = None
+    blocker_heading_kind = ""
+
+    def append_blocker_line(value: str) -> None:
+        sections["blockers"].append(value)
+        if blocker_heading_kind == "risk":
+            risk_lines.append(value)
+        elif blocker_heading_kind == "blocker":
+            blocker_lines.append(value)
+        else:
+            combined_lines.append(value)
 
     for raw_line in text.splitlines():
         line = raw_line.strip()
         if not line:
             if current_section:
                 sections[current_section].append("")
+                if current_section == "blockers":
+                    if blocker_heading_kind == "risk":
+                        risk_lines.append("")
+                    elif blocker_heading_kind == "blocker":
+                        blocker_lines.append("")
+                    else:
+                        combined_lines.append("")
             continue
         detected = detect_section_line(line)
         if detected:
             current_section, rest = detected
+            if current_section == "blockers":
+                blocker_heading_kind = risk_blocker_heading_kind(line)
+            else:
+                blocker_heading_kind = ""
             if rest:
-                sections[current_section].append(rest)
+                if current_section == "blockers":
+                    append_blocker_line(rest)
+                else:
+                    sections[current_section].append(rest)
             continue
         if current_section:
-            sections[current_section].append(line)
+            if current_section == "blockers":
+                append_blocker_line(line)
+            else:
+                sections[current_section].append(line)
 
     values = {section: clean_section_value(lines) for section, lines in sections.items()}
+    risks_value = clean_section_value(risk_lines)
+    blockers_value = clean_section_value(blocker_lines)
+    combined_value = clean_section_value(combined_lines)
+    if blockers_are_none(risks_value):
+        risks_value = ""
+    if blockers_are_none(blockers_value):
+        blockers_value = ""
+    if blockers_are_none(combined_value):
+        combined_value = ""
+
     status = normalize_status(values["status"])
     optional_section_set = set(optional_sections or []) & set(OPTIONAL_SECTIONS)
     missing_sections = [
@@ -613,6 +683,9 @@ def parse_update(
         blockers_risks=values["blockers"],
         template_valid=template_valid,
         score=score,
+        risks=risks_value,
+        blockers=blockers_value,
+        combined_risks_blockers=combined_value,
         missing_sections=missing_sections,
         errors=errors,
     )
@@ -723,6 +796,45 @@ def clean_section_value(lines: list[str]) -> str:
     text = "\n".join(lines)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
+
+
+_RISK_HEADING_LABELS = {"risk", "risks"}
+_BLOCKER_HEADING_LABELS = {
+    "blocker",
+    "blockers",
+    "dependency",
+    "dependencies",
+    "decision",
+    "decisions",
+    "decisions needed",
+}
+
+
+def section_label_from_line(line: str) -> str:
+    """Extract the heading label from a section line (with or without value)."""
+    cleaned = re.sub(r"^\s*(?:[-*]\s+|\d+[.)]\s+)", "", line)
+    cleaned = re.sub(r"^\s*#+\s*", "", cleaned)
+    cleaned = cleaned.replace("**", "").replace("__", "").strip()
+    match = re.match(r"^(?P<label>[A-Za-z][A-Za-z0-9 /&+'-]{0,80})\s*[:\-]", cleaned)
+    return match.group("label") if match else cleaned
+
+
+def risk_blocker_heading_kind(line: str) -> str:
+    """Classify a blockers-section heading as 'risk', 'blocker', or '' (combined)."""
+    normalized = normalize_label(section_label_from_line(line))
+    if normalized in _RISK_HEADING_LABELS:
+        return "risk"
+    if normalized in _BLOCKER_HEADING_LABELS:
+        return "blocker"
+    return ""
+
+
+def blockers_are_none(value: str) -> bool:
+    """True when a blocker/risk value is a recognised explicit-none phrase."""
+    if not value:
+        return True
+    normalized = normalize_label(value.strip())
+    return normalized in NONE_VALUES
 
 
 def normalize_status(value: str) -> str | None:
