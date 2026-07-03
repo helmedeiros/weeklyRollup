@@ -1,0 +1,20 @@
+# Environment and secrets
+.env
+credentials.json
+
+# Encrypted / local token store
+.data/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
