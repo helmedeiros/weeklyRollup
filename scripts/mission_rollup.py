@@ -1451,8 +1451,8 @@ def build_summary_primary_items(
     Always includes the total-count tile; the status / risk / blocker /
     missing-update tiles are dropped when their count is zero (unless
     include_zero_statuses is True) so the row stays uncluttered. Widths
-    are recomputed so all visible tiles share the row evenly, matching
-    the single-row layout used by other Omio teams' rollup emails.
+    are recomputed so all visible tiles share the row evenly in a single
+    header row.
     """
     month_name = month_label_display(report_month_label).split(" ", 1)[0] if report_month_label else "Current"
     items = [

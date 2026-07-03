@@ -75,7 +75,7 @@ class CommentSelectionTest(unittest.TestCase):
                 "author": {
                     "accountId": "em-account",
                     "displayName": "Helio Medeiros",
-                    "emailAddress": "helio.medeiros@omio.com",
+                    "emailAddress": "cover.author@example.com",
                 },
                 "body": valid_body(),
             }
@@ -86,7 +86,7 @@ class CommentSelectionTest(unittest.TestCase):
             DRI,
             WINDOW_START,
             WINDOW_END,
-            cover_emails=["helio.medeiros@omio.com"],
+            cover_emails=["cover.author@example.com"],
         )
 
         self.assertFalse(selection.missing_update)
@@ -102,7 +102,7 @@ class CommentSelectionTest(unittest.TestCase):
                 "author": {
                     "accountId": "em-account",
                     "displayName": "Helio Medeiros",
-                    "emailAddress": "Helio.Medeiros@Omio.com",
+                    "emailAddress": "Cover.Author@Example.com",
                 },
                 "body": valid_body(),
             }
@@ -113,7 +113,7 @@ class CommentSelectionTest(unittest.TestCase):
             DRI,
             WINDOW_START,
             WINDOW_END,
-            cover_emails=["helio.medeiros@omio.com"],
+            cover_emails=["cover.author@example.com"],
         )
 
         self.assertFalse(selection.missing_update)
@@ -134,7 +134,7 @@ class CommentSelectionTest(unittest.TestCase):
             DRI,
             WINDOW_START,
             WINDOW_END,
-            cover_emails=["helio.medeiros@omio.com"],
+            cover_emails=["cover.author@example.com"],
         )
 
         self.assertFalse(selection.missing_update)
