@@ -112,6 +112,7 @@ class SheetWriteResult:
     tab_name: str
     row_count: int
     tab_gid: str = ""
+    spreadsheet_url: str = ""
     message: str = ""
     request: dict[str, Any] | None = None
     error: str | None = None
@@ -707,6 +708,175 @@ class RawMimePlanEmailAdapter(EmailAdapter):
             message="Prepared Gmail API raw MIME draft request; execute with users.drafts.create.",
             request=request_payload,
         )
+
+
+class LiveGoogleSheetsAdapter(SheetAdapter):
+    """Live sheet adapter backed by the bundled google-drive-mcp bridge.
+
+    Invokes scripts/google_sheets_client.js as a subprocess with a small JSON
+    operation per call. History is available: replace_run_history reads the
+    existing tab first so cross-week metrics (blocker age, missing-update
+    streaks) work correctly.
+    """
+
+    def __init__(self, mcp_dir: str | Path | None = None):
+        self.mcp_dir = Path(
+            mcp_dir
+            or os.environ.get("GOOGLE_DRIVE_MCP_DIR")
+            or Path(__file__).resolve().parent.parent / "google-drive-mcp"
+        )
+        self.client_script = Path(__file__).resolve().parent / "google_sheets_client.js"
+        if not self.client_script.exists():
+            raise RollupAdapterError(f"Missing Google Sheets client helper: {self.client_script}")
+        self.history_available = True
+        self.run_history_available = True
+        self._resolved: dict[str, dict[str, Any]] = {}
+
+    def _resolve_spreadsheet(self, config: dict[str, Any]) -> dict[str, Any]:
+        folder_id = str(get_path(config, "sheet.folder_id", ""))
+        file_name = sheet_file_name(config)
+        cache_key = f"{folder_id}::{file_name}"
+        cached = self._resolved.get(cache_key)
+        if cached and cached.get("spreadsheetId"):
+            return cached
+        # Prefer any explicitly configured spreadsheet id first (avoids a Drive lookup).
+        configured_id = str(get_path(config, "sheet.resolved_spreadsheet_id", "") or "").strip()
+        if configured_id:
+            resolved = {"spreadsheetId": configured_id, "name": file_name, "url": "", "created": False}
+            self._resolved[cache_key] = resolved
+            return resolved
+        resolved = self._call(
+            {
+                "operation": "resolveSpreadsheet",
+                "folderId": folder_id,
+                "fileName": file_name,
+                "createIfMissing": True,
+            }
+        )
+        if not resolved.get("spreadsheetId"):
+            raise RollupAdapterError(
+                f"Could not resolve or create spreadsheet '{file_name}' in folder {folder_id}"
+            )
+        self._resolved[cache_key] = resolved
+        return resolved
+
+    def read_history(self, config: dict[str, Any], current_tab_name: str) -> list[dict[str, Any]]:
+        """Return prior weekly tab rows so mission_rollup can compute due-date
+        movement + missing-update streaks."""
+        resolved = self._resolve_spreadsheet(config)
+        sheets = self._call({"operation": "listSheets", "spreadsheetId": resolved["spreadsheetId"]}).get(
+            "sheets", []
+        )
+        history_tabs: list[dict[str, Any]] = []
+        run_history_name = str(get_path(config, "run_history.tab_name", "_Run History"))
+        for sheet in sheets:
+            title = str(sheet.get("title") or "")
+            if not title or title == current_tab_name or title == run_history_name:
+                continue
+            data = self._call(
+                {"operation": "readTab", "spreadsheetId": resolved["spreadsheetId"], "tabName": title}
+            )
+            history_tabs.append({"tab_name": title, "values": data.get("values", [])})
+        return history_tabs
+
+    def read_run_history(self, config: dict[str, Any]) -> list[list[Any]]:
+        resolved = self._resolve_spreadsheet(config)
+        run_history_name = str(get_path(config, "run_history.tab_name", "_Run History"))
+        data = self._call(
+            {"operation": "readTab", "spreadsheetId": resolved["spreadsheetId"], "tabName": run_history_name}
+        )
+        if data.get("missing"):
+            return []
+        return [list(row) for row in data.get("values", [])]
+
+    def replace_week_tab(
+        self,
+        config: dict[str, Any],
+        tab_name: str,
+        values: list[list[str]],
+    ) -> SheetWriteResult:
+        resolved = self._resolve_spreadsheet(config)
+        write = self._call(
+            {
+                "operation": "replaceTab",
+                "spreadsheetId": resolved["spreadsheetId"],
+                "tabName": tab_name,
+                "values": values,
+                "createIfMissing": bool(get_path(config, "sheet.create_tab_if_missing", True)),
+            }
+        )
+        # Refresh the cached URL with the resolved spreadsheet + tab gid for the email link.
+        resolved["url"] = resolved.get("url") or f"https://docs.google.com/spreadsheets/d/{resolved['spreadsheetId']}/edit"
+        return SheetWriteResult(
+            status="written",
+            spreadsheet_id=resolved["spreadsheetId"],
+            spreadsheet_url=resolved.get("url", ""),
+            tab_name=tab_name,
+            tab_gid=str(write.get("sheetId", "") or ""),
+            row_count=int(write.get("rowsWritten") or max(len(values) - 1, 0)),
+            message="Weekly tab written to Google Sheets",
+        )
+
+    def replace_run_history(
+        self,
+        config: dict[str, Any],
+        tab_name: str,
+        values: list[list[str]],
+        *,
+        run_id: str,
+    ) -> SheetWriteResult:
+        resolved = self._resolve_spreadsheet(config)
+        # Read existing history so we can drop any prior rows carrying this run id,
+        # then merge with the new rows and rewrite the whole tab.
+        existing = self._call(
+            {"operation": "readTab", "spreadsheetId": resolved["spreadsheetId"], "tabName": tab_name}
+        )
+        current = [] if existing.get("missing") else [list(row) for row in existing.get("values", [])]
+        merged = merge_run_history_values(current, values, run_id=run_id)
+        write = self._call(
+            {
+                "operation": "replaceTab",
+                "spreadsheetId": resolved["spreadsheetId"],
+                "tabName": tab_name,
+                "values": merged,
+                "createIfMissing": True,
+            }
+        )
+        return SheetWriteResult(
+            status="written",
+            spreadsheet_id=resolved["spreadsheetId"],
+            spreadsheet_url=resolved.get("url", ""),
+            tab_name=tab_name,
+            tab_gid=str(write.get("sheetId", "") or ""),
+            row_count=int(write.get("rowsWritten") or max(len(merged) - 1, 0)),
+            message="Run history tab written to Google Sheets",
+        )
+
+    def _call(self, payload: dict[str, Any]) -> dict[str, Any]:
+        env = {**os.environ, "GOOGLE_DRIVE_MCP_DIR": str(self.mcp_dir)}
+        try:
+            completed = subprocess.run(
+                ["node", str(self.client_script)],
+                input=json.dumps(payload),
+                capture_output=True,
+                check=False,
+                encoding="utf-8",
+                timeout=120,
+                env=env,
+            )
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            raise RollupAdapterError(f"Google Sheets helper failed: {exc}") from exc
+        if completed.returncode != 0:
+            raise RollupAdapterError(
+                f"Google Sheets helper exited {completed.returncode}: {completed.stderr.strip()}"
+            )
+        stdout = completed.stdout.strip()
+        if not stdout:
+            raise RollupAdapterError("Google Sheets helper returned no output")
+        try:
+            return json.loads(stdout)
+        except json.JSONDecodeError as exc:
+            raise RollupAdapterError(f"Google Sheets helper returned invalid JSON: {exc}") from exc
 
 
 def run_rollup(
@@ -2547,9 +2717,18 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--sheet-source",
-        choices=["fixture", "mcp-plan"],
+        choices=["fixture", "mcp-plan", "live"],
         default="mcp-plan",
-        help="How to handle sheet history and writes",
+        help=(
+            "How to handle sheet history and writes. 'live' invokes the "
+            "bundled Google Sheets bridge script (google-drive-mcp/) which "
+            "requires a prior 'npm run auth' inside that folder."
+        ),
+    )
+    parser.add_argument(
+        "--google-drive-mcp-dir",
+        default="",
+        help="Override the bundled google-drive-mcp path used by --sheet-source live",
     )
     parser.add_argument("--sheet-fixture", help="Fixture JSON with history_tabs and optional sheet_write.fail")
     parser.add_argument(
@@ -2596,6 +2775,8 @@ def jira_adapter_from_args(
 def non_jira_adapters_from_args(args: argparse.Namespace) -> tuple[SheetAdapter, EmailAdapter | None]:
     if args.sheet_source == "fixture":
         sheet_adapter: SheetAdapter = FixtureSheetAdapter(args.sheet_fixture)
+    elif args.sheet_source == "live":
+        sheet_adapter = LiveGoogleSheetsAdapter(args.google_drive_mcp_dir or None)
     else:
         sheet_adapter = McpPlanSheetAdapter(args.sheet_fixture)
 
