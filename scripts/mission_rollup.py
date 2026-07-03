@@ -1446,12 +1446,13 @@ def build_summary_primary_items(
     *,
     include_zero_statuses: bool = False,
 ) -> list[dict[str, Any]]:
-    """Dynamic top-row tiles for the email header.
+    """Dynamic tile row for the email header.
 
-    Ports upstream f7cbd7b19's tile layout. Always includes the total-count
-    tile; the status tiles are dropped when their count is zero (unless
-    include_zero_statuses is True). Widths are recomputed so the row fills
-    the available space evenly.
+    Always includes the total-count tile; the status / risk / blocker /
+    missing-update tiles are dropped when their count is zero (unless
+    include_zero_statuses is True) so the row stays uncluttered. Widths
+    are recomputed so all visible tiles share the row evenly, matching
+    the single-row layout used by other Omio teams' rollup emails.
     """
     month_name = month_label_display(report_month_label).split(" ", 1)[0] if report_month_label else "Current"
     items = [
@@ -1466,6 +1467,8 @@ def build_summary_primary_items(
         {"label": "Delayed", "value": summary.get("red", 0), "color": "#dc2626"},
         {"label": "Not Started", "value": summary.get("not_started", 0), "color": "#64748b"},
         {"label": "Done", "value": summary.get("done", 0), "color": "#132968"},
+        {"label": "Risks", "value": summary.get("risks", 0), "color": "#f59e0b"},
+        {"label": "Blockers", "value": summary.get("blockers_only", 0), "color": "#dc2626"},
         {"label": "Missing Updates", "value": summary.get("missing_updates", 0), "color": "#64748b"},
     ]
     visible = [
@@ -1481,7 +1484,11 @@ def build_summary_attention_items(
     *,
     include_zeros: bool = False,
 ) -> list[dict[str, Any]]:
-    """Secondary attention row: Risks, Blockers, Missing Updates."""
+    """Deprecated: kept for backward compatibility with older tests / callers.
+
+    The single-row primary layout now includes Risks / Blockers / Missing
+    Updates inline. New callers should use build_summary_primary_items().
+    """
     items = [
         {"label": "Risks", "value": summary.get("risks", 0), "color": "#f59e0b"},
         {"label": "Blockers", "value": summary.get("blockers_only", 0), "color": "#dc2626"},

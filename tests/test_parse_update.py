@@ -611,6 +611,19 @@ class SummaryTilesTest(unittest.TestCase):
         self.assertEqual(labels.get("Risks"), 1)
         self.assertEqual(labels.get("Blockers"), 2)
 
+    def test_primary_row_now_includes_risks_and_blockers_inline(self):
+        summary = summarize_missions([
+            {"status": STATUS_YELLOW, "blockers": [
+                {"kind": "risk", "text": "x"},
+                {"kind": "blocker", "text": "y"},
+            ]},
+        ])
+        items = build_summary_primary_items(summary, "mission-june-2026")
+        labels = [i["label"] for i in items]
+        # Both Risks and Blockers now share the same row as the status tiles.
+        self.assertIn("Risks", labels)
+        self.assertIn("Blockers", labels)
+
 
 if __name__ == "__main__":
     unittest.main()
