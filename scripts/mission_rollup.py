@@ -1358,7 +1358,7 @@ def render_email_draft(
         get_path(config, "email.signoff_name", "")
         or get_path(config, "email.author", "")
         or get_path(config, "team.em_name", "")
-        or "Katarina"
+        or ""
     )
     greeting = str(get_path(config, "email.greeting", "") or "Hi")
     signoff = str(get_path(config, "email.signoff", "") or "Kind Regards")

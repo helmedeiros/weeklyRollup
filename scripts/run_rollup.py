@@ -711,23 +711,29 @@ class RawMimePlanEmailAdapter(EmailAdapter):
 
 
 class LiveGoogleSheetsAdapter(SheetAdapter):
-    """Live sheet adapter backed by the bundled google-drive-mcp bridge.
+    """Live sheet adapter backed by a remote hosted Google Drive MCP.
 
-    Invokes scripts/google_sheets_client.js as a subprocess with a small JSON
-    operation per call. History is available: replace_run_history reads the
-    existing tab first so cross-week metrics (blocker age, missing-update
-    streaks) work correctly.
+    Invokes scripts/google_sheets_client.js as a subprocess. The bridge script
+    speaks the MCP JSON-RPC protocol to whatever URL is configured in the
+    GOOGLE_SHEETS_MCP_URL env var (through the `mcp-remote` npm proxy, which
+    handles the OAuth ceremony against that server). History is available:
+    replace_run_history reads the existing tab first so cross-week metrics
+    (blocker age, missing-update streaks) work correctly.
     """
 
-    def __init__(self, mcp_dir: str | Path | None = None):
-        self.mcp_dir = Path(
-            mcp_dir
-            or os.environ.get("GOOGLE_DRIVE_MCP_DIR")
-            or Path(__file__).resolve().parent.parent / "google-drive-mcp"
-        )
+    def __init__(self, mcp_url: str | None = None):
+        self.mcp_url = str(
+            mcp_url
+            or os.environ.get("GOOGLE_SHEETS_MCP_URL", "")
+        ).strip()
         self.client_script = Path(__file__).resolve().parent / "google_sheets_client.js"
         if not self.client_script.exists():
             raise RollupAdapterError(f"Missing Google Sheets client helper: {self.client_script}")
+        if not self.mcp_url:
+            raise RollupAdapterError(
+                "GOOGLE_SHEETS_MCP_URL is not set. Copy .env.example to .env and fill it in, "
+                "or pass --google-sheets-mcp-url."
+            )
         self.history_available = True
         self.run_history_available = True
         self._resolved: dict[str, dict[str, Any]] = {}
@@ -853,7 +859,7 @@ class LiveGoogleSheetsAdapter(SheetAdapter):
         )
 
     def _call(self, payload: dict[str, Any]) -> dict[str, Any]:
-        env = {**os.environ, "GOOGLE_DRIVE_MCP_DIR": str(self.mcp_dir)}
+        env = {**os.environ, "GOOGLE_SHEETS_MCP_URL": self.mcp_url}
         try:
             completed = subprocess.run(
                 ["node", str(self.client_script)],
@@ -2721,14 +2727,16 @@ def parse_args() -> argparse.Namespace:
         default="mcp-plan",
         help=(
             "How to handle sheet history and writes. 'live' invokes the "
-            "bundled Google Sheets bridge script (google-drive-mcp/) which "
-            "requires a prior 'npm run auth' inside that folder."
+            "Google Sheets bridge script which speaks the MCP protocol to a "
+            "remote hosted Google Drive MCP (URL from --google-sheets-mcp-url "
+            "or GOOGLE_SHEETS_MCP_URL). First live run opens a browser for "
+            "OAuth against that server; subsequent runs reuse cached tokens."
         ),
     )
     parser.add_argument(
-        "--google-drive-mcp-dir",
+        "--google-sheets-mcp-url",
         default="",
-        help="Override the bundled google-drive-mcp path used by --sheet-source live",
+        help="Override the remote hosted Google Drive MCP URL (env: GOOGLE_SHEETS_MCP_URL)",
     )
     parser.add_argument("--sheet-fixture", help="Fixture JSON with history_tabs and optional sheet_write.fail")
     parser.add_argument(
@@ -2776,7 +2784,7 @@ def non_jira_adapters_from_args(args: argparse.Namespace) -> tuple[SheetAdapter,
     if args.sheet_source == "fixture":
         sheet_adapter: SheetAdapter = FixtureSheetAdapter(args.sheet_fixture)
     elif args.sheet_source == "live":
-        sheet_adapter = LiveGoogleSheetsAdapter(args.google_drive_mcp_dir or None)
+        sheet_adapter = LiveGoogleSheetsAdapter(args.google_sheets_mcp_url or None)
     else:
         sheet_adapter = McpPlanSheetAdapter(args.sheet_fixture)
 

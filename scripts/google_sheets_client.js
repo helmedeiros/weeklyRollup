@@ -1,46 +1,38 @@
 #!/usr/bin/env node
 /**
- * Bridge script from the Python rollup runner to the vendored Sheets + Drive
- * wrappers. Mirrors the shape of scripts/jira_mcp_client.js: one JSON
- * operation on stdin, one JSON payload on stdout.
+ * Bridge script that speaks the MCP protocol to a remote hosted Google Drive
+ * MCP through the `mcp-remote` npm proxy. Mirrors the shape of
+ * scripts/jira_mcp_client.js: one JSON operation on stdin, one JSON payload
+ * on stdout.
  *
- * Supported operations:
- *   - resolveSpreadsheet  { folderId, fileName, createIfMissing }
- *   - listSheets          { spreadsheetId }
- *   - replaceTab          { spreadsheetId, tabName, values, freezeHeader,
- *                           addBasicFilter, autoResize, createIfMissing }
- *   - readTab             { spreadsheetId, tabName, range? }
+ * The remote MCP URL is expected in the env var GOOGLE_SHEETS_MCP_URL (or
+ * a similarly-named override) and never hard-coded in tracked source.
+ *
+ * mcp-remote handles the whole OAuth ceremony against the remote MCP. On the
+ * first run it opens a browser for consent; tokens then live under
+ * ~/.mcp-auth/ and every subsequent invocation is silent.
+ *
+ * Supported top-level operations (this script maps them to the MCP tools the
+ * hosted server exposes; the tool names may vary between server versions and
+ * are looked up dynamically from tools/list, so this script only depends on
+ * the shape of the response):
+ *
+ *   - resolveSpreadsheet { folderId, fileName, createIfMissing }
+ *   - listSheets         { spreadsheetId }
+ *   - replaceTab         { spreadsheetId, tabName, values, freezeHeader,
+ *                          addBasicFilter, autoResize, createIfMissing }
+ *   - readTab            { spreadsheetId, tabName, range? }
  */
 
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { spawn } from 'node:child_process';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-function defaultMcpDir() {
-  return path.resolve(__dirname, '..', 'google-drive-mcp');
+function requireEnv(name) {
+  const value = process.env[name];
+  if (!value) throw new Error(`Missing required env var: ${name}`);
+  return value;
 }
 
-async function loadModules() {
-  const mcpDir = process.env.GOOGLE_DRIVE_MCP_DIR || defaultMcpDir();
-  const src = path.join(mcpDir, 'src');
-  const sheetsPath = path.join(src, 'sheets.js');
-  const drivePath = path.join(src, 'drive.js');
-  const tokenPath = path.join(src, 'token.js');
-  if (!fs.existsSync(sheetsPath) || !fs.existsSync(drivePath) || !fs.existsSync(tokenPath)) {
-    throw new Error(`Google Drive MCP modules not found under ${src}`);
-  }
-  process.chdir(mcpDir); // dotenv in token.js reads mcpDir/.env
-  const [{ SheetsAPI }, { DriveAPI }, { authClientFromEnv }] = await Promise.all([
-    import(sheetsPath),
-    import(drivePath),
-    import(tokenPath),
-  ]);
-  return { SheetsAPI, DriveAPI, authClientFromEnv };
-}
-
-async function readStdin() {
+function readStdin() {
   return new Promise((resolve, reject) => {
     let data = '';
     process.stdin.setEncoding('utf8');
@@ -50,209 +42,233 @@ async function readStdin() {
   });
 }
 
-async function resolveSpreadsheet(driveApi, sheetsApi, { folderId, fileName, createIfMissing }) {
-  if (!folderId) throw new Error('resolveSpreadsheet: folderId is required');
-  if (!fileName) throw new Error('resolveSpreadsheet: fileName is required');
-  const q = [
+class JsonRpcClient {
+  constructor(child) {
+    this.child = child;
+    this.nextId = 1;
+    this.pending = new Map();
+    this.buffer = '';
+    this.child.stdout.setEncoding('utf8');
+    this.child.stdout.on('data', (chunk) => this._onChunk(chunk));
+    this.child.stderr.setEncoding('utf8');
+    this.child.stderr.on('data', () => { /* swallow; mcp-remote is chatty */ });
+    this.child.on('exit', (code) => {
+      const error = new Error(`mcp-remote exited with code ${code}`);
+      for (const { reject } of this.pending.values()) reject(error);
+      this.pending.clear();
+    });
+  }
+
+  _onChunk(chunk) {
+    this.buffer += chunk;
+    while (true) {
+      const newlineIndex = this.buffer.indexOf('\n');
+      if (newlineIndex < 0) break;
+      const line = this.buffer.slice(0, newlineIndex);
+      this.buffer = this.buffer.slice(newlineIndex + 1);
+      if (!line.trim()) continue;
+      let message;
+      try { message = JSON.parse(line); } catch { continue; }
+      if (message.id !== undefined && this.pending.has(message.id)) {
+        const { resolve, reject } = this.pending.get(message.id);
+        this.pending.delete(message.id);
+        if (message.error) reject(new Error(message.error.message || 'MCP error'));
+        else resolve(message.result);
+      }
+    }
+  }
+
+  call(method, params = {}) {
+    const id = this.nextId++;
+    const payload = { jsonrpc: '2.0', id, method, params };
+    return new Promise((resolve, reject) => {
+      this.pending.set(id, { resolve, reject });
+      this.child.stdin.write(`${JSON.stringify(payload)}\n`);
+    });
+  }
+
+  notify(method, params = {}) {
+    const payload = { jsonrpc: '2.0', method, params };
+    this.child.stdin.write(`${JSON.stringify(payload)}\n`);
+  }
+
+  shutdown() {
+    try { this.child.stdin.end(); } catch { /* ignored */ }
+    try { this.child.kill('SIGTERM'); } catch { /* ignored */ }
+  }
+}
+
+async function connect() {
+  const url = requireEnv('GOOGLE_SHEETS_MCP_URL');
+  const child = spawn('npx', ['-y', 'mcp-remote', url], {
+    env: process.env,
+    stdio: ['pipe', 'pipe', 'pipe'],
+  });
+  const client = new JsonRpcClient(child);
+  await client.call('initialize', {
+    protocolVersion: '2024-11-05',
+    capabilities: { tools: {} },
+    clientInfo: { name: 'weekly-rollup-sheets-client', version: '1.0.0' },
+  });
+  client.notify('notifications/initialized');
+  return client;
+}
+
+async function listTools(client) {
+  const tools = [];
+  let cursor;
+  while (true) {
+    const params = cursor ? { cursor } : {};
+    const page = await client.call('tools/list', params);
+    for (const tool of page.tools || []) tools.push(tool);
+    if (!page.nextCursor) break;
+    cursor = page.nextCursor;
+  }
+  return tools;
+}
+
+function pickTool(tools, patterns) {
+  for (const pattern of patterns) {
+    const found = tools.find((tool) => pattern.test(tool.name));
+    if (found) return found.name;
+  }
+  const names = tools.map((tool) => tool.name).join(', ');
+  throw new Error(`No matching tool found. Available: ${names}`);
+}
+
+async function callTool(client, name, args) {
+  const result = await client.call('tools/call', { name, arguments: args });
+  if (!result || !Array.isArray(result.content)) {
+    return { raw: result };
+  }
+  // Prefer structured content when the server returns it; otherwise unwrap
+  // a text/plain payload that carries JSON.
+  const textEntries = result.content.filter((entry) => entry.type === 'text');
+  const combined = textEntries.map((entry) => entry.text).join('');
+  if (combined.trim().startsWith('{') || combined.trim().startsWith('[')) {
+    try { return JSON.parse(combined); } catch { /* fall through */ }
+  }
+  return { raw: result, text: combined };
+}
+
+async function resolveSpreadsheet(client, tools, { folderId, fileName, createIfMissing }) {
+  if (!folderId) throw new Error('resolveSpreadsheet: folderId required');
+  if (!fileName) throw new Error('resolveSpreadsheet: fileName required');
+  const findTool = pickTool(tools, [/drive.?(list|find|search).?files/i, /files.?(list|find|search)/i]);
+  const query = [
     `name = '${fileName.replace(/'/g, "\\'")}'`,
     `'${folderId}' in parents`,
     `mimeType = 'application/vnd.google-apps.spreadsheet'`,
     'trashed = false',
   ].join(' and ');
-  const list = await driveApi.drive.files.list({
-    q,
-    fields: 'files(id,name,webViewLink)',
-    supportsAllDrives: true,
-    includeItemsFromAllDrives: true,
-    pageSize: 5,
-  });
-  const found = (list.data.files || [])[0];
+  const listed = await callTool(client, findTool, { q: query, pageSize: 5 });
+  const files = listed.files || listed.data?.files || [];
+  const found = files[0];
   if (found) {
-    return { spreadsheetId: found.id, name: found.name, url: found.webViewLink, created: false };
+    return {
+      spreadsheetId: found.id || found.fileId || '',
+      name: found.name || fileName,
+      url: found.webViewLink || '',
+      created: false,
+    };
   }
-  if (!createIfMissing) {
-    return { spreadsheetId: '', name: '', url: '', created: false };
-  }
-  // Create empty spreadsheet, then move it into the target folder.
-  const created = await sheetsApi.sheets.spreadsheets.create({
-    requestBody: { properties: { title: fileName } },
-    fields: 'spreadsheetId,spreadsheetUrl',
-  });
-  const spreadsheetId = created.data.spreadsheetId;
-  await driveApi.drive.files.update({
-    fileId: spreadsheetId,
-    addParents: folderId,
-    fields: 'id,parents,webViewLink',
-    supportsAllDrives: true,
-  });
+  if (!createIfMissing) return { spreadsheetId: '', name: '', url: '', created: false };
+  const createTool = pickTool(tools, [/sheet.?create|create.?spreadsheet|spreadsheet.?create/i]);
+  const created = await callTool(client, createTool, { title: fileName });
+  const spreadsheetId = created.spreadsheetId || created.data?.spreadsheetId || '';
+  if (!spreadsheetId) throw new Error(`Sheet create returned no spreadsheetId: ${JSON.stringify(created)}`);
+  const moveTool = pickTool(tools, [/drive.?(move|update)?.?file|files.?update|file.?move/i]);
+  await callTool(client, moveTool, { fileId: spreadsheetId, addParents: folderId });
   return {
     spreadsheetId,
     name: fileName,
-    url: created.data.spreadsheetUrl,
+    url: created.spreadsheetUrl || '',
     created: true,
   };
 }
 
-async function listSheets(sheetsApi, { spreadsheetId }) {
-  const meta = await sheetsApi.sheets.spreadsheets.get({
-    spreadsheetId,
-    fields: 'sheets(properties(sheetId,title,index,gridProperties))',
-  });
+async function listSheets(client, tools, { spreadsheetId }) {
+  const tool = pickTool(tools, [/sheet.?(list|get).?sheets|sheets.?list|spreadsheet.?get/i]);
+  const resp = await callTool(client, tool, { spreadsheetId });
+  const sheets = resp.sheets || resp.data?.sheets || [];
   return {
-    sheets: (meta.data.sheets || []).map((s) => ({
-      sheetId: s.properties.sheetId,
-      title: s.properties.title,
-      index: s.properties.index,
-      rowCount: s.properties.gridProperties?.rowCount,
-      columnCount: s.properties.gridProperties?.columnCount,
-    })),
+    sheets: sheets.map((sheet) => {
+      const props = sheet.properties || sheet;
+      return {
+        sheetId: props.sheetId,
+        title: props.title,
+        index: props.index,
+      };
+    }),
   };
 }
 
-async function replaceTab(sheetsApi, opts) {
-  const {
-    spreadsheetId,
-    tabName,
-    values,
-    freezeHeader = true,
-    addBasicFilter = true,
-    autoResize = true,
-    createIfMissing = true,
-  } = opts;
+async function replaceTab(client, tools, opts) {
+  const { spreadsheetId, tabName, values, createIfMissing = true } = opts;
   if (!spreadsheetId) throw new Error('replaceTab: spreadsheetId required');
   if (!tabName) throw new Error('replaceTab: tabName required');
-
-  const meta = await sheetsApi.sheets.spreadsheets.get({
-    spreadsheetId,
-    fields: 'sheets(properties(sheetId,title))',
-  });
-  const existing = (meta.data.sheets || []).find((s) => s.properties.title === tabName);
-  let sheetId;
-  if (existing) {
-    sheetId = existing.properties.sheetId;
-    // Clear existing content
-    await sheetsApi.sheets.spreadsheets.values.clear({
-      spreadsheetId,
-      range: `${tabName}!A1:ZZ`,
-    });
-    // Remove any existing basic filter so we can re-add with new range.
-    await sheetsApi.sheets.spreadsheets.batchUpdate({
-      spreadsheetId,
-      requestBody: {
-        requests: [
-          { clearBasicFilter: { sheetId } },
-        ],
-      },
-    }).catch(() => { /* no filter existed */ });
-  } else {
+  const existing = await listSheets(client, tools, { spreadsheetId });
+  const found = existing.sheets.find((sheet) => sheet.title === tabName);
+  let sheetId = found?.sheetId;
+  if (!found) {
     if (!createIfMissing) throw new Error(`replaceTab: tab "${tabName}" missing and createIfMissing=false`);
-    const created = await sheetsApi.sheets.spreadsheets.batchUpdate({
-      spreadsheetId,
-      requestBody: {
-        requests: [{ addSheet: { properties: { title: tabName } } }],
-      },
-    });
-    sheetId = created.data.replies[0].addSheet.properties.sheetId;
+    const addTool = pickTool(tools, [/sheet.?add.?sheet|add.?sheet|sheet.?create.?tab/i]);
+    const added = await callTool(client, addTool, { spreadsheetId, title: tabName });
+    sheetId = added.sheetId || added.properties?.sheetId || added.replies?.[0]?.addSheet?.properties?.sheetId;
+  } else {
+    const clearTool = pickTool(tools, [/sheet.?clear.?values|clear.?values|values.?clear/i]);
+    await callTool(client, clearTool, { spreadsheetId, range: `${tabName}!A1:ZZ` });
   }
-
   const rows = values || [];
   if (rows.length) {
-    await sheetsApi.sheets.spreadsheets.values.update({
+    const updateTool = pickTool(tools, [/sheet.?update.?values|values.?update|sheet.?write.?values/i]);
+    await callTool(client, updateTool, {
       spreadsheetId,
       range: `${tabName}!A1`,
       valueInputOption: 'USER_ENTERED',
-      requestBody: { values: rows },
+      values: rows,
     });
   }
-
-  const followUp = [];
-  if (freezeHeader && rows.length) {
-    followUp.push({
-      updateSheetProperties: {
-        properties: { sheetId, gridProperties: { frozenRowCount: 1 } },
-        fields: 'gridProperties.frozenRowCount',
-      },
-    });
-  }
-  if (addBasicFilter && rows.length) {
-    followUp.push({
-      setBasicFilter: {
-        filter: {
-          range: {
-            sheetId,
-            startRowIndex: 0,
-            endRowIndex: rows.length,
-            startColumnIndex: 0,
-            endColumnIndex: rows[0].length,
-          },
-        },
-      },
-    });
-  }
-  if (autoResize && rows.length) {
-    followUp.push({
-      autoResizeDimensions: {
-        dimensions: {
-          sheetId,
-          dimension: 'COLUMNS',
-          startIndex: 0,
-          endIndex: rows[0].length,
-        },
-      },
-    });
-  }
-  if (followUp.length) {
-    await sheetsApi.sheets.spreadsheets.batchUpdate({
-      spreadsheetId,
-      requestBody: { requests: followUp },
-    });
-  }
-
   return { sheetId, tabName, rowsWritten: rows.length };
 }
 
-async function readTab(sheetsApi, { spreadsheetId, tabName, range }) {
-  if (!spreadsheetId) throw new Error('readTab: spreadsheetId required');
-  if (!tabName) throw new Error('readTab: tabName required');
-  const meta = await sheetsApi.sheets.spreadsheets.get({
-    spreadsheetId,
-    fields: 'sheets(properties(title))',
-  });
-  const exists = (meta.data.sheets || []).some((s) => s.properties.title === tabName);
-  if (!exists) return { values: [], missing: true };
+async function readTab(client, tools, { spreadsheetId, tabName, range }) {
+  const meta = await listSheets(client, tools, { spreadsheetId });
+  if (!meta.sheets.some((sheet) => sheet.title === tabName)) {
+    return { values: [], missing: true };
+  }
+  const tool = pickTool(tools, [/sheet.?get.?values|sheet.?read.?values|values.?get/i]);
   const fullRange = range ? `${tabName}!${range}` : `${tabName}`;
-  const resp = await sheetsApi.sheets.spreadsheets.values.get({
-    spreadsheetId,
-    range: fullRange,
-  });
-  return { values: resp.data.values || [], missing: false };
+  const resp = await callTool(client, tool, { spreadsheetId, range: fullRange });
+  return { values: resp.values || resp.data?.values || [], missing: false };
 }
 
 async function main() {
   const input = JSON.parse(await readStdin());
-  const { SheetsAPI, DriveAPI, authClientFromEnv } = await loadModules();
-  const auth = authClientFromEnv();
-  const sheetsApi = new SheetsAPI(auth);
-  const driveApi = new DriveAPI(auth);
-
-  let result;
-  switch (input.operation) {
-    case 'resolveSpreadsheet':
-      result = await resolveSpreadsheet(driveApi, sheetsApi, input);
-      break;
-    case 'listSheets':
-      result = await listSheets(sheetsApi, input);
-      break;
-    case 'replaceTab':
-      result = await replaceTab(sheetsApi, input);
-      break;
-    case 'readTab':
-      result = await readTab(sheetsApi, input);
-      break;
-    default:
-      throw new Error(`Unsupported operation: ${input.operation}`);
+  const client = await connect();
+  try {
+    const tools = await listTools(client);
+    let result;
+    switch (input.operation) {
+      case 'resolveSpreadsheet':
+        result = await resolveSpreadsheet(client, tools, input);
+        break;
+      case 'listSheets':
+        result = await listSheets(client, tools, input);
+        break;
+      case 'replaceTab':
+        result = await replaceTab(client, tools, input);
+        break;
+      case 'readTab':
+        result = await readTab(client, tools, input);
+        break;
+      default:
+        throw new Error(`Unsupported operation: ${input.operation}`);
+    }
+    process.stdout.write(JSON.stringify(result));
+  } finally {
+    client.shutdown();
   }
-  process.stdout.write(JSON.stringify(result));
 }
 
 main().catch((error) => {

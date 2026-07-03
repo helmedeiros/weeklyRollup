@@ -41,7 +41,7 @@ Email tone is configured per team:
 
 - `email.greeting`: opening line, default `Hi`
 - `email.signoff`: closing line, default `Kind Regards`
-- `email.signoff_name`: sender name, for example `Katarina`
+- `email.signoff_name`: sender name shown under the closing line
 
 ## Workflow
 
