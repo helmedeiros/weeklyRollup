@@ -9,10 +9,13 @@ from mission_rollup import (  # noqa: E402
     STATUS_GREEN,
     STATUS_RED,
     STATUS_YELLOW,
+    build_summary_attention_items,
+    build_summary_primary_items,
     comment_body_to_text,
     evaluate_hygiene,
     extract_blockers,
     parse_update,
+    summarize_missions,
 )
 
 
@@ -576,6 +579,37 @@ class AdfEmojiTest(unittest.TestCase):
             ],
         }
         self.assertIn("@Helio", comment_body_to_text(adf))
+
+
+class SummaryTilesTest(unittest.TestCase):
+    def test_primary_items_hide_zero_status_but_keep_total(self):
+        summary = summarize_missions([
+            {"status": STATUS_GREEN, "blockers": []},
+            {"status": STATUS_GREEN, "blockers": []},
+            {"status": "Done", "blockers": []},
+        ])
+        items = build_summary_primary_items(summary, "mission-june-2026")
+        labels = [i["label"] for i in items]
+        self.assertIn("June Missions", labels)
+        self.assertIn("On Track", labels)
+        self.assertIn("Done", labels)
+        self.assertNotIn("At Risk", labels)
+        self.assertNotIn("Missing Updates", labels)
+
+    def test_attention_items_split_risks_from_blockers(self):
+        summary = summarize_missions([
+            {"status": STATUS_YELLOW, "blockers": [
+                {"kind": "risk", "text": "x"},
+                {"kind": "blocker", "text": "y"},
+                {"kind": "", "text": "legacy combined"},
+            ]},
+        ])
+        self.assertEqual(summary["risks"], 1)
+        self.assertEqual(summary["blockers_only"], 2)
+        items = build_summary_attention_items(summary)
+        labels = {i["label"]: i["value"] for i in items}
+        self.assertEqual(labels.get("Risks"), 1)
+        self.assertEqual(labels.get("Blockers"), 2)
 
 
 if __name__ == "__main__":

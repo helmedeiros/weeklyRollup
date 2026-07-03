@@ -1319,7 +1319,9 @@ class RunRollupTest(unittest.TestCase):
         self.assertFalse(request["mcp_tool_compatible"])
         self.assertIn("plainTextBody", request)
         self.assertIn("htmlBody", request)
-        self.assertIn("Weekly Mission Report", request["htmlBody"])
+        # Banner now mirrors the subject (upstream f7cbd7b19 / 8a5f22851 port).
+        self.assertIn(result["draft_email"]["subject"], request["htmlBody"])
+        self.assertNotIn("Weekly Mission Report", request["htmlBody"])
         self.assertIn("message", request["body"])
         self.assertIn("raw", request["body"]["message"])
 

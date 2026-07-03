@@ -1099,7 +1099,13 @@ def run_rollup(
 
     sheet_url = sheet_url_override or sheet_link_url(config, sheet_write)
     sheet_url = sheet_url_with_gid(sheet_url, sheet_tab_gid or sheet_write.tab_gid)
-    draft_email = render_email_draft(config, email_rows, iso_week=iso_week, sheet_url=sheet_url)
+    draft_email = render_email_draft(
+        config,
+        email_rows,
+        iso_week=iso_week,
+        sheet_url=sheet_url,
+        report_month_label=label,
+    )
     email_create = EmailCreateResult(
         status="not_requested",
         to=comma_join(draft_email.get("to", [])),

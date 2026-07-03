@@ -1337,6 +1337,7 @@ def render_email_draft(
     *,
     iso_week: int,
     sheet_url: str = "",
+    report_month_label: str = "",
 ) -> dict[str, Any]:
     """Render a draft-only email payload for EM review."""
 
@@ -1382,6 +1383,7 @@ def render_email_draft(
         signoff,
         signoff_name,
         greeting,
+        report_month_label=report_month_label,
     )
     text_body = render_text_email(
         subject,
@@ -1410,6 +1412,20 @@ def render_email_draft(
 
 def summarize_missions(mission_rows: list[dict[str, Any]]) -> dict[str, int]:
     statuses = [row.get("status") for row in mission_rows]
+    all_blockers = [b for row in mission_rows for b in row.get("blockers", [])]
+
+    def _blocker_kind(b: Any) -> str:
+        if isinstance(b, Blocker):
+            return str(b.kind or "").lower()
+        if isinstance(b, dict):
+            return str(b.get("kind", "") or "").lower()
+        return ""
+
+    risks_count = sum(1 for b in all_blockers if _blocker_kind(b) == "risk")
+    # Anything not explicitly a risk counts as a blocker (kind == "blocker" or
+    # legacy combined kind == ""). Keeps backward-compat with the pre-split
+    # single "blockers" total while exposing risks separately for the tiles.
+    blockers_count = len(all_blockers) - risks_count
     return {
         "total": len(mission_rows),
         "green": statuses.count(STATUS_GREEN),
@@ -1418,8 +1434,62 @@ def summarize_missions(mission_rows: list[dict[str, Any]]) -> dict[str, int]:
         "done": statuses.count(STATUS_DONE),
         "not_started": statuses.count(STATUS_NOT_STARTED),
         "missing_updates": sum(1 for row in mission_rows if row.get("missing_update")),
-        "blockers": sum(len(row.get("blockers", [])) for row in mission_rows),
+        "blockers": len(all_blockers),  # legacy: total risks+blockers count
+        "risks": risks_count,
+        "blockers_only": blockers_count,
     }
+
+
+def build_summary_primary_items(
+    summary: dict[str, int],
+    report_month_label: str = "",
+    *,
+    include_zero_statuses: bool = False,
+) -> list[dict[str, Any]]:
+    """Dynamic top-row tiles for the email header.
+
+    Ports upstream f7cbd7b19's tile layout. Always includes the total-count
+    tile; the status tiles are dropped when their count is zero (unless
+    include_zero_statuses is True). Widths are recomputed so the row fills
+    the available space evenly.
+    """
+    month_name = month_label_display(report_month_label).split(" ", 1)[0] if report_month_label else "Current"
+    items = [
+        {
+            "label": f"{month_name} Missions",
+            "value": summary.get("total", 0),
+            "color": "#132968",
+            "always": True,
+        },
+        {"label": "On Track", "value": summary.get("green", 0), "color": "#16a34a"},
+        {"label": "At Risk", "value": summary.get("yellow", 0), "color": "#f59e0b"},
+        {"label": "Delayed", "value": summary.get("red", 0), "color": "#dc2626"},
+        {"label": "Not Started", "value": summary.get("not_started", 0), "color": "#64748b"},
+        {"label": "Done", "value": summary.get("done", 0), "color": "#132968"},
+        {"label": "Missing Updates", "value": summary.get("missing_updates", 0), "color": "#64748b"},
+    ]
+    visible = [
+        item for item in items
+        if item.get("always") or include_zero_statuses or int(item.get("value") or 0) > 0
+    ]
+    width = f"{100 / len(visible):.2f}%" if visible else "100%"
+    return [{**item, "width": width} for item in visible]
+
+
+def build_summary_attention_items(
+    summary: dict[str, int],
+    *,
+    include_zeros: bool = False,
+) -> list[dict[str, Any]]:
+    """Secondary attention row: Risks, Blockers, Missing Updates."""
+    items = [
+        {"label": "Risks", "value": summary.get("risks", 0), "color": "#f59e0b"},
+        {"label": "Blockers", "value": summary.get("blockers_only", 0), "color": "#dc2626"},
+        {"label": "Missing Updates", "value": summary.get("missing_updates", 0), "color": "#64748b"},
+    ]
+    visible = [item for item in items if include_zeros or int(item.get("value") or 0) > 0]
+    width = f"{100 / len(visible):.2f}%" if visible else "100%"
+    return [{**item, "width": width} for item in visible]
 
 
 def render_html_email(
@@ -1434,6 +1504,8 @@ def render_html_email(
     signoff: str,
     signoff_name: str,
     greeting: str,
+    *,
+    report_month_label: str = "",
 ) -> str:
     """Render a table-based HTML email body that works well in Gmail."""
 
@@ -1449,6 +1521,7 @@ def render_html_email(
         signoff,
         signoff_name,
         greeting,
+        report_month_label=report_month_label,
     )
     return email_template_environment().get_template(EMAIL_TEMPLATE_NAME).render(**context)
 
@@ -1487,6 +1560,8 @@ def build_email_template_context(
     signoff: str,
     signoff_name: str,
     greeting: str,
+    *,
+    report_month_label: str = "",
 ) -> dict[str, Any]:
     at_risk_count = summary["yellow"] + summary["red"]
     preview = (
@@ -1503,6 +1578,8 @@ def build_email_template_context(
         "summary": summary,
         "at_risk_count": at_risk_count,
         "stat_cards": build_summary_stat_cards(summary),
+        "summary_primary_items": build_summary_primary_items(summary, report_month_label),
+        "summary_attention_items": build_summary_attention_items(summary),
         "mission_rows": build_template_mission_rows(rows),
         "blocker_rows": build_template_blocker_rows(blockers),
         "hygiene_groups": build_template_hygiene_groups(hygiene),
@@ -1840,7 +1917,6 @@ def render_text_email(
     at_risk = summary["yellow"] + summary["red"]
     lines = [
         subject,
-        "Weekly Mission Report",
         "",
         "SUMMARY",
         f"- On track: {summary['green']}/{summary['total']}",

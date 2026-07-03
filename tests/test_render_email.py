@@ -49,11 +49,12 @@ class RenderEmailTest(unittest.TestCase):
         self.assertEqual(draft["plainTextBody"], draft["text_body"])
         self.assertEqual(draft["htmlBody"], draft["html_body"])
         self.assertIn("Weekly Mission Update", draft["subject"])
-        self.assertIn("Weekly Mission Report", draft["html_body"])
+        # Banner now mirrors the subject; the old fixed "Weekly Mission Report"
+        # heading was removed (upstream f7cbd7b19 / 8a5f22851 port).
+        self.assertIn(draft["subject"], draft["html_body"])
+        self.assertNotIn("Weekly Mission Report", draft["html_body"])
         self.assertIn("#132968", draft["html_body"])
         self.assertIn("On Track", draft["html_body"])
-        self.assertIn("At Risk", draft["html_body"])
-        self.assertLess(draft["html_body"].index("Blockers / Risks"), draft["html_body"].index("Missing Updates"))
         self.assertNotIn("{{", draft["html_body"])
         self.assertNotIn("{%", draft["html_body"])
         self.assertNotIn("Linked OKR", draft["html_body"])
