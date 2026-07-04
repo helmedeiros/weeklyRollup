@@ -136,6 +136,31 @@ function pickTool(tools, patterns) {
   throw new Error(`No matching tool found. Available: ${names}`);
 }
 
+// Exact tool names exposed by the remote MCP. Pinned so we don't guess and
+// so a tool rename on the remote side surfaces a clear error immediately.
+const TOOLS = {
+  searchFilesByName: 'search_by_name',
+  listFilesQuery: 'list_files',
+  createSpreadsheet: 'create_google_sheet',
+  moveFile: 'move_file',
+  listSheets: 'sheet_list_sheets',
+  getSheetContent: 'sheet_get_content',
+  updateValues: 'sheet_update_values',
+  clearValues: 'sheet_clear_values',
+  addSheet: 'sheet_add_sheet',
+  setBasicFilter: 'sheet_set_basic_filter',
+  clearBasicFilter: 'sheet_clear_basic_filter',
+  freezeRows: 'sheet_freeze_rows',
+  autoResizeColumns: 'sheet_auto_resize_columns',
+};
+
+function ensureTool(tools, name) {
+  if (!tools.find((tool) => tool.name === name)) {
+    throw new Error(`Remote MCP does not expose expected tool: ${name}`);
+  }
+  return name;
+}
+
 async function callTool(client, name, args) {
   const result = await client.call('tools/call', { name, arguments: args });
   if (!result || !Array.isArray(result.content)) {
@@ -154,82 +179,177 @@ async function callTool(client, name, args) {
 async function resolveSpreadsheet(client, tools, { folderId, fileName, createIfMissing }) {
   if (!folderId) throw new Error('resolveSpreadsheet: folderId required');
   if (!fileName) throw new Error('resolveSpreadsheet: fileName required');
-  const findTool = pickTool(tools, [/drive.?(list|find|search).?files/i, /files.?(list|find|search)/i]);
-  const query = [
-    `name = '${fileName.replace(/'/g, "\\'")}'`,
-    `'${folderId}' in parents`,
-    `mimeType = 'application/vnd.google-apps.spreadsheet'`,
-    'trashed = false',
-  ].join(' and ');
-  const listed = await callTool(client, findTool, { q: query, pageSize: 5 });
-  const files = listed.files || listed.data?.files || [];
-  const found = files[0];
-  if (found) {
-    return {
-      spreadsheetId: found.id || found.fileId || '',
-      name: found.name || fileName,
-      url: found.webViewLink || '',
-      created: false,
-    };
-  }
+
+  ensureTool(tools, TOOLS.listFilesQuery);
+  const found = await findExistingSpreadsheet(client, folderId, fileName);
+  if (found) return found;
+
   if (!createIfMissing) return { spreadsheetId: '', name: '', url: '', created: false };
-  const createTool = pickTool(tools, [/sheet.?create|create.?spreadsheet|spreadsheet.?create/i]);
-  const created = await callTool(client, createTool, { title: fileName });
-  const spreadsheetId = created.spreadsheetId || created.data?.spreadsheetId || '';
-  if (!spreadsheetId) throw new Error(`Sheet create returned no spreadsheetId: ${JSON.stringify(created)}`);
-  const moveTool = pickTool(tools, [/drive.?(move|update)?.?file|files.?update|file.?move/i]);
-  await callTool(client, moveTool, { fileId: spreadsheetId, addParents: folderId });
+
+  ensureTool(tools, TOOLS.createSpreadsheet);
+  ensureTool(tools, TOOLS.moveFile);
+  const created = await callTool(client, TOOLS.createSpreadsheet, { title: fileName });
+  const nested = created.spreadsheet || created.data?.spreadsheet || {};
+  const spreadsheetId =
+    nested.id ||
+    nested.spreadsheetId ||
+    nested.spreadsheet_id ||
+    created.spreadsheetId ||
+    created.spreadsheet_id ||
+    created.id ||
+    created.data?.spreadsheetId ||
+    '';
+  if (!spreadsheetId) {
+    throw new Error(`create_google_sheet returned no spreadsheetId: ${JSON.stringify(created)}`);
+  }
+  await callTool(client, TOOLS.moveFile, {
+    file_id: spreadsheetId,
+    new_parent_folder_id: folderId,
+  });
   return {
     spreadsheetId,
     name: fileName,
-    url: created.spreadsheetUrl || '',
+    url:
+      nested.url ||
+      nested.spreadsheetUrl ||
+      nested.webViewLink ||
+      created.spreadsheetUrl ||
+      created.webViewLink ||
+      '',
     created: true,
   };
 }
 
+async function findExistingSpreadsheet(client, folderId, fileName) {
+  const query =
+    `name = '${fileName.replace(/'/g, "\\'")}' ` +
+    `and mimeType = 'application/vnd.google-apps.spreadsheet'`;
+  const resp = await callTool(client, TOOLS.listFilesQuery, {
+    folder_id: folderId,
+    query,
+    page_size: 5,
+    include_trashed: false,
+  });
+  const files = resp.files || resp.data?.files || [];
+  const spreadsheet = files.find(
+    (file) => (file.mimeType || file.mime_type || '').includes('spreadsheet')
+  ) || files[0];
+  if (!spreadsheet) return null;
+  return {
+    spreadsheetId: spreadsheet.id || spreadsheet.file_id || '',
+    name: spreadsheet.name || fileName,
+    url: spreadsheet.webViewLink || spreadsheet.web_view_link || '',
+    created: false,
+  };
+}
+
 async function listSheets(client, tools, { spreadsheetId }) {
-  const tool = pickTool(tools, [/sheet.?(list|get).?sheets|sheets.?list|spreadsheet.?get/i]);
-  const resp = await callTool(client, tool, { spreadsheetId });
+  ensureTool(tools, TOOLS.listSheets);
+  const resp = await callTool(client, TOOLS.listSheets, { spreadsheet_id: spreadsheetId });
   const sheets = resp.sheets || resp.data?.sheets || [];
   return {
     sheets: sheets.map((sheet) => {
       const props = sheet.properties || sheet;
       return {
-        sheetId: props.sheetId,
-        title: props.title,
-        index: props.index,
+        sheetId: props.sheetId ?? props.sheet_id ?? props.id ?? null,
+        title: props.title || props.name || '',
+        index: props.index ?? null,
       };
     }),
   };
 }
 
 async function replaceTab(client, tools, opts) {
-  const { spreadsheetId, tabName, values, createIfMissing = true } = opts;
+  const {
+    spreadsheetId,
+    tabName,
+    values,
+    createIfMissing = true,
+    freezeHeader = true,
+    addBasicFilter = true,
+    autoResize = true,
+  } = opts;
   if (!spreadsheetId) throw new Error('replaceTab: spreadsheetId required');
   if (!tabName) throw new Error('replaceTab: tabName required');
+
   const existing = await listSheets(client, tools, { spreadsheetId });
   const found = existing.sheets.find((sheet) => sheet.title === tabName);
   let sheetId = found?.sheetId;
+
   if (!found) {
     if (!createIfMissing) throw new Error(`replaceTab: tab "${tabName}" missing and createIfMissing=false`);
-    const addTool = pickTool(tools, [/sheet.?add.?sheet|add.?sheet|sheet.?create.?tab/i]);
-    const added = await callTool(client, addTool, { spreadsheetId, title: tabName });
-    sheetId = added.sheetId || added.properties?.sheetId || added.replies?.[0]?.addSheet?.properties?.sheetId;
+    ensureTool(tools, TOOLS.addSheet);
+    const added = await callTool(client, TOOLS.addSheet, {
+      spreadsheet_id: spreadsheetId,
+      title: tabName,
+    });
+    sheetId =
+      added.sheetId ||
+      added.sheet_id ||
+      added.properties?.sheetId ||
+      added.properties?.sheet_id ||
+      added.replies?.[0]?.addSheet?.properties?.sheetId;
   } else {
-    const clearTool = pickTool(tools, [/sheet.?clear.?values|clear.?values|values.?clear/i]);
-    await callTool(client, clearTool, { spreadsheetId, range: `${tabName}!A1:ZZ` });
-  }
-  const rows = values || [];
-  if (rows.length) {
-    const updateTool = pickTool(tools, [/sheet.?update.?values|values.?update|sheet.?write.?values/i]);
-    await callTool(client, updateTool, {
-      spreadsheetId,
-      range: `${tabName}!A1`,
-      valueInputOption: 'USER_ENTERED',
-      values: rows,
+    ensureTool(tools, TOOLS.clearValues);
+    await callTool(client, TOOLS.clearValues, {
+      spreadsheet_id: spreadsheetId,
+      range: `${tabName}!A:ZZ`,
     });
   }
+
+  const rows = values || [];
+  if (rows.length) {
+    const endColumn = columnLetter(rows[0].length);
+    ensureTool(tools, TOOLS.updateValues);
+    await callTool(client, TOOLS.updateValues, {
+      spreadsheet_id: spreadsheetId,
+      range: `${tabName}!A1:${endColumn}${rows.length}`,
+      values: rows.map((row) => row.map((cell) => (cell === null || cell === undefined ? '' : String(cell)))),
+    });
+
+    // Best-effort formatting; individual failures are non-fatal.
+    if (freezeHeader && tools.find((tool) => tool.name === TOOLS.freezeRows)) {
+      await callTool(client, TOOLS.freezeRows, {
+        spreadsheet_id: spreadsheetId,
+        sheet: tabName,
+        rows: 1,
+      }).catch(() => {});
+    }
+    if (addBasicFilter && tools.find((tool) => tool.name === TOOLS.setBasicFilter)) {
+      if (tools.find((tool) => tool.name === TOOLS.clearBasicFilter)) {
+        await callTool(client, TOOLS.clearBasicFilter, {
+          spreadsheet_id: spreadsheetId,
+          sheet: tabName,
+        }).catch(() => {});
+      }
+      await callTool(client, TOOLS.setBasicFilter, {
+        spreadsheet_id: spreadsheetId,
+        sheet: tabName,
+        range: `${tabName}!A1:${endColumn}${rows.length}`,
+      }).catch(() => {});
+    }
+    if (autoResize && tools.find((tool) => tool.name === TOOLS.autoResizeColumns)) {
+      await callTool(client, TOOLS.autoResizeColumns, {
+        spreadsheet_id: spreadsheetId,
+        sheet: tabName,
+        start_index: 0,
+        end_index: rows[0].length,
+      }).catch(() => {});
+    }
+  }
+
   return { sheetId, tabName, rowsWritten: rows.length };
+}
+
+function columnLetter(index) {
+  let value = index;
+  let letters = '';
+  while (value > 0) {
+    const remainder = (value - 1) % 26;
+    letters = String.fromCharCode(65 + remainder) + letters;
+    value = Math.floor((value - 1) / 26);
+  }
+  return letters || 'A';
 }
 
 async function readTab(client, tools, { spreadsheetId, tabName, range }) {
@@ -237,10 +357,18 @@ async function readTab(client, tools, { spreadsheetId, tabName, range }) {
   if (!meta.sheets.some((sheet) => sheet.title === tabName)) {
     return { values: [], missing: true };
   }
-  const tool = pickTool(tools, [/sheet.?get.?values|sheet.?read.?values|values.?get/i]);
-  const fullRange = range ? `${tabName}!${range}` : `${tabName}`;
-  const resp = await callTool(client, tool, { spreadsheetId, range: fullRange });
-  return { values: resp.values || resp.data?.values || [], missing: false };
+  ensureTool(tools, TOOLS.getSheetContent);
+  const params = {
+    spreadsheet_id: spreadsheetId,
+    sheet: tabName,
+    format: 'raw',
+  };
+  if (range) params.range = range;
+  const resp = await callTool(client, TOOLS.getSheetContent, params);
+  return {
+    values: resp.values || resp.data?.values || resp.rows || [],
+    missing: false,
+  };
 }
 
 async function main() {
