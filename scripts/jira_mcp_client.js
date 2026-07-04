@@ -74,6 +74,15 @@ async function main() {
     return;
   }
 
+  if (input.operation === 'issueWithChangelog') {
+    const result = await jira.request(
+      'GET',
+      `/issue/${encodeURIComponent(input.issueKey)}?expand=changelog`,
+    );
+    console.log(JSON.stringify(result));
+    return;
+  }
+
   if (input.operation === 'addComment') {
     if (!input.body || typeof input.body !== 'object') {
       throw new Error('addComment requires an ADF body object');
