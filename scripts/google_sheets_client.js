@@ -202,10 +202,11 @@ async function resolveSpreadsheet(client, tools, { folderId, fileName, createIfM
   if (!spreadsheetId) {
     throw new Error(`create_google_sheet returned no spreadsheetId: ${JSON.stringify(created)}`);
   }
-  await callTool(client, TOOLS.moveFile, {
-    file_id: spreadsheetId,
-    new_parent_folder_id: folderId,
-  });
+  // Move + verify + retry: freshly-created files occasionally report the
+  // move as successful but the parent relationship doesn't stick on the
+  // remote side. Verify with a parent-scoped list and retry up to twice
+  // before giving up.
+  await moveWithVerify(client, spreadsheetId, folderId, fileName);
   return {
     spreadsheetId,
     name: fileName,
@@ -218,6 +219,32 @@ async function resolveSpreadsheet(client, tools, { folderId, fileName, createIfM
       '',
     created: true,
   };
+}
+
+async function moveWithVerify(client, spreadsheetId, folderId, fileName) {
+  const maxAttempts = 3;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    await callTool(client, TOOLS.moveFile, {
+      file_id: spreadsheetId,
+      new_parent_folder_id: folderId,
+    });
+    // Short pause so the remote's parent index catches up.
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    const query =
+      `'${folderId}' in parents ` +
+      `and name = '${fileName.replace(/'/g, "\\'")}' ` +
+      `and mimeType = 'application/vnd.google-apps.spreadsheet'`;
+    const resp = await callTool(client, TOOLS.listFilesQuery, {
+      query,
+      page_size: 5,
+      include_trashed: false,
+    });
+    const files = resp.files || resp.data?.files || [];
+    if (files.some((file) => (file.id || file.file_id) === spreadsheetId)) return;
+  }
+  throw new Error(
+    `move_file reported success for ${spreadsheetId} but the file did not land in folder ${folderId} after ${maxAttempts} attempts.`
+  );
 }
 
 async function findExistingSpreadsheet(client, folderId, fileName) {
