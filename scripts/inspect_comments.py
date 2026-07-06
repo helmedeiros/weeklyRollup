@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Inspect Jira comments against the weekly DRI update parser."""
+"""Inspect Jira comments against the weekly Leader Engineer update parser."""
 
 from __future__ import annotations
 
@@ -8,13 +8,13 @@ from datetime import date
 from textwrap import indent
 from typing import Any
 
-from mission_rollup import (
+from objective_rollup import (
     assert_valid_config,
     author_matches,
     comment_body_to_text,
     compute_week_window,
-    display_dri,
-    find_latest_valid_dri_comment,
+    display_leader_engineer,
+    find_latest_valid_leader_engineer_comment,
     get_path,
     is_deleted_or_internal,
     is_reply_comment,
@@ -34,7 +34,7 @@ def main() -> int:
         "--jira-source",
         choices=("fixture", "mcp", "snapshot"),
         default="mcp",
-        help="Where to read Jira mission Epics/comments from",
+        help="Where to read Jira objective Epics/comments from",
     )
     parser.add_argument("--jira-fixture", help="Fixture JSON path when --jira-source=fixture")
     parser.add_argument("--jira-snapshot", help="Data snapshot JSON path when --jira-source=snapshot")
@@ -51,7 +51,7 @@ def main() -> int:
     label = month_label(
         target_date.month,
         target_date.year,
-        str(get_path(config, "jira.mission_label_pattern")),
+        str(get_path(config, "jira.objective_label_pattern")),
     )
     parse_options = parse_update_options(get_path(config, "weekly_update.validation", {}))
     if args.jira_source == "fixture":
@@ -61,25 +61,25 @@ def main() -> int:
     else:
         adapter = JiraMcpAdapter()
 
-    missions = sorted(adapter.search_mission_epics(config, label), key=lambda item: str(item.get("key", "")))
-    print(f"Mission label: {label}")
+    objectives = sorted(adapter.search_objective_epics(config, label), key=lambda item: str(item.get("key", "")))
+    print(f"Objective label: {label}")
     print(f"Window: {window_start.isoformat()} -> {window_end.isoformat()}")
-    print(f"Mission Epics: {len(missions)}")
+    print(f"Objective Epics: {len(objectives)}")
     print()
 
-    for mission in missions:
-        comments = adapter.get_comments(mission, window_start, window_end)
-        selection = find_latest_valid_dri_comment(
+    for objective in objectives:
+        comments = adapter.get_comments(objective, window_start, window_end)
+        selection = find_latest_valid_leader_engineer_comment(
             comments,
-            mission.get("dri"),
+            objective.get("leader_engineer"),
             window_start,
             window_end,
             parse_options=parse_options,
         )
         selected_id = str(selection.selected_comment.get("id")) if selection.selected_comment else ""
-        mission_name = mission.get("name") or mission.get("summary") or ""
-        print(f"{mission['key']} - {mission_name}")
-        print(f"DRI: {display_dri(mission.get('dri'))}")
+        objective_name = objective.get("name") or objective.get("summary") or ""
+        print(f"{objective['key']} - {objective_name}")
+        print(f"Leader Engineer: {display_leader_engineer(objective.get('leader_engineer'))}")
         print(f"Comments returned: {len(comments)}")
         if not comments:
             print("No comments returned by Jira for this Epic.")
@@ -87,7 +87,7 @@ def main() -> int:
             continue
 
         for comment in comments:
-            diagnostic = diagnose_comment(comment, mission.get("dri"), window_start, window_end, parse_options)
+            diagnostic = diagnose_comment(comment, objective.get("leader_engineer"), window_start, window_end, parse_options)
             marker = "PASS"
             if not diagnostic["passes"]:
                 marker = "FAIL"
@@ -121,7 +121,7 @@ def main() -> int:
 
 def diagnose_comment(
     comment: dict[str, Any],
-    dri: dict[str, Any] | None,
+    leader_engineer: dict[str, Any] | None,
     window_start,
     window_end,
     parse_options: dict[str, Any],
@@ -148,8 +148,8 @@ def diagnose_comment(
         return {**base, "reason": "reply comment"}
     if not body.strip():
         return {**base, "reason": "empty body"}
-    if not author_matches(author, dri):
-        return {**base, "reason": "author is not the mission DRI"}
+    if not author_matches(author, leader_engineer):
+        return {**base, "reason": "author is not the objective Leader Engineer"}
     if created is None:
         return {**base, "reason": "missing or unparsable timestamp"}
     local_created = created.astimezone(window_start.tzinfo)
@@ -170,7 +170,7 @@ def diagnose_comment(
             reason += ": " + "; ".join(parsed.errors)
         return {**base, "reason": reason, "parsed": parsed_summary}
 
-    return {**base, "passes": True, "reason": "valid weekly DRI update", "parsed": parsed_summary}
+    return {**base, "passes": True, "reason": "valid weekly Leader Engineer update", "parsed": parsed_summary}
 
 
 if __name__ == "__main__":

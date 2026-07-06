@@ -5,8 +5,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from mission_rollup import STATUS_GREEN, STATUS_RED, STATUS_YELLOW  # noqa: E402
-from write_dri_update import (  # noqa: E402
+from objective_rollup import STATUS_GREEN, STATUS_RED, STATUS_YELLOW  # noqa: E402
+from write_leader_engineer_update import (  # noqa: E402
     CollectedSections,
     EpicState,
     build_adf_body,
@@ -97,21 +97,21 @@ class StatusInputTest(unittest.TestCase):
 
 
 class MenuRenderingTest(unittest.TestCase):
-    def test_menu_lists_epics_with_status_and_dri(self):
+    def test_menu_lists_epics_with_status_and_leader_engineer(self):
         epics = [
             EpicState(
                 key="DEMO-200",
                 summary="Onboarding conversion refresh",
                 url="https://example.atlassian.net/browse/DEMO-200",
-                dri_name="Ada Lovelace",
+                leader_engineer_name="Ada Lovelace",
                 update_status="missing",
-                update_summary="No DRI weekly update",
+                update_summary="No Leader Engineer weekly update",
             ),
             EpicState(
                 key="DEMO-300",
                 summary="Amenities disclosure V2",
                 url="https://example.atlassian.net/browse/DEMO-300",
-                dri_name="Grace Hopper",
+                leader_engineer_name="Grace Hopper",
                 update_status="valid \U0001F7E2",
                 update_summary="Latest valid update by Grace Hopper",
             ),

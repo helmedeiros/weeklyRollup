@@ -5,7 +5,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from mission_rollup import (  # noqa: E402
+from objective_rollup import (  # noqa: E402
     STATUS_GREEN,
     STATUS_RED,
     STATUS_YELLOW,
@@ -15,7 +15,7 @@ from mission_rollup import (  # noqa: E402
     evaluate_hygiene,
     extract_blockers,
     parse_update,
-    summarize_missions,
+    summarize_objectives,
 )
 
 
@@ -42,7 +42,7 @@ class ParseUpdateTest(unittest.TestCase):
             "Target for next week\n"
             "Communicate to engineers and kick-off new process.\n"
             "Blockers / Risks\xa0\n"
-            "Testing is limited, due to no missions and process starting from June."
+            "Testing is limited, due to no objectives and process starting from June."
         )
 
         self.assertTrue(parsed.template_valid)
@@ -219,8 +219,8 @@ class ParseUpdateTest(unittest.TestCase):
         blockers = extract_blockers(
             "- Waiting for @Data Platform export, open 3 days\n"
             "- Owner: PM Lead to decide scope",
-            mission="Checkout refund automation",
-            dri="Ada Lovelace",
+            objective="Checkout refund automation",
+            leader_engineer="Ada Lovelace",
             status=STATUS_YELLOW,
         )
 
@@ -232,8 +232,8 @@ class ParseUpdateTest(unittest.TestCase):
     def test_none_blockers_create_no_rows(self):
         blockers = extract_blockers(
             "none",
-            mission="Checkout refund automation",
-            dri="Ada Lovelace",
+            objective="Checkout refund automation",
+            leader_engineer="Ada Lovelace",
             status=STATUS_GREEN,
         )
 
@@ -242,8 +242,8 @@ class ParseUpdateTest(unittest.TestCase):
     def test_no_active_blockers_with_context_create_no_rows(self):
         blockers = extract_blockers(
             "No active blockers, monitoring rollout.",
-            mission="Delay Repay for Uber",
-            dri="Ada Lovelace",
+            objective="Delay Repay for Uber",
+            leader_engineer="Ada Lovelace",
             status=STATUS_GREEN,
         )
 
@@ -271,8 +271,8 @@ class ParseUpdateTest(unittest.TestCase):
                 self.assertEqual(
                     extract_blockers(
                         parsed.blockers_risks,
-                        mission="Delay Repay for Uber",
-                        dri="Ada Lovelace",
+                        objective="Delay Repay for Uber",
+                        leader_engineer="Ada Lovelace",
                         status=STATUS_GREEN,
                     ),
                     [],
@@ -281,8 +281,8 @@ class ParseUpdateTest(unittest.TestCase):
     def test_no_blockers_with_exception_still_creates_risk_row(self):
         blockers = extract_blockers(
             "No blockers except QA capacity risk.",
-            mission="Delay Repay for Uber",
-            dri="Ada Lovelace",
+            objective="Delay Repay for Uber",
+            leader_engineer="Ada Lovelace",
             status=STATUS_YELLOW,
         )
 
@@ -302,14 +302,14 @@ class ParseUpdateTest(unittest.TestCase):
             require_template_match=False,
             minimum_score=3,
         )
-        mission = {
-            "dri": {"accountId": "ada-account", "displayName": "Ada Lovelace"},
+        objective = {
+            "leader_engineer": {"accountId": "ada-account", "displayName": "Ada Lovelace"},
             "due_date": "2026-06-30",
             "linked_okr": "KR-1",
         }
 
         issues = evaluate_hygiene(
-            mission,
+            objective,
             config,
             parsed,
             missing_update=False,
@@ -321,8 +321,8 @@ class ParseUpdateTest(unittest.TestCase):
             [issue["message"] for issue in issues],
         )
 
-    def test_ops_mission_exempt_from_missing_linked_okr(self):
-        # Ops / KTLO missions are not expected to link to an OKR; per upstream
+    def test_ops_objective_exempt_from_missing_linked_okr(self):
+        # Ops / KTLO objectives are not expected to link to an OKR; per upstream
         # functional spec, they are exempt from the "Missing linked OKR" yellow.
         config = {
             "team": {},
@@ -335,17 +335,17 @@ class ParseUpdateTest(unittest.TestCase):
         )
         for ops_name in ("Ops Stream sustaining work", "Funnel operational support", "OPS — KTLO bucket"):
             with self.subTest(name=ops_name):
-                mission = {
+                objective = {
                     "name": ops_name,
-                    "dri": {"accountId": "x", "displayName": "Eng"},
+                    "leader_engineer": {"accountId": "x", "displayName": "Eng"},
                     "due_date": "2026-06-30",
                     "linked_okr": "",
                 }
-                issues = evaluate_hygiene(mission, config, parsed, missing_update=False)
+                issues = evaluate_hygiene(objective, config, parsed, missing_update=False)
                 messages = [i["message"] for i in issues]
                 self.assertNotIn("Missing linked OKR", messages, messages)
 
-    def test_non_ops_mission_still_flags_missing_linked_okr(self):
+    def test_non_ops_objective_still_flags_missing_linked_okr(self):
         config = {
             "team": {},
             "weekly_update": {"validation": {"no_update_red_after_weeks": 2}},
@@ -355,16 +355,16 @@ class ParseUpdateTest(unittest.TestCase):
             "Status: Green\nDone: ran.\nPlan: tomorrow.\nBlockers: none",
             optional_sections=["blockers"],
         )
-        mission = {
+        objective = {
             "name": "Improve user Opt-In rates",
-            "dri": {"accountId": "x", "displayName": "Eng"},
+            "leader_engineer": {"accountId": "x", "displayName": "Eng"},
             "due_date": "2026-06-30",
             "linked_okr": "",
         }
-        issues = evaluate_hygiene(mission, config, parsed, missing_update=False)
+        issues = evaluate_hygiene(objective, config, parsed, missing_update=False)
         self.assertIn("Missing linked OKR", [i["message"] for i in issues])
 
-    def test_hygiene_flags_open_delayed_carryover_mission(self):
+    def test_hygiene_flags_open_delayed_carryover_objective(self):
         config = {
             "team": {},
             "weekly_update": {"validation": {"no_update_red_after_weeks": 2}},
@@ -375,15 +375,15 @@ class ParseUpdateTest(unittest.TestCase):
             "Plan: Continue rollout.\n"
             "Blockers: none"
         )
-        mission = {
-            "mission_type": "spillover",
-            "dri": {"accountId": "ada-account", "displayName": "Ada Lovelace"},
+        objective = {
+            "objective_type": "spillover",
+            "leader_engineer": {"accountId": "ada-account", "displayName": "Ada Lovelace"},
             "due_date": "2026-05-31",
             "linked_okr": "KR-1",
         }
 
         issues = evaluate_hygiene(
-            mission,
+            objective,
             config,
             parsed,
             missing_update=False,
@@ -392,7 +392,7 @@ class ParseUpdateTest(unittest.TestCase):
 
         issue_by_message = {issue["message"]: issue for issue in issues}
         self.assertEqual(
-            issue_by_message["Delayed carryover mission still open"]["severity"],
+            issue_by_message["Delayed carryover objective still open"]["severity"],
             "yellow",
         )
 
@@ -477,7 +477,7 @@ class AdfEmojiTest(unittest.TestCase):
                 self.assertEqual(parsed.blockers, "", f"blockers not cleared for {none_value!r}")
 
     def test_bare_next_heading_maps_to_plan(self):
-        # Regression: two DRIs wrote a bare "Next" bare-label heading; without
+        # Regression: two Leader Engineers wrote a bare "Next" bare-label heading; without
         # this alias the plan section was empty and the update was malformed.
         parsed = parse_update(
             "Status\n\U0001F7E2\n"
@@ -491,7 +491,7 @@ class AdfEmojiTest(unittest.TestCase):
         self.assertIn("Test in production", parsed.plan_for_next_week)
 
     def test_planned_for_next_week_heading_maps_to_plan(self):
-        # Regression: a DRI wrote "Planned For Next Week" as a heading
+        # Regression: a Leader Engineer wrote "Planned For Next Week" as a heading
         # without a colon. The plan section was absorbed into done and the
         # update was marked malformed.
         parsed = parse_update(
@@ -517,14 +517,14 @@ class AdfEmojiTest(unittest.TestCase):
         parsed = parse_update(
             "Status: \U0001f7e1\n"
             "Discovery Progress Update\n"
-            "Reviewed mission brief and aligned with enabler teams.\n"
+            "Reviewed objective brief and aligned with enabler teams.\n"
             "Target for next week: Confirm available signals.\n"
             "Blockers / Risks: Dataset not confirmed yet.",
             optional_sections=["blockers"],
         )
         self.assertTrue(parsed.template_valid)
         self.assertEqual(parsed.status, STATUS_YELLOW)
-        self.assertIn("Reviewed mission brief", parsed.done_this_week)
+        self.assertIn("Reviewed objective brief", parsed.done_this_week)
 
     def test_adf_inline_card_yields_jira_issue_key(self):
         adf = {
@@ -583,21 +583,21 @@ class AdfEmojiTest(unittest.TestCase):
 
 class SummaryTilesTest(unittest.TestCase):
     def test_primary_items_hide_zero_status_but_keep_total(self):
-        summary = summarize_missions([
+        summary = summarize_objectives([
             {"status": STATUS_GREEN, "blockers": []},
             {"status": STATUS_GREEN, "blockers": []},
             {"status": "Done", "blockers": []},
         ])
-        items = build_summary_primary_items(summary, "mission-june-2026")
+        items = build_summary_primary_items(summary, "objective-june-2026")
         labels = [i["label"] for i in items]
-        self.assertIn("June Missions", labels)
+        self.assertIn("June Objectives", labels)
         self.assertIn("On Track", labels)
         self.assertIn("Done", labels)
         self.assertNotIn("At Risk", labels)
         self.assertNotIn("Missing Updates", labels)
 
     def test_attention_items_split_risks_from_blockers(self):
-        summary = summarize_missions([
+        summary = summarize_objectives([
             {"status": STATUS_YELLOW, "blockers": [
                 {"kind": "risk", "text": "x"},
                 {"kind": "blocker", "text": "y"},
@@ -612,13 +612,13 @@ class SummaryTilesTest(unittest.TestCase):
         self.assertEqual(labels.get("Blockers"), 2)
 
     def test_primary_row_now_includes_risks_and_blockers_inline(self):
-        summary = summarize_missions([
+        summary = summarize_objectives([
             {"status": STATUS_YELLOW, "blockers": [
                 {"kind": "risk", "text": "x"},
                 {"kind": "blocker", "text": "y"},
             ]},
         ])
-        items = build_summary_primary_items(summary, "mission-june-2026")
+        items = build_summary_primary_items(summary, "objective-june-2026")
         labels = [i["label"] for i in items]
         # Both Risks and Blockers now share the same row as the status tiles.
         self.assertIn("Risks", labels)

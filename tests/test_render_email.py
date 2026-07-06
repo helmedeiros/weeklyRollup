@@ -5,7 +5,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from mission_rollup import (  # noqa: E402
+from objective_rollup import (  # noqa: E402
     STATUS_DONE,
     STATUS_GREEN,
     STATUS_MISSING,
@@ -25,9 +25,9 @@ class RenderEmailTest(unittest.TestCase):
             self.config,
             [
                 {
-                    "mission": "Checkout refund automation",
+                    "objective": "Checkout refund automation",
                     "month_label": "June",
-                    "dri": "Ada Lovelace",
+                    "leader_engineer": "Ada Lovelace",
                     "status": STATUS_GREEN,
                     "progress": "50%",
                     "due_date": "2026-06-30",
@@ -43,16 +43,16 @@ class RenderEmailTest(unittest.TestCase):
         )
 
         self.assertTrue(draft["create_draft_only"])
-        self.assertEqual(draft["to"], ["mission-report@example.com"])
+        self.assertEqual(draft["to"], ["objective-report@example.com"])
         self.assertEqual(draft["cc"], ["reviewer@example.com"])
         self.assertEqual(draft["bcc"], [])
         self.assertEqual(draft["plainTextBody"], draft["text_body"])
         self.assertEqual(draft["htmlBody"], draft["html_body"])
-        self.assertIn("Weekly Mission Update", draft["subject"])
-        # Banner now mirrors the subject; the old fixed "Weekly Mission Report"
+        self.assertIn("Weekly Objective Update", draft["subject"])
+        # Banner now mirrors the subject; the old fixed "Weekly Objective Report"
         # heading was removed (upstream f7cbd7b19 / 8a5f22851 port).
         self.assertIn(draft["subject"], draft["html_body"])
-        self.assertNotIn("Weekly Mission Report", draft["html_body"])
+        self.assertNotIn("Weekly Objective Report", draft["html_body"])
         self.assertIn("#132968", draft["html_body"])
         self.assertIn("On Track", draft["html_body"])
         self.assertNotIn("{{", draft["html_body"])
@@ -72,7 +72,7 @@ class RenderEmailTest(unittest.TestCase):
         self.assertIn("Checkout refund automation (June)", draft["html_body"])
         self.assertIn("[ON TRACK] Checkout refund automation (June)", draft["text_body"])
         self.assertIn("background-color:#f0fdf4", draft["html_body"])
-        self.assertTrue((ROOT / "templates/mission-email.html").exists())
+        self.assertTrue((ROOT / "templates/objective-email.html").exists())
 
     def test_greeting_is_configurable(self):
         config = dict(self.config)
@@ -89,9 +89,9 @@ class RenderEmailTest(unittest.TestCase):
             self.config,
             [
                 {
-                    "mission": "Delivery strategy",
+                    "objective": "Delivery strategy",
                     "month_label": "May",
-                    "dri": "Ada Lovelace",
+                    "leader_engineer": "Ada Lovelace",
                     "status": STATUS_RED,
                     "progress": "50%",
                     "due_date": "2026-06-11",
@@ -104,9 +104,9 @@ class RenderEmailTest(unittest.TestCase):
                     "missing_update": False,
                 },
                 {
-                    "mission": "Overdue moved mission",
+                    "objective": "Overdue moved objective",
                     "month_label": "June",
-                    "dri": "Grace Hopper",
+                    "leader_engineer": "Grace Hopper",
                     "status": STATUS_RED,
                     "progress": "40%",
                     "due_date": "2026-06-01",
@@ -119,9 +119,9 @@ class RenderEmailTest(unittest.TestCase):
                     "missing_update": False,
                 },
                 {
-                    "mission": "Pulled-in mission",
+                    "objective": "Pulled-in objective",
                     "month_label": "June",
-                    "dri": "Katherine Johnson",
+                    "leader_engineer": "Katherine Johnson",
                     "status": STATUS_GREEN,
                     "progress": "80%",
                     "due_date": "2026-06-04",
@@ -172,13 +172,13 @@ class RenderEmailTest(unittest.TestCase):
         self.assertIn(">Ada</strong>", draft["html_body"])
         self.assertIn("\nThanks\nAda", draft["text_body"])
 
-    def test_missions_sort_on_track_at_risk_delayed_missing(self):
+    def test_objectives_sort_on_track_at_risk_delayed_missing(self):
         draft = render_email_draft(
             self.config,
             [
                 {
-                    "mission": "Green mission",
-                    "dri": "Grace Hopper",
+                    "objective": "Green objective",
+                    "leader_engineer": "Grace Hopper",
                     "status": STATUS_GREEN,
                     "progress": "80%",
                     "due_date": "2026-06-30",
@@ -189,8 +189,8 @@ class RenderEmailTest(unittest.TestCase):
                     "missing_update": False,
                 },
                 {
-                    "mission": "Yellow mission",
-                    "dri": "Katherine Johnson",
+                    "objective": "Yellow objective",
+                    "leader_engineer": "Katherine Johnson",
                     "status": STATUS_YELLOW,
                     "progress": "60%",
                     "due_date": "2026-06-30",
@@ -201,8 +201,8 @@ class RenderEmailTest(unittest.TestCase):
                     "missing_update": False,
                 },
                 {
-                    "mission": "Missing mission",
-                    "dri": "Mary Jackson",
+                    "objective": "Missing objective",
+                    "leader_engineer": "Mary Jackson",
                     "status": STATUS_MISSING,
                     "progress": "0%",
                     "due_date": "",
@@ -213,8 +213,8 @@ class RenderEmailTest(unittest.TestCase):
                     "missing_update": True,
                 },
                 {
-                    "mission": "Red mission",
-                    "dri": "Ada Lovelace",
+                    "objective": "Red objective",
+                    "leader_engineer": "Ada Lovelace",
                     "status": STATUS_RED,
                     "progress": "20%",
                     "due_date": "2026-06-30",
@@ -222,8 +222,8 @@ class RenderEmailTest(unittest.TestCase):
                     "plan_for_next_week": "Replan",
                     "blockers": [
                         {
-                            "mission": "Red mission",
-                            "dri": "Ada Lovelace",
+                            "objective": "Red objective",
+                            "leader_engineer": "Ada Lovelace",
                             "status": STATUS_RED,
                             "text": "Decision needed",
                             "owner": "Lead",
@@ -234,8 +234,8 @@ class RenderEmailTest(unittest.TestCase):
                     "missing_update": False,
                 },
                 {
-                    "mission": "Done mission",
-                    "dri": "Dorothy Vaughan",
+                    "objective": "Done objective",
+                    "leader_engineer": "Dorothy Vaughan",
                     "status": STATUS_DONE,
                     "progress": "100%",
                     "due_date": "2026-06-30",
@@ -249,15 +249,15 @@ class RenderEmailTest(unittest.TestCase):
             iso_week=23,
         )
 
-        self.assertLess(draft["text_body"].index("Green mission"), draft["text_body"].index("Yellow mission"))
-        self.assertLess(draft["text_body"].index("Yellow mission"), draft["text_body"].index("Red mission"))
-        self.assertLess(draft["text_body"].index("Red mission"), draft["text_body"].index("Missing mission"))
-        self.assertLess(draft["text_body"].index("Missing mission"), draft["text_body"].index("Done mission"))
+        self.assertLess(draft["text_body"].index("Green objective"), draft["text_body"].index("Yellow objective"))
+        self.assertLess(draft["text_body"].index("Yellow objective"), draft["text_body"].index("Red objective"))
+        self.assertLess(draft["text_body"].index("Red objective"), draft["text_body"].index("Missing objective"))
+        self.assertLess(draft["text_body"].index("Missing objective"), draft["text_body"].index("Done objective"))
         self.assertIn("Missing linked OKR", draft["text_body"])
-        self.assertLess(draft["html_body"].index("Green mission"), draft["html_body"].index("Yellow mission"))
-        self.assertLess(draft["html_body"].index("Yellow mission"), draft["html_body"].index("Red mission"))
-        self.assertLess(draft["html_body"].index("Red mission"), draft["html_body"].index("Missing mission"))
-        self.assertLess(draft["html_body"].index("Missing mission"), draft["html_body"].index("Done mission"))
+        self.assertLess(draft["html_body"].index("Green objective"), draft["html_body"].index("Yellow objective"))
+        self.assertLess(draft["html_body"].index("Yellow objective"), draft["html_body"].index("Red objective"))
+        self.assertLess(draft["html_body"].index("Red objective"), draft["html_body"].index("Missing objective"))
+        self.assertLess(draft["html_body"].index("Missing objective"), draft["html_body"].index("Done objective"))
         self.assertIn("Done</span>", draft["html_body"])
         self.assertIn("background-color:#dbeafe", draft["html_body"])
         self.assertIn("color:#2563eb", draft["html_body"])
@@ -267,8 +267,8 @@ class RenderEmailTest(unittest.TestCase):
             self.config,
             [
                 {
-                    "mission": "Hygiene mission",
-                    "dri": "Ada Lovelace",
+                    "objective": "Hygiene objective",
+                    "leader_engineer": "Ada Lovelace",
                     "status": STATUS_GREEN,
                     "progress": "50%",
                     "due_date": "2026-06-30",
@@ -291,8 +291,8 @@ class RenderEmailTest(unittest.TestCase):
             self.config,
             [
                 {
-                    "mission": "Clean mission",
-                    "dri": "Ada Lovelace",
+                    "objective": "Clean objective",
+                    "leader_engineer": "Ada Lovelace",
                     "status": STATUS_GREEN,
                     "progress": "50%",
                     "due_date": "2026-06-30",

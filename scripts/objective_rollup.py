@@ -1,4 +1,4 @@
-"""Core logic for the Engineer-Owned Mission weekly rollup skill.
+"""Core logic for the Engineer-Owned Objective weekly rollup skill.
 
 The module intentionally keeps product logic local and deterministic. Jira,
 Google Sheets, and email clients should call these functions through thin
@@ -44,7 +44,7 @@ STATUS_NOT_STARTED = "Not Started"
 # lives in git; deployments that want the enforcement export the id via
 # WEEKLY_ROLLUP_REQUIRED_FOLDER_ID (typically alongside GOOGLE_SHEETS_MCP_URL).
 REQUIRED_SHEET_FOLDER_ID = os.environ.get("WEEKLY_ROLLUP_REQUIRED_FOLDER_ID", "")
-EMAIL_TEMPLATE_NAME = "mission-email.html"
+EMAIL_TEMPLATE_NAME = "objective-email.html"
 
 STATUS_WORDS = {
     "green": STATUS_GREEN,
@@ -227,11 +227,11 @@ NONE_VALUES = {
 }
 
 SHEET_COLUMNS = [
-    "Mission key",
-    "Mission name",
-    "Mission URL",
-    "Mission label",
-    "DRI",
+    "Objective key",
+    "Objective name",
+    "Objective URL",
+    "Objective label",
+    "Leader Engineer",
     "Status",
     "Jira progress %",
     "Due date",
@@ -243,14 +243,14 @@ SHEET_COLUMNS = [
     "Risk/blocker days open",
     "Missing update?",
     "Missing update weeks",
-    "DRI comment",
+    "Leader Engineer comment",
     "Hygiene issues",
 ]
 
 
 @dataclass(frozen=True)
 class ParsedUpdate:
-    """Structured representation of a DRI weekly update comment."""
+    """Structured representation of a Leader Engineer weekly update comment."""
 
     status: str | None
     done_this_week: str
@@ -267,8 +267,8 @@ class ParsedUpdate:
 
 @dataclass(frozen=True)
 class Blocker:
-    mission: str
-    dri: str
+    objective: str
+    leader_engineer: str
     status: str
     text: str
     owner: str = ""
@@ -279,7 +279,7 @@ class Blocker:
 
 @dataclass(frozen=True)
 class CommentSelection:
-    """Result of selecting the latest valid DRI update comment."""
+    """Result of selecting the latest valid Leader Engineer update comment."""
 
     selected_comment: dict[str, Any] | None
     parsed_update: ParsedUpdate | None
@@ -362,8 +362,8 @@ def validate_team_config(config: dict[str, Any]) -> list[str]:
     if not (get_path(config, "jira.board_id") or get_path(config, "jira.project_key")):
         errors.append("jira.board_id or jira.project_key is required")
     require("jira.epic_issue_type")
-    require("jira.mission_label_pattern")
-    require("jira.fields.dri.field_id")
+    require("jira.objective_label_pattern")
+    require("jira.fields.leader_engineer.field_id")
     require("jira.fields.due_date.field_id")
     require("jira.fields.status.field_id")
 
@@ -472,7 +472,7 @@ def sheet_file_name(config: dict[str, Any]) -> str:
         get_path(
             config,
             "sheet.file_name_pattern",
-            "{team_name} - Mission Execution Updates",
+            "{team_name} - Objective Execution Updates",
         )
     )
     values = {
@@ -530,8 +530,8 @@ def month_label_end_date(label: Any) -> date | None:
     return next_month - timedelta(days=1)
 
 
-def mission_effective_due_date(mission: dict[str, Any]) -> str:
-    due_date = str(mission.get("due_date", "") or "").strip()
+def objective_effective_due_date(objective: dict[str, Any]) -> str:
+    due_date = str(objective.get("due_date", "") or "").strip()
     return due_date
 
 
@@ -595,7 +595,7 @@ def parse_update(
     allow_unstructured_if_confident: bool = False,
     optional_sections: list[str] | tuple[str, ...] | None = None,
 ) -> ParsedUpdate:
-    """Parse a weekly DRI update into the configured semantic sections.
+    """Parse a weekly Leader Engineer update into the configured semantic sections.
 
     The parser keeps the legacy combined `blockers_risks` value for backward
     compatibility, and also tracks whether each line came from a `Risks:`
@@ -929,8 +929,8 @@ def blocker_fingerprint(text: str) -> str:
 def extract_blockers(
     blockers_text: str,
     *,
-    mission: str,
-    dri: str,
+    objective: str,
+    leader_engineer: str,
     status: str,
     kind: str = "",
 ) -> list[Blocker]:
@@ -948,8 +948,8 @@ def extract_blockers(
         days_open = detect_days_open(item)
         blockers.append(
             Blocker(
-                mission=mission,
-                dri=dri,
+                objective=objective,
+                leader_engineer=leader_engineer,
                 status=status,
                 text=item,
                 owner=owner,
@@ -980,16 +980,16 @@ def detect_days_open(text: str) -> str:
     return match.group(1) if match else ""
 
 
-def find_latest_valid_dri_comment(
+def find_latest_valid_leader_engineer_comment(
     comments: list[dict[str, Any]],
-    dri: dict[str, Any] | None,
+    leader_engineer: dict[str, Any] | None,
     window_start: datetime,
     window_end: datetime,
     *,
     parse_options: dict[str, Any] | None = None,
     cover_emails: list[str] | None = None,
 ) -> CommentSelection:
-    """Select the latest valid DRI weekly update from Jira comments."""
+    """Select the latest valid Leader Engineer weekly update from Jira comments."""
 
     parse_options = parse_options or {}
     valid_candidates: list[tuple[datetime, dict[str, Any], ParsedUpdate]] = []
@@ -1008,8 +1008,8 @@ def find_latest_valid_dri_comment(
         if not body.strip():
             rejection_reasons.append(f"{comment_id}: empty body")
             continue
-        if not author_matches(comment.get("author", {}), dri, cover_emails):
-            rejection_reasons.append(f"{comment_id}: author is not DRI")
+        if not author_matches(comment.get("author", {}), leader_engineer, cover_emails):
+            rejection_reasons.append(f"{comment_id}: author is not Leader Engineer")
             continue
         created = parse_jira_datetime(comment.get("created") or comment.get("updated"))
         if created is None:
@@ -1025,7 +1025,7 @@ def find_latest_valid_dri_comment(
             valid_candidates.append((local_created, comment, parsed))
         else:
             malformed_seen = True
-            rejection_reasons.append(f"{comment_id}: malformed DRI update")
+            rejection_reasons.append(f"{comment_id}: malformed Leader Engineer update")
 
     if not valid_candidates:
         return CommentSelection(
@@ -1038,7 +1038,7 @@ def find_latest_valid_dri_comment(
 
     valid_candidates.sort(key=lambda candidate: candidate[0], reverse=True)
     _, selected_comment, parsed = valid_candidates[0]
-    selected_is_cover = not _author_is_dri(selected_comment.get("author", {}), dri)
+    selected_is_cover = not _author_is_leader_engineer(selected_comment.get("author", {}), leader_engineer)
     return CommentSelection(
         selected_comment=selected_comment,
         parsed_update=parsed,
@@ -1088,34 +1088,34 @@ def parse_jira_datetime(value: Any) -> datetime | None:
 
 def author_matches(
     author: dict[str, Any],
-    dri: dict[str, Any] | None,
+    leader_engineer: dict[str, Any] | None,
     cover_emails: list[str] | None = None,
 ) -> bool:
-    if _author_is_dri(author, dri):
+    if _author_is_leader_engineer(author, leader_engineer):
         return True
     return _author_is_cover(author, cover_emails)
 
 
-def _author_is_dri(author: dict[str, Any], dri: dict[str, Any] | None) -> bool:
-    if not dri:
+def _author_is_leader_engineer(author: dict[str, Any], leader_engineer: dict[str, Any] | None) -> bool:
+    if not leader_engineer:
         return False
     author_account_id = _first_value(author, "accountId", "account_id", "jira_account_id")
-    dri_account_id = _first_value(dri, "accountId", "account_id", "jira_account_id")
-    if author_account_id and dri_account_id:
-        return str(author_account_id) == str(dri_account_id)
+    leader_engineer_account_id = _first_value(leader_engineer, "accountId", "account_id", "jira_account_id")
+    if author_account_id and leader_engineer_account_id:
+        return str(author_account_id) == str(leader_engineer_account_id)
 
     author_email = normalize_identity(_first_value(author, "emailAddress", "email"))
-    dri_email = normalize_identity(_first_value(dri, "emailAddress", "email"))
-    if author_email and dri_email and author_email == dri_email:
+    leader_engineer_email = normalize_identity(_first_value(leader_engineer, "emailAddress", "email"))
+    if author_email and leader_engineer_email and author_email == leader_engineer_email:
         return True
 
     author_name = normalize_identity(
         _first_value(author, "displayName", "display_name", "jira_display_name", "name")
     )
-    dri_name = normalize_identity(
-        _first_value(dri, "displayName", "display_name", "jira_display_name", "name")
+    leader_engineer_name = normalize_identity(
+        _first_value(leader_engineer, "displayName", "display_name", "jira_display_name", "name")
     )
-    return bool(author_name and dri_name and author_name == dri_name)
+    return bool(author_name and leader_engineer_name and author_name == leader_engineer_name)
 
 
 def _author_is_cover(author: dict[str, Any], cover_emails: list[str] | None) -> bool:
@@ -1143,20 +1143,20 @@ def normalize_identity(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value).strip().lower())
 
 
-_OPS_MISSION_RE = re.compile(r"\b(?:ops|ops stream|operational|operational stream)\b")
+_OPS_OBJECTIVE_RE = re.compile(r"\b(?:ops|ops stream|operational|operational stream)\b")
 
 
-def mission_exempt_from_linked_okr(mission: dict[str, Any]) -> bool:
-    """Operational/KTLO missions are not expected to link to an OKR."""
+def objective_exempt_from_linked_okr(objective: dict[str, Any]) -> bool:
+    """Operational/KTLO objectives are not expected to link to an OKR."""
     text = " ".join(
-        str(mission.get(key) or "")
-        for key in ("name", "summary", "mission", "title")
+        str(objective.get(key) or "")
+        for key in ("name", "summary", "objective", "title")
     )
-    return bool(_OPS_MISSION_RE.search(normalize_identity(text)))
+    return bool(_OPS_OBJECTIVE_RE.search(normalize_identity(text)))
 
 
 def evaluate_hygiene(
-    mission: dict[str, Any],
+    objective: dict[str, Any],
     config: dict[str, Any],
     parsed_update: ParsedUpdate | None,
     *,
@@ -1170,15 +1170,15 @@ def evaluate_hygiene(
     is_not_started: bool = False,
     start_signal_seen: bool = False,
 ) -> list[dict[str, str]]:
-    """Evaluate data hygiene rules for a mission row."""
+    """Evaluate data hygiene rules for a objective row."""
 
     issues: list[dict[str, str]] = []
-    dri = mission.get("dri")
-    if not dri:
-        issues.append({"severity": "red", "message": "Missing DRI"})
+    leader_engineer = objective.get("leader_engineer")
+    if not leader_engineer:
+        issues.append({"severity": "red", "message": "Missing Leader Engineer"})
 
-    due_date = mission.get("due_date")
-    effective_due_date = mission_effective_due_date(mission)
+    due_date = objective.get("due_date")
+    effective_due_date = objective_effective_due_date(objective)
     if not due_date:
         issues.append({"severity": "red", "message": "Missing due date"})
     days_overdue = due_date_overdue_days(effective_due_date, target_date)
@@ -1191,10 +1191,10 @@ def evaluate_hygiene(
     if not is_done and history_available and stale_weeks >= stale_threshold and stale_weeks > 0:
         issues.append({"severity": "red", "message": f"No update in {stale_weeks} weeks"})
 
-    if not mission.get("linked_okr") and not mission_exempt_from_linked_okr(mission):
+    if not objective.get("linked_okr") and not objective_exempt_from_linked_okr(objective):
         issues.append({"severity": "yellow", "message": "Missing linked OKR"})
     if missing_update and not is_done:
-        issues.append({"severity": "yellow", "message": "Missing weekly DRI update"})
+        issues.append({"severity": "yellow", "message": "Missing weekly Leader Engineer update"})
     if malformed_update_seen and not is_done:
         issues.append({"severity": "yellow", "message": "Malformed weekly update"})
     if is_not_started and not is_done:
@@ -1228,11 +1228,11 @@ def evaluate_hygiene(
         issues.append({"severity": "info", "message": "No blockers reported"})
 
     if (
-        mission.get("mission_type") == "spillover"
+        objective.get("objective_type") == "spillover"
         and not any(issue["severity"] == "red" for issue in issues)
         and (not parsed_update or parsed_update.status != STATUS_RED)
     ):
-        issues.append({"severity": "yellow", "message": "Delayed carryover mission still open"})
+        issues.append({"severity": "yellow", "message": "Delayed carryover objective still open"})
 
     return issues
 
@@ -1254,14 +1254,14 @@ def format_day_count(days: int) -> str:
     return f"{days} day" if days == 1 else f"{days} days"
 
 
-def mission_to_sheet_row(
-    mission: dict[str, Any],
+def objective_to_sheet_row(
+    objective: dict[str, Any],
     config: dict[str, Any],
     parsed_update: ParsedUpdate | None,
     hygiene_issues: list[dict[str, str]],
     blockers: list[Blocker] | None = None,
     *,
-    dri_comment: str = "",
+    leader_engineer_comment: str = "",
     missing_update: bool = False,
     missing_update_weeks: int = 0,
     due_date_movement: str = "",
@@ -1270,14 +1270,14 @@ def mission_to_sheet_row(
     status = parsed_update.status if parsed_update else STATUS_MISSING
     blockers = blockers or []
     return [
-        str(mission.get("key", "")),
-        str(mission.get("name") or mission.get("summary") or ""),
-        str(mission.get("url", "")),
-        str(mission.get("original_month_label", "")),
-        display_dri(mission.get("dri")),
+        str(objective.get("key", "")),
+        str(objective.get("name") or objective.get("summary") or ""),
+        str(objective.get("url", "")),
+        str(objective.get("original_month_label", "")),
+        display_leader_engineer(objective.get("leader_engineer")),
         status or "",
-        stringify_percent(mission.get("progress")),
-        str(mission.get("due_date", "")),
+        stringify_percent(objective.get("progress")),
+        str(objective.get("due_date", "")),
         due_date_movement,
         parsed_update.done_this_week if parsed_update else "",
         parsed_update.plan_for_next_week if parsed_update else "",
@@ -1286,7 +1286,7 @@ def mission_to_sheet_row(
         blocker_age_summary(blockers),
         "yes" if missing_update else "no",
         str(missing_update_weeks) if missing_update_weeks else "",
-        dri_comment,
+        leader_engineer_comment,
         "; ".join(issue["message"] for issue in hygiene_issues),
     ]
 
@@ -1326,11 +1326,11 @@ def stringify_percent(value: Any) -> str:
     return text if text.endswith("%") else f"{text}%"
 
 
-def display_dri(dri: dict[str, Any] | None) -> str:
-    if not dri:
+def display_leader_engineer(leader_engineer: dict[str, Any] | None) -> str:
+    if not leader_engineer:
         return ""
     return str(
-        _first_value(dri, "displayName", "display_name", "jira_display_name", "name", "email")
+        _first_value(leader_engineer, "displayName", "display_name", "jira_display_name", "name", "email")
         or ""
     )
 
@@ -1341,7 +1341,7 @@ def sheet_values(rows: list[list[str]]) -> list[list[str]]:
 
 def render_email_draft(
     config: dict[str, Any],
-    mission_rows: list[dict[str, Any]],
+    objective_rows: list[dict[str, Any]],
     *,
     iso_week: int,
     sheet_url: str = "",
@@ -1354,7 +1354,7 @@ def render_email_draft(
         get_path(
             config,
             "email.subject_pattern",
-            "Weekly Mission Update - {team_name} - Week {iso_week}",
+            "Weekly Objective Update - {team_name} - Week {iso_week}",
         )
     )
     subject = subject_pattern.format(team_name=team_name, iso_week=iso_week)
@@ -1371,9 +1371,9 @@ def render_email_draft(
     greeting = str(get_path(config, "email.greeting", "") or "Hi")
     signoff = str(get_path(config, "email.signoff", "") or "Kind Regards")
 
-    summary = summarize_missions(mission_rows)
+    summary = summarize_objectives(objective_rows)
     sorted_rows = sorted(
-        mission_rows,
+        objective_rows,
         key=lambda row: STATUS_SORT.get(str(row.get("status", STATUS_MISSING)), 9),
     )
     blockers = collect_email_blockers(sorted_rows)
@@ -1418,9 +1418,9 @@ def render_email_draft(
     }
 
 
-def summarize_missions(mission_rows: list[dict[str, Any]]) -> dict[str, int]:
-    statuses = [row.get("status") for row in mission_rows]
-    all_blockers = [b for row in mission_rows for b in row.get("blockers", [])]
+def summarize_objectives(objective_rows: list[dict[str, Any]]) -> dict[str, int]:
+    statuses = [row.get("status") for row in objective_rows]
+    all_blockers = [b for row in objective_rows for b in row.get("blockers", [])]
 
     def _blocker_kind(b: Any) -> str:
         if isinstance(b, Blocker):
@@ -1435,13 +1435,13 @@ def summarize_missions(mission_rows: list[dict[str, Any]]) -> dict[str, int]:
     # single "blockers" total while exposing risks separately for the tiles.
     blockers_count = len(all_blockers) - risks_count
     return {
-        "total": len(mission_rows),
+        "total": len(objective_rows),
         "green": statuses.count(STATUS_GREEN),
         "yellow": statuses.count(STATUS_YELLOW),
         "red": statuses.count(STATUS_RED),
         "done": statuses.count(STATUS_DONE),
         "not_started": statuses.count(STATUS_NOT_STARTED),
-        "missing_updates": sum(1 for row in mission_rows if row.get("missing_update")),
+        "missing_updates": sum(1 for row in objective_rows if row.get("missing_update")),
         "blockers": len(all_blockers),  # legacy: total risks+blockers count
         "risks": risks_count,
         "blockers_only": blockers_count,
@@ -1465,7 +1465,7 @@ def build_summary_primary_items(
     month_name = month_label_display(report_month_label).split(" ", 1)[0] if report_month_label else "Current"
     items = [
         {
-            "label": f"{month_name} Missions",
+            "label": f"{month_name} Objectives",
             "value": summary.get("total", 0),
             "color": "#132968",
             "always": True,
@@ -1580,7 +1580,7 @@ def build_email_template_context(
 ) -> dict[str, Any]:
     at_risk_count = summary["yellow"] + summary["red"]
     preview = (
-        f"{summary['green']}/{summary['total']} missions on track, "
+        f"{summary['green']}/{summary['total']} objectives on track, "
         f"{at_risk_count} at risk, {summary['missing_updates']} missing updates, "
         f"{summary['not_started']} not started, {summary['done']} done, "
         f"{summary['blockers']} blockers/risks"
@@ -1595,7 +1595,7 @@ def build_email_template_context(
         "stat_cards": build_summary_stat_cards(summary),
         "summary_primary_items": build_summary_primary_items(summary, report_month_label),
         "summary_attention_items": build_summary_attention_items(summary),
-        "mission_rows": build_template_mission_rows(rows),
+        "objective_rows": build_template_objective_rows(rows),
         "blocker_rows": build_template_blocker_rows(blockers),
         "hygiene_groups": build_template_hygiene_groups(hygiene),
         "sheet_url": sheet_url,
@@ -1615,17 +1615,17 @@ def build_summary_stat_cards(summary: dict[str, int]) -> list[dict[str, Any]]:
     ]
 
 
-def build_template_mission_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def build_template_objective_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     template_rows = []
     for row in rows:
         status = str(row.get("status", ""))
         progress = str(row.get("progress", "") or "No progress")
         template_rows.append(
             {
-                "mission": str(row.get("mission", "")),
-                "mission_title": email_mission_title(row),
-                "mission_url": str(row.get("mission_url", "")),
-                "dri": str(row.get("dri", "") or "Unassigned"),
+                "objective": str(row.get("objective", "")),
+                "objective_title": email_objective_title(row),
+                "objective_url": str(row.get("objective_url", "")),
+                "leader_engineer": str(row.get("leader_engineer", "") or "Unassigned"),
                 "status": status or STATUS_MISSING,
                 "status_label": email_status_label(status),
                 "progress": progress,
@@ -1644,10 +1644,10 @@ def build_template_mission_rows(rows: list[dict[str, Any]]) -> list[dict[str, An
     return template_rows
 
 
-def email_mission_title(row: dict[str, Any]) -> str:
-    mission = str(row.get("mission", ""))
+def email_objective_title(row: dict[str, Any]) -> str:
+    objective = str(row.get("objective", ""))
     month = str(row.get("month_label", "") or "").strip()
-    return f"{mission} ({month})" if month else mission
+    return f"{objective} ({month})" if month else objective
 
 
 def collect_email_blockers(rows: list[dict[str, Any]]) -> list[dict[str, str]]:
@@ -1665,12 +1665,12 @@ def collect_email_blockers(rows: list[dict[str, Any]]) -> list[dict[str, str]]:
 def collect_email_hygiene(rows: list[dict[str, Any]]) -> list[dict[str, str]]:
     hygiene: list[dict[str, str]] = []
     for row in rows:
-        mission = str(row.get("mission", ""))
+        objective = str(row.get("objective", ""))
         for issue in row.get("hygiene", []):
             item = dict(issue)
             if str(item.get("severity", "")).lower() == "info":
                 continue
-            item["mission"] = mission
+            item["objective"] = objective
             hygiene.append(item)
     severity_order = {"red": 0, "yellow": 1, "info": 2}
     hygiene.sort(key=lambda item: severity_order.get(item.get("severity", ""), 9))
@@ -1690,9 +1690,9 @@ def build_template_blocker_rows(blockers: list[dict[str, str]]) -> list[dict[str
             kind_label = ""
         rows.append(
             {
-                "mission": str(blocker.get("mission", "")),
+                "objective": str(blocker.get("objective", "")),
                 "text": str(blocker.get("text", "")),
-                "dri": str(blocker.get("dri", "")),
+                "leader_engineer": str(blocker.get("leader_engineer", "")),
                 "owner": str(blocker.get("owner", "") or "Unassigned"),
                 "days_open": str(blocker.get("days_open", "") or "Not provided"),
                 "kind": kind,
@@ -1706,12 +1706,12 @@ def build_template_blocker_rows(blockers: list[dict[str, str]]) -> list[dict[str
 def build_template_hygiene_groups(hygiene: list[dict[str, str]]) -> list[dict[str, Any]]:
     grouped: dict[str, list[dict[str, str]]] = {}
     for issue in hygiene:
-        mission = str(issue.get("mission", ""))
-        grouped.setdefault(mission, []).append(issue)
+        objective = str(issue.get("objective", ""))
+        grouped.setdefault(objective, []).append(issue)
 
     severity_order = {"red": 0, "yellow": 1, "info": 2}
     rows = []
-    for mission, issues in grouped.items():
+    for objective, issues in grouped.items():
         severity = min(
             (str(issue.get("severity", "")).lower() for issue in issues),
             key=lambda value: severity_order.get(value, 9),
@@ -1720,7 +1720,7 @@ def build_template_hygiene_groups(hygiene: list[dict[str, str]]) -> list[dict[st
         messages = "; ".join(str(issue.get("message", "")) for issue in issues if issue.get("message"))
         rows.append(
             {
-                "mission": mission,
+                "objective": objective,
                 "severity": severity or "info",
                 "messages": messages,
                 "style": style,
@@ -1943,9 +1943,9 @@ def render_text_email(
         "",
         greeting,
         "",
-        "Please find the latest mission health report.",
+        "Please find the latest objective health report.",
         "",
-        "MISSION UPDATES",
+        "OBJECTIVE UPDATES",
         "Sorted by status: on track, at risk, delayed, not started, missing, done.",
         "",
     ]
@@ -1959,17 +1959,17 @@ def render_text_email(
             row.get("due_date_overdue_days", 0),
             row.get("original_due_date", ""),
         )
-        mission = str(row.get("mission", ""))
-        title = email_mission_title(row)
+        objective = str(row.get("objective", ""))
+        title = email_objective_title(row)
         lines.extend(
             [
                 f"[{status}] {title}",
-                f"DRI: {row.get('dri', '') or 'Unassigned'}",
+                f"Leader Engineer: {row.get('leader_engineer', '') or 'Unassigned'}",
                 f"Progress: {progress} | Due: {due_date}",
             ]
         )
-        if row.get("mission_url"):
-            lines.append(f"Link: {row.get('mission_url')}")
+        if row.get("objective_url"):
+            lines.append(f"Link: {row.get('objective_url')}")
         lines.extend(
             [
                 f"Done this week: {row.get('done_this_week', '') or 'No update captured.'}",
@@ -1987,8 +1987,8 @@ def render_text_email(
             kind_prefix = "[Risk] " if kind == "risk" else ("[Blocker] " if kind == "blocker" else "")
             lines.extend(
                 [
-                    f"- {kind_prefix}{blocker.get('mission', '')}: {blocker.get('text', '')}",
-                    f"  DRI: {blocker.get('dri', '')} | Owner: {owner} | Days open: {days_open}",
+                    f"- {kind_prefix}{blocker.get('objective', '')}: {blocker.get('text', '')}",
+                    f"  Leader Engineer: {blocker.get('leader_engineer', '')} | Owner: {owner} | Days open: {days_open}",
                 ]
             )
     else:
@@ -1997,10 +1997,10 @@ def render_text_email(
         lines.extend(["", "DATA HYGIENE"])
         grouped: dict[str, list[dict[str, str]]] = {}
         for issue in hygiene:
-            mission = str(issue.get("mission", ""))
-            grouped.setdefault(mission, []).append(issue)
+            objective = str(issue.get("objective", ""))
+            grouped.setdefault(objective, []).append(issue)
         severity_order = {"red": 0, "yellow": 1, "info": 2}
-        for mission, issues in grouped.items():
+        for objective, issues in grouped.items():
             severity = min(
                 (str(issue.get("severity", "")).upper() for issue in issues),
                 key=lambda value: severity_order.get(value.lower(), 9),
@@ -2008,15 +2008,15 @@ def render_text_email(
             messages = "; ".join(
                 str(issue.get("message", "")) for issue in issues if issue.get("message")
             )
-            lines.append(f"- {mission}: {messages} ({severity})")
+            lines.append(f"- {objective}: {messages} ({severity})")
     if sheet_url:
         lines.extend(["", "WEEKLY SHEET", sheet_url])
     lines.extend(["", signoff, signoff_name])
     return "\n".join(lines)
 
 
-def mission_email_row(
-    mission: dict[str, Any],
+def objective_email_row(
+    objective: dict[str, Any],
     parsed_update: ParsedUpdate | None,
     hygiene: list[dict[str, str]],
     blockers: list[Blocker],
@@ -2028,13 +2028,13 @@ def mission_email_row(
     original_due_date: str = "",
 ) -> dict[str, Any]:
     return {
-        "mission": str(mission.get("name") or mission.get("summary") or mission.get("key") or ""),
-        "mission_url": str(mission.get("url", "")),
-        "month_label": month_label_short_display(mission.get("original_month_label", "")),
-        "dri": display_dri(mission.get("dri")),
+        "objective": str(objective.get("name") or objective.get("summary") or objective.get("key") or ""),
+        "objective_url": str(objective.get("url", "")),
+        "month_label": month_label_short_display(objective.get("original_month_label", "")),
+        "leader_engineer": display_leader_engineer(objective.get("leader_engineer")),
         "status": parsed_update.status if parsed_update else STATUS_MISSING,
-        "progress": stringify_percent(mission.get("progress")),
-        "due_date": str(mission.get("due_date", "")),
+        "progress": stringify_percent(objective.get("progress")),
+        "due_date": str(objective.get("due_date", "")),
         "due_date_movement": due_date_movement,
         "due_date_overdue_days": due_date_overdue_days,
         "original_due_date": str(original_due_date or ""),

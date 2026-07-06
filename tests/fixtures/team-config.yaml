@@ -7,9 +7,9 @@ jira:
   board_id: "42"
   project_key: "TEST"
   epic_issue_type: "Epic"
-  mission_label_pattern: "mission-{month}-{year}"
+  objective_label_pattern: "objective-{month}-{year}"
   fields:
-    dri:
+    leader_engineer:
       source: "assignee"
       field_id: "assignee"
     due_date:
@@ -36,15 +36,15 @@ weekly_update:
     no_update_red_after_weeks: 2
 sheet:
   folder_id: "test-folder-id-fixture-only"
-  file_name_pattern: "{team_name} - Mission Execution Updates"
+  file_name_pattern: "{team_name} - Objective Execution Updates"
   tab_name_pattern: "Week {iso_week}"
   create_tab_if_missing: true
   mode: "replace_week_tab"
 email:
   create_draft_only: true
   to:
-    - "mission-report@example.com"
+    - "objective-report@example.com"
   cc:
     - "reviewer@example.com"
   bcc: []
-  subject_pattern: "Weekly Mission Update - {team_name} - Week {iso_week}"
+  subject_pattern: "Weekly Objective Update - {team_name} - Week {iso_week}"

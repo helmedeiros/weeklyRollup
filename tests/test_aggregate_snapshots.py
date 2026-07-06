@@ -13,9 +13,9 @@ def snapshot(team_id: str, name: str, business_unit: str, buckets: tuple[int, in
     total = sum(buckets)
     return {
         "team": {"id": team_id, "name": name, "business_unit": business_unit},
-        "week": {"iso_year": 2026, "iso_week": 27, "target_date": "2026-06-30", "month_label": "mission-june-2026"},
+        "week": {"iso_year": 2026, "iso_week": 27, "target_date": "2026-06-30", "month_label": "objective-june-2026"},
         "totals": {
-            "missions": total,
+            "objectives": total,
             "delivery_rate": round(done / total, 4) if total else 0.0,
             "done": done,
             "spillover_on_track": on_track,
@@ -23,7 +23,7 @@ def snapshot(team_id: str, name: str, business_unit: str, buckets: tuple[int, in
             "spillover_blocked": blocked,
             "missing": missing,
         },
-        "missions": [],
+        "objectives": [],
     }
 
 
@@ -36,7 +36,7 @@ class AggregateSnapshotsTest(unittest.TestCase):
         ])
         totals = aggregate["totals"]
         self.assertEqual(totals["teams"], 3)
-        self.assertEqual(totals["missions"], 13)
+        self.assertEqual(totals["objectives"], 13)
         self.assertEqual(totals["done"], 10)
         self.assertEqual(totals["spillover_at_risk"], 1)
         self.assertEqual(totals["spillover_blocked"], 1)

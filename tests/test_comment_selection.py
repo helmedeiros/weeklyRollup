@@ -8,13 +8,13 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from mission_rollup import STATUS_GREEN, find_latest_valid_dri_comment  # noqa: E402
+from objective_rollup import STATUS_GREEN, find_latest_valid_leader_engineer_comment  # noqa: E402
 
 
 TZ = ZoneInfo("Europe/Prague")
 WINDOW_START = datetime(2026, 6, 1, 0, 0, tzinfo=TZ)
 WINDOW_END = datetime(2026, 6, 5, 17, 0, tzinfo=TZ)
-DRI = {"accountId": "ada-account", "displayName": "Ada Lovelace"}
+LEADER_ENGINEER = {"accountId": "ada-account", "displayName": "Ada Lovelace"}
 
 
 def valid_body(status="Green"):
@@ -27,10 +27,10 @@ def valid_body(status="Green"):
 
 
 class CommentSelectionTest(unittest.TestCase):
-    def test_latest_valid_selected_not_latest_dri_comment(self):
+    def test_latest_valid_selected_not_latest_leader_engineer_comment(self):
         comments = json.loads((ROOT / "tests/fixtures/comments.json").read_text())
 
-        selection = find_latest_valid_dri_comment(comments, DRI, WINDOW_START, WINDOW_END)
+        selection = find_latest_valid_leader_engineer_comment(comments, LEADER_ENGINEER, WINDOW_START, WINDOW_END)
 
         self.assertFalse(selection.missing_update)
         self.assertEqual(selection.selected_comment["id"], "valid-1500")
@@ -42,17 +42,17 @@ class CommentSelectionTest(unittest.TestCase):
             {
                 "id": "typo-1600",
                 "created": "2026-06-04T16:00:00+02:00",
-                "author": DRI,
+                "author": LEADER_ENGINEER,
                 "body": "fixed typo above",
             }
         ]
 
-        selection = find_latest_valid_dri_comment(comments, DRI, WINDOW_START, WINDOW_END)
+        selection = find_latest_valid_leader_engineer_comment(comments, LEADER_ENGINEER, WINDOW_START, WINDOW_END)
 
         self.assertTrue(selection.missing_update)
         self.assertTrue(selection.malformed_update_seen)
 
-    def test_non_dri_update_does_not_count(self):
+    def test_non_leader_engineer_update_does_not_count(self):
         comments = [
             {
                 "id": "em-update",
@@ -62,12 +62,12 @@ class CommentSelectionTest(unittest.TestCase):
             }
         ]
 
-        selection = find_latest_valid_dri_comment(comments, DRI, WINDOW_START, WINDOW_END)
+        selection = find_latest_valid_leader_engineer_comment(comments, LEADER_ENGINEER, WINDOW_START, WINDOW_END)
 
         self.assertTrue(selection.missing_update)
-        self.assertIn("author is not DRI", selection.rejection_reasons[0])
+        self.assertIn("author is not Leader Engineer", selection.rejection_reasons[0])
 
-    def test_cover_author_accepted_when_dri_did_not_comment(self):
+    def test_cover_author_accepted_when_leader_engineer_did_not_comment(self):
         comments = [
             {
                 "id": "em-cover",
@@ -81,9 +81,9 @@ class CommentSelectionTest(unittest.TestCase):
             }
         ]
 
-        selection = find_latest_valid_dri_comment(
+        selection = find_latest_valid_leader_engineer_comment(
             comments,
-            DRI,
+            LEADER_ENGINEER,
             WINDOW_START,
             WINDOW_END,
             cover_emails=["cover.author@example.com"],
@@ -108,9 +108,9 @@ class CommentSelectionTest(unittest.TestCase):
             }
         ]
 
-        selection = find_latest_valid_dri_comment(
+        selection = find_latest_valid_leader_engineer_comment(
             comments,
-            DRI,
+            LEADER_ENGINEER,
             WINDOW_START,
             WINDOW_END,
             cover_emails=["cover.author@example.com"],
@@ -119,19 +119,19 @@ class CommentSelectionTest(unittest.TestCase):
         self.assertFalse(selection.missing_update)
         self.assertTrue(selection.cover_author)
 
-    def test_dri_comment_does_not_flag_cover_author(self):
+    def test_leader_engineer_comment_does_not_flag_cover_author(self):
         comments = [
             {
-                "id": "dri-comment",
+                "id": "leader_engineer-comment",
                 "created": "2026-06-04T10:00:00+02:00",
-                "author": DRI,
+                "author": LEADER_ENGINEER,
                 "body": valid_body(),
             }
         ]
 
-        selection = find_latest_valid_dri_comment(
+        selection = find_latest_valid_leader_engineer_comment(
             comments,
-            DRI,
+            LEADER_ENGINEER,
             WINDOW_START,
             WINDOW_END,
             cover_emails=["cover.author@example.com"],
@@ -145,12 +145,12 @@ class CommentSelectionTest(unittest.TestCase):
             {
                 "id": "late",
                 "created": "2026-06-05T18:00:00+02:00",
-                "author": DRI,
+                "author": LEADER_ENGINEER,
                 "body": valid_body(),
             }
         ]
 
-        selection = find_latest_valid_dri_comment(comments, DRI, WINDOW_START, WINDOW_END)
+        selection = find_latest_valid_leader_engineer_comment(comments, LEADER_ENGINEER, WINDOW_START, WINDOW_END)
 
         self.assertTrue(selection.missing_update)
         self.assertIn("outside weekly window", selection.rejection_reasons[0])
@@ -160,18 +160,18 @@ class CommentSelectionTest(unittest.TestCase):
             {
                 "id": "first",
                 "created": "2026-06-04T10:00:00+02:00",
-                "author": DRI,
+                "author": LEADER_ENGINEER,
                 "body": valid_body("Yellow"),
             },
             {
                 "id": "second",
                 "created": "2026-06-04T15:00:00+02:00",
-                "author": DRI,
+                "author": LEADER_ENGINEER,
                 "body": valid_body("Green"),
             },
         ]
 
-        selection = find_latest_valid_dri_comment(comments, DRI, WINDOW_START, WINDOW_END)
+        selection = find_latest_valid_leader_engineer_comment(comments, LEADER_ENGINEER, WINDOW_START, WINDOW_END)
 
         self.assertEqual(selection.selected_comment["id"], "second")
         self.assertEqual(selection.parsed_update.status, STATUS_GREEN)
@@ -185,9 +185,9 @@ class CommentSelectionTest(unittest.TestCase):
                 "body": valid_body(),
             }
         ]
-        dri = {"displayName": "Ada Lovelace"}
+        leader_engineer = {"displayName": "Ada Lovelace"}
 
-        selection = find_latest_valid_dri_comment(comments, dri, WINDOW_START, WINDOW_END)
+        selection = find_latest_valid_leader_engineer_comment(comments, leader_engineer, WINDOW_START, WINDOW_END)
 
         self.assertFalse(selection.missing_update)
         self.assertEqual(selection.selected_comment["id"], "display-name")

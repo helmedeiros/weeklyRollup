@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Run the weekly Engineer-Owned Mission rollup.
+"""Run the weekly Engineer-Owned Objective rollup.
 
 This is the orchestration layer for Codex invocation. It keeps the weekly run
 deterministic while allowing the external systems to stay behind adapters:
 
-- Jira adapter: find mission Epics and fetch comments.
+- Jira adapter: find objective Epics and fetch comments.
 - Sheet adapter: read previous weekly rows and prepare/write this week's tab.
 - Email adapter: prepare a connector-compatible draft request.
 - Core logic: parse comments, evaluate hygiene, build rows, render email.
@@ -31,7 +31,7 @@ import subprocess
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-from mission_rollup import (
+from objective_rollup import (
     Blocker,
     ConfigError,
     ParsedUpdate,
@@ -46,29 +46,29 @@ from mission_rollup import (
     blocker_items,
     comment_body_to_text,
     compute_week_window,
-    display_dri,
+    display_leader_engineer,
     due_date_overdue_days,
     evaluate_hygiene,
     extract_blockers,
     format_day_count,
-    find_latest_valid_dri_comment,
+    find_latest_valid_leader_engineer_comment,
     get_path,
     load_config,
-    mission_email_row,
-    mission_effective_due_date,
-    mission_to_sheet_row,
+    objective_email_row,
+    objective_effective_due_date,
+    objective_to_sheet_row,
     month_label,
     render_email_draft,
     sheet_file_name,
     sheet_values,
     stringify_percent,
-    summarize_missions,
+    summarize_objectives,
     validate_expected_team,
     week_tab_name,
 )
 
-MISSION_TYPE_CURRENT = "current"
-MISSION_TYPE_SPILLOVER = "spillover"
+OBJECTIVE_TYPE_CURRENT = "current"
+OBJECTIVE_TYPE_SPILLOVER = "spillover"
 RUN_HISTORY_DEFAULT_TAB_NAME = "_Run History"
 RUN_HISTORY_SCHEMA_VERSION = "1"
 RUN_HISTORY_COLUMNS = [
@@ -78,12 +78,12 @@ RUN_HISTORY_COLUMNS = [
     "Team name",
     "Target date",
     "ISO week",
-    "Mission key",
-    "Mission name",
-    "Mission URL",
-    "Mission label",
-    "Mission type",
-    "DRI",
+    "Objective key",
+    "Objective name",
+    "Objective URL",
+    "Objective label",
+    "Objective type",
+    "Leader Engineer",
     "Jira status",
     "Rollup status",
     "Is done",
@@ -137,18 +137,18 @@ class RollupAdapterError(RuntimeError):
 
 
 class JiraAdapter:
-    def search_mission_epics(self, config: dict[str, Any], label: str) -> list[dict[str, Any]]:
+    def search_objective_epics(self, config: dict[str, Any], label: str) -> list[dict[str, Any]]:
         raise NotImplementedError
 
-    def get_child_issues(self, mission: dict[str, Any], config: dict[str, Any]) -> list[dict[str, Any]]:
+    def get_child_issues(self, objective: dict[str, Any], config: dict[str, Any]) -> list[dict[str, Any]]:
         raise NotImplementedError
 
-    def get_issue_property(self, mission: dict[str, Any], property_key: str) -> dict[str, Any] | None:
+    def get_issue_property(self, objective: dict[str, Any], property_key: str) -> dict[str, Any] | None:
         raise NotImplementedError
 
     def get_comments(
         self,
-        mission: dict[str, Any],
+        objective: dict[str, Any],
         window_start: datetime,
         window_end: datetime,
     ) -> list[dict[str, Any]]:
@@ -171,36 +171,36 @@ class FixtureJiraAdapter(JiraAdapter):
     def from_data(cls, data: dict[str, Any]) -> "FixtureJiraAdapter":
         return cls(data=data)
 
-    def search_mission_epics(self, config: dict[str, Any], label: str) -> list[dict[str, Any]]:
-        missions = list(self.data.get("missions", []))
+    def search_objective_epics(self, config: dict[str, Any], label: str) -> list[dict[str, Any]]:
+        objectives = list(self.data.get("objectives", []))
         return [
-            normalize_fixture_mission(mission, config)
-            for mission in missions
-            if mission_matches_config(mission, config, label)
+            normalize_fixture_objective(objective, config)
+            for objective in objectives
+            if objective_matches_config(objective, config, label)
         ]
 
-    def get_child_issues(self, mission: dict[str, Any], config: dict[str, Any]) -> list[dict[str, Any]]:
+    def get_child_issues(self, objective: dict[str, Any], config: dict[str, Any]) -> list[dict[str, Any]]:
         del config
-        if mission.get("_children_error"):
-            raise RollupAdapterError(str(mission["_children_error"]))
-        return list(mission.get("children", []))
+        if objective.get("_children_error"):
+            raise RollupAdapterError(str(objective["_children_error"]))
+        return list(objective.get("children", []))
 
-    def get_issue_property(self, mission: dict[str, Any], property_key: str) -> dict[str, Any] | None:
-        property_errors = mission.get("_property_errors", {}) or {}
+    def get_issue_property(self, objective: dict[str, Any], property_key: str) -> dict[str, Any] | None:
+        property_errors = objective.get("_property_errors", {}) or {}
         if property_errors.get(property_key):
             raise RollupAdapterError(str(property_errors[property_key]))
-        return (mission.get("properties", {}) or {}).get(property_key)
+        return (objective.get("properties", {}) or {}).get(property_key)
 
     def get_comments(
         self,
-        mission: dict[str, Any],
+        objective: dict[str, Any],
         window_start: datetime,
         window_end: datetime,
     ) -> list[dict[str, Any]]:
         del window_start, window_end
-        if mission.get("_comments_error"):
-            raise RollupAdapterError(str(mission["_comments_error"]))
-        return list(mission.get("comments", []))
+        if objective.get("_comments_error"):
+            raise RollupAdapterError(str(objective["_comments_error"]))
+        return list(objective.get("comments", []))
 
 
 class JiraMcpAdapter(JiraAdapter):
@@ -216,8 +216,8 @@ class JiraMcpAdapter(JiraAdapter):
         if not self.client_script.exists():
             raise RollupAdapterError(f"Missing Jira MCP client helper: {self.client_script}")
 
-    def search_mission_epics(self, config: dict[str, Any], label: str) -> list[dict[str, Any]]:
-        jql = build_mission_jql(config, label)
+    def search_objective_epics(self, config: dict[str, Any], label: str) -> list[dict[str, Any]]:
+        jql = build_objective_jql(config, label)
         fields = sorted(jira_fields_to_request(config))
         issues: list[dict[str, Any]] = []
         next_page_token: str | None = None
@@ -238,9 +238,9 @@ class JiraMcpAdapter(JiraAdapter):
                 break
         return [normalize_jira_issue(issue, config) for issue in issues]
 
-    def get_child_issues(self, mission: dict[str, Any], config: dict[str, Any]) -> list[dict[str, Any]]:
+    def get_child_issues(self, objective: dict[str, Any], config: dict[str, Any]) -> list[dict[str, Any]]:
         del config
-        issue_key = str(mission["key"])
+        issue_key = str(objective["key"])
         children: list[dict[str, Any]] = []
         next_page_token: str | None = None
         while True:
@@ -260,11 +260,11 @@ class JiraMcpAdapter(JiraAdapter):
                 break
         return children
 
-    def get_issue_property(self, mission: dict[str, Any], property_key: str) -> dict[str, Any] | None:
+    def get_issue_property(self, objective: dict[str, Any], property_key: str) -> dict[str, Any] | None:
         payload = self._call(
             {
                 "operation": "issueProperty",
-                "issueKey": str(mission["key"]),
+                "issueKey": str(objective["key"]),
                 "propertyKey": property_key,
             }
         )
@@ -274,13 +274,13 @@ class JiraMcpAdapter(JiraAdapter):
 
     def get_comments(
         self,
-        mission: dict[str, Any],
+        objective: dict[str, Any],
         window_start: datetime,
         window_end: datetime,
     ) -> list[dict[str, Any]]:
         del window_start, window_end
-        base_url = str(mission["base_url"]).rstrip("/")
-        issue_key = str(mission["key"])
+        base_url = str(objective["base_url"]).rstrip("/")
+        issue_key = str(objective["key"])
         comments: list[dict[str, Any]] = []
         start_at = 0
         while True:
@@ -352,7 +352,7 @@ def collect_jira_snapshot(
     label = month_label(
         target_date.month,
         target_date.year,
-        str(get_path(config, "jira.mission_label_pattern")),
+        str(get_path(config, "jira.objective_label_pattern")),
     )
     snapshot: dict[str, Any] = {
         "schema_version": 1,
@@ -366,22 +366,22 @@ def collect_jira_snapshot(
             "end": window_end.isoformat(),
             "timezone": get_path(config, "team.timezone"),
         },
-        "missions": [],
+        "objectives": [],
         "errors": [],
     }
-    missions, current_mission_count, spillover_mission_count = collect_rollup_missions(
+    objectives, current_objective_count, spillover_objective_count = collect_rollup_objectives(
         config,
         target_date,
         jira_adapter,
         current_label=label,
         errors=snapshot["errors"],
     )
-    snapshot["current_mission_count"] = current_mission_count
-    snapshot["spillover_mission_count"] = spillover_mission_count
-    for mission in sorted(missions, key=lambda item: str(item.get("key", ""))):
-        snapshot["missions"].append(
-            collect_jira_snapshot_mission(
-                mission,
+    snapshot["current_objective_count"] = current_objective_count
+    snapshot["spillover_objective_count"] = spillover_objective_count
+    for objective in sorted(objectives, key=lambda item: str(item.get("key", ""))):
+        snapshot["objectives"].append(
+            collect_jira_snapshot_objective(
+                objective,
                 config,
                 jira_adapter,
                 window_start=window_start,
@@ -391,42 +391,42 @@ def collect_jira_snapshot(
     return snapshot
 
 
-def collect_jira_snapshot_mission(
-    mission: dict[str, Any],
+def collect_jira_snapshot_objective(
+    objective: dict[str, Any],
     config: dict[str, Any],
     jira_adapter: JiraAdapter,
     *,
     window_start: datetime,
     window_end: datetime,
 ) -> dict[str, Any]:
-    """Collect child issues, issue properties, and comments for one mission."""
+    """Collect child issues, issue properties, and comments for one objective."""
 
-    snapshot_mission = json_safe(mission)
-    snapshot_mission.setdefault("properties", {})
+    snapshot_objective = json_safe(objective)
+    snapshot_objective.setdefault("properties", {})
     try:
-        snapshot_mission["children"] = json_safe(jira_adapter.get_child_issues(mission, config))
+        snapshot_objective["children"] = json_safe(jira_adapter.get_child_issues(objective, config))
     except Exception as exc:  # noqa: BLE001 - preserve partial snapshots
-        snapshot_mission["children"] = []
-        snapshot_mission["_children_error"] = str(exc)
+        snapshot_objective["children"] = []
+        snapshot_objective["_children_error"] = str(exc)
 
     property_errors: dict[str, str] = {}
     for property_key in issue_property_keys_to_request(config):
         try:
-            property_payload = jira_adapter.get_issue_property(mission, property_key)
+            property_payload = jira_adapter.get_issue_property(objective, property_key)
         except Exception as exc:  # noqa: BLE001
             property_errors[property_key] = str(exc)
             continue
         if property_payload:
-            snapshot_mission["properties"][property_key] = json_safe(property_payload)
+            snapshot_objective["properties"][property_key] = json_safe(property_payload)
     if property_errors:
-        snapshot_mission["_property_errors"] = property_errors
+        snapshot_objective["_property_errors"] = property_errors
 
     try:
-        snapshot_mission["comments"] = json_safe(jira_adapter.get_comments(mission, window_start, window_end))
+        snapshot_objective["comments"] = json_safe(jira_adapter.get_comments(objective, window_start, window_end))
     except Exception as exc:  # noqa: BLE001
-        snapshot_mission["comments"] = []
-        snapshot_mission["_comments_error"] = str(exc)
-    return snapshot_mission
+        snapshot_objective["comments"] = []
+        snapshot_objective["_comments_error"] = str(exc)
+    return snapshot_objective
 
 
 def issue_property_keys_to_request(config: dict[str, Any]) -> set[str]:
@@ -442,18 +442,18 @@ def json_safe(value: Any) -> Any:
 
 
 def jira_snapshot_summary(snapshot: dict[str, Any]) -> dict[str, Any]:
-    mission_errors = 0
-    for mission in snapshot.get("missions", []) or []:
-        if mission.get("_children_error") or mission.get("_comments_error") or mission.get("_property_errors"):
-            mission_errors += 1
+    objective_errors = 0
+    for objective in snapshot.get("objectives", []) or []:
+        if objective.get("_children_error") or objective.get("_comments_error") or objective.get("_property_errors"):
+            objective_errors += 1
     return {
         "schema_version": snapshot.get("schema_version"),
         "source": snapshot.get("source"),
         "target_date": snapshot.get("target_date"),
         "month_label": snapshot.get("month_label"),
         "iso_week": snapshot.get("iso_week"),
-        "mission_count": len(snapshot.get("missions", []) or []),
-        "error_count": len(snapshot.get("errors", []) or []) + mission_errors,
+        "objective_count": len(snapshot.get("objectives", []) or []),
+        "error_count": len(snapshot.get("errors", []) or []) + objective_errors,
     }
 
 
@@ -767,7 +767,7 @@ class LiveGoogleSheetsAdapter(SheetAdapter):
         return resolved
 
     def read_history(self, config: dict[str, Any], current_tab_name: str) -> list[dict[str, Any]]:
-        """Return prior weekly tab rows so mission_rollup can compute due-date
+        """Return prior weekly tab rows so objective_rollup can compute due-date
         movement + missing-update streaks."""
         resolved = self._resolve_spreadsheet(config)
         sheets = self._call({"operation": "listSheets", "spreadsheetId": resolved["spreadsheetId"]}).get(
@@ -908,7 +908,7 @@ def run_rollup(
     label = month_label(
         target_date.month,
         target_date.year,
-        str(get_path(config, "jira.mission_label_pattern")),
+        str(get_path(config, "jira.objective_label_pattern")),
     )
     tab_name = week_tab_name(iso_week, str(get_path(config, "sheet.tab_name_pattern")))
     run_id = run_id_for_run(config, target_date, iso_week)
@@ -916,23 +916,23 @@ def run_rollup(
 
     errors: list[dict[str, str]] = []
     warnings: list[dict[str, str]] = []
-    missions, current_mission_count, spillover_mission_count = collect_rollup_missions(
+    objectives, current_objective_count, spillover_objective_count = collect_rollup_objectives(
         config,
         target_date,
         jira_adapter,
         current_label=label,
         errors=errors,
     )
-    if current_mission_count == 0 and not any(error.get("source") == "jira" for error in errors):
+    if current_objective_count == 0 and not any(error.get("source") == "jira" for error in errors):
         warnings.append(
             {
                 "severity": "yellow",
                 "source": "jira",
                 "message": (
-                    f"No epics found with mission label {label}; "
-                    f"expected label format is {get_path(config, 'jira.mission_label_pattern')}"
+                    f"No epics found with objective label {label}; "
+                    f"expected label format is {get_path(config, 'jira.objective_label_pattern')}"
                 ),
-                "mission_label": label,
+                "objective_label": label,
             }
         )
 
@@ -961,7 +961,7 @@ def run_rollup(
 
     sheet_rows: list[list[str]] = []
     email_rows: list[dict[str, Any]] = []
-    mission_summaries: list[dict[str, Any]] = []
+    objective_summaries: list[dict[str, Any]] = []
     hygiene_issues: list[dict[str, str]] = []
 
     parse_options = parse_update_options(get_path(config, "weekly_update.validation", {}))
@@ -970,87 +970,87 @@ def run_rollup(
         for addr in get_path(config, "weekly_update.cover_authors", []) or []
         if str(addr).strip()
     ]
-    for mission in sorted(missions, key=lambda item: str(item.get("key", ""))):
+    for objective in sorted(objectives, key=lambda item: str(item.get("key", ""))):
         try:
-            apply_issue_property_fields(mission, config, jira_adapter)
+            apply_issue_property_fields(objective, config, jira_adapter)
         except Exception as exc:  # noqa: BLE001
-            errors.append({"source": "jira_issue_property", "mission_key": mission.get("key", ""), "message": str(exc)})
+            errors.append({"source": "jira_issue_property", "objective_key": objective.get("key", ""), "message": str(exc)})
 
         try:
-            apply_derived_progress(mission, config, jira_adapter)
+            apply_derived_progress(objective, config, jira_adapter)
         except Exception as exc:  # noqa: BLE001
-            errors.append({"source": "jira_progress", "mission_key": mission.get("key", ""), "message": str(exc)})
+            errors.append({"source": "jira_progress", "objective_key": objective.get("key", ""), "message": str(exc)})
 
         try:
-            comments = mission.get("comments")
+            comments = objective.get("comments")
             if comments is None:
-                comments = jira_adapter.get_comments(mission, window_start, window_end)
+                comments = jira_adapter.get_comments(objective, window_start, window_end)
         except Exception as exc:  # noqa: BLE001
             comments = []
-            errors.append({"source": "jira_comments", "mission_key": mission.get("key", ""), "message": str(exc)})
+            errors.append({"source": "jira_comments", "objective_key": objective.get("key", ""), "message": str(exc)})
 
-        selection = find_latest_valid_dri_comment(
+        selection = find_latest_valid_leader_engineer_comment(
             comments,
-            mission.get("dri"),
+            objective.get("leader_engineer"),
             window_start,
             window_end,
             parse_options=parse_options,
             cover_emails=cover_emails,
         )
         parsed = selection.parsed_update
-        mission_key = str(mission.get("key", ""))
-        mission_done = mission_is_done(mission, config)
-        mission_not_started = mission_is_not_started(mission)
-        start_signal_seen = mission_start_signal_seen(
-            mission,
+        objective_key = str(objective.get("key", ""))
+        objective_done = objective_is_done(objective, config)
+        objective_not_started = objective_is_not_started(objective)
+        start_signal_seen = objective_start_signal_seen(
+            objective,
             parsed,
             malformed_update_seen=selection.malformed_update_seen,
         )
-        effective_due_date = mission_effective_due_date(mission)
-        days_overdue = 0 if mission_done else due_date_overdue_days(effective_due_date, target_date)
+        effective_due_date = objective_effective_due_date(objective)
+        days_overdue = 0 if objective_done else due_date_overdue_days(effective_due_date, target_date)
         not_started_without_signal = (
-            mission_not_started
-            and not mission_done
+            objective_not_started
+            and not objective_done
             and not start_signal_seen
             and days_overdue == 0
         )
-        missing_update = selection.missing_update and not mission_done and not not_started_without_signal
-        previous_due_date = history.previous_due_dates.get(mission_key)
-        original_due_date = original_due_date_for_mission(
+        missing_update = selection.missing_update and not objective_done and not not_started_without_signal
+        previous_due_date = history.previous_due_dates.get(objective_key)
+        original_due_date = original_due_date_for_objective(
             history,
-            mission_key=mission_key,
-            current_due_date=mission.get("due_date"),
+            objective_key=objective_key,
+            current_due_date=objective.get("due_date"),
         )
-        prior_missing_streak = history.missing_update_streaks.get(mission_key, 0)
+        prior_missing_streak = history.missing_update_streaks.get(objective_key, 0)
         stale_weeks = 0
         if missing_update:
             stale_weeks = (prior_missing_streak if history_available else 0) + 1
-        due_date_history_baseline = history.original_due_dates.get(mission_key) or previous_due_date
+        due_date_history_baseline = history.original_due_dates.get(objective_key) or previous_due_date
         due_date_status = due_date_change_status(
-            mission.get("due_date"),
+            objective.get("due_date"),
             due_date_history_baseline,
-            observed_before=mission_key in history.observed_mission_keys,
+            observed_before=objective_key in history.observed_objective_keys,
             history_available=history_available,
         )
         due_date_movement = due_date_movement_label(
-            mission.get("due_date"),
+            objective.get("due_date"),
             due_date_history_baseline,
-            observed_before=mission_key in history.observed_mission_keys,
+            observed_before=objective_key in history.observed_objective_keys,
             history_available=history_available,
-            target_date=None if mission_done else target_date,
+            target_date=None if objective_done else target_date,
         )
-        history_fields = mission_history_fields(
+        history_fields = objective_history_fields(
             history,
-            mission_key=mission_key,
+            objective_key=objective_key,
             target_date=target_date,
-            is_done=mission_done,
+            is_done=objective_done,
         )
         due_date_delta = due_date_delta_days(
             original_due_date,
-            str(mission.get("due_date", "") or ""),
+            str(objective.get("due_date", "") or ""),
         )
         stale_threshold = int(get_path(config, "weekly_update.validation.no_update_red_after_weeks", 2))
-        if mission_done:
+        if objective_done:
             effective_status = STATUS_DONE
         elif not_started_without_signal:
             effective_status = STATUS_NOT_STARTED
@@ -1062,7 +1062,7 @@ def run_rollup(
                 if effective_status != (parsed.status or STATUS_MISSING)
                 else parsed
             )
-        elif mission_done:
+        elif objective_done:
             display_parsed = ParsedUpdate(
                 status=STATUS_DONE,
                 done_this_week="Jira epic is Done.",
@@ -1083,7 +1083,7 @@ def run_rollup(
         else:
             display_parsed = None
         issues = evaluate_hygiene(
-            mission,
+            objective,
             config,
             parsed,
             missing_update=missing_update,
@@ -1092,8 +1092,8 @@ def run_rollup(
             stale_weeks=stale_weeks,
             history_available=history_available,
             target_date=target_date,
-            is_done=mission_done,
-            is_not_started=mission_not_started,
+            is_done=objective_done,
+            is_not_started=objective_not_started,
             start_signal_seen=start_signal_seen,
         )
         if selection.cover_author and selection.selected_comment is not None:
@@ -1104,19 +1104,19 @@ def run_rollup(
             )
             issues.append({
                 "severity": "info",
-                "message": f"Weekly update by cover author {cover_name} (DRI: {display_dri(mission.get('dri'))})",
+                "message": f"Weekly update by cover author {cover_name} (Leader Engineer: {display_leader_engineer(objective.get('leader_engineer'))})",
             })
         if parsed:
-            mission_label = str(mission.get("name") or mission.get("summary") or mission.get("key") or "")
-            dri_label = display_dri(mission.get("dri"))
+            objective_label = str(objective.get("name") or objective.get("summary") or objective.get("key") or "")
+            leader_engineer_label = display_leader_engineer(objective.get("leader_engineer"))
             raw_blockers: list = []
             if parsed.risks or parsed.blockers:
                 if parsed.risks:
                     raw_blockers.extend(
                         extract_blockers(
                             parsed.risks,
-                            mission=mission_label,
-                            dri=dri_label,
+                            objective=objective_label,
+                            leader_engineer=leader_engineer_label,
                             status=effective_status,
                             kind="risk",
                         )
@@ -1125,8 +1125,8 @@ def run_rollup(
                     raw_blockers.extend(
                         extract_blockers(
                             parsed.blockers,
-                            mission=mission_label,
-                            dri=dri_label,
+                            objective=objective_label,
+                            leader_engineer=leader_engineer_label,
                             status=effective_status,
                             kind="blocker",
                         )
@@ -1135,34 +1135,34 @@ def run_rollup(
                     raw_blockers.extend(
                         extract_blockers(
                             parsed.combined_risks_blockers,
-                            mission=mission_label,
-                            dri=dri_label,
+                            objective=objective_label,
+                            leader_engineer=leader_engineer_label,
                             status=effective_status,
                         )
                     )
             else:
                 raw_blockers = extract_blockers(
                     parsed.blockers_risks,
-                    mission=mission_label,
-                    dri=dri_label,
+                    objective=objective_label,
+                    leader_engineer=leader_engineer_label,
                     status=effective_status,
                 )
             blockers = apply_blocker_history(
                 raw_blockers,
                 history,
-                mission_key=mission_key,
+                objective_key=objective_key,
                 current_week=iso_week,
             )
         else:
             blockers = []
         sheet_rows.append(
-            mission_to_sheet_row(
-                mission,
+            objective_to_sheet_row(
+                objective,
                 config,
                 display_parsed,
                 issues,
                 blockers,
-                dri_comment=(
+                leader_engineer_comment=(
                     comment_body_to_text(selection.selected_comment.get("body"))
                     if selection.selected_comment
                     else ""
@@ -1172,8 +1172,8 @@ def run_rollup(
                 due_date_movement=due_date_movement,
             )
         )
-        email_row = mission_email_row(
-            mission,
+        email_row = objective_email_row(
+            objective,
             display_parsed,
             issues,
             blockers,
@@ -1186,24 +1186,24 @@ def run_rollup(
         email_rows.append(email_row)
         hygiene_issues.extend(
             {
-                "mission_key": str(mission.get("key", "")),
-                "mission": str(mission.get("name") or mission.get("summary") or mission.get("key") or ""),
+                "objective_key": str(objective.get("key", "")),
+                "objective": str(objective.get("name") or objective.get("summary") or objective.get("key") or ""),
                 **issue,
             }
             for issue in issues
         )
-        mission_summaries.append(
+        objective_summaries.append(
             {
-                "key": mission.get("key", ""),
-                "mission": mission.get("name") or mission.get("summary") or "",
-                "mission_url": str(mission.get("url", "")),
-                "mission_type": mission.get("mission_type", MISSION_TYPE_CURRENT),
-                "original_month_label": mission.get("original_month_label", label),
-                "dri": display_dri(mission.get("dri")),
-                "jira_status": str(mission.get("status", "") or ""),
+                "key": objective.get("key", ""),
+                "objective": objective.get("name") or objective.get("summary") or "",
+                "objective_url": str(objective.get("url", "")),
+                "objective_type": objective.get("objective_type", OBJECTIVE_TYPE_CURRENT),
+                "original_month_label": objective.get("original_month_label", label),
+                "leader_engineer": display_leader_engineer(objective.get("leader_engineer")),
+                "jira_status": str(objective.get("status", "") or ""),
                 "status": effective_status,
-                "is_done": mission_done,
-                "current_due_date": str(mission.get("due_date", "") or ""),
+                "is_done": objective_done,
+                "current_due_date": str(objective.get("due_date", "") or ""),
                 "effective_due_date": effective_due_date,
                 "previous_due_date": previous_due_date or "",
                 "original_due_date": original_due_date or "",
@@ -1241,7 +1241,7 @@ def run_rollup(
 
     current_run_history_values = build_run_history_values(
         config,
-        mission_summaries,
+        objective_summaries,
         run_id=run_id,
         target_date=target_date,
         iso_week=iso_week,
@@ -1303,30 +1303,30 @@ def run_rollup(
             )
             errors.append({"source": "email_create", "message": str(exc)})
 
-    counts = summarize_missions(email_rows)
+    counts = summarize_objectives(email_rows)
     stale_update_count = sum(
         1
-        for mission in mission_summaries
-        if any(str(issue.get("message", "")).startswith("No update in ") for issue in mission["hygiene"])
+        for objective in objective_summaries
+        if any(str(issue.get("message", "")).startswith("No update in ") for issue in objective["hygiene"])
     )
-    metrics = compute_run_metrics(mission_summaries)
+    metrics = compute_run_metrics(objective_summaries)
     due_date_changed_count = sum(
-        1 for mission in mission_summaries if mission["due_date_change_status"] == "changed"
+        1 for objective in objective_summaries if objective["due_date_change_status"] == "changed"
     )
     due_date_moved_later_count = metrics["due_date_moved_later_count"]
     due_date_moved_earlier_count = metrics["due_date_moved_earlier_count"]
-    overdue_mission_count = metrics["overdue_mission_count"]
+    overdue_objective_count = metrics["overdue_objective_count"]
     hygiene_issue_counts = count_hygiene_issues_by_severity(hygiene_issues)
     preview_status = "rendered" if draft_email.get("html_body") or draft_email.get("text_body") else "missing"
     run_summary = {
-        "current_month_mission_count": current_mission_count,
-        "spillover_mission_count": spillover_mission_count,
-        "mission_count": metrics["mission_count"],
-        "completed_mission_count": metrics["completed_mission_count"],
-        "active_mission_count": metrics["active_mission_count"],
+        "current_month_objective_count": current_objective_count,
+        "spillover_objective_count": spillover_objective_count,
+        "objective_count": metrics["objective_count"],
+        "completed_objective_count": metrics["completed_objective_count"],
+        "active_objective_count": metrics["active_objective_count"],
         "completion_rate": metrics["completion_rate"],
         "average_cycle_time_days": metrics["average_cycle_time_days"],
-        "active_mission_average_age_days": metrics["active_mission_average_age_days"],
+        "active_objective_average_age_days": metrics["active_objective_average_age_days"],
         "status_counts": {
             "green": counts["green"],
             "yellow": counts["yellow"],
@@ -1340,7 +1340,7 @@ def run_rollup(
         "due_date_changed_count": due_date_changed_count,
         "due_date_moved_later_count": due_date_moved_later_count,
         "due_date_moved_earlier_count": due_date_moved_earlier_count,
-        "overdue_mission_count": overdue_mission_count,
+        "overdue_objective_count": overdue_objective_count,
         "recurring_missing_update_count": metrics["recurring_missing_update_count"],
         "hygiene_issue_counts": hygiene_issue_counts,
         "sheet_write_status": sheet_write.status,
@@ -1359,9 +1359,9 @@ def run_rollup(
             "end": window_end.isoformat(),
             "timezone": get_path(config, "team.timezone"),
         },
-        "mission_count": counts["total"],
-        "current_mission_count": current_mission_count,
-        "spillover_mission_count": spillover_mission_count,
+        "objective_count": counts["total"],
+        "current_objective_count": current_objective_count,
+        "spillover_objective_count": spillover_objective_count,
         "status_counts": {
             "green": counts["green"],
             "yellow": counts["yellow"],
@@ -1375,7 +1375,7 @@ def run_rollup(
         "due_date_changed_count": due_date_changed_count,
         "due_date_moved_later_count": due_date_moved_later_count,
         "due_date_moved_earlier_count": due_date_moved_earlier_count,
-        "overdue_mission_count": overdue_mission_count,
+        "overdue_objective_count": overdue_objective_count,
         "blocker_count": counts["blockers"],
         "hygiene_issue_counts": hygiene_issue_counts,
         "metrics": metrics,
@@ -1397,7 +1397,7 @@ def run_rollup(
         "sheet_values": values,
         "draft_email": draft_email,
         "email_create": asdict(email_create),
-        "missions": mission_summaries,
+        "objectives": objective_summaries,
         "errors": errors,
     }
     if jira_snapshot:
@@ -1407,7 +1407,7 @@ def run_rollup(
     return result
 
 
-def collect_rollup_missions(
+def collect_rollup_objectives(
     config: dict[str, Any],
     target_date: date,
     jira_adapter: JiraAdapter,
@@ -1416,61 +1416,61 @@ def collect_rollup_missions(
     errors: list[dict[str, str]],
 ) -> tuple[list[dict[str, Any]], int, int]:
     try:
-        current_missions = jira_adapter.search_mission_epics(config, current_label)
+        current_objectives = jira_adapter.search_objective_epics(config, current_label)
     except Exception as exc:  # noqa: BLE001 - keep draft generation resilient
-        current_missions = []
+        current_objectives = []
         errors.append({"source": "jira", "message": str(exc)})
 
-    current_missions = [
-        mission_with_report_type(mission, MISSION_TYPE_CURRENT, current_label)
-        for mission in current_missions
+    current_objectives = [
+        objective_with_report_type(objective, OBJECTIVE_TYPE_CURRENT, current_label)
+        for objective in current_objectives
     ]
-    current_keys = {str(mission.get("key", "")) for mission in current_missions}
+    current_keys = {str(objective.get("key", "")) for objective in current_objectives}
 
-    spillover_missions: list[dict[str, Any]] = []
-    continuing_missions: list[dict[str, Any]] = []
+    spillover_objectives: list[dict[str, Any]] = []
+    continuing_objectives: list[dict[str, Any]] = []
     if previous_month_spillover_enabled(config):
         previous_year, previous_month = previous_month_for_date(target_date)
         previous_label = month_label(
             previous_month,
             previous_year,
-            str(get_path(config, "jira.mission_label_pattern")),
+            str(get_path(config, "jira.objective_label_pattern")),
         )
         try:
-            previous_missions = jira_adapter.search_mission_epics(config, previous_label)
+            previous_objectives = jira_adapter.search_objective_epics(config, previous_label)
         except Exception as exc:  # noqa: BLE001
-            previous_missions = []
+            previous_objectives = []
             errors.append({"source": "jira_spillover", "message": str(exc)})
-        for mission in previous_missions:
-            key = str(mission.get("key", ""))
+        for objective in previous_objectives:
+            key = str(objective.get("key", ""))
             if key in current_keys:
                 continue
-            if spillover_requires_open_status(config) and mission_is_done(mission, config):
+            if spillover_requires_open_status(config) and objective_is_done(objective, config):
                 continue
-            if mission_has_reached_spillover_due_point(
-                mission,
+            if objective_has_reached_spillover_due_point(
+                objective,
                 target_date,
                 label_year=previous_year,
                 label_month=previous_month,
             ):
-                spillover_missions.append(
-                    mission_with_report_type(mission, MISSION_TYPE_SPILLOVER, previous_label)
+                spillover_objectives.append(
+                    objective_with_report_type(objective, OBJECTIVE_TYPE_SPILLOVER, previous_label)
                 )
             else:
-                continuing_missions.append(
-                    mission_with_report_type(mission, MISSION_TYPE_CURRENT, previous_label)
+                continuing_objectives.append(
+                    objective_with_report_type(objective, OBJECTIVE_TYPE_CURRENT, previous_label)
                 )
 
     return (
-        current_missions + continuing_missions + spillover_missions,
-        len(current_missions) + len(continuing_missions),
-        len(spillover_missions),
+        current_objectives + continuing_objectives + spillover_objectives,
+        len(current_objectives) + len(continuing_objectives),
+        len(spillover_objectives),
     )
 
 
-def mission_with_report_type(mission: dict[str, Any], mission_type: str, original_month_label: str) -> dict[str, Any]:
-    typed = dict(mission)
-    typed["mission_type"] = mission_type
+def objective_with_report_type(objective: dict[str, Any], objective_type: str, original_month_label: str) -> dict[str, Any]:
+    typed = dict(objective)
+    typed["objective_type"] = objective_type
     typed["original_month_label"] = original_month_label
     return typed
 
@@ -1503,14 +1503,14 @@ def previous_month_label_for_date(target_date: date, pattern: str) -> str:
     return month_label(month, year, pattern)
 
 
-def mission_has_reached_spillover_due_point(
-    mission: dict[str, Any],
+def objective_has_reached_spillover_due_point(
+    objective: dict[str, Any],
     target_date: date,
     *,
     label_year: int,
     label_month: int,
 ) -> bool:
-    due_point = parse_due_date(mission.get("due_date")) or end_of_month(label_year, label_month)
+    due_point = parse_due_date(objective.get("due_date")) or end_of_month(label_year, label_month)
     return target_date > due_point
 
 
@@ -1520,16 +1520,16 @@ def end_of_month(year: int, month: int) -> date:
     return date(year, month + 1, 1) - timedelta(days=1)
 
 
-def mission_is_done(mission: dict[str, Any], config: dict[str, Any]) -> bool:
+def objective_is_done(objective: dict[str, Any], config: dict[str, Any]) -> bool:
     done_statuses = {
         normalize_status_name(status)
         for status in (get_path(config, "jira.done_statuses", []) or [])
     }
-    return status_is_done(mission.get("status"), done_statuses)
+    return status_is_done(objective.get("status"), done_statuses)
 
 
-def mission_is_not_started(mission: dict[str, Any]) -> bool:
-    status = mission.get("status")
+def objective_is_not_started(objective: dict[str, Any]) -> bool:
+    status = objective.get("status")
     if isinstance(status, dict):
         status_name = normalize_status_name(status.get("name"))
         category_key = normalize_status_name(get_path(status, "statusCategory.key"))
@@ -1538,18 +1538,18 @@ def mission_is_not_started(mission: dict[str, Any]) -> bool:
     return normalize_status_name(status) in {"to do", "todo"}
 
 
-def mission_start_signal_seen(
-    mission: dict[str, Any],
+def objective_start_signal_seen(
+    objective: dict[str, Any],
     parsed_update: ParsedUpdate | None,
     *,
     malformed_update_seen: bool = False,
 ) -> bool:
     if parsed_update is not None or malformed_update_seen:
         return True
-    return mission_progress_started(mission.get("progress")) or child_issue_start_signal_seen(mission)
+    return objective_progress_started(objective.get("progress")) or child_issue_start_signal_seen(objective)
 
 
-def mission_progress_started(progress: Any) -> bool:
+def objective_progress_started(progress: Any) -> bool:
     text = stringify_percent(progress).strip()
     if not text:
         return False
@@ -1621,34 +1621,34 @@ def count_hygiene_issues_by_severity(issues: list[dict[str, str]]) -> dict[str, 
     return counts
 
 
-def compute_run_metrics(mission_summaries: list[dict[str, Any]]) -> dict[str, Any]:
-    mission_count = len(mission_summaries)
-    completed = [mission for mission in mission_summaries if bool(mission.get("is_done"))]
-    active = [mission for mission in mission_summaries if not bool(mission.get("is_done"))]
+def compute_run_metrics(objective_summaries: list[dict[str, Any]]) -> dict[str, Any]:
+    objective_count = len(objective_summaries)
+    completed = [objective for objective in objective_summaries if bool(objective.get("is_done"))]
+    active = [objective for objective in objective_summaries if not bool(objective.get("is_done"))]
     cycle_time_values = [
         value
-        for value in (metric_int(mission.get("cycle_time_days")) for mission in completed)
+        for value in (metric_int(objective.get("cycle_time_days")) for objective in completed)
         if value is not None
     ]
     active_age_values = [
         value
-        for value in (metric_int(mission.get("active_age_days")) for mission in active)
+        for value in (metric_int(objective.get("active_age_days")) for objective in active)
         if value is not None
     ]
     due_date_deltas = [
         value
-        for value in (metric_int(mission.get("due_date_delta_days")) for mission in mission_summaries)
+        for value in (metric_int(objective.get("due_date_delta_days")) for objective in objective_summaries)
         if value is not None
     ]
     return {
-        "mission_count": mission_count,
-        "completed_mission_count": len(completed),
-        "active_mission_count": len(active),
-        "completion_rate": round(len(completed) / mission_count, 3) if mission_count else 0.0,
+        "objective_count": objective_count,
+        "completed_objective_count": len(completed),
+        "active_objective_count": len(active),
+        "completion_rate": round(len(completed) / objective_count, 3) if objective_count else 0.0,
         "average_cycle_time_days": average_metric(cycle_time_values),
-        "active_mission_average_age_days": average_metric(active_age_values),
-        "overdue_mission_count": count_overdue_active_missions(active),
-        "recurring_missing_update_count": sum(1 for mission in mission_summaries if mission.get("recurring_missing_update")),
+        "active_objective_average_age_days": average_metric(active_age_values),
+        "overdue_objective_count": count_overdue_active_objectives(active),
+        "recurring_missing_update_count": sum(1 for objective in objective_summaries if objective.get("recurring_missing_update")),
         "due_date_moved_later_count": sum(1 for delta in due_date_deltas if delta > 0),
         "due_date_moved_earlier_count": sum(1 for delta in due_date_deltas if delta < 0),
     }
@@ -1664,10 +1664,10 @@ def metric_int(value: Any) -> int | None:
         return None
 
 
-def count_overdue_active_missions(missions: list[dict[str, Any]]) -> int:
+def count_overdue_active_objectives(objectives: list[dict[str, Any]]) -> int:
     count = 0
-    for mission in missions:
-        overdue_days = metric_int(mission.get("due_date_overdue_days"))
+    for objective in objectives:
+        overdue_days = metric_int(objective.get("due_date_overdue_days"))
         if overdue_days is not None and overdue_days > 0:
             count += 1
     return count
@@ -1776,7 +1776,7 @@ def run_history_has_rows(values: list[list[Any]]) -> bool:
 
 def build_run_history_values(
     config: dict[str, Any],
-    mission_summaries: list[dict[str, Any]],
+    objective_summaries: list[dict[str, Any]],
     *,
     run_id: str,
     target_date: date,
@@ -1787,26 +1787,26 @@ def build_run_history_values(
         *[
             build_run_history_row(
                 config,
-                mission,
+                objective,
                 run_id=run_id,
                 target_date=target_date,
                 iso_week=iso_week,
             )
-            for mission in mission_summaries
+            for objective in objective_summaries
         ],
     ]
 
 
 def build_run_history_row(
     config: dict[str, Any],
-    mission: dict[str, Any],
+    objective: dict[str, Any],
     *,
     run_id: str,
     target_date: date,
     iso_week: int,
 ) -> list[str]:
-    hygiene_messages = "; ".join(str(issue.get("message", "")) for issue in mission.get("hygiene", []))
-    blocker_text = "\n".join(str(blocker.get("text", "")) for blocker in mission.get("blockers", []))
+    hygiene_messages = "; ".join(str(issue.get("message", "")) for issue in objective.get("hygiene", []))
+    blocker_text = "\n".join(str(blocker.get("text", "")) for blocker in objective.get("blockers", []))
     return [
         RUN_HISTORY_SCHEMA_VERSION,
         run_id,
@@ -1814,30 +1814,30 @@ def build_run_history_row(
         str(get_path(config, "team.name", "")),
         target_date.isoformat(),
         str(iso_week),
-        str(mission.get("key", "")),
-        str(mission.get("mission", "")),
-        str(mission.get("mission_url", "")),
-        str(mission.get("original_month_label", "")),
-        str(mission.get("mission_type", "")),
-        str(mission.get("dri", "")),
-        str(mission.get("jira_status", "")),
-        str(mission.get("status", "")),
-        "yes" if mission.get("is_done") else "no",
-        str(mission.get("original_due_date", "")),
-        str(mission.get("current_due_date", "")),
-        str(mission.get("effective_due_date", "")),
-        str(mission.get("due_date_movement", "")),
-        str(mission.get("due_date_delta_days", "")),
-        str(mission.get("due_date_overdue_days", "")),
-        "yes" if mission.get("missing_update") else "no",
-        str(mission.get("missing_update_weeks", "")),
-        str(mission.get("latest_valid_comment_timestamp", "")),
+        str(objective.get("key", "")),
+        str(objective.get("objective", "")),
+        str(objective.get("objective_url", "")),
+        str(objective.get("original_month_label", "")),
+        str(objective.get("objective_type", "")),
+        str(objective.get("leader_engineer", "")),
+        str(objective.get("jira_status", "")),
+        str(objective.get("status", "")),
+        "yes" if objective.get("is_done") else "no",
+        str(objective.get("original_due_date", "")),
+        str(objective.get("current_due_date", "")),
+        str(objective.get("effective_due_date", "")),
+        str(objective.get("due_date_movement", "")),
+        str(objective.get("due_date_delta_days", "")),
+        str(objective.get("due_date_overdue_days", "")),
+        "yes" if objective.get("missing_update") else "no",
+        str(objective.get("missing_update_weeks", "")),
+        str(objective.get("latest_valid_comment_timestamp", "")),
         blocker_text,
-        str(mission.get("hygiene_severity", "")),
+        str(objective.get("hygiene_severity", "")),
         hygiene_messages,
-        str(mission.get("first_observed_date", "")),
-        str(mission.get("done_date", "")),
-        str(mission.get("cycle_time_days", "")),
+        str(objective.get("first_observed_date", "")),
+        str(objective.get("done_date", "")),
+        str(objective.get("cycle_time_days", "")),
     ]
 
 
@@ -1877,7 +1877,7 @@ def due_date_movement_delta(movement: Any) -> int:
 class SheetHistory:
     previous_due_dates: dict[str, str]
     original_due_dates: dict[str, str]
-    observed_mission_keys: set[str]
+    observed_objective_keys: set[str]
     missing_update_streaks: dict[str, int]
     blocker_first_seen_weeks: dict[str, int]
     first_observed_dates: dict[str, str]
@@ -1888,7 +1888,7 @@ def empty_sheet_history() -> SheetHistory:
     return SheetHistory(
         previous_due_dates={},
         original_due_dates={},
-        observed_mission_keys=set(),
+        observed_objective_keys=set(),
         missing_update_streaks={},
         blocker_first_seen_weeks={},
         first_observed_dates={},
@@ -1908,7 +1908,7 @@ def parse_sheet_history(history_tabs: list[dict[str, Any]], *, current_week: int
         tab_week = parse_week_number(str(tab.get("name", "")))
         for raw_row in values[1:]:
             row = row_to_dict(headers, raw_row)
-            key = row.get("Mission key", "")
+            key = row.get("Objective key", "")
             if not key:
                 continue
             week = parse_int(row.get("Week")) or tab_week
@@ -1919,11 +1919,11 @@ def parse_sheet_history(history_tabs: list[dict[str, Any]], *, current_week: int
 
     previous_due_dates: dict[str, str] = {}
     original_due_dates: dict[str, str] = {}
-    observed_mission_keys: set[str] = set()
+    observed_objective_keys: set[str] = set()
     missing_update_streaks: dict[str, int] = {}
     blocker_first_seen_weeks: dict[str, int] = {}
     for key, rows in rows_by_key.items():
-        observed_mission_keys.add(key)
+        observed_objective_keys.add(key)
         rows.sort(key=lambda row: int(row["_week"]), reverse=True)
         previous_due_dates[key] = next(
             (
@@ -1953,7 +1953,7 @@ def parse_sheet_history(history_tabs: list[dict[str, Any]], *, current_week: int
     return SheetHistory(
         previous_due_dates={key: value for key, value in previous_due_dates.items() if value},
         original_due_dates={key: value for key, value in original_due_dates.items() if value},
-        observed_mission_keys=observed_mission_keys,
+        observed_objective_keys=observed_objective_keys,
         missing_update_streaks=missing_update_streaks,
         blocker_first_seen_weeks=blocker_first_seen_weeks,
         first_observed_dates={},
@@ -1975,7 +1975,7 @@ def parse_run_history(
     rows_by_key: dict[str, list[dict[str, str]]] = {}
     for raw_row in values[1:]:
         row = row_to_dict(headers, raw_row)
-        key = first_non_empty(row, "Mission key", "mission_key")
+        key = first_non_empty(row, "Objective key", "objective_key")
         if not key:
             continue
         if first_non_empty(row, "Run ID", "run_id") == current_run_id:
@@ -1989,14 +1989,14 @@ def parse_run_history(
 
     previous_due_dates: dict[str, str] = {}
     original_due_dates: dict[str, str] = {}
-    observed_mission_keys: set[str] = set()
+    observed_objective_keys: set[str] = set()
     missing_update_streaks: dict[str, int] = {}
     blocker_first_seen_weeks: dict[str, int] = {}
     first_observed_dates: dict[str, str] = {}
     done_dates: dict[str, str] = {}
 
     for key, rows in rows_by_key.items():
-        observed_mission_keys.add(key)
+        observed_objective_keys.add(key)
         rows.sort(key=history_row_sort_key, reverse=True)
         previous_due_dates[key] = next(
             (
@@ -2028,7 +2028,7 @@ def parse_run_history(
     return SheetHistory(
         previous_due_dates={key: value for key, value in previous_due_dates.items() if value},
         original_due_dates={key: value for key, value in original_due_dates.items() if value},
-        observed_mission_keys=observed_mission_keys,
+        observed_objective_keys=observed_objective_keys,
         missing_update_streaks=missing_update_streaks,
         blocker_first_seen_weeks=blocker_first_seen_weeks,
         first_observed_dates={key: value for key, value in first_observed_dates.items() if value},
@@ -2106,13 +2106,13 @@ def original_due_date_from_movement(value: Any) -> str:
     return match.group(1) if match else ""
 
 
-def original_due_date_for_mission(
+def original_due_date_for_objective(
     history: SheetHistory,
     *,
-    mission_key: str,
+    objective_key: str,
     current_due_date: Any,
 ) -> str:
-    original = history.original_due_dates.get(mission_key, "")
+    original = history.original_due_dates.get(objective_key, "")
     if original:
         return original
     current = str(current_due_date or "").strip()
@@ -2129,15 +2129,15 @@ def first_non_empty(row: dict[str, str], *keys: str) -> str:
     return ""
 
 
-def mission_history_fields(
+def objective_history_fields(
     history: SheetHistory,
     *,
-    mission_key: str,
+    objective_key: str,
     target_date: date,
     is_done: bool,
 ) -> dict[str, Any]:
-    first_observed_date = history.first_observed_dates.get(mission_key) or target_date.isoformat()
-    done_date = history.done_dates.get(mission_key) or (target_date.isoformat() if is_done else "")
+    first_observed_date = history.first_observed_dates.get(objective_key) or target_date.isoformat()
+    done_date = history.done_dates.get(objective_key) or (target_date.isoformat() if is_done else "")
     cycle_time_days = days_between(first_observed_date, done_date) if done_date else ""
     active_age_days = "" if done_date else days_between(first_observed_date, target_date.isoformat())
     return {
@@ -2167,13 +2167,13 @@ def apply_blocker_history(
     blockers: list[Blocker],
     history: SheetHistory,
     *,
-    mission_key: str,
+    objective_key: str,
     current_week: int,
 ) -> list[Blocker]:
     resolved: list[Blocker] = []
     for blocker in blockers:
         fingerprint = blocker_fingerprint(blocker.text)
-        first_seen_week = history.blocker_first_seen_weeks.get(blocker_history_key(mission_key, fingerprint))
+        first_seen_week = history.blocker_first_seen_weeks.get(blocker_history_key(objective_key, fingerprint))
         if first_seen_week is None:
             first_seen_week = current_week
         days_open = blocker_days_open_label(current_week, first_seen_week)
@@ -2192,8 +2192,8 @@ def blocker_days_open_label(current_week: int, first_seen_week: int) -> str:
     return "new risk" if days_open == 0 else str(days_open)
 
 
-def blocker_history_key(mission_key: str, fingerprint: str) -> str:
-    return f"{mission_key}\0{fingerprint}"
+def blocker_history_key(objective_key: str, fingerprint: str) -> str:
+    return f"{objective_key}\0{fingerprint}"
 
 
 def parse_update_options(validation_config: dict[str, Any]) -> dict[str, Any]:
@@ -2301,36 +2301,36 @@ def parse_due_date(value: Any) -> date | None:
         return None
 
 
-def mission_matches_config(mission: dict[str, Any], config: dict[str, Any], label: str) -> bool:
-    labels = mission.get("labels", []) or []
+def objective_matches_config(objective: dict[str, Any], config: dict[str, Any], label: str) -> bool:
+    labels = objective.get("labels", []) or []
     if label not in labels:
         return False
-    issue_type = mission.get("issue_type") or mission.get("issuetype") or get_path(mission, "fields.issuetype.name")
+    issue_type = objective.get("issue_type") or objective.get("issuetype") or get_path(objective, "fields.issuetype.name")
     expected_type = get_path(config, "jira.epic_issue_type")
     if issue_type and expected_type and str(issue_type).lower() != str(expected_type).lower():
         return False
-    project_key = mission.get("project_key") or get_path(mission, "fields.project.key")
+    project_key = objective.get("project_key") or get_path(objective, "fields.project.key")
     expected_project = get_path(config, "jira.project_key")
     if expected_project and project_key and str(project_key) != str(expected_project):
         return False
-    board_id = str(mission.get("board_id", ""))
+    board_id = str(objective.get("board_id", ""))
     expected_board = str(get_path(config, "jira.board_id", ""))
     if expected_board and board_id and board_id != expected_board:
         return False
     return True
 
 
-def normalize_fixture_mission(mission: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
+def normalize_fixture_objective(objective: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
     base_url = str(get_path(config, "jira.base_url", "")).rstrip("/")
-    key = str(mission.get("key", ""))
-    normalized = dict(mission)
-    normalized.setdefault("name", mission.get("summary", ""))
+    key = str(objective.get("key", ""))
+    normalized = dict(objective)
+    normalized.setdefault("name", objective.get("summary", ""))
     normalized.setdefault("url", f"{base_url}/browse/{key}" if base_url and key else "")
     normalized.setdefault("base_url", base_url)
     return normalized
 
 
-def build_mission_jql(config: dict[str, Any], label: str) -> str:
+def build_objective_jql(config: dict[str, Any], label: str) -> str:
     clauses = [
         f'issuetype = "{get_path(config, "jira.epic_issue_type", "Epic")}"',
         f'labels = "{label}"',
@@ -2361,7 +2361,7 @@ def child_issue_fields_to_request() -> set[str]:
 
 
 def apply_derived_progress(
-    mission: dict[str, Any],
+    objective: dict[str, Any],
     config: dict[str, Any],
     jira_adapter: JiraAdapter,
 ) -> None:
@@ -2371,14 +2371,14 @@ def apply_derived_progress(
     source = progress_config.get("source")
     if source != "child_issue_progress":
         return
-    mission["progress"] = child_issue_progress(
-        jira_adapter.get_child_issues(mission, config),
+    objective["progress"] = child_issue_progress(
+        jira_adapter.get_child_issues(objective, config),
         config,
     )
 
 
 def apply_issue_property_fields(
-    mission: dict[str, Any],
+    objective: dict[str, Any],
     config: dict[str, Any],
     jira_adapter: JiraAdapter,
 ) -> None:
@@ -2388,11 +2388,11 @@ def apply_issue_property_fields(
     property_key = str(linked_okr_config.get("property_key") or "")
     if not property_key:
         return
-    property_payload = jira_adapter.get_issue_property(mission, property_key)
+    property_payload = jira_adapter.get_issue_property(objective, property_key)
     if not property_payload:
-        mission["linked_okr"] = ""
+        objective["linked_okr"] = ""
         return
-    mission["linked_okr"] = stringify_field_value(
+    objective["linked_okr"] = stringify_field_value(
         get_path(property_payload, str(linked_okr_config.get("path") or "value"))
     )
 
@@ -2455,23 +2455,23 @@ def status_category_values(status: Any) -> list[Any]:
     return values
 
 
-def mission_status_categories(mission_or_status: Any) -> set[str]:
-    """Normalised set of Jira status categories for a mission or status payload."""
+def objective_status_categories(objective_or_status: Any) -> set[str]:
+    """Normalised set of Jira status categories for a objective or status payload."""
     categories: set[str] = set()
-    if isinstance(mission_or_status, dict):
-        explicit = mission_or_status.get("status_category")
+    if isinstance(objective_or_status, dict):
+        explicit = objective_or_status.get("status_category")
         if explicit:
             categories.add(normalize_status_name(explicit))
-        status = mission_or_status.get("status", mission_or_status)
+        status = objective_or_status.get("status", objective_or_status)
     else:
-        status = mission_or_status
+        status = objective_or_status
     categories.update(normalize_status_name(value) for value in status_category_values(status))
     return categories
 
 
-def child_issue_start_signal_seen(mission: dict[str, Any]) -> bool:
+def child_issue_start_signal_seen(objective: dict[str, Any]) -> bool:
     """A non-subtask child in an in-progress/done category is a start signal."""
-    for child in mission.get("children", []) or []:
+    for child in objective.get("children", []) or []:
         if not isinstance(child, dict):
             continue
         fields = child.get("fields", child)
@@ -2480,7 +2480,7 @@ def child_issue_start_signal_seen(mission: dict[str, Any]) -> bool:
         if get_path(fields, "issuetype.subtask") is True:
             continue
         status = fields.get("status")
-        categories = mission_status_categories(status)
+        categories = objective_status_categories(status)
         if "done" in categories or "indeterminate" in categories or "in progress" in categories:
             return True
     return False
@@ -2511,7 +2511,7 @@ def normalize_jira_issue(issue: dict[str, Any], config: dict[str, Any]) -> dict[
         "project_key": get_path(fields, "project.key", ""),
         "issue_type": get_path(fields, "issuetype.name", ""),
         "labels": fields.get("labels", []) or [],
-        "dri": normalize_jira_user(field_value(fields, get_path(config, "jira.fields.dri.field_id", "assignee"))),
+        "leader_engineer": normalize_jira_user(field_value(fields, get_path(config, "jira.fields.leader_engineer.field_id", "assignee"))),
         "due_date": field_value(fields, due_date_field),
         "progress": normalize_jira_progress(progress),
         "linked_okr": ""
@@ -2588,8 +2588,8 @@ def build_team_snapshot(result: dict[str, Any], config: dict[str, Any]) -> dict[
     """Canonical per-team-per-week JSON meant for the aggregator and dashboard.
 
     Superset of what a leadership rollup would need: totals per bucket, plus
-    each mission's identity + parsed status + Jira status + due-date state +
-    hygiene flags. The consumer classifies each mission into one of five
+    each objective's identity + parsed status + Jira status + due-date state +
+    hygiene flags. The consumer classifies each objective into one of five
     buckets: done, spillover_on_track, spillover_at_risk, spillover_blocked,
     missing. The bucket rule stays here so every downstream reader agrees.
     """
@@ -2605,7 +2605,7 @@ def build_team_snapshot(result: dict[str, Any], config: dict[str, Any]) -> dict[
             iso_week = iso_week or iso_week_derived
         except ValueError:
             pass
-    missions_bucketed: list[dict[str, Any]] = []
+    objectives_bucketed: list[dict[str, Any]] = []
     bucket_counts = {
         "done": 0,
         "spillover_on_track": 0,
@@ -2613,29 +2613,29 @@ def build_team_snapshot(result: dict[str, Any], config: dict[str, Any]) -> dict[
         "spillover_blocked": 0,
         "missing": 0,
     }
-    for mission in result.get("missions", []):
-        bucket = _bucket_for_mission(mission)
+    for objective in result.get("objectives", []):
+        bucket = _bucket_for_objective(objective)
         bucket_counts[bucket] += 1
-        missions_bucketed.append(
+        objectives_bucketed.append(
             {
-                "key": mission.get("key", ""),
-                "name": mission.get("mission", ""),
-                "url": mission.get("mission_url", ""),
-                "dri": mission.get("dri", ""),
-                "status": mission.get("status", ""),
-                "jira_status": mission.get("jira_status", ""),
-                "is_done": bool(mission.get("is_done")),
-                "missing_update": bool(mission.get("missing_update")),
-                "effective_due_date": mission.get("effective_due_date", ""),
-                "due_date_overdue_days": mission.get("due_date_overdue_days", 0),
-                "progress": mission.get("progress", ""),
+                "key": objective.get("key", ""),
+                "name": objective.get("objective", ""),
+                "url": objective.get("objective_url", ""),
+                "leader_engineer": objective.get("leader_engineer", ""),
+                "status": objective.get("status", ""),
+                "jira_status": objective.get("jira_status", ""),
+                "is_done": bool(objective.get("is_done")),
+                "missing_update": bool(objective.get("missing_update")),
+                "effective_due_date": objective.get("effective_due_date", ""),
+                "due_date_overdue_days": objective.get("due_date_overdue_days", 0),
+                "progress": objective.get("progress", ""),
                 "bucket": bucket,
-                "hygiene_severity": mission.get("hygiene_severity", ""),
-                "hygiene": mission.get("hygiene", []),
-                "blockers": mission.get("blockers", []),
+                "hygiene_severity": objective.get("hygiene_severity", ""),
+                "hygiene": objective.get("hygiene", []),
+                "blockers": objective.get("blockers", []),
             }
         )
-    total = len(missions_bucketed)
+    total = len(objectives_bucketed)
     delivery_rate = (bucket_counts["done"] / total) if total else 0.0
     return {
         "schema_version": 1,
@@ -2651,21 +2651,21 @@ def build_team_snapshot(result: dict[str, Any], config: dict[str, Any]) -> dict[
             "month_label": result.get("month_label", ""),
         },
         "totals": {
-            "missions": total,
+            "objectives": total,
             "delivery_rate": round(delivery_rate, 4),
             **bucket_counts,
         },
-        "missions": missions_bucketed,
+        "objectives": objectives_bucketed,
     }
 
 
-def _bucket_for_mission(mission: dict[str, Any]) -> str:
-    """Classify a mission into one of the five leadership buckets."""
-    if mission.get("is_done") or str(mission.get("jira_status", "")).lower() == "done":
+def _bucket_for_objective(objective: dict[str, Any]) -> str:
+    """Classify a objective into one of the five leadership buckets."""
+    if objective.get("is_done") or str(objective.get("jira_status", "")).lower() == "done":
         return "done"
-    if mission.get("missing_update"):
+    if objective.get("missing_update"):
         return "missing"
-    reported = str(mission.get("status", "")).lower()
+    reported = str(objective.get("status", "")).lower()
     if reported == "green":
         return "spillover_on_track"
     if reported == "yellow":
@@ -2819,7 +2819,7 @@ def parse_args() -> argparse.Namespace:
         "--jira-source",
         choices=["fixture", "mcp", "snapshot"],
         default="fixture",
-        help="Where to read Jira mission Epics/comments from",
+        help="Where to read Jira objective Epics/comments from",
     )
     parser.add_argument("--jira-fixture", help="Fixture JSON for --jira-source fixture")
     parser.add_argument("--jira-snapshot", help="Data snapshot JSON for --jira-source snapshot")
@@ -2944,7 +2944,7 @@ def main() -> int:
         print(f"Wrote Jira snapshot: {snapshot_path}")
         print(
             "Summary: "
-            f"{summary['mission_count']} missions, "
+            f"{summary['objective_count']} objectives, "
             f"{summary['error_count']} retrieval errors, "
             f"label {summary['month_label']}, "
             f"week {summary['iso_week']}"
@@ -2983,11 +2983,11 @@ def print_human_summary(result: dict[str, Any]) -> None:
     subject = result["draft_email"]["subject"]
     print(subject)
     print()
-    print(f"Mission label: {result['month_label']}")
+    print(f"Objective label: {result['month_label']}")
     print(f"Window: {result['window']['start']} → {result['window']['end']}")
     print(
         "Summary: "
-        f"{result['mission_count']} missions, "
+        f"{result['objective_count']} objectives, "
         f"{result['status_counts']['green']} green, "
         f"{result['status_counts']['yellow']} yellow, "
         f"{result['status_counts']['red']} red, "
@@ -2998,7 +2998,7 @@ def print_human_summary(result: dict[str, Any]) -> None:
         f"{result['due_date_changed_count']} due date changes, "
         f"{result['due_date_moved_later_count']} moved later, "
         f"{result['due_date_moved_earlier_count']} moved earlier, "
-        f"{result['overdue_mission_count']} overdue, "
+        f"{result['overdue_objective_count']} overdue, "
         f"{result['blocker_count']} blockers/risks"
     )
     hygiene_counts = result.get("hygiene_issue_counts", {})
@@ -3011,11 +3011,11 @@ def print_human_summary(result: dict[str, Any]) -> None:
     metrics = result.get("metrics", {})
     print(
         "Metrics: "
-        f"{metrics.get('completed_mission_count', 0)}/{metrics.get('mission_count', 0)} completed "
+        f"{metrics.get('completed_objective_count', 0)}/{metrics.get('objective_count', 0)} completed "
         f"({format_completion_rate(metrics.get('completion_rate'))}), "
-        f"{metrics.get('active_mission_count', 0)} active, "
+        f"{metrics.get('active_objective_count', 0)} active, "
         f"avg cycle {format_metric_days(metrics.get('average_cycle_time_days'))}, "
-        f"avg active age {format_metric_days(metrics.get('active_mission_average_age_days'))}, "
+        f"avg active age {format_metric_days(metrics.get('active_objective_average_age_days'))}, "
         f"{metrics.get('recurring_missing_update_count', 0)} recurring misses"
     )
     print(
@@ -3042,8 +3042,8 @@ def print_human_summary(result: dict[str, Any]) -> None:
         print("Data hygiene:")
         for issue in result["hygiene_issues"]:
             print(
-                f"- {issue['severity'].upper()} {issue['mission_key']} "
-                f"{issue['mission']}: {issue['message']}"
+                f"- {issue['severity'].upper()} {issue['objective_key']} "
+                f"{issue['objective']}: {issue['message']}"
             )
     if result.get("warnings"):
         print()

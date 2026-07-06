@@ -4,10 +4,10 @@
       "name": "Week 22",
       "values": [
         [
-          "Mission key",
-          "Mission name",
-          "Mission URL",
-          "DRI",
+          "Objective key",
+          "Objective name",
+          "Objective URL",
+          "Leader Engineer",
           "Status",
           "Jira progress %",
           "Due date",
@@ -16,7 +16,7 @@
           "Plan for next week",
           "Blockers / risks",
           "Missing update?",
-          "DRI comment",
+          "Leader Engineer comment",
           "Hygiene issues"
         ],
         [
@@ -33,7 +33,7 @@
           "",
           "yes",
           "",
-          "Missing weekly DRI update"
+          "Missing weekly Leader Engineer update"
         ]
       ]
     }

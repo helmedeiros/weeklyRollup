@@ -33,7 +33,7 @@ TEMPLATES = ROOT / "templates"
 def _month_display(month_label: str, target_date: str) -> str:
     """Return a friendly month label like 'June 2026' for the H1."""
     if month_label:
-        parts = month_label.replace("mission-", "").split("-")
+        parts = month_label.replace("objective-", "").split("-")
         if len(parts) == 2:
             month, year = parts
             return f"{month.capitalize()} {year}"

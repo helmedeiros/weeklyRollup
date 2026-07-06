@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a draft weekly mission email from normalized mission rows."""
+"""Render a draft weekly objective email from normalized objective rows."""
 
 from __future__ import annotations
 
@@ -7,13 +7,13 @@ import argparse
 import json
 from pathlib import Path
 
-from mission_rollup import load_config, render_email_draft
+from objective_rollup import load_config, render_email_draft
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("config", help="Path to team YAML/JSON config")
-    parser.add_argument("rows", help="JSON file containing normalized mission rows")
+    parser.add_argument("rows", help="JSON file containing normalized objective rows")
     parser.add_argument("--week", type=int, required=True, help="ISO week number")
     parser.add_argument("--sheet-url", default="")
     parser.add_argument(

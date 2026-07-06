@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Validate a mission weekly rollup team config."""
+"""Validate a objective weekly rollup team config."""
 
 from __future__ import annotations
 
 import argparse
 import json
 
-from mission_rollup import load_config, validate_expected_team, validate_team_config
+from objective_rollup import load_config, validate_expected_team, validate_team_config
 
 
 def main() -> int:

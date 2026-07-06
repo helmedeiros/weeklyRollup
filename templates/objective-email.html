@@ -52,26 +52,26 @@
                     <tr>
                         <td style="padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;">
                             {{ greeting }}<br><br>
-                            Please find the latest mission health report for <strong style="color:#132968;">{{ team_name }}</strong>.
+                            Please find the latest objective health report for <strong style="color:#132968;">{{ team_name }}</strong>.
                         </td>
                     </tr>
 
-                    {{ section_heading('Mission Updates', 'Sorted by status: on track, at risk, delayed, not started, missing, done') }}
+                    {{ section_heading('Objective Updates', 'Sorted by status: on track, at risk, delayed, not started, missing, done') }}
                     <tr>
                         <td style="padding:15px 28px 24px 28px;">
-                            {% if mission_rows %}
+                            {% if objective_rows %}
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;">
-                                {% for row in mission_rows %}
+                                {% for row in objective_rows %}
                                 <tr style="background-color:{{ row.style.row_bg }};">
                                     <td width="32%" style="padding:14px;border-right:1px solid {{ row.style.border }};border-bottom:1px solid {{ row.style.border }};vertical-align:top;">
                                         <div style="font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;">
-                                            {% if row.mission_url %}
-                                            <a href="{{ row.mission_url }}" target="_blank" style="color:{{ row.style.color }};text-decoration:none;font-weight:700;">{{ row.mission_title }}</a>
+                                            {% if row.objective_url %}
+                                            <a href="{{ row.objective_url }}" target="_blank" style="color:{{ row.style.color }};text-decoration:none;font-weight:700;">{{ row.objective_title }}</a>
                                             {% else %}
-                                            <span style="color:{{ row.style.color }};font-weight:700;">{{ row.mission_title }}</span>
+                                            <span style="color:{{ row.style.color }};font-weight:700;">{{ row.objective_title }}</span>
                                             {% endif %}
                                         </div>
-                                        <div style="font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;">DRI: {{ row.dri }}</div>
+                                        <div style="font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;">Leader Engineer: {{ row.leader_engineer }}</div>
                                         <div style="font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;">Due: {{ row.due_date }}</div>
                                         <div style="margin-top:10px;">
                                             <span style="display:inline-block;background-color:{{ row.style.badge_bg }};color:{{ row.style.color }};font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;">{{ row.status_label }}</span>
@@ -93,7 +93,7 @@
                                 {% endfor %}
                             </table>
                             {% else %}
-                            {{ empty_notice('No missions found.') }}
+                            {{ empty_notice('No objectives found.') }}
                             {% endif %}
                         </td>
                     </tr>
@@ -105,10 +105,10 @@
                                 {% for blocker in blocker_rows %}
                                 <div style="margin-bottom:10px;padding:12px;background-color:{{ blocker.style.soft_bg }};border:1px solid {{ blocker.style.border }};border-left:4px solid {{ blocker.style.accent }};border-radius:5px;">
                                     <div style="font-family:Verdana,sans-serif;font-size:13px;color:{{ blocker.style.color }};font-weight:bold;line-height:1.4;">
-                                        {% if blocker.kind_label %}<span style="display:inline-block;background-color:#ffffff;color:{{ blocker.style.color }};border:1px solid {{ blocker.style.border }};font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;">{{ blocker.kind_label }}</span>{% endif %}{{ blocker.mission }}
+                                        {% if blocker.kind_label %}<span style="display:inline-block;background-color:#ffffff;color:{{ blocker.style.color }};border:1px solid {{ blocker.style.border }};font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;">{{ blocker.kind_label }}</span>{% endif %}{{ blocker.objective }}
                                     </div>
                                     <div style="font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;">{{ blocker.text | nl2br }}</div>
-                                    <div style="font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;">DRI: {{ blocker.dri }} &nbsp;|&nbsp; Owner: {{ blocker.owner }} &nbsp;|&nbsp; Days open: {{ blocker.days_open }}</div>
+                                    <div style="font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;">Leader Engineer: {{ blocker.leader_engineer }} &nbsp;|&nbsp; Owner: {{ blocker.owner }} &nbsp;|&nbsp; Days open: {{ blocker.days_open }}</div>
                                 </div>
                                 {% endfor %}
                             {% else %}
@@ -128,7 +128,7 @@
                                         <span style="display:inline-block;background-color:{{ group.style.color }};width:10px;height:10px;line-height:10px;border-radius:999px;">&nbsp;</span>
                                     </td>
                                     <td style="padding:9px 10px 9px 4px;border-bottom:1px solid #f1f5f9;vertical-align:top;font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.45;">
-                                        <strong>{{ group.mission }}</strong>: {{ group.messages | nl2br }}
+                                        <strong>{{ group.objective }}</strong>: {{ group.messages | nl2br }}
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -141,7 +141,7 @@
                     {{ section_heading('Weekly Sheet') }}
                     <tr>
                         <td style="padding:15px 28px 24px 28px;">
-                            <a href="{{ sheet_url }}" target="_blank" style="display:inline-block;background-color:#132968;color:#ffffff;font-family:Verdana,sans-serif;font-size:12px;font-weight:bold;text-decoration:none;padding:11px 18px;border-radius:5px;">Open weekly mission sheet</a>
+                            <a href="{{ sheet_url }}" target="_blank" style="display:inline-block;background-color:#132968;color:#ffffff;font-family:Verdana,sans-serif;font-size:12px;font-weight:bold;text-decoration:none;padding:11px 18px;border-radius:5px;">Open weekly objective sheet</a>
                         </td>
                     </tr>
                     {% endif %}

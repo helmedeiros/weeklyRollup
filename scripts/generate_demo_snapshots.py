@@ -1,7 +1,7 @@
 """Generate a fully synthetic team-snapshot dataset for the public dashboard.
 
-Every value here is invented for demonstration. No team names, mission
-keys, DRIs, or KPIs mirror any real organisation. Re-run this script
+Every value here is invented for demonstration. No team names, objective
+keys, Leader Engineers, or KPIs mirror any real organisation. Re-run this script
 whenever you want to refresh the shape of the demo dataset.
 
 The output layout matches ``snapshots/``: each team gets a JSON file at
@@ -14,11 +14,11 @@ import json
 import random
 from pathlib import Path
 
-DEMO_WEEK = {"iso_year": 2026, "iso_week": 27, "target_date": "2026-06-30", "month_label": "mission-june-2026"}
+DEMO_WEEK = {"iso_year": 2026, "iso_week": 27, "target_date": "2026-06-30", "month_label": "objective-june-2026"}
 
 # Twelve teams across four business units (B2C, B2B, Platform, Coverage).
 # Numbers below drive the invented status mix — one team is a clean 100%,
-# a couple hover in the 60-80% band, one takes on a blocked mission.
+# a couple hover in the 60-80% band, one takes on a blocked objective.
 TEAMS = [
     ("alpha-foundations",   "Alpha Foundations",    "Platform", (8, 8, 0, 0, 0, 0)),
     ("beta-payments",       "Beta Payments Core",   "Platform", (7, 6, 1, 0, 0, 0)),
@@ -34,7 +34,7 @@ TEAMS = [
     ("mu-content-ops",      "Mu Content Ops",       "Coverage", (5, 3, 1, 0, 0, 1)),
 ]
 
-MISSION_NAMES = {
+OBJECTIVE_NAMES = {
     "Platform": [
         "Zero-downtime restart choreography",
         "Feature flag rollout guardrails",
@@ -64,7 +64,7 @@ MISSION_NAMES = {
     ],
 }
 
-DRI_POOL = [
+LEADER_ENGINEER_POOL = [
     "Ava Thornton", "Bram Larsson", "Cai Nguyen", "Dara Okonjo", "Ellis Marín",
     "Frida Ohno", "Gali Tomori", "Hiro Vasquez", "Ines Marchetti", "Jules Cabrera",
     "Kai Ostberg", "Lena Rihanna", "Milo Anders", "Nya Sardar", "Odin Barone",
@@ -79,24 +79,24 @@ def generate() -> None:
         total, done, on_track, at_risk, blocked, missing = buckets
         assert total == sum(buckets[1:]), f"bucket totals mismatch for {team_id}"
 
-        missions = []
-        pool = MISSION_NAMES[business_unit]
-        used_dris: list[str] = []
+        objectives = []
+        pool = OBJECTIVE_NAMES[business_unit]
+        used_leader_engineers: list[str] = []
         prefix = "M"
         counter = 100
-        def _make(bucket: str, mission_status: str, jira_status: str) -> dict:
+        def _make(bucket: str, objective_status: str, jira_status: str) -> dict:
             nonlocal counter
             counter += 1
             title = pool[counter % len(pool)]
-            dri = random.choice(DRI_POOL)
-            used_dris.append(dri)
+            leader_engineer = random.choice(LEADER_ENGINEER_POOL)
+            used_leader_engineers.append(leader_engineer)
             key = f"{prefix}{team_id.split('-')[0].upper()[:4]}-{counter}"
             return {
                 "key": key,
                 "name": title,
-                "url": f"https://example.invalid/missions/{key}",
-                "dri": dri,
-                "status": mission_status,
+                "url": f"https://example.invalid/objectives/{key}",
+                "leader_engineer": leader_engineer,
+                "status": objective_status,
                 "jira_status": jira_status,
                 "is_done": bucket == "done",
                 "missing_update": bucket == "missing",
@@ -110,22 +110,22 @@ def generate() -> None:
             }
 
         for _ in range(done):
-            missions.append(_make("done", "Green", "Done"))
+            objectives.append(_make("done", "Green", "Done"))
         for _ in range(on_track):
-            missions.append(_make("spillover_on_track", "Green", "In Progress"))
+            objectives.append(_make("spillover_on_track", "Green", "In Progress"))
         for _ in range(at_risk):
-            missions.append(_make("spillover_at_risk", "Yellow", "In Progress"))
+            objectives.append(_make("spillover_at_risk", "Yellow", "In Progress"))
         for _ in range(blocked):
-            missions.append(_make("spillover_blocked", "Red", "In Progress"))
+            objectives.append(_make("spillover_blocked", "Red", "In Progress"))
         for _ in range(missing):
-            missions.append(_make("missing", "Missing", "In Progress"))
+            objectives.append(_make("missing", "Missing", "In Progress"))
 
         payload = {
             "schema_version": 1,
             "team": {"id": team_id, "name": team_name, "business_unit": business_unit},
             "week": DEMO_WEEK,
             "totals": {
-                "missions": total,
+                "objectives": total,
                 "delivery_rate": round(done / total, 4) if total else 0.0,
                 "done": done,
                 "spillover_on_track": on_track,
@@ -133,7 +133,7 @@ def generate() -> None:
                 "spillover_blocked": blocked,
                 "missing": missing,
             },
-            "missions": missions,
+            "objectives": objectives,
         }
         out = root / team_id / f"{DEMO_WEEK['iso_year']}-W{DEMO_WEEK['iso_week']:02d}.json"
         out.parent.mkdir(parents=True, exist_ok=True)

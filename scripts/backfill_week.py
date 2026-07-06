@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from mission_rollup import (  # noqa: E402
+from objective_rollup import (  # noqa: E402
     compute_week_window,
     get_path,
     load_config,
@@ -36,7 +36,7 @@ from mission_rollup import (  # noqa: E402
 )
 from run_rollup import (  # noqa: E402
     JiraMcpAdapter,
-    collect_jira_snapshot_mission,
+    collect_jira_snapshot_objective,
     normalize_jira_issue,
 )
 
@@ -148,14 +148,14 @@ def fetch_issue_with_changelog(adapter: JiraMcpAdapter, issue_key: str) -> dict[
     return payload
 
 
-def rewind_mission(
-    mission: dict[str, Any],
+def rewind_objective(
+    objective: dict[str, Any],
     raw_issue: dict[str, Any],
     cutoff: datetime,
     config: dict[str, Any],
 ) -> dict[str, Any] | None:
-    """Return a mission dict with historical field values, or None if the
-    mission did not exist as a labelled June mission at cutoff."""
+    """Return a objective dict with historical field values, or None if the
+    objective did not exist as a labelled June objective at cutoff."""
     fields = raw_issue.get("fields") or {}
     histories = (raw_issue.get("changelog") or {}).get("histories") or []
 
@@ -164,9 +164,9 @@ def rewind_mission(
     if created and created > cutoff:
         return None
 
-    # Filter: was the mission-june-2026 label on the issue at cutoff?
+    # Filter: was the objective-june-2026 label on the issue at cutoff?
     historical_labels = apply_history_labels(fields.get("labels"), histories, cutoff)
-    label_pattern = str(get_path(config, "jira.mission_label_pattern", "mission-{month}-{year}"))
+    label_pattern = str(get_path(config, "jira.objective_label_pattern", "objective-{month}-{year}"))
     required_label = month_label(cutoff.month, cutoff.year, label_pattern)
     if required_label not in historical_labels:
         return None
@@ -227,14 +227,14 @@ def build_snapshot(
     window_start, window_end, iso_week = compute_week_window(
         target_date, tz_name, get_path(config, "weekly_update.window")
     )
-    label_pattern = str(get_path(config, "jira.mission_label_pattern"))
+    label_pattern = str(get_path(config, "jira.objective_label_pattern"))
     label = month_label(target_date.month, target_date.year, label_pattern)
 
-    live_missions = adapter.search_mission_epics(config, label)
+    live_objectives = adapter.search_objective_epics(config, label)
 
-    snapshot_missions: list[dict[str, Any]] = []
-    for mission in live_missions:
-        key = mission.get("key")
+    snapshot_objectives: list[dict[str, Any]] = []
+    for objective in live_objectives:
+        key = objective.get("key")
         if not key:
             continue
         try:
@@ -242,18 +242,18 @@ def build_snapshot(
         except Exception as exc:  # noqa: BLE001
             print(f"  skipped {key}: changelog fetch failed ({exc})", file=sys.stderr)
             continue
-        rewound = rewind_mission(mission, detail, cutoff, config)
+        rewound = rewind_objective(objective, detail, cutoff, config)
         if rewound is None:
-            print(f"  filtered {key}: not a labelled June mission at {target_date}", file=sys.stderr)
+            print(f"  filtered {key}: not a labelled June objective at {target_date}", file=sys.stderr)
             continue
         # Collect properties + comments (comments are filtered to the target
-        # week's window by collect_jira_snapshot_mission), plus current
+        # week's window by collect_jira_snapshot_objective), plus current
         # children so progress renders. Then rewind the children's status.
-        base = collect_jira_snapshot_mission(
+        base = collect_jira_snapshot_objective(
             rewound, config, adapter, window_start=window_start, window_end=window_end
         )
         base["children"] = rewind_children(base.get("children") or [], adapter, cutoff)
-        snapshot_missions.append(base)
+        snapshot_objectives.append(base)
 
     return {
         "schema_version": 1,
@@ -267,10 +267,10 @@ def build_snapshot(
             "end": window_end.isoformat(),
             "timezone": tz_name,
         },
-        "missions": snapshot_missions,
+        "objectives": snapshot_objectives,
         "errors": [],
-        "current_mission_count": len(snapshot_missions),
-        "spillover_mission_count": 0,
+        "current_objective_count": len(snapshot_objectives),
+        "spillover_objective_count": 0,
     }
 
 
@@ -298,7 +298,7 @@ def main() -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     snapshot_path = output_dir / f"data-snapshot-{target.isoformat()}.json"
     snapshot_path.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"Wrote {snapshot_path} with {len(snapshot['missions'])} missions", file=sys.stderr)
+    print(f"Wrote {snapshot_path} with {len(snapshot['objectives'])} objectives", file=sys.stderr)
     return 0
 
 

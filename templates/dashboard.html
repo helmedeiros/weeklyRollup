@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Missions Summary — Week {{ aggregate.week.iso_week }}</title>
+<title>Objectives Summary — Week {{ aggregate.week.iso_week }}</title>
 <style>
 :root {
   --navy: #132968;
@@ -108,8 +108,8 @@ table.teams tr:last-child td { border-bottom: none; }
 </head>
 <body>
 <div class="eyebrow">Week {{ aggregate.week.iso_week }} leadership view</div>
-<h1>{{ month_display }} Missions Summary</h1>
-<p class="subhead">Team delivery, status mix, and mission risks from the latest Week {{ aggregate.week.iso_week }} snapshot.</p>
+<h1>{{ month_display }} Objectives Summary</h1>
+<p class="subhead">Team delivery, status mix, and objective risks from the latest Week {{ aggregate.week.iso_week }} snapshot.</p>
 <div class="section-divider"></div>
 
 <div class="filter-bar" id="bu-filter">
@@ -122,17 +122,17 @@ table.teams tr:last-child td { border-bottom: none; }
 
 <div class="top-cards">
   <div class="card">
-    <h3>Mission delivery rate</h3>
+    <h3>Objective delivery rate</h3>
     <div class="delivery-rate" id="delivery-rate">{{ "%.1f"|format(aggregate.totals.delivery_rate * 100) }}%</div>
     <div class="progress"><div id="delivery-bar" style="width: {{ (aggregate.totals.delivery_rate * 100)|round(1) }}%"></div></div>
-    <div class="progress-note" id="delivery-note">{{ aggregate.totals.done }} of {{ aggregate.totals.missions }} missions done.</div>
+    <div class="progress-note" id="delivery-note">{{ aggregate.totals.done }} of {{ aggregate.totals.objectives }} objectives done.</div>
   </div>
   <div class="card">
     <h3>Scope</h3>
     <div class="desc">Current filter coverage</div>
     <div class="scope-inner">
       <div class="scope-box"><div class="num" id="scope-teams">{{ aggregate.totals.teams }}</div><div class="label">Teams</div></div>
-      <div class="scope-box"><div class="num" id="scope-missions">{{ aggregate.totals.missions }}</div><div class="label">Missions</div></div>
+      <div class="scope-box"><div class="num" id="scope-objectives">{{ aggregate.totals.objectives }}</div><div class="label">Objectives</div></div>
     </div>
   </div>
   <div class="card">
@@ -151,7 +151,7 @@ table.teams tr:last-child td { border-bottom: none; }
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;">
   <div>
     <div style="font-size:18px;font-weight:700;color:var(--navy);">Team delivery table</div>
-    <div class="subhead" id="team-count-note">{{ aggregate.totals.missions }} missions across {{ aggregate.totals.teams }} teams.</div>
+    <div class="subhead" id="team-count-note">{{ aggregate.totals.objectives }} objectives across {{ aggregate.totals.teams }} teams.</div>
   </div>
   <div class="legend">
     <span><span class="dot" style="background:var(--red)"></span>Spillover Blocked</span>
@@ -176,7 +176,7 @@ table.teams tr:last-child td { border-bottom: none; }
 <tr data-bu="{{ row.business_unit }}">
   <td><strong>{{ row.team_name }}</strong></td>
   <td><span class="pill">{{ row.business_unit }}</span></td>
-  <td>{{ row.total_missions }}</td>
+  <td>{{ row.total_objectives }}</td>
   <td>
     {% if row.done %}<span class="status-pill done">{{ row.done }} Done</span>{% else %}<span class="status-pill zero">0 Done</span>{% endif %}
     {% if row.spillover_on_track %}<span class="status-pill spillover_on_track">{{ row.spillover_on_track }} Spillover Track</span>{% else %}<span class="status-pill zero">0 Track</span>{% endif %}
@@ -208,13 +208,13 @@ table.teams tr:last-child td { border-bottom: none; }
   function applyFilter(bu) {
     const buRow = bu === '__all__' ? aggregate.totals : aggregate.business_units.find(x => x.business_unit === bu);
     if (!buRow) return;
-    const missions = (buRow.done || 0) + (buRow.spillover_on_track || 0) + (buRow.spillover_at_risk || 0) + (buRow.spillover_blocked || 0) + (buRow.missing || 0);
-    const rate = missions ? (buRow.done || 0) / missions : 0;
+    const objectives = (buRow.done || 0) + (buRow.spillover_on_track || 0) + (buRow.spillover_at_risk || 0) + (buRow.spillover_blocked || 0) + (buRow.missing || 0);
+    const rate = objectives ? (buRow.done || 0) / objectives : 0;
     document.getElementById('delivery-rate').textContent = (rate * 100).toFixed(1) + '%';
     document.getElementById('delivery-bar').style.width = (rate * 100).toFixed(1) + '%';
-    document.getElementById('delivery-note').textContent = (buRow.done || 0) + ' of ' + missions + ' missions done.';
+    document.getElementById('delivery-note').textContent = (buRow.done || 0) + ' of ' + objectives + ' objectives done.';
     document.getElementById('scope-teams').textContent = bu === '__all__' ? aggregate.totals.teams : buRow.team_count;
-    document.getElementById('scope-missions').textContent = missions;
+    document.getElementById('scope-objectives').textContent = objectives;
     totals.forEach(node => {
       const role = node.getAttribute('data-role');
       node.textContent = buRow[role] || 0;
@@ -223,7 +223,7 @@ table.teams tr:last-child td { border-bottom: none; }
       row.style.display = (bu === '__all__' || row.getAttribute('data-bu') === bu) ? '' : 'none';
     });
     document.getElementById('team-count-note').textContent =
-      missions + ' missions across ' + (bu === '__all__' ? aggregate.totals.teams : buRow.team_count) + ' teams.';
+      objectives + ' objectives across ' + (bu === '__all__' ? aggregate.totals.teams : buRow.team_count) + ' teams.';
   }
 
   buttons.forEach(btn => {

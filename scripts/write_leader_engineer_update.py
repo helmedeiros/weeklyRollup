@@ -1,15 +1,15 @@
-"""Interactive helper to write a template-valid DRI weekly mission update and
+"""Interactive helper to write a template-valid Leader Engineer weekly objective update and
 post it as a Jira comment via the bundled Jira MCP.
 
 Usage:
-    python3 scripts/write_dri_update.py --config config/<team>-local.yaml \
+    python3 scripts/write_leader_engineer_update.py --config config/<team>-local.yaml \
         --expect-team-id <team-id> --date YYYY-MM-DD
 
 The flow is:
 1. Load + validate the team config.
-2. Query the Jira MCP for Epics carrying this month's mission label.
+2. Query the Jira MCP for Epics carrying this month's objective label.
 3. Show a menu with each Epic's current weekly-update state
-   (missing / malformed / valid <status emoji>) plus DRI name.
+   (missing / malformed / valid <status emoji>) plus Leader Engineer name.
 4. Prompt the user to pick one.
 5. Open $EDITOR per section (Status, Done this week, Target for next week,
    Blockers / Risks). Status accepts an emoji or word.
@@ -38,14 +38,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from mission_rollup import (  # noqa: E402
+from objective_rollup import (  # noqa: E402
     STATUS_EMOJI,
     STATUS_GREEN,
     STATUS_RED,
     STATUS_YELLOW,
     compute_week_window,
-    display_dri,
-    find_latest_valid_dri_comment,
+    display_leader_engineer,
+    find_latest_valid_leader_engineer_comment,
     get_path,
     load_config,
     month_label,
@@ -80,7 +80,7 @@ class EpicState:
     key: str
     summary: str
     url: str
-    dri_name: str
+    leader_engineer_name: str
     update_status: str
     update_summary: str
 
@@ -101,23 +101,23 @@ def render_menu(epics: list[EpicState]) -> str:
     for idx, epic in enumerate(epics, start=1):
         lines.append(
             f"{idx:>2}. [{epic.update_status:<{width_status}}] {epic.key:<{width_key}}  {epic.summary}"
-            f"\n      DRI: {epic.dri_name} | {epic.url}"
+            f"\n      Leader Engineer: {epic.leader_engineer_name} | {epic.url}"
         )
     return "\n".join(lines)
 
 
 def update_state_for_epic(
     comments: list[dict],
-    dri: dict | None,
+    leader_engineer: dict | None,
     window_start: datetime,
     window_end: datetime,
     parse_opts: dict,
     cover_emails: list[str],
 ) -> tuple[str, str]:
     """Return (status_label, summary) for the epic menu badge."""
-    selection = find_latest_valid_dri_comment(
+    selection = find_latest_valid_leader_engineer_comment(
         comments,
-        dri,
+        leader_engineer,
         window_start,
         window_end,
         parse_options=parse_opts,
@@ -129,7 +129,7 @@ def update_state_for_epic(
         return f"valid {emoji}{cover}".strip(), f"Latest valid update by {_author_name(selection.selected_comment)}"
     if selection.malformed_update_seen:
         return "malformed", "Latest comment did not match the template"
-    return "missing", "No DRI weekly update in this week's window"
+    return "missing", "No Leader Engineer weekly update in this week's window"
 
 
 def _author_name(comment: dict) -> str:
@@ -145,7 +145,7 @@ def parse_status_input(raw: str) -> str | None:
 
 
 def build_template_text(sections: CollectedSections) -> str:
-    """Render the template a DRI weekly update needs to match. Pure function."""
+    """Render the template a Leader Engineer weekly update needs to match. Pure function."""
     emoji = STATUS_TO_EMOJI[sections.status]
     body = [
         f"Status: {emoji}",
@@ -211,7 +211,7 @@ def collect_section_via_editor(label: str, hint: str, initial: str = "") -> str:
 
 
 def prompt_status(stdin=sys.stdin, stdout=sys.stdout) -> str:
-    """Ask the DRI for a status. Loops until a valid value is given."""
+    """Ask the Leader Engineer for a status. Loops until a valid value is given."""
     while True:
         stdout.write("\nStatus options:\n")
         for status, emoji in STATUS_TO_EMOJI.items():
@@ -250,14 +250,14 @@ def validate_sections(sections: CollectedSections, parse_opts: dict) -> tuple[bo
 
 
 def label_for(config: dict, target_date: date) -> str:
-    pattern = str(get_path(config, "jira.mission_label_pattern"))
+    pattern = str(get_path(config, "jira.objective_label_pattern"))
     return month_label(target_date.month, target_date.year, pattern)
 
 
 def load_epics(config: dict, target_date: date, adapter) -> tuple[list[dict], str]:
     """Search the bundled Jira MCP for the team's epics carrying this month's label."""
     label = label_for(config, target_date)
-    return adapter.search_mission_epics(config, label), label
+    return adapter.search_objective_epics(config, label), label
 
 
 def build_epic_states(
@@ -279,14 +279,14 @@ def build_epic_states(
         if str(addr).strip()
     ]
     states: list[EpicState] = []
-    for mission in epics:
+    for objective in epics:
         try:
-            comments = adapter.get_comments(mission, window_start, window_end)
+            comments = adapter.get_comments(objective, window_start, window_end)
         except Exception:  # noqa: BLE001
             comments = []
         status_label, summary = update_state_for_epic(
             comments,
-            mission.get("dri"),
+            objective.get("leader_engineer"),
             window_start,
             window_end,
             parse_opts,
@@ -294,10 +294,10 @@ def build_epic_states(
         )
         states.append(
             EpicState(
-                key=str(mission.get("key", "")),
-                summary=str(mission.get("name") or mission.get("summary") or "")[:80],
-                url=str(mission.get("url", "")),
-                dri_name=display_dri(mission.get("dri")),
+                key=str(objective.get("key", "")),
+                summary=str(objective.get("name") or objective.get("summary") or "")[:80],
+                url=str(objective.get("url", "")),
+                leader_engineer_name=display_leader_engineer(objective.get("leader_engineer")),
                 update_status=status_label,
                 update_summary=summary,
             )
@@ -312,7 +312,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--date",
         default=datetime.now(timezone.utc).date().isoformat(),
-        help="Target date (defaults to today UTC); selects the mission label and weekly window",
+        help="Target date (defaults to today UTC); selects the objective label and weekly window",
     )
     parser.add_argument("--jira-mcp-dir", help="Override the bundled jira-mcp path")
     args = parser.parse_args(argv)
@@ -346,12 +346,12 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if choice.isdigit() and 1 <= int(choice) <= len(states):
             picked = states[int(choice) - 1]
-            picked_mission = epics[int(choice) - 1]
+            picked_objective = epics[int(choice) - 1]
             break
         print("Invalid choice.")
 
     print(f"\nWriting weekly update for {picked.key} — {picked.summary}")
-    print(f"DRI: {picked.dri_name} | {picked.url}\n")
+    print(f"Leader Engineer: {picked.leader_engineer_name} | {picked.url}\n")
 
     parse_opts = parse_update_options(get_path(config, "weekly_update.validation", {}))
     while True:

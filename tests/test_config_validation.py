@@ -7,7 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from mission_rollup import (  # noqa: E402
+from objective_rollup import (  # noqa: E402
     author_matches,
     load_config,
     sheet_file_name,
@@ -46,7 +46,7 @@ class ConfigValidationTest(unittest.TestCase):
         config = deepcopy(self.config)
         config["sheet"]["folder_id"] = "another-folder-id"
 
-        with patch("mission_rollup.REQUIRED_SHEET_FOLDER_ID", "expected-folder-id"):
+        with patch("objective_rollup.REQUIRED_SHEET_FOLDER_ID", "expected-folder-id"):
             errors = validate_team_config(config)
 
         self.assertTrue(
@@ -60,7 +60,7 @@ class ConfigValidationTest(unittest.TestCase):
         config = deepcopy(self.config)
         config["sheet"]["folder_id"] = "some-other-folder"
 
-        with patch("mission_rollup.REQUIRED_SHEET_FOLDER_ID", ""):
+        with patch("objective_rollup.REQUIRED_SHEET_FOLDER_ID", ""):
             errors = validate_team_config(config)
 
         self.assertFalse(
@@ -72,7 +72,7 @@ class ConfigValidationTest(unittest.TestCase):
         config = deepcopy(self.config)
 
         self.assertEqual(validate_team_config(config), [])
-        self.assertEqual(sheet_file_name(config), "Test Team - Mission Execution Updates")
+        self.assertEqual(sheet_file_name(config), "Test Team - Objective Execution Updates")
 
     def test_smtp_email_config_is_rejected(self):
         config = deepcopy(self.config)
@@ -131,9 +131,9 @@ class ConfigValidationTest(unittest.TestCase):
 
     def test_account_id_matching_wins(self):
         author = {"accountId": "ada-account", "displayName": "Someone Else"}
-        dri = {"accountId": "ada-account", "displayName": "Ada Lovelace"}
+        leader_engineer = {"accountId": "ada-account", "displayName": "Ada Lovelace"}
 
-        self.assertTrue(author_matches(author, dri))
+        self.assertTrue(author_matches(author, leader_engineer))
 
     def test_expected_team_identity_allows_separator_variants(self):
         errors = validate_expected_team(

@@ -7,7 +7,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from mission_rollup import (  # noqa: E402
+from objective_rollup import (  # noqa: E402
     SHEET_COLUMNS,
     compute_week_window,
     month_label,
@@ -24,17 +24,17 @@ class SheetTabNamingTest(unittest.TestCase):
         self.assertEqual(week_tab_name(24, "Week {iso_week}"), "Week 24")
 
     def test_month_label_uses_lowercase_month_name(self):
-        self.assertEqual(month_label(6, 2026, "mission-{month}-{year}"), "mission-june-2026")
+        self.assertEqual(month_label(6, 2026, "objective-{month}-{year}"), "objective-june-2026")
 
     def test_month_label_display_uses_readable_month(self):
-        self.assertEqual(month_label_display("mission-may-2026"), "May 2026")
-        self.assertEqual(month_label_display("mission-june-2026"), "June 2026")
-        self.assertEqual(month_label_short_display("mission-may-2026"), "May")
-        self.assertEqual(month_label_short_display("mission-june-2026"), "June")
+        self.assertEqual(month_label_display("objective-may-2026"), "May 2026")
+        self.assertEqual(month_label_display("objective-june-2026"), "June 2026")
+        self.assertEqual(month_label_short_display("objective-may-2026"), "May")
+        self.assertEqual(month_label_short_display("objective-june-2026"), "June")
 
     def test_month_label_end_date_uses_last_day_of_month(self):
-        self.assertEqual(month_label_end_date("mission-may-2026"), date(2026, 5, 31))
-        self.assertEqual(month_label_end_date("mission-february-2028"), date(2028, 2, 29))
+        self.assertEqual(month_label_end_date("objective-may-2026"), date(2026, 5, 31))
+        self.assertEqual(month_label_end_date("objective-february-2028"), date(2028, 2, 29))
 
     def test_week_window_uses_team_timezone(self):
         start, cutoff, week = compute_week_window(
@@ -59,7 +59,7 @@ class SheetTabNamingTest(unittest.TestCase):
         self.assertEqual(values[1], ["DM-1"])
 
     def test_sheet_headers_keep_review_fields_without_comment_diagnostics(self):
-        self.assertIn("DRI comment", SHEET_COLUMNS)
+        self.assertIn("Leader Engineer comment", SHEET_COLUMNS)
         self.assertIn("Hygiene issues", SHEET_COLUMNS)
         self.assertNotIn("Run date", SHEET_COLUMNS)
         self.assertNotIn("Week", SHEET_COLUMNS)

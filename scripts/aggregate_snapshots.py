@@ -34,10 +34,10 @@ def _add_buckets(target: dict[str, int], source: dict[str, int]) -> None:
 
 
 def _delivery_rate(totals: dict[str, int]) -> float:
-    total_missions = sum(totals.get(bucket, 0) or 0 for bucket in BUCKETS)
-    if total_missions <= 0:
+    total_objectives = sum(totals.get(bucket, 0) or 0 for bucket in BUCKETS)
+    if total_objectives <= 0:
         return 0.0
-    return round(totals["done"] / total_missions, 4)
+    return round(totals["done"] / total_objectives, 4)
 
 
 def _load_team_snapshots(root: Path, iso_year: int, iso_week: int) -> list[dict[str, Any]]:
@@ -81,7 +81,7 @@ def build_aggregate(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
             "team_id": team.get("id", ""),
             "team_name": team.get("name", ""),
             "business_unit": business_unit,
-            "total_missions": team_row_total,
+            "total_objectives": team_row_total,
             "delivery_rate": team_delivery_rate,
             **team_bucket_counts,
         })
@@ -92,9 +92,9 @@ def build_aggregate(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
     org_row_total = sum(org_totals.values())
     org_delivery_rate = _delivery_rate(org_totals)
 
-    # Deterministic sort: highest delivery rate first, then largest mission
+    # Deterministic sort: highest delivery rate first, then largest objective
     # base, then team name — matches how humans read the screenshot layout.
-    team_rows.sort(key=lambda row: (-row["delivery_rate"], -row["total_missions"], row["team_name"]))
+    team_rows.sort(key=lambda row: (-row["delivery_rate"], -row["total_objectives"], row["team_name"]))
 
     return {
         "schema_version": 1,
@@ -106,7 +106,7 @@ def build_aggregate(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
         },
         "totals": {
             "teams": len(team_rows),
-            "missions": org_row_total,
+            "objectives": org_row_total,
             "delivery_rate": org_delivery_rate,
             **org_totals,
         },
@@ -114,7 +114,7 @@ def build_aggregate(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
             {
                 "business_unit": name,
                 "team_count": sum(1 for row in team_rows if row["business_unit"] == name),
-                "total_missions": sum(counts.values()),
+                "total_objectives": sum(counts.values()),
                 "delivery_rate": _delivery_rate(counts),
                 **counts,
             }
@@ -155,7 +155,7 @@ def main(argv: list[str] | None = None) -> int:
     output_path = Path(args.output_path) if args.output_path else (root / "_aggregates" / f"{iso_year}-W{iso_week:02d}.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(aggregate, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"Wrote {output_path} — {aggregate['totals']['teams']} teams, {aggregate['totals']['missions']} missions, delivery rate {aggregate['totals']['delivery_rate'] * 100:.1f}%")
+    print(f"Wrote {output_path} — {aggregate['totals']['teams']} teams, {aggregate['totals']['objectives']} objectives, delivery rate {aggregate['totals']['delivery_rate'] * 100:.1f}%")
     return 0
 
 

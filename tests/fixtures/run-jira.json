@@ -1,13 +1,13 @@
 {
-  "missions": [
+  "objectives": [
     {
       "key": "TEST-1",
       "project_key": "TEST",
       "board_id": "42",
       "issue_type": "Epic",
-      "labels": ["mission-june-2026"],
+      "labels": ["objective-june-2026"],
       "summary": "Checkout refund automation",
-      "dri": {
+      "leader_engineer": {
         "accountId": "ada-account",
         "displayName": "Ada Lovelace"
       },
@@ -32,9 +32,9 @@
       "project_key": "TEST",
       "board_id": "42",
       "issue_type": "Epic",
-      "labels": ["mission-june-2026"],
+      "labels": ["objective-june-2026"],
       "summary": "Partner cancellation investigation",
-      "dri": {
+      "leader_engineer": {
         "accountId": "grace-account",
         "displayName": "Grace Hopper"
       },
@@ -59,9 +59,9 @@
       "project_key": "TEST",
       "board_id": "42",
       "issue_type": "Epic",
-      "labels": ["mission-may-2026"],
-      "summary": "Previous month mission",
-      "dri": {
+      "labels": ["objective-may-2026"],
+      "summary": "Previous month objective",
+      "leader_engineer": {
         "accountId": "ada-account",
         "displayName": "Ada Lovelace"
       },
@@ -76,9 +76,9 @@
       "project_key": "OTHER",
       "board_id": "42",
       "issue_type": "Epic",
-      "labels": ["mission-june-2026"],
-      "summary": "Wrong project mission",
-      "dri": {
+      "labels": ["objective-june-2026"],
+      "summary": "Wrong project objective",
+      "leader_engineer": {
         "accountId": "ada-account",
         "displayName": "Ada Lovelace"
       },
@@ -93,9 +93,9 @@
       "project_key": "TEST",
       "board_id": "99",
       "issue_type": "Epic",
-      "labels": ["mission-june-2026"],
-      "summary": "Wrong board mission",
-      "dri": {
+      "labels": ["objective-june-2026"],
+      "summary": "Wrong board objective",
+      "leader_engineer": {
         "accountId": "ada-account",
         "displayName": "Ada Lovelace"
       },

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse a weekly DRI update comment from stdin or a file."""
+"""Parse a weekly Leader Engineer update comment from stdin or a file."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 import sys
 
-from mission_rollup import parse_update
+from objective_rollup import parse_update
 
 
 def main() -> int:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare or write the weekly mission sheet tab.
+"""Prepare or write the weekly objective sheet tab.
 
 The script keeps the Google Sheets integration behind a seam. In Codex, the
 skill should use the Google Drive MCP sheet tools to create/replace the tab and
@@ -13,7 +13,7 @@ import argparse
 import json
 from pathlib import Path
 
-from mission_rollup import get_path, load_config, sheet_file_name, sheet_values, week_tab_name
+from objective_rollup import get_path, load_config, sheet_file_name, sheet_values, week_tab_name
 
 
 def main() -> int:
