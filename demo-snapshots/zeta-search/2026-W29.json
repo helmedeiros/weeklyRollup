@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "zeta-search",
+    "name": "Zeta Search Discovery",
+    "business_unit": "B2C"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 29,
+    "target_date": "2026-07-15",
+    "month_label": "objective-july-2026"
+  },
+  "totals": {
+    "objectives": 4,
+    "delivery_rate": 0.75,
+    "done": 3,
+    "spillover_on_track": 0,
+    "spillover_at_risk": 1,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "objectives": [
+    {
+      "key": "MZETA-151",
+      "name": "Cart persistence across surfaces",
+      "url": "https://example.invalid/objectives/MZETA-151",
+      "leader_engineer": "Bram Larsson",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-152",
+      "name": "Personalised trip recommendations",
+      "url": "https://example.invalid/objectives/MZETA-152",
+      "leader_engineer": "Ellis Marín",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-153",
+      "name": "Purchase confirmation clarity",
+      "url": "https://example.invalid/objectives/MZETA-153",
+      "leader_engineer": "Tomo Ilves",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-154",
+      "name": "Refund status transparency",
+      "url": "https://example.invalid/objectives/MZETA-154",
+      "leader_engineer": "Dara Okonjo",
+      "status": "Yellow",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "71%",
+      "bucket": "spillover_at_risk",
+      "hygiene_severity": "yellow",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

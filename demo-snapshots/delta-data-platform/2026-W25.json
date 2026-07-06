@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "delta-data-platform",
+    "name": "Delta Data Platform",
+    "business_unit": "Platform"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 25,
+    "target_date": "2026-06-15",
+    "month_label": "objective-june-2026"
+  },
+  "totals": {
+    "objectives": 5,
+    "delivery_rate": 1.0,
+    "done": 5,
+    "spillover_on_track": 0,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "objectives": [
+    {
+      "key": "MDELT-141",
+      "name": "Feature flag rollout guardrails",
+      "url": "https://example.invalid/objectives/MDELT-141",
+      "leader_engineer": "Jules Cabrera",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-142",
+      "name": "Golden-path SLO board",
+      "url": "https://example.invalid/objectives/MDELT-142",
+      "leader_engineer": "Pia Rivas",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-143",
+      "name": "Observability sampling refresh",
+      "url": "https://example.invalid/objectives/MDELT-143",
+      "leader_engineer": "Gali Tomori",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-144",
+      "name": "Warm-cache eviction policy",
+      "url": "https://example.invalid/objectives/MDELT-144",
+      "leader_engineer": "Tomo Ilves",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-145",
+      "name": "Zero-downtime restart choreography",
+      "url": "https://example.invalid/objectives/MDELT-145",
+      "leader_engineer": "Ines Marchetti",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

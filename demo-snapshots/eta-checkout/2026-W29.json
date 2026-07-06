@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "eta-checkout",
+    "name": "Eta Checkout",
+    "business_unit": "B2C"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 29,
+    "target_date": "2026-07-15",
+    "month_label": "objective-july-2026"
+  },
+  "totals": {
+    "objectives": 5,
+    "delivery_rate": 0.8,
+    "done": 4,
+    "spillover_on_track": 1,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "objectives": [
+    {
+      "key": "META-151",
+      "name": "Cart persistence across surfaces",
+      "url": "https://example.invalid/objectives/META-151",
+      "leader_engineer": "Jules Cabrera",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "META-152",
+      "name": "Personalised trip recommendations",
+      "url": "https://example.invalid/objectives/META-152",
+      "leader_engineer": "Quinn Yates",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "META-153",
+      "name": "Purchase confirmation clarity",
+      "url": "https://example.invalid/objectives/META-153",
+      "leader_engineer": "Sana Rowe",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "META-154",
+      "name": "Refund status transparency",
+      "url": "https://example.invalid/objectives/META-154",
+      "leader_engineer": "Rio Delacroix",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "META-155",
+      "name": "Homepage skeleton refresh",
+      "url": "https://example.invalid/objectives/META-155",
+      "leader_engineer": "Dara Okonjo",
+      "status": "Green",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-07-15",
+      "due_date_overdue_days": 0,
+      "progress": "59%",
+      "bucket": "spillover_on_track",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}
