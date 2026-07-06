@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "iota-partners",
+    "name": "Iota Partner Portal",
+    "business_unit": "B2B"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 27,
+    "target_date": "2026-06-30",
+    "month_label": "mission-june-2026"
+  },
+  "totals": {
+    "missions": 5,
+    "delivery_rate": 0.8,
+    "done": 4,
+    "spillover_on_track": 1,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "missions": [
+    {
+      "key": "MIOTA-101",
+      "name": "Onboarding self-serve wizard",
+      "url": "https://example.invalid/missions/MIOTA-101",
+      "dri": "Bram Larsson",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-102",
+      "name": "Compliance audit trail",
+      "url": "https://example.invalid/missions/MIOTA-102",
+      "dri": "Cai Nguyen",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-103",
+      "name": "Partner billing reconciliation",
+      "url": "https://example.invalid/missions/MIOTA-103",
+      "dri": "Sana Rowe",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-104",
+      "name": "Partner API rate-limit v2",
+      "url": "https://example.invalid/missions/MIOTA-104",
+      "dri": "Pia Rivas",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-105",
+      "name": "Onboarding self-serve wizard",
+      "url": "https://example.invalid/missions/MIOTA-105",
+      "dri": "Frida Ohno",
+      "status": "Green",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "34%",
+      "bucket": "spillover_on_track",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

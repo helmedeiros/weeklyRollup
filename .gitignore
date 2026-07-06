@@ -8,3 +8,10 @@ __pycache__/
 config/delivery_*.yaml
 config/*local*.yaml
 .DS_Store
+
+# Real per-team weekly snapshots may reference internal identifiers,
+# mission keys, employee names, or historical scoring. Keep them local;
+# the public/demo dashboard is fed from demo-snapshots/ instead.
+snapshots/**/*.json
+snapshots/_aggregates/
+snapshots/_dashboards/

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "zeta-search",
+    "name": "Zeta Search Discovery",
+    "business_unit": "B2C"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 27,
+    "target_date": "2026-06-30",
+    "month_label": "mission-june-2026"
+  },
+  "totals": {
+    "missions": 4,
+    "delivery_rate": 0.75,
+    "done": 3,
+    "spillover_on_track": 0,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 1,
+    "missing": 0
+  },
+  "missions": [
+    {
+      "key": "MZETA-101",
+      "name": "Cart persistence across surfaces",
+      "url": "https://example.invalid/missions/MZETA-101",
+      "dri": "Jules Cabrera",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-102",
+      "name": "Personalised trip recommendations",
+      "url": "https://example.invalid/missions/MZETA-102",
+      "dri": "Pia Rivas",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-103",
+      "name": "Purchase confirmation clarity",
+      "url": "https://example.invalid/missions/MZETA-103",
+      "dri": "Lena Rihanna",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-30",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-104",
+      "name": "Refund status transparency",
+      "url": "https://example.invalid/missions/MZETA-104",
+      "dri": "Ines Marchetti",
+      "status": "Red",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-07-10",
+      "due_date_overdue_days": 0,
+      "progress": "45%",
+      "bucket": "spillover_blocked",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}
