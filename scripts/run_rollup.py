@@ -2584,6 +2584,114 @@ def normalize_jira_comment(comment: dict[str, Any], base_url: str, issue_key: st
     return normalized
 
 
+def build_team_snapshot(result: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
+    """Canonical per-team-per-week JSON meant for the aggregator and dashboard.
+
+    Superset of what a leadership rollup would need: totals per bucket, plus
+    each mission's identity + parsed status + Jira status + due-date state +
+    hygiene flags. The consumer classifies each mission into one of five
+    buckets: done, spillover_on_track, spillover_at_risk, spillover_blocked,
+    missing. The bucket rule stays here so every downstream reader agrees.
+    """
+    team_id = str(get_path(config, "team.id", ""))
+    team_name = str(get_path(config, "team.name", ""))
+    business_unit = str(get_path(config, "team.business_unit", "") or "")
+    target_date = str(result.get("target_date", ""))
+    iso_week = int(result.get("iso_week") or 0)
+    iso_year = 0
+    if target_date:
+        try:
+            iso_year, iso_week_derived, _ = date.fromisoformat(target_date).isocalendar()
+            iso_week = iso_week or iso_week_derived
+        except ValueError:
+            pass
+    missions_bucketed: list[dict[str, Any]] = []
+    bucket_counts = {
+        "done": 0,
+        "spillover_on_track": 0,
+        "spillover_at_risk": 0,
+        "spillover_blocked": 0,
+        "missing": 0,
+    }
+    for mission in result.get("missions", []):
+        bucket = _bucket_for_mission(mission)
+        bucket_counts[bucket] += 1
+        missions_bucketed.append(
+            {
+                "key": mission.get("key", ""),
+                "name": mission.get("mission", ""),
+                "url": mission.get("mission_url", ""),
+                "dri": mission.get("dri", ""),
+                "status": mission.get("status", ""),
+                "jira_status": mission.get("jira_status", ""),
+                "is_done": bool(mission.get("is_done")),
+                "missing_update": bool(mission.get("missing_update")),
+                "effective_due_date": mission.get("effective_due_date", ""),
+                "due_date_overdue_days": mission.get("due_date_overdue_days", 0),
+                "progress": mission.get("progress", ""),
+                "bucket": bucket,
+                "hygiene_severity": mission.get("hygiene_severity", ""),
+                "hygiene": mission.get("hygiene", []),
+                "blockers": mission.get("blockers", []),
+            }
+        )
+    total = len(missions_bucketed)
+    delivery_rate = (bucket_counts["done"] / total) if total else 0.0
+    return {
+        "schema_version": 1,
+        "team": {
+            "id": team_id,
+            "name": team_name,
+            "business_unit": business_unit,
+        },
+        "week": {
+            "iso_year": iso_year,
+            "iso_week": iso_week,
+            "target_date": target_date,
+            "month_label": result.get("month_label", ""),
+        },
+        "totals": {
+            "missions": total,
+            "delivery_rate": round(delivery_rate, 4),
+            **bucket_counts,
+        },
+        "missions": missions_bucketed,
+    }
+
+
+def _bucket_for_mission(mission: dict[str, Any]) -> str:
+    """Classify a mission into one of the five leadership buckets."""
+    if mission.get("is_done") or str(mission.get("jira_status", "")).lower() == "done":
+        return "done"
+    if mission.get("missing_update"):
+        return "missing"
+    reported = str(mission.get("status", "")).lower()
+    if reported == "green":
+        return "spillover_on_track"
+    if reported == "yellow":
+        return "spillover_at_risk"
+    if reported == "red":
+        return "spillover_blocked"
+    return "missing"
+
+
+def write_team_snapshot(
+    result: dict[str, Any],
+    config: dict[str, Any],
+    snapshot_dir: str | Path,
+) -> Path:
+    """Write build_team_snapshot()'s output under <snapshot_dir>/<team-id>/<YYYY>-Www.json."""
+    payload = build_team_snapshot(result, config)
+    team_id = payload["team"]["id"] or "unknown-team"
+    iso_year = payload["week"]["iso_year"] or 0
+    iso_week = payload["week"]["iso_week"] or 0
+    file_name = f"{iso_year}-W{iso_week:02d}.json" if iso_year and iso_week else "run.json"
+    path = Path(snapshot_dir) / team_id / file_name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
 def write_output_files(
     result: dict[str, Any],
     output_dir: str | Path,
@@ -2756,6 +2864,15 @@ def parse_args() -> argparse.Namespace:
         help="How to handle email draft output",
     )
     parser.add_argument("--output-dir", help="Directory for result/email/sheet artifacts")
+    parser.add_argument(
+        "--team-snapshot-dir",
+        default="snapshots",
+        help=(
+            "Directory for the canonical per-team-per-week JSON snapshots used by "
+            "the cross-team aggregator/dashboard. Written automatically when "
+            "--sheet-source live is set. Set to an empty string to disable."
+        ),
+    )
     parser.add_argument("--json", action="store_true", help="Print full JSON result")
     return parser.parse_args()
 
@@ -2846,6 +2963,15 @@ def main() -> int:
         sheet_url_override=args.sheet_url,
         sheet_tab_gid=args.sheet_tab_gid,
     )
+    if args.sheet_source == "live" and args.team_snapshot_dir:
+        try:
+            snapshot_path = write_team_snapshot(result, config, args.team_snapshot_dir)
+            result.setdefault("output_files", {})["team_snapshot"] = str(snapshot_path)
+        except Exception as exc:  # noqa: BLE001 - never let snapshot writing break the run
+            result.setdefault("warnings", []).append(
+                {"source": "team_snapshot", "message": str(exc)}
+            )
+
     if args.json:
         print(json.dumps(result, indent=2, ensure_ascii=False))
     else:

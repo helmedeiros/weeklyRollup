@@ -12,7 +12,11 @@
       "properties": {
         "id": { "type": "string", "minLength": 1 },
         "name": { "type": "string", "minLength": 1 },
-        "timezone": { "type": "string", "minLength": 1 }
+        "timezone": { "type": "string", "minLength": 1 },
+        "business_unit": {
+          "type": "string",
+          "description": "Business unit label used by the cross-team aggregator/dashboard to group teams (e.g. B2C, B2B, Platform, Coverage). Optional; when unset the team lands in an 'Unassigned' bucket in aggregates."
+        }
       }
     },
     "jira": {

@@ -15,7 +15,9 @@ from run_rollup import (  # noqa: E402
     RawMimePlanEmailAdapter,
     RUN_HISTORY_COLUMNS,
     RollupAdapterError,
+    _bucket_for_mission,
     apply_issue_property_fields,
+    build_team_snapshot,
     child_issue_progress,
     child_issue_start_signal_seen,
     collect_jira_snapshot,
@@ -1806,6 +1808,76 @@ class StartSignalTest(unittest.TestCase):
         cats = mission_status_categories(mission)
         self.assertIn("in progress", cats)
         self.assertIn("indeterminate", cats)
+
+
+class TeamSnapshotTest(unittest.TestCase):
+    def _config(self):
+        return {
+            "team": {"id": "test-team", "name": "Test Team", "business_unit": "B2C"},
+        }
+
+    def _result(self, missions):
+        return {
+            "target_date": "2026-06-30",
+            "iso_week": 27,
+            "month_label": "mission-june-2026",
+            "missions": missions,
+        }
+
+    def test_bucket_done_wins_over_reported_status(self):
+        # Jira status Done + parsed status Green ⇒ done bucket, not spillover_on_track.
+        self.assertEqual(
+            _bucket_for_mission({"is_done": True, "status": "Green", "jira_status": "Done"}),
+            "done",
+        )
+
+    def test_bucket_missing_when_no_update(self):
+        self.assertEqual(
+            _bucket_for_mission({"is_done": False, "missing_update": True, "status": "Missing"}),
+            "missing",
+        )
+
+    def test_bucket_spillover_from_reported_status(self):
+        for status, bucket in [
+            ("Green", "spillover_on_track"),
+            ("Yellow", "spillover_at_risk"),
+            ("Red", "spillover_blocked"),
+        ]:
+            with self.subTest(status=status):
+                self.assertEqual(
+                    _bucket_for_mission({
+                        "is_done": False,
+                        "missing_update": False,
+                        "status": status,
+                        "jira_status": "In Progress",
+                    }),
+                    bucket,
+                )
+
+    def test_snapshot_totals_add_up_and_carry_business_unit(self):
+        payload = build_team_snapshot(
+            self._result([
+                {"key": "T-1", "status": "Green", "jira_status": "Done", "is_done": True},
+                {"key": "T-2", "status": "Yellow", "jira_status": "In Progress"},
+                {"key": "T-3", "status": "Red", "jira_status": "In Progress"},
+                {"key": "T-4", "status": "Missing", "missing_update": True},
+            ]),
+            self._config(),
+        )
+        self.assertEqual(payload["team"]["business_unit"], "B2C")
+        totals = payload["totals"]
+        self.assertEqual(totals["missions"], 4)
+        self.assertEqual(totals["done"], 1)
+        self.assertEqual(totals["spillover_at_risk"], 1)
+        self.assertEqual(totals["spillover_blocked"], 1)
+        self.assertEqual(totals["missing"], 1)
+        self.assertEqual(totals["delivery_rate"], 0.25)
+        self.assertEqual(payload["week"]["iso_week"], 27)
+
+    def test_snapshot_empty_missions_yields_zero_delivery_rate(self):
+        payload = build_team_snapshot(self._result([]), self._config())
+        self.assertEqual(payload["totals"]["missions"], 0)
+        self.assertEqual(payload["totals"]["delivery_rate"], 0.0)
 
 
 if __name__ == "__main__":
