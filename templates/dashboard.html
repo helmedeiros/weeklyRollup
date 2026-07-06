@@ -29,51 +29,81 @@ h1 { margin: 0; font-size: 34px; color: var(--navy); }
 .subhead { color: var(--slate); font-size: 14px; margin-top: 4px; }
 .section-divider { border-top: 1px solid var(--line); margin: 24px 0; }
 
-/* Date-range chip + picker */
-.range-row { display: flex; align-items: center; gap: 12px; margin: 12px 0 8px; position: relative; }
-.range-chip {
-  display: inline-flex; align-items: center; gap: 8px;
+/* Filter row */
+.filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 12px 0 8px; position: relative; }
+.search-box { position: relative; }
+.search-box input {
+  border: 1px solid var(--line); border-radius: 999px; padding: 10px 40px 10px 18px;
+  font-size: 13px; font-family: inherit; color: var(--slate-strong); background: var(--panel);
+  min-width: 260px;
+}
+.search-box .icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--slate); pointer-events: none; }
+.chips-container { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter-chip {
+  display: inline-flex; align-items: stretch;
   background: var(--panel); border: 1.5px solid var(--navy); color: var(--navy);
-  border-radius: 999px; padding: 8px 8px 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer;
+  border-radius: 999px; font-size: 13px; font-weight: 600; overflow: hidden;
 }
-.range-chip .range-label { line-height: 1; }
-.range-chip .range-reset { background: transparent; border: none; color: var(--navy); cursor: pointer; padding: 2px 6px; border-radius: 999px; }
-.range-chip .range-reset:hover { background: #eef2ff; }
-.range-picker {
-  position: absolute; top: calc(100% + 8px); left: 0; z-index: 20;
+.filter-chip-label { background: transparent; border: none; color: inherit; font: inherit; padding: 8px 12px 8px 16px; cursor: pointer; white-space: nowrap; }
+.filter-chip-label .dim { color: var(--slate); font-weight: 500; margin-right: 6px; }
+.filter-chip-remove { background: transparent; border: none; color: inherit; padding: 8px 12px 8px 4px; cursor: pointer; font-size: 15px; line-height: 1; }
+.filter-chip-remove:hover { color: var(--red); }
+.add-filter-wrap { position: relative; }
+.add-filter-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--panel); border: 1px solid var(--line); color: var(--navy);
+  border-radius: 8px; padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.add-filter-btn:hover { border-color: var(--navy); }
+.add-filter-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 30;
   background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
-  padding: 16px; display: grid; grid-template-columns: 180px 1fr; gap: 20px;
-  box-shadow: 0 12px 40px rgba(19, 41, 104, 0.12); min-width: 480px;
+  box-shadow: 0 12px 40px rgba(19, 41, 104, 0.12); padding: 6px; min-width: 200px;
 }
-.range-picker[hidden] { display: none; }
-.range-presets { display: flex; flex-direction: column; gap: 4px; }
-.range-presets button {
-  text-align: left; background: transparent; border: none; padding: 8px 12px;
-  border-radius: 6px; font-size: 13px; color: var(--slate-strong); cursor: pointer;
+.add-filter-menu[hidden] { display: none; }
+.add-filter-menu button {
+  display: block; width: 100%; text-align: left; background: transparent; border: none;
+  padding: 10px 14px; font-size: 14px; color: var(--navy); border-radius: 6px; cursor: pointer;
 }
-.range-presets button:hover { background: #f1f5f9; }
-.range-presets button[aria-pressed="true"] { background: #eef2ff; color: var(--navy); font-weight: 700; }
-.range-form label { display: block; font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-.range-form .inputs { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-.range-form .inputs input { border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 14px; color: var(--slate-strong); font-family: inherit; }
-.range-form .actions { display: flex; justify-content: flex-end; gap: 8px; }
-.range-form .actions button {
+.add-filter-menu button:hover { background: #f1f5f9; }
+.clear-btn { background: transparent; border: none; color: var(--slate); font-size: 13px; font-weight: 600; padding: 8px 8px; cursor: pointer; }
+.clear-btn:hover { color: var(--navy); text-decoration: underline; }
+
+/* Picker panel */
+.picker-panel {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 25;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(19, 41, 104, 0.12); padding: 16px; min-width: 320px;
+}
+.picker-panel[hidden] { display: none; }
+.picker-panel h4 { margin: 0 0 12px; font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+.picker-list { display: flex; flex-direction: column; gap: 4px; max-height: 260px; overflow-y: auto; padding-right: 4px; margin-bottom: 12px; }
+.picker-list label { display: flex; align-items: center; gap: 10px; padding: 6px 8px; border-radius: 6px; cursor: pointer; font-size: 13px; color: var(--slate-strong); }
+.picker-list label:hover { background: #f1f5f9; }
+.picker-list input[type="checkbox"] { accent-color: var(--navy); }
+.picker-search { width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px; font-family: inherit; margin-bottom: 10px; }
+.picker-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.picker-actions button {
   border-radius: 999px; border: 1px solid var(--line); background: var(--panel);
   padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--slate-strong);
 }
-.range-form .actions button.primary { background: var(--navy); color: white; border-color: var(--navy); }
+.picker-actions button.primary { background: var(--navy); color: white; border-color: var(--navy); }
 
-/* BU filter bar */
-.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
-.filter-bar button {
-  border: 1px solid var(--line); background: var(--panel); color: var(--navy);
-  padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer;
+/* Date range picker specifics */
+.date-picker-body { display: grid; grid-template-columns: 180px 1fr; gap: 20px; min-width: 480px; }
+.date-presets { display: flex; flex-direction: column; gap: 4px; }
+.date-presets button {
+  text-align: left; background: transparent; border: none; padding: 8px 12px;
+  border-radius: 6px; font-size: 13px; color: var(--slate-strong); cursor: pointer;
 }
-.filter-bar button[aria-pressed="true"] { background: #4341c9; color: #ffffff; border-color: #4341c9; }
-.filter-help { color: var(--slate); font-size: 12px; margin-bottom: 24px; }
+.date-presets button:hover { background: #f1f5f9; }
+.date-presets button[aria-pressed="true"] { background: #eef2ff; color: var(--navy); font-weight: 700; }
+.date-form label { display: block; font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.date-form .inputs { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.date-form .inputs input { border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 14px; color: var(--slate-strong); font-family: inherit; }
 
 /* Top cards */
-.top-cards { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 16px; align-items: stretch; margin-bottom: 32px; }
+.top-cards { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 16px; align-items: stretch; margin-bottom: 32px; margin-top: 16px; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; }
 .card h3 { margin: 0 0 12px; font-size: 11px; letter-spacing: 1.3px; color: var(--slate); font-weight: 700; text-transform: uppercase; }
 .card .desc { color: var(--slate); font-size: 13px; margin-bottom: 12px; }
@@ -126,47 +156,26 @@ table.teams tr:last-child td { border-bottom: none; }
 </style>
 </head>
 <body>
-<div class="eyebrow" id="eyebrow">Leadership view</div>
-<h1 id="page-title">Objectives Summary</h1>
+<div class="eyebrow">Leadership view</div>
+<h1>Objectives Summary</h1>
 <p class="subhead" id="page-subhead">Team delivery, status mix, and objective risks over the selected range.</p>
 <div class="section-divider"></div>
 
-<div class="range-row">
-  <div class="range-chip" id="range-chip" role="button" aria-haspopup="dialog" aria-expanded="false">
-    <span class="range-label" id="range-label">…</span>
-    <button class="range-reset" id="range-reset" type="button" title="Reset to default range">×</button>
+<div class="filter-row">
+  <div class="search-box">
+    <input type="search" id="search-input" placeholder="Search teams, engineers, objectives…" autocomplete="off">
+    <span class="icon">🔎</span>
   </div>
-  <div class="range-picker" id="range-picker" hidden role="dialog" aria-label="Choose date range">
-    <div class="range-presets" id="range-presets">
-      <button type="button" data-preset="current-month" aria-pressed="true">Current month</button>
-      <button type="button" data-preset="last-1-month">Last 1 Month</button>
-      <button type="button" data-preset="last-3-months">Last 3 Months</button>
-      <button type="button" data-preset="last-6-months">Last 6 Months</button>
-      <button type="button" data-preset="last-1-year">Last 1 Year</button>
-      <button type="button" data-preset="all-time">All time</button>
-    </div>
-    <div class="range-form">
-      <label for="range-start">Date range</label>
-      <div class="inputs">
-        <input type="date" id="range-start" value="{{ default_start }}">
-        <span>→</span>
-        <input type="date" id="range-end" value="{{ default_end }}">
-      </div>
-      <div class="actions">
-        <button type="button" id="range-cancel">Cancel</button>
-        <button type="button" class="primary" id="range-apply">Apply</button>
-      </div>
-    </div>
+  <div class="chips-container" id="chips-container"></div>
+  <div class="add-filter-wrap">
+    <button class="add-filter-btn" id="add-filter-btn" type="button">
+      <span>▽</span> Add Filter
+    </button>
+    <div class="add-filter-menu" id="add-filter-menu" hidden></div>
   </div>
+  <button class="clear-btn" id="clear-filters" type="button">Clear</button>
+  <div class="picker-panel" id="picker-panel" hidden></div>
 </div>
-
-<div class="filter-bar" id="bu-filter">
-  <button type="button" data-bu="__all__" aria-pressed="true">All BUs</button>
-  {% for bu in business_units %}
-    <button type="button" data-bu="{{ bu }}">{{ bu }}</button>
-  {% endfor %}
-</div>
-<div class="filter-help">Click a business unit above to focus the table below on that group.</div>
 
 <div class="top-cards">
   <div class="card">
@@ -241,29 +250,72 @@ table.teams tr:last-child td { border-bottom: none; }
     spillover_blocked: "0 Blocked",
     missing: "0 Missing",
   };
+  const STATUS_OPTIONS = [
+    { id: "done", label: "Done" },
+    { id: "spillover_on_track", label: "Spillover On Track" },
+    { id: "spillover_at_risk", label: "Spillover At Risk" },
+    { id: "spillover_blocked", label: "Spillover Blocked" },
+    { id: "missing", label: "Missing" },
+  ];
+  const PRESET_LABELS = {
+    "current-month": "Current month",
+    "last-1-month": "Last 1 Month",
+    "last-3-months": "Last 3 Months",
+    "last-6-months": "Last 6 Months",
+    "last-1-year": "Last 1 Year",
+    "all-time": "All time",
+  };
 
   const snapshots = JSON.parse(document.getElementById("snapshots-json").textContent);
   const defaultStart = "{{ default_start }}";
   const defaultEnd = "{{ default_end }}";
 
-  let currentStart = parseDate(defaultStart);
-  let currentEnd = parseDate(defaultEnd);
-  let currentBU = "__all__";
-  let currentPreset = "current-month";
+  const ALL_BUSINESS_UNITS = Array.from(new Set(snapshots.map(s => s.team.business_unit))).sort();
+  const ALL_TEAMS = (() => {
+    const seen = new Map();
+    snapshots.forEach(s => { if (!seen.has(s.team.id)) seen.set(s.team.id, { id: s.team.id, name: s.team.name, business_unit: s.team.business_unit }); });
+    return Array.from(seen.values()).sort((a, b) => a.name.localeCompare(b.name));
+  })();
+
+  const state = {
+    search: "",
+    dateRange: { preset: "current-month", start: parseDate(defaultStart), end: parseDate(defaultEnd) },
+    businessUnits: null,   // null = filter not added
+    teams: null,
+    statuses: null,
+  };
 
   function parseDate(iso) { return new Date(iso + "T00:00:00"); }
   function fmtISO(d) { return d.toISOString().slice(0, 10); }
 
-  function computeAggregate(startDate, endDate, bu) {
-    const startMs = startDate.getTime();
-    const endMs = endDate.getTime();
-    const inRange = snapshots.filter(s => {
+  // --- Aggregation ---
+  function matchesSearch(s, q) {
+    if (!q) return true;
+    if (s.team.name.toLowerCase().includes(q)) return true;
+    if (s.team.id.toLowerCase().includes(q)) return true;
+    if (s.team.business_unit.toLowerCase().includes(q)) return true;
+    return (s.objectives || []).some(o =>
+      (o.name || "").toLowerCase().includes(q)
+      || (o.key || "").toLowerCase().includes(q)
+      || (o.leader_engineer || "").toLowerCase().includes(q)
+    );
+  }
+
+  function filterSnapshots() {
+    const startMs = state.dateRange.start.getTime();
+    const endMs = state.dateRange.end.getTime();
+    const q = state.search.trim().toLowerCase();
+    return snapshots.filter(s => {
       const t = parseDate(s.week.target_date).getTime();
       if (t < startMs || t > endMs) return false;
-      if (bu !== "__all__" && s.team.business_unit !== bu) return false;
+      if (state.businessUnits && state.businessUnits.length && !state.businessUnits.includes(s.team.business_unit)) return false;
+      if (state.teams && state.teams.length && !state.teams.includes(s.team.id)) return false;
+      if (!matchesSearch(s, q)) return false;
       return true;
     });
+  }
 
+  function aggregateTeams(inRange) {
     const teamMap = new Map();
     inRange.forEach(s => {
       const key = s.team.id;
@@ -276,47 +328,31 @@ table.teams tr:last-child td { border-bottom: none; }
       BUCKETS.forEach(b => row[b] += (s.totals[b] || 0));
       row.total_objectives += (s.totals.objectives || 0);
     });
-
     const teams = Array.from(teamMap.values());
     teams.forEach(t => t.delivery_rate = t.total_objectives ? t.done / t.total_objectives : 0);
     teams.sort((a, b) =>
       b.delivery_rate - a.delivery_rate
       || b.total_objectives - a.total_objectives
       || a.team_name.localeCompare(b.team_name));
+    return teams;
+  }
 
+  function applyStatusFilter(teams) {
+    if (!state.statuses || state.statuses.length === 0) return teams;
+    return teams.filter(t => state.statuses.some(s => (t[s] || 0) > 0));
+  }
+
+  function computeTotals(teams) {
     const totals = { teams: teams.length };
     BUCKETS.forEach(b => totals[b] = 0);
     teams.forEach(t => BUCKETS.forEach(b => totals[b] += t[b]));
     totals.objectives = BUCKETS.reduce((a, b) => a + totals[b], 0);
     totals.delivery_rate = totals.objectives ? totals.done / totals.objectives : 0;
-
-    return { totals, teams };
+    return totals;
   }
 
+  // --- Rendering ---
   function pluralize(n, singular, plural) { return n === 1 ? singular : plural; }
-
-  function humanRangeLabel(startDate, endDate, preset) {
-    if (preset === "all-time") return "All time";
-    if (preset && preset !== "custom") {
-      const map = {
-        "current-month": "Current month",
-        "last-1-month": "Last 1 Month",
-        "last-3-months": "Last 3 Months",
-        "last-6-months": "Last 6 Months",
-        "last-1-year": "Last 1 Year",
-      };
-      if (map[preset]) return map[preset];
-    }
-    const opts = { month: "short", day: "numeric" };
-    const startStr = startDate.toLocaleDateString("en-US", opts);
-    const endStr = endDate.toLocaleDateString("en-US", { ...opts, year: "numeric" });
-    return `${startStr} – ${endStr}`;
-  }
-
-  function humanRangeSubhead(startDate, endDate) {
-    const opts = { month: "long", day: "numeric", year: "numeric" };
-    return `${startDate.toLocaleDateString("en-US", opts)} → ${endDate.toLocaleDateString("en-US", opts)}`;
-  }
 
   function pillFor(count, bucket) {
     if (count > 0) return `<span class="status-pill ${bucket}">${count} ${BUCKET_LABELS[bucket]}</span>`;
@@ -326,13 +362,11 @@ table.teams tr:last-child td { border-bottom: none; }
   function renderTeamRow(row) {
     const warn = row.delivery_rate < 0.8 ? "warn" : "";
     const pct = (row.delivery_rate * 100).toFixed(1);
-    return `<tr data-bu="${row.business_unit}">
-      <td><strong>${row.team_name}</strong></td>
-      <td><span class="pill">${row.business_unit}</span></td>
+    return `<tr>
+      <td><strong>${escapeHtml(row.team_name)}</strong></td>
+      <td><span class="pill">${escapeHtml(row.business_unit)}</span></td>
       <td>${row.total_objectives}</td>
-      <td><div class="status-cell">
-        ${BUCKETS.map(b => pillFor(row[b], b)).join("")}
-      </div></td>
+      <td><div class="status-cell">${BUCKETS.map(b => pillFor(row[b], b)).join("")}</div></td>
       <td>
         <div class="delivery-cell ${warn}">
           <div class="bar"><div style="width: ${pct}%"></div></div>
@@ -342,35 +376,189 @@ table.teams tr:last-child td { border-bottom: none; }
     </tr>`;
   }
 
-  function refresh() {
-    const agg = computeAggregate(currentStart, currentEnd, currentBU);
-    const { totals, teams } = agg;
-
-    document.getElementById("delivery-rate").textContent = totals.objectives ? (totals.delivery_rate * 100).toFixed(1) + "%" : "–";
-    document.getElementById("delivery-bar").style.width = (totals.delivery_rate * 100).toFixed(1) + "%";
-    document.getElementById("delivery-note").textContent = totals.objectives
-      ? `${totals.done} of ${totals.objectives} objectives done.`
-      : "No objectives in range.";
-    document.getElementById("scope-teams").textContent = totals.teams;
-    document.getElementById("scope-objectives").textContent = totals.objectives;
-    BUCKETS.forEach(b => document.querySelector(`.status-num[data-role="${b}"]`).textContent = totals[b]);
-
-    const tbody = document.getElementById("teams-tbody");
-    if (teams.length === 0) {
-      tbody.innerHTML = `<tr class="empty-row"><td colspan="5">No snapshots for this range.</td></tr>`;
-    } else {
-      tbody.innerHTML = teams.map(renderTeamRow).join("");
-    }
-
-    document.getElementById("team-count-note").textContent =
-      `${totals.objectives} ${pluralize(totals.objectives, "objective", "objectives")} across ${totals.teams} ${pluralize(totals.teams, "team", "teams")}.`;
-
-    document.getElementById("range-label").textContent = humanRangeLabel(currentStart, currentEnd, currentPreset);
-    document.getElementById("page-subhead").textContent = `Team delivery, status mix, and objective risks over ${humanRangeSubhead(currentStart, currentEnd)}.`;
-    document.getElementById("page-title").textContent = "Objectives Summary";
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  // --- Range presets ---
+  function humanRangeLabel() {
+    const p = state.dateRange.preset;
+    if (p && PRESET_LABELS[p]) return PRESET_LABELS[p];
+    const opts = { month: "short", day: "numeric" };
+    const startStr = state.dateRange.start.toLocaleDateString("en-US", opts);
+    const endStr = state.dateRange.end.toLocaleDateString("en-US", { ...opts, year: "numeric" });
+    return `${startStr} – ${endStr}`;
+  }
+
+  function humanRangeSubhead() {
+    const opts = { month: "long", day: "numeric", year: "numeric" };
+    return `${state.dateRange.start.toLocaleDateString("en-US", opts)} → ${state.dateRange.end.toLocaleDateString("en-US", opts)}`;
+  }
+
+  function multiLabel(values, singularLabel) {
+    if (values.length === 0) return "None";
+    if (values.length === 1) return values[0];
+    return `${values[0]} (+${values.length - 1})`;
+  }
+
+  function renderChips() {
+    const box = document.getElementById("chips-container");
+    box.innerHTML = "";
+
+    box.appendChild(chipEl("date-range", "Date Range", humanRangeLabel(), false));
+
+    if (state.businessUnits !== null) {
+      const label = state.businessUnits.length ? multiLabel(state.businessUnits, "BU") : "Select BU…";
+      box.appendChild(chipEl("business-unit", "Business Unit", label, true));
+    }
+    if (state.teams !== null) {
+      const names = state.teams.map(id => (ALL_TEAMS.find(t => t.id === id) || {}).name || id);
+      const label = names.length ? multiLabel(names, "team") : "Select teams…";
+      box.appendChild(chipEl("team", "Team", label, true));
+    }
+    if (state.statuses !== null) {
+      const labels = state.statuses.map(id => (STATUS_OPTIONS.find(o => o.id === id) || {}).label || id);
+      const label = labels.length ? multiLabel(labels, "status") : "Select statuses…";
+      box.appendChild(chipEl("status", "Status", label, true));
+    }
+  }
+
+  function chipEl(id, dimension, value, removable) {
+    const wrap = document.createElement("div");
+    wrap.className = "filter-chip";
+    wrap.dataset.filter = id;
+    const label = document.createElement("button");
+    label.type = "button";
+    label.className = "filter-chip-label";
+    label.innerHTML = `<span class="dim">${escapeHtml(dimension)} ·</span>${escapeHtml(value)}`;
+    label.addEventListener("click", (e) => { e.stopPropagation(); openPicker(id, label); });
+    wrap.appendChild(label);
+    if (removable) {
+      const rm = document.createElement("button");
+      rm.type = "button";
+      rm.className = "filter-chip-remove";
+      rm.textContent = "×";
+      rm.title = `Remove ${dimension} filter`;
+      rm.addEventListener("click", (e) => { e.stopPropagation(); removeFilter(id); });
+      wrap.appendChild(rm);
+    }
+    return wrap;
+  }
+
+  function renderAddFilterMenu() {
+    const menu = document.getElementById("add-filter-menu");
+    menu.innerHTML = "";
+    const options = [
+      { id: "business-unit", label: "Business Unit", active: state.businessUnits !== null },
+      { id: "team", label: "Team", active: state.teams !== null },
+      { id: "status", label: "Status", active: state.statuses !== null },
+    ].filter(o => !o.active);
+    if (options.length === 0) {
+      menu.innerHTML = `<div style="padding: 10px 14px; color: var(--slate); font-size: 13px;">All filters added.</div>`;
+      return;
+    }
+    options.forEach(o => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = o.label;
+      b.addEventListener("click", () => {
+        if (o.id === "business-unit") state.businessUnits = [];
+        if (o.id === "team") state.teams = [];
+        if (o.id === "status") state.statuses = [];
+        closeAddFilterMenu();
+        renderChips();
+        renderAddFilterMenu();
+        const newChip = document.querySelector(`.filter-chip[data-filter="${o.id}"] .filter-chip-label`);
+        if (newChip) openPicker(o.id, newChip);
+      });
+      menu.appendChild(b);
+    });
+  }
+
+  function removeFilter(id) {
+    if (id === "business-unit") state.businessUnits = null;
+    if (id === "team") state.teams = null;
+    if (id === "status") state.statuses = null;
+    closePicker();
+    renderChips();
+    renderAddFilterMenu();
+    refresh();
+  }
+
+  // --- Pickers ---
+  const picker = document.getElementById("picker-panel");
+
+  function openPicker(id, anchorEl) {
+    picker.innerHTML = "";
+    if (id === "date-range") renderDateRangePicker();
+    else if (id === "business-unit") renderMultiPicker("business-unit", "Business Unit", ALL_BUSINESS_UNITS.map(bu => ({ id: bu, label: bu })), state.businessUnits || []);
+    else if (id === "team") renderTeamPicker();
+    else if (id === "status") renderMultiPicker("status", "Status", STATUS_OPTIONS, state.statuses || []);
+    positionPicker(anchorEl);
+    picker.removeAttribute("hidden");
+  }
+
+  function closePicker() { picker.setAttribute("hidden", ""); }
+
+  function positionPicker(anchorEl) {
+    if (!anchorEl) return;
+    const row = document.querySelector(".filter-row");
+    const rowRect = row.getBoundingClientRect();
+    const anchorRect = anchorEl.getBoundingClientRect();
+    picker.style.left = (anchorRect.left - rowRect.left) + "px";
+    picker.style.top = "calc(100% + 8px)";
+  }
+
+  function renderDateRangePicker() {
+    const body = document.createElement("div");
+    body.className = "date-picker-body";
+    const presetsDiv = document.createElement("div");
+    presetsDiv.className = "date-presets";
+    Object.entries(PRESET_LABELS).forEach(([id, label]) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = label;
+      b.setAttribute("aria-pressed", state.dateRange.preset === id ? "true" : "false");
+      b.addEventListener("click", () => applyPreset(id));
+      presetsDiv.appendChild(b);
+    });
+    const form = document.createElement("div");
+    form.className = "date-form";
+    form.innerHTML = `
+      <label>Date range</label>
+      <div class="inputs">
+        <input type="date" id="dp-start" value="${fmtISO(state.dateRange.start)}">
+        <span>→</span>
+        <input type="date" id="dp-end" value="${fmtISO(state.dateRange.end)}">
+      </div>
+      <div class="picker-actions">
+        <button type="button" id="dp-cancel">Cancel</button>
+        <button type="button" class="primary" id="dp-apply">Apply</button>
+      </div>
+    `;
+    body.appendChild(presetsDiv);
+    body.appendChild(form);
+    picker.appendChild(body);
+    document.getElementById("dp-cancel").addEventListener("click", closePicker);
+    document.getElementById("dp-apply").addEventListener("click", () => {
+      const s = document.getElementById("dp-start").value;
+      const e = document.getElementById("dp-end").value;
+      if (!s || !e) return;
+      state.dateRange = { preset: "custom", start: parseDate(s), end: parseDate(e) };
+      closePicker();
+      renderChips();
+      refresh();
+    });
+  }
+
+  function applyPreset(id) {
+    const r = computePreset(id);
+    if (!r) return;
+    state.dateRange = { preset: id, start: r.start, end: r.end };
+    closePicker();
+    renderChips();
+    refresh();
+  }
+
   function computePreset(preset) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -394,85 +582,166 @@ table.teams tr:last-child td { border-bottom: none; }
       const dates = snapshots.map(s => parseDate(s.week.target_date).getTime());
       start = new Date(Math.min(...dates));
       end = new Date(Math.max(...dates));
-    } else {
-      return null;
-    }
+    } else return null;
     return { start, end };
   }
 
-  function applyPreset(preset) {
-    const r = computePreset(preset);
-    if (!r) return;
-    currentStart = r.start;
-    currentEnd = r.end;
-    currentPreset = preset;
-    document.getElementById("range-start").value = fmtISO(r.start);
-    document.getElementById("range-end").value = fmtISO(r.end);
-    document.querySelectorAll("#range-presets button").forEach(b => b.setAttribute("aria-pressed", b.dataset.preset === preset ? "true" : "false"));
-    refresh();
+  function renderMultiPicker(id, title, options, current) {
+    const heading = document.createElement("h4");
+    heading.textContent = title;
+    picker.appendChild(heading);
+    const list = document.createElement("div");
+    list.className = "picker-list";
+    const selected = new Set(current);
+    options.forEach(opt => {
+      const label = document.createElement("label");
+      label.innerHTML = `<input type="checkbox" ${selected.has(opt.id) ? "checked" : ""}> ${escapeHtml(opt.label)}`;
+      label.querySelector("input").addEventListener("change", (e) => {
+        if (e.target.checked) selected.add(opt.id); else selected.delete(opt.id);
+      });
+      list.appendChild(label);
+    });
+    picker.appendChild(list);
+    const actions = document.createElement("div");
+    actions.className = "picker-actions";
+    actions.innerHTML = `<button type="button" data-role="cancel">Cancel</button><button type="button" class="primary" data-role="apply">Apply</button>`;
+    picker.appendChild(actions);
+    actions.querySelector('[data-role="cancel"]').addEventListener("click", closePicker);
+    actions.querySelector('[data-role="apply"]').addEventListener("click", () => {
+      const values = Array.from(selected);
+      if (id === "business-unit") state.businessUnits = values;
+      else if (id === "status") state.statuses = values;
+      closePicker();
+      renderChips();
+      refresh();
+    });
   }
 
-  // --- Wire up controls ---
-  document.getElementById("range-chip").addEventListener("click", (e) => {
-    if (e.target.id === "range-reset") return;
-    const picker = document.getElementById("range-picker");
-    const showing = !picker.hasAttribute("hidden");
-    if (showing) picker.setAttribute("hidden", ""); else picker.removeAttribute("hidden");
-    document.getElementById("range-chip").setAttribute("aria-expanded", showing ? "false" : "true");
-  });
+  function renderTeamPicker() {
+    const heading = document.createElement("h4");
+    heading.textContent = "Team";
+    picker.appendChild(heading);
+    const searchInput = document.createElement("input");
+    searchInput.type = "search";
+    searchInput.className = "picker-search";
+    searchInput.placeholder = "Type to filter teams…";
+    searchInput.autocomplete = "off";
+    picker.appendChild(searchInput);
+    const list = document.createElement("div");
+    list.className = "picker-list";
+    picker.appendChild(list);
+    const selected = new Set(state.teams || []);
 
-  document.getElementById("range-reset").addEventListener("click", (e) => {
-    e.stopPropagation();
-    applyPreset("current-month");
-  });
+    function drawList(q) {
+      list.innerHTML = "";
+      const filtered = ALL_TEAMS.filter(t =>
+        !q
+        || t.name.toLowerCase().includes(q)
+        || t.business_unit.toLowerCase().includes(q)
+        || t.id.toLowerCase().includes(q)
+      );
+      if (filtered.length === 0) {
+        list.innerHTML = `<div style="padding: 10px; color: var(--slate); font-size: 13px;">No teams match.</div>`;
+        return;
+      }
+      filtered.forEach(t => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" ${selected.has(t.id) ? "checked" : ""}> <span>${escapeHtml(t.name)}</span> <span style="color: var(--slate); font-size: 11px; margin-left: auto;">${escapeHtml(t.business_unit)}</span>`;
+        label.style.gap = "8px";
+        label.querySelector("input").addEventListener("change", (e) => {
+          if (e.target.checked) selected.add(t.id); else selected.delete(t.id);
+        });
+        list.appendChild(label);
+      });
+    }
+    drawList("");
+    searchInput.addEventListener("input", () => drawList(searchInput.value.trim().toLowerCase()));
 
-  document.querySelectorAll("#range-presets button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      applyPreset(btn.dataset.preset);
-      document.getElementById("range-picker").setAttribute("hidden", "");
-      document.getElementById("range-chip").setAttribute("aria-expanded", "false");
+    const actions = document.createElement("div");
+    actions.className = "picker-actions";
+    actions.innerHTML = `<button type="button" data-role="cancel">Cancel</button><button type="button" class="primary" data-role="apply">Apply</button>`;
+    picker.appendChild(actions);
+    actions.querySelector('[data-role="cancel"]').addEventListener("click", closePicker);
+    actions.querySelector('[data-role="apply"]').addEventListener("click", () => {
+      state.teams = Array.from(selected);
+      closePicker();
+      renderChips();
+      refresh();
     });
+    setTimeout(() => searchInput.focus(), 0);
+  }
+
+  // --- Add filter menu ---
+  function openAddFilterMenu() { document.getElementById("add-filter-menu").removeAttribute("hidden"); }
+  function closeAddFilterMenu() { document.getElementById("add-filter-menu").setAttribute("hidden", ""); }
+
+  document.getElementById("add-filter-btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    const menu = document.getElementById("add-filter-menu");
+    if (menu.hasAttribute("hidden")) { renderAddFilterMenu(); openAddFilterMenu(); }
+    else closeAddFilterMenu();
   });
 
-  document.getElementById("range-apply").addEventListener("click", () => {
-    const s = document.getElementById("range-start").value;
-    const e = document.getElementById("range-end").value;
-    if (!s || !e) return;
-    currentStart = parseDate(s);
-    currentEnd = parseDate(e);
-    currentPreset = "custom";
-    document.querySelectorAll("#range-presets button").forEach(b => b.setAttribute("aria-pressed", "false"));
-    document.getElementById("range-picker").setAttribute("hidden", "");
-    document.getElementById("range-chip").setAttribute("aria-expanded", "false");
+  document.getElementById("clear-filters").addEventListener("click", () => {
+    state.search = "";
+    state.dateRange = { preset: "current-month", ...computePreset("current-month") };
+    state.businessUnits = null;
+    state.teams = null;
+    state.statuses = null;
+    document.getElementById("search-input").value = "";
+    closePicker();
+    closeAddFilterMenu();
+    renderChips();
+    renderAddFilterMenu();
     refresh();
   });
 
-  document.getElementById("range-cancel").addEventListener("click", () => {
-    document.getElementById("range-start").value = fmtISO(currentStart);
-    document.getElementById("range-end").value = fmtISO(currentEnd);
-    document.getElementById("range-picker").setAttribute("hidden", "");
-    document.getElementById("range-chip").setAttribute("aria-expanded", "false");
+  document.getElementById("search-input").addEventListener("input", (e) => {
+    state.search = e.target.value;
+    refresh();
   });
 
   document.addEventListener("click", (e) => {
-    const picker = document.getElementById("range-picker");
-    if (picker.hasAttribute("hidden")) return;
-    if (picker.contains(e.target)) return;
-    if (document.getElementById("range-chip").contains(e.target)) return;
-    picker.setAttribute("hidden", "");
-    document.getElementById("range-chip").setAttribute("aria-expanded", "false");
+    if (!picker.hasAttribute("hidden")
+        && !picker.contains(e.target)
+        && !e.target.closest(".filter-chip")) closePicker();
+    const menu = document.getElementById("add-filter-menu");
+    if (!menu.hasAttribute("hidden")
+        && !menu.contains(e.target)
+        && !e.target.closest("#add-filter-btn")) closeAddFilterMenu();
   });
 
-  document.querySelectorAll("#bu-filter button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      currentBU = btn.dataset.bu;
-      document.querySelectorAll("#bu-filter button").forEach(b => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
-      refresh();
-    });
-  });
+  // --- Main refresh ---
+  function refresh() {
+    const inRange = filterSnapshots();
+    let teams = aggregateTeams(inRange);
+    teams = applyStatusFilter(teams);
+    const totals = computeTotals(teams);
 
-  // Default preset: current month (based on the latest snapshot's month, as
-  // computed server-side via default_start/default_end).
+    document.getElementById("delivery-rate").textContent = totals.objectives ? (totals.delivery_rate * 100).toFixed(1) + "%" : "–";
+    document.getElementById("delivery-bar").style.width = (totals.delivery_rate * 100).toFixed(1) + "%";
+    document.getElementById("delivery-note").textContent = totals.objectives
+      ? `${totals.done} of ${totals.objectives} objectives done.`
+      : "No objectives match these filters.";
+    document.getElementById("scope-teams").textContent = totals.teams;
+    document.getElementById("scope-objectives").textContent = totals.objectives;
+    BUCKETS.forEach(b => document.querySelector(`.status-num[data-role="${b}"]`).textContent = totals[b]);
+
+    const tbody = document.getElementById("teams-tbody");
+    if (teams.length === 0) {
+      tbody.innerHTML = `<tr class="empty-row"><td colspan="5">No snapshots for these filters.</td></tr>`;
+    } else {
+      tbody.innerHTML = teams.map(renderTeamRow).join("");
+    }
+
+    document.getElementById("team-count-note").textContent =
+      `${totals.objectives} ${pluralize(totals.objectives, "objective", "objectives")} across ${totals.teams} ${pluralize(totals.teams, "team", "teams")}.`;
+    document.getElementById("page-subhead").textContent = `Team delivery, status mix, and objective risks over ${humanRangeSubhead()}.`;
+  }
+
+  // Initial paint
+  renderChips();
+  renderAddFilterMenu();
   refresh();
 })();
 </script>
