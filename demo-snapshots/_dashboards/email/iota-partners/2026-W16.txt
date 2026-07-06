@@ -1,0 +1,36 @@
+Objectives Rollup — Iota Partner Portal — Week 16
+=================================================
+
+Iota Partner Portal — Week 16 (April 15, 2026)
+Delivery rate: 60.0% (3 of 5 done)
+
+Done: 3  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MIOTA-104 — SLA breach notifier
+    Ellis Marín · In Progress · 69%
+    Done this week: Owner was out; update will land in the next report.
+    Target next week: Post an update by Friday capturing what shifted.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MIOTA-101 — Onboarding self-serve wizard
+    Tomo Ilves · In Progress · 58%
+    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+    Target next week: Complete the final code review and enable the feature flag globally.
+
+[Done] MIOTA-100 — Partner API rate-limit v2
+    Lena Rihanna · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MIOTA-102 — Compliance audit trail
+    Pia Rivas · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MIOTA-103 — Partner billing reconciliation
+    Ines Marchetti · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

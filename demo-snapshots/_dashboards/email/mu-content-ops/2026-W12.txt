@@ -1,0 +1,36 @@
+Objectives Rollup — Mu Content Ops — Week 12
+============================================
+
+Mu Content Ops — Week 12 (March 18, 2026)
+Delivery rate: 80.0% (4 of 5 done)
+
+Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MMU-101 — Cross-locale asset governance
+    Nya Sardar · In Progress · 68%
+    Done this week: Update deferred pending a decision from the steering meeting.
+    Target next week: Sync with the owner and file the missing update retroactively.
+    Blockers: No owner reachable this week.
+
+[Done] MMU-100 — Provider content ingestion QA
+    Hiro Vasquez · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MMU-102 — Publisher content freshness
+    Odin Barone · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MMU-103 — Cadence dashboard for editors
+    Bram Larsson · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MMU-104 — Broken-image sentinel
+    Pia Rivas · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.

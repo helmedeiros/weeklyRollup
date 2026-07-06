@@ -1,0 +1,31 @@
+Objectives Rollup — Zeta Search Discovery — Week 18
+===================================================
+
+Zeta Search Discovery — Week 18 (April 29, 2026)
+Delivery rate: 75.0% (3 of 4 done)
+
+Done: 3  |  On track: 0  |  At risk: 0  |  Blocked: 1  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover blocked] MZETA-102 — Personalised trip recommendations
+    Milo Anders · In Progress · 41%
+    Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
+    Target next week: Unblock the vendor conversation and get an ETA.
+    Blockers: External vendor SLA slipping; no eta.
+
+[Done] MZETA-100 — Homepage skeleton refresh
+    Tomo Ilves · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MZETA-101 — Cart persistence across surfaces
+    Odin Barone · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MZETA-103 — Purchase confirmation clarity
+    Bram Larsson · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.

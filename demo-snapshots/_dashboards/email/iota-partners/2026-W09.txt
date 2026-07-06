@@ -1,0 +1,35 @@
+Objectives Rollup — Iota Partner Portal — Week 9
+================================================
+
+Iota Partner Portal — Week 9 (February 25, 2026)
+Delivery rate: 80.0% (4 of 5 done)
+
+Done: 4  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover on track] MIOTA-101 — Onboarding self-serve wizard
+    Tomo Ilves · In Progress · 77%
+    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Done] MIOTA-100 — Partner API rate-limit v2
+    Lena Rihanna · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MIOTA-102 — Compliance audit trail
+    Pia Rivas · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MIOTA-103 — Partner billing reconciliation
+    Ines Marchetti · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MIOTA-104 — SLA breach notifier
+    Ellis Marín · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.

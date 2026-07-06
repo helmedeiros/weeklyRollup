@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "team": {
     "id": "kappa-enterprise",
     "name": "Kappa Enterprise Ops",
@@ -36,7 +36,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Sana Rowe",
+        "status": "Green",
+        "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
+        "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
+        "blockers": ""
+      }
     },
     {
       "key": "MKAPP-101",
@@ -53,7 +60,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Rio Delacroix",
+        "status": "Green",
+        "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
+        "target_next_week": "Hand off to the on-call rotation and close the epic.",
+        "blockers": ""
+      }
     },
     {
       "key": "MKAPP-103",
@@ -70,7 +84,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Frida Ohno",
+        "status": "Green",
+        "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
+        "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
+        "blockers": ""
+      }
     },
     {
       "key": "MKAPP-100",
@@ -87,7 +108,21 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Sana Rowe",
+        "status": "Green",
+        "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
+        "target_next_week": "Move to maintenance; capture learnings into the runbook.",
+        "blockers": ""
+      }
     }
-  ]
+  ],
+  "outputs": {
+    "email": {
+      "subject": "Objectives Rollup — Kappa Enterprise Ops — Week 23",
+      "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head><meta charset=\"utf-8\"><title>Objectives Rollup — Kappa Enterprise Ops — Week 23</title></head>\n<body style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background:#f1f2f6;\">\n  <tr>\n    <td align=\"center\" style=\"padding:16px 8px;\">\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n        <tr>\n          <td style=\"background-color:#132968;padding:28px;text-align:center;\">\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Kappa Enterprise Ops</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:24px;font-weight:bold;color:#ffffff;padding-top:8px;\">Week 23 — June 3, 2026</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;padding-top:6px;\">Delivery rate: 100.0%</div>\n          </td>\n        </tr>\n        <tr><td style=\"padding:12px;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;background:#f8fafc;\">\n  <tr>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">4</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#0d9488;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On track</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">At risk</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Blocked</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#475569;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Missing</div></td>\n  </tr>\n</table></td></tr>\n        <tr>\n          <td style=\"padding:22px 28px 8px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n            Hi team,<br><br>\n            Please find the latest objective health report for <strong style=\"color:#132968;\">Kappa Enterprise Ops</strong>.\n          </td>\n        </tr>\n        <tr>\n          <td style=\"padding:0 28px 28px;\">\n            <h2 style=\"font-family:Verdana,sans-serif;font-size:16px;color:#132968;border-bottom:2px solid #132968;padding-bottom:8px;margin:12px 0 8px;\">Objective updates</h2>\n            \n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MKAPP-100</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Partner API rate-limit v2</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Sana Rowe · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Move to maintenance; capture learnings into the runbook.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MKAPP-101</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Onboarding self-serve wizard</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Rio Delacroix · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Hand off to the on-call rotation and close the epic.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MKAPP-102</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Compliance audit trail</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Sana Rowe · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Monitor for the next 2 weeks; no active work planned.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MKAPP-103</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Partner billing reconciliation</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Frida Ohno · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Monitor for the next 2 weeks; no active work planned.</div>\n  \n</div>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n</body>\n</html>\n",
+      "text": "Objectives Rollup — Kappa Enterprise Ops — Week 23\n==================================================\n\nKappa Enterprise Ops — Week 23 (June 3, 2026)\nDelivery rate: 100.0% (4 of 4 done)\n\nDone: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0\n\nObjective updates\n-----------------\n\n[Done] MKAPP-100 — Partner API rate-limit v2\n    Sana Rowe · Done · 100%\n    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\n    Target next week: Move to maintenance; capture learnings into the runbook.\n\n[Done] MKAPP-101 — Onboarding self-serve wizard\n    Rio Delacroix · Done · 100%\n    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\n    Target next week: Hand off to the on-call rotation and close the epic.\n\n[Done] MKAPP-102 — Compliance audit trail\n    Sana Rowe · Done · 100%\n    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\n    Target next week: Monitor for the next 2 weeks; no active work planned.\n\n[Done] MKAPP-103 — Partner billing reconciliation\n    Frida Ohno · Done · 100%\n    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\n    Target next week: Monitor for the next 2 weeks; no active work planned.\n"
+    }
+  }
 }

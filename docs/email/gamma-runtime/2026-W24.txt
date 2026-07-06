@@ -1,0 +1,43 @@
+Objectives Rollup — Gamma Runtime — Week 24
+===========================================
+
+Gamma Runtime — Week 24 (June 10, 2026)
+Delivery rate: 50.0% (3 of 6 done)
+
+Done: 3  |  On track: 0  |  At risk: 2  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Spillover at risk] MGAMM-101 — Feature flag rollout guardrails
+    Ellis Marín · In Progress · 74%
+    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+    Target next week: Realign with the partner team and reset the delivery date.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Spillover at risk] MGAMM-103 — Observability sampling refresh
+    Ava Thornton · In Progress · 58%
+    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Missing update] MGAMM-100 — Zero-downtime restart choreography
+    Sana Rowe · In Progress · 39%
+    Done this week: Update deferred pending a decision from the steering meeting.
+    Target next week: Post an update by Friday capturing what shifted.
+    Blockers: No owner reachable this week.
+
+[Done] MGAMM-102 — Golden-path SLO board
+    Pia Rivas · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-104 — Warm-cache eviction policy
+    Hiro Vasquez · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-105 — Rate-limiter fairness audit
+    Rio Delacroix · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Hand off to the on-call rotation and close the epic.

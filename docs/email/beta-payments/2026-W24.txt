@@ -1,0 +1,46 @@
+Objectives Rollup — Beta Payments Core — Week 24
+================================================
+
+Beta Payments Core — Week 24 (June 10, 2026)
+Delivery rate: 71.4% (5 of 7 done)
+
+Done: 5  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MBETA-105 — Rate-limiter fairness audit
+    Bram Larsson · In Progress · 44%
+    Done this week: Owner was out; update will land in the next report.
+    Target next week: Sync with the owner and file the missing update retroactively.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MBETA-102 — Golden-path SLO board
+    Sana Rowe · In Progress · 34%
+    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Done] MBETA-100 — Zero-downtime restart choreography
+    Ava Thornton · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MBETA-101 — Feature flag rollout guardrails
+    Rio Delacroix · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MBETA-103 — Observability sampling refresh
+    Pia Rivas · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MBETA-104 — Warm-cache eviction policy
+    Rio Delacroix · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MBETA-106 — Deprecation channel rollout
+    Pia Rivas · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Hand off to the on-call rotation and close the epic.

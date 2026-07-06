@@ -1,0 +1,56 @@
+Objectives Rollup — Epsilon Growth — Week 30
+============================================
+
+Epsilon Growth — Week 30 (July 22, 2026)
+Delivery rate: 66.7% (6 of 9 done)
+
+Done: 6  |  On track: 2  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover at risk] MEPSI-104 — Refund status transparency
+    Milo Anders · In Progress · 58%
+    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
+    Blockers: Design review pending from the sibling team.
+
+[Spillover on track] MEPSI-101 — Cart persistence across surfaces
+    Ellis Marín · In Progress · 62%
+    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Spillover on track] MEPSI-105 — Payment method reorder
+    Frida Ohno · In Progress · 88%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Done] MEPSI-100 — Homepage skeleton refresh
+    Quinn Yates · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MEPSI-102 — Personalised trip recommendations
+    Pia Rivas · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MEPSI-103 — Purchase confirmation clarity
+    Ava Thornton · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MEPSI-106 — Passenger name-change flow
+    Ines Marchetti · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MEPSI-107 — Search relevance re-ranker
+    Bram Larsson · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MEPSI-108 — Loyalty perks eligibility banner
+    Ellis Marín · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.

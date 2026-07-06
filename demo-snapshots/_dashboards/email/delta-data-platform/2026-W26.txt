@@ -1,0 +1,36 @@
+Objectives Rollup — Delta Data Platform — Week 26
+=================================================
+
+Delta Data Platform — Week 26 (June 24, 2026)
+Delivery rate: 80.0% (4 of 5 done)
+
+Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MDELT-101 — Feature flag rollout guardrails
+    Ellis Marín · In Progress · 83%
+    Done this week: No update was captured this week.
+    Target next week: Post an update by Friday capturing what shifted.
+    Blockers: No owner reachable this week.
+
+[Done] MDELT-100 — Zero-downtime restart choreography
+    Cai Nguyen · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MDELT-102 — Golden-path SLO board
+    Milo Anders · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MDELT-103 — Observability sampling refresh
+    Pia Rivas · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MDELT-104 — Warm-cache eviction policy
+    Ines Marchetti · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

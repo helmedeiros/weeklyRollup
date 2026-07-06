@@ -1,0 +1,41 @@
+Objectives Rollup — Gamma Runtime — Week 30
+===========================================
+
+Gamma Runtime — Week 30 (July 22, 2026)
+Delivery rate: 83.3% (5 of 6 done)
+
+Done: 5  |  On track: 0  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover at risk] MGAMM-104 — Warm-cache eviction policy
+    Hiro Vasquez · In Progress · 89%
+    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Done] MGAMM-100 — Zero-downtime restart choreography
+    Sana Rowe · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-101 — Feature flag rollout guardrails
+    Ellis Marín · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MGAMM-102 — Golden-path SLO board
+    Pia Rivas · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-103 — Observability sampling refresh
+    Ava Thornton · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-105 — Rate-limiter fairness audit
+    Rio Delacroix · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Hand off to the on-call rotation and close the epic.

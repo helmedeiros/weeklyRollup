@@ -1,0 +1,42 @@
+Objectives Rollup — Gamma Runtime — Week 25
+===========================================
+
+Gamma Runtime — Week 25 (June 17, 2026)
+Delivery rate: 66.7% (4 of 6 done)
+
+Done: 4  |  On track: 0  |  At risk: 2  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover at risk] MGAMM-103 — Observability sampling refresh
+    Ava Thornton · In Progress · 80%
+    Done this week: Scope grew after user testing; trimming to hit the reduced target.
+    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Spillover at risk] MGAMM-105 — Rate-limiter fairness audit
+    Rio Delacroix · In Progress · 90%
+    Done this week: Scope grew after user testing; trimming to hit the reduced target.
+    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+    Blockers: Design review pending from the sibling team.
+
+[Done] MGAMM-100 — Zero-downtime restart choreography
+    Sana Rowe · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MGAMM-101 — Feature flag rollout guardrails
+    Ellis Marín · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MGAMM-102 — Golden-path SLO board
+    Pia Rivas · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MGAMM-104 — Warm-cache eviction policy
+    Hiro Vasquez · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.

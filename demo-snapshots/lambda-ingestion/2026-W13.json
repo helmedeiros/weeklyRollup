@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "team": {
     "id": "lambda-ingestion",
     "name": "Lambda Ingestion",
@@ -36,7 +36,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Ellis Marín",
+        "status": "Green",
+        "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
+        "target_next_week": "Hand off to the on-call rotation and close the epic.",
+        "blockers": ""
+      }
     },
     {
       "key": "MLAMB-100",
@@ -53,7 +60,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Gali Tomori",
+        "status": "Green",
+        "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
+        "target_next_week": "Move to maintenance; capture learnings into the runbook.",
+        "blockers": ""
+      }
     },
     {
       "key": "MLAMB-104",
@@ -70,7 +84,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Kai Ostberg",
+        "status": "Green",
+        "done_this_week": "Closed the final ticket in the epic and archived the working doc.",
+        "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
+        "blockers": ""
+      }
     },
     {
       "key": "MLAMB-105",
@@ -87,7 +108,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Dara Okonjo",
+        "status": "Green",
+        "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
+        "target_next_week": "Move to maintenance; capture learnings into the runbook.",
+        "blockers": ""
+      }
     },
     {
       "key": "MLAMB-102",
@@ -104,7 +132,14 @@
       "bucket": "spillover_at_risk",
       "hygiene_severity": "yellow",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Pia Rivas",
+        "status": "Yellow",
+        "done_this_week": "Scope grew after user testing; trimming to hit the reduced target.",
+        "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
+        "blockers": "Design review pending from the sibling team."
+      }
     },
     {
       "key": "MLAMB-103",
@@ -121,7 +156,21 @@
       "bucket": "spillover_at_risk",
       "hygiene_severity": "yellow",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Bram Larsson",
+        "status": "Yellow",
+        "done_this_week": "Scope grew after user testing; trimming to hit the reduced target.",
+        "target_next_week": "Realign with the partner team and reset the delivery date.",
+        "blockers": "Design review pending from the sibling team."
+      }
     }
-  ]
+  ],
+  "outputs": {
+    "email": {
+      "subject": "Objectives Rollup — Lambda Ingestion — Week 13",
+      "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head><meta charset=\"utf-8\"><title>Objectives Rollup — Lambda Ingestion — Week 13</title></head>\n<body style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background:#f1f2f6;\">\n  <tr>\n    <td align=\"center\" style=\"padding:16px 8px;\">\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n        <tr>\n          <td style=\"background-color:#132968;padding:28px;text-align:center;\">\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Lambda Ingestion</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:24px;font-weight:bold;color:#ffffff;padding-top:8px;\">Week 13 — March 25, 2026</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;padding-top:6px;\">Delivery rate: 66.7%</div>\n          </td>\n        </tr>\n        <tr><td style=\"padding:12px;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;background:#f8fafc;\">\n  <tr>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">4</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#0d9488;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On track</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">2</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">At risk</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Blocked</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#475569;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Missing</div></td>\n  </tr>\n</table></td></tr>\n        <tr>\n          <td style=\"padding:22px 28px 8px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n            Hi team,<br><br>\n            Please find the latest objective health report for <strong style=\"color:#132968;\">Lambda Ingestion</strong>.\n          </td>\n        </tr>\n        <tr>\n          <td style=\"padding:0 28px 28px;\">\n            <h2 style=\"font-family:Verdana,sans-serif;font-size:16px;color:#132968;border-bottom:2px solid #132968;padding-bottom:8px;margin:12px 0 8px;\">Objective updates</h2>\n            \n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MLAMB-102</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Publisher content freshness</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fdecc9;color:#b45309;text-transform:uppercase;letter-spacing:0.5px;\">Spillover at risk</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Pia Rivas · In Progress · 87%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Scope grew after user testing; trimming to hit the reduced target.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Focus on removing the current blocker; deprioritise nice-to-haves.</div>\n  <div style=\"margin-top:6px;color:#b45309;\"><strong>Blockers:</strong> Design review pending from the sibling team.</div>\n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MLAMB-103</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Cadence dashboard for editors</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fdecc9;color:#b45309;text-transform:uppercase;letter-spacing:0.5px;\">Spillover at risk</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Bram Larsson · In Progress · 89%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Scope grew after user testing; trimming to hit the reduced target.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Realign with the partner team and reset the delivery date.</div>\n  <div style=\"margin-top:6px;color:#b45309;\"><strong>Blockers:</strong> Design review pending from the sibling team.</div>\n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MLAMB-100</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Provider content ingestion QA</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Gali Tomori · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Move to maintenance; capture learnings into the runbook.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MLAMB-101</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Cross-locale asset governance</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Ellis Marín · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Landed the migration cutover; no incidents in the follow-up window.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Hand off to the on-call rotation and close the epic.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MLAMB-104</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Broken-image sentinel</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Kai Ostberg · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Closed the final ticket in the epic and archived the working doc.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Monitor for the next 2 weeks; no active work planned.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MLAMB-105</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Content lint gate</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Dara Okonjo · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Move to maintenance; capture learnings into the runbook.</div>\n  \n</div>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n</body>\n</html>\n",
+      "text": "Objectives Rollup — Lambda Ingestion — Week 13\n==============================================\n\nLambda Ingestion — Week 13 (March 25, 2026)\nDelivery rate: 66.7% (4 of 6 done)\n\nDone: 4  |  On track: 0  |  At risk: 2  |  Blocked: 0  |  Missing: 0\n\nObjective updates\n-----------------\n\n[Spillover at risk] MLAMB-102 — Publisher content freshness\n    Pia Rivas · In Progress · 87%\n    Done this week: Scope grew after user testing; trimming to hit the reduced target.\n    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.\n    Blockers: Design review pending from the sibling team.\n\n[Spillover at risk] MLAMB-103 — Cadence dashboard for editors\n    Bram Larsson · In Progress · 89%\n    Done this week: Scope grew after user testing; trimming to hit the reduced target.\n    Target next week: Realign with the partner team and reset the delivery date.\n    Blockers: Design review pending from the sibling team.\n\n[Done] MLAMB-100 — Provider content ingestion QA\n    Gali Tomori · Done · 100%\n    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\n    Target next week: Move to maintenance; capture learnings into the runbook.\n\n[Done] MLAMB-101 — Cross-locale asset governance\n    Ellis Marín · Done · 100%\n    Done this week: Landed the migration cutover; no incidents in the follow-up window.\n    Target next week: Hand off to the on-call rotation and close the epic.\n\n[Done] MLAMB-104 — Broken-image sentinel\n    Kai Ostberg · Done · 100%\n    Done this week: Closed the final ticket in the epic and archived the working doc.\n    Target next week: Monitor for the next 2 weeks; no active work planned.\n\n[Done] MLAMB-105 — Content lint gate\n    Dara Okonjo · Done · 100%\n    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\n    Target next week: Move to maintenance; capture learnings into the runbook.\n"
+    }
+  }
 }

@@ -1,0 +1,30 @@
+Objectives Rollup — Kappa Enterprise Ops — Week 10
+==================================================
+
+Kappa Enterprise Ops — Week 10 (March 4, 2026)
+Delivery rate: 100.0% (4 of 4 done)
+
+Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Done] MKAPP-100 — Partner API rate-limit v2
+    Sana Rowe · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MKAPP-101 — Onboarding self-serve wizard
+    Rio Delacroix · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MKAPP-102 — Compliance audit trail
+    Sana Rowe · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MKAPP-103 — Partner billing reconciliation
+    Frida Ohno · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.

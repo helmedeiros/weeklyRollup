@@ -1,0 +1,36 @@
+Objectives Rollup — Mu Content Ops — Week 18
+============================================
+
+Mu Content Ops — Week 18 (April 29, 2026)
+Delivery rate: 40.0% (2 of 5 done)
+
+Done: 2  |  On track: 2  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MMU-103 — Cadence dashboard for editors
+    Bram Larsson · In Progress · 61%
+    Done this week: Update deferred pending a decision from the steering meeting.
+    Target next week: Sync with the owner and file the missing update retroactively.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MMU-101 — Cross-locale asset governance
+    Nya Sardar · In Progress · 85%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Spillover on track] MMU-104 — Broken-image sentinel
+    Pia Rivas · In Progress · 40%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Wrap the last integration test and hand off to QA.
+
+[Done] MMU-100 — Provider content ingestion QA
+    Hiro Vasquez · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MMU-102 — Publisher content freshness
+    Odin Barone · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Hand off to the on-call rotation and close the epic.

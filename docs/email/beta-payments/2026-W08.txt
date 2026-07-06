@@ -1,0 +1,45 @@
+Objectives Rollup — Beta Payments Core — Week 8
+===============================================
+
+Beta Payments Core — Week 8 (February 18, 2026)
+Delivery rate: 85.7% (6 of 7 done)
+
+Done: 6  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover on track] MBETA-102 — Golden-path SLO board
+    Sana Rowe · In Progress · 65%
+    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+    Target next week: Wrap the last integration test and hand off to QA.
+
+[Done] MBETA-100 — Zero-downtime restart choreography
+    Ava Thornton · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MBETA-101 — Feature flag rollout guardrails
+    Rio Delacroix · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MBETA-103 — Observability sampling refresh
+    Pia Rivas · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MBETA-104 — Warm-cache eviction policy
+    Rio Delacroix · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MBETA-105 — Rate-limiter fairness audit
+    Bram Larsson · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MBETA-106 — Deprecation channel rollout
+    Pia Rivas · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.

@@ -1,0 +1,32 @@
+Objectives Rollup — Zeta Search Discovery — Week 30
+===================================================
+
+Zeta Search Discovery — Week 30 (July 22, 2026)
+Delivery rate: 25.0% (1 of 4 done)
+
+Done: 1  |  On track: 1  |  At risk: 0  |  Blocked: 1  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Spillover blocked] MZETA-101 — Cart persistence across surfaces
+    Odin Barone · In Progress · 45%
+    Done this week: Waiting on infra migration that was pushed to the next quarter.
+    Target next week: Unblock the vendor conversation and get an ETA.
+    Blockers: Infra migration blocking rollout; owner: platform.
+
+[Missing update] MZETA-103 — Purchase confirmation clarity
+    Bram Larsson · In Progress · 61%
+    Done this week: No update was captured this week.
+    Target next week: Sync with the owner and file the missing update retroactively.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MZETA-102 — Personalised trip recommendations
+    Milo Anders · In Progress · 62%
+    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Done] MZETA-100 — Homepage skeleton refresh
+    Tomo Ilves · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.

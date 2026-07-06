@@ -1,0 +1,50 @@
+Objectives Rollup — Alpha Foundations — Week 14
+===============================================
+
+Alpha Foundations — Week 14 (April 1, 2026)
+Delivery rate: 100.0% (8 of 8 done)
+
+Done: 8  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Done] MALPH-100 — Zero-downtime restart choreography
+    Sana Rowe · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MALPH-101 — Feature flag rollout guardrails
+    Nya Sardar · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MALPH-102 — Golden-path SLO board
+    Ava Thornton · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MALPH-103 — Observability sampling refresh
+    Sana Rowe · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MALPH-104 — Warm-cache eviction policy
+    Pia Rivas · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MALPH-105 — Rate-limiter fairness audit
+    Ava Thornton · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MALPH-106 — Deprecation channel rollout
+    Jules Cabrera · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MALPH-107 — Service topology drift alarm
+    Sana Rowe · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.

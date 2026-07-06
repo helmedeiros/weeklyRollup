@@ -1,0 +1,46 @@
+Objectives Rollup — Beta Payments Core — Week 20
+================================================
+
+Beta Payments Core — Week 20 (May 13, 2026)
+Delivery rate: 71.4% (5 of 7 done)
+
+Done: 5  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MBETA-101 — Feature flag rollout guardrails
+    Rio Delacroix · In Progress · 40%
+    Done this week: Owner was out; update will land in the next report.
+    Target next week: Post an update by Friday capturing what shifted.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MBETA-106 — Deprecation channel rollout
+    Pia Rivas · In Progress · 72%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Complete the final code review and enable the feature flag globally.
+
+[Done] MBETA-100 — Zero-downtime restart choreography
+    Ava Thornton · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MBETA-102 — Golden-path SLO board
+    Sana Rowe · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MBETA-103 — Observability sampling refresh
+    Pia Rivas · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MBETA-104 — Warm-cache eviction policy
+    Rio Delacroix · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MBETA-105 — Rate-limiter fairness audit
+    Bram Larsson · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

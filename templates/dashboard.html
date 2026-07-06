@@ -179,6 +179,41 @@ table.teams tr:last-child td { border-bottom: none; }
 .week-body { border-top: 1px solid var(--line); }
 .week-section[data-open="false"] .week-body { display: none; }
 .obj-key { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--navy); background: #eaf1fb; padding: 2px 8px; border-radius: 6px; }
+
+/* Detail-view email + updates */
+.email-strip { display: flex; align-items: center; gap: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; }
+.email-strip .meta { color: var(--slate); font-size: 12px; }
+.email-strip .primary { margin-left: auto; }
+.btn-primary { background: var(--navy); color: white; border: none; border-radius: 999px; padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+.btn-primary:hover { background: #0f1f4d; }
+.btn-primary[disabled] { background: #cbd5e1; cursor: not-allowed; }
+.email-chip { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--navy); cursor: pointer; font-family: inherit; }
+.email-chip:hover { background: #eef2ff; border-color: var(--navy); }
+.email-chip[disabled] { color: #94a3b8; cursor: not-allowed; }
+.email-chip[disabled]:hover { background: transparent; border-color: var(--line); }
+.week-row.expandable { cursor: pointer; }
+.week-row.expandable:hover { background: #f8fafc; }
+.week-row .toggle { display: inline-block; width: 12px; color: var(--slate); font-family: monospace; }
+.week-row-detail td { background: #f8fafc; padding: 14px 18px; }
+.update-panel { display: grid; grid-template-columns: 100px 1fr; gap: 6px 16px; font-size: 13px; }
+.update-panel .k { color: var(--slate); text-transform: uppercase; font-size: 10px; letter-spacing: 1px; font-weight: 700; padding-top: 4px; }
+.update-panel .v { color: var(--slate-strong); }
+.update-empty { color: var(--slate); font-style: italic; padding: 6px 0; }
+
+/* Email modal */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.55); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.modal-backdrop[hidden] { display: none; }
+.modal { background: var(--panel); border-radius: 14px; width: 100%; max-width: 900px; height: 90vh; display: flex; flex-direction: column; overflow: hidden; }
+.modal-head { display: flex; align-items: baseline; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.modal-head h3 { margin: 0; font-size: 16px; color: var(--navy); }
+.modal-head .subject { color: var(--slate); font-size: 13px; }
+.modal-close { margin-left: auto; background: transparent; border: none; font-size: 24px; color: var(--slate); cursor: pointer; padding: 0 6px; line-height: 1; }
+.modal-close:hover { color: var(--navy); }
+.modal-actions { display: flex; gap: 8px; padding: 10px 20px; border-bottom: 1px solid var(--line); background: #f8fafc; }
+.modal-actions button { border: 1px solid var(--line); background: white; color: var(--navy); border-radius: 999px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; }
+.modal-actions button:hover { border-color: var(--navy); background: #eef2ff; }
+.modal-actions .status { margin-left: auto; align-self: center; color: var(--slate); font-size: 12px; }
+.modal-frame { flex: 1; width: 100%; border: none; background: #f1f2f6; }
 </style>
 </head>
 <body>
@@ -269,6 +304,14 @@ table.teams tr:last-child td { border-bottom: none; }
   </div>
   <p class="detail-subhead" id="detail-range"></p>
 
+  <div class="email-strip" id="detail-email-strip">
+    <div>
+      <div style="font-size: 13px; font-weight: 700; color: var(--navy);" id="detail-email-title">Weekly email draft</div>
+      <div class="meta" id="detail-email-meta"></div>
+    </div>
+    <button class="btn-primary primary" id="detail-email-open" type="button" disabled>View email</button>
+  </div>
+
   <div class="section-block">
     <h2>Objectives in period</h2>
     <p class="section-subhead" id="detail-obj-subhead"></p>
@@ -294,6 +337,22 @@ table.teams tr:last-child td { border-bottom: none; }
     <h2>Weekly reports</h2>
     <p class="section-subhead" id="detail-weeks-subhead"></p>
     <div id="weekly-reports"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="email-modal" hidden>
+  <div class="modal" role="dialog" aria-labelledby="email-modal-title">
+    <div class="modal-head">
+      <h3 id="email-modal-title">Email Draft</h3>
+      <span class="subject" id="email-modal-subject"></span>
+      <button class="modal-close" id="email-modal-close" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="modal-actions">
+      <button type="button" data-copy="html">Copy HTML</button>
+      <button type="button" data-copy="text">Copy Text</button>
+      <span class="status" id="email-modal-status"></span>
+    </div>
+    <iframe id="email-modal-frame" class="modal-frame" sandbox="allow-same-origin" title="Email preview"></iframe>
   </div>
 </div>
 
@@ -846,9 +905,84 @@ table.teams tr:last-child td { border-bottom: none; }
     document.getElementById("detail-team-bu").textContent = team.business_unit;
     document.getElementById("detail-range").textContent = humanRangeSubhead(start, end);
 
+    renderEmailStrip(teamSnapshots);
     renderObjectivesInPeriod(teamSnapshots);
     renderWeeklyReports(teamSnapshots);
   }
+
+  // --- Email helpers ---
+  function snapshotHasEmail(s) {
+    return !!(s && s.outputs && s.outputs.email && s.outputs.email.has_html);
+  }
+  function snapshotEmailUrl(s, kind) {
+    const y = s.week.iso_year;
+    const w = String(s.week.iso_week).padStart(2, "0");
+    return `email/${encodeURIComponent(s.team.id)}/${y}-W${w}.${kind === "text" ? "txt" : "html"}`;
+  }
+
+  function renderEmailStrip(teamSnapshots) {
+    const btn = document.getElementById("detail-email-open");
+    const meta = document.getElementById("detail-email-meta");
+    const title = document.getElementById("detail-email-title");
+    if (teamSnapshots.length === 0) {
+      title.textContent = "Weekly email draft";
+      meta.textContent = "No snapshots in this range.";
+      btn.setAttribute("disabled", "");
+      btn.onclick = null;
+      return;
+    }
+    // Latest snapshot with an email; fall back to latest snapshot overall.
+    const latest = teamSnapshots.find(snapshotHasEmail) || teamSnapshots[0];
+    const date = parseDate(latest.week.target_date);
+    const dateLabel = date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+    title.textContent = `Weekly email draft — Week ${latest.week.iso_week} · ${dateLabel}`;
+    if (snapshotHasEmail(latest)) {
+      meta.textContent = latest.outputs.email.subject || "";
+      btn.removeAttribute("disabled");
+      btn.onclick = () => openEmailModal(latest);
+    } else {
+      meta.textContent = "Email not captured for this week. Run scripts/regenerate_from_snapshot.py to enrich the snapshot.";
+      btn.setAttribute("disabled", "");
+      btn.onclick = null;
+    }
+  }
+
+  function openEmailModal(snapshot) {
+    const modal = document.getElementById("email-modal");
+    document.getElementById("email-modal-subject").textContent = snapshot.outputs?.email?.subject || "";
+    document.getElementById("email-modal-status").textContent = "";
+    const frame = document.getElementById("email-modal-frame");
+    frame.setAttribute("src", snapshotEmailUrl(snapshot, "html"));
+    modal.dataset.htmlUrl = snapshotEmailUrl(snapshot, "html");
+    modal.dataset.textUrl = snapshotEmailUrl(snapshot, "text");
+    modal.removeAttribute("hidden");
+  }
+  function closeEmailModal() {
+    const modal = document.getElementById("email-modal");
+    modal.setAttribute("hidden", "");
+    document.getElementById("email-modal-frame").setAttribute("src", "about:blank");
+  }
+  document.getElementById("email-modal-close").addEventListener("click", closeEmailModal);
+  document.getElementById("email-modal").addEventListener("click", (e) => {
+    if (e.target.id === "email-modal") closeEmailModal();
+  });
+  document.querySelectorAll('#email-modal [data-copy]').forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const modal = document.getElementById("email-modal");
+      const kind = btn.dataset.copy;
+      const url = kind === "text" ? modal.dataset.textUrl : modal.dataset.htmlUrl;
+      const status = document.getElementById("email-modal-status");
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) throw new Error(resp.statusText);
+        const body = await resp.text();
+        await navigator.clipboard.writeText(body);
+        status.textContent = `Copied ${kind.toUpperCase()} to clipboard.`;
+      } catch (err) {
+        status.textContent = `Failed to copy: ${err.message}`;
+      }
+    });
+  });
 
   function renderObjectivesInPeriod(teamSnapshots) {
     const tbody = document.getElementById("objectives-in-period-tbody");
@@ -899,15 +1033,23 @@ table.teams tr:last-child td { border-bottom: none; }
       const section = document.createElement("section");
       section.className = "week-section";
       section.setAttribute("data-open", open ? "true" : "false");
-      const header = document.createElement("button");
-      header.type = "button";
+      const header = document.createElement("div");
       header.className = "week-header";
-      header.innerHTML = `<span class="chev">${open ? "▾" : "▸"}</span><span>Week of ${escapeHtml(dateLabel)}</span><span class="meta">${s.totals.objectives} ${pluralize(s.totals.objectives, "objective", "objectives")} · ${rate}</span>`;
-      header.addEventListener("click", () => {
-        const wasOpen = section.getAttribute("data-open") === "true";
-        section.setAttribute("data-open", wasOpen ? "false" : "true");
-        header.querySelector(".chev").textContent = wasOpen ? "▸" : "▾";
+      const hasEmail = snapshotHasEmail(s);
+      header.innerHTML = `<button type="button" class="chev" data-role="toggle" style="background:transparent;border:none;font-family:inherit;font-size:14px;color:var(--slate);cursor:pointer;">${open ? "▾" : "▸"}</button><span data-role="toggle" style="cursor:pointer;">Week of ${escapeHtml(dateLabel)}</span><span class="meta">${s.totals.objectives} ${pluralize(s.totals.objectives, "objective", "objectives")} · ${rate}</span><button type="button" class="email-chip" data-role="email" ${hasEmail ? "" : "disabled"} title="${hasEmail ? "View draft email for this week" : "Email not captured for this week"}">📧 Email</button>`;
+      header.querySelectorAll('[data-role="toggle"]').forEach(el => {
+        el.addEventListener("click", () => {
+          const wasOpen = section.getAttribute("data-open") === "true";
+          section.setAttribute("data-open", wasOpen ? "false" : "true");
+          header.querySelector(".chev").textContent = wasOpen ? "▸" : "▾";
+        });
       });
+      if (hasEmail) {
+        header.querySelector('[data-role="email"]').addEventListener("click", (e) => {
+          e.stopPropagation();
+          openEmailModal(s);
+        });
+      }
       section.appendChild(header);
       const body = document.createElement("div");
       body.className = "week-body";
@@ -919,22 +1061,55 @@ table.teams tr:last-child td { border-bottom: none; }
 
   function renderWeekTable(objectives) {
     if (!objectives.length) return `<p style="color: var(--slate); padding: 16px 20px;">No objectives.</p>`;
-    const rows = objectives
+    const sorted = objectives
       .slice()
-      .sort((a, b) => (BUCKET_ORDER[a.bucket] ?? 99) - (BUCKET_ORDER[b.bucket] ?? 99) || (a.key || "").localeCompare(b.key || ""))
-      .map(o => `<tr>
-        <td><span class="obj-key">${escapeHtml(o.key)}</span></td>
-        <td>${escapeHtml(o.name)}</td>
-        <td>${bucketPill(o.bucket)}</td>
-        <td>${escapeHtml(o.jira_status)}</td>
-        <td>${escapeHtml(o.leader_engineer)}</td>
-        <td>${escapeHtml(o.progress)}</td>
-      </tr>`);
+      .sort((a, b) => (BUCKET_ORDER[a.bucket] ?? 99) - (BUCKET_ORDER[b.bucket] ?? 99) || (a.key || "").localeCompare(b.key || ""));
+    const rows = sorted.flatMap((o, idx) => {
+      const rowId = `wr-${idx}`;
+      return [
+        `<tr class="week-row expandable" data-target="${rowId}">
+          <td><span class="toggle">▸</span> <span class="obj-key">${escapeHtml(o.key)}</span></td>
+          <td>${escapeHtml(o.name)}</td>
+          <td>${bucketPill(o.bucket)}</td>
+          <td>${escapeHtml(o.jira_status)}</td>
+          <td>${escapeHtml(o.leader_engineer)}</td>
+          <td>${escapeHtml(o.progress)}</td>
+        </tr>`,
+        `<tr class="week-row-detail" id="${rowId}" hidden>
+          <td colspan="6">${renderUpdatePanel(o.update)}</td>
+        </tr>`,
+      ];
+    });
     return `<table class="week-table">
       <thead><tr><th>Key</th><th>Name</th><th>Status</th><th>Jira</th><th>Leader Engineer</th><th>Progress</th></tr></thead>
       <tbody>${rows.join("")}</tbody>
     </table>`;
   }
+
+  function renderUpdatePanel(update) {
+    if (!update) return `<div class="update-empty">No LE update captured for this objective.</div>`;
+    const row = (k, v) => v ? `<div class="k">${k}</div><div class="v">${escapeHtml(v)}</div>` : "";
+    return `<div class="update-panel">
+      ${row("Status", update.status)}
+      ${row("Author", update.author)}
+      ${row("Done this week", update.done_this_week)}
+      ${row("Target next week", update.target_next_week)}
+      ${update.blockers ? row("Blockers", update.blockers) : ""}
+    </div>`;
+  }
+
+  // Delegated toggle for expandable objective rows.
+  document.addEventListener("click", (e) => {
+    const row = e.target.closest("tr.week-row.expandable");
+    if (!row) return;
+    const targetId = row.dataset.target;
+    if (!targetId) return;
+    const detail = document.getElementById(targetId);
+    if (!detail) return;
+    const isOpen = !detail.hasAttribute("hidden");
+    if (isOpen) { detail.setAttribute("hidden", ""); row.querySelector(".toggle").textContent = "▸"; }
+    else { detail.removeAttribute("hidden"); row.querySelector(".toggle").textContent = "▾"; }
+  });
 
   // --- Router ---
   function currentRoute() {

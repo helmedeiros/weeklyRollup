@@ -1,0 +1,35 @@
+Objectives Rollup — Delta Data Platform — Week 17
+=================================================
+
+Delta Data Platform — Week 17 (April 22, 2026)
+Delivery rate: 100.0% (5 of 5 done)
+
+Done: 5  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Done] MDELT-100 — Zero-downtime restart choreography
+    Cai Nguyen · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MDELT-101 — Feature flag rollout guardrails
+    Ellis Marín · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MDELT-102 — Golden-path SLO board
+    Milo Anders · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MDELT-103 — Observability sampling refresh
+    Pia Rivas · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MDELT-104 — Warm-cache eviction policy
+    Ines Marchetti · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.

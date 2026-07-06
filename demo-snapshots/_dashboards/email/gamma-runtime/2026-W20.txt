@@ -1,0 +1,40 @@
+Objectives Rollup — Gamma Runtime — Week 20
+===========================================
+
+Gamma Runtime — Week 20 (May 13, 2026)
+Delivery rate: 100.0% (6 of 6 done)
+
+Done: 6  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Done] MGAMM-100 — Zero-downtime restart choreography
+    Sana Rowe · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-101 — Feature flag rollout guardrails
+    Ellis Marín · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-102 — Golden-path SLO board
+    Pia Rivas · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-103 — Observability sampling refresh
+    Ava Thornton · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-104 — Warm-cache eviction policy
+    Hiro Vasquez · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-105 — Rate-limiter fairness audit
+    Rio Delacroix · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.

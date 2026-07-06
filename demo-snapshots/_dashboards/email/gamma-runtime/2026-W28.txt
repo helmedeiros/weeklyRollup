@@ -1,0 +1,42 @@
+Objectives Rollup — Gamma Runtime — Week 28
+===========================================
+
+Gamma Runtime — Week 28 (July 8, 2026)
+Delivery rate: 66.7% (4 of 6 done)
+
+Done: 4  |  On track: 0  |  At risk: 1  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Spillover at risk] MGAMM-101 — Feature flag rollout guardrails
+    Ellis Marín · In Progress · 34%
+    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Missing update] MGAMM-103 — Observability sampling refresh
+    Ava Thornton · In Progress · 83%
+    Done this week: Update deferred pending a decision from the steering meeting.
+    Target next week: Post an update by Friday capturing what shifted.
+    Blockers: No owner reachable this week.
+
+[Done] MGAMM-100 — Zero-downtime restart choreography
+    Sana Rowe · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-102 — Golden-path SLO board
+    Pia Rivas · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-104 — Warm-cache eviction policy
+    Hiro Vasquez · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-105 — Rate-limiter fairness audit
+    Rio Delacroix · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.

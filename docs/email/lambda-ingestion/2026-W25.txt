@@ -1,0 +1,42 @@
+Objectives Rollup — Lambda Ingestion — Week 25
+==============================================
+
+Lambda Ingestion — Week 25 (June 17, 2026)
+Delivery rate: 66.7% (4 of 6 done)
+
+Done: 4  |  On track: 0  |  At risk: 1  |  Blocked: 1  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover blocked] MLAMB-103 — Cadence dashboard for editors
+    Bram Larsson · In Progress · 52%
+    Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
+    Target next week: Pick up a related workstream while the primary path stays blocked.
+    Blockers: Infra migration blocking rollout; owner: platform.
+
+[Spillover at risk] MLAMB-105 — Content lint gate
+    Dara Okonjo · In Progress · 36%
+    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Done] MLAMB-100 — Provider content ingestion QA
+    Gali Tomori · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MLAMB-101 — Cross-locale asset governance
+    Ellis Marín · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MLAMB-102 — Publisher content freshness
+    Pia Rivas · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MLAMB-104 — Broken-image sentinel
+    Kai Ostberg · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.

@@ -1,0 +1,55 @@
+Objectives Rollup — Epsilon Growth — Week 24
+============================================
+
+Epsilon Growth — Week 24 (June 10, 2026)
+Delivery rate: 77.8% (7 of 9 done)
+
+Done: 7  |  On track: 2  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover on track] MEPSI-100 — Homepage skeleton refresh
+    Quinn Yates · In Progress · 52%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Wrap the last integration test and hand off to QA.
+
+[Spillover on track] MEPSI-108 — Loyalty perks eligibility banner
+    Ellis Marín · In Progress · 41%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Complete the final code review and enable the feature flag globally.
+
+[Done] MEPSI-101 — Cart persistence across surfaces
+    Ellis Marín · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MEPSI-102 — Personalised trip recommendations
+    Pia Rivas · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MEPSI-103 — Purchase confirmation clarity
+    Ava Thornton · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MEPSI-104 — Refund status transparency
+    Milo Anders · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MEPSI-105 — Payment method reorder
+    Frida Ohno · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MEPSI-106 — Passenger name-change flow
+    Ines Marchetti · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MEPSI-107 — Search relevance re-ranker
+    Bram Larsson · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.

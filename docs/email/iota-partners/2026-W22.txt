@@ -1,0 +1,35 @@
+Objectives Rollup — Iota Partner Portal — Week 22
+=================================================
+
+Iota Partner Portal — Week 22 (May 27, 2026)
+Delivery rate: 60.0% (3 of 5 done)
+
+Done: 3  |  On track: 2  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover on track] MIOTA-100 — Partner API rate-limit v2
+    Lena Rihanna · In Progress · 57%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Spillover on track] MIOTA-101 — Onboarding self-serve wizard
+    Tomo Ilves · In Progress · 49%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Complete the final code review and enable the feature flag globally.
+
+[Done] MIOTA-102 — Compliance audit trail
+    Pia Rivas · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MIOTA-103 — Partner billing reconciliation
+    Ines Marchetti · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MIOTA-104 — SLA breach notifier
+    Ellis Marín · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

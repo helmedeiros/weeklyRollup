@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "team": {
     "id": "gamma-runtime",
     "name": "Gamma Runtime",
@@ -36,7 +36,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Hiro Vasquez",
+        "status": "Green",
+        "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
+        "target_next_week": "Move to maintenance; capture learnings into the runbook.",
+        "blockers": ""
+      }
     },
     {
       "key": "MGAMM-101",
@@ -53,7 +60,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Ellis Marín",
+        "status": "Green",
+        "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
+        "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
+        "blockers": ""
+      }
     },
     {
       "key": "MGAMM-103",
@@ -70,7 +84,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Ava Thornton",
+        "status": "Green",
+        "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
+        "target_next_week": "Move to maintenance; capture learnings into the runbook.",
+        "blockers": ""
+      }
     },
     {
       "key": "MGAMM-102",
@@ -87,7 +108,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Pia Rivas",
+        "status": "Green",
+        "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
+        "target_next_week": "Hand off to the on-call rotation and close the epic.",
+        "blockers": ""
+      }
     },
     {
       "key": "MGAMM-105",
@@ -104,7 +132,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Rio Delacroix",
+        "status": "Green",
+        "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
+        "target_next_week": "Hand off to the on-call rotation and close the epic.",
+        "blockers": ""
+      }
     },
     {
       "key": "MGAMM-100",
@@ -121,7 +156,21 @@
       "bucket": "spillover_at_risk",
       "hygiene_severity": "yellow",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Sana Rowe",
+        "status": "Yellow",
+        "done_this_week": "Waiting on a dependency from an adjacent team; escalation opened.",
+        "target_next_week": "Realign with the partner team and reset the delivery date.",
+        "blockers": "A single reviewer is a bottleneck; needs a delegate."
+      }
     }
-  ]
+  ],
+  "outputs": {
+    "email": {
+      "subject": "Objectives Rollup — Gamma Runtime — Week 7",
+      "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head><meta charset=\"utf-8\"><title>Objectives Rollup — Gamma Runtime — Week 7</title></head>\n<body style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background:#f1f2f6;\">\n  <tr>\n    <td align=\"center\" style=\"padding:16px 8px;\">\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n        <tr>\n          <td style=\"background-color:#132968;padding:28px;text-align:center;\">\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Gamma Runtime</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:24px;font-weight:bold;color:#ffffff;padding-top:8px;\">Week 7 — February 11, 2026</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;padding-top:6px;\">Delivery rate: 83.3%</div>\n          </td>\n        </tr>\n        <tr><td style=\"padding:12px;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;background:#f8fafc;\">\n  <tr>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">5</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#0d9488;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On track</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">At risk</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Blocked</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#475569;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Missing</div></td>\n  </tr>\n</table></td></tr>\n        <tr>\n          <td style=\"padding:22px 28px 8px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n            Hi team,<br><br>\n            Please find the latest objective health report for <strong style=\"color:#132968;\">Gamma Runtime</strong>.\n          </td>\n        </tr>\n        <tr>\n          <td style=\"padding:0 28px 28px;\">\n            <h2 style=\"font-family:Verdana,sans-serif;font-size:16px;color:#132968;border-bottom:2px solid #132968;padding-bottom:8px;margin:12px 0 8px;\">Objective updates</h2>\n            \n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MGAMM-100</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Zero-downtime restart choreography</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fdecc9;color:#b45309;text-transform:uppercase;letter-spacing:0.5px;\">Spillover at risk</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Sana Rowe · In Progress · 83%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Waiting on a dependency from an adjacent team; escalation opened.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Realign with the partner team and reset the delivery date.</div>\n  <div style=\"margin-top:6px;color:#b45309;\"><strong>Blockers:</strong> A single reviewer is a bottleneck; needs a delegate.</div>\n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MGAMM-101</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Feature flag rollout guardrails</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Ellis Marín · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Monitor for the next 2 weeks; no active work planned.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MGAMM-102</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Golden-path SLO board</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Pia Rivas · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Landed the migration cutover; no incidents in the follow-up window.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Hand off to the on-call rotation and close the epic.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MGAMM-103</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Observability sampling refresh</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Ava Thornton · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Move to maintenance; capture learnings into the runbook.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MGAMM-104</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Warm-cache eviction policy</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Hiro Vasquez · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Landed the migration cutover; no incidents in the follow-up window.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Move to maintenance; capture learnings into the runbook.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MGAMM-105</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Rate-limiter fairness audit</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Rio Delacroix · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Hand off to the on-call rotation and close the epic.</div>\n  \n</div>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n</body>\n</html>\n",
+      "text": "Objectives Rollup — Gamma Runtime — Week 7\n==========================================\n\nGamma Runtime — Week 7 (February 11, 2026)\nDelivery rate: 83.3% (5 of 6 done)\n\nDone: 5  |  On track: 0  |  At risk: 1  |  Blocked: 0  |  Missing: 0\n\nObjective updates\n-----------------\n\n[Spillover at risk] MGAMM-100 — Zero-downtime restart choreography\n    Sana Rowe · In Progress · 83%\n    Done this week: Waiting on a dependency from an adjacent team; escalation opened.\n    Target next week: Realign with the partner team and reset the delivery date.\n    Blockers: A single reviewer is a bottleneck; needs a delegate.\n\n[Done] MGAMM-101 — Feature flag rollout guardrails\n    Ellis Marín · Done · 100%\n    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\n    Target next week: Monitor for the next 2 weeks; no active work planned.\n\n[Done] MGAMM-102 — Golden-path SLO board\n    Pia Rivas · Done · 100%\n    Done this week: Landed the migration cutover; no incidents in the follow-up window.\n    Target next week: Hand off to the on-call rotation and close the epic.\n\n[Done] MGAMM-103 — Observability sampling refresh\n    Ava Thornton · Done · 100%\n    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\n    Target next week: Move to maintenance; capture learnings into the runbook.\n\n[Done] MGAMM-104 — Warm-cache eviction policy\n    Hiro Vasquez · Done · 100%\n    Done this week: Landed the migration cutover; no incidents in the follow-up window.\n    Target next week: Move to maintenance; capture learnings into the runbook.\n\n[Done] MGAMM-105 — Rate-limiter fairness audit\n    Rio Delacroix · Done · 100%\n    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\n    Target next week: Hand off to the on-call rotation and close the epic.\n"
+    }
+  }
 }

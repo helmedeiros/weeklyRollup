@@ -1,0 +1,41 @@
+Objectives Rollup — Gamma Runtime — Week 19
+===========================================
+
+Gamma Runtime — Week 19 (May 6, 2026)
+Delivery rate: 66.7% (4 of 6 done)
+
+Done: 4  |  On track: 1  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover at risk] MGAMM-104 — Warm-cache eviction policy
+    Hiro Vasquez · In Progress · 68%
+    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+    Target next week: Realign with the partner team and reset the delivery date.
+    Blockers: Design review pending from the sibling team.
+
+[Spillover on track] MGAMM-103 — Observability sampling refresh
+    Ava Thornton · In Progress · 66%
+    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Done] MGAMM-100 — Zero-downtime restart choreography
+    Sana Rowe · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-101 — Feature flag rollout guardrails
+    Ellis Marín · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-102 — Golden-path SLO board
+    Pia Rivas · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-105 — Rate-limiter fairness audit
+    Rio Delacroix · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

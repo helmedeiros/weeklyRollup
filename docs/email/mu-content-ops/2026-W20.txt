@@ -1,0 +1,36 @@
+Objectives Rollup — Mu Content Ops — Week 20
+============================================
+
+Mu Content Ops — Week 20 (May 13, 2026)
+Delivery rate: 60.0% (3 of 5 done)
+
+Done: 3  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MMU-104 — Broken-image sentinel
+    Pia Rivas · In Progress · 76%
+    Done this week: Owner was out; update will land in the next report.
+    Target next week: Sync with the owner and file the missing update retroactively.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MMU-101 — Cross-locale asset governance
+    Nya Sardar · In Progress · 83%
+    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[Done] MMU-100 — Provider content ingestion QA
+    Hiro Vasquez · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MMU-102 — Publisher content freshness
+    Odin Barone · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MMU-103 — Cadence dashboard for editors
+    Bram Larsson · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.

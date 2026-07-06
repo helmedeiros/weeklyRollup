@@ -1,0 +1,41 @@
+Objectives Rollup — Gamma Runtime — Week 17
+===========================================
+
+Gamma Runtime — Week 17 (April 22, 2026)
+Delivery rate: 66.7% (4 of 6 done)
+
+Done: 4  |  On track: 1  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover at risk] MGAMM-100 — Zero-downtime restart choreography
+    Sana Rowe · In Progress · 77%
+    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+    Blockers: Design review pending from the sibling team.
+
+[Spillover on track] MGAMM-101 — Feature flag rollout guardrails
+    Ellis Marín · In Progress · 69%
+    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+    Target next week: Complete the final code review and enable the feature flag globally.
+
+[Done] MGAMM-102 — Golden-path SLO board
+    Pia Rivas · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-103 — Observability sampling refresh
+    Ava Thornton · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MGAMM-104 — Warm-cache eviction policy
+    Hiro Vasquez · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MGAMM-105 — Rate-limiter fairness audit
+    Rio Delacroix · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

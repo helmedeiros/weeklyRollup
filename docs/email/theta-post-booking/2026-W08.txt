@@ -1,0 +1,41 @@
+Objectives Rollup — Theta Post-Booking — Week 8
+===============================================
+
+Theta Post-Booking — Week 8 (February 18, 2026)
+Delivery rate: 66.7% (4 of 6 done)
+
+Done: 4  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Missing update] MTHET-105 — Payment method reorder
+    Sana Rowe · In Progress · 66%
+    Done this week: Update deferred pending a decision from the steering meeting.
+    Target next week: Post an update by Friday capturing what shifted.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MTHET-103 — Purchase confirmation clarity
+    Jules Cabrera · In Progress · 45%
+    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+    Target next week: Wrap the last integration test and hand off to QA.
+
+[Done] MTHET-100 — Homepage skeleton refresh
+    Milo Anders · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MTHET-101 — Cart persistence across surfaces
+    Quinn Yates · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MTHET-102 — Personalised trip recommendations
+    Rio Delacroix · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MTHET-104 — Refund status transparency
+    Pia Rivas · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

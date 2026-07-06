@@ -1,0 +1,31 @@
+Objectives Rollup — Zeta Search Discovery — Week 12
+===================================================
+
+Zeta Search Discovery — Week 12 (March 18, 2026)
+Delivery rate: 75.0% (3 of 4 done)
+
+Done: 3  |  On track: 0  |  At risk: 0  |  Blocked: 1  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover blocked] MZETA-100 — Homepage skeleton refresh
+    Tomo Ilves · In Progress · 60%
+    Done this week: Waiting on infra migration that was pushed to the next quarter.
+    Target next week: Reassign to a different owner so the current one can help elsewhere.
+    Blockers: Infra migration blocking rollout; owner: platform.
+
+[Done] MZETA-101 — Cart persistence across surfaces
+    Odin Barone · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MZETA-102 — Personalised trip recommendations
+    Milo Anders · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MZETA-103 — Purchase confirmation clarity
+    Bram Larsson · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Move to maintenance; capture learnings into the runbook.

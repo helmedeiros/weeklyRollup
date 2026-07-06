@@ -1,0 +1,47 @@
+Objectives Rollup — Beta Payments Core — Week 15
+================================================
+
+Beta Payments Core — Week 15 (April 8, 2026)
+Delivery rate: 57.1% (4 of 7 done)
+
+Done: 4  |  On track: 1  |  At risk: 2  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover at risk] MBETA-102 — Golden-path SLO board
+    Sana Rowe · In Progress · 35%
+    Done this week: Slipped the promised design review; rescheduling for later this week.
+    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Spillover at risk] MBETA-104 — Warm-cache eviction policy
+    Rio Delacroix · In Progress · 53%
+    Done this week: Scope grew after user testing; trimming to hit the reduced target.
+    Target next week: Realign with the partner team and reset the delivery date.
+    Blockers: Design review pending from the sibling team.
+
+[Spillover on track] MBETA-101 — Feature flag rollout guardrails
+    Rio Delacroix · In Progress · 61%
+    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+    Target next week: Complete the final code review and enable the feature flag globally.
+
+[Done] MBETA-100 — Zero-downtime restart choreography
+    Ava Thornton · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MBETA-103 — Observability sampling refresh
+    Pia Rivas · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.
+
+[Done] MBETA-105 — Rate-limiter fairness audit
+    Bram Larsson · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MBETA-106 — Deprecation channel rollout
+    Pia Rivas · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.

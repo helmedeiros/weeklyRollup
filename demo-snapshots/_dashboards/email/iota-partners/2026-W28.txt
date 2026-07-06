@@ -1,0 +1,37 @@
+Objectives Rollup — Iota Partner Portal — Week 28
+=================================================
+
+Iota Partner Portal — Week 28 (July 8, 2026)
+Delivery rate: 40.0% (2 of 5 done)
+
+Done: 2  |  On track: 1  |  At risk: 1  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Spillover at risk] MIOTA-101 — Onboarding self-serve wizard
+    Tomo Ilves · In Progress · 78%
+    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+    Target next week: Realign with the partner team and reset the delivery date.
+    Blockers: Design review pending from the sibling team.
+
+[Missing update] MIOTA-102 — Compliance audit trail
+    Pia Rivas · In Progress · 69%
+    Done this week: Update deferred pending a decision from the steering meeting.
+    Target next week: Sync with the owner and file the missing update retroactively.
+    Blockers: No owner reachable this week.
+
+[Spillover on track] MIOTA-103 — Partner billing reconciliation
+    Ines Marchetti · In Progress · 49%
+    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+    Target next week: Wrap the last integration test and hand off to QA.
+
+[Done] MIOTA-100 — Partner API rate-limit v2
+    Lena Rihanna · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MIOTA-104 — SLA breach notifier
+    Ellis Marín · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.

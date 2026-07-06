@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "team": {
     "id": "iota-partners",
     "name": "Iota Partner Portal",
@@ -36,7 +36,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Tomo Ilves",
+        "status": "Green",
+        "done_this_week": "Closed the final ticket in the epic and archived the working doc.",
+        "target_next_week": "Move to maintenance; capture learnings into the runbook.",
+        "blockers": ""
+      }
     },
     {
       "key": "MIOTA-100",
@@ -53,7 +60,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Lena Rihanna",
+        "status": "Green",
+        "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
+        "target_next_week": "Move to maintenance; capture learnings into the runbook.",
+        "blockers": ""
+      }
     },
     {
       "key": "MIOTA-103",
@@ -70,7 +84,14 @@
       "bucket": "done",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Ines Marchetti",
+        "status": "Green",
+        "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
+        "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
+        "blockers": ""
+      }
     },
     {
       "key": "MIOTA-102",
@@ -87,7 +108,14 @@
       "bucket": "spillover_on_track",
       "hygiene_severity": "info",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Pia Rivas",
+        "status": "Green",
+        "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
+        "target_next_week": "Complete the final code review and enable the feature flag globally.",
+        "blockers": ""
+      }
     },
     {
       "key": "MIOTA-104",
@@ -104,7 +132,21 @@
       "bucket": "missing",
       "hygiene_severity": "yellow",
       "hygiene": [],
-      "blockers": []
+      "blockers": [],
+      "update": {
+        "author": "Ellis Marín",
+        "status": "Missing",
+        "done_this_week": "Update deferred pending a decision from the steering meeting.",
+        "target_next_week": "Post an update by Friday capturing what shifted.",
+        "blockers": "No owner reachable this week."
+      }
     }
-  ]
+  ],
+  "outputs": {
+    "email": {
+      "subject": "Objectives Rollup — Iota Partner Portal — Week 15",
+      "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head><meta charset=\"utf-8\"><title>Objectives Rollup — Iota Partner Portal — Week 15</title></head>\n<body style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background:#f1f2f6;\">\n  <tr>\n    <td align=\"center\" style=\"padding:16px 8px;\">\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n        <tr>\n          <td style=\"background-color:#132968;padding:28px;text-align:center;\">\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Iota Partner Portal</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:24px;font-weight:bold;color:#ffffff;padding-top:8px;\">Week 15 — April 8, 2026</div>\n            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;padding-top:6px;\">Delivery rate: 60.0%</div>\n          </td>\n        </tr>\n        <tr><td style=\"padding:12px;\">\n<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;background:#f8fafc;\">\n  <tr>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">3</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#0d9488;\">1</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On track</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">At risk</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">0</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Blocked</div></td>\n    <td style=\"padding:12px;\"><div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#475569;\">1</div><div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Missing</div></td>\n  </tr>\n</table></td></tr>\n        <tr>\n          <td style=\"padding:22px 28px 8px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n            Hi team,<br><br>\n            Please find the latest objective health report for <strong style=\"color:#132968;\">Iota Partner Portal</strong>.\n          </td>\n        </tr>\n        <tr>\n          <td style=\"padding:0 28px 28px;\">\n            <h2 style=\"font-family:Verdana,sans-serif;font-size:16px;color:#132968;border-bottom:2px solid #132968;padding-bottom:8px;margin:12px 0 8px;\">Objective updates</h2>\n            \n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MIOTA-104</span>\n        <strong style=\"margin-left:8px;color:#132968;\">SLA breach notifier</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#e6ecf5;color:#475569;text-transform:uppercase;letter-spacing:0.5px;\">Missing update</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Ellis Marín · In Progress · 66%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Update deferred pending a decision from the steering meeting.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Post an update by Friday capturing what shifted.</div>\n  <div style=\"margin-top:6px;color:#b45309;\"><strong>Blockers:</strong> No owner reachable this week.</div>\n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MIOTA-102</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Compliance audit trail</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#d1f2ee;color:#0f766e;text-transform:uppercase;letter-spacing:0.5px;\">Spillover on track</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Pia Rivas · In Progress · 79%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Landed 3 of 5 PRs; last two under review with a partner team.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Complete the final code review and enable the feature flag globally.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MIOTA-100</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Partner API rate-limit v2</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Lena Rihanna · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Move to maintenance; capture learnings into the runbook.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MIOTA-101</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Onboarding self-serve wizard</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Tomo Ilves · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Closed the final ticket in the epic and archived the working doc.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Move to maintenance; capture learnings into the runbook.</div>\n  \n</div>\n<div style=\"margin:12px 0;padding:14px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;\">\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n    <tr>\n      <td>\n        <span style=\"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#132968;background:#eaf1fb;padding:2px 8px;border-radius:4px;\">MIOTA-103</span>\n        <strong style=\"margin-left:8px;color:#132968;\">Partner billing reconciliation</strong>\n      </td>\n      <td style=\"text-align:right;\">\n        <span style=\"font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#dcf3e0;color:#16a34a;text-transform:uppercase;letter-spacing:0.5px;\">Done</span>\n      </td>\n    </tr>\n  </table>\n  <div style=\"color:#64748b;font-size:12px;margin-top:6px;\">Ines Marchetti · Done · 100%</div>\n  <div style=\"margin-top:10px;\"><strong>Done this week:</strong> Landed the migration cutover; no incidents in the follow-up window.</div>\n  <div style=\"margin-top:4px;\"><strong>Target next week:</strong> Monitor for the next 2 weeks; no active work planned.</div>\n  \n</div>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n</body>\n</html>\n",
+      "text": "Objectives Rollup — Iota Partner Portal — Week 15\n=================================================\n\nIota Partner Portal — Week 15 (April 8, 2026)\nDelivery rate: 60.0% (3 of 5 done)\n\nDone: 3  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1\n\nObjective updates\n-----------------\n\n[Missing update] MIOTA-104 — SLA breach notifier\n    Ellis Marín · In Progress · 66%\n    Done this week: Update deferred pending a decision from the steering meeting.\n    Target next week: Post an update by Friday capturing what shifted.\n    Blockers: No owner reachable this week.\n\n[Spillover on track] MIOTA-102 — Compliance audit trail\n    Pia Rivas · In Progress · 79%\n    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.\n    Target next week: Complete the final code review and enable the feature flag globally.\n\n[Done] MIOTA-100 — Partner API rate-limit v2\n    Lena Rihanna · Done · 100%\n    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\n    Target next week: Move to maintenance; capture learnings into the runbook.\n\n[Done] MIOTA-101 — Onboarding self-serve wizard\n    Tomo Ilves · Done · 100%\n    Done this week: Closed the final ticket in the epic and archived the working doc.\n    Target next week: Move to maintenance; capture learnings into the runbook.\n\n[Done] MIOTA-103 — Partner billing reconciliation\n    Ines Marchetti · Done · 100%\n    Done this week: Landed the migration cutover; no incidents in the follow-up window.\n    Target next week: Monitor for the next 2 weeks; no active work planned.\n"
+    }
+  }
 }

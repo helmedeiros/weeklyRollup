@@ -1,0 +1,31 @@
+Objectives Rollup — Zeta Search Discovery — Week 29
+===================================================
+
+Zeta Search Discovery — Week 29 (July 15, 2026)
+Delivery rate: 75.0% (3 of 4 done)
+
+Done: 3  |  On track: 0  |  At risk: 0  |  Blocked: 1  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover blocked] MZETA-101 — Cart persistence across surfaces
+    Odin Barone · In Progress · 33%
+    Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
+    Target next week: Reassign to a different owner so the current one can help elsewhere.
+    Blockers: Legal sign-off outstanding.
+
+[Done] MZETA-100 — Homepage skeleton refresh
+    Tomo Ilves · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MZETA-102 — Personalised trip recommendations
+    Milo Anders · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MZETA-103 — Purchase confirmation clarity
+    Bram Larsson · Done · 100%
+    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+    Target next week: Hand off to the on-call rotation and close the epic.

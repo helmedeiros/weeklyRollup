@@ -23,6 +23,12 @@ import random
 from datetime import date
 from pathlib import Path
 
+from email_from_snapshot import (
+    build_email_html,
+    build_email_text,
+    synth_leader_engineer_update,
+)
+
 
 ISO_YEAR = 2026
 FIRST_WEEK = 6   # 2026-W06: Mon Feb 2 - Sun Feb 8
@@ -178,7 +184,7 @@ def generate() -> None:
             for bucket, objective_status, jira_status, count in bucket_specs:
                 for _ in range(count):
                     src = shuffled[cursor]; cursor += 1
-                    objectives.append({
+                    obj = {
                         "key": src["key"],
                         "name": src["name"],
                         "url": f"https://example.invalid/objectives/{src['key']}",
@@ -194,10 +200,12 @@ def generate() -> None:
                         "hygiene_severity": "yellow" if bucket in {"spillover_at_risk", "missing"} else "info",
                         "hygiene": [],
                         "blockers": [],
-                    })
+                    }
+                    obj["update"] = synth_leader_engineer_update(obj, team_name, ISO_YEAR, iso_week)
+                    objectives.append(obj)
 
             payload = {
-                "schema_version": 1,
+                "schema_version": 2,
                 "team": {"id": team_id, "name": team_name, "business_unit": business_unit},
                 "week": week,
                 "totals": {
@@ -210,6 +218,13 @@ def generate() -> None:
                     "missing": missing,
                 },
                 "objectives": objectives,
+            }
+            payload["outputs"] = {
+                "email": {
+                    "subject": f"Objectives Rollup — {team_name} — Week {iso_week}",
+                    "html": build_email_html(payload),
+                    "text": build_email_text(payload),
+                }
             }
             out = root / team_id / f"{ISO_YEAR}-W{iso_week:02d}.json"
             out.parent.mkdir(parents=True, exist_ok=True)

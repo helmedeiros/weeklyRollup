@@ -1,0 +1,36 @@
+Objectives Rollup — Eta Checkout — Week 28
+==========================================
+
+Eta Checkout — Week 28 (July 8, 2026)
+Delivery rate: 60.0% (3 of 5 done)
+
+Done: 3  |  On track: 1  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover at risk] META-102 — Personalised trip recommendations
+    Jules Cabrera · In Progress · 67%
+    Done this week: Scope grew after user testing; trimming to hit the reduced target.
+    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
+    Blockers: A single reviewer is a bottleneck; needs a delegate.
+
+[Spillover on track] META-100 — Homepage skeleton refresh
+    Pia Rivas · In Progress · 32%
+    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+    Target next week: Wrap the last integration test and hand off to QA.
+
+[Done] META-101 — Cart persistence across surfaces
+    Rio Delacroix · Done · 100%
+    Done this week: Landed the migration cutover; no incidents in the follow-up window.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] META-103 — Purchase confirmation clarity
+    Odin Barone · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] META-104 — Refund status transparency
+    Rio Delacroix · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

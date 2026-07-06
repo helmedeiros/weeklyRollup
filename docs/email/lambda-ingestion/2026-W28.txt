@@ -1,0 +1,42 @@
+Objectives Rollup — Lambda Ingestion — Week 28
+==============================================
+
+Lambda Ingestion — Week 28 (July 8, 2026)
+Delivery rate: 66.7% (4 of 6 done)
+
+Done: 4  |  On track: 0  |  At risk: 1  |  Blocked: 1  |  Missing: 0
+
+Objective updates
+-----------------
+
+[Spillover blocked] MLAMB-102 — Publisher content freshness
+    Pia Rivas · In Progress · 80%
+    Done this week: Waiting on infra migration that was pushed to the next quarter.
+    Target next week: Reassign to a different owner so the current one can help elsewhere.
+    Blockers: External vendor SLA slipping; no eta.
+
+[Spillover at risk] MLAMB-104 — Broken-image sentinel
+    Kai Ostberg · In Progress · 73%
+    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+    Blockers: Design review pending from the sibling team.
+
+[Done] MLAMB-100 — Provider content ingestion QA
+    Gali Tomori · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MLAMB-101 — Cross-locale asset governance
+    Ellis Marín · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MLAMB-103 — Cadence dashboard for editors
+    Bram Larsson · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Hand off to the on-call rotation and close the epic.
+
+[Done] MLAMB-105 — Content lint gate
+    Dara Okonjo · Done · 100%
+    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+    Target next week: Monitor for the next 2 weeks; no active work planned.

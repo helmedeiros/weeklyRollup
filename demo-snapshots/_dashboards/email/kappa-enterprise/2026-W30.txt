@@ -1,0 +1,32 @@
+Objectives Rollup — Kappa Enterprise Ops — Week 30
+==================================================
+
+Kappa Enterprise Ops — Week 30 (July 22, 2026)
+Delivery rate: 50.0% (2 of 4 done)
+
+Done: 2  |  On track: 0  |  At risk: 1  |  Blocked: 0  |  Missing: 1
+
+Objective updates
+-----------------
+
+[Spillover at risk] MKAPP-100 — Partner API rate-limit v2
+    Sana Rowe · In Progress · 74%
+    Done this week: Scope grew after user testing; trimming to hit the reduced target.
+    Target next week: Realign with the partner team and reset the delivery date.
+    Blockers: Design review pending from the sibling team.
+
+[Missing update] MKAPP-103 — Partner billing reconciliation
+    Frida Ohno · In Progress · 33%
+    Done this week: No update was captured this week.
+    Target next week: Post an update by Friday capturing what shifted.
+    Blockers: No owner reachable this week.
+
+[Done] MKAPP-101 — Onboarding self-serve wizard
+    Rio Delacroix · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.
+
+[Done] MKAPP-102 — Compliance audit trail
+    Sana Rowe · Done · 100%
+    Done this week: Closed the final ticket in the epic and archived the working doc.
+    Target next week: Move to maintenance; capture learnings into the runbook.

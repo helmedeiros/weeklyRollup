@@ -62,6 +62,62 @@ def default_range(snapshots: list[dict[str, Any]]) -> tuple[str, str]:
     return start.isoformat(), last_day.isoformat()
 
 
+EMAIL_SIDECAR_DIR = "email"
+
+
+def _strip_outputs(snapshot: dict[str, Any]) -> dict[str, Any]:
+    """Return a copy of the snapshot without the heavy email HTML/text bodies.
+
+    The dashboard only needs a marker + subject in the embedded blob; the
+    full email body is served as a sidecar HTML file loaded lazily.
+    """
+    trimmed = {k: v for k, v in snapshot.items() if k != "outputs"}
+    outputs = snapshot.get("outputs") or {}
+    email = outputs.get("email") or {}
+    if email:
+        trimmed["outputs"] = {
+            "email": {
+                "subject": email.get("subject", ""),
+                "has_html": bool(email.get("html")),
+                "has_text": bool(email.get("text")),
+            }
+        }
+    return trimmed
+
+
+def _sidecar_paths(base_dir: Path, snapshot: dict[str, Any]) -> tuple[Path, Path]:
+    team_id = snapshot.get("team", {}).get("id", "unknown")
+    week = snapshot.get("week", {})
+    label = f"{week.get('iso_year')}-W{int(week.get('iso_week') or 0):02d}"
+    return (
+        base_dir / EMAIL_SIDECAR_DIR / team_id / f"{label}.html",
+        base_dir / EMAIL_SIDECAR_DIR / team_id / f"{label}.txt",
+    )
+
+
+def write_email_sidecars(snapshots: list[dict[str, Any]], base_dir: Path) -> int:
+    """Write per-snapshot email HTML/text next to the dashboard output.
+
+    The dashboard opens ``email/<team>/<label>.html`` in an iframe on click.
+    """
+    written = 0
+    for snap in snapshots:
+        outputs = snap.get("outputs") or {}
+        email = outputs.get("email") or {}
+        html_body = email.get("html") or ""
+        text_body = email.get("text") or ""
+        if not html_body and not text_body:
+            continue
+        html_path, text_path = _sidecar_paths(base_dir, snap)
+        html_path.parent.mkdir(parents=True, exist_ok=True)
+        if html_body:
+            html_path.write_text(html_body, encoding="utf-8")
+            written += 1
+        if text_body:
+            text_path.write_text(text_body, encoding="utf-8")
+    return written
+
+
 def render(snapshots: list[dict[str, Any]]) -> str:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
@@ -71,12 +127,14 @@ def render(snapshots: list[dict[str, Any]]) -> str:
     )
     template = env.get_template("dashboard.html")
     default_start, default_end = default_range(snapshots)
+    embedded = [_strip_outputs(s) for s in snapshots]
     return template.render(
-        snapshots_json=json.dumps(snapshots, ensure_ascii=False),
+        snapshots_json=json.dumps(embedded, ensure_ascii=False),
         business_units=collect_business_units(snapshots),
         default_start=default_start,
         default_end=default_end,
         snapshot_count=len(snapshots),
+        email_sidecar_dir=EMAIL_SIDECAR_DIR,
     )
 
 
@@ -95,7 +153,8 @@ def main(argv: list[str] | None = None) -> int:
     output_path = Path(args.output_path) if args.output_path else (root / "_dashboards" / "index.html")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(html, encoding="utf-8")
-    print(f"Wrote {output_path} — {len(snapshots)} snapshots across {len(collect_business_units(snapshots))} business units")
+    written = write_email_sidecars(snapshots, output_path.parent)
+    print(f"Wrote {output_path} — {len(snapshots)} snapshots across {len(collect_business_units(snapshots))} business units; {written} email sidecars")
     return 0
 
 
