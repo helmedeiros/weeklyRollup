@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Missions Summary — Week {{ aggregate.week.iso_week }}</title>
+<style>
+:root {
+  --navy: #132968;
+  --green: #16a34a;
+  --amber: #f59e0b;
+  --red: #dc2626;
+  --slate: #64748b;
+  --slate-strong: #334155;
+  --panel: #ffffff;
+  --page: #f5f5eb;
+  --line: #e2e8f0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 32px 40px 64px;
+  background: var(--page);
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--slate-strong);
+  line-height: 1.45;
+}
+h1 { margin: 0; font-size: 34px; color: var(--navy); }
+.eyebrow { text-transform: uppercase; color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: 1.4px; }
+.subhead { color: var(--slate); font-size: 14px; margin-top: 4px; }
+.section-divider { border-top: 1px solid var(--line); margin: 24px 0; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+.filter-bar button {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--navy);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filter-bar button[aria-pressed="true"] {
+  background: #4341c9;
+  color: #ffffff;
+  border-color: #4341c9;
+}
+.filter-help { color: var(--slate); font-size: 12px; margin-bottom: 24px; }
+.top-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 16px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.card h3 { margin: 0 0 12px; font-size: 11px; letter-spacing: 1.3px; color: var(--slate); font-weight: 700; text-transform: uppercase; }
+.card .desc { color: var(--slate); font-size: 13px; margin-bottom: 12px; }
+.delivery-rate { font-size: 60px; font-weight: 700; color: var(--navy); line-height: 1; }
+.progress {
+  height: 10px; border-radius: 999px; background: #e6ecf5; margin-top: 14px; overflow: hidden;
+}
+.progress > div { height: 100%; background: var(--green); border-radius: 999px; }
+.progress-note { color: var(--slate); font-size: 12px; margin-top: 8px; }
+.scope-inner { display: flex; gap: 12px; }
+.scope-box { flex: 1; background: #eef4fb; border: 1px solid #dbe5f0; border-radius: 8px; padding: 14px 16px; }
+.scope-box .num { font-size: 32px; font-weight: 700; color: var(--navy); }
+.scope-box .label { color: var(--slate); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+.status-inner { display: flex; gap: 10px; overflow-x: auto; }
+.status-tile { flex: 1; border-radius: 8px; padding: 12px 14px; min-width: 100px; }
+.status-tile .status-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #566178; line-height: 1.2; }
+.status-tile .status-num { font-size: 34px; font-weight: 700; margin-top: 6px; }
+.status-tile.done { background: #e9f7ef; }
+.status-tile.done .status-num { color: var(--green); }
+.status-tile.spillover_on_track { background: #dcf5f5; }
+.status-tile.spillover_on_track .status-num { color: #0d9488; }
+.status-tile.spillover_at_risk { background: #fdf1d7; }
+.status-tile.spillover_at_risk .status-num { color: var(--amber); }
+.status-tile.spillover_blocked { background: #fbe0e0; }
+.status-tile.spillover_blocked .status-num { color: var(--red); }
+.status-tile.missing { background: #e6ecf5; }
+.status-tile.missing .status-num { color: #475569; }
+.legend { display: flex; gap: 12px; align-items: center; font-size: 11px; color: var(--slate); margin-bottom: 8px; }
+.legend .dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; margin-right: 4px; }
+.table-wrap { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
+table.teams { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.teams th { text-align: left; text-transform: uppercase; letter-spacing: 1px; font-size: 10px; color: var(--slate); padding: 12px 16px; background: #edf1f9; border-bottom: 1px solid var(--line); }
+table.teams td { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+table.teams tr:last-child td { border-bottom: none; }
+.pill { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: var(--navy); background: #eaf1fb; border: 1px solid #d0dbec; }
+.status-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+.status-pill.zero { color: #94a3b8; background: transparent; padding: 5px 0; font-weight: 500; }
+.status-pill.done { background: #dcf3e0; color: var(--green); }
+.status-pill.spillover_on_track { background: #d1f2ee; color: #0f766e; }
+.status-pill.spillover_at_risk { background: #fdecc9; color: #b45309; }
+.status-pill.spillover_blocked { background: #fbd6d6; color: #b91c1c; }
+.status-pill.missing { background: #e6ecf5; color: #475569; }
+.delivery-cell { display: flex; align-items: center; gap: 10px; min-width: 180px; }
+.delivery-cell .bar { flex: 1; height: 8px; background: #eef2f8; border-radius: 999px; overflow: hidden; }
+.delivery-cell .bar > div { height: 100%; background: var(--green); }
+.delivery-cell.warn .bar > div { background: #0d9488; }
+.delivery-cell strong { min-width: 52px; text-align: right; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="eyebrow">Week {{ aggregate.week.iso_week }} leadership view</div>
+<h1>{{ month_display }} Missions Summary</h1>
+<p class="subhead">Team delivery, status mix, and mission risks from the latest Week {{ aggregate.week.iso_week }} snapshot.</p>
+<div class="section-divider"></div>
+
+<div class="filter-bar" id="bu-filter">
+  <button type="button" data-bu="__all__" aria-pressed="true">All BUs ({{ aggregate.totals.teams }})</button>
+  {% for bu in aggregate.business_units %}
+    <button type="button" data-bu="{{ bu.business_unit }}">{{ bu.business_unit }} ({{ bu.team_count }})</button>
+  {% endfor %}
+</div>
+<div class="filter-help">Click a business unit above to focus the table below on that group.</div>
+
+<div class="top-cards">
+  <div class="card">
+    <h3>Mission delivery rate</h3>
+    <div class="delivery-rate" id="delivery-rate">{{ "%.1f"|format(aggregate.totals.delivery_rate * 100) }}%</div>
+    <div class="progress"><div id="delivery-bar" style="width: {{ (aggregate.totals.delivery_rate * 100)|round(1) }}%"></div></div>
+    <div class="progress-note" id="delivery-note">{{ aggregate.totals.done }} of {{ aggregate.totals.missions }} missions done.</div>
+  </div>
+  <div class="card">
+    <h3>Scope</h3>
+    <div class="desc">Current filter coverage</div>
+    <div class="scope-inner">
+      <div class="scope-box"><div class="num" id="scope-teams">{{ aggregate.totals.teams }}</div><div class="label">Teams</div></div>
+      <div class="scope-box"><div class="num" id="scope-missions">{{ aggregate.totals.missions }}</div><div class="label">Missions</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Status</h3>
+    <div class="desc">Delivery state across the selected teams</div>
+    <div class="status-inner">
+      <div class="status-tile done"><div class="status-label">Done</div><div class="status-num" data-role="done">{{ aggregate.totals.done }}</div></div>
+      <div class="status-tile spillover_on_track"><div class="status-label">Spillover<br>on track</div><div class="status-num" data-role="spillover_on_track">{{ aggregate.totals.spillover_on_track }}</div></div>
+      <div class="status-tile spillover_at_risk"><div class="status-label">Spillover<br>at risk</div><div class="status-num" data-role="spillover_at_risk">{{ aggregate.totals.spillover_at_risk }}</div></div>
+      <div class="status-tile spillover_blocked"><div class="status-label">Spillover<br>blocked</div><div class="status-num" data-role="spillover_blocked">{{ aggregate.totals.spillover_blocked }}</div></div>
+      <div class="status-tile missing"><div class="status-label">Missing</div><div class="status-num" data-role="missing">{{ aggregate.totals.missing }}</div></div>
+    </div>
+  </div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;">
+  <div>
+    <div style="font-size:18px;font-weight:700;color:var(--navy);">Team delivery table</div>
+    <div class="subhead" id="team-count-note">{{ aggregate.totals.missions }} missions across {{ aggregate.totals.teams }} teams.</div>
+  </div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--red)"></span>Spillover Blocked</span>
+    <span><span class="dot" style="background:var(--amber)"></span>Spillover At Risk</span>
+    <span><span class="dot" style="background:var(--green)"></span>Done</span>
+  </div>
+</div>
+
+<div class="table-wrap">
+<table class="teams">
+<thead>
+<tr>
+  <th>Team</th>
+  <th>Business Unit</th>
+  <th>Total</th>
+  <th>Status</th>
+  <th style="text-align:right;">Delivery rate</th>
+</tr>
+</thead>
+<tbody id="teams-tbody">
+{% for row in aggregate.teams %}
+<tr data-bu="{{ row.business_unit }}">
+  <td><strong>{{ row.team_name }}</strong></td>
+  <td><span class="pill">{{ row.business_unit }}</span></td>
+  <td>{{ row.total_missions }}</td>
+  <td>
+    {% if row.done %}<span class="status-pill done">{{ row.done }} Done</span>{% else %}<span class="status-pill zero">0 Done</span>{% endif %}
+    {% if row.spillover_on_track %}<span class="status-pill spillover_on_track">{{ row.spillover_on_track }} Spillover Track</span>{% else %}<span class="status-pill zero">0 Track</span>{% endif %}
+    {% if row.spillover_at_risk %}<span class="status-pill spillover_at_risk">{{ row.spillover_at_risk }} Spillover Risk</span>{% else %}<span class="status-pill zero">0 Risk</span>{% endif %}
+    {% if row.spillover_blocked %}<span class="status-pill spillover_blocked">{{ row.spillover_blocked }} Spillover Blocked</span>{% else %}<span class="status-pill zero">0 Blocked</span>{% endif %}
+    {% if row.missing %}<span class="status-pill missing">{{ row.missing }} Missing</span>{% else %}<span class="status-pill zero">0 Missing</span>{% endif %}
+  </td>
+  <td>
+    <div class="delivery-cell {% if row.delivery_rate < 0.8 %}warn{% endif %}">
+      <div class="bar"><div style="width: {{ (row.delivery_rate * 100)|round(1) }}%"></div></div>
+      <strong>{{ "%.1f"|format(row.delivery_rate * 100) }}%</strong>
+    </div>
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<script id="aggregate-json" type="application/json">{{ aggregate_json | safe }}</script>
+<script>
+(function () {
+  const raw = document.getElementById('aggregate-json').textContent;
+  const aggregate = JSON.parse(raw);
+  const buttons = document.querySelectorAll('#bu-filter button');
+  const rows = document.querySelectorAll('#teams-tbody tr');
+  const totals = document.querySelectorAll('.status-num[data-role]');
+
+  function applyFilter(bu) {
+    const buRow = bu === '__all__' ? aggregate.totals : aggregate.business_units.find(x => x.business_unit === bu);
+    if (!buRow) return;
+    const missions = (buRow.done || 0) + (buRow.spillover_on_track || 0) + (buRow.spillover_at_risk || 0) + (buRow.spillover_blocked || 0) + (buRow.missing || 0);
+    const rate = missions ? (buRow.done || 0) / missions : 0;
+    document.getElementById('delivery-rate').textContent = (rate * 100).toFixed(1) + '%';
+    document.getElementById('delivery-bar').style.width = (rate * 100).toFixed(1) + '%';
+    document.getElementById('delivery-note').textContent = (buRow.done || 0) + ' of ' + missions + ' missions done.';
+    document.getElementById('scope-teams').textContent = bu === '__all__' ? aggregate.totals.teams : buRow.team_count;
+    document.getElementById('scope-missions').textContent = missions;
+    totals.forEach(node => {
+      const role = node.getAttribute('data-role');
+      node.textContent = buRow[role] || 0;
+    });
+    rows.forEach(row => {
+      row.style.display = (bu === '__all__' || row.getAttribute('data-bu') === bu) ? '' : 'none';
+    });
+    document.getElementById('team-count-note').textContent =
+      missions + ' missions across ' + (bu === '__all__' ? aggregate.totals.teams : buRow.team_count) + ' teams.';
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(other => other.setAttribute('aria-pressed', other === btn ? 'true' : 'false'));
+      applyFilter(btn.getAttribute('data-bu'));
+    });
+  });
+})();
+</script>
+</body>
+</html>
