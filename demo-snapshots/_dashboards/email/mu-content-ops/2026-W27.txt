@@ -1,12 +1,12 @@
 Weekly Objective Update — Mu Content Ops — Week 27
 
 SUMMARY
-- On track: 1/5
+- On track: 5/5
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 3
-- Missing updates: 1
-- Blockers / risks: 1
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,44 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Provider content ingestion QA (july-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 81% | Due: 1 Jul
-Link: https://example.invalid/objectives/MMU-100
-Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+[ON TRACK] Q3 2026 [July]: Publisher content freshness (july-2026)
+Leader Engineer: Nya Sardar
+Progress: 16% | Due: 31 Jul
+Link: https://example.invalid/objectives/MMU-2607-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Broken-image sentinel (july-2026)
+[ON TRACK] Q3 2026 [July]: Provider content ingestion QA (july-2026)
 Leader Engineer: Pia Rivas
-Progress: 72% | Due: 1 Jul
-Link: https://example.invalid/objectives/MMU-104
-Done this week: No update was captured this week.
-Plan for next week: Post an update by Friday capturing what shifted.
+Progress: 20% | Due: 31 Jul
+Link: https://example.invalid/objectives/MMU-2607-02
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Cadence dashboard for editors (july-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 1 Jul
-Link: https://example.invalid/objectives/MMU-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q3 2026 [July]: Cross-locale asset governance (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 22% | Due: 31 Jul
+Link: https://example.invalid/objectives/MMU-2607-03
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Cross-locale asset governance (july-2026)
-Leader Engineer: Nya Sardar
-Progress: 100% | Due: 1 Jul
-Link: https://example.invalid/objectives/MMU-101
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q3 2026 [July]: Broken-image sentinel (july-2026)
+Leader Engineer: Ines Marchetti
+Progress: 11% | Due: 31 Jul
+Link: https://example.invalid/objectives/MMU-2607-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Publisher content freshness (july-2026)
-Leader Engineer: Odin Barone
-Progress: 100% | Due: 1 Jul
-Link: https://example.invalid/objectives/MMU-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q3 2026 [July]: Legacy asset migration (july-2026)
+Leader Engineer: Frida Ohno
+Progress: 11% | Due: 31 Jul
+Link: https://example.invalid/objectives/MMU-2607-05
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- [Risk] Broken-image sentinel: No owner reachable this week.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

@@ -1,10 +1,10 @@
 Weekly Objective Update — Zeta Search Discovery — Week 21
 
 SUMMARY
-- On track: 0/4
-- At risk: 1 (1 red, 0 yellow)
+- On track: 3/4
+- At risk: 1 (0 red, 1 yellow)
 - Not started: 0
-- Done: 3
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 1
 
@@ -15,37 +15,37 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DELAYED] Cart persistence across surfaces (may-2026)
-Leader Engineer: Odin Barone
-Progress: 88% | Due: 20 May
-Link: https://example.invalid/objectives/MZETA-101
-Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
-Plan for next week: Reassign to a different owner so the current one can help elsewhere.
+[ON TRACK] Q2 2026 [May]: Purchase confirmation clarity (may-2026)
+Leader Engineer: Nya Sardar
+Progress: 79% | Due: 31 May
+Link: https://example.invalid/objectives/MZETA-2605-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Personalised trip recommendations (may-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/MZETA-102
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q2 2026 [May]: Payment method reorder (may-2026)
+Leader Engineer: Lena Rihanna
+Progress: 77% | Due: 31 May
+Link: https://example.invalid/objectives/MZETA-2605-02
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Homepage skeleton refresh (may-2026)
-Leader Engineer: Tomo Ilves
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/MZETA-100
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q2 2026 [May]: Loyalty perks eligibility banner (may-2026)
+Leader Engineer: Rio Delacroix
+Progress: 77% | Due: 31 May
+Link: https://example.invalid/objectives/MZETA-2605-04
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Purchase confirmation clarity (may-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/MZETA-103
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[AT RISK] Q2 2026 [May]: Checkout abandonment nudge (may-2026)
+Leader Engineer: Sana Rowe
+Progress: 30% | Due: 31 May
+Link: https://example.invalid/objectives/MZETA-2605-03
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 BLOCKERS / RISKS
-- [Blocker] Cart persistence across surfaces: External vendor SLA slipping; no eta.
-  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+- [Risk] Q2 2026 [May]: Checkout abandonment nudge: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

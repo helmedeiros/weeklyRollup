@@ -1,12 +1,12 @@
 Weekly Objective Update — Zeta Search Discovery — Week 30
 
 SUMMARY
-- On track: 1/4
-- At risk: 1 (1 red, 0 yellow)
+- On track: 3/4
+- At risk: 1 (0 red, 1 yellow)
 - Not started: 0
-- Done: 1
-- Missing updates: 1
-- Blockers / risks: 2
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -15,39 +15,37 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Personalised trip recommendations (july-2026)
-Leader Engineer: Milo Anders
-Progress: 62% | Due: 22 Jul
-Link: https://example.invalid/objectives/MZETA-102
+[ON TRACK] Q3 2026 [July]: Passenger name-change flow (july-2026)
+Leader Engineer: Pia Rivas
+Progress: 56% | Due: 31 Jul
+Link: https://example.invalid/objectives/MZETA-2607-01
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DELAYED] Cart persistence across surfaces (july-2026)
+[ON TRACK] Q3 2026 [July]: Refund status transparency (july-2026)
 Leader Engineer: Odin Barone
-Progress: 45% | Due: 22 Jul
-Link: https://example.invalid/objectives/MZETA-101
-Done this week: Waiting on infra migration that was pushed to the next quarter.
-Plan for next week: Unblock the vendor conversation and get an ETA.
+Progress: 77% | Due: 31 Jul
+Link: https://example.invalid/objectives/MZETA-2607-03
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Purchase confirmation clarity (july-2026)
-Leader Engineer: Bram Larsson
-Progress: 61% | Due: 22 Jul
-Link: https://example.invalid/objectives/MZETA-103
-Done this week: No update was captured this week.
-Plan for next week: Sync with the owner and file the missing update retroactively.
+[ON TRACK] Q3 2026 [July]: Cart persistence across surfaces (july-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 80% | Due: 31 Jul
+Link: https://example.invalid/objectives/MZETA-2607-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Homepage skeleton refresh (july-2026)
-Leader Engineer: Tomo Ilves
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MZETA-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[AT RISK] Q3 2026 [July]: Payment method reorder (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 26% | Due: 31 Jul
+Link: https://example.invalid/objectives/MZETA-2607-02
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 BLOCKERS / RISKS
-- [Blocker] Cart persistence across surfaces: Infra migration blocking rollout; owner: platform.
-  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
-- [Risk] Purchase confirmation clarity: No owner reachable this week.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- [Risk] Q3 2026 [July]: Payment method reorder: Design review pending from the sibling team.
+  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards
 Engineering Manager

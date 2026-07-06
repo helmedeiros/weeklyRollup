@@ -1,12 +1,12 @@
 Weekly Objective Update — Iota Partner Portal — Week 18
 
 SUMMARY
-- On track: 1/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 1/4
+- At risk: 1 (1 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 2
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -15,43 +15,37 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] SLA breach notifier (april-2026)
-Leader Engineer: Ellis Marín
-Progress: 78% | Due: 29 Apr
-Link: https://example.invalid/objectives/MIOTA-104
+[ON TRACK] Q2 2026 [April]: Partner billing reconciliation (april-2026)
+Leader Engineer: Bram Larsson
+Progress: 60% | Due: 30 Apr
+Link: https://example.invalid/objectives/MIOTA-2604-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-Plan for next week: Wrap the last integration test and hand off to QA.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Onboarding self-serve wizard (april-2026)
-Leader Engineer: Tomo Ilves
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MIOTA-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Q2 2026 [April]: SLA breach notifier (april-2026)
+Leader Engineer: Milo Anders
+Progress: 28% | Due: 30 Apr
+Link: https://example.invalid/objectives/MIOTA-2604-01
+Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
+Plan for next week: Unblock the vendor conversation and get an ETA.
 
-[DONE] Compliance audit trail (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MIOTA-102
+[DONE] Q2 2026 [April]: Reseller webhook v3 (april-2026)
+Leader Engineer: Cai Nguyen
+Progress: 100% | Due: 30 Apr
+Link: https://example.invalid/objectives/MIOTA-2604-02
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Partner API rate-limit v2 (april-2026)
-Leader Engineer: Lena Rihanna
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MIOTA-100
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Partner billing reconciliation (april-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MIOTA-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
+[DONE] Q2 2026 [April]: Partner API rate-limit v2 (april-2026)
+Leader Engineer: Nya Sardar
+Progress: 100% | Due: 30 Apr
+Link: https://example.invalid/objectives/MIOTA-2604-04
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Blocker] Q2 2026 [April]: SLA breach notifier: Legal sign-off outstanding.
+  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
 
 Kind Regards
 Engineering Manager

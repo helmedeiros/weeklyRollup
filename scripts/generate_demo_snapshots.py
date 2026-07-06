@@ -1,25 +1,28 @@
 """Generate a fully synthetic team-snapshot dataset for the public dashboard.
 
 Every value here is invented for demonstration. No team names, objective
-keys, Leader Engineers, or KPIs mirror any real organisation. Re-run this
-script whenever you want to refresh the shape of the demo dataset.
+keys, Leader Engineers, or KPIs mirror any real organisation.
 
-The output layout matches ``snapshots/``: each team gets one JSON file per
-ISO week at ``demo-snapshots/<team-id>/<YYYY>-Www.json``. Snapshots span
-ISO weeks W06 through W31 of 2026 (Feb through end of July) so every
-month has 4-5 weekly reports and the detail view always has multiple
-weeks to expand.
+Data model:
 
-Each team has a **stable pool of objectives** with fixed keys, names, and
-leader-engineer owners. The bucket each objective sits in varies from
-week to week (deterministic per team+week seed), so the same objective
-key follows a trajectory across the range.
+- Each team owns a fresh **monthly cohort** of objectives. A cohort's
+  objectives only appear in the weeks whose target-Wednesday falls in
+  that calendar month. When the month rolls over, the previous cohort
+  disappears and a brand-new set of objectives arrives (mirroring how
+  the tool is used in production).
+- Every objective has a target outcome for the month (done / on-track /
+  at-risk / blocked / missing) chosen at cohort build time. Progress
+  moves week-by-week toward that target, with small deterministic noise,
+  so weekly reports show a real trajectory instead of a static 100%.
+- Files are still emitted one per ISO week per team at
+  ``demo-snapshots/<team-id>/<YYYY>-Www.json``.
 """
 
 from __future__ import annotations
 
 import json
 import random
+from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
@@ -33,33 +36,30 @@ ISO_YEAR = 2026
 FIRST_WEEK = 6   # 2026-W06: Mon Feb 2 - Sun Feb 8
 LAST_WEEK = 31   # 2026-W31: Mon Jul 27 - Sun Aug 2
 
-MONTH_NAME = {
+MONTH_NAME_LOWER = {
     1: "january", 2: "february", 3: "march", 4: "april", 5: "may", 6: "june",
     7: "july", 8: "august", 9: "september", 10: "october", 11: "november", 12: "december",
 }
+MONTH_NAME_DISPLAY = {k: v.capitalize() for k, v in MONTH_NAME_LOWER.items()}
 
-MONTH_NAME = {
-    1: "january", 2: "february", 3: "march", 4: "april", 5: "may", 6: "june",
-    7: "july", 8: "august", 9: "september", 10: "october", 11: "november", 12: "december",
-}
 
-# Baseline shape per team. (total, done, on_track, at_risk, blocked, missing)
+# Team roster + monthly cohort size + business unit.
 TEAMS = [
-    ("alpha-foundations",   "Alpha Foundations",    "Platform", (8, 8, 0, 0, 0, 0)),
-    ("beta-payments",       "Beta Payments Core",   "Platform", (7, 6, 1, 0, 0, 0)),
-    ("gamma-runtime",       "Gamma Runtime",        "Platform", (6, 5, 0, 1, 0, 0)),
-    ("delta-data-platform", "Delta Data Platform",  "Platform", (5, 5, 0, 0, 0, 0)),
-    ("epsilon-growth",      "Epsilon Growth",       "B2C",      (9, 6, 2, 1, 0, 0)),
-    ("zeta-search",         "Zeta Search Discovery","B2C",      (4, 3, 0, 0, 1, 0)),
-    ("eta-checkout",        "Eta Checkout",         "B2C",      (5, 5, 0, 0, 0, 0)),
-    ("theta-post-booking",  "Theta Post-Booking",   "B2C",      (6, 4, 1, 0, 0, 1)),
-    ("iota-partners",       "Iota Partner Portal",  "B2B",      (5, 4, 1, 0, 0, 0)),
-    ("kappa-enterprise",    "Kappa Enterprise Ops", "B2B",      (4, 4, 0, 0, 0, 0)),
-    ("lambda-ingestion",    "Lambda Ingestion",     "Coverage", (6, 4, 0, 1, 1, 0)),
-    ("mu-content-ops",      "Mu Content Ops",       "Coverage", (5, 3, 1, 0, 0, 1)),
+    ("alpha-foundations",   "Alpha Foundations",    "Platform", 5),
+    ("beta-payments",       "Beta Payments Core",   "Platform", 6),
+    ("gamma-runtime",       "Gamma Runtime",        "Platform", 5),
+    ("delta-data-platform", "Delta Data Platform",  "Platform", 4),
+    ("epsilon-growth",      "Epsilon Growth",       "B2C",      6),
+    ("zeta-search",         "Zeta Search Discovery","B2C",      4),
+    ("eta-checkout",        "Eta Checkout",         "B2C",      5),
+    ("theta-post-booking",  "Theta Post-Booking",   "B2C",      5),
+    ("iota-partners",       "Iota Partner Portal",  "B2B",      4),
+    ("kappa-enterprise",    "Kappa Enterprise Ops", "B2B",      4),
+    ("lambda-ingestion",    "Lambda Ingestion",     "Coverage", 5),
+    ("mu-content-ops",      "Mu Content Ops",       "Coverage", 5),
 ]
 
-OBJECTIVE_NAMES = {
+OBJECTIVE_TITLES = {
     "Platform": [
         "Zero-downtime restart choreography",
         "Feature flag rollout guardrails",
@@ -69,6 +69,8 @@ OBJECTIVE_NAMES = {
         "Rate-limiter fairness audit",
         "Deprecation channel rollout",
         "Service topology drift alarm",
+        "Config drift auto-repair",
+        "Runtime resource budgets",
     ],
     "B2C": [
         "Homepage skeleton refresh",
@@ -80,6 +82,7 @@ OBJECTIVE_NAMES = {
         "Passenger name-change flow",
         "Search relevance re-ranker",
         "Loyalty perks eligibility banner",
+        "Checkout abandonment nudge",
     ],
     "B2B": [
         "Partner API rate-limit v2",
@@ -87,6 +90,8 @@ OBJECTIVE_NAMES = {
         "Compliance audit trail",
         "Partner billing reconciliation",
         "SLA breach notifier",
+        "Reseller webhook v3",
+        "Contract-tier feature gating",
     ],
     "Coverage": [
         "Provider content ingestion QA",
@@ -95,6 +100,7 @@ OBJECTIVE_NAMES = {
         "Cadence dashboard for editors",
         "Broken-image sentinel",
         "Content lint gate",
+        "Legacy asset migration",
     ],
 }
 
@@ -105,121 +111,255 @@ LEADER_ENGINEER_POOL = [
     "Pia Rivas", "Quinn Yates", "Rio Delacroix", "Sana Rowe", "Tomo Ilves",
 ]
 
+# Weighted outcome distribution: (label, weight)
+OUTCOME_WEIGHTS = [
+    ("done", 0.55),
+    ("on_track", 0.20),
+    ("at_risk", 0.15),
+    ("blocked", 0.05),
+    ("missing", 0.05),
+]
 
-def build_team_pool(team_id: str, business_unit: str, total: int) -> list[dict]:
-    """Return ``total`` stable objectives for a team (key/name/LE fixed for the demo)."""
-    rng = random.Random(f"pool-{team_id}")
-    titles = OBJECTIVE_NAMES[business_unit]
+BUCKET_OF_OUTCOME = {
+    "done": "done",
+    "on_track": "spillover_on_track",
+    "at_risk": "spillover_at_risk",
+    "blocked": "spillover_blocked",
+    "missing": "missing",
+}
+
+
+def weighted_choice(weights, rng):
+    total = sum(w for _, w in weights)
+    r = rng.random() * total
+    acc = 0.0
+    for value, weight in weights:
+        acc += weight
+        if r < acc:
+            return value
+    return weights[-1][0]
+
+
+def month_of_iso_week(iso_year: int, iso_week: int) -> tuple[int, int]:
+    """Return (calendar_year, calendar_month) for the ISO week's Wednesday."""
+    target = date.fromisocalendar(iso_year, iso_week, 3)
+    return target.year, target.month
+
+
+def weeks_by_month(iso_year: int, first: int, last: int) -> dict[tuple[int, int], list[int]]:
+    grouped: dict[tuple[int, int], list[int]] = defaultdict(list)
+    for w in range(first, last + 1):
+        y, m = month_of_iso_week(iso_year, w)
+        grouped[(y, m)].append(w)
+    return dict(grouped)
+
+
+def last_day_of_month(year: int, month: int) -> date:
+    if month == 12:
+        return date(year, 12, 31)
+    return date(year, month + 1, 1).replace(day=1) - (date(year, month + 1, 1) - date(year, month, 28)).__class__(days=(date(year, month + 1, 1) - date(year, month + 1, 1)).days)
+
+
+def _last_day(year: int, month: int) -> date:
+    """Return the last calendar day of the month."""
+    from calendar import monthrange
+    return date(year, month, monthrange(year, month)[1])
+
+
+def build_cohort(
+    team_id: str,
+    business_unit: str,
+    year: int,
+    month: int,
+    cohort_size: int,
+    weeks_in_month: list[int],
+) -> list[dict]:
+    """Return the objectives for one team-month, with per-week progression."""
+    rng = random.Random(f"cohort-{team_id}-{year}-{month}")
+    titles = OBJECTIVE_TITLES[business_unit]
+    quarter = (month - 1) // 3 + 1
+    month_display = MONTH_NAME_DISPLAY[month]
     prefix = team_id.split("-")[0].upper()[:4]
-    pool = []
-    for i in range(total):
-        pool.append({
-            "key": f"M{prefix}-{100 + i}",
-            "name": titles[i % len(titles)],
-            "leader_engineer": rng.choice(LEADER_ENGINEER_POOL),
+    yy_mm = f"{year % 100:02d}{month:02d}"
+    n_weeks = len(weeks_in_month)
+
+    picked_titles = rng.sample(titles, k=min(cohort_size, len(titles)))
+    if len(picked_titles) < cohort_size:
+        picked_titles += [rng.choice(titles) for _ in range(cohort_size - len(picked_titles))]
+
+    objectives: list[dict] = []
+    for i in range(cohort_size):
+        outcome = weighted_choice(OUTCOME_WEIGHTS, rng)
+        obj_rng = random.Random(f"obj-{team_id}-{year}-{month}-{i}")
+        title = picked_titles[i]
+
+        # Final progress per outcome
+        if outcome == "done":
+            final_pct = 100
+        elif outcome == "on_track":
+            final_pct = obj_rng.randint(60, 85)
+        elif outcome == "at_risk":
+            final_pct = obj_rng.randint(35, 55)
+        elif outcome == "blocked":
+            final_pct = obj_rng.randint(10, 30)
+        elif outcome == "missing":
+            final_pct = obj_rng.randint(20, 60)
+        else:
+            final_pct = 100
+
+        # Starting progress (early in the month)
+        start_pct = min(final_pct, obj_rng.randint(10, 25))
+
+        # Weekly progression: near-linear with small noise, monotone increasing.
+        progress_by_week: list[int] = []
+        for w_idx in range(n_weeks):
+            if n_weeks == 1:
+                pct = final_pct
+            else:
+                fraction = w_idx / (n_weeks - 1)
+                linear = start_pct + (final_pct - start_pct) * fraction
+                noise = obj_rng.randint(-4, 4)
+                pct = max(0, min(100, int(round(linear + noise))))
+            progress_by_week.append(pct)
+        for w in range(1, n_weeks):
+            progress_by_week[w] = max(progress_by_week[w], progress_by_week[w - 1])
+        progress_by_week[-1] = final_pct
+
+        # Bucket per week. Non-final weeks show the ramp-up story; the
+        # final week snaps to the outcome so end-of-month totals match
+        # the promised distribution.
+        buckets_by_week: list[str] = []
+        for w_idx, pct in enumerate(progress_by_week):
+            is_final = w_idx == n_weeks - 1
+            if is_final:
+                bucket = BUCKET_OF_OUTCOME[outcome]
+            elif pct >= 100:
+                bucket = "done"
+            else:
+                bucket = _mid_week_bucket(outcome, w_idx, n_weeks)
+            buckets_by_week.append(bucket)
+
+        objectives.append({
+            "key": f"M{prefix}-{yy_mm}-{i + 1:02d}",
+            "name": f"Q{quarter} {year} [{month_display}]: {title}",
+            "leader_engineer": obj_rng.choice(LEADER_ENGINEER_POOL),
+            "outcome": outcome,
+            "progress_by_week": progress_by_week,
+            "buckets_by_week": buckets_by_week,
+            "target_month": (year, month),
         })
-    return pool
+    return objectives
 
 
-def week_variant(base: tuple[int, int, int, int, int, int], iso_year: int, iso_week: int, team_id: str) -> tuple[int, int, int, int, int, int]:
-    """Deterministically perturb the base bucket layout for a given team-week."""
-    rng = random.Random(f"variant-{iso_year}-{iso_week}-{team_id}")
-    total, done, on_track, at_risk, blocked, missing = base
-    counts = {"done": done, "on_track": on_track, "at_risk": at_risk, "blocked": blocked, "missing": missing}
-    moves = [
-        ("done", "on_track"),
-        ("done", "at_risk"),
-        ("on_track", "done"),
-        ("at_risk", "done"),
-        ("at_risk", "blocked"),
-        ("blocked", "at_risk"),
-        ("done", "missing"),
-        ("missing", "done"),
-    ]
-    for _ in range(rng.randint(0, 2)):
-        src, dst = rng.choice(moves)
-        if counts[src] > 0:
-            counts[src] -= 1
-            counts[dst] += 1
-    result = (total, counts["done"], counts["on_track"], counts["at_risk"], counts["blocked"], counts["missing"])
-    assert result[0] == sum(result[1:]), f"variant total mismatch for {team_id} {iso_year}-W{iso_week:02d}"
-    return result
+def _mid_week_bucket(outcome: str, w_idx: int, n_weeks: int) -> str:
+    """Non-final-week bucket, capturing when trouble typically appears.
+
+    ``done`` / ``on_track`` outcomes stay on-track through the month.
+    ``at_risk`` outcomes slip roughly halfway through.
+    ``blocked`` outcomes get blocked after the first third.
+    ``missing`` outcomes only appear as missing on the final week.
+    """
+    if outcome in ("done", "on_track", "missing"):
+        return "spillover_on_track"
+    if outcome == "at_risk":
+        return "spillover_on_track" if w_idx < n_weeks / 2 else "spillover_at_risk"
+    if outcome == "blocked":
+        return "spillover_on_track" if w_idx < n_weeks / 3 else "spillover_blocked"
+    return "spillover_on_track"
+
+
+def _status_word(bucket: str) -> str:
+    return {
+        "done": "Done",
+        "spillover_on_track": "Green",
+        "spillover_at_risk": "Yellow",
+        "spillover_blocked": "Red",
+        "missing": "Missing",
+    }.get(bucket, "Green")
+
+
+def _jira_status(bucket: str) -> str:
+    return {
+        "done": "Done",
+        "spillover_on_track": "In Progress",
+        "spillover_at_risk": "In Progress",
+        "spillover_blocked": "Blocked",
+        "missing": "In Progress",
+    }.get(bucket, "In Progress")
 
 
 def generate() -> None:
     root = Path(__file__).resolve().parent.parent / "demo-snapshots"
+    by_month = weeks_by_month(ISO_YEAR, FIRST_WEEK, LAST_WEEK)
 
-    # Pre-generate the stable objective pool for every team.
-    pools = {team_id: build_team_pool(team_id, business_unit, base_buckets[0])
-             for team_id, _, business_unit, base_buckets in TEAMS}
+    # Pre-build every cohort so weekly snapshots just index into them.
+    cohorts: dict[tuple[str, int, int], list[dict]] = {}
+    for team_id, _, business_unit, cohort_size in TEAMS:
+        for (year, month), weeks_in_month in by_month.items():
+            cohorts[(team_id, year, month)] = build_cohort(
+                team_id, business_unit, year, month, cohort_size, weeks_in_month,
+            )
 
     for iso_week in range(FIRST_WEEK, LAST_WEEK + 1):
-        target = date.fromisocalendar(ISO_YEAR, iso_week, 3)  # Wednesday
-        week = {
-            "iso_year": ISO_YEAR,
-            "iso_week": iso_week,
-            "target_date": target.isoformat(),
-            "month_label": f"objective-{MONTH_NAME[target.month]}-{target.year}",
-        }
+        target = date.fromisocalendar(ISO_YEAR, iso_week, 3)
+        year, month = target.year, target.month
+        weeks_in_this_month = by_month[(year, month)]
+        week_idx = weeks_in_this_month.index(iso_week)
+        due_day = _last_day(year, month).isoformat()
 
-        for team_id, team_name, business_unit, base_buckets in TEAMS:
-            total, done, on_track, at_risk, blocked, missing = week_variant(base_buckets, ISO_YEAR, iso_week, team_id)
+        for team_id, team_name, business_unit, _ in TEAMS:
+            cohort = cohorts[(team_id, year, month)]
 
-            pool = pools[team_id]
-            rng = random.Random(f"assign-{team_id}-{ISO_YEAR}-{iso_week}")
-            shuffled = list(pool)
-            rng.shuffle(shuffled)
+            objectives: list[dict] = []
+            totals = {b: 0 for b in ("done", "spillover_on_track", "spillover_at_risk", "spillover_blocked", "missing")}
+            for src in cohort:
+                bucket = src["buckets_by_week"][week_idx]
+                progress = src["progress_by_week"][week_idx]
+                obj = {
+                    "key": src["key"],
+                    "name": src["name"],
+                    "url": f"https://example.invalid/objectives/{src['key']}",
+                    "leader_engineer": src["leader_engineer"],
+                    "status": _status_word(bucket),
+                    "jira_status": _jira_status(bucket),
+                    "is_done": bucket == "done",
+                    "missing_update": bucket == "missing",
+                    "effective_due_date": due_day,
+                    "due_date_overdue_days": 0,
+                    "progress": f"{progress}%",
+                    "bucket": bucket,
+                    "hygiene_severity": "yellow" if bucket in {"spillover_at_risk", "missing"} else "info",
+                    "hygiene": [],
+                    "blockers": [],
+                }
+                obj["update"] = synth_leader_engineer_update(obj, team_name, ISO_YEAR, iso_week)
+                objectives.append(obj)
+                totals[bucket] += 1
 
-            bucket_specs = [
-                ("done", "Green", "Done", done),
-                ("spillover_on_track", "Green", "In Progress", on_track),
-                ("spillover_at_risk", "Yellow", "In Progress", at_risk),
-                ("spillover_blocked", "Red", "In Progress", blocked),
-                ("missing", "Missing", "In Progress", missing),
-            ]
-
-            objectives = []
-            cursor = 0
-            for bucket, objective_status, jira_status, count in bucket_specs:
-                for _ in range(count):
-                    src = shuffled[cursor]; cursor += 1
-                    obj = {
-                        "key": src["key"],
-                        "name": src["name"],
-                        "url": f"https://example.invalid/objectives/{src['key']}",
-                        "leader_engineer": src["leader_engineer"],
-                        "status": objective_status,
-                        "jira_status": jira_status,
-                        "is_done": bucket == "done",
-                        "missing_update": bucket == "missing",
-                        "effective_due_date": target.isoformat(),
-                        "due_date_overdue_days": 0,
-                        "progress": "100%" if bucket == "done" else f"{rng.randint(30, 90)}%",
-                        "bucket": bucket,
-                        "hygiene_severity": "yellow" if bucket in {"spillover_at_risk", "missing"} else "info",
-                        "hygiene": [],
-                        "blockers": [],
-                    }
-                    obj["update"] = synth_leader_engineer_update(obj, team_name, ISO_YEAR, iso_week)
-                    objectives.append(obj)
-
+            total = sum(totals.values())
             payload = {
-                "schema_version": 2,
+                "schema_version": 3,
                 "team": {"id": team_id, "name": team_name, "business_unit": business_unit},
-                "week": week,
+                "week": {
+                    "iso_year": ISO_YEAR,
+                    "iso_week": iso_week,
+                    "target_date": target.isoformat(),
+                    "month_label": f"objective-{MONTH_NAME_LOWER[month]}-{year}",
+                },
                 "totals": {
                     "objectives": total,
-                    "delivery_rate": round(done / total, 4) if total else 0.0,
-                    "done": done,
-                    "spillover_on_track": on_track,
-                    "spillover_at_risk": at_risk,
-                    "spillover_blocked": blocked,
-                    "missing": missing,
+                    "delivery_rate": round(totals["done"] / total, 4) if total else 0.0,
+                    "done": totals["done"],
+                    "spillover_on_track": totals["spillover_on_track"],
+                    "spillover_at_risk": totals["spillover_at_risk"],
+                    "spillover_blocked": totals["spillover_blocked"],
+                    "missing": totals["missing"],
                 },
                 "objectives": objectives,
             }
             draft = build_email_draft(payload)
             payload["outputs"] = {"email": draft}
+
             out = root / team_id / f"{ISO_YEAR}-W{iso_week:02d}.json"
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")

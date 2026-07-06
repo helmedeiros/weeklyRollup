@@ -1,12 +1,12 @@
 Weekly Objective Update — Beta Payments Core — Week 20
 
 SUMMARY
-- On track: 1/7
+- On track: 6/6
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 5
-- Missing updates: 1
-- Blockers / risks: 1
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,58 +15,50 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Deprecation channel rollout (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 72% | Due: 13 May
-Link: https://example.invalid/objectives/MBETA-106
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+[ON TRACK] Q2 2026 [May]: Golden-path SLO board (may-2026)
+Leader Engineer: Cai Nguyen
+Progress: 44% | Due: 31 May
+Link: https://example.invalid/objectives/MBETA-2605-01
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [May]: Deprecation channel rollout (may-2026)
+Leader Engineer: Frida Ohno
+Progress: 49% | Due: 31 May
+Link: https://example.invalid/objectives/MBETA-2605-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [May]: Zero-downtime restart choreography (may-2026)
+Leader Engineer: Nya Sardar
+Progress: 47% | Due: 31 May
+Link: https://example.invalid/objectives/MBETA-2605-03
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Feature flag rollout guardrails (may-2026)
-Leader Engineer: Rio Delacroix
-Progress: 40% | Due: 13 May
-Link: https://example.invalid/objectives/MBETA-101
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Post an update by Friday capturing what shifted.
+[ON TRACK] Q2 2026 [May]: Warm-cache eviction policy (may-2026)
+Leader Engineer: Lena Rihanna
+Progress: 27% | Due: 31 May
+Link: https://example.invalid/objectives/MBETA-2605-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Warm-cache eviction policy (may-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MBETA-104
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q2 2026 [May]: Observability sampling refresh (may-2026)
+Leader Engineer: Dara Okonjo
+Progress: 52% | Due: 31 May
+Link: https://example.invalid/objectives/MBETA-2605-05
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Observability sampling refresh (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MBETA-103
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Zero-downtime restart choreography (may-2026)
-Leader Engineer: Ava Thornton
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MBETA-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Golden-path SLO board (may-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MBETA-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Rate-limiter fairness audit (may-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MBETA-105
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q2 2026 [May]: Runtime resource budgets (may-2026)
+Leader Engineer: Dara Okonjo
+Progress: 34% | Due: 31 May
+Link: https://example.invalid/objectives/MBETA-2605-06
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- [Risk] Feature flag rollout guardrails: No owner reachable this week.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

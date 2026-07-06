@@ -1,10 +1,10 @@
 Weekly Objective Update — Gamma Runtime — Week 20
 
 SUMMARY
-- On track: 0/6
+- On track: 5/5
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 6
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 0
 
@@ -15,47 +15,40 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Golden-path SLO board (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MGAMM-102
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q2 2026 [May]: Zero-downtime restart choreography (may-2026)
+Leader Engineer: Gali Tomori
+Progress: 49% | Due: 31 May
+Link: https://example.invalid/objectives/MGAMM-2605-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Zero-downtime restart choreography (may-2026)
+[ON TRACK] Q2 2026 [May]: Deprecation channel rollout (may-2026)
+Leader Engineer: Dara Okonjo
+Progress: 31% | Due: 31 May
+Link: https://example.invalid/objectives/MGAMM-2605-02
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [May]: Warm-cache eviction policy (may-2026)
 Leader Engineer: Sana Rowe
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MGAMM-100
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Progress: 30% | Due: 31 May
+Link: https://example.invalid/objectives/MGAMM-2605-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Observability sampling refresh (may-2026)
-Leader Engineer: Ava Thornton
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MGAMM-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q2 2026 [May]: Feature flag rollout guardrails (may-2026)
+Leader Engineer: Dara Okonjo
+Progress: 37% | Due: 31 May
+Link: https://example.invalid/objectives/MGAMM-2605-04
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Rate-limiter fairness audit (may-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MGAMM-105
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Feature flag rollout guardrails (may-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MGAMM-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Warm-cache eviction policy (may-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MGAMM-104
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q2 2026 [May]: Runtime resource budgets (may-2026)
+Leader Engineer: Milo Anders
+Progress: 28% | Due: 31 May
+Link: https://example.invalid/objectives/MGAMM-2605-05
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - No active blockers reported.

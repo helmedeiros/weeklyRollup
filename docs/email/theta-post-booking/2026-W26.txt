@@ -1,12 +1,12 @@
 Weekly Objective Update — Theta Post-Booking — Week 26
 
 SUMMARY
-- On track: 0/6
+- On track: 0/5
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
 - Done: 5
-- Missing updates: 1
-- Blockers / risks: 1
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,51 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[MISSING UPDATES] Refund status transparency (june-2026)
-Leader Engineer: Pia Rivas
-Progress: 46% | Due: 24 Jun
-Link: https://example.invalid/objectives/MTHET-104
-Done this week: Update deferred pending a decision from the steering meeting.
-Plan for next week: Post an update by Friday capturing what shifted.
-
-[DONE] Personalised trip recommendations (june-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MTHET-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+[DONE] Q2 2026 [June]: Homepage skeleton refresh (june-2026)
+Leader Engineer: Jules Cabrera
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-01
+Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[DONE] Payment method reorder (june-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MTHET-105
+[DONE] Q2 2026 [June]: Personalised trip recommendations (june-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-02
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[DONE] Cart persistence across surfaces (june-2026)
-Leader Engineer: Quinn Yates
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MTHET-101
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Q2 2026 [June]: Refund status transparency (june-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-03
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[DONE] Purchase confirmation clarity (june-2026)
-Leader Engineer: Jules Cabrera
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MTHET-103
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Q2 2026 [June]: Checkout abandonment nudge (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-04
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[DONE] Homepage skeleton refresh (june-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MTHET-100
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
+[DONE] Q2 2026 [June]: Search relevance re-ranker (june-2026)
+Leader Engineer: Gali Tomori
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-05
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- [Risk] Refund status transparency: No owner reachable this week.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

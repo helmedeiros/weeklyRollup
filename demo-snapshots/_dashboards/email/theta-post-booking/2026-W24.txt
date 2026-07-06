@@ -1,12 +1,12 @@
 Weekly Objective Update — Theta Post-Booking — Week 24
 
 SUMMARY
-- On track: 1/6
+- On track: 5/5
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
-- Missing updates: 1
-- Blockers / risks: 1
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,51 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Homepage skeleton refresh (june-2026)
+[ON TRACK] Q2 2026 [June]: Homepage skeleton refresh (june-2026)
+Leader Engineer: Jules Cabrera
+Progress: 47% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-01
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [June]: Personalised trip recommendations (june-2026)
 Leader Engineer: Milo Anders
-Progress: 82% | Due: 10 Jun
-Link: https://example.invalid/objectives/MTHET-100
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Progress: 45% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [June]: Refund status transparency (june-2026)
+Leader Engineer: Ellis Marín
+Progress: 47% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [June]: Checkout abandonment nudge (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 46% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [June]: Search relevance re-ranker (june-2026)
+Leader Engineer: Gali Tomori
+Progress: 49% | Due: 30 Jun
+Link: https://example.invalid/objectives/MTHET-2606-05
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Purchase confirmation clarity (june-2026)
-Leader Engineer: Jules Cabrera
-Progress: 38% | Due: 10 Jun
-Link: https://example.invalid/objectives/MTHET-103
-Done this week: Update deferred pending a decision from the steering meeting.
-Plan for next week: Sync with the owner and file the missing update retroactively.
-
-[DONE] Payment method reorder (june-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 10 Jun
-Link: https://example.invalid/objectives/MTHET-105
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Cart persistence across surfaces (june-2026)
-Leader Engineer: Quinn Yates
-Progress: 100% | Due: 10 Jun
-Link: https://example.invalid/objectives/MTHET-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Personalised trip recommendations (june-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 10 Jun
-Link: https://example.invalid/objectives/MTHET-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Refund status transparency (june-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 10 Jun
-Link: https://example.invalid/objectives/MTHET-104
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
 BLOCKERS / RISKS
-- [Risk] Purchase confirmation clarity: No owner reachable this week.
-  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

@@ -1,11 +1,11 @@
 Weekly Objective Update — Kappa Enterprise Ops — Week 17
 
 SUMMARY
-- On track: 0/4
-- At risk: 0 (0 red, 0 yellow)
+- On track: 2/4
+- At risk: 2 (0 red, 2 yellow)
 - Not started: 0
-- Done: 2
-- Missing updates: 2
+- Done: 0
+- Missing updates: 0
 - Blockers / risks: 2
 
 Hi team,
@@ -15,39 +15,39 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[MISSING UPDATES] Partner billing reconciliation (april-2026)
-Leader Engineer: Frida Ohno
-Progress: 69% | Due: 22 Apr
-Link: https://example.invalid/objectives/MKAPP-103
-Done this week: No update was captured this week.
-Plan for next week: Post an update by Friday capturing what shifted.
-
-[MISSING UPDATES] Partner API rate-limit v2 (april-2026)
-Leader Engineer: Sana Rowe
-Progress: 49% | Due: 22 Apr
-Link: https://example.invalid/objectives/MKAPP-100
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Post an update by Friday capturing what shifted.
-
-[DONE] Onboarding self-serve wizard (april-2026)
+[ON TRACK] Q2 2026 [April]: Onboarding self-serve wizard (april-2026)
 Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/MKAPP-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Progress: 80% | Due: 30 Apr
+Link: https://example.invalid/objectives/MKAPP-2604-02
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Compliance audit trail (april-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/MKAPP-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q2 2026 [April]: Partner billing reconciliation (april-2026)
+Leader Engineer: Ines Marchetti
+Progress: 79% | Due: 30 Apr
+Link: https://example.invalid/objectives/MKAPP-2604-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[AT RISK] Q2 2026 [April]: SLA breach notifier (april-2026)
+Leader Engineer: Ava Thornton
+Progress: 31% | Due: 30 Apr
+Link: https://example.invalid/objectives/MKAPP-2604-01
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
+
+[AT RISK] Q2 2026 [April]: Partner API rate-limit v2 (april-2026)
+Leader Engineer: Cai Nguyen
+Progress: 39% | Due: 30 Apr
+Link: https://example.invalid/objectives/MKAPP-2604-04
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
 BLOCKERS / RISKS
-- [Risk] Partner billing reconciliation: No owner reachable this week.
-  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
-- [Risk] Partner API rate-limit v2: No owner reachable this week.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+- [Risk] Q2 2026 [April]: SLA breach notifier: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+- [Risk] Q2 2026 [April]: Partner API rate-limit v2: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards
 Engineering Manager

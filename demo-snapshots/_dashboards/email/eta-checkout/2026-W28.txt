@@ -1,12 +1,12 @@
 Weekly Objective Update — Eta Checkout — Week 28
 
 SUMMARY
-- On track: 1/5
-- At risk: 1 (0 red, 1 yellow)
+- On track: 5/5
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 3
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,44 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Homepage skeleton refresh (july-2026)
+[ON TRACK] Q3 2026 [July]: Search relevance re-ranker (july-2026)
+Leader Engineer: Bram Larsson
+Progress: 32% | Due: 31 Jul
+Link: https://example.invalid/objectives/META-2607-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q3 2026 [July]: Passenger name-change flow (july-2026)
+Leader Engineer: Milo Anders
+Progress: 24% | Due: 31 Jul
+Link: https://example.invalid/objectives/META-2607-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q3 2026 [July]: Purchase confirmation clarity (july-2026)
 Leader Engineer: Pia Rivas
-Progress: 32% | Due: 8 Jul
-Link: https://example.invalid/objectives/META-100
+Progress: 29% | Due: 31 Jul
+Link: https://example.invalid/objectives/META-2607-03
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q3 2026 [July]: Refund status transparency (july-2026)
+Leader Engineer: Rio Delacroix
+Progress: 36% | Due: 31 Jul
+Link: https://example.invalid/objectives/META-2607-04
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
-[AT RISK] Personalised trip recommendations (july-2026)
-Leader Engineer: Jules Cabrera
-Progress: 67% | Due: 8 Jul
-Link: https://example.invalid/objectives/META-102
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
-
-[DONE] Refund status transparency (july-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/META-104
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Cart persistence across surfaces (july-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/META-101
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Purchase confirmation clarity (july-2026)
-Leader Engineer: Odin Barone
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/META-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q3 2026 [July]: Loyalty perks eligibility banner (july-2026)
+Leader Engineer: Tomo Ilves
+Progress: 36% | Due: 31 Jul
+Link: https://example.invalid/objectives/META-2607-05
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- [Risk] Personalised trip recommendations: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

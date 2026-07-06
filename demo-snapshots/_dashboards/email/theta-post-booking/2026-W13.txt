@@ -1,12 +1,12 @@
 Weekly Objective Update — Theta Post-Booking — Week 13
 
 SUMMARY
-- On track: 2/6
-- At risk: 0 (0 red, 0 yellow)
+- On track: 2/5
+- At risk: 2 (0 red, 2 yellow)
 - Not started: 0
-- Done: 3
-- Missing updates: 1
-- Blockers / risks: 1
+- Done: 1
+- Missing updates: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,51 +15,46 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Personalised trip recommendations (march-2026)
-Leader Engineer: Rio Delacroix
-Progress: 90% | Due: 25 Mar
-Link: https://example.invalid/objectives/MTHET-102
-Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+[ON TRACK] Q1 2026 [March]: Loyalty perks eligibility banner (march-2026)
+Leader Engineer: Gali Tomori
+Progress: 68% | Due: 31 Mar
+Link: https://example.invalid/objectives/MTHET-2603-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[ON TRACK] Payment method reorder (march-2026)
-Leader Engineer: Sana Rowe
-Progress: 52% | Due: 25 Mar
-Link: https://example.invalid/objectives/MTHET-105
-Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+[ON TRACK] Q1 2026 [March]: Passenger name-change flow (march-2026)
+Leader Engineer: Lena Rihanna
+Progress: 80% | Due: 31 Mar
+Link: https://example.invalid/objectives/MTHET-2603-05
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Refund status transparency (march-2026)
-Leader Engineer: Pia Rivas
-Progress: 69% | Due: 25 Mar
-Link: https://example.invalid/objectives/MTHET-104
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Post an update by Friday capturing what shifted.
+[AT RISK] Q1 2026 [March]: Cart persistence across surfaces (march-2026)
+Leader Engineer: Lena Rihanna
+Progress: 35% | Due: 31 Mar
+Link: https://example.invalid/objectives/MTHET-2603-02
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[DONE] Homepage skeleton refresh (march-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 25 Mar
-Link: https://example.invalid/objectives/MTHET-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[AT RISK] Q1 2026 [March]: Homepage skeleton refresh (march-2026)
+Leader Engineer: Dara Okonjo
+Progress: 51% | Due: 31 Mar
+Link: https://example.invalid/objectives/MTHET-2603-03
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[DONE] Purchase confirmation clarity (march-2026)
-Leader Engineer: Jules Cabrera
-Progress: 100% | Due: 25 Mar
-Link: https://example.invalid/objectives/MTHET-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Cart persistence across surfaces (march-2026)
-Leader Engineer: Quinn Yates
-Progress: 100% | Due: 25 Mar
-Link: https://example.invalid/objectives/MTHET-101
+[DONE] Q1 2026 [March]: Refund status transparency (march-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 31 Mar
+Link: https://example.invalid/objectives/MTHET-2603-01
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Risk] Refund status transparency: No owner reachable this week.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- [Risk] Q1 2026 [March]: Cart persistence across surfaces: Design review pending from the sibling team.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
+- [Risk] Q1 2026 [March]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
 
 Kind Regards
 Engineering Manager

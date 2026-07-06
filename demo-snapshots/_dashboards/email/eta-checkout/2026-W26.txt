@@ -2,11 +2,11 @@ Weekly Objective Update — Eta Checkout — Week 26
 
 SUMMARY
 - On track: 0/5
-- At risk: 0 (0 red, 0 yellow)
+- At risk: 1 (0 red, 1 yellow)
 - Not started: 0
-- Done: 4
+- Done: 3
 - Missing updates: 1
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,44 +15,46 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[MISSING UPDATES] Homepage skeleton refresh (june-2026)
-Leader Engineer: Pia Rivas
-Progress: 74% | Due: 24 Jun
-Link: https://example.invalid/objectives/META-100
-Done this week: Owner was out; update will land in the next report.
+[AT RISK] Q2 2026 [June]: Passenger name-change flow (june-2026)
+Leader Engineer: Ellis Marín
+Progress: 50% | Due: 30 Jun
+Link: https://example.invalid/objectives/META-2606-02
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+
+[MISSING UPDATES] Q2 2026 [June]: Search relevance re-ranker (june-2026)
+Leader Engineer: Milo Anders
+Progress: 27% | Due: 30 Jun
+Link: https://example.invalid/objectives/META-2606-04
+Done this week: Update deferred pending a decision from the steering meeting.
 Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[DONE] Cart persistence across surfaces (june-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/META-101
+[DONE] Q2 2026 [June]: Loyalty perks eligibility banner (june-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/META-2606-01
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[DONE] Personalised trip recommendations (june-2026)
-Leader Engineer: Jules Cabrera
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/META-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Refund status transparency (june-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/META-104
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+[DONE] Q2 2026 [June]: Checkout abandonment nudge (june-2026)
+Leader Engineer: Dara Okonjo
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/META-2606-03
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Purchase confirmation clarity (june-2026)
-Leader Engineer: Odin Barone
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/META-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Q2 2026 [June]: Cart persistence across surfaces (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/META-2606-05
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Risk] Homepage skeleton refresh: No owner reachable this week.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- [Risk] Q2 2026 [June]: Passenger name-change flow: Design review pending from the sibling team.
+  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+- [Risk] Q2 2026 [June]: Search relevance re-ranker: No owner reachable this week.
+  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
 
 Kind Regards
 Engineering Manager

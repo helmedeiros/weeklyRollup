@@ -1,10 +1,10 @@
 Weekly Objective Update — Beta Payments Core — Week 18
 
 SUMMARY
-- On track: 1/7
+- On track: 2/6
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 6
+- Done: 4
 - Missing updates: 0
 - Blockers / risks: 0
 
@@ -15,54 +15,47 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Zero-downtime restart choreography (april-2026)
+[ON TRACK] Q2 2026 [April]: Observability sampling refresh (april-2026)
+Leader Engineer: Dara Okonjo
+Progress: 79% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-03
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [April]: Golden-path SLO board (april-2026)
 Leader Engineer: Ava Thornton
-Progress: 77% | Due: 29 Apr
-Link: https://example.invalid/objectives/MBETA-100
-Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-Plan for next week: Wrap the last integration test and hand off to QA.
+Progress: 72% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-06
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Warm-cache eviction policy (april-2026)
+[DONE] Q2 2026 [April]: Rate-limiter fairness audit (april-2026)
 Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MBETA-104
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Feature flag rollout guardrails (april-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MBETA-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
+Progress: 100% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-01
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[DONE] Rate-limiter fairness audit (april-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MBETA-105
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+[DONE] Q2 2026 [April]: Warm-cache eviction policy (april-2026)
+Leader Engineer: Jules Cabrera
+Progress: 100% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-02
+Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Observability sampling refresh (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MBETA-103
+[DONE] Q2 2026 [April]: Runtime resource budgets (april-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-04
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Golden-path SLO board (april-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MBETA-102
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Deprecation channel rollout (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 29 Apr
-Link: https://example.invalid/objectives/MBETA-106
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[DONE] Q2 2026 [April]: Config drift auto-repair (april-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-05
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - No active blockers reported.

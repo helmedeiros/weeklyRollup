@@ -1,12 +1,12 @@
 Weekly Objective Update — Beta Payments Core — Week 15
 
 SUMMARY
-- On track: 1/7
-- At risk: 2 (0 red, 2 yellow)
+- On track: 6/6
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 2
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,60 +15,50 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Feature flag rollout guardrails (april-2026)
+[ON TRACK] Q2 2026 [April]: Rate-limiter fairness audit (april-2026)
 Leader Engineer: Rio Delacroix
-Progress: 61% | Due: 8 Apr
-Link: https://example.invalid/objectives/MBETA-101
+Progress: 37% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-01
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [April]: Warm-cache eviction policy (april-2026)
+Leader Engineer: Jules Cabrera
+Progress: 46% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [April]: Observability sampling refresh (april-2026)
+Leader Engineer: Dara Okonjo
+Progress: 28% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-03
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[AT RISK] Warm-cache eviction policy (april-2026)
-Leader Engineer: Rio Delacroix
-Progress: 53% | Due: 8 Apr
-Link: https://example.invalid/objectives/MBETA-104
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Realign with the partner team and reset the delivery date.
-
-[AT RISK] Golden-path SLO board (april-2026)
-Leader Engineer: Sana Rowe
-Progress: 35% | Due: 8 Apr
-Link: https://example.invalid/objectives/MBETA-102
-Done this week: Slipped the promised design review; rescheduling for later this week.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
-
-[DONE] Observability sampling refresh (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MBETA-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Rate-limiter fairness audit (april-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MBETA-105
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Zero-downtime restart choreography (april-2026)
+[ON TRACK] Q2 2026 [April]: Runtime resource budgets (april-2026)
 Leader Engineer: Ava Thornton
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MBETA-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Progress: 40% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Deprecation channel rollout (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MBETA-106
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q2 2026 [April]: Config drift auto-repair (april-2026)
+Leader Engineer: Ava Thornton
+Progress: 30% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-05
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [April]: Golden-path SLO board (april-2026)
+Leader Engineer: Ava Thornton
+Progress: 36% | Due: 30 Apr
+Link: https://example.invalid/objectives/MBETA-2604-06
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- [Risk] Warm-cache eviction policy: Design review pending from the sibling team.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
-- [Risk] Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

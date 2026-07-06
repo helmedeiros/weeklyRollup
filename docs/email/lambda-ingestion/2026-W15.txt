@@ -1,12 +1,12 @@
 Weekly Objective Update — Lambda Ingestion — Week 15
 
 SUMMARY
-- On track: 0/6
-- At risk: 2 (1 red, 1 yellow)
+- On track: 5/5
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 2
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,53 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[AT RISK] Publisher content freshness (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 62% | Due: 8 Apr
-Link: https://example.invalid/objectives/MLAMB-102
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Realign with the partner team and reset the delivery date.
-
-[DELAYED] Provider content ingestion QA (april-2026)
-Leader Engineer: Gali Tomori
-Progress: 86% | Due: 8 Apr
-Link: https://example.invalid/objectives/MLAMB-100
-Done this week: Incident on adjacent service consumed the week; work is paused.
-Plan for next week: Reassign to a different owner so the current one can help elsewhere.
-
-[DONE] Content lint gate (april-2026)
-Leader Engineer: Dara Okonjo
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MLAMB-105
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Cross-locale asset governance (april-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MLAMB-101
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Cadence dashboard for editors (april-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MLAMB-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Broken-image sentinel (april-2026)
+[ON TRACK] Q2 2026 [April]: Content lint gate (april-2026)
 Leader Engineer: Kai Ostberg
-Progress: 100% | Due: 8 Apr
-Link: https://example.invalid/objectives/MLAMB-104
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Progress: 33% | Due: 30 Apr
+Link: https://example.invalid/objectives/MLAMB-2604-01
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [April]: Legacy asset migration (april-2026)
+Leader Engineer: Tomo Ilves
+Progress: 26% | Due: 30 Apr
+Link: https://example.invalid/objectives/MLAMB-2604-02
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [April]: Cross-locale asset governance (april-2026)
+Leader Engineer: Ellis Marín
+Progress: 24% | Due: 30 Apr
+Link: https://example.invalid/objectives/MLAMB-2604-03
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [April]: Provider content ingestion QA (april-2026)
+Leader Engineer: Lena Rihanna
+Progress: 17% | Due: 30 Apr
+Link: https://example.invalid/objectives/MLAMB-2604-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [April]: Cadence dashboard for editors (april-2026)
+Leader Engineer: Quinn Yates
+Progress: 44% | Due: 30 Apr
+Link: https://example.invalid/objectives/MLAMB-2604-05
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- [Blocker] Provider content ingestion QA: External vendor SLA slipping; no eta.
-  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
-- [Risk] Publisher content freshness: Design review pending from the sibling team.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

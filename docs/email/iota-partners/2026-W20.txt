@@ -1,10 +1,10 @@
 Weekly Objective Update — Iota Partner Portal — Week 20
 
 SUMMARY
-- On track: 1/5
+- On track: 4/4
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 0
 
@@ -15,40 +15,33 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] SLA breach notifier (may-2026)
-Leader Engineer: Ellis Marín
-Progress: 50% | Due: 13 May
-Link: https://example.invalid/objectives/MIOTA-104
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+[ON TRACK] Q2 2026 [May]: Contract-tier feature gating (may-2026)
+Leader Engineer: Sana Rowe
+Progress: 25% | Due: 31 May
+Link: https://example.invalid/objectives/MIOTA-2605-01
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Partner API rate-limit v2 (may-2026)
-Leader Engineer: Lena Rihanna
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MIOTA-100
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q2 2026 [May]: Reseller webhook v3 (may-2026)
+Leader Engineer: Gali Tomori
+Progress: 29% | Due: 31 May
+Link: https://example.invalid/objectives/MIOTA-2605-02
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Onboarding self-serve wizard (may-2026)
-Leader Engineer: Tomo Ilves
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MIOTA-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q2 2026 [May]: Onboarding self-serve wizard (may-2026)
+Leader Engineer: Jules Cabrera
+Progress: 43% | Due: 31 May
+Link: https://example.invalid/objectives/MIOTA-2605-03
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Partner billing reconciliation (may-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MIOTA-103
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Compliance audit trail (may-2026)
+[ON TRACK] Q2 2026 [May]: Compliance audit trail (may-2026)
 Leader Engineer: Pia Rivas
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MIOTA-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Progress: 53% | Due: 31 May
+Link: https://example.invalid/objectives/MIOTA-2605-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
 - No active blockers reported.

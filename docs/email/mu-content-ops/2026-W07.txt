@@ -1,12 +1,12 @@
 Weekly Objective Update — Mu Content Ops — Week 7
 
 SUMMARY
-- On track: 1/5
+- On track: 5/5
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 2
-- Missing updates: 2
-- Blockers / risks: 2
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,46 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Provider content ingestion QA (february-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 81% | Due: 11 Feb
-Link: https://example.invalid/objectives/MMU-100
+[ON TRACK] Q1 2026 [February]: Legacy asset migration (february-2026)
+Leader Engineer: Jules Cabrera
+Progress: 34% | Due: 28 Feb
+Link: https://example.invalid/objectives/MMU-2602-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q1 2026 [February]: Publisher content freshness (february-2026)
+Leader Engineer: Dara Okonjo
+Progress: 46% | Due: 28 Feb
+Link: https://example.invalid/objectives/MMU-2602-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q1 2026 [February]: Cadence dashboard for editors (february-2026)
+Leader Engineer: Dara Okonjo
+Progress: 44% | Due: 28 Feb
+Link: https://example.invalid/objectives/MMU-2602-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Broken-image sentinel (february-2026)
-Leader Engineer: Pia Rivas
-Progress: 60% | Due: 11 Feb
-Link: https://example.invalid/objectives/MMU-104
-Done this week: No update was captured this week.
-Plan for next week: Sync with the owner and file the missing update retroactively.
+[ON TRACK] Q1 2026 [February]: Content lint gate (february-2026)
+Leader Engineer: Gali Tomori
+Progress: 40% | Due: 28 Feb
+Link: https://example.invalid/objectives/MMU-2602-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Cross-locale asset governance (february-2026)
-Leader Engineer: Nya Sardar
-Progress: 86% | Due: 11 Feb
-Link: https://example.invalid/objectives/MMU-101
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Sync with the owner and file the missing update retroactively.
-
-[DONE] Cadence dashboard for editors (february-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 11 Feb
-Link: https://example.invalid/objectives/MMU-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Publisher content freshness (february-2026)
-Leader Engineer: Odin Barone
-Progress: 100% | Due: 11 Feb
-Link: https://example.invalid/objectives/MMU-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q1 2026 [February]: Broken-image sentinel (february-2026)
+Leader Engineer: Frida Ohno
+Progress: 28% | Due: 28 Feb
+Link: https://example.invalid/objectives/MMU-2602-05
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- [Risk] Broken-image sentinel: No owner reachable this week.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
-- [Risk] Cross-locale asset governance: No owner reachable this week.
-  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

@@ -1,12 +1,12 @@
 Weekly Objective Update — Gamma Runtime — Week 28
 
 SUMMARY
-- On track: 0/6
-- At risk: 1 (0 red, 1 yellow)
+- On track: 5/5
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
-- Missing updates: 1
-- Blockers / risks: 2
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,53 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[AT RISK] Feature flag rollout guardrails (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 34% | Due: 8 Jul
-Link: https://example.invalid/objectives/MGAMM-101
-Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
+[ON TRACK] Q3 2026 [July]: Deprecation channel rollout (july-2026)
+Leader Engineer: Jules Cabrera
+Progress: 26% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-01
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Observability sampling refresh (july-2026)
-Leader Engineer: Ava Thornton
-Progress: 83% | Due: 8 Jul
-Link: https://example.invalid/objectives/MGAMM-103
-Done this week: Update deferred pending a decision from the steering meeting.
-Plan for next week: Post an update by Friday capturing what shifted.
+[ON TRACK] Q3 2026 [July]: Golden-path SLO board (july-2026)
+Leader Engineer: Odin Barone
+Progress: 23% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-02
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Zero-downtime restart choreography (july-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MGAMM-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q3 2026 [July]: Zero-downtime restart choreography (july-2026)
+Leader Engineer: Nya Sardar
+Progress: 38% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Warm-cache eviction policy (july-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MGAMM-104
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q3 2026 [July]: Config drift auto-repair (july-2026)
+Leader Engineer: Dara Okonjo
+Progress: 30% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Golden-path SLO board (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MGAMM-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Rate-limiter fairness audit (july-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MGAMM-105
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q3 2026 [July]: Rate-limiter fairness audit (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 41% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-05
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- [Risk] Feature flag rollout guardrails: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
-- [Risk] Observability sampling refresh: No owner reachable this week.
-  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

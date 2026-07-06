@@ -1,12 +1,12 @@
 Weekly Objective Update — Eta Checkout — Week 21
 
 SUMMARY
-- On track: 0/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 4/5
+- At risk: 1 (0 red, 1 yellow)
 - Not started: 0
-- Done: 5
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -15,43 +15,44 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Cart persistence across surfaces (may-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/META-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Homepage skeleton refresh (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/META-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Personalised trip recommendations (may-2026)
+[ON TRACK] Q2 2026 [May]: Loyalty perks eligibility banner (may-2026)
 Leader Engineer: Jules Cabrera
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/META-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Progress: 59% | Due: 31 May
+Link: https://example.invalid/objectives/META-2605-01
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Purchase confirmation clarity (may-2026)
-Leader Engineer: Odin Barone
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/META-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q2 2026 [May]: Personalised trip recommendations (may-2026)
+Leader Engineer: Tomo Ilves
+Progress: 53% | Due: 31 May
+Link: https://example.invalid/objectives/META-2605-02
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Refund status transparency (may-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 20 May
-Link: https://example.invalid/objectives/META-104
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q2 2026 [May]: Passenger name-change flow (may-2026)
+Leader Engineer: Ines Marchetti
+Progress: 47% | Due: 31 May
+Link: https://example.invalid/objectives/META-2605-03
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [May]: Cart persistence across surfaces (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 67% | Due: 31 May
+Link: https://example.invalid/objectives/META-2605-05
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[AT RISK] Q2 2026 [May]: Homepage skeleton refresh (may-2026)
+Leader Engineer: Milo Anders
+Progress: 30% | Due: 31 May
+Link: https://example.invalid/objectives/META-2605-04
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [May]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
 
 Kind Regards
 Engineering Manager

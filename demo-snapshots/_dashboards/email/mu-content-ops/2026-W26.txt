@@ -1,10 +1,10 @@
 Weekly Objective Update — Mu Content Ops — Week 26
 
 SUMMARY
-- On track: 1/5
+- On track: 0/5
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 3
+- Done: 4
 - Missing updates: 1
 - Blockers / risks: 1
 
@@ -15,44 +15,44 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Publisher content freshness (june-2026)
-Leader Engineer: Odin Barone
-Progress: 55% | Due: 24 Jun
-Link: https://example.invalid/objectives/MMU-102
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-Plan for next week: Wrap the last integration test and hand off to QA.
-
-[MISSING UPDATES] Broken-image sentinel (june-2026)
-Leader Engineer: Pia Rivas
-Progress: 65% | Due: 24 Jun
-Link: https://example.invalid/objectives/MMU-104
+[MISSING UPDATES] Q2 2026 [June]: Legacy asset migration (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 21% | Due: 30 Jun
+Link: https://example.invalid/objectives/MMU-2606-02
 Done this week: Owner was out; update will land in the next report.
-Plan for next week: Sync with the owner and file the missing update retroactively.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[DONE] Cross-locale asset governance (june-2026)
-Leader Engineer: Nya Sardar
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MMU-101
+[DONE] Q2 2026 [June]: Provider content ingestion QA (june-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MMU-2606-01
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Cadence dashboard for editors (june-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MMU-103
+[DONE] Q2 2026 [June]: Cadence dashboard for editors (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MMU-2606-03
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Provider content ingestion QA (june-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MMU-100
+[DONE] Q2 2026 [June]: Cross-locale asset governance (june-2026)
+Leader Engineer: Nya Sardar
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MMU-2606-04
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Q2 2026 [June]: Publisher content freshness (june-2026)
+Leader Engineer: Gali Tomori
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MMU-2606-05
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Broken-image sentinel: No owner reachable this week.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- [Risk] Q2 2026 [June]: Legacy asset migration: No owner reachable this week.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

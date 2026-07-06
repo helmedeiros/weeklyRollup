@@ -1,12 +1,12 @@
 Weekly Objective Update — Lambda Ingestion — Week 29
 
 SUMMARY
-- On track: 1/6
-- At risk: 2 (1 red, 1 yellow)
+- On track: 5/5
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 2
-- Missing updates: 1
-- Blockers / risks: 3
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,55 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Provider content ingestion QA (july-2026)
-Leader Engineer: Gali Tomori
-Progress: 32% | Due: 15 Jul
-Link: https://example.invalid/objectives/MLAMB-100
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+[ON TRACK] Q3 2026 [July]: Broken-image sentinel (july-2026)
+Leader Engineer: Frida Ohno
+Progress: 36% | Due: 31 Jul
+Link: https://example.invalid/objectives/MLAMB-2607-01
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[AT RISK] Content lint gate (july-2026)
-Leader Engineer: Dara Okonjo
-Progress: 71% | Due: 15 Jul
-Link: https://example.invalid/objectives/MLAMB-105
-Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-Plan for next week: Realign with the partner team and reset the delivery date.
+[ON TRACK] Q3 2026 [July]: Publisher content freshness (july-2026)
+Leader Engineer: Gali Tomori
+Progress: 58% | Due: 31 Jul
+Link: https://example.invalid/objectives/MLAMB-2607-02
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DELAYED] Cross-locale asset governance (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 52% | Due: 15 Jul
-Link: https://example.invalid/objectives/MLAMB-101
-Done this week: Incident on adjacent service consumed the week; work is paused.
-Plan for next week: Pick up a related workstream while the primary path stays blocked.
+[ON TRACK] Q3 2026 [July]: Provider content ingestion QA (july-2026)
+Leader Engineer: Gali Tomori
+Progress: 55% | Due: 31 Jul
+Link: https://example.invalid/objectives/MLAMB-2607-03
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[MISSING UPDATES] Broken-image sentinel (july-2026)
-Leader Engineer: Kai Ostberg
-Progress: 53% | Due: 15 Jul
-Link: https://example.invalid/objectives/MLAMB-104
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Sync with the owner and file the missing update retroactively.
+[ON TRACK] Q3 2026 [July]: Cross-locale asset governance (july-2026)
+Leader Engineer: Gali Tomori
+Progress: 46% | Due: 31 Jul
+Link: https://example.invalid/objectives/MLAMB-2607-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Publisher content freshness (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 15 Jul
-Link: https://example.invalid/objectives/MLAMB-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Cadence dashboard for editors (july-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 15 Jul
-Link: https://example.invalid/objectives/MLAMB-103
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q3 2026 [July]: Legacy asset migration (july-2026)
+Leader Engineer: Rio Delacroix
+Progress: 27% | Due: 31 Jul
+Link: https://example.invalid/objectives/MLAMB-2607-05
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- [Blocker] Cross-locale asset governance: Legal sign-off outstanding.
-  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
-- [Risk] Content lint gate: Design review pending from the sibling team.
-  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
-- [Risk] Broken-image sentinel: No owner reachable this week.
-  Leader Engineer: Kai Ostberg | Owner: Kai Ostberg | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

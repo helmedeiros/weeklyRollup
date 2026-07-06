@@ -1,7 +1,7 @@
 Weekly Objective Update — Lambda Ingestion — Week 22
 
 SUMMARY
-- On track: 1/6
+- On track: 0/5
 - At risk: 2 (1 red, 1 yellow)
 - Not started: 0
 - Done: 3
@@ -15,53 +15,46 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Broken-image sentinel (may-2026)
-Leader Engineer: Kai Ostberg
-Progress: 68% | Due: 27 May
-Link: https://example.invalid/objectives/MLAMB-104
-Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-Plan for next week: Wrap the last integration test and hand off to QA.
-
-[AT RISK] Content lint gate (may-2026)
-Leader Engineer: Dara Okonjo
-Progress: 39% | Due: 27 May
-Link: https://example.invalid/objectives/MLAMB-105
-Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-Plan for next week: Realign with the partner team and reset the delivery date.
-
-[DELAYED] Cross-locale asset governance (may-2026)
-Leader Engineer: Ellis Marín
-Progress: 60% | Due: 27 May
-Link: https://example.invalid/objectives/MLAMB-101
-Done this week: Legal review outstanding — no code path until the sign-off lands.
-Plan for next week: Reassign to a different owner so the current one can help elsewhere.
-
-[DONE] Cadence dashboard for editors (may-2026)
+[AT RISK] Q2 2026 [May]: Broken-image sentinel (may-2026)
 Leader Engineer: Bram Larsson
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MLAMB-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Progress: 53% | Due: 31 May
+Link: https://example.invalid/objectives/MLAMB-2605-01
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[DONE] Provider content ingestion QA (may-2026)
-Leader Engineer: Gali Tomori
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MLAMB-100
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Q2 2026 [May]: Legacy asset migration (may-2026)
+Leader Engineer: Sana Rowe
+Progress: 12% | Due: 31 May
+Link: https://example.invalid/objectives/MLAMB-2605-03
+Done this week: Incident on adjacent service consumed the week; work is paused.
+Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
-[DONE] Publisher content freshness (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MLAMB-102
+[DONE] Q2 2026 [May]: Provider content ingestion QA (may-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 100% | Due: 31 May
+Link: https://example.invalid/objectives/MLAMB-2605-02
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
+[DONE] Q2 2026 [May]: Publisher content freshness (may-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 31 May
+Link: https://example.invalid/objectives/MLAMB-2605-04
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Q2 2026 [May]: Cadence dashboard for editors (may-2026)
+Leader Engineer: Gali Tomori
+Progress: 100% | Due: 31 May
+Link: https://example.invalid/objectives/MLAMB-2605-05
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
 BLOCKERS / RISKS
-- [Blocker] Cross-locale asset governance: Legal sign-off outstanding.
-  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
-- [Risk] Content lint gate: Design review pending from the sibling team.
-  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+- [Blocker] Q2 2026 [May]: Legacy asset migration: External vendor SLA slipping; no eta.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+- [Risk] Q2 2026 [May]: Broken-image sentinel: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
 
 Kind Regards
 Engineering Manager

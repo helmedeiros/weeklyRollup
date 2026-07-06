@@ -1,12 +1,12 @@
 Weekly Objective Update — Mu Content Ops — Week 22
 
 SUMMARY
-- On track: 1/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 2/5
+- At risk: 1 (0 red, 1 yellow)
 - Not started: 0
 - Done: 2
-- Missing updates: 2
-- Blockers / risks: 2
+- Missing updates: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -15,46 +15,44 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Publisher content freshness (may-2026)
-Leader Engineer: Odin Barone
-Progress: 74% | Due: 27 May
-Link: https://example.invalid/objectives/MMU-102
-Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+[ON TRACK] Q2 2026 [May]: Cross-locale asset governance (may-2026)
+Leader Engineer: Sana Rowe
+Progress: 78% | Due: 31 May
+Link: https://example.invalid/objectives/MMU-2605-02
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[MISSING UPDATES] Cross-locale asset governance (may-2026)
-Leader Engineer: Nya Sardar
-Progress: 37% | Due: 27 May
-Link: https://example.invalid/objectives/MMU-101
-Done this week: No update was captured this week.
-Plan for next week: Post an update by Friday capturing what shifted.
-
-[MISSING UPDATES] Provider content ingestion QA (may-2026)
+[ON TRACK] Q2 2026 [May]: Cadence dashboard for editors (may-2026)
 Leader Engineer: Hiro Vasquez
-Progress: 40% | Due: 27 May
-Link: https://example.invalid/objectives/MMU-100
-Done this week: No update was captured this week.
-Plan for next week: Sync with the owner and file the missing update retroactively.
+Progress: 64% | Due: 31 May
+Link: https://example.invalid/objectives/MMU-2605-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Broken-image sentinel (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MMU-104
+[AT RISK] Q2 2026 [May]: Provider content ingestion QA (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 50% | Due: 31 May
+Link: https://example.invalid/objectives/MMU-2605-01
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+
+[DONE] Q2 2026 [May]: Content lint gate (may-2026)
+Leader Engineer: Ines Marchetti
+Progress: 100% | Due: 31 May
+Link: https://example.invalid/objectives/MMU-2605-03
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Cadence dashboard for editors (may-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MMU-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
+[DONE] Q2 2026 [May]: Broken-image sentinel (may-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 31 May
+Link: https://example.invalid/objectives/MMU-2605-05
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
 BLOCKERS / RISKS
-- [Risk] Cross-locale asset governance: No owner reachable this week.
-  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
-- [Risk] Provider content ingestion QA: No owner reachable this week.
-  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+- [Risk] Q2 2026 [May]: Provider content ingestion QA: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
 
 Kind Regards
 Engineering Manager

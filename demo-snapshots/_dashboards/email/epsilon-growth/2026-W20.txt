@@ -1,12 +1,12 @@
 Weekly Objective Update — Epsilon Growth — Week 20
 
 SUMMARY
-- On track: 2/9
-- At risk: 1 (0 red, 1 yellow)
+- On track: 6/6
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 6
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,72 +15,50 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Cart persistence across surfaces (may-2026)
-Leader Engineer: Ellis Marín
-Progress: 59% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-101
-Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+[ON TRACK] Q2 2026 [May]: Loyalty perks eligibility banner (may-2026)
+Leader Engineer: Sana Rowe
+Progress: 38% | Due: 31 May
+Link: https://example.invalid/objectives/MEPSI-2605-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
-[ON TRACK] Homepage skeleton refresh (may-2026)
-Leader Engineer: Quinn Yates
-Progress: 87% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-100
-Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+[ON TRACK] Q2 2026 [May]: Cart persistence across surfaces (may-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 27% | Due: 31 May
+Link: https://example.invalid/objectives/MEPSI-2605-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [May]: Passenger name-change flow (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 44% | Due: 31 May
+Link: https://example.invalid/objectives/MEPSI-2605-03
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [May]: Checkout abandonment nudge (may-2026)
+Leader Engineer: Gali Tomori
+Progress: 47% | Due: 31 May
+Link: https://example.invalid/objectives/MEPSI-2605-04
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [May]: Payment method reorder (may-2026)
+Leader Engineer: Ellis Marín
+Progress: 22% | Due: 31 May
+Link: https://example.invalid/objectives/MEPSI-2605-05
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[AT RISK] Payment method reorder (may-2026)
-Leader Engineer: Frida Ohno
-Progress: 30% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-105
-Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-
-[DONE] Passenger name-change flow (may-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-106
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Loyalty perks eligibility banner (may-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-108
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Purchase confirmation clarity (may-2026)
-Leader Engineer: Ava Thornton
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Refund status transparency (may-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-104
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Personalised trip recommendations (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Search relevance re-ranker (may-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 13 May
-Link: https://example.invalid/objectives/MEPSI-107
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q2 2026 [May]: Search relevance re-ranker (may-2026)
+Leader Engineer: Odin Barone
+Progress: 50% | Due: 31 May
+Link: https://example.invalid/objectives/MEPSI-2605-06
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- [Risk] Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

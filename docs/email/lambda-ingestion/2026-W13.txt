@@ -1,12 +1,12 @@
 Weekly Objective Update — Lambda Ingestion — Week 13
 
 SUMMARY
-- On track: 0/6
-- At risk: 2 (0 red, 2 yellow)
+- On track: 3/5
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
-- Missing updates: 0
-- Blockers / risks: 2
+- Done: 1
+- Missing updates: 1
+- Blockers / risks: 1
 
 Hi team,
 
@@ -15,52 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[AT RISK] Publisher content freshness (march-2026)
-Leader Engineer: Pia Rivas
-Progress: 87% | Due: 25 Mar
-Link: https://example.invalid/objectives/MLAMB-102
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-
-[AT RISK] Cadence dashboard for editors (march-2026)
-Leader Engineer: Bram Larsson
-Progress: 89% | Due: 25 Mar
-Link: https://example.invalid/objectives/MLAMB-103
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Realign with the partner team and reset the delivery date.
-
-[DONE] Cross-locale asset governance (march-2026)
+[ON TRACK] Q1 2026 [March]: Cross-locale asset governance (march-2026)
 Leader Engineer: Ellis Marín
-Progress: 100% | Due: 25 Mar
-Link: https://example.invalid/objectives/MLAMB-101
+Progress: 74% | Due: 31 Mar
+Link: https://example.invalid/objectives/MLAMB-2603-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q1 2026 [March]: Broken-image sentinel (march-2026)
+Leader Engineer: Pia Rivas
+Progress: 66% | Due: 31 Mar
+Link: https://example.invalid/objectives/MLAMB-2603-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q1 2026 [March]: Cadence dashboard for editors (march-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 76% | Due: 31 Mar
+Link: https://example.invalid/objectives/MLAMB-2603-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[MISSING UPDATES] Q1 2026 [March]: Legacy asset migration (march-2026)
+Leader Engineer: Bram Larsson
+Progress: 30% | Due: 31 Mar
+Link: https://example.invalid/objectives/MLAMB-2603-02
+Done this week: No update was captured this week.
+Plan for next week: Sync with the owner and file the missing update retroactively.
+
+[DONE] Q1 2026 [March]: Provider content ingestion QA (march-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 100% | Due: 31 Mar
+Link: https://example.invalid/objectives/MLAMB-2603-05
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Provider content ingestion QA (march-2026)
-Leader Engineer: Gali Tomori
-Progress: 100% | Due: 25 Mar
-Link: https://example.invalid/objectives/MLAMB-100
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Broken-image sentinel (march-2026)
-Leader Engineer: Kai Ostberg
-Progress: 100% | Due: 25 Mar
-Link: https://example.invalid/objectives/MLAMB-104
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Content lint gate (march-2026)
-Leader Engineer: Dara Okonjo
-Progress: 100% | Due: 25 Mar
-Link: https://example.invalid/objectives/MLAMB-105
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Publisher content freshness: Design review pending from the sibling team.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
-- [Risk] Cadence dashboard for editors: Design review pending from the sibling team.
+- [Risk] Q1 2026 [March]: Legacy asset migration: No owner reachable this week.
   Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
 
 Kind Regards

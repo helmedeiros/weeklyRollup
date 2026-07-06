@@ -1,12 +1,12 @@
 Weekly Objective Update — Gamma Runtime — Week 26
 
 SUMMARY
-- On track: 0/6
-- At risk: 1 (1 red, 0 yellow)
+- On track: 1/5
+- At risk: 2 (0 red, 2 yellow)
 - Not started: 0
-- Done: 5
-- Missing updates: 0
-- Blockers / risks: 1
+- Done: 1
+- Missing updates: 1
+- Blockers / risks: 3
 
 Hi team,
 
@@ -15,51 +15,48 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DELAYED] Rate-limiter fairness audit (june-2026)
-Leader Engineer: Rio Delacroix
-Progress: 71% | Due: 24 Jun
-Link: https://example.invalid/objectives/MGAMM-105
-Done this week: Legal review outstanding — no code path until the sign-off lands.
-Plan for next week: Reassign to a different owner so the current one can help elsewhere.
+[ON TRACK] Q2 2026 [June]: Feature flag rollout guardrails (june-2026)
+Leader Engineer: Odin Barone
+Progress: 82% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-05
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Observability sampling refresh (june-2026)
-Leader Engineer: Ava Thornton
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MGAMM-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[AT RISK] Q2 2026 [June]: Zero-downtime restart choreography (june-2026)
+Leader Engineer: Quinn Yates
+Progress: 40% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-02
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[DONE] Golden-path SLO board (june-2026)
+[AT RISK] Q2 2026 [June]: Golden-path SLO board (june-2026)
+Leader Engineer: Tomo Ilves
+Progress: 52% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-03
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+
+[MISSING UPDATES] Q2 2026 [June]: Observability sampling refresh (june-2026)
+Leader Engineer: Frida Ohno
+Progress: 60% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-04
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Sync with the owner and file the missing update retroactively.
+
+[DONE] Q2 2026 [June]: Runtime resource budgets (june-2026)
 Leader Engineer: Pia Rivas
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MGAMM-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Feature flag rollout guardrails (june-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MGAMM-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Warm-cache eviction policy (june-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MGAMM-104
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-01
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[DONE] Zero-downtime restart choreography (june-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MGAMM-100
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
 BLOCKERS / RISKS
-- [Blocker] Rate-limiter fairness audit: Infra migration blocking rollout; owner: platform.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Design review pending from the sibling team.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q2 2026 [June]: Golden-path SLO board: Design review pending from the sibling team.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+- [Risk] Q2 2026 [June]: Observability sampling refresh: No owner reachable this week.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards
 Engineering Manager

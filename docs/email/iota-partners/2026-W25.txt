@@ -1,12 +1,12 @@
 Weekly Objective Update — Iota Partner Portal — Week 25
 
 SUMMARY
-- On track: 1/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 2/4
+- At risk: 2 (2 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,43 +15,39 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Onboarding self-serve wizard (june-2026)
-Leader Engineer: Tomo Ilves
-Progress: 76% | Due: 17 Jun
-Link: https://example.invalid/objectives/MIOTA-101
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-Plan for next week: Complete the final code review and enable the feature flag globally.
+[ON TRACK] Q2 2026 [June]: Partner API rate-limit v2 (june-2026)
+Leader Engineer: Kai Ostberg
+Progress: 65% | Due: 30 Jun
+Link: https://example.invalid/objectives/MIOTA-2606-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Partner billing reconciliation (june-2026)
+[ON TRACK] Q2 2026 [June]: SLA breach notifier (june-2026)
+Leader Engineer: Frida Ohno
+Progress: 66% | Due: 30 Jun
+Link: https://example.invalid/objectives/MIOTA-2606-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[DELAYED] Q2 2026 [June]: Contract-tier feature gating (june-2026)
 Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MIOTA-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Progress: 14% | Due: 30 Jun
+Link: https://example.invalid/objectives/MIOTA-2606-02
+Done this week: Legal review outstanding — no code path until the sign-off lands.
+Plan for next week: Unblock the vendor conversation and get an ETA.
 
-[DONE] Compliance audit trail (june-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MIOTA-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Partner API rate-limit v2 (june-2026)
-Leader Engineer: Lena Rihanna
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MIOTA-100
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] SLA breach notifier (june-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MIOTA-104
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Q2 2026 [June]: Compliance audit trail (june-2026)
+Leader Engineer: Frida Ohno
+Progress: 23% | Due: 30 Jun
+Link: https://example.invalid/objectives/MIOTA-2606-03
+Done this week: Incident on adjacent service consumed the week; work is paused.
+Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Blocker] Q2 2026 [June]: Contract-tier feature gating: Legal sign-off outstanding.
+  Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a
+- [Blocker] Q2 2026 [June]: Compliance audit trail: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards
 Engineering Manager

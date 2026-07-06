@@ -1,10 +1,10 @@
 Weekly Objective Update — Zeta Search Discovery — Week 17
 
 SUMMARY
-- On track: 0/4
-- At risk: 1 (1 red, 0 yellow)
+- On track: 3/4
+- At risk: 1 (0 red, 1 yellow)
 - Not started: 0
-- Done: 3
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 1
 
@@ -15,37 +15,37 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DELAYED] Homepage skeleton refresh (april-2026)
-Leader Engineer: Tomo Ilves
-Progress: 34% | Due: 22 Apr
-Link: https://example.invalid/objectives/MZETA-100
-Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
-Plan for next week: Reassign to a different owner so the current one can help elsewhere.
+[ON TRACK] Q2 2026 [April]: Cart persistence across surfaces (april-2026)
+Leader Engineer: Rio Delacroix
+Progress: 72% | Due: 30 Apr
+Link: https://example.invalid/objectives/MZETA-2604-02
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Purchase confirmation clarity (april-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/MZETA-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Personalised trip recommendations (april-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/MZETA-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Cart persistence across surfaces (april-2026)
+[ON TRACK] Q2 2026 [April]: Refund status transparency (april-2026)
 Leader Engineer: Odin Barone
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/MZETA-101
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Progress: 66% | Due: 30 Apr
+Link: https://example.invalid/objectives/MZETA-2604-03
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [April]: Checkout abandonment nudge (april-2026)
+Leader Engineer: Bram Larsson
+Progress: 82% | Due: 30 Apr
+Link: https://example.invalid/objectives/MZETA-2604-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[AT RISK] Q2 2026 [April]: Homepage skeleton refresh (april-2026)
+Leader Engineer: Odin Barone
+Progress: 35% | Due: 30 Apr
+Link: https://example.invalid/objectives/MZETA-2604-01
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 BLOCKERS / RISKS
-- [Blocker] Homepage skeleton refresh: Legal sign-off outstanding.
-  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+- [Risk] Q2 2026 [April]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager

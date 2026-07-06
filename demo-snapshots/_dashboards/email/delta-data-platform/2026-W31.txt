@@ -1,12 +1,12 @@
 Weekly Objective Update — Delta Data Platform — Week 31
 
 SUMMARY
-- On track: 0/5
-- At risk: 1 (0 red, 1 yellow)
+- On track: 0/4
+- At risk: 2 (2 red, 0 yellow)
 - Not started: 0
-- Done: 3
+- Done: 1
 - Missing updates: 1
-- Blockers / risks: 2
+- Blockers / risks: 3
 
 Hi team,
 
@@ -15,46 +15,41 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[AT RISK] Golden-path SLO board (july-2026)
-Leader Engineer: Milo Anders
-Progress: 42% | Due: 29 Jul
-Link: https://example.invalid/objectives/MDELT-102
-Done this week: Slipped the promised design review; rescheduling for later this week.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
+[DELAYED] Q3 2026 [July]: Warm-cache eviction policy (july-2026)
+Leader Engineer: Quinn Yates
+Progress: 10% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-01
+Done this week: Incident on adjacent service consumed the week; work is paused.
+Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
-[MISSING UPDATES] Observability sampling refresh (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 37% | Due: 29 Jul
-Link: https://example.invalid/objectives/MDELT-103
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Post an update by Friday capturing what shifted.
+[DELAYED] Q3 2026 [July]: Observability sampling refresh (july-2026)
+Leader Engineer: Lena Rihanna
+Progress: 30% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-02
+Done this week: Incident on adjacent service consumed the week; work is paused.
+Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
-[DONE] Zero-downtime restart choreography (july-2026)
+[MISSING UPDATES] Q3 2026 [July]: Config drift auto-repair (july-2026)
+Leader Engineer: Odin Barone
+Progress: 54% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-04
+Done this week: Update deferred pending a decision from the steering meeting.
+Plan for next week: Sync with the owner and file the missing update retroactively.
+
+[DONE] Q3 2026 [July]: Golden-path SLO board (july-2026)
 Leader Engineer: Cai Nguyen
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MDELT-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Feature flag rollout guardrails (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MDELT-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Warm-cache eviction policy (july-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MDELT-104
-Done this week: Closed the final ticket in the epic and archived the working doc.
+Progress: 100% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-03
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
-- [Risk] Observability sampling refresh: No owner reachable this week.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- [Blocker] Q3 2026 [July]: Warm-cache eviction policy: External vendor SLA slipping; no eta.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Blocker] Q3 2026 [July]: Observability sampling refresh: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
+- [Risk] Q3 2026 [July]: Config drift auto-repair: No owner reachable this week.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager

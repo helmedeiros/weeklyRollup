@@ -1,12 +1,12 @@
 Weekly Objective Update — Delta Data Platform — Week 9
 
 SUMMARY
-- On track: 0/5
+- On track: 1/4
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 5
-- Missing updates: 0
-- Blockers / risks: 0
+- Done: 2
+- Missing updates: 1
+- Blockers / risks: 1
 
 Hi team,
 
@@ -15,43 +15,37 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Feature flag rollout guardrails (february-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MDELT-101
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q1 2026 [February]: Zero-downtime restart choreography (february-2026)
+Leader Engineer: Rio Delacroix
+Progress: 64% | Due: 28 Feb
+Link: https://example.invalid/objectives/MDELT-2602-03
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Observability sampling refresh (february-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MDELT-103
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[MISSING UPDATES] Q1 2026 [February]: Observability sampling refresh (february-2026)
+Leader Engineer: Quinn Yates
+Progress: 20% | Due: 28 Feb
+Link: https://example.invalid/objectives/MDELT-2602-04
+Done this week: Update deferred pending a decision from the steering meeting.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[DONE] Warm-cache eviction policy (february-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MDELT-104
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Zero-downtime restart choreography (february-2026)
-Leader Engineer: Cai Nguyen
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MDELT-100
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Golden-path SLO board (february-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MDELT-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
+[DONE] Q1 2026 [February]: Feature flag rollout guardrails (february-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MDELT-2602-01
+Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
+[DONE] Q1 2026 [February]: Config drift auto-repair (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MDELT-2602-02
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [February]: Observability sampling refresh: No owner reachable this week.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

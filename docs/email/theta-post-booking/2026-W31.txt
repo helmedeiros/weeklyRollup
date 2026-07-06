@@ -1,11 +1,11 @@
 Weekly Objective Update — Theta Post-Booking — Week 31
 
 SUMMARY
-- On track: 1/6
-- At risk: 0 (0 red, 0 yellow)
+- On track: 3/5
+- At risk: 1 (0 red, 1 yellow)
 - Not started: 0
-- Done: 4
-- Missing updates: 1
+- Done: 1
+- Missing updates: 0
 - Blockers / risks: 1
 
 Hi team,
@@ -15,51 +15,44 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Homepage skeleton refresh (july-2026)
-Leader Engineer: Milo Anders
-Progress: 59% | Due: 29 Jul
-Link: https://example.invalid/objectives/MTHET-100
-Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-Plan for next week: Wrap the last integration test and hand off to QA.
-
-[MISSING UPDATES] Cart persistence across surfaces (july-2026)
-Leader Engineer: Quinn Yates
-Progress: 89% | Due: 29 Jul
-Link: https://example.invalid/objectives/MTHET-101
-Done this week: No update was captured this week.
-Plan for next week: Post an update by Friday capturing what shifted.
-
-[DONE] Purchase confirmation clarity (july-2026)
+[ON TRACK] Q3 2026 [July]: Passenger name-change flow (july-2026)
 Leader Engineer: Jules Cabrera
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MTHET-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Progress: 84% | Due: 31 Jul
+Link: https://example.invalid/objectives/MTHET-2607-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Payment method reorder (july-2026)
+[ON TRACK] Q3 2026 [July]: Checkout abandonment nudge (july-2026)
 Leader Engineer: Sana Rowe
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MTHET-105
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Progress: 63% | Due: 31 Jul
+Link: https://example.invalid/objectives/MTHET-2607-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Refund status transparency (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MTHET-104
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+[ON TRACK] Q3 2026 [July]: Loyalty perks eligibility banner (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 79% | Due: 31 Jul
+Link: https://example.invalid/objectives/MTHET-2607-05
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[AT RISK] Q3 2026 [July]: Search relevance re-ranker (july-2026)
+Leader Engineer: Bram Larsson
+Progress: 45% | Due: 31 Jul
+Link: https://example.invalid/objectives/MTHET-2607-01
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
+
+[DONE] Q3 2026 [July]: Purchase confirmation clarity (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 100% | Due: 31 Jul
+Link: https://example.invalid/objectives/MTHET-2607-03
+Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Personalised trip recommendations (july-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MTHET-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Cart persistence across surfaces: No owner reachable this week.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q3 2026 [July]: Search relevance re-ranker: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
 
 Kind Regards
 Engineering Manager

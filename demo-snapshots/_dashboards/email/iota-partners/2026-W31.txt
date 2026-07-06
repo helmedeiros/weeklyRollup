@@ -1,12 +1,12 @@
 Weekly Objective Update — Iota Partner Portal — Week 31
 
 SUMMARY
-- On track: 1/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 1/4
+- At risk: 2 (1 red, 1 yellow)
 - Not started: 0
-- Done: 4
+- Done: 1
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,43 +15,39 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Partner API rate-limit v2 (july-2026)
-Leader Engineer: Lena Rihanna
-Progress: 40% | Due: 29 Jul
-Link: https://example.invalid/objectives/MIOTA-100
+[ON TRACK] Q3 2026 [July]: Contract-tier feature gating (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 82% | Due: 31 Jul
+Link: https://example.invalid/objectives/MIOTA-2607-01
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Compliance audit trail (july-2026)
+[AT RISK] Q3 2026 [July]: Reseller webhook v3 (july-2026)
+Leader Engineer: Lena Rihanna
+Progress: 36% | Due: 31 Jul
+Link: https://example.invalid/objectives/MIOTA-2607-03
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
+
+[DELAYED] Q3 2026 [July]: Compliance audit trail (july-2026)
+Leader Engineer: Rio Delacroix
+Progress: 21% | Due: 31 Jul
+Link: https://example.invalid/objectives/MIOTA-2607-04
+Done this week: Waiting on infra migration that was pushed to the next quarter.
+Plan for next week: Reassign to a different owner so the current one can help elsewhere.
+
+[DONE] Q3 2026 [July]: Partner API rate-limit v2 (july-2026)
 Leader Engineer: Pia Rivas
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MIOTA-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] SLA breach notifier (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MIOTA-104
+Progress: 100% | Due: 31 Jul
+Link: https://example.invalid/objectives/MIOTA-2607-02
 Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Onboarding self-serve wizard (july-2026)
-Leader Engineer: Tomo Ilves
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MIOTA-101
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Partner billing reconciliation (july-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 29 Jul
-Link: https://example.invalid/objectives/MIOTA-103
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Blocker] Q3 2026 [July]: Compliance audit trail: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+- [Risk] Q3 2026 [July]: Reseller webhook v3: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

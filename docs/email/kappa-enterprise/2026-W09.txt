@@ -15,33 +15,33 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Onboarding self-serve wizard (february-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MKAPP-101
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+[DONE] Q1 2026 [February]: Reseller webhook v3 (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-01
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Compliance audit trail (february-2026)
+[DONE] Q1 2026 [February]: Partner API rate-limit v2 (february-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-02
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Q1 2026 [February]: SLA breach notifier (february-2026)
 Leader Engineer: Sana Rowe
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MKAPP-102
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-03
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Q1 2026 [February]: Partner billing reconciliation (february-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-04
+Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Partner API rate-limit v2 (february-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MKAPP-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Partner billing reconciliation (february-2026)
-Leader Engineer: Frida Ohno
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MKAPP-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
 - No active blockers reported.

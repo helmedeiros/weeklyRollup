@@ -1,12 +1,12 @@
 Weekly Objective Update — Eta Checkout — Week 17
 
 SUMMARY
-- On track: 1/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 3/5
+- At risk: 2 (2 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,43 +15,46 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Purchase confirmation clarity (april-2026)
-Leader Engineer: Odin Barone
-Progress: 85% | Due: 22 Apr
-Link: https://example.invalid/objectives/META-103
+[ON TRACK] Q2 2026 [April]: Homepage skeleton refresh (april-2026)
+Leader Engineer: Kai Ostberg
+Progress: 59% | Due: 30 Apr
+Link: https://example.invalid/objectives/META-2604-02
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-Plan for next week: Complete the final code review and enable the feature flag globally.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Personalised trip recommendations (april-2026)
+[ON TRACK] Q2 2026 [April]: Purchase confirmation clarity (april-2026)
+Leader Engineer: Odin Barone
+Progress: 74% | Due: 30 Apr
+Link: https://example.invalid/objectives/META-2604-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [April]: Personalised trip recommendations (april-2026)
+Leader Engineer: Frida Ohno
+Progress: 74% | Due: 30 Apr
+Link: https://example.invalid/objectives/META-2604-05
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[DELAYED] Q2 2026 [April]: Payment method reorder (april-2026)
+Leader Engineer: Cai Nguyen
+Progress: 21% | Due: 30 Apr
+Link: https://example.invalid/objectives/META-2604-01
+Done this week: Legal review outstanding — no code path until the sign-off lands.
+Plan for next week: Unblock the vendor conversation and get an ETA.
+
+[DELAYED] Q2 2026 [April]: Cart persistence across surfaces (april-2026)
 Leader Engineer: Jules Cabrera
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/META-102
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Refund status transparency (april-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/META-104
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Homepage skeleton refresh (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/META-100
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Cart persistence across surfaces (april-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 22 Apr
-Link: https://example.invalid/objectives/META-101
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Progress: 23% | Due: 30 Apr
+Link: https://example.invalid/objectives/META-2604-03
+Done this week: Incident on adjacent service consumed the week; work is paused.
+Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Blocker] Q2 2026 [April]: Payment method reorder: Legal sign-off outstanding.
+  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
+- [Blocker] Q2 2026 [April]: Cart persistence across surfaces: Legal sign-off outstanding.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards
 Engineering Manager

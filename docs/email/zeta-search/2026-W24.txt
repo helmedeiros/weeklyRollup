@@ -1,12 +1,12 @@
 Weekly Objective Update — Zeta Search Discovery — Week 24
 
 SUMMARY
-- On track: 0/4
-- At risk: 1 (1 red, 0 yellow)
+- On track: 4/4
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 2
-- Missing updates: 1
-- Blockers / risks: 2
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,39 +15,36 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DELAYED] Cart persistence across surfaces (june-2026)
-Leader Engineer: Odin Barone
-Progress: 83% | Due: 10 Jun
-Link: https://example.invalid/objectives/MZETA-101
-Done this week: Waiting on infra migration that was pushed to the next quarter.
-Plan for next week: Unblock the vendor conversation and get an ETA.
+[ON TRACK] Q2 2026 [June]: Passenger name-change flow (june-2026)
+Leader Engineer: Nya Sardar
+Progress: 46% | Due: 30 Jun
+Link: https://example.invalid/objectives/MZETA-2606-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[MISSING UPDATES] Purchase confirmation clarity (june-2026)
-Leader Engineer: Bram Larsson
-Progress: 41% | Due: 10 Jun
-Link: https://example.invalid/objectives/MZETA-103
-Done this week: Update deferred pending a decision from the steering meeting.
-Plan for next week: Sync with the owner and file the missing update retroactively.
-
-[DONE] Homepage skeleton refresh (june-2026)
-Leader Engineer: Tomo Ilves
-Progress: 100% | Due: 10 Jun
-Link: https://example.invalid/objectives/MZETA-100
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Personalised trip recommendations (june-2026)
+[ON TRACK] Q2 2026 [June]: Homepage skeleton refresh (june-2026)
 Leader Engineer: Milo Anders
-Progress: 100% | Due: 10 Jun
-Link: https://example.invalid/objectives/MZETA-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Progress: 43% | Due: 30 Jun
+Link: https://example.invalid/objectives/MZETA-2606-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [June]: Personalised trip recommendations (june-2026)
+Leader Engineer: Ellis Marín
+Progress: 40% | Due: 30 Jun
+Link: https://example.invalid/objectives/MZETA-2606-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [June]: Loyalty perks eligibility banner (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 28% | Due: 30 Jun
+Link: https://example.invalid/objectives/MZETA-2606-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- [Blocker] Cart persistence across surfaces: External vendor SLA slipping; no eta.
-  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
-- [Risk] Purchase confirmation clarity: No owner reachable this week.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

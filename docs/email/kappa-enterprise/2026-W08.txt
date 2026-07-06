@@ -1,10 +1,10 @@
 Weekly Objective Update — Kappa Enterprise Ops — Week 8
 
 SUMMARY
-- On track: 0/4
+- On track: 4/4
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 0
 
@@ -15,33 +15,33 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Partner API rate-limit v2 (february-2026)
+[ON TRACK] Q1 2026 [February]: Reseller webhook v3 (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 68% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-01
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q1 2026 [February]: Partner API rate-limit v2 (february-2026)
+Leader Engineer: Odin Barone
+Progress: 75% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-02
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q1 2026 [February]: SLA breach notifier (february-2026)
 Leader Engineer: Sana Rowe
-Progress: 100% | Due: 18 Feb
-Link: https://example.invalid/objectives/MKAPP-100
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Progress: 72% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Compliance audit trail (february-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 18 Feb
-Link: https://example.invalid/objectives/MKAPP-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Onboarding self-serve wizard (february-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 18 Feb
-Link: https://example.invalid/objectives/MKAPP-101
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Partner billing reconciliation (february-2026)
-Leader Engineer: Frida Ohno
-Progress: 100% | Due: 18 Feb
-Link: https://example.invalid/objectives/MKAPP-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q1 2026 [February]: Partner billing reconciliation (february-2026)
+Leader Engineer: Tomo Ilves
+Progress: 68% | Due: 28 Feb
+Link: https://example.invalid/objectives/MKAPP-2602-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - No active blockers reported.

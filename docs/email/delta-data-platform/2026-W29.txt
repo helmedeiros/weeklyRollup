@@ -1,12 +1,12 @@
 Weekly Objective Update — Delta Data Platform — Week 29
 
 SUMMARY
-- On track: 0/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 2/4
+- At risk: 2 (2 red, 0 yellow)
 - Not started: 0
-- Done: 4
-- Missing updates: 1
-- Blockers / risks: 1
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,44 +15,39 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[MISSING UPDATES] Zero-downtime restart choreography (july-2026)
+[ON TRACK] Q3 2026 [July]: Golden-path SLO board (july-2026)
 Leader Engineer: Cai Nguyen
-Progress: 30% | Due: 15 Jul
-Link: https://example.invalid/objectives/MDELT-100
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Post an update by Friday capturing what shifted.
+Progress: 56% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-03
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Golden-path SLO board (july-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 15 Jul
-Link: https://example.invalid/objectives/MDELT-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q3 2026 [July]: Config drift auto-repair (july-2026)
+Leader Engineer: Odin Barone
+Progress: 36% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Feature flag rollout guardrails (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 15 Jul
-Link: https://example.invalid/objectives/MDELT-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[DELAYED] Q3 2026 [July]: Warm-cache eviction policy (july-2026)
+Leader Engineer: Quinn Yates
+Progress: 10% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-01
+Done this week: Waiting on infra migration that was pushed to the next quarter.
+Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
-[DONE] Warm-cache eviction policy (july-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 15 Jul
-Link: https://example.invalid/objectives/MDELT-104
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Observability sampling refresh (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 15 Jul
-Link: https://example.invalid/objectives/MDELT-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Q3 2026 [July]: Observability sampling refresh (july-2026)
+Leader Engineer: Lena Rihanna
+Progress: 18% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-02
+Done this week: Waiting on infra migration that was pushed to the next quarter.
+Plan for next week: Unblock the vendor conversation and get an ETA.
 
 BLOCKERS / RISKS
-- [Risk] Zero-downtime restart choreography: No owner reachable this week.
-  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
+- [Blocker] Q3 2026 [July]: Warm-cache eviction policy: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Blocker] Q3 2026 [July]: Observability sampling refresh: Legal sign-off outstanding.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

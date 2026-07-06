@@ -1,10 +1,10 @@
 Weekly Objective Update — Gamma Runtime — Week 25
 
 SUMMARY
-- On track: 0/6
+- On track: 3/5
 - At risk: 2 (0 red, 2 yellow)
 - Not started: 0
-- Done: 4
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 2
 
@@ -15,53 +15,46 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[AT RISK] Rate-limiter fairness audit (june-2026)
-Leader Engineer: Rio Delacroix
-Progress: 90% | Due: 17 Jun
-Link: https://example.invalid/objectives/MGAMM-105
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-
-[AT RISK] Observability sampling refresh (june-2026)
-Leader Engineer: Ava Thornton
-Progress: 80% | Due: 17 Jun
-Link: https://example.invalid/objectives/MGAMM-103
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-
-[DONE] Feature flag rollout guardrails (june-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MGAMM-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Golden-path SLO board (june-2026)
+[ON TRACK] Q2 2026 [June]: Runtime resource budgets (june-2026)
 Leader Engineer: Pia Rivas
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MGAMM-102
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Progress: 76% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Zero-downtime restart choreography (june-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MGAMM-100
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q2 2026 [June]: Observability sampling refresh (june-2026)
+Leader Engineer: Frida Ohno
+Progress: 44% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-04
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Warm-cache eviction policy (june-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 100% | Due: 17 Jun
-Link: https://example.invalid/objectives/MGAMM-104
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q2 2026 [June]: Feature flag rollout guardrails (june-2026)
+Leader Engineer: Odin Barone
+Progress: 60% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-05
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[AT RISK] Q2 2026 [June]: Zero-downtime restart choreography (june-2026)
+Leader Engineer: Quinn Yates
+Progress: 32% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-02
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Realign with the partner team and reset the delivery date.
+
+[AT RISK] Q2 2026 [June]: Golden-path SLO board (june-2026)
+Leader Engineer: Tomo Ilves
+Progress: 37% | Due: 30 Jun
+Link: https://example.invalid/objectives/MGAMM-2606-03
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
 BLOCKERS / RISKS
-- [Risk] Rate-limiter fairness audit: Design review pending from the sibling team.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
-- [Risk] Observability sampling refresh: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Design review pending from the sibling team.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q2 2026 [June]: Golden-path SLO board: Design review pending from the sibling team.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

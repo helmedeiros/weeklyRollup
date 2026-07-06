@@ -1,12 +1,12 @@
 Weekly Objective Update — Delta Data Platform — Week 26
 
 SUMMARY
-- On track: 0/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 1/4
+- At risk: 2 (0 red, 2 yellow)
 - Not started: 0
-- Done: 4
-- Missing updates: 1
-- Blockers / risks: 1
+- Done: 1
+- Missing updates: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,44 +15,39 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[MISSING UPDATES] Feature flag rollout guardrails (june-2026)
-Leader Engineer: Ellis Marín
-Progress: 83% | Due: 24 Jun
-Link: https://example.invalid/objectives/MDELT-101
-Done this week: No update was captured this week.
-Plan for next week: Post an update by Friday capturing what shifted.
+[ON TRACK] Q2 2026 [June]: Golden-path SLO board (june-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 61% | Due: 30 Jun
+Link: https://example.invalid/objectives/MDELT-2606-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Golden-path SLO board (june-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MDELT-102
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[AT RISK] Q2 2026 [June]: Deprecation channel rollout (june-2026)
+Leader Engineer: Bram Larsson
+Progress: 39% | Due: 30 Jun
+Link: https://example.invalid/objectives/MDELT-2606-01
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[DONE] Zero-downtime restart choreography (june-2026)
+[AT RISK] Q2 2026 [June]: Warm-cache eviction policy (june-2026)
 Leader Engineer: Cai Nguyen
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MDELT-100
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Progress: 38% | Due: 30 Jun
+Link: https://example.invalid/objectives/MDELT-2606-02
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
-[DONE] Observability sampling refresh (june-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MDELT-103
+[DONE] Q2 2026 [June]: Config drift auto-repair (june-2026)
+Leader Engineer: Cai Nguyen
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MDELT-2606-03
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Warm-cache eviction policy (june-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MDELT-104
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- [Risk] Feature flag rollout guardrails: No owner reachable this week.
-  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+- [Risk] Q2 2026 [June]: Deprecation channel rollout: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- [Risk] Q2 2026 [June]: Warm-cache eviction policy: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards
 Engineering Manager

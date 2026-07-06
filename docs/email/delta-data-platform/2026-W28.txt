@@ -1,10 +1,10 @@
 Weekly Objective Update — Delta Data Platform — Week 28
 
 SUMMARY
-- On track: 0/5
+- On track: 4/4
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 5
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 0
 
@@ -15,40 +15,33 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Zero-downtime restart choreography (july-2026)
+[ON TRACK] Q3 2026 [July]: Warm-cache eviction policy (july-2026)
+Leader Engineer: Quinn Yates
+Progress: 8% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-01
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q3 2026 [July]: Observability sampling refresh (july-2026)
+Leader Engineer: Lena Rihanna
+Progress: 16% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-02
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q3 2026 [July]: Golden-path SLO board (july-2026)
 Leader Engineer: Cai Nguyen
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MDELT-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Progress: 41% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-03
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Golden-path SLO board (july-2026)
-Leader Engineer: Milo Anders
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MDELT-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Observability sampling refresh (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MDELT-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Warm-cache eviction policy (july-2026)
-Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MDELT-104
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Feature flag rollout guardrails (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 8 Jul
-Link: https://example.invalid/objectives/MDELT-101
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q3 2026 [July]: Config drift auto-repair (july-2026)
+Leader Engineer: Odin Barone
+Progress: 24% | Due: 31 Jul
+Link: https://example.invalid/objectives/MDELT-2607-04
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
 - No active blockers reported.

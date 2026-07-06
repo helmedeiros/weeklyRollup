@@ -1,12 +1,12 @@
 Weekly Objective Update — Eta Checkout — Week 9
 
 SUMMARY
-- On track: 0/5
-- At risk: 0 (0 red, 0 yellow)
+- On track: 1/5
+- At risk: 1 (1 red, 0 yellow)
 - Not started: 0
-- Done: 5
-- Missing updates: 0
-- Blockers / risks: 0
+- Done: 2
+- Missing updates: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,43 +15,46 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Refund status transparency (february-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/META-104
+[ON TRACK] Q1 2026 [February]: Passenger name-change flow (february-2026)
+Leader Engineer: Frida Ohno
+Progress: 80% | Due: 28 Feb
+Link: https://example.invalid/objectives/META-2602-03
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[DELAYED] Q1 2026 [February]: Cart persistence across surfaces (february-2026)
+Leader Engineer: Quinn Yates
+Progress: 16% | Due: 28 Feb
+Link: https://example.invalid/objectives/META-2602-04
+Done this week: Waiting on infra migration that was pushed to the next quarter.
+Plan for next week: Pick up a related workstream while the primary path stays blocked.
+
+[MISSING UPDATES] Q1 2026 [February]: Purchase confirmation clarity (february-2026)
+Leader Engineer: Sana Rowe
+Progress: 21% | Due: 28 Feb
+Link: https://example.invalid/objectives/META-2602-05
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Post an update by Friday capturing what shifted.
+
+[DONE] Q1 2026 [February]: Personalised trip recommendations (february-2026)
+Leader Engineer: Nya Sardar
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/META-2602-01
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Cart persistence across surfaces (february-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/META-101
+[DONE] Q1 2026 [February]: Refund status transparency (february-2026)
+Leader Engineer: Frida Ohno
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/META-2602-02
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Homepage skeleton refresh (february-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/META-100
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Personalised trip recommendations (february-2026)
-Leader Engineer: Jules Cabrera
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/META-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Purchase confirmation clarity (february-2026)
-Leader Engineer: Odin Barone
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/META-103
-Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Blocker] Q1 2026 [February]: Cart persistence across surfaces: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q1 2026 [February]: Purchase confirmation clarity: No owner reachable this week.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -1,12 +1,12 @@
 Weekly Objective Update — Kappa Enterprise Ops — Week 26
 
 SUMMARY
-- On track: 0/4
-- At risk: 0 (0 red, 0 yellow)
+- On track: 1/4
+- At risk: 2 (0 red, 2 yellow)
 - Not started: 0
-- Done: 4
+- Done: 1
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,36 +15,39 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[DONE] Partner API rate-limit v2 (june-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MKAPP-100
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q2 2026 [June]: Reseller webhook v3 (june-2026)
+Leader Engineer: Dara Okonjo
+Progress: 67% | Due: 30 Jun
+Link: https://example.invalid/objectives/MKAPP-2606-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Compliance audit trail (june-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MKAPP-102
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[AT RISK] Q2 2026 [June]: Compliance audit trail (june-2026)
+Leader Engineer: Kai Ostberg
+Progress: 47% | Due: 30 Jun
+Link: https://example.invalid/objectives/MKAPP-2606-03
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[DONE] Partner billing reconciliation (june-2026)
+[AT RISK] Q2 2026 [June]: Contract-tier feature gating (june-2026)
 Leader Engineer: Frida Ohno
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MKAPP-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Progress: 38% | Due: 30 Jun
+Link: https://example.invalid/objectives/MKAPP-2606-04
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[DONE] Onboarding self-serve wizard (june-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 24 Jun
-Link: https://example.invalid/objectives/MKAPP-101
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+[DONE] Q2 2026 [June]: Onboarding self-serve wizard (june-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 30 Jun
+Link: https://example.invalid/objectives/MKAPP-2606-01
+Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [June]: Compliance audit trail: Design review pending from the sibling team.
+  Leader Engineer: Kai Ostberg | Owner: Kai Ostberg | Days open: n/a
+- [Risk] Q2 2026 [June]: Contract-tier feature gating: Design review pending from the sibling team.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -1,12 +1,12 @@
 Weekly Objective Update — Kappa Enterprise Ops — Week 22
 
 SUMMARY
-- On track: 0/4
-- At risk: 0 (0 red, 0 yellow)
+- On track: 1/4
+- At risk: 1 (1 red, 0 yellow)
 - Not started: 0
-- Done: 3
+- Done: 1
 - Missing updates: 1
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -15,37 +15,39 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[MISSING UPDATES] Partner API rate-limit v2 (may-2026)
-Leader Engineer: Sana Rowe
-Progress: 71% | Due: 27 May
-Link: https://example.invalid/objectives/MKAPP-100
+[ON TRACK] Q2 2026 [May]: Partner API rate-limit v2 (may-2026)
+Leader Engineer: Tomo Ilves
+Progress: 76% | Due: 31 May
+Link: https://example.invalid/objectives/MKAPP-2605-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[DELAYED] Q2 2026 [May]: SLA breach notifier (may-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 26% | Due: 31 May
+Link: https://example.invalid/objectives/MKAPP-2605-03
+Done this week: Legal review outstanding — no code path until the sign-off lands.
+Plan for next week: Reassign to a different owner so the current one can help elsewhere.
+
+[MISSING UPDATES] Q2 2026 [May]: Partner billing reconciliation (may-2026)
+Leader Engineer: Quinn Yates
+Progress: 47% | Due: 31 May
+Link: https://example.invalid/objectives/MKAPP-2605-01
 Done this week: Owner was out; update will land in the next report.
 Plan for next week: Post an update by Friday capturing what shifted.
 
-[DONE] Partner billing reconciliation (may-2026)
-Leader Engineer: Frida Ohno
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MKAPP-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Compliance audit trail (may-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MKAPP-102
+[DONE] Q2 2026 [May]: Compliance audit trail (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 31 May
+Link: https://example.invalid/objectives/MKAPP-2605-02
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Onboarding self-serve wizard (may-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MKAPP-101
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- [Risk] Partner API rate-limit v2: No owner reachable this week.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+- [Blocker] Q2 2026 [May]: SLA breach notifier: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+- [Risk] Q2 2026 [May]: Partner billing reconciliation: No owner reachable this week.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

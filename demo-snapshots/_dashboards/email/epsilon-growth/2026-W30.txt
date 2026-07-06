@@ -1,12 +1,12 @@
 Weekly Objective Update — Epsilon Growth — Week 30
 
 SUMMARY
-- On track: 2/9
-- At risk: 1 (0 red, 1 yellow)
+- On track: 6/6
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 6
+- Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,72 +15,50 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Payment method reorder (july-2026)
-Leader Engineer: Frida Ohno
-Progress: 88% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-105
+[ON TRACK] Q3 2026 [July]: Homepage skeleton refresh (july-2026)
+Leader Engineer: Nya Sardar
+Progress: 31% | Due: 31 Jul
+Link: https://example.invalid/objectives/MEPSI-2607-01
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[ON TRACK] Cart persistence across surfaces (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 62% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-101
-Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+[ON TRACK] Q3 2026 [July]: Purchase confirmation clarity (july-2026)
+Leader Engineer: Gali Tomori
+Progress: 61% | Due: 31 Jul
+Link: https://example.invalid/objectives/MEPSI-2607-02
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[AT RISK] Refund status transparency (july-2026)
-Leader Engineer: Milo Anders
-Progress: 58% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-104
-Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
+[ON TRACK] Q3 2026 [July]: Checkout abandonment nudge (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 78% | Due: 31 Jul
+Link: https://example.invalid/objectives/MEPSI-2607-03
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Personalised trip recommendations (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q3 2026 [July]: Personalised trip recommendations (july-2026)
+Leader Engineer: Lena Rihanna
+Progress: 81% | Due: 31 Jul
+Link: https://example.invalid/objectives/MEPSI-2607-04
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Search relevance re-ranker (july-2026)
-Leader Engineer: Bram Larsson
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-107
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q3 2026 [July]: Cart persistence across surfaces (july-2026)
+Leader Engineer: Dara Okonjo
+Progress: 78% | Due: 31 Jul
+Link: https://example.invalid/objectives/MEPSI-2607-05
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Passenger name-change flow (july-2026)
+[ON TRACK] Q3 2026 [July]: Refund status transparency (july-2026)
 Leader Engineer: Ines Marchetti
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-106
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Purchase confirmation clarity (july-2026)
-Leader Engineer: Ava Thornton
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-103
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Homepage skeleton refresh (july-2026)
-Leader Engineer: Quinn Yates
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Loyalty perks eligibility banner (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MEPSI-108
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+Progress: 83% | Due: 31 Jul
+Link: https://example.invalid/objectives/MEPSI-2607-06
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- [Risk] Refund status transparency: Design review pending from the sibling team.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

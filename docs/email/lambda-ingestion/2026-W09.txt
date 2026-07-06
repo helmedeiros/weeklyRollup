@@ -1,12 +1,12 @@
 Weekly Objective Update — Lambda Ingestion — Week 9
 
 SUMMARY
-- On track: 0/6
-- At risk: 2 (0 red, 2 yellow)
+- On track: 0/5
+- At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
+- Done: 5
 - Missing updates: 0
-- Blockers / risks: 2
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,53 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[AT RISK] Publisher content freshness (february-2026)
-Leader Engineer: Pia Rivas
-Progress: 32% | Due: 25 Feb
-Link: https://example.invalid/objectives/MLAMB-102
-Done this week: Slipped the promised design review; rescheduling for later this week.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
-
-[AT RISK] Cadence dashboard for editors (february-2026)
-Leader Engineer: Bram Larsson
-Progress: 60% | Due: 25 Feb
-Link: https://example.invalid/objectives/MLAMB-103
-Done this week: Scope grew after user testing; trimming to hit the reduced target.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
-
-[DONE] Provider content ingestion QA (february-2026)
-Leader Engineer: Gali Tomori
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MLAMB-100
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Broken-image sentinel (february-2026)
-Leader Engineer: Kai Ostberg
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MLAMB-104
+[DONE] Q1 2026 [February]: Cadence dashboard for editors (february-2026)
+Leader Engineer: Lena Rihanna
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MLAMB-2602-01
 Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[DONE] Cross-locale asset governance (february-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MLAMB-101
+[DONE] Q1 2026 [February]: Content lint gate (february-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MLAMB-2602-02
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[DONE] Content lint gate (february-2026)
+[DONE] Q1 2026 [February]: Broken-image sentinel (february-2026)
 Leader Engineer: Dara Okonjo
-Progress: 100% | Due: 25 Feb
-Link: https://example.invalid/objectives/MLAMB-105
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MLAMB-2602-03
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Q1 2026 [February]: Cross-locale asset governance (february-2026)
+Leader Engineer: Ines Marchetti
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MLAMB-2602-04
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
+[DONE] Q1 2026 [February]: Legacy asset migration (february-2026)
+Leader Engineer: Frida Ohno
+Progress: 100% | Due: 28 Feb
+Link: https://example.invalid/objectives/MLAMB-2602-05
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
 BLOCKERS / RISKS
-- [Risk] Publisher content freshness: Design review pending from the sibling team.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
-- [Risk] Cadence dashboard for editors: Design review pending from the sibling team.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

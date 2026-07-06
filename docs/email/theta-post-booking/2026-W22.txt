@@ -1,12 +1,12 @@
 Weekly Objective Update — Theta Post-Booking — Week 22
 
 SUMMARY
-- On track: 1/6
-- At risk: 1 (0 red, 1 yellow)
+- On track: 0/5
+- At risk: 3 (0 red, 3 yellow)
 - Not started: 0
-- Done: 2
-- Missing updates: 2
-- Blockers / risks: 3
+- Done: 1
+- Missing updates: 1
+- Blockers / risks: 4
 
 Hi team,
 
@@ -15,55 +15,50 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Personalised trip recommendations (may-2026)
-Leader Engineer: Rio Delacroix
-Progress: 88% | Due: 27 May
-Link: https://example.invalid/objectives/MTHET-102
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+[AT RISK] Q2 2026 [May]: Refund status transparency (may-2026)
+Leader Engineer: Frida Ohno
+Progress: 45% | Due: 31 May
+Link: https://example.invalid/objectives/MTHET-2605-01
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[AT RISK] Purchase confirmation clarity (may-2026)
-Leader Engineer: Jules Cabrera
-Progress: 43% | Due: 27 May
-Link: https://example.invalid/objectives/MTHET-103
+[AT RISK] Q2 2026 [May]: Passenger name-change flow (may-2026)
+Leader Engineer: Ines Marchetti
+Progress: 54% | Due: 31 May
+Link: https://example.invalid/objectives/MTHET-2605-02
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Realign with the partner team and reset the delivery date.
 
-[MISSING UPDATES] Cart persistence across surfaces (may-2026)
-Leader Engineer: Quinn Yates
-Progress: 84% | Due: 27 May
-Link: https://example.invalid/objectives/MTHET-101
-Done this week: Owner was out; update will land in the next report.
-Plan for next week: Sync with the owner and file the missing update retroactively.
-
-[MISSING UPDATES] Payment method reorder (may-2026)
-Leader Engineer: Sana Rowe
-Progress: 58% | Due: 27 May
-Link: https://example.invalid/objectives/MTHET-105
-Done this week: Update deferred pending a decision from the steering meeting.
-Plan for next week: Sync with the owner and file the missing update retroactively.
-
-[DONE] Homepage skeleton refresh (may-2026)
+[AT RISK] Q2 2026 [May]: Payment method reorder (may-2026)
 Leader Engineer: Milo Anders
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MTHET-100
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Progress: 52% | Due: 31 May
+Link: https://example.invalid/objectives/MTHET-2605-05
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[DONE] Refund status transparency (may-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 27 May
-Link: https://example.invalid/objectives/MTHET-104
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+[MISSING UPDATES] Q2 2026 [May]: Loyalty perks eligibility banner (may-2026)
+Leader Engineer: Tomo Ilves
+Progress: 42% | Due: 31 May
+Link: https://example.invalid/objectives/MTHET-2605-03
+Done this week: No update was captured this week.
+Plan for next week: Sync with the owner and file the missing update retroactively.
+
+[DONE] Q2 2026 [May]: Cart persistence across surfaces (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 31 May
+Link: https://example.invalid/objectives/MTHET-2605-04
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Purchase confirmation clarity: Design review pending from the sibling team.
-  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
-- [Risk] Cart persistence across surfaces: No owner reachable this week.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
-- [Risk] Payment method reorder: No owner reachable this week.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+- [Risk] Q2 2026 [May]: Refund status transparency: Design review pending from the sibling team.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+- [Risk] Q2 2026 [May]: Passenger name-change flow: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a
+- [Risk] Q2 2026 [May]: Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+- [Risk] Q2 2026 [May]: Loyalty perks eligibility banner: No owner reachable this week.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

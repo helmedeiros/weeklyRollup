@@ -1,12 +1,12 @@
 Weekly Objective Update — Theta Post-Booking — Week 16
 
 SUMMARY
-- On track: 1/6
+- On track: 5/5
 - At risk: 0 (0 red, 0 yellow)
 - Not started: 0
-- Done: 4
-- Missing updates: 1
-- Blockers / risks: 1
+- Done: 0
+- Missing updates: 0
+- Blockers / risks: 0
 
 Hi team,
 
@@ -15,51 +15,43 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[ON TRACK] Homepage skeleton refresh (april-2026)
-Leader Engineer: Milo Anders
-Progress: 69% | Due: 15 Apr
-Link: https://example.invalid/objectives/MTHET-100
-Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+[ON TRACK] Q2 2026 [April]: Homepage skeleton refresh (april-2026)
+Leader Engineer: Odin Barone
+Progress: 60% | Due: 30 Apr
+Link: https://example.invalid/objectives/MTHET-2604-01
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
+
+[ON TRACK] Q2 2026 [April]: Payment method reorder (april-2026)
+Leader Engineer: Pia Rivas
+Progress: 52% | Due: 30 Apr
+Link: https://example.invalid/objectives/MTHET-2604-02
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
+
+[ON TRACK] Q2 2026 [April]: Loyalty perks eligibility banner (april-2026)
+Leader Engineer: Tomo Ilves
+Progress: 46% | Due: 30 Apr
+Link: https://example.invalid/objectives/MTHET-2604-03
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
-[MISSING UPDATES] Purchase confirmation clarity (april-2026)
-Leader Engineer: Jules Cabrera
-Progress: 57% | Due: 15 Apr
-Link: https://example.invalid/objectives/MTHET-103
-Done this week: Update deferred pending a decision from the steering meeting.
-Plan for next week: Sync with the owner and file the missing update retroactively.
-
-[DONE] Cart persistence across surfaces (april-2026)
-Leader Engineer: Quinn Yates
-Progress: 100% | Due: 15 Apr
-Link: https://example.invalid/objectives/MTHET-101
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Personalised trip recommendations (april-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 15 Apr
-Link: https://example.invalid/objectives/MTHET-102
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
-
-[DONE] Refund status transparency (april-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 15 Apr
-Link: https://example.invalid/objectives/MTHET-104
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Hand off to the on-call rotation and close the epic.
-
-[DONE] Payment method reorder (april-2026)
+[ON TRACK] Q2 2026 [April]: Personalised trip recommendations (april-2026)
 Leader Engineer: Sana Rowe
-Progress: 100% | Due: 15 Apr
-Link: https://example.invalid/objectives/MTHET-105
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+Progress: 51% | Due: 30 Apr
+Link: https://example.invalid/objectives/MTHET-2604-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
+
+[ON TRACK] Q2 2026 [April]: Purchase confirmation clarity (april-2026)
+Leader Engineer: Gali Tomori
+Progress: 59% | Due: 30 Apr
+Link: https://example.invalid/objectives/MTHET-2604-05
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- [Risk] Purchase confirmation clarity: No owner reachable this week.
-  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
+- No active blockers reported.
 
 Kind Regards
 Engineering Manager

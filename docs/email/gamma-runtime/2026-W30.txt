@@ -1,10 +1,10 @@
 Weekly Objective Update — Gamma Runtime — Week 30
 
 SUMMARY
-- On track: 0/6
+- On track: 4/5
 - At risk: 1 (0 red, 1 yellow)
 - Not started: 0
-- Done: 5
+- Done: 0
 - Missing updates: 0
 - Blockers / risks: 1
 
@@ -15,51 +15,44 @@ Please find the latest objective health report.
 OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[AT RISK] Warm-cache eviction policy (july-2026)
-Leader Engineer: Hiro Vasquez
-Progress: 89% | Due: 22 Jul
-Link: https://example.invalid/objectives/MGAMM-104
-Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
+[ON TRACK] Q3 2026 [July]: Deprecation channel rollout (july-2026)
+Leader Engineer: Jules Cabrera
+Progress: 51% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-01
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Zero-downtime restart choreography (july-2026)
-Leader Engineer: Sana Rowe
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MGAMM-100
-Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Q3 2026 [July]: Zero-downtime restart choreography (july-2026)
+Leader Engineer: Nya Sardar
+Progress: 81% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-03
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[DONE] Rate-limiter fairness audit (july-2026)
-Leader Engineer: Rio Delacroix
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MGAMM-105
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] Q3 2026 [July]: Config drift auto-repair (july-2026)
+Leader Engineer: Dara Okonjo
+Progress: 53% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-04
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[DONE] Golden-path SLO board (july-2026)
-Leader Engineer: Pia Rivas
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MGAMM-102
-Done this week: Landed the migration cutover; no incidents in the follow-up window.
-Plan for next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Q3 2026 [July]: Rate-limiter fairness audit (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 77% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-05
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[DONE] Observability sampling refresh (july-2026)
-Leader Engineer: Ava Thornton
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MGAMM-103
-Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-Plan for next week: Move to maintenance; capture learnings into the runbook.
-
-[DONE] Feature flag rollout guardrails (july-2026)
-Leader Engineer: Ellis Marín
-Progress: 100% | Due: 22 Jul
-Link: https://example.invalid/objectives/MGAMM-101
-Done this week: Closed the final ticket in the epic and archived the working doc.
-Plan for next week: Hand off to the on-call rotation and close the epic.
+[AT RISK] Q3 2026 [July]: Golden-path SLO board (july-2026)
+Leader Engineer: Odin Barone
+Progress: 32% | Due: 31 Jul
+Link: https://example.invalid/objectives/MGAMM-2607-02
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
 BLOCKERS / RISKS
-- [Risk] Warm-cache eviction policy: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+- [Risk] Q3 2026 [July]: Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager
