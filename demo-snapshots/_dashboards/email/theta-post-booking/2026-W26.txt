@@ -1,41 +1,65 @@
-Objectives Rollup — Theta Post-Booking — Week 26
-================================================
+Weekly Objective Update — Theta Post-Booking — Week 26
 
-Theta Post-Booking — Week 26 (June 24, 2026)
-Delivery rate: 83.3% (5 of 6 done)
+SUMMARY
+- On track: 0/6
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 5
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 5  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MTHET-104 — Refund status transparency
-    Pia Rivas · In Progress · 46%
-    Done this week: Update deferred pending a decision from the steering meeting.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MTHET-100 — Homepage skeleton refresh
-    Milo Anders · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Refund status transparency (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 46% | Due: 24 Jun
+Link: https://example.invalid/objectives/MTHET-104
+Done this week: Update deferred pending a decision from the steering meeting.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MTHET-101 — Cart persistence across surfaces
-    Quinn Yates · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Personalised trip recommendations (june-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MTHET-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MTHET-102 — Personalised trip recommendations
-    Rio Delacroix · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Payment method reorder (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MTHET-105
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MTHET-103 — Purchase confirmation clarity
-    Jules Cabrera · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Cart persistence across surfaces (june-2026)
+Leader Engineer: Quinn Yates
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MTHET-101
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MTHET-105 — Payment method reorder
-    Sana Rowe · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Purchase confirmation clarity (june-2026)
+Leader Engineer: Jules Cabrera
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MTHET-103
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Homepage skeleton refresh (june-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MTHET-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Refund status transparency: No owner reachable this week.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+
+Kind Regards
+Engineering Manager

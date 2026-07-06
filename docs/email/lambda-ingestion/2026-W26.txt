@@ -1,42 +1,67 @@
-Objectives Rollup — Lambda Ingestion — Week 26
-==============================================
+Weekly Objective Update — Lambda Ingestion — Week 26
 
-Lambda Ingestion — Week 26 (June 24, 2026)
-Delivery rate: 50.0% (3 of 6 done)
+SUMMARY
+- On track: 1/6
+- At risk: 2 (0 red, 2 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 0
+- Blockers / risks: 2
 
-Done: 3  |  On track: 1  |  At risk: 2  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MLAMB-102 — Publisher content freshness
-    Pia Rivas · In Progress · 53%
-    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover at risk] MLAMB-103 — Cadence dashboard for editors
-    Bram Larsson · In Progress · 87%
-    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+[ON TRACK] Broken-image sentinel (june-2026)
+Leader Engineer: Kai Ostberg
+Progress: 43% | Due: 24 Jun
+Link: https://example.invalid/objectives/MLAMB-104
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Spillover on track] MLAMB-104 — Broken-image sentinel
-    Kai Ostberg · In Progress · 43%
-    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[AT RISK] Cadence dashboard for editors (june-2026)
+Leader Engineer: Bram Larsson
+Progress: 87% | Due: 24 Jun
+Link: https://example.invalid/objectives/MLAMB-103
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
-[Done] MLAMB-100 — Provider content ingestion QA
-    Gali Tomori · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[AT RISK] Publisher content freshness (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 53% | Due: 24 Jun
+Link: https://example.invalid/objectives/MLAMB-102
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
-[Done] MLAMB-101 — Cross-locale asset governance
-    Ellis Marín · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Provider content ingestion QA (june-2026)
+Leader Engineer: Gali Tomori
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MLAMB-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MLAMB-105 — Content lint gate
-    Dara Okonjo · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Content lint gate (june-2026)
+Leader Engineer: Dara Okonjo
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MLAMB-105
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Cross-locale asset governance (june-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MLAMB-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Cadence dashboard for editors: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- [Risk] Publisher content freshness: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+
+Kind Regards
+Engineering Manager

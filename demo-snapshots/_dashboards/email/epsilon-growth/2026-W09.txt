@@ -1,56 +1,86 @@
-Objectives Rollup — Epsilon Growth — Week 9
-===========================================
+Weekly Objective Update — Epsilon Growth — Week 9
 
-Epsilon Growth — Week 9 (February 25, 2026)
-Delivery rate: 55.6% (5 of 9 done)
+SUMMARY
+- On track: 3/9
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 5
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 5  |  On track: 3  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MEPSI-101 — Cart persistence across surfaces
-    Ellis Marín · In Progress · 82%
-    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
-    Blockers: Design review pending from the sibling team.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] MEPSI-100 — Homepage skeleton refresh
-    Quinn Yates · In Progress · 46%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Complete the final code review and enable the feature flag globally.
+[ON TRACK] Homepage skeleton refresh (february-2026)
+Leader Engineer: Quinn Yates
+Progress: 46% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-100
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Spillover on track] MEPSI-103 — Purchase confirmation clarity
-    Ava Thornton · In Progress · 84%
-    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-    Target next week: Wrap the last integration test and hand off to QA.
+[ON TRACK] Refund status transparency (february-2026)
+Leader Engineer: Milo Anders
+Progress: 88% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-104
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Spillover on track] MEPSI-104 — Refund status transparency
-    Milo Anders · In Progress · 88%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Wrap the last integration test and hand off to QA.
+[ON TRACK] Purchase confirmation clarity (february-2026)
+Leader Engineer: Ava Thornton
+Progress: 84% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-103
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Done] MEPSI-102 — Personalised trip recommendations
-    Pia Rivas · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[AT RISK] Cart persistence across surfaces (february-2026)
+Leader Engineer: Ellis Marín
+Progress: 82% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-101
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[Done] MEPSI-105 — Payment method reorder
-    Frida Ohno · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Personalised trip recommendations (february-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-102
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MEPSI-106 — Passenger name-change flow
-    Ines Marchetti · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Loyalty perks eligibility banner (february-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-108
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MEPSI-107 — Search relevance re-ranker
-    Bram Larsson · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Search relevance re-ranker (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-107
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MEPSI-108 — Loyalty perks eligibility banner
-    Ellis Marín · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Passenger name-change flow (february-2026)
+Leader Engineer: Ines Marchetti
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-106
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Payment method reorder (february-2026)
+Leader Engineer: Frida Ohno
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MEPSI-105
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Cart persistence across surfaces: Design review pending from the sibling team.
+  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+
+Kind Regards
+Engineering Manager

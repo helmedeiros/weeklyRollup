@@ -1,46 +1,72 @@
-Objectives Rollup — Beta Payments Core — Week 21
-================================================
+Weekly Objective Update — Beta Payments Core — Week 21
 
-Beta Payments Core — Week 21 (May 20, 2026)
-Delivery rate: 57.1% (4 of 7 done)
+SUMMARY
+- On track: 2/7
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 4  |  On track: 2  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MBETA-104 — Warm-cache eviction policy
-    Rio Delacroix · In Progress · 74%
-    Done this week: Scope grew after user testing; trimming to hit the reduced target.
-    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-    Blockers: Design review pending from the sibling team.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] MBETA-101 — Feature flag rollout guardrails
-    Rio Delacroix · In Progress · 53%
-    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[ON TRACK] Feature flag rollout guardrails (may-2026)
+Leader Engineer: Rio Delacroix
+Progress: 53% | Due: 20 May
+Link: https://example.invalid/objectives/MBETA-101
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Spillover on track] MBETA-102 — Golden-path SLO board
-    Sana Rowe · In Progress · 75%
-    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-    Target next week: Wrap the last integration test and hand off to QA.
+[ON TRACK] Golden-path SLO board (may-2026)
+Leader Engineer: Sana Rowe
+Progress: 75% | Due: 20 May
+Link: https://example.invalid/objectives/MBETA-102
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Done] MBETA-100 — Zero-downtime restart choreography
-    Ava Thornton · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[AT RISK] Warm-cache eviction policy (may-2026)
+Leader Engineer: Rio Delacroix
+Progress: 74% | Due: 20 May
+Link: https://example.invalid/objectives/MBETA-104
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
-[Done] MBETA-103 — Observability sampling refresh
-    Pia Rivas · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Deprecation channel rollout (may-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 20 May
+Link: https://example.invalid/objectives/MBETA-106
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MBETA-105 — Rate-limiter fairness audit
-    Bram Larsson · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Observability sampling refresh (may-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 20 May
+Link: https://example.invalid/objectives/MBETA-103
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MBETA-106 — Deprecation channel rollout
-    Pia Rivas · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Zero-downtime restart choreography (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 20 May
+Link: https://example.invalid/objectives/MBETA-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Rate-limiter fairness audit (may-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 20 May
+Link: https://example.invalid/objectives/MBETA-105
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Warm-cache eviction policy: Design review pending from the sibling team.
+  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+
+Kind Regards
+Engineering Manager

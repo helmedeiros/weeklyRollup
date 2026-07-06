@@ -1,45 +1,71 @@
-Objectives Rollup — Beta Payments Core — Week 26
-================================================
+Weekly Objective Update — Beta Payments Core — Week 26
 
-Beta Payments Core — Week 26 (June 24, 2026)
-Delivery rate: 85.7% (6 of 7 done)
+SUMMARY
+- On track: 1/7
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 6
+- Missing updates: 0
+- Blockers / risks: 0
 
-Done: 6  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover on track] MBETA-102 — Golden-path SLO board
-    Sana Rowe · In Progress · 52%
-    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MBETA-100 — Zero-downtime restart choreography
-    Ava Thornton · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[ON TRACK] Golden-path SLO board (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 52% | Due: 24 Jun
+Link: https://example.invalid/objectives/MBETA-102
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Done] MBETA-101 — Feature flag rollout guardrails
-    Rio Delacroix · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Rate-limiter fairness audit (june-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MBETA-105
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MBETA-103 — Observability sampling refresh
-    Pia Rivas · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Deprecation channel rollout (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MBETA-106
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MBETA-104 — Warm-cache eviction policy
-    Rio Delacroix · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Warm-cache eviction policy (june-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MBETA-104
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MBETA-105 — Rate-limiter fairness audit
-    Bram Larsson · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Feature flag rollout guardrails (june-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MBETA-101
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MBETA-106 — Deprecation channel rollout
-    Pia Rivas · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Observability sampling refresh (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MBETA-103
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Zero-downtime restart choreography (june-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MBETA-100
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- No active blockers reported.
+
+Kind Regards
+Engineering Manager

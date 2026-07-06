@@ -1,36 +1,58 @@
-Objectives Rollup — Mu Content Ops — Week 28
-============================================
+Weekly Objective Update — Mu Content Ops — Week 28
 
-Mu Content Ops — Week 28 (July 8, 2026)
-Delivery rate: 80.0% (4 of 5 done)
+SUMMARY
+- On track: 0/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MMU-102 — Publisher content freshness
-    Odin Barone · In Progress · 51%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MMU-100 — Provider content ingestion QA
-    Hiro Vasquez · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Publisher content freshness (july-2026)
+Leader Engineer: Odin Barone
+Progress: 51% | Due: 8 Jul
+Link: https://example.invalid/objectives/MMU-102
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MMU-101 — Cross-locale asset governance
-    Nya Sardar · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Cadence dashboard for editors (july-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MMU-103
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MMU-103 — Cadence dashboard for editors
-    Bram Larsson · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Provider content ingestion QA (july-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MMU-100
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MMU-104 — Broken-image sentinel
-    Pia Rivas · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Broken-image sentinel (july-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MMU-104
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Cross-locale asset governance (july-2026)
+Leader Engineer: Nya Sardar
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MMU-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Publisher content freshness: No owner reachable this week.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+
+Kind Regards
+Engineering Manager

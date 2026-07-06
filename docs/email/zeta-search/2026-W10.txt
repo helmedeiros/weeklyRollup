@@ -1,32 +1,53 @@
-Objectives Rollup — Zeta Search Discovery — Week 10
-===================================================
+Weekly Objective Update — Zeta Search Discovery — Week 10
 
-Zeta Search Discovery — Week 10 (March 4, 2026)
-Delivery rate: 50.0% (2 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 2
+- Missing updates: 1
+- Blockers / risks: 2
 
-Done: 2  |  On track: 0  |  At risk: 1  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MZETA-101 — Cart persistence across surfaces
-    Odin Barone · In Progress · 33%
-    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
-    Blockers: Design review pending from the sibling team.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MZETA-103 — Purchase confirmation clarity
-    Bram Larsson · In Progress · 51%
-    Done this week: No update was captured this week.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+[AT RISK] Cart persistence across surfaces (march-2026)
+Leader Engineer: Odin Barone
+Progress: 33% | Due: 4 Mar
+Link: https://example.invalid/objectives/MZETA-101
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[Done] MZETA-100 — Homepage skeleton refresh
-    Tomo Ilves · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[MISSING UPDATES] Purchase confirmation clarity (march-2026)
+Leader Engineer: Bram Larsson
+Progress: 51% | Due: 4 Mar
+Link: https://example.invalid/objectives/MZETA-103
+Done this week: No update was captured this week.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MZETA-102 — Personalised trip recommendations
-    Milo Anders · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Homepage skeleton refresh (march-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 4 Mar
+Link: https://example.invalid/objectives/MZETA-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Personalised trip recommendations (march-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 4 Mar
+Link: https://example.invalid/objectives/MZETA-102
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Cart persistence across surfaces: Design review pending from the sibling team.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+- [Risk] Purchase confirmation clarity: No owner reachable this week.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+
+Kind Regards
+Engineering Manager

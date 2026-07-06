@@ -1,35 +1,57 @@
-Objectives Rollup — Mu Content Ops — Week 30
-============================================
+Weekly Objective Update — Mu Content Ops — Week 30
 
-Mu Content Ops — Week 30 (July 22, 2026)
-Delivery rate: 100.0% (5 of 5 done)
+SUMMARY
+- On track: 0/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 5
+- Missing updates: 0
+- Blockers / risks: 0
 
-Done: 5  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Done] MMU-100 — Provider content ingestion QA
-    Hiro Vasquez · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MMU-101 — Cross-locale asset governance
-    Nya Sardar · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Provider content ingestion QA (july-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 100% | Due: 22 Jul
+Link: https://example.invalid/objectives/MMU-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MMU-102 — Publisher content freshness
-    Odin Barone · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Publisher content freshness (july-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 22 Jul
+Link: https://example.invalid/objectives/MMU-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MMU-103 — Cadence dashboard for editors
-    Bram Larsson · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Broken-image sentinel (july-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 22 Jul
+Link: https://example.invalid/objectives/MMU-104
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MMU-104 — Broken-image sentinel
-    Pia Rivas · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Cadence dashboard for editors (july-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 22 Jul
+Link: https://example.invalid/objectives/MMU-103
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Cross-locale asset governance (july-2026)
+Leader Engineer: Nya Sardar
+Progress: 100% | Due: 22 Jul
+Link: https://example.invalid/objectives/MMU-101
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- No active blockers reported.
+
+Kind Regards
+Engineering Manager

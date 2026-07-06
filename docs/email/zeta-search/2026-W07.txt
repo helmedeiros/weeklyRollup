@@ -1,32 +1,53 @@
-Objectives Rollup — Zeta Search Discovery — Week 7
-==================================================
+Weekly Objective Update — Zeta Search Discovery — Week 7
 
-Zeta Search Discovery — Week 7 (February 11, 2026)
-Delivery rate: 50.0% (2 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 1 (1 red, 0 yellow)
+- Not started: 0
+- Done: 2
+- Missing updates: 1
+- Blockers / risks: 2
 
-Done: 2  |  On track: 0  |  At risk: 0  |  Blocked: 1  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MZETA-102 — Personalised trip recommendations
-    Milo Anders · In Progress · 88%
-    Done this week: Incident on adjacent service consumed the week; work is paused.
-    Target next week: Pick up a related workstream while the primary path stays blocked.
-    Blockers: Legal sign-off outstanding.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MZETA-100 — Homepage skeleton refresh
-    Tomo Ilves · In Progress · 60%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+[DELAYED] Personalised trip recommendations (february-2026)
+Leader Engineer: Milo Anders
+Progress: 88% | Due: 11 Feb
+Link: https://example.invalid/objectives/MZETA-102
+Done this week: Incident on adjacent service consumed the week; work is paused.
+Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
-[Done] MZETA-101 — Cart persistence across surfaces
-    Odin Barone · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[MISSING UPDATES] Homepage skeleton refresh (february-2026)
+Leader Engineer: Tomo Ilves
+Progress: 60% | Due: 11 Feb
+Link: https://example.invalid/objectives/MZETA-100
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MZETA-103 — Purchase confirmation clarity
-    Bram Larsson · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Purchase confirmation clarity (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MZETA-103
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Cart persistence across surfaces (february-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MZETA-101
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Blocker] Personalised trip recommendations: Legal sign-off outstanding.
+  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+- [Risk] Homepage skeleton refresh: No owner reachable this week.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+
+Kind Regards
+Engineering Manager

@@ -1,36 +1,58 @@
-Objectives Rollup — Mu Content Ops — Week 8
-===========================================
+Weekly Objective Update — Mu Content Ops — Week 8
 
-Mu Content Ops — Week 8 (February 18, 2026)
-Delivery rate: 60.0% (3 of 5 done)
+SUMMARY
+- On track: 1/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 3  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MMU-101 — Cross-locale asset governance
-    Nya Sardar · In Progress · 78%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] MMU-104 — Broken-image sentinel
-    Pia Rivas · In Progress · 63%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Complete the final code review and enable the feature flag globally.
+[ON TRACK] Broken-image sentinel (february-2026)
+Leader Engineer: Pia Rivas
+Progress: 63% | Due: 18 Feb
+Link: https://example.invalid/objectives/MMU-104
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Done] MMU-100 — Provider content ingestion QA
-    Hiro Vasquez · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[MISSING UPDATES] Cross-locale asset governance (february-2026)
+Leader Engineer: Nya Sardar
+Progress: 78% | Due: 18 Feb
+Link: https://example.invalid/objectives/MMU-101
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MMU-102 — Publisher content freshness
-    Odin Barone · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Provider content ingestion QA (february-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 100% | Due: 18 Feb
+Link: https://example.invalid/objectives/MMU-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MMU-103 — Cadence dashboard for editors
-    Bram Larsson · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Cadence dashboard for editors (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 18 Feb
+Link: https://example.invalid/objectives/MMU-103
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Publisher content freshness (february-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 18 Feb
+Link: https://example.invalid/objectives/MMU-102
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Cross-locale asset governance: No owner reachable this week.
+  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
+
+Kind Regards
+Engineering Manager

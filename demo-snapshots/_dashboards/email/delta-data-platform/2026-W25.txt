@@ -1,35 +1,57 @@
-Objectives Rollup — Delta Data Platform — Week 25
-=================================================
+Weekly Objective Update — Delta Data Platform — Week 25
 
-Delta Data Platform — Week 25 (June 17, 2026)
-Delivery rate: 100.0% (5 of 5 done)
+SUMMARY
+- On track: 0/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 5
+- Missing updates: 0
+- Blockers / risks: 0
 
-Done: 5  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Done] MDELT-100 — Zero-downtime restart choreography
-    Cai Nguyen · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MDELT-101 — Feature flag rollout guardrails
-    Ellis Marín · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Golden-path SLO board (june-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MDELT-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MDELT-102 — Golden-path SLO board
-    Milo Anders · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Observability sampling refresh (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MDELT-103
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MDELT-103 — Observability sampling refresh
-    Pia Rivas · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Zero-downtime restart choreography (june-2026)
+Leader Engineer: Cai Nguyen
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MDELT-100
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MDELT-104 — Warm-cache eviction policy
-    Ines Marchetti · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Feature flag rollout guardrails (june-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MDELT-101
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Warm-cache eviction policy (june-2026)
+Leader Engineer: Ines Marchetti
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MDELT-104
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- No active blockers reported.
+
+Kind Regards
+Engineering Manager

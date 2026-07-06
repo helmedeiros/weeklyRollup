@@ -24,8 +24,7 @@ from datetime import date
 from pathlib import Path
 
 from email_from_snapshot import (
-    build_email_html,
-    build_email_text,
+    build_email_draft,
     synth_leader_engineer_update,
 )
 
@@ -219,13 +218,8 @@ def generate() -> None:
                 },
                 "objectives": objectives,
             }
-            payload["outputs"] = {
-                "email": {
-                    "subject": f"Objectives Rollup — {team_name} — Week {iso_week}",
-                    "html": build_email_html(payload),
-                    "text": build_email_text(payload),
-                }
-            }
+            draft = build_email_draft(payload)
+            payload["outputs"] = {"email": draft}
             out = root / team_id / f"{ISO_YEAR}-W{iso_week:02d}.json"
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")

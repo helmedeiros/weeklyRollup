@@ -1,32 +1,53 @@
-Objectives Rollup — Zeta Search Discovery — Week 24
-===================================================
+Weekly Objective Update — Zeta Search Discovery — Week 24
 
-Zeta Search Discovery — Week 24 (June 10, 2026)
-Delivery rate: 50.0% (2 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 1 (1 red, 0 yellow)
+- Not started: 0
+- Done: 2
+- Missing updates: 1
+- Blockers / risks: 2
 
-Done: 2  |  On track: 0  |  At risk: 0  |  Blocked: 1  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MZETA-101 — Cart persistence across surfaces
-    Odin Barone · In Progress · 83%
-    Done this week: Waiting on infra migration that was pushed to the next quarter.
-    Target next week: Unblock the vendor conversation and get an ETA.
-    Blockers: External vendor SLA slipping; no eta.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MZETA-103 — Purchase confirmation clarity
-    Bram Larsson · In Progress · 41%
-    Done this week: Update deferred pending a decision from the steering meeting.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+[DELAYED] Cart persistence across surfaces (june-2026)
+Leader Engineer: Odin Barone
+Progress: 83% | Due: 10 Jun
+Link: https://example.invalid/objectives/MZETA-101
+Done this week: Waiting on infra migration that was pushed to the next quarter.
+Plan for next week: Unblock the vendor conversation and get an ETA.
 
-[Done] MZETA-100 — Homepage skeleton refresh
-    Tomo Ilves · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[MISSING UPDATES] Purchase confirmation clarity (june-2026)
+Leader Engineer: Bram Larsson
+Progress: 41% | Due: 10 Jun
+Link: https://example.invalid/objectives/MZETA-103
+Done this week: Update deferred pending a decision from the steering meeting.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MZETA-102 — Personalised trip recommendations
-    Milo Anders · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Homepage skeleton refresh (june-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MZETA-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Personalised trip recommendations (june-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MZETA-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Blocker] Cart persistence across surfaces: External vendor SLA slipping; no eta.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+- [Risk] Purchase confirmation clarity: No owner reachable this week.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+
+Kind Regards
+Engineering Manager

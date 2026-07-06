@@ -1,35 +1,57 @@
-Objectives Rollup — Iota Partner Portal — Week 20
-=================================================
+Weekly Objective Update — Iota Partner Portal — Week 20
 
-Iota Partner Portal — Week 20 (May 13, 2026)
-Delivery rate: 80.0% (4 of 5 done)
+SUMMARY
+- On track: 1/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 0
 
-Done: 4  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover on track] MIOTA-104 — SLA breach notifier
-    Ellis Marín · In Progress · 50%
-    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-    Target next week: Wrap the last integration test and hand off to QA.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MIOTA-100 — Partner API rate-limit v2
-    Lena Rihanna · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[ON TRACK] SLA breach notifier (may-2026)
+Leader Engineer: Ellis Marín
+Progress: 50% | Due: 13 May
+Link: https://example.invalid/objectives/MIOTA-104
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Done] MIOTA-101 — Onboarding self-serve wizard
-    Tomo Ilves · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Partner API rate-limit v2 (may-2026)
+Leader Engineer: Lena Rihanna
+Progress: 100% | Due: 13 May
+Link: https://example.invalid/objectives/MIOTA-100
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MIOTA-102 — Compliance audit trail
-    Pia Rivas · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Onboarding self-serve wizard (may-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 13 May
+Link: https://example.invalid/objectives/MIOTA-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MIOTA-103 — Partner billing reconciliation
-    Ines Marchetti · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Partner billing reconciliation (may-2026)
+Leader Engineer: Ines Marchetti
+Progress: 100% | Due: 13 May
+Link: https://example.invalid/objectives/MIOTA-103
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Compliance audit trail (may-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 13 May
+Link: https://example.invalid/objectives/MIOTA-102
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- No active blockers reported.
+
+Kind Regards
+Engineering Manager

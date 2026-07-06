@@ -1,58 +1,90 @@
-Objectives Rollup — Epsilon Growth — Week 19
-============================================
+Weekly Objective Update — Epsilon Growth — Week 19
 
-Epsilon Growth — Week 19 (May 6, 2026)
-Delivery rate: 44.4% (4 of 9 done)
+SUMMARY
+- On track: 2/9
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 2
+- Blockers / risks: 3
 
-Done: 4  |  On track: 2  |  At risk: 1  |  Blocked: 0  |  Missing: 2
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MEPSI-101 — Cart persistence across surfaces
-    Ellis Marín · In Progress · 82%
-    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: Design review pending from the sibling team.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MEPSI-102 — Personalised trip recommendations
-    Pia Rivas · In Progress · 49%
-    Done this week: No update was captured this week.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+[ON TRACK] Loyalty perks eligibility banner (may-2026)
+Leader Engineer: Ellis Marín
+Progress: 38% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-108
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Missing update] MEPSI-106 — Passenger name-change flow
-    Ines Marchetti · In Progress · 51%
-    Done this week: Update deferred pending a decision from the steering meeting.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+[ON TRACK] Payment method reorder (may-2026)
+Leader Engineer: Frida Ohno
+Progress: 53% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-105
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Spillover on track] MEPSI-105 — Payment method reorder
-    Frida Ohno · In Progress · 53%
-    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[AT RISK] Cart persistence across surfaces (may-2026)
+Leader Engineer: Ellis Marín
+Progress: 82% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-101
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Spillover on track] MEPSI-108 — Loyalty perks eligibility banner
-    Ellis Marín · In Progress · 38%
-    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-    Target next week: Complete the final code review and enable the feature flag globally.
+[MISSING UPDATES] Personalised trip recommendations (may-2026)
+Leader Engineer: Pia Rivas
+Progress: 49% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-102
+Done this week: No update was captured this week.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MEPSI-100 — Homepage skeleton refresh
-    Quinn Yates · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Passenger name-change flow (may-2026)
+Leader Engineer: Ines Marchetti
+Progress: 51% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-106
+Done this week: Update deferred pending a decision from the steering meeting.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MEPSI-103 — Purchase confirmation clarity
-    Ava Thornton · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Purchase confirmation clarity (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-103
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MEPSI-104 — Refund status transparency
-    Milo Anders · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Search relevance re-ranker (may-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-107
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MEPSI-107 — Search relevance re-ranker
-    Bram Larsson · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Refund status transparency (may-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-104
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Homepage skeleton refresh (may-2026)
+Leader Engineer: Quinn Yates
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MEPSI-100
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Cart persistence across surfaces: Design review pending from the sibling team.
+  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+- [Risk] Personalised trip recommendations: No owner reachable this week.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+- [Risk] Passenger name-change flow: No owner reachable this week.
+  Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a
+
+Kind Regards
+Engineering Manager

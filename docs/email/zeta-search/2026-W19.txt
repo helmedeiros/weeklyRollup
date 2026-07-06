@@ -1,31 +1,51 @@
-Objectives Rollup — Zeta Search Discovery — Week 19
-===================================================
+Weekly Objective Update — Zeta Search Discovery — Week 19
 
-Zeta Search Discovery — Week 19 (May 6, 2026)
-Delivery rate: 75.0% (3 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 3  |  On track: 0  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MZETA-101 — Cart persistence across surfaces
-    Odin Barone · In Progress · 83%
-    Done this week: Scope grew after user testing; trimming to hit the reduced target.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MZETA-100 — Homepage skeleton refresh
-    Tomo Ilves · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[AT RISK] Cart persistence across surfaces (may-2026)
+Leader Engineer: Odin Barone
+Progress: 83% | Due: 6 May
+Link: https://example.invalid/objectives/MZETA-101
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MZETA-102 — Personalised trip recommendations
-    Milo Anders · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Purchase confirmation clarity (may-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MZETA-103
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MZETA-103 — Purchase confirmation clarity
-    Bram Larsson · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Personalised trip recommendations (may-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MZETA-102
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Homepage skeleton refresh (may-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MZETA-100
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Risk] Cart persistence across surfaces: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+
+Kind Regards
+Engineering Manager

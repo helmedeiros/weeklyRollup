@@ -1,41 +1,65 @@
-Objectives Rollup — Theta Post-Booking — Week 9
-===============================================
+Weekly Objective Update — Theta Post-Booking — Week 9
 
-Theta Post-Booking — Week 9 (February 25, 2026)
-Delivery rate: 50.0% (3 of 6 done)
+SUMMARY
+- On track: 2/6
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 3  |  On track: 2  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MTHET-103 — Purchase confirmation clarity
-    Jules Cabrera · In Progress · 39%
-    Done this week: No update was captured this week.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] MTHET-101 — Cart persistence across surfaces
-    Quinn Yates · In Progress · 31%
-    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-    Target next week: Complete the final code review and enable the feature flag globally.
+[ON TRACK] Personalised trip recommendations (february-2026)
+Leader Engineer: Rio Delacroix
+Progress: 40% | Due: 25 Feb
+Link: https://example.invalid/objectives/MTHET-102
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Spillover on track] MTHET-102 — Personalised trip recommendations
-    Rio Delacroix · In Progress · 40%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Complete the final code review and enable the feature flag globally.
+[ON TRACK] Cart persistence across surfaces (february-2026)
+Leader Engineer: Quinn Yates
+Progress: 31% | Due: 25 Feb
+Link: https://example.invalid/objectives/MTHET-101
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Done] MTHET-100 — Homepage skeleton refresh
-    Milo Anders · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Purchase confirmation clarity (february-2026)
+Leader Engineer: Jules Cabrera
+Progress: 39% | Due: 25 Feb
+Link: https://example.invalid/objectives/MTHET-103
+Done this week: No update was captured this week.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MTHET-104 — Refund status transparency
-    Pia Rivas · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Homepage skeleton refresh (february-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MTHET-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MTHET-105 — Payment method reorder
-    Sana Rowe · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Payment method reorder (february-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MTHET-105
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Refund status transparency (february-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 25 Feb
+Link: https://example.invalid/objectives/MTHET-104
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Risk] Purchase confirmation clarity: No owner reachable this week.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
+
+Kind Regards
+Engineering Manager

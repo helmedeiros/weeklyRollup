@@ -1,51 +1,79 @@
-Objectives Rollup — Alpha Foundations — Week 24
-===============================================
+Weekly Objective Update — Alpha Foundations — Week 24
 
-Alpha Foundations — Week 24 (June 10, 2026)
-Delivery rate: 87.5% (7 of 8 done)
+SUMMARY
+- On track: 0/8
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 7
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 7  |  On track: 0  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MALPH-102 — Golden-path SLO board
-    Ava Thornton · In Progress · 68%
-    Done this week: Slipped the promised design review; rescheduling for later this week.
-    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
-    Blockers: Design review pending from the sibling team.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MALPH-100 — Zero-downtime restart choreography
-    Sana Rowe · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[AT RISK] Golden-path SLO board (june-2026)
+Leader Engineer: Ava Thornton
+Progress: 68% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-102
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[Done] MALPH-101 — Feature flag rollout guardrails
-    Nya Sardar · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Zero-downtime restart choreography (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MALPH-103 — Observability sampling refresh
-    Sana Rowe · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Deprecation channel rollout (june-2026)
+Leader Engineer: Jules Cabrera
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-106
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MALPH-104 — Warm-cache eviction policy
-    Pia Rivas · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Warm-cache eviction policy (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-104
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MALPH-105 — Rate-limiter fairness audit
-    Ava Thornton · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Service topology drift alarm (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-107
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MALPH-106 — Deprecation channel rollout
-    Jules Cabrera · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Observability sampling refresh (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-103
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MALPH-107 — Service topology drift alarm
-    Sana Rowe · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Feature flag rollout guardrails (june-2026)
+Leader Engineer: Nya Sardar
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Rate-limiter fairness audit (june-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 10 Jun
+Link: https://example.invalid/objectives/MALPH-105
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Golden-path SLO board: Design review pending from the sibling team.
+  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+
+Kind Regards
+Engineering Manager

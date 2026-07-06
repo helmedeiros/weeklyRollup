@@ -1,36 +1,58 @@
-Objectives Rollup — Mu Content Ops — Week 20
-============================================
+Weekly Objective Update — Mu Content Ops — Week 20
 
-Mu Content Ops — Week 20 (May 13, 2026)
-Delivery rate: 60.0% (3 of 5 done)
+SUMMARY
+- On track: 1/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 3  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MMU-104 — Broken-image sentinel
-    Pia Rivas · In Progress · 76%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] MMU-101 — Cross-locale asset governance
-    Nya Sardar · In Progress · 83%
-    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[ON TRACK] Cross-locale asset governance (may-2026)
+Leader Engineer: Nya Sardar
+Progress: 83% | Due: 13 May
+Link: https://example.invalid/objectives/MMU-101
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Done] MMU-100 — Provider content ingestion QA
-    Hiro Vasquez · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[MISSING UPDATES] Broken-image sentinel (may-2026)
+Leader Engineer: Pia Rivas
+Progress: 76% | Due: 13 May
+Link: https://example.invalid/objectives/MMU-104
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MMU-102 — Publisher content freshness
-    Odin Barone · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Publisher content freshness (may-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 13 May
+Link: https://example.invalid/objectives/MMU-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MMU-103 — Cadence dashboard for editors
-    Bram Larsson · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Cadence dashboard for editors (may-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 13 May
+Link: https://example.invalid/objectives/MMU-103
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Provider content ingestion QA (may-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 100% | Due: 13 May
+Link: https://example.invalid/objectives/MMU-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Risk] Broken-image sentinel: No owner reachable this week.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+
+Kind Regards
+Engineering Manager

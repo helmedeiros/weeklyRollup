@@ -1,45 +1,71 @@
-Objectives Rollup — Beta Payments Core — Week 17
-================================================
+Weekly Objective Update — Beta Payments Core — Week 17
 
-Beta Payments Core — Week 17 (April 22, 2026)
-Delivery rate: 85.7% (6 of 7 done)
+SUMMARY
+- On track: 1/7
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 6
+- Missing updates: 0
+- Blockers / risks: 0
 
-Done: 6  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover on track] MBETA-103 — Observability sampling refresh
-    Pia Rivas · In Progress · 54%
-    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-    Target next week: Complete the final code review and enable the feature flag globally.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MBETA-100 — Zero-downtime restart choreography
-    Ava Thornton · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Observability sampling refresh (april-2026)
+Leader Engineer: Pia Rivas
+Progress: 54% | Due: 22 Apr
+Link: https://example.invalid/objectives/MBETA-103
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Done] MBETA-101 — Feature flag rollout guardrails
-    Rio Delacroix · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Rate-limiter fairness audit (april-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MBETA-105
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MBETA-102 — Golden-path SLO board
-    Sana Rowe · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Feature flag rollout guardrails (april-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MBETA-101
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MBETA-104 — Warm-cache eviction policy
-    Rio Delacroix · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Zero-downtime restart choreography (april-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MBETA-100
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MBETA-105 — Rate-limiter fairness audit
-    Bram Larsson · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Warm-cache eviction policy (april-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MBETA-104
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MBETA-106 — Deprecation channel rollout
-    Pia Rivas · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Golden-path SLO board (april-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MBETA-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Deprecation channel rollout (april-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MBETA-106
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- No active blockers reported.
+
+Kind Regards
+Engineering Manager

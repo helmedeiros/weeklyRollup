@@ -1,36 +1,58 @@
-Objectives Rollup — Eta Checkout — Week 26
-==========================================
+Weekly Objective Update — Eta Checkout — Week 26
 
-Eta Checkout — Week 26 (June 24, 2026)
-Delivery rate: 80.0% (4 of 5 done)
+SUMMARY
+- On track: 0/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] META-100 — Homepage skeleton refresh
-    Pia Rivas · In Progress · 74%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] META-101 — Cart persistence across surfaces
-    Rio Delacroix · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[MISSING UPDATES] Homepage skeleton refresh (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 74% | Due: 24 Jun
+Link: https://example.invalid/objectives/META-100
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] META-102 — Personalised trip recommendations
-    Jules Cabrera · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Cart persistence across surfaces (june-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/META-101
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] META-103 — Purchase confirmation clarity
-    Odin Barone · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Personalised trip recommendations (june-2026)
+Leader Engineer: Jules Cabrera
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/META-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] META-104 — Refund status transparency
-    Rio Delacroix · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Refund status transparency (june-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/META-104
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Purchase confirmation clarity (june-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/META-103
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Homepage skeleton refresh: No owner reachable this week.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+
+Kind Regards
+Engineering Manager

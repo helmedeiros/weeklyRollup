@@ -1,36 +1,58 @@
-Objectives Rollup — Delta Data Platform — Week 12
-=================================================
+Weekly Objective Update — Delta Data Platform — Week 12
 
-Delta Data Platform — Week 12 (March 18, 2026)
-Delivery rate: 80.0% (4 of 5 done)
+SUMMARY
+- On track: 0/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MDELT-104 — Warm-cache eviction policy
-    Ines Marchetti · In Progress · 85%
-    Done this week: Update deferred pending a decision from the steering meeting.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MDELT-100 — Zero-downtime restart choreography
-    Cai Nguyen · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Warm-cache eviction policy (march-2026)
+Leader Engineer: Ines Marchetti
+Progress: 85% | Due: 18 Mar
+Link: https://example.invalid/objectives/MDELT-104
+Done this week: Update deferred pending a decision from the steering meeting.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MDELT-101 — Feature flag rollout guardrails
-    Ellis Marín · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Feature flag rollout guardrails (march-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 18 Mar
+Link: https://example.invalid/objectives/MDELT-101
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MDELT-102 — Golden-path SLO board
-    Milo Anders · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Zero-downtime restart choreography (march-2026)
+Leader Engineer: Cai Nguyen
+Progress: 100% | Due: 18 Mar
+Link: https://example.invalid/objectives/MDELT-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MDELT-103 — Observability sampling refresh
-    Pia Rivas · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Golden-path SLO board (march-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 18 Mar
+Link: https://example.invalid/objectives/MDELT-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Observability sampling refresh (march-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 18 Mar
+Link: https://example.invalid/objectives/MDELT-103
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Risk] Warm-cache eviction policy: No owner reachable this week.
+  Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a
+
+Kind Regards
+Engineering Manager

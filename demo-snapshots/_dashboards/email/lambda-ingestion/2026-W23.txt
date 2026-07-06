@@ -1,42 +1,67 @@
-Objectives Rollup — Lambda Ingestion — Week 23
-==============================================
+Weekly Objective Update — Lambda Ingestion — Week 23
 
-Lambda Ingestion — Week 23 (June 3, 2026)
-Delivery rate: 66.7% (4 of 6 done)
+SUMMARY
+- On track: 0/6
+- At risk: 2 (1 red, 1 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 2
 
-Done: 4  |  On track: 0  |  At risk: 1  |  Blocked: 1  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MLAMB-101 — Cross-locale asset governance
-    Ellis Marín · In Progress · 42%
-    Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
-    Target next week: Unblock the vendor conversation and get an ETA.
-    Blockers: Legal sign-off outstanding.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover at risk] MLAMB-105 — Content lint gate
-    Dara Okonjo · In Progress · 66%
-    Done this week: Slipped the promised design review; rescheduling for later this week.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+[AT RISK] Content lint gate (june-2026)
+Leader Engineer: Dara Okonjo
+Progress: 66% | Due: 3 Jun
+Link: https://example.invalid/objectives/MLAMB-105
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MLAMB-100 — Provider content ingestion QA
-    Gali Tomori · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Cross-locale asset governance (june-2026)
+Leader Engineer: Ellis Marín
+Progress: 42% | Due: 3 Jun
+Link: https://example.invalid/objectives/MLAMB-101
+Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
+Plan for next week: Unblock the vendor conversation and get an ETA.
 
-[Done] MLAMB-102 — Publisher content freshness
-    Pia Rivas · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Provider content ingestion QA (june-2026)
+Leader Engineer: Gali Tomori
+Progress: 100% | Due: 3 Jun
+Link: https://example.invalid/objectives/MLAMB-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MLAMB-103 — Cadence dashboard for editors
-    Bram Larsson · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Cadence dashboard for editors (june-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 3 Jun
+Link: https://example.invalid/objectives/MLAMB-103
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MLAMB-104 — Broken-image sentinel
-    Kai Ostberg · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Publisher content freshness (june-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 3 Jun
+Link: https://example.invalid/objectives/MLAMB-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Broken-image sentinel (june-2026)
+Leader Engineer: Kai Ostberg
+Progress: 100% | Due: 3 Jun
+Link: https://example.invalid/objectives/MLAMB-104
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Blocker] Cross-locale asset governance: Legal sign-off outstanding.
+  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+- [Risk] Content lint gate: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+
+Kind Regards
+Engineering Manager

@@ -1,42 +1,67 @@
-Objectives Rollup — Lambda Ingestion — Week 7
-=============================================
+Weekly Objective Update — Lambda Ingestion — Week 7
 
-Lambda Ingestion — Week 7 (February 11, 2026)
-Delivery rate: 66.7% (4 of 6 done)
+SUMMARY
+- On track: 0/6
+- At risk: 2 (1 red, 1 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 2
 
-Done: 4  |  On track: 0  |  At risk: 1  |  Blocked: 1  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MLAMB-100 — Provider content ingestion QA
-    Gali Tomori · In Progress · 55%
-    Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
-    Target next week: Unblock the vendor conversation and get an ETA.
-    Blockers: Infra migration blocking rollout; owner: platform.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover at risk] MLAMB-103 — Cadence dashboard for editors
-    Bram Larsson · In Progress · 68%
-    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: Design review pending from the sibling team.
+[AT RISK] Cadence dashboard for editors (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 68% | Due: 11 Feb
+Link: https://example.invalid/objectives/MLAMB-103
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MLAMB-101 — Cross-locale asset governance
-    Ellis Marín · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DELAYED] Provider content ingestion QA (february-2026)
+Leader Engineer: Gali Tomori
+Progress: 55% | Due: 11 Feb
+Link: https://example.invalid/objectives/MLAMB-100
+Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
+Plan for next week: Unblock the vendor conversation and get an ETA.
 
-[Done] MLAMB-102 — Publisher content freshness
-    Pia Rivas · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Cross-locale asset governance (february-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MLAMB-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MLAMB-104 — Broken-image sentinel
-    Kai Ostberg · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Broken-image sentinel (february-2026)
+Leader Engineer: Kai Ostberg
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MLAMB-104
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MLAMB-105 — Content lint gate
-    Dara Okonjo · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Content lint gate (february-2026)
+Leader Engineer: Dara Okonjo
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MLAMB-105
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Publisher content freshness (february-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MLAMB-102
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Blocker] Provider content ingestion QA: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
+- [Risk] Cadence dashboard for editors: Design review pending from the sibling team.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+
+Kind Regards
+Engineering Manager

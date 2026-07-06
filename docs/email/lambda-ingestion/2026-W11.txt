@@ -1,42 +1,67 @@
-Objectives Rollup — Lambda Ingestion — Week 11
-==============================================
+Weekly Objective Update — Lambda Ingestion — Week 11
 
-Lambda Ingestion — Week 11 (March 11, 2026)
-Delivery rate: 50.0% (3 of 6 done)
+SUMMARY
+- On track: 1/6
+- At risk: 2 (1 red, 1 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 0
+- Blockers / risks: 2
 
-Done: 3  |  On track: 1  |  At risk: 1  |  Blocked: 1  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MLAMB-105 — Content lint gate
-    Dara Okonjo · In Progress · 76%
-    Done this week: Waiting on infra migration that was pushed to the next quarter.
-    Target next week: Reassign to a different owner so the current one can help elsewhere.
-    Blockers: Legal sign-off outstanding.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover at risk] MLAMB-100 — Provider content ingestion QA
-    Gali Tomori · In Progress · 35%
-    Done this week: Slipped the promised design review; rescheduling for later this week.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: Design review pending from the sibling team.
+[ON TRACK] Cross-locale asset governance (march-2026)
+Leader Engineer: Ellis Marín
+Progress: 86% | Due: 11 Mar
+Link: https://example.invalid/objectives/MLAMB-101
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Spillover on track] MLAMB-101 — Cross-locale asset governance
-    Ellis Marín · In Progress · 86%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[AT RISK] Provider content ingestion QA (march-2026)
+Leader Engineer: Gali Tomori
+Progress: 35% | Due: 11 Mar
+Link: https://example.invalid/objectives/MLAMB-100
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MLAMB-102 — Publisher content freshness
-    Pia Rivas · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Content lint gate (march-2026)
+Leader Engineer: Dara Okonjo
+Progress: 76% | Due: 11 Mar
+Link: https://example.invalid/objectives/MLAMB-105
+Done this week: Waiting on infra migration that was pushed to the next quarter.
+Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
-[Done] MLAMB-103 — Cadence dashboard for editors
-    Bram Larsson · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Broken-image sentinel (march-2026)
+Leader Engineer: Kai Ostberg
+Progress: 100% | Due: 11 Mar
+Link: https://example.invalid/objectives/MLAMB-104
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MLAMB-104 — Broken-image sentinel
-    Kai Ostberg · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Publisher content freshness (march-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 11 Mar
+Link: https://example.invalid/objectives/MLAMB-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Cadence dashboard for editors (march-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 11 Mar
+Link: https://example.invalid/objectives/MLAMB-103
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Blocker] Content lint gate: Legal sign-off outstanding.
+  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+- [Risk] Provider content ingestion QA: Design review pending from the sibling team.
+  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
+
+Kind Regards
+Engineering Manager

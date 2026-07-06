@@ -1,30 +1,50 @@
-Objectives Rollup — Kappa Enterprise Ops — Week 26
-==================================================
+Weekly Objective Update — Kappa Enterprise Ops — Week 26
 
-Kappa Enterprise Ops — Week 26 (June 24, 2026)
-Delivery rate: 100.0% (4 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 0
 
-Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Done] MKAPP-100 — Partner API rate-limit v2
-    Sana Rowe · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MKAPP-101 — Onboarding self-serve wizard
-    Rio Delacroix · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Partner API rate-limit v2 (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MKAPP-100
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MKAPP-102 — Compliance audit trail
-    Sana Rowe · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Compliance audit trail (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MKAPP-102
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MKAPP-103 — Partner billing reconciliation
-    Frida Ohno · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Partner billing reconciliation (june-2026)
+Leader Engineer: Frida Ohno
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MKAPP-103
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Onboarding self-serve wizard (june-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 24 Jun
+Link: https://example.invalid/objectives/MKAPP-101
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- No active blockers reported.
+
+Kind Regards
+Engineering Manager

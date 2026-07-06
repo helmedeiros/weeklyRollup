@@ -1,41 +1,65 @@
-Objectives Rollup — Gamma Runtime — Week 19
-===========================================
+Weekly Objective Update — Gamma Runtime — Week 19
 
-Gamma Runtime — Week 19 (May 6, 2026)
-Delivery rate: 66.7% (4 of 6 done)
+SUMMARY
+- On track: 1/6
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 4  |  On track: 1  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MGAMM-104 — Warm-cache eviction policy
-    Hiro Vasquez · In Progress · 68%
-    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: Design review pending from the sibling team.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] MGAMM-103 — Observability sampling refresh
-    Ava Thornton · In Progress · 66%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[ON TRACK] Observability sampling refresh (may-2026)
+Leader Engineer: Ava Thornton
+Progress: 66% | Due: 6 May
+Link: https://example.invalid/objectives/MGAMM-103
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Done] MGAMM-100 — Zero-downtime restart choreography
-    Sana Rowe · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[AT RISK] Warm-cache eviction policy (may-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 68% | Due: 6 May
+Link: https://example.invalid/objectives/MGAMM-104
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MGAMM-101 — Feature flag rollout guardrails
-    Ellis Marín · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Feature flag rollout guardrails (may-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MGAMM-101
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MGAMM-102 — Golden-path SLO board
-    Pia Rivas · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Rate-limiter fairness audit (may-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MGAMM-105
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MGAMM-105 — Rate-limiter fairness audit
-    Rio Delacroix · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Golden-path SLO board (may-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MGAMM-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Zero-downtime restart choreography (may-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 6 May
+Link: https://example.invalid/objectives/MGAMM-100
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Risk] Warm-cache eviction policy: Design review pending from the sibling team.
+  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+
+Kind Regards
+Engineering Manager

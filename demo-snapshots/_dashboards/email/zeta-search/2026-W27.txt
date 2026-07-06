@@ -1,31 +1,51 @@
-Objectives Rollup — Zeta Search Discovery — Week 27
-===================================================
+Weekly Objective Update — Zeta Search Discovery — Week 27
 
-Zeta Search Discovery — Week 27 (July 1, 2026)
-Delivery rate: 75.0% (3 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 1 (1 red, 0 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 3  |  On track: 0  |  At risk: 0  |  Blocked: 1  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MZETA-100 — Homepage skeleton refresh
-    Tomo Ilves · In Progress · 54%
-    Done this week: Legal review outstanding — no code path until the sign-off lands.
-    Target next week: Reassign to a different owner so the current one can help elsewhere.
-    Blockers: Legal sign-off outstanding.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MZETA-101 — Cart persistence across surfaces
-    Odin Barone · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Homepage skeleton refresh (july-2026)
+Leader Engineer: Tomo Ilves
+Progress: 54% | Due: 1 Jul
+Link: https://example.invalid/objectives/MZETA-100
+Done this week: Legal review outstanding — no code path until the sign-off lands.
+Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
-[Done] MZETA-102 — Personalised trip recommendations
-    Milo Anders · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Purchase confirmation clarity (july-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 1 Jul
+Link: https://example.invalid/objectives/MZETA-103
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MZETA-103 — Purchase confirmation clarity
-    Bram Larsson · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Cart persistence across surfaces (july-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 1 Jul
+Link: https://example.invalid/objectives/MZETA-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Personalised trip recommendations (july-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 1 Jul
+Link: https://example.invalid/objectives/MZETA-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Blocker] Homepage skeleton refresh: Legal sign-off outstanding.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+
+Kind Regards
+Engineering Manager

@@ -1,31 +1,51 @@
-Objectives Rollup — Kappa Enterprise Ops — Week 25
-==================================================
+Weekly Objective Update — Kappa Enterprise Ops — Week 25
 
-Kappa Enterprise Ops — Week 25 (June 17, 2026)
-Delivery rate: 75.0% (3 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 3  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MKAPP-101 — Onboarding self-serve wizard
-    Rio Delacroix · In Progress · 67%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MKAPP-100 — Partner API rate-limit v2
-    Sana Rowe · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[MISSING UPDATES] Onboarding self-serve wizard (june-2026)
+Leader Engineer: Rio Delacroix
+Progress: 67% | Due: 17 Jun
+Link: https://example.invalid/objectives/MKAPP-101
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MKAPP-102 — Compliance audit trail
-    Sana Rowe · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Partner billing reconciliation (june-2026)
+Leader Engineer: Frida Ohno
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MKAPP-103
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MKAPP-103 — Partner billing reconciliation
-    Frida Ohno · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Partner API rate-limit v2 (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MKAPP-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Compliance audit trail (june-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 17 Jun
+Link: https://example.invalid/objectives/MKAPP-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Onboarding self-serve wizard: No owner reachable this week.
+  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+
+Kind Regards
+Engineering Manager

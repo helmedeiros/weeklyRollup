@@ -1,35 +1,57 @@
-Objectives Rollup — Eta Checkout — Week 17
-==========================================
+Weekly Objective Update — Eta Checkout — Week 17
 
-Eta Checkout — Week 17 (April 22, 2026)
-Delivery rate: 80.0% (4 of 5 done)
+SUMMARY
+- On track: 1/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 0
 
-Done: 4  |  On track: 1  |  At risk: 0  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover on track] META-103 — Purchase confirmation clarity
-    Odin Barone · In Progress · 85%
-    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-    Target next week: Complete the final code review and enable the feature flag globally.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] META-100 — Homepage skeleton refresh
-    Pia Rivas · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[ON TRACK] Purchase confirmation clarity (april-2026)
+Leader Engineer: Odin Barone
+Progress: 85% | Due: 22 Apr
+Link: https://example.invalid/objectives/META-103
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Done] META-101 — Cart persistence across surfaces
-    Rio Delacroix · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Personalised trip recommendations (april-2026)
+Leader Engineer: Jules Cabrera
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/META-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] META-102 — Personalised trip recommendations
-    Jules Cabrera · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Refund status transparency (april-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/META-104
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] META-104 — Refund status transparency
-    Rio Delacroix · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Homepage skeleton refresh (april-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/META-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Cart persistence across surfaces (april-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/META-101
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- No active blockers reported.
+
+Kind Regards
+Engineering Manager

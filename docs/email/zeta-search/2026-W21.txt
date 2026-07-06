@@ -1,31 +1,51 @@
-Objectives Rollup — Zeta Search Discovery — Week 21
-===================================================
+Weekly Objective Update — Zeta Search Discovery — Week 21
 
-Zeta Search Discovery — Week 21 (May 20, 2026)
-Delivery rate: 75.0% (3 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 1 (1 red, 0 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 3  |  On track: 0  |  At risk: 0  |  Blocked: 1  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MZETA-101 — Cart persistence across surfaces
-    Odin Barone · In Progress · 88%
-    Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
-    Target next week: Reassign to a different owner so the current one can help elsewhere.
-    Blockers: External vendor SLA slipping; no eta.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MZETA-100 — Homepage skeleton refresh
-    Tomo Ilves · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DELAYED] Cart persistence across surfaces (may-2026)
+Leader Engineer: Odin Barone
+Progress: 88% | Due: 20 May
+Link: https://example.invalid/objectives/MZETA-101
+Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
+Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
-[Done] MZETA-102 — Personalised trip recommendations
-    Milo Anders · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Personalised trip recommendations (may-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 20 May
+Link: https://example.invalid/objectives/MZETA-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MZETA-103 — Purchase confirmation clarity
-    Bram Larsson · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Homepage skeleton refresh (may-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 20 May
+Link: https://example.invalid/objectives/MZETA-100
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Purchase confirmation clarity (may-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 20 May
+Link: https://example.invalid/objectives/MZETA-103
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Blocker] Cart persistence across surfaces: External vendor SLA slipping; no eta.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+
+Kind Regards
+Engineering Manager

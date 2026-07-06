@@ -1,32 +1,53 @@
-Objectives Rollup — Zeta Search Discovery — Week 30
-===================================================
+Weekly Objective Update — Zeta Search Discovery — Week 30
 
-Zeta Search Discovery — Week 30 (July 22, 2026)
-Delivery rate: 25.0% (1 of 4 done)
+SUMMARY
+- On track: 1/4
+- At risk: 1 (1 red, 0 yellow)
+- Not started: 0
+- Done: 1
+- Missing updates: 1
+- Blockers / risks: 2
 
-Done: 1  |  On track: 1  |  At risk: 0  |  Blocked: 1  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover blocked] MZETA-101 — Cart persistence across surfaces
-    Odin Barone · In Progress · 45%
-    Done this week: Waiting on infra migration that was pushed to the next quarter.
-    Target next week: Unblock the vendor conversation and get an ETA.
-    Blockers: Infra migration blocking rollout; owner: platform.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MZETA-103 — Purchase confirmation clarity
-    Bram Larsson · In Progress · 61%
-    Done this week: No update was captured this week.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+[ON TRACK] Personalised trip recommendations (july-2026)
+Leader Engineer: Milo Anders
+Progress: 62% | Due: 22 Jul
+Link: https://example.invalid/objectives/MZETA-102
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Spillover on track] MZETA-102 — Personalised trip recommendations
-    Milo Anders · In Progress · 62%
-    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[DELAYED] Cart persistence across surfaces (july-2026)
+Leader Engineer: Odin Barone
+Progress: 45% | Due: 22 Jul
+Link: https://example.invalid/objectives/MZETA-101
+Done this week: Waiting on infra migration that was pushed to the next quarter.
+Plan for next week: Unblock the vendor conversation and get an ETA.
 
-[Done] MZETA-100 — Homepage skeleton refresh
-    Tomo Ilves · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Purchase confirmation clarity (july-2026)
+Leader Engineer: Bram Larsson
+Progress: 61% | Due: 22 Jul
+Link: https://example.invalid/objectives/MZETA-103
+Done this week: No update was captured this week.
+Plan for next week: Sync with the owner and file the missing update retroactively.
+
+[DONE] Homepage skeleton refresh (july-2026)
+Leader Engineer: Tomo Ilves
+Progress: 100% | Due: 22 Jul
+Link: https://example.invalid/objectives/MZETA-100
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Blocker] Cart persistence across surfaces: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+- [Risk] Purchase confirmation clarity: No owner reachable this week.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+
+Kind Regards
+Engineering Manager

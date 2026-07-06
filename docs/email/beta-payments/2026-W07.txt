@@ -1,46 +1,72 @@
-Objectives Rollup — Beta Payments Core — Week 7
-===============================================
+Weekly Objective Update — Beta Payments Core — Week 7
 
-Beta Payments Core — Week 7 (February 11, 2026)
-Delivery rate: 57.1% (4 of 7 done)
+SUMMARY
+- On track: 2/7
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 4  |  On track: 2  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MBETA-106 — Deprecation channel rollout
-    Pia Rivas · In Progress · 76%
-    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] MBETA-102 — Golden-path SLO board
-    Sana Rowe · In Progress · 62%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[ON TRACK] Golden-path SLO board (february-2026)
+Leader Engineer: Sana Rowe
+Progress: 62% | Due: 11 Feb
+Link: https://example.invalid/objectives/MBETA-102
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Spillover on track] MBETA-103 — Observability sampling refresh
-    Pia Rivas · In Progress · 44%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[ON TRACK] Observability sampling refresh (february-2026)
+Leader Engineer: Pia Rivas
+Progress: 44% | Due: 11 Feb
+Link: https://example.invalid/objectives/MBETA-103
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Done] MBETA-100 — Zero-downtime restart choreography
-    Ava Thornton · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[AT RISK] Deprecation channel rollout (february-2026)
+Leader Engineer: Pia Rivas
+Progress: 76% | Due: 11 Feb
+Link: https://example.invalid/objectives/MBETA-106
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MBETA-101 — Feature flag rollout guardrails
-    Rio Delacroix · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Zero-downtime restart choreography (february-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MBETA-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MBETA-104 — Warm-cache eviction policy
-    Rio Delacroix · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Rate-limiter fairness audit (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MBETA-105
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
 
-[Done] MBETA-105 — Rate-limiter fairness audit
-    Bram Larsson · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Feature flag rollout guardrails (february-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MBETA-101
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+[DONE] Warm-cache eviction policy (february-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 11 Feb
+Link: https://example.invalid/objectives/MBETA-104
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+BLOCKERS / RISKS
+- [Risk] Deprecation channel rollout: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+
+Kind Regards
+Engineering Manager

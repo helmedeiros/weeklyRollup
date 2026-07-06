@@ -1,36 +1,58 @@
-Objectives Rollup — Delta Data Platform — Week 29
-=================================================
+Weekly Objective Update — Delta Data Platform — Week 29
 
-Delta Data Platform — Week 29 (July 15, 2026)
-Delivery rate: 80.0% (4 of 5 done)
+SUMMARY
+- On track: 0/5
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 4
+- Missing updates: 1
+- Blockers / risks: 1
 
-Done: 4  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MDELT-100 — Zero-downtime restart choreography
-    Cai Nguyen · In Progress · 30%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Done] MDELT-101 — Feature flag rollout guardrails
-    Ellis Marín · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[MISSING UPDATES] Zero-downtime restart choreography (july-2026)
+Leader Engineer: Cai Nguyen
+Progress: 30% | Due: 15 Jul
+Link: https://example.invalid/objectives/MDELT-100
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MDELT-102 — Golden-path SLO board
-    Milo Anders · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Golden-path SLO board (july-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 15 Jul
+Link: https://example.invalid/objectives/MDELT-102
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MDELT-103 — Observability sampling refresh
-    Pia Rivas · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Feature flag rollout guardrails (july-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 15 Jul
+Link: https://example.invalid/objectives/MDELT-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MDELT-104 — Warm-cache eviction policy
-    Ines Marchetti · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Warm-cache eviction policy (july-2026)
+Leader Engineer: Ines Marchetti
+Progress: 100% | Due: 15 Jul
+Link: https://example.invalid/objectives/MDELT-104
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Observability sampling refresh (july-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 15 Jul
+Link: https://example.invalid/objectives/MDELT-103
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Zero-downtime restart choreography: No owner reachable this week.
+  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
+
+Kind Regards
+Engineering Manager

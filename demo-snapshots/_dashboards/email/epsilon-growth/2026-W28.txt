@@ -1,57 +1,88 @@
-Objectives Rollup — Epsilon Growth — Week 28
-============================================
+Weekly Objective Update — Epsilon Growth — Week 28
 
-Epsilon Growth — Week 28 (July 8, 2026)
-Delivery rate: 55.6% (5 of 9 done)
+SUMMARY
+- On track: 2/9
+- At risk: 2 (0 red, 2 yellow)
+- Not started: 0
+- Done: 5
+- Missing updates: 0
+- Blockers / risks: 2
 
-Done: 5  |  On track: 2  |  At risk: 2  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MEPSI-105 — Payment method reorder
-    Frida Ohno · In Progress · 30%
-    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-    Target next week: Focus on removing the current blocker; deprioritise nice-to-haves.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover at risk] MEPSI-108 — Loyalty perks eligibility banner
-    Ellis Marín · In Progress · 53%
-    Done this week: Waiting on a dependency from an adjacent team; escalation opened.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: Design review pending from the sibling team.
+[ON TRACK] Cart persistence across surfaces (july-2026)
+Leader Engineer: Ellis Marín
+Progress: 75% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-101
+Done this week: Cleared the staging soak; production rollout scheduled for early next week.
+Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
-[Spillover on track] MEPSI-101 — Cart persistence across surfaces
-    Ellis Marín · In Progress · 75%
-    Done this week: Cleared the staging soak; production rollout scheduled for early next week.
-    Target next week: Ship remaining PRs; start canary rollout by Wednesday.
+[ON TRACK] Search relevance re-ranker (july-2026)
+Leader Engineer: Bram Larsson
+Progress: 40% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-107
+Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Spillover on track] MEPSI-107 — Search relevance re-ranker
-    Bram Larsson · In Progress · 40%
-    Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
-    Target next week: Wrap the last integration test and hand off to QA.
+[AT RISK] Payment method reorder (july-2026)
+Leader Engineer: Frida Ohno
+Progress: 30% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-105
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
-[Done] MEPSI-100 — Homepage skeleton refresh
-    Quinn Yates · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[AT RISK] Loyalty perks eligibility banner (july-2026)
+Leader Engineer: Ellis Marín
+Progress: 53% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-108
+Done this week: Waiting on a dependency from an adjacent team; escalation opened.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MEPSI-102 — Personalised trip recommendations
-    Pia Rivas · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Purchase confirmation clarity (july-2026)
+Leader Engineer: Ava Thornton
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-103
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MEPSI-103 — Purchase confirmation clarity
-    Ava Thornton · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Personalised trip recommendations (july-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-102
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] MEPSI-104 — Refund status transparency
-    Milo Anders · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Refund status transparency (july-2026)
+Leader Engineer: Milo Anders
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-104
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Hand off to the on-call rotation and close the epic.
 
-[Done] MEPSI-106 — Passenger name-change flow
-    Ines Marchetti · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Passenger name-change flow (july-2026)
+Leader Engineer: Ines Marchetti
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-106
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Homepage skeleton refresh (july-2026)
+Leader Engineer: Quinn Yates
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MEPSI-100
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+- [Risk] Loyalty perks eligibility banner: Design review pending from the sibling team.
+  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+
+Kind Regards
+Engineering Manager

@@ -1,32 +1,53 @@
-Objectives Rollup — Kappa Enterprise Ops — Week 17
-==================================================
+Weekly Objective Update — Kappa Enterprise Ops — Week 17
 
-Kappa Enterprise Ops — Week 17 (April 22, 2026)
-Delivery rate: 50.0% (2 of 4 done)
+SUMMARY
+- On track: 0/4
+- At risk: 0 (0 red, 0 yellow)
+- Not started: 0
+- Done: 2
+- Missing updates: 2
+- Blockers / risks: 2
 
-Done: 2  |  On track: 0  |  At risk: 0  |  Blocked: 0  |  Missing: 2
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Missing update] MKAPP-100 — Partner API rate-limit v2
-    Sana Rowe · In Progress · 49%
-    Done this week: Owner was out; update will land in the next report.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MKAPP-103 — Partner billing reconciliation
-    Frida Ohno · In Progress · 69%
-    Done this week: No update was captured this week.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+[MISSING UPDATES] Partner billing reconciliation (april-2026)
+Leader Engineer: Frida Ohno
+Progress: 69% | Due: 22 Apr
+Link: https://example.invalid/objectives/MKAPP-103
+Done this week: No update was captured this week.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MKAPP-101 — Onboarding self-serve wizard
-    Rio Delacroix · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[MISSING UPDATES] Partner API rate-limit v2 (april-2026)
+Leader Engineer: Sana Rowe
+Progress: 49% | Due: 22 Apr
+Link: https://example.invalid/objectives/MKAPP-100
+Done this week: Owner was out; update will land in the next report.
+Plan for next week: Post an update by Friday capturing what shifted.
 
-[Done] MKAPP-102 — Compliance audit trail
-    Sana Rowe · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Onboarding self-serve wizard (april-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MKAPP-101
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
+
+[DONE] Compliance audit trail (april-2026)
+Leader Engineer: Sana Rowe
+Progress: 100% | Due: 22 Apr
+Link: https://example.invalid/objectives/MKAPP-102
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Partner billing reconciliation: No owner reachable this week.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+- [Risk] Partner API rate-limit v2: No owner reachable this week.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+
+Kind Regards
+Engineering Manager

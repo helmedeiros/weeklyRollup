@@ -1,37 +1,60 @@
-Objectives Rollup — Mu Content Ops — Week 6
-===========================================
+Weekly Objective Update — Mu Content Ops — Week 6
 
-Mu Content Ops — Week 6 (February 4, 2026)
-Delivery rate: 20.0% (1 of 5 done)
+SUMMARY
+- On track: 2/5
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 1
+- Missing updates: 1
+- Blockers / risks: 2
 
-Done: 1  |  On track: 2  |  At risk: 1  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MMU-102 — Publisher content freshness
-    Odin Barone · In Progress · 56%
-    Done this week: Slipped the promised design review; rescheduling for later this week.
-    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MMU-101 — Cross-locale asset governance
-    Nya Sardar · In Progress · 57%
-    Done this week: No update was captured this week.
-    Target next week: Post an update by Friday capturing what shifted.
-    Blockers: No owner reachable this week.
+[ON TRACK] Provider content ingestion QA (february-2026)
+Leader Engineer: Hiro Vasquez
+Progress: 45% | Due: 4 Feb
+Link: https://example.invalid/objectives/MMU-100
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Spillover on track] MMU-100 — Provider content ingestion QA
-    Hiro Vasquez · In Progress · 45%
-    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-    Target next week: Wrap the last integration test and hand off to QA.
+[ON TRACK] Cadence dashboard for editors (february-2026)
+Leader Engineer: Bram Larsson
+Progress: 70% | Due: 4 Feb
+Link: https://example.invalid/objectives/MMU-103
+Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
+Plan for next week: Complete the final code review and enable the feature flag globally.
 
-[Spillover on track] MMU-103 — Cadence dashboard for editors
-    Bram Larsson · In Progress · 70%
-    Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
-    Target next week: Complete the final code review and enable the feature flag globally.
+[AT RISK] Publisher content freshness (february-2026)
+Leader Engineer: Odin Barone
+Progress: 56% | Due: 4 Feb
+Link: https://example.invalid/objectives/MMU-102
+Done this week: Slipped the promised design review; rescheduling for later this week.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[Done] MMU-104 — Broken-image sentinel
-    Pia Rivas · Done · 100%
-    Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Cross-locale asset governance (february-2026)
+Leader Engineer: Nya Sardar
+Progress: 57% | Due: 4 Feb
+Link: https://example.invalid/objectives/MMU-101
+Done this week: No update was captured this week.
+Plan for next week: Post an update by Friday capturing what shifted.
+
+[DONE] Broken-image sentinel (february-2026)
+Leader Engineer: Pia Rivas
+Progress: 100% | Due: 4 Feb
+Link: https://example.invalid/objectives/MMU-104
+Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Publisher content freshness: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+- [Risk] Cross-locale asset governance: No owner reachable this week.
+  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
+
+Kind Regards
+Engineering Manager

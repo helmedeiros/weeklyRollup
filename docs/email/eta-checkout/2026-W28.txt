@@ -1,36 +1,58 @@
-Objectives Rollup — Eta Checkout — Week 28
-==========================================
+Weekly Objective Update — Eta Checkout — Week 28
 
-Eta Checkout — Week 28 (July 8, 2026)
-Delivery rate: 60.0% (3 of 5 done)
+SUMMARY
+- On track: 1/5
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 3
+- Missing updates: 0
+- Blockers / risks: 1
 
-Done: 3  |  On track: 1  |  At risk: 1  |  Blocked: 0  |  Missing: 0
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] META-102 — Personalised trip recommendations
-    Jules Cabrera · In Progress · 67%
-    Done this week: Scope grew after user testing; trimming to hit the reduced target.
-    Target next week: Reduce scope to the top-2 use cases and land a partial fix.
-    Blockers: A single reviewer is a bottleneck; needs a delegate.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Spillover on track] META-100 — Homepage skeleton refresh
-    Pia Rivas · In Progress · 32%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Wrap the last integration test and hand off to QA.
+[ON TRACK] Homepage skeleton refresh (july-2026)
+Leader Engineer: Pia Rivas
+Progress: 32% | Due: 8 Jul
+Link: https://example.invalid/objectives/META-100
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Done] META-101 — Cart persistence across surfaces
-    Rio Delacroix · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[AT RISK] Personalised trip recommendations (july-2026)
+Leader Engineer: Jules Cabrera
+Progress: 67% | Due: 8 Jul
+Link: https://example.invalid/objectives/META-102
+Done this week: Scope grew after user testing; trimming to hit the reduced target.
+Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
-[Done] META-103 — Purchase confirmation clarity
-    Odin Barone · Done · 100%
-    Done this week: Closed the final ticket in the epic and archived the working doc.
-    Target next week: Move to maintenance; capture learnings into the runbook.
+[DONE] Refund status transparency (july-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/META-104
+Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
+Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
-[Done] META-104 — Refund status transparency
-    Rio Delacroix · Done · 100%
-    Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
-    Target next week: Monitor for the next 2 weeks; no active work planned.
+[DONE] Cart persistence across surfaces (july-2026)
+Leader Engineer: Rio Delacroix
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/META-101
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] Purchase confirmation clarity (july-2026)
+Leader Engineer: Odin Barone
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/META-103
+Done this week: Closed the final ticket in the epic and archived the working doc.
+Plan for next week: Move to maintenance; capture learnings into the runbook.
+
+BLOCKERS / RISKS
+- [Risk] Personalised trip recommendations: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
+
+Kind Regards
+Engineering Manager

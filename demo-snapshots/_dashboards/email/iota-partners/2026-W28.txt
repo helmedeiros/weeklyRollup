@@ -1,37 +1,60 @@
-Objectives Rollup — Iota Partner Portal — Week 28
-=================================================
+Weekly Objective Update — Iota Partner Portal — Week 28
 
-Iota Partner Portal — Week 28 (July 8, 2026)
-Delivery rate: 40.0% (2 of 5 done)
+SUMMARY
+- On track: 1/5
+- At risk: 1 (0 red, 1 yellow)
+- Not started: 0
+- Done: 2
+- Missing updates: 1
+- Blockers / risks: 2
 
-Done: 2  |  On track: 1  |  At risk: 1  |  Blocked: 0  |  Missing: 1
+Hi team,
 
-Objective updates
------------------
+Please find the latest objective health report.
 
-[Spillover at risk] MIOTA-101 — Onboarding self-serve wizard
-    Tomo Ilves · In Progress · 78%
-    Done this week: Discovered a regression in the smoke tests that pushed the merge back.
-    Target next week: Realign with the partner team and reset the delivery date.
-    Blockers: Design review pending from the sibling team.
+OBJECTIVE UPDATES
+Sorted by status: on track, at risk, delayed, not started, missing, done.
 
-[Missing update] MIOTA-102 — Compliance audit trail
-    Pia Rivas · In Progress · 69%
-    Done this week: Update deferred pending a decision from the steering meeting.
-    Target next week: Sync with the owner and file the missing update retroactively.
-    Blockers: No owner reachable this week.
+[ON TRACK] Partner billing reconciliation (july-2026)
+Leader Engineer: Ines Marchetti
+Progress: 49% | Due: 8 Jul
+Link: https://example.invalid/objectives/MIOTA-103
+Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
+Plan for next week: Wrap the last integration test and hand off to QA.
 
-[Spillover on track] MIOTA-103 — Partner billing reconciliation
-    Ines Marchetti · In Progress · 49%
-    Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
-    Target next week: Wrap the last integration test and hand off to QA.
+[AT RISK] Onboarding self-serve wizard (july-2026)
+Leader Engineer: Tomo Ilves
+Progress: 78% | Due: 8 Jul
+Link: https://example.invalid/objectives/MIOTA-101
+Done this week: Discovered a regression in the smoke tests that pushed the merge back.
+Plan for next week: Realign with the partner team and reset the delivery date.
 
-[Done] MIOTA-100 — Partner API rate-limit v2
-    Lena Rihanna · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[MISSING UPDATES] Compliance audit trail (july-2026)
+Leader Engineer: Pia Rivas
+Progress: 69% | Due: 8 Jul
+Link: https://example.invalid/objectives/MIOTA-102
+Done this week: Update deferred pending a decision from the steering meeting.
+Plan for next week: Sync with the owner and file the missing update retroactively.
 
-[Done] MIOTA-104 — SLA breach notifier
-    Ellis Marín · Done · 100%
-    Done this week: Landed the migration cutover; no incidents in the follow-up window.
-    Target next week: Hand off to the on-call rotation and close the epic.
+[DONE] Partner API rate-limit v2 (july-2026)
+Leader Engineer: Lena Rihanna
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MIOTA-100
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+[DONE] SLA breach notifier (july-2026)
+Leader Engineer: Ellis Marín
+Progress: 100% | Due: 8 Jul
+Link: https://example.invalid/objectives/MIOTA-104
+Done this week: Landed the migration cutover; no incidents in the follow-up window.
+Plan for next week: Hand off to the on-call rotation and close the epic.
+
+BLOCKERS / RISKS
+- [Risk] Onboarding self-serve wizard: Design review pending from the sibling team.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+- [Risk] Compliance audit trail: No owner reachable this week.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+
+Kind Regards
+Engineering Manager
