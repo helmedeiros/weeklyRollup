@@ -171,19 +171,22 @@ table.teams tr:last-child td { border-bottom: none; }
 .obj-table th { background: #edf1f9; padding: 12px 16px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
 .obj-table td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; word-wrap: break-word; overflow-wrap: anywhere; }
 .obj-table tr:last-child td { border-bottom: none; }
-/* Shared column widths so the rollup table and every weekly report align vertically. */
-.obj-table .col-key      { width: 11%; }
-.obj-table .col-name     { width: 32%; }
+/* Pills inside a fixed-layout cell should size to content and center, so the STATUS
+   column renders identically whether the table sits in the rollup wrapper or one
+   level deeper inside .week-section > .week-body. */
+.obj-table th.tc, .obj-table td.tc { text-align: center; }
+.obj-table td.tc .status-pill { display: inline-flex; margin: 0 auto; }
+/* Identical column widths shared by the rollup and every weekly report so the
+   Key / Name / Leader Engineer / Status / Jira / Progress columns line up
+   vertically down the whole page. */
+.obj-table .col-key      { width: 13%; }
+.obj-table .col-name     { width: 34%; }
 .obj-table .col-le       { width: 15%; }
 .obj-table .col-status   { width: 16%; }
 .obj-table .col-jira     { width: 10%; }
-.obj-table .col-progress { width: 8%; }
-.obj-table .col-weeks    { width: 8%; }
-/* Weekly (6 cols) redistributes the rollup's 8% "weeks tracked" column across name + progress
-   so the remaining columns keep the same relative positions in both tables. */
-.obj-table-week .col-name     { width: 36%; }
-.obj-table-week .col-progress { width: 12%; }
+.obj-table .col-progress { width: 12%; }
 .obj-table td.wrap { overflow: visible; white-space: normal; }
+.weeks-badge { display: inline-block; margin-left: 8px; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 600; color: var(--slate); background: #f1f5f9; padding: 2px 6px; border-radius: 999px; letter-spacing: 0.4px; }
 .week-section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
 .week-header { width: 100%; text-align: left; background: transparent; border: none; padding: 14px 20px; font-size: 14px; font-weight: 700; color: var(--navy); cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: inherit; }
 .week-header:hover { background: #f8fafc; }
@@ -329,7 +332,7 @@ table.teams tr:last-child td { border-bottom: none; }
     <h2>Objectives in period</h2>
     <p class="section-subhead" id="detail-obj-subhead"></p>
     <div class="objectives-in-period">
-      <table class="obj-table obj-table-rollup">
+      <table class="obj-table">
         <colgroup>
           <col class="col-key">
           <col class="col-name">
@@ -337,17 +340,15 @@ table.teams tr:last-child td { border-bottom: none; }
           <col class="col-status">
           <col class="col-jira">
           <col class="col-progress">
-          <col class="col-weeks">
         </colgroup>
         <thead>
           <tr>
             <th>Key</th>
             <th>Name</th>
             <th>Leader Engineer</th>
-            <th>Status</th>
+            <th class="tc">Status</th>
             <th>Jira</th>
             <th>Progress</th>
-            <th>Weeks tracked</th>
           </tr>
         </thead>
         <tbody id="objectives-in-period-tbody"></tbody>
@@ -1011,7 +1012,7 @@ table.teams tr:last-child td { border-bottom: none; }
     const tbody = document.getElementById("objectives-in-period-tbody");
     const subhead = document.getElementById("detail-obj-subhead");
     if (teamSnapshots.length === 0) {
-      tbody.innerHTML = `<tr class="empty-row"><td colspan="7">No snapshots for this team in the selected range.</td></tr>`;
+      tbody.innerHTML = `<tr class="empty-row"><td colspan="6">No snapshots for this team in the selected range.</td></tr>`;
       subhead.textContent = "";
       return;
     }
@@ -1027,13 +1028,12 @@ table.teams tr:last-child td { border-bottom: none; }
       .sort((a, b) => (BUCKET_ORDER[a.obj.bucket] ?? 99) - (BUCKET_ORDER[b.obj.bucket] ?? 99)
         || (a.obj.key || "").localeCompare(b.obj.key || ""))
       .map(({ obj, weeks }) => `<tr>
-        <td><span class="obj-key">${escapeHtml(obj.key)}</span></td>
+        <td><span class="obj-key">${escapeHtml(obj.key)}</span><span class="weeks-badge" title="Tracked in ${weeks} weekly snapshots">${weeks} wk</span></td>
         <td>${escapeHtml(obj.name)}</td>
         <td>${escapeHtml(obj.leader_engineer)}</td>
-        <td>${bucketPill(obj.bucket)}</td>
+        <td class="tc">${bucketPill(obj.bucket)}</td>
         <td>${escapeHtml(obj.jira_status)}</td>
         <td>${escapeHtml(obj.progress)}</td>
-        <td>${weeks}</td>
       </tr>`);
     tbody.innerHTML = rows.join("");
     subhead.textContent = `${latest.size} ${pluralize(latest.size, "objective", "objectives")} tracked across ${teamSnapshots.length} ${pluralize(teamSnapshots.length, "snapshot", "snapshots")}.`;
@@ -1094,7 +1094,7 @@ table.teams tr:last-child td { border-bottom: none; }
           <td><span class="toggle">▸</span> <span class="obj-key">${escapeHtml(o.key)}</span></td>
           <td>${escapeHtml(o.name)}</td>
           <td>${escapeHtml(o.leader_engineer)}</td>
-          <td>${bucketPill(o.bucket)}</td>
+          <td class="tc">${bucketPill(o.bucket)}</td>
           <td>${escapeHtml(o.jira_status)}</td>
           <td>${escapeHtml(o.progress)}</td>
         </tr>`,
@@ -1103,7 +1103,7 @@ table.teams tr:last-child td { border-bottom: none; }
         </tr>`,
       ];
     });
-    return `<table class="obj-table obj-table-week">
+    return `<table class="obj-table">
       <colgroup>
         <col class="col-key">
         <col class="col-name">
@@ -1112,7 +1112,7 @@ table.teams tr:last-child td { border-bottom: none; }
         <col class="col-jira">
         <col class="col-progress">
       </colgroup>
-      <thead><tr><th>Key</th><th>Name</th><th>Leader Engineer</th><th>Status</th><th>Jira</th><th>Progress</th></tr></thead>
+      <thead><tr><th>Key</th><th>Name</th><th>Leader Engineer</th><th class="tc">Status</th><th>Jira</th><th>Progress</th></tr></thead>
       <tbody>${rows.join("")}</tbody>
     </table>`;
   }
