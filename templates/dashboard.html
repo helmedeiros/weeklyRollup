@@ -92,8 +92,9 @@ table.teams th { text-align: left; text-transform: uppercase; letter-spacing: 1p
 table.teams td { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
 table.teams tr:last-child td { border-bottom: none; }
 .pill { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: var(--navy); background: #eaf1fb; border: 1px solid #d0dbec; }
-.status-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-.status-pill.zero { color: #94a3b8; background: transparent; padding: 5px 0; font-weight: 500; }
+.status-cell { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; align-items: center; min-width: 560px; }
+.status-pill { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+.status-pill.zero { color: #94a3b8; background: transparent; font-weight: 500; }
 .status-pill.done { background: #dcf3e0; color: var(--green); }
 .status-pill.spillover_on_track { background: #d1f2ee; color: #0f766e; }
 .status-pill.spillover_at_risk { background: #fdecc9; color: #b45309; }
@@ -178,11 +179,13 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">{{ row.business_unit }}</span></td>
   <td>{{ row.total_objectives }}</td>
   <td>
-    {% if row.done %}<span class="status-pill done">{{ row.done }} Done</span>{% else %}<span class="status-pill zero">0 Done</span>{% endif %}
-    {% if row.spillover_on_track %}<span class="status-pill spillover_on_track">{{ row.spillover_on_track }} Spillover Track</span>{% else %}<span class="status-pill zero">0 Track</span>{% endif %}
-    {% if row.spillover_at_risk %}<span class="status-pill spillover_at_risk">{{ row.spillover_at_risk }} Spillover Risk</span>{% else %}<span class="status-pill zero">0 Risk</span>{% endif %}
-    {% if row.spillover_blocked %}<span class="status-pill spillover_blocked">{{ row.spillover_blocked }} Spillover Blocked</span>{% else %}<span class="status-pill zero">0 Blocked</span>{% endif %}
-    {% if row.missing %}<span class="status-pill missing">{{ row.missing }} Missing</span>{% else %}<span class="status-pill zero">0 Missing</span>{% endif %}
+    <div class="status-cell">
+      {% if row.done %}<span class="status-pill done">{{ row.done }} Done</span>{% else %}<span class="status-pill zero">0 Done</span>{% endif %}
+      {% if row.spillover_on_track %}<span class="status-pill spillover_on_track">{{ row.spillover_on_track }} Spillover Track</span>{% else %}<span class="status-pill zero">0 Track</span>{% endif %}
+      {% if row.spillover_at_risk %}<span class="status-pill spillover_at_risk">{{ row.spillover_at_risk }} Spillover Risk</span>{% else %}<span class="status-pill zero">0 Risk</span>{% endif %}
+      {% if row.spillover_blocked %}<span class="status-pill spillover_blocked">{{ row.spillover_blocked }} Spillover Blocked</span>{% else %}<span class="status-pill zero">0 Blocked</span>{% endif %}
+      {% if row.missing %}<span class="status-pill missing">{{ row.missing }} Missing</span>{% else %}<span class="status-pill zero">0 Missing</span>{% endif %}
+    </div>
   </td>
   <td>
     <div class="delivery-cell {% if row.delivery_rate < 0.8 %}warn{% endif %}">

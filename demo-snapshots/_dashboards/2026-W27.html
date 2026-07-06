@@ -92,8 +92,9 @@ table.teams th { text-align: left; text-transform: uppercase; letter-spacing: 1p
 table.teams td { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
 table.teams tr:last-child td { border-bottom: none; }
 .pill { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: var(--navy); background: #eaf1fb; border: 1px solid #d0dbec; }
-.status-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-.status-pill.zero { color: #94a3b8; background: transparent; padding: 5px 0; font-weight: 500; }
+.status-cell { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; align-items: center; min-width: 560px; }
+.status-pill { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+.status-pill.zero { color: #94a3b8; background: transparent; font-weight: 500; }
 .status-pill.done { background: #dcf3e0; color: var(--green); }
 .status-pill.spillover_on_track { background: #d1f2ee; color: #0f766e; }
 .status-pill.spillover_at_risk { background: #fdecc9; color: #b45309; }
@@ -178,7 +179,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">Platform</span></td>
   <td>8</td>
   <td>
-<span class="status-pill done">8 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">8 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell ">
       <div class="bar"><div style="width: 100.0%"></div></div>
@@ -191,7 +194,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">Platform</span></td>
   <td>5</td>
   <td>
-<span class="status-pill done">5 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">5 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell ">
       <div class="bar"><div style="width: 100.0%"></div></div>
@@ -204,7 +209,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">B2C</span></td>
   <td>5</td>
   <td>
-<span class="status-pill done">5 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">5 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell ">
       <div class="bar"><div style="width: 100.0%"></div></div>
@@ -217,7 +224,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">B2B</span></td>
   <td>4</td>
   <td>
-<span class="status-pill done">4 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">4 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell ">
       <div class="bar"><div style="width: 100.0%"></div></div>
@@ -230,7 +239,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">Platform</span></td>
   <td>7</td>
   <td>
-<span class="status-pill done">6 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">6 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell ">
       <div class="bar"><div style="width: 85.7%"></div></div>
@@ -243,7 +254,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">Platform</span></td>
   <td>6</td>
   <td>
-<span class="status-pill done">5 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill spillover_at_risk">1 Spillover Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">5 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill spillover_at_risk">1 Spillover Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell ">
       <div class="bar"><div style="width: 83.3%"></div></div>
@@ -256,7 +269,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">B2B</span></td>
   <td>5</td>
   <td>
-<span class="status-pill done">4 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">4 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell ">
       <div class="bar"><div style="width: 80.0%"></div></div>
@@ -269,7 +284,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">B2C</span></td>
   <td>4</td>
   <td>
-<span class="status-pill done">3 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill spillover_blocked">1 Spillover Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">3 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill spillover_blocked">1 Spillover Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell warn">
       <div class="bar"><div style="width: 75.0%"></div></div>
@@ -282,7 +299,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">B2C</span></td>
   <td>9</td>
   <td>
-<span class="status-pill done">6 Done</span><span class="status-pill spillover_on_track">2 Spillover Track</span><span class="status-pill spillover_at_risk">1 Spillover Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">6 Done</span><span class="status-pill spillover_on_track">2 Spillover Track</span><span class="status-pill spillover_at_risk">1 Spillover Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell warn">
       <div class="bar"><div style="width: 66.7%"></div></div>
@@ -295,7 +314,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">Coverage</span></td>
   <td>6</td>
   <td>
-<span class="status-pill done">4 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill spillover_at_risk">1 Spillover Risk</span><span class="status-pill spillover_blocked">1 Spillover Blocked</span><span class="status-pill zero">0 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">4 Done</span><span class="status-pill zero">0 Track</span><span class="status-pill spillover_at_risk">1 Spillover Risk</span><span class="status-pill spillover_blocked">1 Spillover Blocked</span><span class="status-pill zero">0 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell warn">
       <div class="bar"><div style="width: 66.7%"></div></div>
@@ -308,7 +329,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">B2C</span></td>
   <td>6</td>
   <td>
-<span class="status-pill done">4 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill missing">1 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">4 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill missing">1 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell warn">
       <div class="bar"><div style="width: 66.7%"></div></div>
@@ -321,7 +344,9 @@ table.teams tr:last-child td { border-bottom: none; }
   <td><span class="pill">Coverage</span></td>
   <td>5</td>
   <td>
-<span class="status-pill done">3 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill missing">1 Missing</span>  </td>
+    <div class="status-cell">
+<span class="status-pill done">3 Done</span><span class="status-pill spillover_on_track">1 Spillover Track</span><span class="status-pill zero">0 Risk</span><span class="status-pill zero">0 Blocked</span><span class="status-pill missing">1 Missing</span>    </div>
+  </td>
   <td>
     <div class="delivery-cell warn">
       <div class="bar"><div style="width: 60.0%"></div></div>
