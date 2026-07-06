@@ -417,7 +417,7 @@ table.teams tr:last-child td { border-bottom: none; }
   const snapshots = JSON.parse(document.getElementById("snapshots-json").textContent);
   const defaultStart = "2026-07-01";
   const defaultEnd = "2026-07-31";
-  const BUILD_VERSION = "20260706124230";
+  const BUILD_VERSION = "20260706125353";
 
   const ALL_BUSINESS_UNITS = Array.from(new Set(snapshots.map(s => s.team.business_unit))).sort();
   const ALL_TEAMS = (() => {
@@ -1076,19 +1076,20 @@ table.teams tr:last-child td { border-bottom: none; }
       section.appendChild(header);
       const body = document.createElement("div");
       body.className = "week-body";
-      body.innerHTML = renderWeekTable(s.objectives || []);
+      const weekLabel = `${s.week.iso_year}-W${String(s.week.iso_week).padStart(2, "0")}`;
+      body.innerHTML = renderWeekTable(s.objectives || [], weekLabel);
       section.appendChild(body);
       container.appendChild(section);
     });
   }
 
-  function renderWeekTable(objectives) {
+  function renderWeekTable(objectives, weekLabel) {
     if (!objectives.length) return `<p style="color: var(--slate); padding: 16px 20px;">No objectives.</p>`;
     const sorted = objectives
       .slice()
       .sort((a, b) => (BUCKET_ORDER[a.bucket] ?? 99) - (BUCKET_ORDER[b.bucket] ?? 99) || (a.key || "").localeCompare(b.key || ""));
     const rows = sorted.flatMap((o, idx) => {
-      const rowId = `wr-${idx}`;
+      const rowId = `wr-${weekLabel}-${idx}`;
       return [
         `<tr class="week-row expandable" data-target="${rowId}">
           <td><span class="toggle">▸</span> <span class="obj-key">${escapeHtml(o.key)}</span></td>
