@@ -167,10 +167,23 @@ table.teams tr:last-child td { border-bottom: none; }
 .section-block .section-subhead { color: var(--slate); font-size: 13px; margin: 0 0 12px; }
 .objectives-in-period, .week-body { background: var(--panel); }
 .objectives-in-period { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.objectives-in-period table, .week-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.objectives-in-period th, .week-table th { background: #edf1f9; padding: 12px 16px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
-.objectives-in-period td, .week-table td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; }
-.objectives-in-period tr:last-child td, .week-table tr:last-child td { border-bottom: none; }
+.obj-table { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
+.obj-table th { background: #edf1f9; padding: 12px 16px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+.obj-table td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; word-wrap: break-word; overflow-wrap: anywhere; }
+.obj-table tr:last-child td { border-bottom: none; }
+/* Shared column widths so the rollup table and every weekly report align vertically. */
+.obj-table .col-key      { width: 11%; }
+.obj-table .col-name     { width: 32%; }
+.obj-table .col-le       { width: 15%; }
+.obj-table .col-status   { width: 16%; }
+.obj-table .col-jira     { width: 10%; }
+.obj-table .col-progress { width: 8%; }
+.obj-table .col-weeks    { width: 8%; }
+/* Weekly (6 cols) redistributes the rollup's 8% "weeks tracked" column across name + progress
+   so the remaining columns keep the same relative positions in both tables. */
+.obj-table-week .col-name     { width: 36%; }
+.obj-table-week .col-progress { width: 12%; }
+.obj-table td.wrap { overflow: visible; white-space: normal; }
 .week-section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
 .week-header { width: 100%; text-align: left; background: transparent; border: none; padding: 14px 20px; font-size: 14px; font-weight: 700; color: var(--navy); cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: inherit; }
 .week-header:hover { background: #f8fafc; }
@@ -316,14 +329,23 @@ table.teams tr:last-child td { border-bottom: none; }
     <h2>Objectives in period</h2>
     <p class="section-subhead" id="detail-obj-subhead"></p>
     <div class="objectives-in-period">
-      <table>
+      <table class="obj-table obj-table-rollup">
+        <colgroup>
+          <col class="col-key">
+          <col class="col-name">
+          <col class="col-le">
+          <col class="col-status">
+          <col class="col-jira">
+          <col class="col-progress">
+          <col class="col-weeks">
+        </colgroup>
         <thead>
           <tr>
             <th>Key</th>
             <th>Name</th>
             <th>Leader Engineer</th>
-            <th>Latest status</th>
-            <th>Latest Jira status</th>
+            <th>Status</th>
+            <th>Jira</th>
             <th>Progress</th>
             <th>Weeks tracked</th>
           </tr>
@@ -1071,9 +1093,9 @@ table.teams tr:last-child td { border-bottom: none; }
         `<tr class="week-row expandable" data-target="${rowId}">
           <td><span class="toggle">▸</span> <span class="obj-key">${escapeHtml(o.key)}</span></td>
           <td>${escapeHtml(o.name)}</td>
+          <td>${escapeHtml(o.leader_engineer)}</td>
           <td>${bucketPill(o.bucket)}</td>
           <td>${escapeHtml(o.jira_status)}</td>
-          <td>${escapeHtml(o.leader_engineer)}</td>
           <td>${escapeHtml(o.progress)}</td>
         </tr>`,
         `<tr class="week-row-detail" id="${rowId}" hidden>
@@ -1081,8 +1103,16 @@ table.teams tr:last-child td { border-bottom: none; }
         </tr>`,
       ];
     });
-    return `<table class="week-table">
-      <thead><tr><th>Key</th><th>Name</th><th>Status</th><th>Jira</th><th>Leader Engineer</th><th>Progress</th></tr></thead>
+    return `<table class="obj-table obj-table-week">
+      <colgroup>
+        <col class="col-key">
+        <col class="col-name">
+        <col class="col-le">
+        <col class="col-status">
+        <col class="col-jira">
+        <col class="col-progress">
+      </colgroup>
+      <thead><tr><th>Key</th><th>Name</th><th>Leader Engineer</th><th>Status</th><th>Jira</th><th>Progress</th></tr></thead>
       <tbody>${rows.join("")}</tbody>
     </table>`;
   }
