@@ -100,28 +100,28 @@ class MenuRenderingTest(unittest.TestCase):
     def test_menu_lists_epics_with_status_and_dri(self):
         epics = [
             EpicState(
-                key="COP-318",
-                summary="Improve user Opt-In rates",
-                url="https://example.atlassian.net/browse/COP-318",
-                dri_name="Thiago Moreira",
+                key="DEMO-200",
+                summary="Onboarding conversion refresh",
+                url="https://example.atlassian.net/browse/DEMO-200",
+                dri_name="Ada Lovelace",
                 update_status="missing",
                 update_summary="No DRI weekly update",
             ),
             EpicState(
-                key="COP-320",
-                summary="Train Class Confidence and Upgrades",
-                url="https://example.atlassian.net/browse/COP-320",
-                dri_name="Gabriel Castro",
+                key="DEMO-300",
+                summary="Amenities disclosure V2",
+                url="https://example.atlassian.net/browse/DEMO-300",
+                dri_name="Grace Hopper",
                 update_status="valid \U0001F7E2",
-                update_summary="Latest valid update by Gabriel Castro",
+                update_summary="Latest valid update by Grace Hopper",
             ),
         ]
         menu = render_menu(epics)
         self.assertIn(" 1. [missing", menu)
-        self.assertIn("COP-318", menu)
-        self.assertIn("Thiago Moreira", menu)
+        self.assertIn("DEMO-200", menu)
+        self.assertIn("Ada Lovelace", menu)
         self.assertIn(" 2. [valid", menu)
-        self.assertIn("Gabriel Castro", menu)
+        self.assertIn("Grace Hopper", menu)
 
 
 if __name__ == "__main__":

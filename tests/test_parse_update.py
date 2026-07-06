@@ -477,7 +477,7 @@ class AdfEmojiTest(unittest.TestCase):
                 self.assertEqual(parsed.blockers, "", f"blockers not cleared for {none_value!r}")
 
     def test_bare_next_heading_maps_to_plan(self):
-        # Regression: Thiago/Gabriel wrote a "Next" bare-label heading; without
+        # Regression: two DRIs wrote a bare "Next" bare-label heading; without
         # this alias the plan section was empty and the update was malformed.
         parsed = parse_update(
             "Status\n\U0001F7E2\n"
@@ -491,7 +491,7 @@ class AdfEmojiTest(unittest.TestCase):
         self.assertIn("Test in production", parsed.plan_for_next_week)
 
     def test_planned_for_next_week_heading_maps_to_plan(self):
-        # Regression: Madhura's update wrote "Planned For Next Week" as a heading
+        # Regression: a DRI wrote "Planned For Next Week" as a heading
         # without a colon. The plan section was absorbed into done and the
         # update was marked malformed.
         parsed = parse_update(
@@ -536,14 +536,14 @@ class AdfEmojiTest(unittest.TestCase):
                         {"type": "text", "text": "Switched focus to "},
                         {
                             "type": "inlineCard",
-                            "attrs": {"url": "https://example.atlassian.net/browse/ACTIN-757"},
+                            "attrs": {"url": "https://example.atlassian.net/browse/DEMO-100"},
                         },
                         {"type": "text", "text": " this week."},
                     ],
                 }
             ],
         }
-        self.assertIn("Switched focus to ACTIN-757 this week.", comment_body_to_text(adf))
+        self.assertIn("Switched focus to DEMO-100 this week.", comment_body_to_text(adf))
 
     def test_adf_inline_card_non_jira_url_falls_back_to_url(self):
         adf = {

@@ -720,7 +720,7 @@ _JIRA_BROWSE_RE = re.compile(r"/browse/([A-Z][A-Z0-9_]+-\d+)\b")
 def _short_card_label(url: str) -> str:
     """Render a Jira/Confluence smart-card URL as a short readable token.
 
-    Jira issue URLs render as the issue key (ACTIN-757). Other URLs return
+    Jira issue URLs render as the issue key (e.g. DEMO-100). Other URLs return
     empty so the caller falls back to the raw URL.
     """
     if not url:
