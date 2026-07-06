@@ -9,10 +9,10 @@
     "iso_year": 2026,
     "iso_week": 27,
     "target_date": "2026-06-30",
-    "month_label": "mission-june-2026"
+    "month_label": "objective-june-2026"
   },
   "totals": {
-    "missions": 6,
+    "objectives": 6,
     "delivery_rate": 0.6667,
     "done": 4,
     "spillover_on_track": 1,
@@ -20,12 +20,12 @@
     "spillover_blocked": 0,
     "missing": 1
   },
-  "missions": [
+  "objectives": [
     {
       "key": "MTHET-101",
       "name": "Cart persistence across surfaces",
-      "url": "https://example.invalid/missions/MTHET-101",
-      "dri": "Cai Nguyen",
+      "url": "https://example.invalid/objectives/MTHET-101",
+      "leader_engineer": "Cai Nguyen",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -41,8 +41,8 @@
     {
       "key": "MTHET-102",
       "name": "Personalised trip recommendations",
-      "url": "https://example.invalid/missions/MTHET-102",
-      "dri": "Ava Thornton",
+      "url": "https://example.invalid/objectives/MTHET-102",
+      "leader_engineer": "Ava Thornton",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -58,8 +58,8 @@
     {
       "key": "MTHET-103",
       "name": "Purchase confirmation clarity",
-      "url": "https://example.invalid/missions/MTHET-103",
-      "dri": "Kai Ostberg",
+      "url": "https://example.invalid/objectives/MTHET-103",
+      "leader_engineer": "Kai Ostberg",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -75,8 +75,8 @@
     {
       "key": "MTHET-104",
       "name": "Refund status transparency",
-      "url": "https://example.invalid/missions/MTHET-104",
-      "dri": "Ellis Marín",
+      "url": "https://example.invalid/objectives/MTHET-104",
+      "leader_engineer": "Ellis Marín",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -92,8 +92,8 @@
     {
       "key": "MTHET-105",
       "name": "Homepage skeleton refresh",
-      "url": "https://example.invalid/missions/MTHET-105",
-      "dri": "Pia Rivas",
+      "url": "https://example.invalid/objectives/MTHET-105",
+      "leader_engineer": "Pia Rivas",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -109,8 +109,8 @@
     {
       "key": "MTHET-106",
       "name": "Cart persistence across surfaces",
-      "url": "https://example.invalid/missions/MTHET-106",
-      "dri": "Milo Anders",
+      "url": "https://example.invalid/objectives/MTHET-106",
+      "leader_engineer": "Milo Anders",
       "status": "Missing",
       "jira_status": "In Progress",
       "is_done": false,

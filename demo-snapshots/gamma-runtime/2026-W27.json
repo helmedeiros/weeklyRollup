@@ -9,10 +9,10 @@
     "iso_year": 2026,
     "iso_week": 27,
     "target_date": "2026-06-30",
-    "month_label": "mission-june-2026"
+    "month_label": "objective-june-2026"
   },
   "totals": {
-    "missions": 6,
+    "objectives": 6,
     "delivery_rate": 0.8333,
     "done": 5,
     "spillover_on_track": 0,
@@ -20,12 +20,12 @@
     "spillover_blocked": 0,
     "missing": 0
   },
-  "missions": [
+  "objectives": [
     {
       "key": "MGAMM-101",
       "name": "Feature flag rollout guardrails",
-      "url": "https://example.invalid/missions/MGAMM-101",
-      "dri": "Tomo Ilves",
+      "url": "https://example.invalid/objectives/MGAMM-101",
+      "leader_engineer": "Tomo Ilves",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -41,8 +41,8 @@
     {
       "key": "MGAMM-102",
       "name": "Golden-path SLO board",
-      "url": "https://example.invalid/missions/MGAMM-102",
-      "dri": "Odin Barone",
+      "url": "https://example.invalid/objectives/MGAMM-102",
+      "leader_engineer": "Odin Barone",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -58,8 +58,8 @@
     {
       "key": "MGAMM-103",
       "name": "Observability sampling refresh",
-      "url": "https://example.invalid/missions/MGAMM-103",
-      "dri": "Ellis Marín",
+      "url": "https://example.invalid/objectives/MGAMM-103",
+      "leader_engineer": "Ellis Marín",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -75,8 +75,8 @@
     {
       "key": "MGAMM-104",
       "name": "Warm-cache eviction policy",
-      "url": "https://example.invalid/missions/MGAMM-104",
-      "dri": "Cai Nguyen",
+      "url": "https://example.invalid/objectives/MGAMM-104",
+      "leader_engineer": "Cai Nguyen",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -92,8 +92,8 @@
     {
       "key": "MGAMM-105",
       "name": "Zero-downtime restart choreography",
-      "url": "https://example.invalid/missions/MGAMM-105",
-      "dri": "Frida Ohno",
+      "url": "https://example.invalid/objectives/MGAMM-105",
+      "leader_engineer": "Frida Ohno",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -109,8 +109,8 @@
     {
       "key": "MGAMM-106",
       "name": "Feature flag rollout guardrails",
-      "url": "https://example.invalid/missions/MGAMM-106",
-      "dri": "Dara Okonjo",
+      "url": "https://example.invalid/objectives/MGAMM-106",
+      "leader_engineer": "Dara Okonjo",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,

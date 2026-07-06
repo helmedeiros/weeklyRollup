@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Missions Summary — Week 27</title>
+<title>Objectives Summary — Week 27</title>
 <style>
 :root {
   --navy: #132968;
@@ -108,8 +108,8 @@ table.teams tr:last-child td { border-bottom: none; }
 </head>
 <body>
 <div class="eyebrow">Week 27 leadership view</div>
-<h1>June 2026 Missions Summary</h1>
-<p class="subhead">Team delivery, status mix, and mission risks from the latest Week 27 snapshot.</p>
+<h1>June 2026 Objectives Summary</h1>
+<p class="subhead">Team delivery, status mix, and objective risks from the latest Week 27 snapshot.</p>
 <div class="section-divider"></div>
 
 <div class="filter-bar" id="bu-filter">
@@ -123,17 +123,17 @@ table.teams tr:last-child td { border-bottom: none; }
 
 <div class="top-cards">
   <div class="card">
-    <h3>Mission delivery rate</h3>
+    <h3>Objective delivery rate</h3>
     <div class="delivery-rate" id="delivery-rate">81.4%</div>
     <div class="progress"><div id="delivery-bar" style="width: 81.4%"></div></div>
-    <div class="progress-note" id="delivery-note">57 of 70 missions done.</div>
+    <div class="progress-note" id="delivery-note">57 of 70 objectives done.</div>
   </div>
   <div class="card">
     <h3>Scope</h3>
     <div class="desc">Current filter coverage</div>
     <div class="scope-inner">
       <div class="scope-box"><div class="num" id="scope-teams">12</div><div class="label">Teams</div></div>
-      <div class="scope-box"><div class="num" id="scope-missions">70</div><div class="label">Missions</div></div>
+      <div class="scope-box"><div class="num" id="scope-objectives">70</div><div class="label">Objectives</div></div>
     </div>
   </div>
   <div class="card">
@@ -152,7 +152,7 @@ table.teams tr:last-child td { border-bottom: none; }
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;">
   <div>
     <div style="font-size:18px;font-weight:700;color:var(--navy);">Team delivery table</div>
-    <div class="subhead" id="team-count-note">70 missions across 12 teams.</div>
+    <div class="subhead" id="team-count-note">70 objectives across 12 teams.</div>
   </div>
   <div class="legend">
     <span><span class="dot" style="background:var(--red)"></span>Spillover Blocked</span>
@@ -333,7 +333,7 @@ table.teams tr:last-child td { border-bottom: none; }
 </table>
 </div>
 
-<script id="aggregate-json" type="application/json">{"schema_version": 1, "week": {"iso_year": 2026, "iso_week": 27, "target_date": "2026-06-30", "month_label": "mission-june-2026"}, "totals": {"teams": 12, "missions": 70, "delivery_rate": 0.8143, "done": 57, "spillover_on_track": 6, "spillover_at_risk": 3, "spillover_blocked": 2, "missing": 2}, "business_units": [{"business_unit": "B2B", "team_count": 2, "total_missions": 9, "delivery_rate": 0.8889, "done": 8, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"business_unit": "B2C", "team_count": 4, "total_missions": 24, "delivery_rate": 0.75, "done": 18, "spillover_on_track": 3, "spillover_at_risk": 1, "spillover_blocked": 1, "missing": 1}, {"business_unit": "Coverage", "team_count": 2, "total_missions": 11, "delivery_rate": 0.6364, "done": 7, "spillover_on_track": 1, "spillover_at_risk": 1, "spillover_blocked": 1, "missing": 1}, {"business_unit": "Platform", "team_count": 4, "total_missions": 26, "delivery_rate": 0.9231, "done": 24, "spillover_on_track": 1, "spillover_at_risk": 1, "spillover_blocked": 0, "missing": 0}], "teams": [{"team_id": "alpha-foundations", "team_name": "Alpha Foundations", "business_unit": "Platform", "total_missions": 8, "delivery_rate": 1.0, "done": 8, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "delta-data-platform", "team_name": "Delta Data Platform", "business_unit": "Platform", "total_missions": 5, "delivery_rate": 1.0, "done": 5, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "eta-checkout", "team_name": "Eta Checkout", "business_unit": "B2C", "total_missions": 5, "delivery_rate": 1.0, "done": 5, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "kappa-enterprise", "team_name": "Kappa Enterprise Ops", "business_unit": "B2B", "total_missions": 4, "delivery_rate": 1.0, "done": 4, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "beta-payments", "team_name": "Beta Payments Core", "business_unit": "Platform", "total_missions": 7, "delivery_rate": 0.8571, "done": 6, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "gamma-runtime", "team_name": "Gamma Runtime", "business_unit": "Platform", "total_missions": 6, "delivery_rate": 0.8333, "done": 5, "spillover_on_track": 0, "spillover_at_risk": 1, "spillover_blocked": 0, "missing": 0}, {"team_id": "iota-partners", "team_name": "Iota Partner Portal", "business_unit": "B2B", "total_missions": 5, "delivery_rate": 0.8, "done": 4, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "zeta-search", "team_name": "Zeta Search Discovery", "business_unit": "B2C", "total_missions": 4, "delivery_rate": 0.75, "done": 3, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 1, "missing": 0}, {"team_id": "epsilon-growth", "team_name": "Epsilon Growth", "business_unit": "B2C", "total_missions": 9, "delivery_rate": 0.6667, "done": 6, "spillover_on_track": 2, "spillover_at_risk": 1, "spillover_blocked": 0, "missing": 0}, {"team_id": "lambda-ingestion", "team_name": "Lambda Ingestion", "business_unit": "Coverage", "total_missions": 6, "delivery_rate": 0.6667, "done": 4, "spillover_on_track": 0, "spillover_at_risk": 1, "spillover_blocked": 1, "missing": 0}, {"team_id": "theta-post-booking", "team_name": "Theta Post-Booking", "business_unit": "B2C", "total_missions": 6, "delivery_rate": 0.6667, "done": 4, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 1}, {"team_id": "mu-content-ops", "team_name": "Mu Content Ops", "business_unit": "Coverage", "total_missions": 5, "delivery_rate": 0.6, "done": 3, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 1}]}</script>
+<script id="aggregate-json" type="application/json">{"schema_version": 1, "week": {"iso_year": 2026, "iso_week": 27, "target_date": "2026-06-30", "month_label": "objective-june-2026"}, "totals": {"teams": 12, "objectives": 70, "delivery_rate": 0.8143, "done": 57, "spillover_on_track": 6, "spillover_at_risk": 3, "spillover_blocked": 2, "missing": 2}, "business_units": [{"business_unit": "B2B", "team_count": 2, "total_objectives": 9, "delivery_rate": 0.8889, "done": 8, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"business_unit": "B2C", "team_count": 4, "total_objectives": 24, "delivery_rate": 0.75, "done": 18, "spillover_on_track": 3, "spillover_at_risk": 1, "spillover_blocked": 1, "missing": 1}, {"business_unit": "Coverage", "team_count": 2, "total_objectives": 11, "delivery_rate": 0.6364, "done": 7, "spillover_on_track": 1, "spillover_at_risk": 1, "spillover_blocked": 1, "missing": 1}, {"business_unit": "Platform", "team_count": 4, "total_objectives": 26, "delivery_rate": 0.9231, "done": 24, "spillover_on_track": 1, "spillover_at_risk": 1, "spillover_blocked": 0, "missing": 0}], "teams": [{"team_id": "alpha-foundations", "team_name": "Alpha Foundations", "business_unit": "Platform", "total_objectives": 8, "delivery_rate": 1.0, "done": 8, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "delta-data-platform", "team_name": "Delta Data Platform", "business_unit": "Platform", "total_objectives": 5, "delivery_rate": 1.0, "done": 5, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "eta-checkout", "team_name": "Eta Checkout", "business_unit": "B2C", "total_objectives": 5, "delivery_rate": 1.0, "done": 5, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "kappa-enterprise", "team_name": "Kappa Enterprise Ops", "business_unit": "B2B", "total_objectives": 4, "delivery_rate": 1.0, "done": 4, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "beta-payments", "team_name": "Beta Payments Core", "business_unit": "Platform", "total_objectives": 7, "delivery_rate": 0.8571, "done": 6, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "gamma-runtime", "team_name": "Gamma Runtime", "business_unit": "Platform", "total_objectives": 6, "delivery_rate": 0.8333, "done": 5, "spillover_on_track": 0, "spillover_at_risk": 1, "spillover_blocked": 0, "missing": 0}, {"team_id": "iota-partners", "team_name": "Iota Partner Portal", "business_unit": "B2B", "total_objectives": 5, "delivery_rate": 0.8, "done": 4, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 0}, {"team_id": "zeta-search", "team_name": "Zeta Search Discovery", "business_unit": "B2C", "total_objectives": 4, "delivery_rate": 0.75, "done": 3, "spillover_on_track": 0, "spillover_at_risk": 0, "spillover_blocked": 1, "missing": 0}, {"team_id": "epsilon-growth", "team_name": "Epsilon Growth", "business_unit": "B2C", "total_objectives": 9, "delivery_rate": 0.6667, "done": 6, "spillover_on_track": 2, "spillover_at_risk": 1, "spillover_blocked": 0, "missing": 0}, {"team_id": "lambda-ingestion", "team_name": "Lambda Ingestion", "business_unit": "Coverage", "total_objectives": 6, "delivery_rate": 0.6667, "done": 4, "spillover_on_track": 0, "spillover_at_risk": 1, "spillover_blocked": 1, "missing": 0}, {"team_id": "theta-post-booking", "team_name": "Theta Post-Booking", "business_unit": "B2C", "total_objectives": 6, "delivery_rate": 0.6667, "done": 4, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 1}, {"team_id": "mu-content-ops", "team_name": "Mu Content Ops", "business_unit": "Coverage", "total_objectives": 5, "delivery_rate": 0.6, "done": 3, "spillover_on_track": 1, "spillover_at_risk": 0, "spillover_blocked": 0, "missing": 1}]}</script>
 <script>
 (function () {
   const raw = document.getElementById('aggregate-json').textContent;
@@ -345,13 +345,13 @@ table.teams tr:last-child td { border-bottom: none; }
   function applyFilter(bu) {
     const buRow = bu === '__all__' ? aggregate.totals : aggregate.business_units.find(x => x.business_unit === bu);
     if (!buRow) return;
-    const missions = (buRow.done || 0) + (buRow.spillover_on_track || 0) + (buRow.spillover_at_risk || 0) + (buRow.spillover_blocked || 0) + (buRow.missing || 0);
-    const rate = missions ? (buRow.done || 0) / missions : 0;
+    const objectives = (buRow.done || 0) + (buRow.spillover_on_track || 0) + (buRow.spillover_at_risk || 0) + (buRow.spillover_blocked || 0) + (buRow.missing || 0);
+    const rate = objectives ? (buRow.done || 0) / objectives : 0;
     document.getElementById('delivery-rate').textContent = (rate * 100).toFixed(1) + '%';
     document.getElementById('delivery-bar').style.width = (rate * 100).toFixed(1) + '%';
-    document.getElementById('delivery-note').textContent = (buRow.done || 0) + ' of ' + missions + ' missions done.';
+    document.getElementById('delivery-note').textContent = (buRow.done || 0) + ' of ' + objectives + ' objectives done.';
     document.getElementById('scope-teams').textContent = bu === '__all__' ? aggregate.totals.teams : buRow.team_count;
-    document.getElementById('scope-missions').textContent = missions;
+    document.getElementById('scope-objectives').textContent = objectives;
     totals.forEach(node => {
       const role = node.getAttribute('data-role');
       node.textContent = buRow[role] || 0;
@@ -360,7 +360,7 @@ table.teams tr:last-child td { border-bottom: none; }
       row.style.display = (bu === '__all__' || row.getAttribute('data-bu') === bu) ? '' : 'none';
     });
     document.getElementById('team-count-note').textContent =
-      missions + ' missions across ' + (bu === '__all__' ? aggregate.totals.teams : buRow.team_count) + ' teams.';
+      objectives + ' objectives across ' + (bu === '__all__' ? aggregate.totals.teams : buRow.team_count) + ' teams.';
   }
 
   buttons.forEach(btn => {

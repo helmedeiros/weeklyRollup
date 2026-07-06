@@ -9,10 +9,10 @@
     "iso_year": 2026,
     "iso_week": 27,
     "target_date": "2026-06-30",
-    "month_label": "mission-june-2026"
+    "month_label": "objective-june-2026"
   },
   "totals": {
-    "missions": 4,
+    "objectives": 4,
     "delivery_rate": 1.0,
     "done": 4,
     "spillover_on_track": 0,
@@ -20,12 +20,12 @@
     "spillover_blocked": 0,
     "missing": 0
   },
-  "missions": [
+  "objectives": [
     {
       "key": "MKAPP-101",
       "name": "Onboarding self-serve wizard",
-      "url": "https://example.invalid/missions/MKAPP-101",
-      "dri": "Rio Delacroix",
+      "url": "https://example.invalid/objectives/MKAPP-101",
+      "leader_engineer": "Rio Delacroix",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -41,8 +41,8 @@
     {
       "key": "MKAPP-102",
       "name": "Compliance audit trail",
-      "url": "https://example.invalid/missions/MKAPP-102",
-      "dri": "Gali Tomori",
+      "url": "https://example.invalid/objectives/MKAPP-102",
+      "leader_engineer": "Gali Tomori",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -58,8 +58,8 @@
     {
       "key": "MKAPP-103",
       "name": "Partner billing reconciliation",
-      "url": "https://example.invalid/missions/MKAPP-103",
-      "dri": "Ellis Marín",
+      "url": "https://example.invalid/objectives/MKAPP-103",
+      "leader_engineer": "Ellis Marín",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -75,8 +75,8 @@
     {
       "key": "MKAPP-104",
       "name": "Partner API rate-limit v2",
-      "url": "https://example.invalid/missions/MKAPP-104",
-      "dri": "Ava Thornton",
+      "url": "https://example.invalid/objectives/MKAPP-104",
+      "leader_engineer": "Ava Thornton",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,

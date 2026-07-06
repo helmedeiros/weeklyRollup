@@ -9,10 +9,10 @@
     "iso_year": 2026,
     "iso_week": 27,
     "target_date": "2026-06-30",
-    "month_label": "mission-june-2026"
+    "month_label": "objective-june-2026"
   },
   "totals": {
-    "missions": 4,
+    "objectives": 4,
     "delivery_rate": 0.75,
     "done": 3,
     "spillover_on_track": 0,
@@ -20,12 +20,12 @@
     "spillover_blocked": 1,
     "missing": 0
   },
-  "missions": [
+  "objectives": [
     {
       "key": "MZETA-101",
       "name": "Cart persistence across surfaces",
-      "url": "https://example.invalid/missions/MZETA-101",
-      "dri": "Jules Cabrera",
+      "url": "https://example.invalid/objectives/MZETA-101",
+      "leader_engineer": "Jules Cabrera",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -41,8 +41,8 @@
     {
       "key": "MZETA-102",
       "name": "Personalised trip recommendations",
-      "url": "https://example.invalid/missions/MZETA-102",
-      "dri": "Pia Rivas",
+      "url": "https://example.invalid/objectives/MZETA-102",
+      "leader_engineer": "Pia Rivas",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -58,8 +58,8 @@
     {
       "key": "MZETA-103",
       "name": "Purchase confirmation clarity",
-      "url": "https://example.invalid/missions/MZETA-103",
-      "dri": "Lena Rihanna",
+      "url": "https://example.invalid/objectives/MZETA-103",
+      "leader_engineer": "Lena Rihanna",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -75,8 +75,8 @@
     {
       "key": "MZETA-104",
       "name": "Refund status transparency",
-      "url": "https://example.invalid/missions/MZETA-104",
-      "dri": "Ines Marchetti",
+      "url": "https://example.invalid/objectives/MZETA-104",
+      "leader_engineer": "Ines Marchetti",
       "status": "Red",
       "jira_status": "In Progress",
       "is_done": false,
