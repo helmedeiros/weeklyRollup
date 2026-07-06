@@ -1,7 +1,7 @@
 # demo-snapshots/
 
 Tracked, fully-synthetic dataset that feeds the public dashboard.
-Every team name, mission key, DRI, KPI, and status here is invented
+Every team name, objective key, Leader Engineer, KPI, and status here is invented
 for demonstration; nothing references any real organisation.
 
 The layout mirrors `snapshots/` (which is gitignored):

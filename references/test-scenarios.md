@@ -1,34 +1,34 @@
 # Test Scenarios
 
-## Mission Discovery
+## Objective Discovery
 
-1. Current mission label is included.
+1. Current objective label is included.
 2. Previous month label with done status is excluded from carryover.
-3. Previous month label with future due date remains a current mission.
+3. Previous month label with future due date remains a current objective.
 4. Previous month label with past due date is included as delayed carryover.
 5. Previous month label with no due date remains visible after that label month
    with missing-due-date hygiene, without displaying an assumed due date.
-6. No mission label is excluded from main report.
+6. No objective label is excluded from main report.
 7. Correct label but wrong board/project is excluded unless config allows
    cross-project.
 
-## DRI Validation
+## Leader Engineer Validation
 
-8. Epic assignee is used as the Engineering DRI.
+8. Epic assignee is used as the Engineering Leader Engineer.
 9. Missing assignee is red hygiene.
 10. No configured team-member roster is required or enforced.
 11. Comment author account ID matching wins; email/display name is fallback.
 
 ## Comment Detection
 
-12. Latest DRI comment with valid template is selected.
-13. Latest DRI comment "fixed typo above" is ignored when a previous valid
+12. Latest Leader Engineer comment with valid template is selected.
+13. Latest Leader Engineer comment "fixed typo above" is ignored when a previous valid
     update exists.
 14. EM update does not count.
 15. PM update does not count.
-16. DRI comment outside weekly window is missing this week.
-17. DRI comment after Friday cutoff is not counted for current week.
-18. If two valid DRI updates exist in the window, latest valid is selected.
+16. Leader Engineer comment outside weekly window is missing this week.
+17. Leader Engineer comment after Friday cutoff is not counted for current week.
+18. If two valid Leader Engineer updates exist in the window, latest valid is selected.
 19. Missing blockers section is valid when status, done, and plan are present.
 20. `blockers: none` is valid.
 21. Aliases like `Next week`, `Target for next week`, and bare heading lines
@@ -77,13 +77,13 @@
 43. Missing team spreadsheet is created in the configured Drive folder.
 44. Weekly tab is named `Week <ISO week number>`.
 45. Sheet rows do not include `Run date`, `Week`, or `Team` columns.
-46. Sheet rows include `Mission label`.
-47. Sheet rows include `DRI comment`.
+46. Sheet rows include `Objective label`.
+47. Sheet rows include `Leader Engineer comment`.
 48. Sheet rows do not include `Template valid?` or `Linked OKR` columns.
 49. Sheet write failure still returns draft email.
 50. Due date changed vs previous sheet row is shown as date movement.
 51. No previous row is not shown as movement.
-52. Overdue missions show overdue days in due date movement.
+52. Overdue objectives show overdue days in due date movement.
 
 ## Email
 
@@ -91,9 +91,9 @@
 54. Missing updates make the data hygiene block visible.
 55. Missing linked OKR appears under data hygiene.
 56. All green with no actionable hygiene omits the data hygiene section.
-57. Done missions render with blue status styling.
+57. Done objectives render with blue status styling.
 58. Red/yellow risks are shown first.
-59. Mission title includes the mission month in parentheses.
+59. Objective title includes the objective month in parentheses.
 60. Due date line shows moved later/earlier days and overdue days when relevant.
 61. Recipients come from explicit `email.to`, `email.cc`, and `email.bcc`
     config lists.

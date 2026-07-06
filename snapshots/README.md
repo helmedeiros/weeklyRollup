@@ -21,9 +21,9 @@ snapshots/
 
 Each `<YYYY>-Www.json` describes one team at one week: business unit,
 totals per bucket (`done` / `spillover_on_track` / `spillover_at_risk` /
-`spillover_blocked` / `missing`), delivery rate, and every mission's
+`spillover_blocked` / `missing`), delivery rate, and every objective's
 identity + parsed status + Jira status + due-date state + hygiene flags.
 
-The bucket classifier lives in `scripts/run_rollup.py::_bucket_for_mission()`
+The bucket classifier lives in `scripts/run_rollup.py::_bucket_for_objective()`
 so every downstream reader (aggregator, dashboard, spreadsheets) agrees
 on classification.

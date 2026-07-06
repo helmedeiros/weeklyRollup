@@ -1,12 +1,12 @@
 ---
-name: mission-weekly-rollup
-description: Generate weekly Engineer-Owned Mission rollups from Jira Epic mission updates, write the team sheet, and render a copy-pastable HTML email draft for EM review.
+name: objective-weekly-rollup
+description: Generate weekly Engineer-Owned Objective rollups from Jira Epic objective updates, write the team sheet, and render a copy-pastable HTML email draft for EM review.
 ---
 
-# Mission Weekly Rollup
+# Objective Weekly Rollup
 
 Use this skill when an Engineering Manager asks for the weekly Engineer-Owned
-Mission rollup for a team.
+Objective rollup for a team.
 
 ## Guardrails
 
@@ -45,8 +45,8 @@ Email tone is configured per team:
 
 ## Workflow
 
-Run commands from `${CODEX_HOME:-$HOME/.codex}/skills/mission-weekly-rollup`
-or from this repository folder: `skills/mission-weekly-rollup`.
+Run commands from `${CODEX_HOME:-$HOME/.codex}/skills/objective-weekly-rollup`
+or from this repository folder: `skills/objective-weekly-rollup`.
 
 1. Locate the requested team's local config and validate it before running
    anything:
@@ -57,7 +57,7 @@ or from this repository folder: `skills/mission-weekly-rollup`.
    enforcement of a specific folder id is optional via
    `WEEKLY_ROLLUP_REQUIRED_FOLDER_ID`.
 2. Run the orchestrator with any capable Jira source. The normalized Jira data
-   must include epics, labels, DRI, due date, status, comments, progress, and
+   must include epics, labels, Leader Engineer, due date, status, comments, progress, and
    the linked OKR field/property when available. The bundled `--jira-source mcp`
    adapter uses the bundled in-tree `jira-mcp/`; use `--jira-source snapshot` when another
    authenticated Jira route has already collected the same snapshot shape:
@@ -102,11 +102,11 @@ or from this repository folder: `skills/mission-weekly-rollup`.
      subject/body; this is an expected successful outcome.
    - Do not use a plain-text-only draft helper for formatted HTML drafts.
 6. Return the run summary, sheet result, run-history result, draft email
-   payload/files, mission count, status counts, blocker count, and hygiene
+   payload/files, objective count, status counts, blocker count, and hygiene
    issues.
 
-The orchestrator handles target date, team timezone, ISO week, monthly mission
-label, Jira mission discovery, DRI comment filtering, latest valid comment
+The orchestrator handles target date, team timezone, ISO week, monthly objective
+label, Jira objective discovery, Leader Engineer comment filtering, latest valid comment
 selection, parsing, hygiene, sheet row construction, and draft email rendering.
 
 For test runs without live systems, use:
@@ -115,11 +115,11 @@ For test runs without live systems, use:
 
 ## Local Helpers
 
-- `scripts/mission_rollup.py` contains deterministic business logic.
+- `scripts/objective_rollup.py` contains deterministic business logic.
 - `scripts/run_rollup.py` is the main Codex-invoked weekly runner.
 - `scripts/parse_update.py` parses a single comment.
 - `scripts/render_email.py` renders a draft email payload from normalized rows.
-- `templates/mission-email.html` is the editable HTML email template for
+- `templates/objective-email.html` is the editable HTML email template for
   layout, copy, and inline colors/styles.
 - `scripts/write_sheet.py` prepares the sheet values. In Codex, use the Google
   Drive MCP sheet tools to perform the actual tab creation/replacement/write.
@@ -141,7 +141,7 @@ For test runs without live systems, use:
 
 ## Weekly Update Template
 
-The latest valid DRI comment must include these semantic sections:
+The latest valid Leader Engineer comment must include these semantic sections:
 
 - Status
 - Done this week
@@ -151,7 +151,7 @@ The latest valid DRI comment must include these semantic sections:
 Accepted status values are green, yellow, red, done/completed, the matching
 status emoji, or delivery wording such as on track, at risk, delayed, or off
 track. Jira done status wins over weekly health display for current-month
-missions, and prior-month done missions are not reported in later months.
+objectives, and prior-month done objectives are not reported in later months.
 Aliases such as `state`, `completed`, `next week`, `coming up`, `dependencies`,
 and `decisions needed` are supported.
 

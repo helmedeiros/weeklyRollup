@@ -1,21 +1,21 @@
-# Mission Weekly Rollup
+# Objective Weekly Rollup
 
-Weekly mission reporting helper for EM-owned mission updates.
+Weekly objective reporting helper for EM-owned objective updates.
 
-It collects mission Epics from Jira, parses the latest valid DRI weekly update,
+It collects objective Epics from Jira, parses the latest valid Leader Engineer weekly update,
 prepares the weekly Google Sheet tab, and renders a formatted HTML email with a
 plain-text fallback.
 
 ## What It Does
 
-- finds Jira Epic missions by monthly label, for example `mission-may-2026`
-- reads only Engineering DRI comments for the current weekly window
+- finds Jira Epic objectives by monthly label, for example `objective-may-2026`
+- reads only Engineering Leader Engineer comments for the current weekly window
 - parses status, work done, plan, and blockers/risks
 - writes a normalized weekly sheet tab
-- renders a mission health email from `templates/mission-email.html`
+- renders a objective health email from `templates/objective-email.html`
 - persists durable run history in a `_Run History` sheet tab
 - computes completion, cycle-time, active-age, overdue, and recurring-miss metrics
-- marks untouched Jira `To Do` missions as `Not Started` instead of missing
+- marks untouched Jira `To Do` objectives as `Not Started` instead of missing
   updates, while warning when Jira still says `To Do` but progress or update
   comments show work has started
 - creates copy-pastable email output instead of sending email directly
@@ -25,7 +25,7 @@ plain-text fallback.
 Run commands from this folder:
 
 ```bash
-cd skills/mission-weekly-rollup
+cd skills/objective-weekly-rollup
 ```
 
 Create a local team config:
@@ -38,8 +38,8 @@ python3 scripts/validate_config.py config/<your-team-local>.yaml --expect-team-i
 Do not commit local team configs, generated `output/`, credentials, tokens, or
 real Sheet/Drive IDs. They are ignored by `.gitignore`.
 
-For live Jira runs, use any Jira source that can provide the normalized mission
-snapshot shape: epics, labels, DRI, due date, status, comments, progress, and
+For live Jira runs, use any Jira source that can provide the normalized objective
+snapshot shape: epics, labels, Leader Engineer, due date, status, comments, progress, and
 the linked OKR field/property when available. The bundled `--jira-source mcp`
 adapter uses the in-tree `jira-mcp/` server and is recommended when issue
 properties or tenant-specific fields are needed. If another Jira connector is
@@ -63,7 +63,7 @@ email:
   from_address: "em@example.com"
   preview_to: "em@example.com"
   to:
-    - "mission-report@example.com"
+    - "objective-report@example.com"
   cc: []
   bcc: []
   greeting: "Hi"
@@ -180,15 +180,15 @@ draft. If a raw-MIME-capable route is available, use
 When `--output-dir` is not provided, the JSON result still includes
 `draft_email.subject`, `draft_email.text_body`, and `draft_email.html_body`.
 
-## Write A DRI Weekly Update
+## Write A Leader Engineer Weekly Update
 
-Interactive helper to compose a template-valid DRI weekly update and post it
+Interactive helper to compose a template-valid Leader Engineer weekly update and post it
 as a Jira comment via the bundled Jira MCP. Useful when you are covering for
-an out-of-office DRI, or when a DRI wants a guided way to land a valid
+an out-of-office Leader Engineer, or when a Leader Engineer wants a guided way to land a valid
 template on the Epic.
 
 ```bash
-python3 scripts/write_dri_update.py \
+python3 scripts/write_leader_engineer_update.py \
   --config config/<your-team-local>.yaml \
   --expect-team-id <team-id> \
   --date YYYY-MM-DD
@@ -196,7 +196,7 @@ python3 scripts/write_dri_update.py \
 
 What happens:
 
-1. The script lists the team's Epics for this month's mission label, each
+1. The script lists the team's Epics for this month's objective label, each
    tagged `[missing]`, `[malformed]`, or `[valid <emoji>]` so you can see at a
    glance which still need an update.
 2. After you pick an Epic, the script prompts for the status (Green / Yellow /
@@ -218,11 +218,11 @@ Each run includes a `metrics` object in `rollup-result.json` and mirrors the key
 values in `run_summary`. These metrics are computed from the current run plus
 the team-level `_Run History` tab:
 
-- completed and active mission counts
+- completed and active objective counts
 - completion rate
-- average cycle time for completed missions
-- average age for active missions
-- active overdue mission count
+- average cycle time for completed objectives
+- average age for active objectives
+- active overdue objective count
 - recurring missing-update count
 
 The weekly sheet stays human-facing; `_Run History` remains the durable source
