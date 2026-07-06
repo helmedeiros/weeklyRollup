@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 27,
+    "target_date": "2026-06-30",
+    "month_label": "mission-june-2026"
+  },
+  "totals": {
+    "teams": 12,
+    "missions": 70,
+    "delivery_rate": 0.8143,
+    "done": 57,
+    "spillover_on_track": 6,
+    "spillover_at_risk": 3,
+    "spillover_blocked": 2,
+    "missing": 2
+  },
+  "business_units": [
+    {
+      "business_unit": "B2B",
+      "team_count": 2,
+      "total_missions": 9,
+      "delivery_rate": 0.8889,
+      "done": 8,
+      "spillover_on_track": 1,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "business_unit": "B2C",
+      "team_count": 4,
+      "total_missions": 24,
+      "delivery_rate": 0.75,
+      "done": 18,
+      "spillover_on_track": 3,
+      "spillover_at_risk": 1,
+      "spillover_blocked": 1,
+      "missing": 1
+    },
+    {
+      "business_unit": "Coverage",
+      "team_count": 2,
+      "total_missions": 11,
+      "delivery_rate": 0.6364,
+      "done": 7,
+      "spillover_on_track": 1,
+      "spillover_at_risk": 1,
+      "spillover_blocked": 1,
+      "missing": 1
+    },
+    {
+      "business_unit": "Platform",
+      "team_count": 4,
+      "total_missions": 26,
+      "delivery_rate": 0.9231,
+      "done": 24,
+      "spillover_on_track": 1,
+      "spillover_at_risk": 1,
+      "spillover_blocked": 0,
+      "missing": 0
+    }
+  ],
+  "teams": [
+    {
+      "team_id": "alpha-foundations",
+      "team_name": "Alpha Foundations",
+      "business_unit": "Platform",
+      "total_missions": 8,
+      "delivery_rate": 1.0,
+      "done": 8,
+      "spillover_on_track": 0,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "delta-data-platform",
+      "team_name": "Delta Data Platform",
+      "business_unit": "Platform",
+      "total_missions": 5,
+      "delivery_rate": 1.0,
+      "done": 5,
+      "spillover_on_track": 0,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "eta-checkout",
+      "team_name": "Eta Checkout",
+      "business_unit": "B2C",
+      "total_missions": 5,
+      "delivery_rate": 1.0,
+      "done": 5,
+      "spillover_on_track": 0,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "kappa-enterprise",
+      "team_name": "Kappa Enterprise Ops",
+      "business_unit": "B2B",
+      "total_missions": 4,
+      "delivery_rate": 1.0,
+      "done": 4,
+      "spillover_on_track": 0,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "beta-payments",
+      "team_name": "Beta Payments Core",
+      "business_unit": "Platform",
+      "total_missions": 7,
+      "delivery_rate": 0.8571,
+      "done": 6,
+      "spillover_on_track": 1,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "gamma-runtime",
+      "team_name": "Gamma Runtime",
+      "business_unit": "Platform",
+      "total_missions": 6,
+      "delivery_rate": 0.8333,
+      "done": 5,
+      "spillover_on_track": 0,
+      "spillover_at_risk": 1,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "iota-partners",
+      "team_name": "Iota Partner Portal",
+      "business_unit": "B2B",
+      "total_missions": 5,
+      "delivery_rate": 0.8,
+      "done": 4,
+      "spillover_on_track": 1,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "zeta-search",
+      "team_name": "Zeta Search Discovery",
+      "business_unit": "B2C",
+      "total_missions": 4,
+      "delivery_rate": 0.75,
+      "done": 3,
+      "spillover_on_track": 0,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 1,
+      "missing": 0
+    },
+    {
+      "team_id": "epsilon-growth",
+      "team_name": "Epsilon Growth",
+      "business_unit": "B2C",
+      "total_missions": 9,
+      "delivery_rate": 0.6667,
+      "done": 6,
+      "spillover_on_track": 2,
+      "spillover_at_risk": 1,
+      "spillover_blocked": 0,
+      "missing": 0
+    },
+    {
+      "team_id": "lambda-ingestion",
+      "team_name": "Lambda Ingestion",
+      "business_unit": "Coverage",
+      "total_missions": 6,
+      "delivery_rate": 0.6667,
+      "done": 4,
+      "spillover_on_track": 0,
+      "spillover_at_risk": 1,
+      "spillover_blocked": 1,
+      "missing": 0
+    },
+    {
+      "team_id": "theta-post-booking",
+      "team_name": "Theta Post-Booking",
+      "business_unit": "B2C",
+      "total_missions": 6,
+      "delivery_rate": 0.6667,
+      "done": 4,
+      "spillover_on_track": 1,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 1
+    },
+    {
+      "team_id": "mu-content-ops",
+      "team_name": "Mu Content Ops",
+      "business_unit": "Coverage",
+      "total_missions": 5,
+      "delivery_rate": 0.6,
+      "done": 3,
+      "spillover_on_track": 1,
+      "spillover_at_risk": 0,
+      "spillover_blocked": 0,
+      "missing": 1
+    }
+  ]
+}
