@@ -22,10 +22,10 @@
   },
   "objectives": [
     {
-      "key": "MKAPP-102",
-      "name": "Compliance audit trail",
-      "url": "https://example.invalid/objectives/MKAPP-102",
-      "leader_engineer": "Sana Rowe",
+      "key": "MKAPP-101",
+      "name": "Onboarding self-serve wizard",
+      "url": "https://example.invalid/objectives/MKAPP-101",
+      "leader_engineer": "Rio Delacroix",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -73,10 +73,10 @@
       "blockers": []
     },
     {
-      "key": "MKAPP-101",
-      "name": "Onboarding self-serve wizard",
-      "url": "https://example.invalid/objectives/MKAPP-101",
-      "leader_engineer": "Rio Delacroix",
+      "key": "MKAPP-102",
+      "name": "Compliance audit trail",
+      "url": "https://example.invalid/objectives/MKAPP-102",
+      "leader_engineer": "Sana Rowe",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "mu-content-ops",
+    "name": "Mu Content Ops",
+    "business_unit": "Coverage"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 23,
+    "target_date": "2026-06-03",
+    "month_label": "objective-june-2026"
+  },
+  "totals": {
+    "objectives": 5,
+    "delivery_rate": 0.6,
+    "done": 3,
+    "spillover_on_track": 1,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 0,
+    "missing": 1
+  },
+  "objectives": [
+    {
+      "key": "MMU-103",
+      "name": "Cadence dashboard for editors",
+      "url": "https://example.invalid/objectives/MMU-103",
+      "leader_engineer": "Bram Larsson",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-03",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MMU-104",
+      "name": "Broken-image sentinel",
+      "url": "https://example.invalid/objectives/MMU-104",
+      "leader_engineer": "Pia Rivas",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-03",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MMU-100",
+      "name": "Provider content ingestion QA",
+      "url": "https://example.invalid/objectives/MMU-100",
+      "leader_engineer": "Hiro Vasquez",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-03",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MMU-102",
+      "name": "Publisher content freshness",
+      "url": "https://example.invalid/objectives/MMU-102",
+      "leader_engineer": "Odin Barone",
+      "status": "Green",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-06-03",
+      "due_date_overdue_days": 0,
+      "progress": "34%",
+      "bucket": "spillover_on_track",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MMU-101",
+      "name": "Cross-locale asset governance",
+      "url": "https://example.invalid/objectives/MMU-101",
+      "leader_engineer": "Nya Sardar",
+      "status": "Missing",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": true,
+      "effective_due_date": "2026-06-03",
+      "due_date_overdue_days": 0,
+      "progress": "33%",
+      "bucket": "missing",
+      "hygiene_severity": "yellow",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

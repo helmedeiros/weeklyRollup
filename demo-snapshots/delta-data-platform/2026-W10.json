@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "delta-data-platform",
+    "name": "Delta Data Platform",
+    "business_unit": "Platform"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 10,
+    "target_date": "2026-03-04",
+    "month_label": "objective-march-2026"
+  },
+  "totals": {
+    "objectives": 5,
+    "delivery_rate": 1.0,
+    "done": 5,
+    "spillover_on_track": 0,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "objectives": [
+    {
+      "key": "MDELT-100",
+      "name": "Zero-downtime restart choreography",
+      "url": "https://example.invalid/objectives/MDELT-100",
+      "leader_engineer": "Cai Nguyen",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-03-04",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-104",
+      "name": "Warm-cache eviction policy",
+      "url": "https://example.invalid/objectives/MDELT-104",
+      "leader_engineer": "Ines Marchetti",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-03-04",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-102",
+      "name": "Golden-path SLO board",
+      "url": "https://example.invalid/objectives/MDELT-102",
+      "leader_engineer": "Milo Anders",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-03-04",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-103",
+      "name": "Observability sampling refresh",
+      "url": "https://example.invalid/objectives/MDELT-103",
+      "leader_engineer": "Pia Rivas",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-03-04",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MDELT-101",
+      "name": "Feature flag rollout guardrails",
+      "url": "https://example.invalid/objectives/MDELT-101",
+      "leader_engineer": "Ellis Marín",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-03-04",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

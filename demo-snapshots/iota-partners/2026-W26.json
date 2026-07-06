@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "iota-partners",
+    "name": "Iota Partner Portal",
+    "business_unit": "B2B"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 26,
+    "target_date": "2026-06-24",
+    "month_label": "objective-june-2026"
+  },
+  "totals": {
+    "objectives": 5,
+    "delivery_rate": 0.6,
+    "done": 3,
+    "spillover_on_track": 2,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "objectives": [
+    {
+      "key": "MIOTA-104",
+      "name": "SLA breach notifier",
+      "url": "https://example.invalid/objectives/MIOTA-104",
+      "leader_engineer": "Ellis Marín",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-24",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-100",
+      "name": "Partner API rate-limit v2",
+      "url": "https://example.invalid/objectives/MIOTA-100",
+      "leader_engineer": "Lena Rihanna",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-24",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-102",
+      "name": "Compliance audit trail",
+      "url": "https://example.invalid/objectives/MIOTA-102",
+      "leader_engineer": "Pia Rivas",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-06-24",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-103",
+      "name": "Partner billing reconciliation",
+      "url": "https://example.invalid/objectives/MIOTA-103",
+      "leader_engineer": "Ines Marchetti",
+      "status": "Green",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-06-24",
+      "due_date_overdue_days": 0,
+      "progress": "79%",
+      "bucket": "spillover_on_track",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MIOTA-101",
+      "name": "Onboarding self-serve wizard",
+      "url": "https://example.invalid/objectives/MIOTA-101",
+      "leader_engineer": "Tomo Ilves",
+      "status": "Green",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-06-24",
+      "due_date_overdue_days": 0,
+      "progress": "71%",
+      "bucket": "spillover_on_track",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

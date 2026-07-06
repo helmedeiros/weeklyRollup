@@ -39,10 +39,10 @@
       "blockers": []
     },
     {
-      "key": "MZETA-102",
-      "name": "Personalised trip recommendations",
-      "url": "https://example.invalid/objectives/MZETA-102",
-      "leader_engineer": "Milo Anders",
+      "key": "MZETA-103",
+      "name": "Purchase confirmation clarity",
+      "url": "https://example.invalid/objectives/MZETA-103",
+      "leader_engineer": "Bram Larsson",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -56,10 +56,10 @@
       "blockers": []
     },
     {
-      "key": "MZETA-103",
-      "name": "Purchase confirmation clarity",
-      "url": "https://example.invalid/objectives/MZETA-103",
-      "leader_engineer": "Bram Larsson",
+      "key": "MZETA-102",
+      "name": "Personalised trip recommendations",
+      "url": "https://example.invalid/objectives/MZETA-102",
+      "leader_engineer": "Milo Anders",
       "status": "Green",
       "jira_status": "Done",
       "is_done": true,
@@ -83,7 +83,7 @@
       "missing_update": false,
       "effective_due_date": "2026-04-15",
       "due_date_overdue_days": 0,
-      "progress": "49%",
+      "progress": "46%",
       "bucket": "spillover_blocked",
       "hygiene_severity": "info",
       "hygiene": [],

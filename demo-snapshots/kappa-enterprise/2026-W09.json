@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "kappa-enterprise",
+    "name": "Kappa Enterprise Ops",
+    "business_unit": "B2B"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 9,
+    "target_date": "2026-02-25",
+    "month_label": "objective-february-2026"
+  },
+  "totals": {
+    "objectives": 4,
+    "delivery_rate": 1.0,
+    "done": 4,
+    "spillover_on_track": 0,
+    "spillover_at_risk": 0,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "objectives": [
+    {
+      "key": "MKAPP-101",
+      "name": "Onboarding self-serve wizard",
+      "url": "https://example.invalid/objectives/MKAPP-101",
+      "leader_engineer": "Rio Delacroix",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-02-25",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MKAPP-102",
+      "name": "Compliance audit trail",
+      "url": "https://example.invalid/objectives/MKAPP-102",
+      "leader_engineer": "Sana Rowe",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-02-25",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MKAPP-100",
+      "name": "Partner API rate-limit v2",
+      "url": "https://example.invalid/objectives/MKAPP-100",
+      "leader_engineer": "Sana Rowe",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-02-25",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MKAPP-103",
+      "name": "Partner billing reconciliation",
+      "url": "https://example.invalid/objectives/MKAPP-103",
+      "leader_engineer": "Frida Ohno",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-02-25",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

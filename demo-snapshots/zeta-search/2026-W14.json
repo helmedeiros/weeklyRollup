@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "zeta-search",
+    "name": "Zeta Search Discovery",
+    "business_unit": "B2C"
+  },
+  "week": {
+    "iso_year": 2026,
+    "iso_week": 14,
+    "target_date": "2026-04-01",
+    "month_label": "objective-april-2026"
+  },
+  "totals": {
+    "objectives": 4,
+    "delivery_rate": 0.75,
+    "done": 3,
+    "spillover_on_track": 0,
+    "spillover_at_risk": 1,
+    "spillover_blocked": 0,
+    "missing": 0
+  },
+  "objectives": [
+    {
+      "key": "MZETA-101",
+      "name": "Cart persistence across surfaces",
+      "url": "https://example.invalid/objectives/MZETA-101",
+      "leader_engineer": "Odin Barone",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-04-01",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-103",
+      "name": "Purchase confirmation clarity",
+      "url": "https://example.invalid/objectives/MZETA-103",
+      "leader_engineer": "Bram Larsson",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-04-01",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-100",
+      "name": "Homepage skeleton refresh",
+      "url": "https://example.invalid/objectives/MZETA-100",
+      "leader_engineer": "Tomo Ilves",
+      "status": "Green",
+      "jira_status": "Done",
+      "is_done": true,
+      "missing_update": false,
+      "effective_due_date": "2026-04-01",
+      "due_date_overdue_days": 0,
+      "progress": "100%",
+      "bucket": "done",
+      "hygiene_severity": "info",
+      "hygiene": [],
+      "blockers": []
+    },
+    {
+      "key": "MZETA-102",
+      "name": "Personalised trip recommendations",
+      "url": "https://example.invalid/objectives/MZETA-102",
+      "leader_engineer": "Milo Anders",
+      "status": "Yellow",
+      "jira_status": "In Progress",
+      "is_done": false,
+      "missing_update": false,
+      "effective_due_date": "2026-04-01",
+      "due_date_overdue_days": 0,
+      "progress": "37%",
+      "bucket": "spillover_at_risk",
+      "hygiene_severity": "yellow",
+      "hygiene": [],
+      "blockers": []
+    }
+  ]
+}

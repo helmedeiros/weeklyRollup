@@ -5,13 +5,15 @@ keys, Leader Engineers, or KPIs mirror any real organisation. Re-run this
 script whenever you want to refresh the shape of the demo dataset.
 
 The output layout matches ``snapshots/``: each team gets one JSON file per
-month at ``demo-snapshots/<team-id>/<YYYY>-Www.json``. Six months are
-emitted (Feb-Jul 2026) so the dashboard can demo a rolling range picker.
+ISO week at ``demo-snapshots/<team-id>/<YYYY>-Www.json``. Snapshots span
+ISO weeks W06 through W31 of 2026 (Feb through end of July) so every
+month has 4-5 weekly reports and the detail view always has multiple
+weeks to expand.
 
 Each team has a **stable pool of objectives** with fixed keys, names, and
 leader-engineer owners. The bucket each objective sits in varies from
-month to month (deterministic per team+month seed), so the same objective
-key follows a trend across the range.
+week to week (deterministic per team+week seed), so the same objective
+key follows a trajectory across the range.
 """
 
 from __future__ import annotations
@@ -22,14 +24,14 @@ from datetime import date
 from pathlib import Path
 
 
-MONTHS: list[tuple[int, int]] = [
-    (2026, 2),
-    (2026, 3),
-    (2026, 4),
-    (2026, 5),
-    (2026, 6),
-    (2026, 7),
-]
+ISO_YEAR = 2026
+FIRST_WEEK = 6   # 2026-W06: Mon Feb 2 - Sun Feb 8
+LAST_WEEK = 31   # 2026-W31: Mon Jul 27 - Sun Aug 2
+
+MONTH_NAME = {
+    1: "january", 2: "february", 3: "march", 4: "april", 5: "may", 6: "june",
+    7: "july", 8: "august", 9: "september", 10: "october", 11: "november", 12: "december",
+}
 
 MONTH_NAME = {
     1: "january", 2: "february", 3: "march", 4: "april", 5: "may", 6: "june",
@@ -114,9 +116,9 @@ def build_team_pool(team_id: str, business_unit: str, total: int) -> list[dict]:
     return pool
 
 
-def month_variant(base: tuple[int, int, int, int, int, int], month_index: int, team_id: str) -> tuple[int, int, int, int, int, int]:
-    """Deterministically perturb the base bucket layout for a given month/team."""
-    rng = random.Random(f"variant-{month_index}-{team_id}")
+def week_variant(base: tuple[int, int, int, int, int, int], iso_year: int, iso_week: int, team_id: str) -> tuple[int, int, int, int, int, int]:
+    """Deterministically perturb the base bucket layout for a given team-week."""
+    rng = random.Random(f"variant-{iso_year}-{iso_week}-{team_id}")
     total, done, on_track, at_risk, blocked, missing = base
     counts = {"done": done, "on_track": on_track, "at_risk": at_risk, "blocked": blocked, "missing": missing}
     moves = [
@@ -135,7 +137,7 @@ def month_variant(base: tuple[int, int, int, int, int, int], month_index: int, t
             counts[src] -= 1
             counts[dst] += 1
     result = (total, counts["done"], counts["on_track"], counts["at_risk"], counts["blocked"], counts["missing"])
-    assert result[0] == sum(result[1:]), f"variant total mismatch for {team_id} m={month_index}"
+    assert result[0] == sum(result[1:]), f"variant total mismatch for {team_id} {iso_year}-W{iso_week:02d}"
     return result
 
 
@@ -146,21 +148,20 @@ def generate() -> None:
     pools = {team_id: build_team_pool(team_id, business_unit, base_buckets[0])
              for team_id, _, business_unit, base_buckets in TEAMS}
 
-    for month_index, (year, month) in enumerate(MONTHS):
-        target = date(year, month, 15)
-        iso_year, iso_week, _ = target.isocalendar()
+    for iso_week in range(FIRST_WEEK, LAST_WEEK + 1):
+        target = date.fromisocalendar(ISO_YEAR, iso_week, 3)  # Wednesday
         week = {
-            "iso_year": iso_year,
+            "iso_year": ISO_YEAR,
             "iso_week": iso_week,
             "target_date": target.isoformat(),
-            "month_label": f"objective-{MONTH_NAME[month]}-{year}",
+            "month_label": f"objective-{MONTH_NAME[target.month]}-{target.year}",
         }
 
         for team_id, team_name, business_unit, base_buckets in TEAMS:
-            total, done, on_track, at_risk, blocked, missing = month_variant(base_buckets, month_index, team_id)
+            total, done, on_track, at_risk, blocked, missing = week_variant(base_buckets, ISO_YEAR, iso_week, team_id)
 
             pool = pools[team_id]
-            rng = random.Random(f"assign-{team_id}-{month_index}")
+            rng = random.Random(f"assign-{team_id}-{ISO_YEAR}-{iso_week}")
             shuffled = list(pool)
             rng.shuffle(shuffled)
 
@@ -210,7 +211,7 @@ def generate() -> None:
                 },
                 "objectives": objectives,
             }
-            out = root / team_id / f"{iso_year}-W{iso_week:02d}.json"
+            out = root / team_id / f"{ISO_YEAR}-W{iso_week:02d}.json"
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
             print(f"wrote {out}")
