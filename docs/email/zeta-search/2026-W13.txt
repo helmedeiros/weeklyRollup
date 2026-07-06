@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 2
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -44,7 +44,8 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Search relevance re-ranker: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

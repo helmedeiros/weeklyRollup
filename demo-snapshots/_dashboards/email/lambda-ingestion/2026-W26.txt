@@ -51,7 +51,7 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [June]: Publisher content freshness: Legal sign-off outstanding.
+- [Blocker] Q2 2026 [June]: Publisher content freshness: External vendor SLA slipping; no eta.
   Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
 
 Kind Regards

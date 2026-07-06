@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 1
 - Missing updates: 0
-- Blockers / risks: 3
+- Blockers / risks: 4
 
 Hi team,
 
@@ -60,10 +60,12 @@ Plan for next week: Monitor for the next 2 weeks; no active work planned.
 BLOCKERS / RISKS
 - [Blocker] Q3 2026 [July]: Config drift auto-repair: Legal sign-off outstanding.
   Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
-- [Risk] Q3 2026 [July]: Zero-downtime restart choreography: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q3 2026 [July]: Zero-downtime restart choreography: Design review pending from the sibling team.
   Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
-- [Risk] Q3 2026 [July]: Runtime resource budgets: Design review pending from the sibling team.
+- [Risk] Q3 2026 [July]: Runtime resource budgets: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q3 2026 [July]: Warm-cache eviction policy: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager

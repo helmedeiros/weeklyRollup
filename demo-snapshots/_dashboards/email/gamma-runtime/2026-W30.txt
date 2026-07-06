@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 3
 
 Hi team,
 
@@ -51,8 +51,12 @@ Done this week: Slipped the promised design review; rescheduling for later this 
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 BLOCKERS / RISKS
-- [Risk] Q3 2026 [July]: Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q3 2026 [July]: Golden-path SLO board: Owner is oncall this week; capacity is halved.
   Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+- [Risk] Q3 2026 [July]: Deprecation channel rollout: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
+- [Risk] Q3 2026 [July]: Config drift auto-repair: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
 
 Kind Regards
 Engineering Manager

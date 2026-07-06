@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -44,7 +44,7 @@ Done this week: Closed the final ticket in the epic and archived the working doc
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Q3 2026 [July]: Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q3 2026 [July]: Payment method reorder: Owner is oncall this week; capacity is halved.
   Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards

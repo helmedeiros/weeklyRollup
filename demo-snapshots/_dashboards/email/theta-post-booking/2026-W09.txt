@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 2
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [February]: Purchase confirmation clarity: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
 
 Kind Regards
 Engineering Manager

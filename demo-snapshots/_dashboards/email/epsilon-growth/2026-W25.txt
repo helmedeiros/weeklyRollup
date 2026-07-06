@@ -58,7 +58,7 @@ Done this week: Incident on adjacent service consumed the week; work is paused.
 Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [June]: Checkout abandonment nudge: Legal sign-off outstanding.
+- [Blocker] Q2 2026 [June]: Checkout abandonment nudge: External vendor SLA slipping; no eta.
   Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
 - [Risk] Q2 2026 [June]: Passenger name-change flow: Design review pending from the sibling team.
   Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a

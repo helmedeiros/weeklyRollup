@@ -44,9 +44,9 @@ Done this week: Legal review outstanding — no code path until the sign-off lan
 Plan for next week: Unblock the vendor conversation and get an ETA.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [May]: Config drift auto-repair: Legal sign-off outstanding.
+- [Blocker] Q2 2026 [May]: Config drift auto-repair: Awaiting security review that was pushed to next quarter.
   Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
-- [Risk] Q2 2026 [May]: Zero-downtime restart choreography: Design review pending from the sibling team.
+- [Risk] Q2 2026 [May]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
 
 Kind Regards

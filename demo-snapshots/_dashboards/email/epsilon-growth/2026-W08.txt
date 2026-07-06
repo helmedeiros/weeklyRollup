@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 2
+- Blockers / risks: 3
 
 Hi team,
 
@@ -58,10 +58,12 @@ Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
 Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
 BLOCKERS / RISKS
-- [Blocker] Q1 2026 [February]: Loyalty perks eligibility banner: Legal sign-off outstanding.
+- [Blocker] Q1 2026 [February]: Loyalty perks eligibility banner: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
-- [Risk] Q1 2026 [February]: Payment method reorder: Design review pending from the sibling team.
+- [Risk] Q1 2026 [February]: Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+- [Risk] Q1 2026 [February]: Refund status transparency: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Cleared the staging soak; production rollout scheduled for early
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards
 Engineering Manager

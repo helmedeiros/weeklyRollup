@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Prep work is done; kickoff of the customer-facing rollout starts
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Purchase confirmation clarity: Follow-on ticket landed late; scope grew mid-sprint.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards
 Engineering Manager

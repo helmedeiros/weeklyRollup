@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 3
+- Blockers / risks: 4
 
 Hi team,
 
@@ -51,12 +51,14 @@ Done this week: Incident on adjacent service consumed the week; work is paused.
 Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
 BLOCKERS / RISKS
-- [Blocker] Q1 2026 [February]: Config drift auto-repair: Infra migration blocking rollout; owner: platform.
+- [Blocker] Q1 2026 [February]: Config drift auto-repair: External vendor SLA slipping; no eta.
   Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
-- [Risk] Q1 2026 [February]: Service topology drift alarm: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q1 2026 [February]: Service topology drift alarm: Owner is oncall this week; capacity is halved.
   Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
-- [Risk] Q1 2026 [February]: Golden-path SLO board: Design review pending from the sibling team.
+- [Risk] Q1 2026 [February]: Golden-path SLO board: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+- [Risk] Q1 2026 [February]: Feature flag rollout guardrails: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards
 Engineering Manager

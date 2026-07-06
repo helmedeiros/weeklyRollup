@@ -46,7 +46,7 @@ Plan for next week: Hand off to the on-call rotation and close the epic.
 BLOCKERS / RISKS
 - [Blocker] Q2 2026 [May]: SLA breach notifier: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
-- [Risk] Q2 2026 [May]: Partner billing reconciliation: No owner reachable this week.
+- [Risk] Q2 2026 [May]: Partner billing reconciliation: Update deferred; owner on PTO.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 
 Kind Regards

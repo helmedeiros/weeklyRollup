@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 3
 
 Hi team,
 
@@ -53,6 +53,10 @@ Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [April]: Legacy asset migration: Design review pending from the sibling team.
   Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+- [Risk] Q2 2026 [April]: Content lint gate: No owner reachable this week.
+  Leader Engineer: Kai Ostberg | Owner: Kai Ostberg | Days open: n/a
+- [Risk] Q2 2026 [April]: Provider content ingestion QA: No owner reachable this week.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

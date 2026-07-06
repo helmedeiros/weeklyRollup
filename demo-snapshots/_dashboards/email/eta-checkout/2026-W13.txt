@@ -51,7 +51,7 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Risk] Q1 2026 [March]: Purchase confirmation clarity: Design review pending from the sibling team.
+- [Risk] Q1 2026 [March]: Purchase confirmation clarity: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards

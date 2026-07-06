@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 2
+- Blockers / risks: 3
 
 Hi team,
 
@@ -51,10 +51,12 @@ Done this week: Waiting on a dependency from an adjacent team; escalation opened
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Design review pending from the sibling team.
+- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
-- [Risk] Q2 2026 [June]: Golden-path SLO board: Design review pending from the sibling team.
+- [Risk] Q2 2026 [June]: Golden-path SLO board: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+- [Risk] Q2 2026 [June]: Observability sampling refresh: No owner reachable this week.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards
 Engineering Manager

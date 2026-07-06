@@ -44,9 +44,9 @@ Done this week: Waiting on infra migration that was pushed to the next quarter.
 Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [May]: Reseller webhook v3: Infra migration blocking rollout; owner: platform.
+- [Blocker] Q2 2026 [May]: Reseller webhook v3: Awaiting security review that was pushed to next quarter.
   Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
-- [Risk] Q2 2026 [May]: Contract-tier feature gating: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [May]: Contract-tier feature gating: Owner is oncall this week; capacity is halved.
   Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards

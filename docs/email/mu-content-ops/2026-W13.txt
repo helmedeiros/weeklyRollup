@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 3
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Closed the final ticket in the epic and archived the working doc
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -58,9 +58,9 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Blocker] Q1 2026 [March]: Rate-limiter fairness audit: Legal sign-off outstanding.
+- [Blocker] Q1 2026 [March]: Rate-limiter fairness audit: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
-- [Risk] Q1 2026 [March]: Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q1 2026 [March]: Golden-path SLO board: Design review pending from the sibling team.
   Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
 
 Kind Regards

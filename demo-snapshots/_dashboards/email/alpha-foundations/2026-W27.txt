@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q3 2026 [July]: Zero-downtime restart choreography: Update deferred; owner on PTO.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

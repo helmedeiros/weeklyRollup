@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 4
 
 Hi team,
 
@@ -58,7 +58,14 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q3 2026 [July]: Warm-cache eviction policy: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+- [Risk] Q3 2026 [July]: Zero-downtime restart choreography: Design review pending from the sibling team.
+  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+- [Risk] Q3 2026 [July]: Config drift auto-repair: Legal sign-off outstanding.
+  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+- [Risk] Q3 2026 [July]: Runtime resource budgets: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

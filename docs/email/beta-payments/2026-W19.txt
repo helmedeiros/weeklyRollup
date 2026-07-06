@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -58,7 +58,8 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [May]: Warm-cache eviction policy: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

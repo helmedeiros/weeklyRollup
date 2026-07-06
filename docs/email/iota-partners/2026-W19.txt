@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,7 +44,10 @@ Done this week: Prep work is done; kickoff of the customer-facing rollout starts
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [May]: Contract-tier feature gating: Owner is oncall this week; capacity is halved.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+- [Risk] Q2 2026 [May]: Reseller webhook v3: Awaiting security review that was pushed to next quarter.
+  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
 
 Kind Regards
 Engineering Manager

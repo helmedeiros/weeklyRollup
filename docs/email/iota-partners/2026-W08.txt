@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,8 +44,10 @@ Done this week: Slipped the promised design review; rescheduling for later this 
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 BLOCKERS / RISKS
-- [Risk] Q1 2026 [February]: Reseller webhook v3: Design review pending from the sibling team.
+- [Risk] Q1 2026 [February]: Reseller webhook v3: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+- [Risk] Q1 2026 [February]: Contract-tier feature gating: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

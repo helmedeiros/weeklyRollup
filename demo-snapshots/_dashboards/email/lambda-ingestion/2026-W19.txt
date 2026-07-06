@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -51,7 +51,10 @@ Done this week: Feature flag is enabled for internal cohorts; watching latency a
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [May]: Broken-image sentinel: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- [Risk] Q2 2026 [May]: Legacy asset migration: Awaiting security review that was pushed to next quarter.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -58,7 +58,7 @@ Done this week: Closed the final ticket in the epic and archived the working doc
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards

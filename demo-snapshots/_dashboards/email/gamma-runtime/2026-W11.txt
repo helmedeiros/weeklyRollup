@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 3
 
 Hi team,
 
@@ -51,7 +51,12 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Observability sampling refresh: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- [Risk] Q1 2026 [March]: Config drift auto-repair: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+- [Risk] Q1 2026 [March]: Rate-limiter fairness audit: Owner is oncall this week; capacity is halved.
+  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
 
 Kind Regards
 Engineering Manager

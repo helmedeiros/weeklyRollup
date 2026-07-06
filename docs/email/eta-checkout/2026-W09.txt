@@ -51,9 +51,9 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Blocker] Q1 2026 [February]: Cart persistence across surfaces: Infra migration blocking rollout; owner: platform.
+- [Blocker] Q1 2026 [February]: Cart persistence across surfaces: Legal sign-off outstanding.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
-- [Risk] Q1 2026 [February]: Purchase confirmation clarity: No owner reachable this week.
+- [Risk] Q1 2026 [February]: Purchase confirmation clarity: Update deferred; owner on PTO.
   Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards

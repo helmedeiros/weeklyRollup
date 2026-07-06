@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 1
 - Missing updates: 0
-- Blockers / risks: 2
+- Blockers / risks: 4
 
 Hi team,
 
@@ -53,8 +53,12 @@ Plan for next week: Monitor for the next 2 weeks; no active work planned.
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [April]: Publisher content freshness: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
-- [Risk] Q2 2026 [April]: Content lint gate: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [April]: Content lint gate: Design review pending from the sibling team.
   Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+- [Risk] Q2 2026 [April]: Cadence dashboard for editors: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+- [Risk] Q2 2026 [April]: Provider content ingestion QA: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

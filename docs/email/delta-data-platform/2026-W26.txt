@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 1
 - Missing updates: 0
-- Blockers / risks: 2
+- Blockers / risks: 3
 
 Hi team,
 
@@ -44,10 +44,12 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [June]: Deprecation channel rollout: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [June]: Deprecation channel rollout: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
-- [Risk] Q2 2026 [June]: Warm-cache eviction policy: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [June]: Warm-cache eviction policy: Owner is oncall this week; capacity is halved.
   Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
+- [Risk] Q2 2026 [June]: Golden-path SLO board: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
 
 Kind Regards
 Engineering Manager

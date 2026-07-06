@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,7 +44,10 @@ Done this week: Cleared the staging soak; production rollout scheduled for early
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [February]: Contract-tier feature gating: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
+- [Risk] Q1 2026 [February]: Reseller webhook v3: A single reviewer is a bottleneck; needs a delegate.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards
 Engineering Manager

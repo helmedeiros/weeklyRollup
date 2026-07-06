@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,7 +44,10 @@ Done this week: Feature flag is enabled for internal cohorts; watching latency a
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [May]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.
+  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+- [Risk] Q2 2026 [May]: Config drift auto-repair: Awaiting security review that was pushed to next quarter.
+  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
 
 Kind Regards
 Engineering Manager

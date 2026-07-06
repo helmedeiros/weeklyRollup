@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -51,7 +51,10 @@ Done this week: Cleared the staging soak; production rollout scheduled for early
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [June]: Rate-limiter fairness audit: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q2 2026 [June]: Runtime resource budgets: External vendor SLA slipping; no eta.
+  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards
 Engineering Manager

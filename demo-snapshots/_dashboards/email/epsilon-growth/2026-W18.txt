@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 5
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -58,7 +58,8 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [April]: Cart persistence across surfaces: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
 
 Kind Regards
 Engineering Manager

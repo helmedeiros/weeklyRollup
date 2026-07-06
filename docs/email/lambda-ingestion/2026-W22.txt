@@ -51,7 +51,7 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [May]: Legacy asset migration: External vendor SLA slipping; no eta.
+- [Blocker] Q2 2026 [May]: Legacy asset migration: Awaiting security review that was pushed to next quarter.
   Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 - [Risk] Q2 2026 [May]: Broken-image sentinel: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a

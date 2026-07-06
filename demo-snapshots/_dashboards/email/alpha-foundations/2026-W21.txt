@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -51,8 +51,10 @@ Done this week: Waiting on a dependency from an adjacent team; escalation opened
 Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [May]: Runtime resource budgets: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [May]: Runtime resource budgets: Design review pending from the sibling team.
   Leader Engineer: Kai Ostberg | Owner: Kai Ostberg | Days open: n/a
+- [Risk] Q2 2026 [May]: Service topology drift alarm: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

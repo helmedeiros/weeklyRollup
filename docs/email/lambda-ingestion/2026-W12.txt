@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -51,7 +51,10 @@ Done this week: Cleared the staging soak; production rollout scheduled for early
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Legacy asset migration: No owner reachable this week.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
 
 Kind Regards
 Engineering Manager

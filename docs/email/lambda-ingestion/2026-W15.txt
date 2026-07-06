@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 3
 
 Hi team,
 
@@ -51,7 +51,12 @@ Done this week: Feature flag is enabled for internal cohorts; watching latency a
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [April]: Content lint gate: No owner reachable this week.
+  Leader Engineer: Kai Ostberg | Owner: Kai Ostberg | Days open: n/a
+- [Risk] Q2 2026 [April]: Legacy asset migration: Design review pending from the sibling team.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+- [Risk] Q2 2026 [April]: Provider content ingestion QA: No owner reachable this week.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

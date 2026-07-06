@@ -116,19 +116,31 @@ TARGET_PHRASES = {
 }
 
 BLOCKER_PHRASES = {
-    "spillover_at_risk": [
+    "on_track": [
+        "Reviewer coverage is thin the week of launch — flagging in case rollout slips.",
+        "Downstream integration test suite is flaky; may hide a regression at go-live.",
+        "Adjacent team is mid-migration — could take longer to help if we hit a snag.",
+    ],
+    "at_risk": [
         "Design review pending from the sibling team.",
         "A single reviewer is a bottleneck; needs a delegate.",
+        "Owner is oncall this week; capacity is halved.",
+        "Follow-on ticket landed late; scope grew mid-sprint.",
     ],
-    "spillover_blocked": [
+    "blocked": [
         "External vendor SLA slipping; no eta.",
         "Legal sign-off outstanding.",
         "Infra migration blocking rollout; owner: platform.",
+        "Awaiting security review that was pushed to next quarter.",
     ],
     "missing": [
         "No owner reachable this week.",
+        "Update deferred; owner on PTO.",
     ],
 }
+
+# Probability that an on_track objective has a proactive risk flagged.
+ON_TRACK_RISK_PROBABILITY = 0.30
 
 
 def synth_leader_engineer_update(
@@ -137,17 +149,32 @@ def synth_leader_engineer_update(
     iso_year: int,
     iso_week: int,
 ) -> dict[str, Any]:
-    """Deterministically synthesise a weekly update body for one objective."""
-    seed = f"update-{team_name}-{iso_year}-{iso_week}-{objective.get('key', '')}"
-    rng = random.Random(seed)
+    """Deterministically synthesise a weekly update body for one objective.
+
+    The "done this week" and "target next week" bodies are seeded off the
+    current-week bucket so the language shifts as the objective slips /
+    recovers. Risks and blockers are seeded off the cohort's persistent
+    outcome (not the weekly bucket) so a "will finish at risk" objective
+    still has a flagged risk in W1 while the bucket is still on-track.
+    """
+    key = objective.get("key", "")
     bucket = objective.get("bucket", "done")
+    outcome = objective.get("outcome") or bucket
     author = objective.get("leader_engineer", "")
     status_word = STATUS_WORD.get(bucket, "Green")
 
-    done = rng.choice(DONE_PHRASES.get(bucket, DONE_PHRASES["done"]))
-    target = rng.choice(TARGET_PHRASES.get(bucket, TARGET_PHRASES["done"]))
-    blockers_pool = BLOCKER_PHRASES.get(bucket, [])
-    blockers = rng.choice(blockers_pool) if blockers_pool else ""
+    week_rng = random.Random(f"update-{team_name}-{iso_year}-{iso_week}-{key}")
+    done = week_rng.choice(DONE_PHRASES.get(bucket, DONE_PHRASES["done"]))
+    target = week_rng.choice(TARGET_PHRASES.get(bucket, TARGET_PHRASES["done"]))
+
+    blockers_rng = random.Random(f"blocker-{team_name}-{key}-{outcome}")
+    blockers = ""
+    pool = BLOCKER_PHRASES.get(outcome, [])
+    if outcome == "on_track":
+        if blockers_rng.random() < ON_TRACK_RISK_PROBABILITY and pool:
+            blockers = blockers_rng.choice(pool)
+    elif pool:
+        blockers = blockers_rng.choice(pool)
 
     return {
         "author": author,

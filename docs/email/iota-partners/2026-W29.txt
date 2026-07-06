@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,8 +44,10 @@ Done this week: Legal review outstanding — no code path until the sign-off lan
 Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
 BLOCKERS / RISKS
-- [Blocker] Q3 2026 [July]: Compliance audit trail: Legal sign-off outstanding.
+- [Blocker] Q3 2026 [July]: Compliance audit trail: Awaiting security review that was pushed to next quarter.
   Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+- [Risk] Q3 2026 [July]: Reseller webhook v3: Follow-on ticket landed late; scope grew mid-sprint.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

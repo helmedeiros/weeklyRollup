@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -51,8 +51,10 @@ Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
 Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
 BLOCKERS / RISKS
-- [Blocker] Q1 2026 [February]: Cart persistence across surfaces: External vendor SLA slipping; no eta.
+- [Blocker] Q1 2026 [February]: Cart persistence across surfaces: Legal sign-off outstanding.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q1 2026 [February]: Purchase confirmation clarity: Update deferred; owner on PTO.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

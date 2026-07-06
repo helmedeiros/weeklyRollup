@@ -46,7 +46,7 @@ Plan for next week: Realign with the partner team and reset the delivery date.
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [April]: SLA breach notifier: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
-- [Risk] Q2 2026 [April]: Partner API rate-limit v2: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [April]: Partner API rate-limit v2: Owner is oncall this week; capacity is halved.
   Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards

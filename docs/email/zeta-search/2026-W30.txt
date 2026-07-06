@@ -44,7 +44,7 @@ Done this week: Scope grew after user testing; trimming to hit the reduced targe
 Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 BLOCKERS / RISKS
-- [Risk] Q3 2026 [July]: Payment method reorder: Design review pending from the sibling team.
+- [Risk] Q3 2026 [July]: Payment method reorder: Owner is oncall this week; capacity is halved.
   Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards

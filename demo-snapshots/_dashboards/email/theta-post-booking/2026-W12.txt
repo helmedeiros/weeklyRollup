@@ -53,7 +53,7 @@ Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [March]: Cart persistence across surfaces: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
-- [Risk] Q1 2026 [March]: Homepage skeleton refresh: Design review pending from the sibling team.
+- [Risk] Q1 2026 [March]: Homepage skeleton refresh: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
 
 Kind Regards

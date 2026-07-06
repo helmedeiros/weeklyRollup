@@ -51,7 +51,7 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [April]: Legacy asset migration: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [April]: Legacy asset migration: Design review pending from the sibling team.
   Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 - [Risk] Q2 2026 [April]: Content lint gate: No owner reachable this week.
   Leader Engineer: Kai Ostberg | Owner: Kai Ostberg | Days open: n/a

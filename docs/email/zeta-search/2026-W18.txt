@@ -44,7 +44,7 @@ Done this week: Closed the final ticket in the epic and archived the working doc
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [April]: Homepage skeleton refresh: Design review pending from the sibling team.
+- [Risk] Q2 2026 [April]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
 
 Kind Regards

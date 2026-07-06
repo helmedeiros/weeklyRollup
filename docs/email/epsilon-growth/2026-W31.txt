@@ -58,7 +58,7 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
-- [Risk] Q3 2026 [July]: Homepage skeleton refresh: No owner reachable this week.
+- [Risk] Q3 2026 [July]: Homepage skeleton refresh: Update deferred; owner on PTO.
   Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
 
 Kind Regards

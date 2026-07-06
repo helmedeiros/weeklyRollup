@@ -44,11 +44,11 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Blocker] Q3 2026 [July]: Warm-cache eviction policy: External vendor SLA slipping; no eta.
+- [Blocker] Q3 2026 [July]: Warm-cache eviction policy: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
-- [Blocker] Q3 2026 [July]: Observability sampling refresh: Infra migration blocking rollout; owner: platform.
+- [Blocker] Q3 2026 [July]: Observability sampling refresh: Legal sign-off outstanding.
   Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
-- [Risk] Q3 2026 [July]: Config drift auto-repair: No owner reachable this week.
+- [Risk] Q3 2026 [July]: Config drift auto-repair: Update deferred; owner on PTO.
   Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
 
 Kind Regards

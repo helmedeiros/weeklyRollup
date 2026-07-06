@@ -51,11 +51,11 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Blocker] Q1 2026 [February]: Observability sampling refresh: Legal sign-off outstanding.
+- [Blocker] Q1 2026 [February]: Observability sampling refresh: Awaiting security review that was pushed to next quarter.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
-- [Risk] Q1 2026 [February]: Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q1 2026 [February]: Golden-path SLO board: Owner is oncall this week; capacity is halved.
   Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
-- [Risk] Q1 2026 [February]: Deprecation channel rollout: Design review pending from the sibling team.
+- [Risk] Q1 2026 [February]: Deprecation channel rollout: Owner is oncall this week; capacity is halved.
   Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards

@@ -51,9 +51,9 @@ Done this week: Incident on adjacent service consumed the week; work is paused.
 Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [April]: Payment method reorder: Legal sign-off outstanding.
+- [Blocker] Q2 2026 [April]: Payment method reorder: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
-- [Blocker] Q2 2026 [April]: Cart persistence across surfaces: Legal sign-off outstanding.
+- [Blocker] Q2 2026 [April]: Cart persistence across surfaces: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards

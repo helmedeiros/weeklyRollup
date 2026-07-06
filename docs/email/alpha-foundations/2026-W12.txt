@@ -53,7 +53,7 @@ Plan for next week: Focus on removing the current blocker; deprioritise nice-to-
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [March]: Zero-downtime restart choreography: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
-- [Risk] Q1 2026 [March]: Golden-path SLO board: Design review pending from the sibling team.
+- [Risk] Q1 2026 [March]: Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
 
 Kind Regards

@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,7 +44,10 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [June]: Contract-tier feature gating: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a
+- [Risk] Q2 2026 [June]: Compliance audit trail: Legal sign-off outstanding.
+  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards
 Engineering Manager

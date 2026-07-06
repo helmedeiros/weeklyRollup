@@ -51,7 +51,7 @@ Done this week: Waiting on infra migration that was pushed to the next quarter.
 Plan for next week: Reassign to a different owner so the current one can help elsewhere.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [June]: Publisher content freshness: Infra migration blocking rollout; owner: platform.
+- [Blocker] Q2 2026 [June]: Publisher content freshness: External vendor SLA slipping; no eta.
   Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
 
 Kind Regards

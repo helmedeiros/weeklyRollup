@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 2
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,8 +44,10 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [April]: SLA breach notifier: Legal sign-off outstanding.
+- [Blocker] Q2 2026 [April]: SLA breach notifier: Awaiting security review that was pushed to next quarter.
   Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+- [Risk] Q2 2026 [April]: Partner billing reconciliation: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
 
 Kind Regards
 Engineering Manager

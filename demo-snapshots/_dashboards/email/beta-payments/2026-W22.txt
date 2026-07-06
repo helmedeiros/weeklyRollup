@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 4
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -58,7 +58,8 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [May]: Warm-cache eviction policy: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

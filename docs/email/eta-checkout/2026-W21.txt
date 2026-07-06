@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -51,8 +51,10 @@ Done this week: Scope grew after user testing; trimming to hit the reduced targe
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [May]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [May]: Homepage skeleton refresh: Design review pending from the sibling team.
   Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+- [Risk] Q2 2026 [May]: Personalised trip recommendations: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

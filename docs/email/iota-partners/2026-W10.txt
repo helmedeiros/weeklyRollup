@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,7 +44,10 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [March]: Contract-tier feature gating: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+- [Risk] Q1 2026 [March]: Onboarding self-serve wizard: Follow-on ticket landed late; scope grew mid-sprint.
+  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
 
 Kind Regards
 Engineering Manager

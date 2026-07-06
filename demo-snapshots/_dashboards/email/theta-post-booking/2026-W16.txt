@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [April]: Loyalty perks eligibility banner: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

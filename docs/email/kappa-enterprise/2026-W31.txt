@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 2
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -44,7 +44,8 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q3 2026 [July]: Partner API rate-limit v2: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

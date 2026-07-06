@@ -51,7 +51,7 @@ Done this week: Slipped the promised design review; rescheduling for later this 
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 BLOCKERS / RISKS
-- [Risk] Q3 2026 [July]: Passenger name-change flow: Design review pending from the sibling team.
+- [Risk] Q3 2026 [July]: Passenger name-change flow: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
 
 Kind Regards

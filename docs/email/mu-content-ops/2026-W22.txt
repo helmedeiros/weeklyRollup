@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 2
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -51,8 +51,10 @@ Done this week: Closed the final ticket in the epic and archived the working doc
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [May]: Provider content ingestion QA: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [May]: Provider content ingestion QA: Owner is oncall this week; capacity is halved.
   Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+- [Risk] Q2 2026 [May]: Cadence dashboard for editors: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
 
 Kind Regards
 Engineering Manager

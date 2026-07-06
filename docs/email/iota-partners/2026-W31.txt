@@ -44,9 +44,9 @@ Done this week: Closed the final ticket in the epic and archived the working doc
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Blocker] Q3 2026 [July]: Compliance audit trail: Infra migration blocking rollout; owner: platform.
+- [Blocker] Q3 2026 [July]: Compliance audit trail: Awaiting security review that was pushed to next quarter.
   Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
-- [Risk] Q3 2026 [July]: Reseller webhook v3: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q3 2026 [July]: Reseller webhook v3: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
 
 Kind Regards

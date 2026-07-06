@@ -51,13 +51,13 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [May]: Refund status transparency: Design review pending from the sibling team.
+- [Risk] Q2 2026 [May]: Refund status transparency: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 - [Risk] Q2 2026 [May]: Passenger name-change flow: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a
-- [Risk] Q2 2026 [May]: Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q2 2026 [May]: Payment method reorder: Design review pending from the sibling team.
   Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
-- [Risk] Q2 2026 [May]: Loyalty perks eligibility banner: No owner reachable this week.
+- [Risk] Q2 2026 [May]: Loyalty perks eligibility banner: Update deferred; owner on PTO.
   Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards

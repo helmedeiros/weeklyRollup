@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Cleared the staging soak; production rollout scheduled for early
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [June]: Legacy asset migration: Update deferred; owner on PTO.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

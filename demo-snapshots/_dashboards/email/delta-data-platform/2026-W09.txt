@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 2
 - Missing updates: 1
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,6 +44,8 @@ Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed 
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
+- [Risk] Q1 2026 [February]: Zero-downtime restart choreography: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
 - [Risk] Q1 2026 [February]: Observability sampling refresh: No owner reachable this week.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 

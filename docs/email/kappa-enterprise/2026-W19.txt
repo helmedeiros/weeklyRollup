@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,7 +44,10 @@ Done this week: Prep work is done; kickoff of the customer-facing rollout starts
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [May]: Partner billing reconciliation: Update deferred; owner on PTO.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+- [Risk] Q2 2026 [May]: SLA breach notifier: Infra migration blocking rollout; owner: platform.
+  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
 
 Kind Regards
 Engineering Manager

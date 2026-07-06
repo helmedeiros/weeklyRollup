@@ -51,7 +51,7 @@ Done this week: Slipped the promised design review; rescheduling for later this 
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 BLOCKERS / RISKS
-- [Risk] Q1 2026 [March]: Purchase confirmation clarity: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q1 2026 [March]: Purchase confirmation clarity: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards

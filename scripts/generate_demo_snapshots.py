@@ -328,6 +328,7 @@ def generate() -> None:
                     "due_date_overdue_days": 0,
                     "progress": f"{progress}%",
                     "bucket": bucket,
+                    "outcome": src["outcome"],
                     "hygiene_severity": "yellow" if bucket in {"spillover_at_risk", "missing"} else "info",
                     "hygiene": [],
                     "blockers": [],

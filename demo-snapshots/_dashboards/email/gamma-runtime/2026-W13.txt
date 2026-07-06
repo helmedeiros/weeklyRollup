@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 2
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 3
 
 Hi team,
 
@@ -51,8 +51,12 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
-- [Risk] Q1 2026 [March]: Rate-limiter fairness audit: Design review pending from the sibling team.
+- [Risk] Q1 2026 [March]: Rate-limiter fairness audit: Owner is oncall this week; capacity is halved.
   Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
+- [Risk] Q1 2026 [March]: Observability sampling refresh: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+- [Risk] Q1 2026 [March]: Config drift auto-repair: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards
 Engineering Manager

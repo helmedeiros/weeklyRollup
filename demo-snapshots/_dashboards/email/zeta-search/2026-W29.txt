@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -44,7 +44,8 @@ Done this week: Cleared the staging soak; production rollout scheduled for early
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q3 2026 [July]: Payment method reorder: Owner is oncall this week; capacity is halved.
+  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
 
 Kind Regards
 Engineering Manager

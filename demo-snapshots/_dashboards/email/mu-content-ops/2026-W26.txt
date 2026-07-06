@@ -51,7 +51,7 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [June]: Legacy asset migration: No owner reachable this week.
+- [Risk] Q2 2026 [June]: Legacy asset migration: Update deferred; owner on PTO.
   Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards

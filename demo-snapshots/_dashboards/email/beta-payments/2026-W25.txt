@@ -58,7 +58,7 @@ Done this week: Waiting on a dependency from an adjacent team; escalation opened
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Design review pending from the sibling team.
+- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
 
 Kind Regards

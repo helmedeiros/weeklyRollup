@@ -51,7 +51,7 @@ Done this week: Slipped the promised design review; rescheduling for later this 
 Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 BLOCKERS / RISKS
-- [Risk] Q3 2026 [July]: Legacy asset migration: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q3 2026 [July]: Legacy asset migration: Owner is oncall this week; capacity is halved.
   Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
 
 Kind Regards

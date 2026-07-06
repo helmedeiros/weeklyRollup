@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 4
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -58,7 +58,8 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [April]: Observability sampling refresh: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
 
 Kind Regards
 Engineering Manager

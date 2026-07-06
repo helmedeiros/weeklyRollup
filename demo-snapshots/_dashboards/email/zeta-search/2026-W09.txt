@@ -46,7 +46,7 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [February]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
-- [Risk] Q1 2026 [February]: Payment method reorder: Design review pending from the sibling team.
+- [Risk] Q1 2026 [February]: Payment method reorder: Owner is oncall this week; capacity is halved.
   Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
 
 Kind Regards

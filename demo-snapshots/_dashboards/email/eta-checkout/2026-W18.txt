@@ -51,9 +51,9 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Blocker] Q2 2026 [April]: Payment method reorder: External vendor SLA slipping; no eta.
+- [Blocker] Q2 2026 [April]: Payment method reorder: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
-- [Blocker] Q2 2026 [April]: Cart persistence across surfaces: Legal sign-off outstanding.
+- [Blocker] Q2 2026 [April]: Cart persistence across surfaces: Infra migration blocking rollout; owner: platform.
   Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
 
 Kind Regards

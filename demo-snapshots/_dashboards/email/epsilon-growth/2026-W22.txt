@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 4
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -58,8 +58,10 @@ Done this week: Shipped the last remaining PR and confirmed the target metric mo
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- [Risk] Q2 2026 [May]: Payment method reorder: Design review pending from the sibling team.
+- [Risk] Q2 2026 [May]: Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
   Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+- [Risk] Q2 2026 [May]: Cart persistence across surfaces: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
 
 Kind Regards
 Engineering Manager

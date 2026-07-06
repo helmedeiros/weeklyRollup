@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,7 +44,10 @@ Done this week: Cleared the staging soak; production rollout scheduled for early
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q1 2026 [February]: Zero-downtime restart choreography: Adjacent team is mid-migration — could take longer to help if we hit a snag.
+  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+- [Risk] Q1 2026 [February]: Observability sampling refresh: No owner reachable this week.
+  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 4
 - Missing updates: 0
-- Blockers / risks: 0
+- Blockers / risks: 1
 
 Hi team,
 
@@ -51,7 +51,8 @@ Done this week: Landed the migration cutover; no incidents in the follow-up wind
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
-- No active blockers reported.
+- [Risk] Q2 2026 [April]: Loyalty perks eligibility banner: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
+  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

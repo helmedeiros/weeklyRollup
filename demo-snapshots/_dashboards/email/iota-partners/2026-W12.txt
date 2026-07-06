@@ -6,7 +6,7 @@ SUMMARY
 - Not started: 0
 - Done: 0
 - Missing updates: 0
-- Blockers / risks: 1
+- Blockers / risks: 2
 
 Hi team,
 
@@ -44,8 +44,10 @@ Done this week: Scope grew after user testing; trimming to hit the reduced targe
 Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 BLOCKERS / RISKS
-- [Risk] Q1 2026 [March]: Onboarding self-serve wizard: A single reviewer is a bottleneck; needs a delegate.
+- [Risk] Q1 2026 [March]: Onboarding self-serve wizard: Follow-on ticket landed late; scope grew mid-sprint.
   Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
+- [Risk] Q1 2026 [March]: Contract-tier feature gating: Downstream integration test suite is flaky; may hide a regression at go-live.
+  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
 
 Kind Regards
 Engineering Manager
