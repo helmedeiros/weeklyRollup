@@ -394,6 +394,7 @@ table.teams tr:last-child td { border-bottom: none; }
   const snapshots = JSON.parse(document.getElementById("snapshots-json").textContent);
   const defaultStart = "2026-07-01";
   const defaultEnd = "2026-07-31";
+  const BUILD_VERSION = "20260706103828";
 
   const ALL_BUSINESS_UNITS = Array.from(new Set(snapshots.map(s => s.team.business_unit))).sort();
   const ALL_TEAMS = (() => {
@@ -917,7 +918,7 @@ table.teams tr:last-child td { border-bottom: none; }
   function snapshotEmailUrl(s, kind) {
     const y = s.week.iso_year;
     const w = String(s.week.iso_week).padStart(2, "0");
-    return `email/${encodeURIComponent(s.team.id)}/${y}-W${w}.${kind === "text" ? "txt" : "html"}`;
+    return `email/${encodeURIComponent(s.team.id)}/${y}-W${w}.${kind === "text" ? "txt" : "html"}?v=${BUILD_VERSION}`;
   }
 
   function renderEmailStrip(teamSnapshots) {

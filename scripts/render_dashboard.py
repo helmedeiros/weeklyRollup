@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -128,6 +128,7 @@ def render(snapshots: list[dict[str, Any]]) -> str:
     template = env.get_template("dashboard.html")
     default_start, default_end = default_range(snapshots)
     embedded = [_strip_outputs(s) for s in snapshots]
+    build_version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
     return template.render(
         snapshots_json=json.dumps(embedded, ensure_ascii=False),
         business_units=collect_business_units(snapshots),
@@ -135,6 +136,7 @@ def render(snapshots: list[dict[str, Any]]) -> str:
         default_end=default_end,
         snapshot_count=len(snapshots),
         email_sidecar_dir=EMAIL_SIDECAR_DIR,
+        build_version=build_version,
     )
 
 
