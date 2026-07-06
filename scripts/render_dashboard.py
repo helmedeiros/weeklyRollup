@@ -1,15 +1,12 @@
-"""Render a leadership dashboard HTML page from a weekly aggregate JSON.
+"""Render the leadership dashboard as a static HTML page.
 
-Reads the aggregate at ``<snapshots-dir>/_aggregates/<YYYY>-Www.json``,
-plugs it into ``templates/dashboard.html``, and writes the rendered
-static page to ``<snapshots-dir>/_dashboards/<YYYY>-Www.html``.
+Reads every per-team snapshot under ``<snapshots-dir>/<team-id>/*.json``,
+embeds the raw list into ``templates/dashboard.html``, and writes the
+rendered HTML. The template computes the visible aggregate client-side
+based on the current date-range picker + business-unit filter.
 
-Default `--snapshots-dir` is ``demo-snapshots``; run with
+Default ``--snapshots-dir`` is ``demo-snapshots``; run with
 ``--snapshots-dir snapshots`` to render your local dataset.
-
-The output is a fully self-contained HTML file with inline CSS + a
-small vanilla-JS BU filter, so it can be published as-is (e.g. via
-GitHub Pages) without a build step or JS bundler.
 """
 
 from __future__ import annotations
@@ -30,22 +27,42 @@ ROOT = Path(__file__).resolve().parent.parent
 TEMPLATES = ROOT / "templates"
 
 
-def _month_display(month_label: str, target_date: str) -> str:
-    """Return a friendly month label like 'June 2026' for the H1."""
-    if month_label:
-        parts = month_label.replace("objective-", "").split("-")
-        if len(parts) == 2:
-            month, year = parts
-            return f"{month.capitalize()} {year}"
-    if target_date:
-        try:
-            return date.fromisoformat(target_date).strftime("%B %Y")
-        except ValueError:
-            pass
-    return "Weekly"
+def load_snapshots(root: Path) -> list[dict[str, Any]]:
+    """Return every per-team snapshot under ``root`` sorted by target_date."""
+    snapshots: list[dict[str, Any]] = []
+    for team_dir in sorted(p for p in root.iterdir() if p.is_dir() and not p.name.startswith("_")):
+        for file in sorted(team_dir.glob("*.json")):
+            snapshots.append(json.loads(file.read_text(encoding="utf-8")))
+    snapshots.sort(key=lambda s: (s.get("week", {}).get("target_date", ""), s.get("team", {}).get("id", "")))
+    return snapshots
 
 
-def render(aggregate: dict[str, Any]) -> str:
+def collect_business_units(snapshots: list[dict[str, Any]]) -> list[str]:
+    seen: dict[str, None] = {}
+    for s in snapshots:
+        bu = str(s.get("team", {}).get("business_unit") or "Unassigned")
+        seen.setdefault(bu, None)
+    return sorted(seen.keys())
+
+
+def default_range(snapshots: list[dict[str, Any]]) -> tuple[str, str]:
+    """Default range = calendar month of the latest snapshot's target_date (inclusive)."""
+    if not snapshots:
+        today = date.today()
+        return today.replace(day=1).isoformat(), today.isoformat()
+    latest = max(str(s.get("week", {}).get("target_date") or "") for s in snapshots)
+    parsed = date.fromisoformat(latest)
+    start = parsed.replace(day=1)
+    if parsed.month == 12:
+        end = date(parsed.year + 1, 1, 1)
+    else:
+        end = date(parsed.year, parsed.month + 1, 1)
+    # last day inclusive
+    last_day = date.fromordinal(end.toordinal() - 1)
+    return start.isoformat(), last_day.isoformat()
+
+
+def render(snapshots: list[dict[str, Any]]) -> str:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
         autoescape=select_autoescape(["html"]),
@@ -53,49 +70,32 @@ def render(aggregate: dict[str, Any]) -> str:
         lstrip_blocks=True,
     )
     template = env.get_template("dashboard.html")
-    aggregate_json = json.dumps(aggregate, ensure_ascii=False)
+    default_start, default_end = default_range(snapshots)
     return template.render(
-        aggregate=aggregate,
-        aggregate_json=aggregate_json,
-        month_display=_month_display(
-            str(aggregate.get("week", {}).get("month_label") or ""),
-            str(aggregate.get("week", {}).get("target_date") or ""),
-        ),
+        snapshots_json=json.dumps(snapshots, ensure_ascii=False),
+        business_units=collect_business_units(snapshots),
+        default_start=default_start,
+        default_end=default_end,
+        snapshot_count=len(snapshots),
     )
-
-
-def resolve_week(args: argparse.Namespace) -> tuple[int, int]:
-    if args.week:
-        year_part, week_part = args.week.split("-W")
-        return int(year_part), int(week_part)
-    if args.target_date:
-        parsed = date.fromisoformat(args.target_date)
-        y, w, _ = parsed.isocalendar()
-        return y, w
-    raise SystemExit("Provide --week YYYY-Www or --target-date YYYY-MM-DD")
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--snapshots-dir", default="demo-snapshots")
-    parser.add_argument("--week", help="ISO week label, e.g. 2026-W27")
-    parser.add_argument("--target-date")
-    parser.add_argument("--output-path")
+    parser.add_argument("--output-path", help="Defaults to <snapshots-dir>/_dashboards/index.html")
     args = parser.parse_args(argv)
 
-    iso_year, iso_week = resolve_week(args)
     root = Path(args.snapshots_dir)
-    aggregate_path = root / "_aggregates" / f"{iso_year}-W{iso_week:02d}.json"
-    if not aggregate_path.exists():
-        print(f"Aggregate not found: {aggregate_path}. Run aggregate_snapshots.py first.")
+    snapshots = load_snapshots(root)
+    if not snapshots:
+        print(f"No snapshots found under {root}/")
         return 1
-    aggregate = json.loads(aggregate_path.read_text(encoding="utf-8"))
-
-    html = render(aggregate)
-    output_path = Path(args.output_path) if args.output_path else (root / "_dashboards" / f"{iso_year}-W{iso_week:02d}.html")
+    html = render(snapshots)
+    output_path = Path(args.output_path) if args.output_path else (root / "_dashboards" / "index.html")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(html, encoding="utf-8")
-    print(f"Wrote {output_path}")
+    print(f"Wrote {output_path} — {len(snapshots)} snapshots across {len(collect_business_units(snapshots))} business units")
     return 0
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Objectives Summary — Week {{ aggregate.week.iso_week }}</title>
+<title>Objectives Summary</title>
 <style>
 :root {
   --navy: #132968;
@@ -28,42 +28,57 @@ h1 { margin: 0; font-size: 34px; color: var(--navy); }
 .eyebrow { text-transform: uppercase; color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: 1.4px; }
 .subhead { color: var(--slate); font-size: 14px; margin-top: 4px; }
 .section-divider { border-top: 1px solid var(--line); margin: 24px 0; }
-.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+
+/* Date-range chip + picker */
+.range-row { display: flex; align-items: center; gap: 12px; margin: 12px 0 8px; position: relative; }
+.range-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--panel); border: 1.5px solid var(--navy); color: var(--navy);
+  border-radius: 999px; padding: 8px 8px 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.range-chip .range-label { line-height: 1; }
+.range-chip .range-reset { background: transparent; border: none; color: var(--navy); cursor: pointer; padding: 2px 6px; border-radius: 999px; }
+.range-chip .range-reset:hover { background: #eef2ff; }
+.range-picker {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 20;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 16px; display: grid; grid-template-columns: 180px 1fr; gap: 20px;
+  box-shadow: 0 12px 40px rgba(19, 41, 104, 0.12); min-width: 480px;
+}
+.range-picker[hidden] { display: none; }
+.range-presets { display: flex; flex-direction: column; gap: 4px; }
+.range-presets button {
+  text-align: left; background: transparent; border: none; padding: 8px 12px;
+  border-radius: 6px; font-size: 13px; color: var(--slate-strong); cursor: pointer;
+}
+.range-presets button:hover { background: #f1f5f9; }
+.range-presets button[aria-pressed="true"] { background: #eef2ff; color: var(--navy); font-weight: 700; }
+.range-form label { display: block; font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.range-form .inputs { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.range-form .inputs input { border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 14px; color: var(--slate-strong); font-family: inherit; }
+.range-form .actions { display: flex; justify-content: flex-end; gap: 8px; }
+.range-form .actions button {
+  border-radius: 999px; border: 1px solid var(--line); background: var(--panel);
+  padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--slate-strong);
+}
+.range-form .actions button.primary { background: var(--navy); color: white; border-color: var(--navy); }
+
+/* BU filter bar */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
 .filter-bar button {
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--navy);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
+  border: 1px solid var(--line); background: var(--panel); color: var(--navy);
+  padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer;
 }
-.filter-bar button[aria-pressed="true"] {
-  background: #4341c9;
-  color: #ffffff;
-  border-color: #4341c9;
-}
+.filter-bar button[aria-pressed="true"] { background: #4341c9; color: #ffffff; border-color: #4341c9; }
 .filter-help { color: var(--slate); font-size: 12px; margin-bottom: 24px; }
-.top-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  gap: 16px;
-  align-items: stretch;
-  margin-bottom: 32px;
-}
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 20px 22px;
-}
+
+/* Top cards */
+.top-cards { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 16px; align-items: stretch; margin-bottom: 32px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; }
 .card h3 { margin: 0 0 12px; font-size: 11px; letter-spacing: 1.3px; color: var(--slate); font-weight: 700; text-transform: uppercase; }
 .card .desc { color: var(--slate); font-size: 13px; margin-bottom: 12px; }
 .delivery-rate { font-size: 60px; font-weight: 700; color: var(--navy); line-height: 1; }
-.progress {
-  height: 10px; border-radius: 999px; background: #e6ecf5; margin-top: 14px; overflow: hidden;
-}
+.progress { height: 10px; border-radius: 999px; background: #e6ecf5; margin-top: 14px; overflow: hidden; }
 .progress > div { height: 100%; background: var(--green); border-radius: 999px; }
 .progress-note { color: var(--slate); font-size: 12px; margin-top: 8px; }
 .scope-inner { display: flex; gap: 12px; }
@@ -86,6 +101,8 @@ h1 { margin: 0; font-size: 34px; color: var(--navy); }
 .status-tile.missing .status-num { color: #475569; }
 .legend { display: flex; gap: 12px; align-items: center; font-size: 11px; color: var(--slate); margin-bottom: 8px; }
 .legend .dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; margin-right: 4px; }
+
+/* Team table */
 .table-wrap { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
 table.teams { width: 100%; border-collapse: collapse; font-size: 13px; }
 table.teams th { text-align: left; text-transform: uppercase; letter-spacing: 1px; font-size: 10px; color: var(--slate); padding: 12px 16px; background: #edf1f9; border-bottom: 1px solid var(--line); }
@@ -105,18 +122,48 @@ table.teams tr:last-child td { border-bottom: none; }
 .delivery-cell .bar > div { height: 100%; background: var(--green); }
 .delivery-cell.warn .bar > div { background: #0d9488; }
 .delivery-cell strong { min-width: 52px; text-align: right; font-weight: 700; }
+.empty-row td { padding: 24px 16px; color: var(--slate); text-align: center; font-style: italic; }
 </style>
 </head>
 <body>
-<div class="eyebrow">Week {{ aggregate.week.iso_week }} leadership view</div>
-<h1>{{ month_display }} Objectives Summary</h1>
-<p class="subhead">Team delivery, status mix, and objective risks from the latest Week {{ aggregate.week.iso_week }} snapshot.</p>
+<div class="eyebrow" id="eyebrow">Leadership view</div>
+<h1 id="page-title">Objectives Summary</h1>
+<p class="subhead" id="page-subhead">Team delivery, status mix, and objective risks over the selected range.</p>
 <div class="section-divider"></div>
 
+<div class="range-row">
+  <div class="range-chip" id="range-chip" role="button" aria-haspopup="dialog" aria-expanded="false">
+    <span class="range-label" id="range-label">…</span>
+    <button class="range-reset" id="range-reset" type="button" title="Reset to default range">×</button>
+  </div>
+  <div class="range-picker" id="range-picker" hidden role="dialog" aria-label="Choose date range">
+    <div class="range-presets" id="range-presets">
+      <button type="button" data-preset="current-month" aria-pressed="true">Current month</button>
+      <button type="button" data-preset="last-1-month">Last 1 Month</button>
+      <button type="button" data-preset="last-3-months">Last 3 Months</button>
+      <button type="button" data-preset="last-6-months">Last 6 Months</button>
+      <button type="button" data-preset="last-1-year">Last 1 Year</button>
+      <button type="button" data-preset="all-time">All time</button>
+    </div>
+    <div class="range-form">
+      <label for="range-start">Date range</label>
+      <div class="inputs">
+        <input type="date" id="range-start" value="{{ default_start }}">
+        <span>→</span>
+        <input type="date" id="range-end" value="{{ default_end }}">
+      </div>
+      <div class="actions">
+        <button type="button" id="range-cancel">Cancel</button>
+        <button type="button" class="primary" id="range-apply">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="filter-bar" id="bu-filter">
-  <button type="button" data-bu="__all__" aria-pressed="true">All BUs ({{ aggregate.totals.teams }})</button>
-  {% for bu in aggregate.business_units %}
-    <button type="button" data-bu="{{ bu.business_unit }}">{{ bu.business_unit }} ({{ bu.team_count }})</button>
+  <button type="button" data-bu="__all__" aria-pressed="true">All BUs</button>
+  {% for bu in business_units %}
+    <button type="button" data-bu="{{ bu }}">{{ bu }}</button>
   {% endfor %}
 </div>
 <div class="filter-help">Click a business unit above to focus the table below on that group.</div>
@@ -124,27 +171,27 @@ table.teams tr:last-child td { border-bottom: none; }
 <div class="top-cards">
   <div class="card">
     <h3>Objective delivery rate</h3>
-    <div class="delivery-rate" id="delivery-rate">{{ "%.1f"|format(aggregate.totals.delivery_rate * 100) }}%</div>
-    <div class="progress"><div id="delivery-bar" style="width: {{ (aggregate.totals.delivery_rate * 100)|round(1) }}%"></div></div>
-    <div class="progress-note" id="delivery-note">{{ aggregate.totals.done }} of {{ aggregate.totals.objectives }} objectives done.</div>
+    <div class="delivery-rate" id="delivery-rate">–</div>
+    <div class="progress"><div id="delivery-bar" style="width: 0%"></div></div>
+    <div class="progress-note" id="delivery-note"></div>
   </div>
   <div class="card">
     <h3>Scope</h3>
     <div class="desc">Current filter coverage</div>
     <div class="scope-inner">
-      <div class="scope-box"><div class="num" id="scope-teams">{{ aggregate.totals.teams }}</div><div class="label">Teams</div></div>
-      <div class="scope-box"><div class="num" id="scope-objectives">{{ aggregate.totals.objectives }}</div><div class="label">Objectives</div></div>
+      <div class="scope-box"><div class="num" id="scope-teams">0</div><div class="label">Teams</div></div>
+      <div class="scope-box"><div class="num" id="scope-objectives">0</div><div class="label">Objectives</div></div>
     </div>
   </div>
   <div class="card">
     <h3>Status</h3>
     <div class="desc">Delivery state across the selected teams</div>
     <div class="status-inner">
-      <div class="status-tile done"><div class="status-label">Done</div><div class="status-num" data-role="done">{{ aggregate.totals.done }}</div></div>
-      <div class="status-tile spillover_on_track"><div class="status-label">Spillover<br>on track</div><div class="status-num" data-role="spillover_on_track">{{ aggregate.totals.spillover_on_track }}</div></div>
-      <div class="status-tile spillover_at_risk"><div class="status-label">Spillover<br>at risk</div><div class="status-num" data-role="spillover_at_risk">{{ aggregate.totals.spillover_at_risk }}</div></div>
-      <div class="status-tile spillover_blocked"><div class="status-label">Spillover<br>blocked</div><div class="status-num" data-role="spillover_blocked">{{ aggregate.totals.spillover_blocked }}</div></div>
-      <div class="status-tile missing"><div class="status-label">Missing</div><div class="status-num" data-role="missing">{{ aggregate.totals.missing }}</div></div>
+      <div class="status-tile done"><div class="status-label">Done</div><div class="status-num" data-role="done">0</div></div>
+      <div class="status-tile spillover_on_track"><div class="status-label">Spillover<br>on track</div><div class="status-num" data-role="spillover_on_track">0</div></div>
+      <div class="status-tile spillover_at_risk"><div class="status-label">Spillover<br>at risk</div><div class="status-num" data-role="spillover_at_risk">0</div></div>
+      <div class="status-tile spillover_blocked"><div class="status-label">Spillover<br>blocked</div><div class="status-num" data-role="spillover_blocked">0</div></div>
+      <div class="status-tile missing"><div class="status-label">Missing</div><div class="status-num" data-role="missing">0</div></div>
     </div>
   </div>
 </div>
@@ -152,7 +199,7 @@ table.teams tr:last-child td { border-bottom: none; }
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;">
   <div>
     <div style="font-size:18px;font-weight:700;color:var(--navy);">Team delivery table</div>
-    <div class="subhead" id="team-count-note">{{ aggregate.totals.objectives }} objectives across {{ aggregate.totals.teams }} teams.</div>
+    <div class="subhead" id="team-count-note"></div>
   </div>
   <div class="legend">
     <span><span class="dot" style="background:var(--red)"></span>Spillover Blocked</span>
@@ -172,69 +219,261 @@ table.teams tr:last-child td { border-bottom: none; }
   <th style="text-align:right;">Delivery rate</th>
 </tr>
 </thead>
-<tbody id="teams-tbody">
-{% for row in aggregate.teams %}
-<tr data-bu="{{ row.business_unit }}">
-  <td><strong>{{ row.team_name }}</strong></td>
-  <td><span class="pill">{{ row.business_unit }}</span></td>
-  <td>{{ row.total_objectives }}</td>
-  <td>
-    <div class="status-cell">
-      {% if row.done %}<span class="status-pill done">{{ row.done }} Done</span>{% else %}<span class="status-pill zero">0 Done</span>{% endif %}
-      {% if row.spillover_on_track %}<span class="status-pill spillover_on_track">{{ row.spillover_on_track }} Spillover Track</span>{% else %}<span class="status-pill zero">0 Track</span>{% endif %}
-      {% if row.spillover_at_risk %}<span class="status-pill spillover_at_risk">{{ row.spillover_at_risk }} Spillover Risk</span>{% else %}<span class="status-pill zero">0 Risk</span>{% endif %}
-      {% if row.spillover_blocked %}<span class="status-pill spillover_blocked">{{ row.spillover_blocked }} Spillover Blocked</span>{% else %}<span class="status-pill zero">0 Blocked</span>{% endif %}
-      {% if row.missing %}<span class="status-pill missing">{{ row.missing }} Missing</span>{% else %}<span class="status-pill zero">0 Missing</span>{% endif %}
-    </div>
-  </td>
-  <td>
-    <div class="delivery-cell {% if row.delivery_rate < 0.8 %}warn{% endif %}">
-      <div class="bar"><div style="width: {{ (row.delivery_rate * 100)|round(1) }}%"></div></div>
-      <strong>{{ "%.1f"|format(row.delivery_rate * 100) }}%</strong>
-    </div>
-  </td>
-</tr>
-{% endfor %}
-</tbody>
+<tbody id="teams-tbody"></tbody>
 </table>
 </div>
 
-<script id="aggregate-json" type="application/json">{{ aggregate_json | safe }}</script>
+<script id="snapshots-json" type="application/json">{{ snapshots_json | safe }}</script>
 <script>
 (function () {
-  const raw = document.getElementById('aggregate-json').textContent;
-  const aggregate = JSON.parse(raw);
-  const buttons = document.querySelectorAll('#bu-filter button');
-  const rows = document.querySelectorAll('#teams-tbody tr');
-  const totals = document.querySelectorAll('.status-num[data-role]');
+  const BUCKETS = ["done", "spillover_on_track", "spillover_at_risk", "spillover_blocked", "missing"];
+  const BUCKET_LABELS = {
+    done: "Done",
+    spillover_on_track: "Spillover Track",
+    spillover_at_risk: "Spillover Risk",
+    spillover_blocked: "Spillover Blocked",
+    missing: "Missing",
+  };
+  const BUCKET_ZERO_LABELS = {
+    done: "0 Done",
+    spillover_on_track: "0 Track",
+    spillover_at_risk: "0 Risk",
+    spillover_blocked: "0 Blocked",
+    missing: "0 Missing",
+  };
 
-  function applyFilter(bu) {
-    const buRow = bu === '__all__' ? aggregate.totals : aggregate.business_units.find(x => x.business_unit === bu);
-    if (!buRow) return;
-    const objectives = (buRow.done || 0) + (buRow.spillover_on_track || 0) + (buRow.spillover_at_risk || 0) + (buRow.spillover_blocked || 0) + (buRow.missing || 0);
-    const rate = objectives ? (buRow.done || 0) / objectives : 0;
-    document.getElementById('delivery-rate').textContent = (rate * 100).toFixed(1) + '%';
-    document.getElementById('delivery-bar').style.width = (rate * 100).toFixed(1) + '%';
-    document.getElementById('delivery-note').textContent = (buRow.done || 0) + ' of ' + objectives + ' objectives done.';
-    document.getElementById('scope-teams').textContent = bu === '__all__' ? aggregate.totals.teams : buRow.team_count;
-    document.getElementById('scope-objectives').textContent = objectives;
-    totals.forEach(node => {
-      const role = node.getAttribute('data-role');
-      node.textContent = buRow[role] || 0;
+  const snapshots = JSON.parse(document.getElementById("snapshots-json").textContent);
+  const defaultStart = "{{ default_start }}";
+  const defaultEnd = "{{ default_end }}";
+
+  let currentStart = parseDate(defaultStart);
+  let currentEnd = parseDate(defaultEnd);
+  let currentBU = "__all__";
+  let currentPreset = "current-month";
+
+  function parseDate(iso) { return new Date(iso + "T00:00:00"); }
+  function fmtISO(d) { return d.toISOString().slice(0, 10); }
+
+  function computeAggregate(startDate, endDate, bu) {
+    const startMs = startDate.getTime();
+    const endMs = endDate.getTime();
+    const inRange = snapshots.filter(s => {
+      const t = parseDate(s.week.target_date).getTime();
+      if (t < startMs || t > endMs) return false;
+      if (bu !== "__all__" && s.team.business_unit !== bu) return false;
+      return true;
     });
-    rows.forEach(row => {
-      row.style.display = (bu === '__all__' || row.getAttribute('data-bu') === bu) ? '' : 'none';
+
+    const teamMap = new Map();
+    inRange.forEach(s => {
+      const key = s.team.id;
+      if (!teamMap.has(key)) {
+        const row = { team_id: s.team.id, team_name: s.team.name, business_unit: s.team.business_unit, total_objectives: 0 };
+        BUCKETS.forEach(b => row[b] = 0);
+        teamMap.set(key, row);
+      }
+      const row = teamMap.get(key);
+      BUCKETS.forEach(b => row[b] += (s.totals[b] || 0));
+      row.total_objectives += (s.totals.objectives || 0);
     });
-    document.getElementById('team-count-note').textContent =
-      objectives + ' objectives across ' + (bu === '__all__' ? aggregate.totals.teams : buRow.team_count) + ' teams.';
+
+    const teams = Array.from(teamMap.values());
+    teams.forEach(t => t.delivery_rate = t.total_objectives ? t.done / t.total_objectives : 0);
+    teams.sort((a, b) =>
+      b.delivery_rate - a.delivery_rate
+      || b.total_objectives - a.total_objectives
+      || a.team_name.localeCompare(b.team_name));
+
+    const totals = { teams: teams.length };
+    BUCKETS.forEach(b => totals[b] = 0);
+    teams.forEach(t => BUCKETS.forEach(b => totals[b] += t[b]));
+    totals.objectives = BUCKETS.reduce((a, b) => a + totals[b], 0);
+    totals.delivery_rate = totals.objectives ? totals.done / totals.objectives : 0;
+
+    return { totals, teams };
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(other => other.setAttribute('aria-pressed', other === btn ? 'true' : 'false'));
-      applyFilter(btn.getAttribute('data-bu'));
+  function pluralize(n, singular, plural) { return n === 1 ? singular : plural; }
+
+  function humanRangeLabel(startDate, endDate, preset) {
+    if (preset === "all-time") return "All time";
+    if (preset && preset !== "custom") {
+      const map = {
+        "current-month": "Current month",
+        "last-1-month": "Last 1 Month",
+        "last-3-months": "Last 3 Months",
+        "last-6-months": "Last 6 Months",
+        "last-1-year": "Last 1 Year",
+      };
+      if (map[preset]) return map[preset];
+    }
+    const opts = { month: "short", day: "numeric" };
+    const startStr = startDate.toLocaleDateString("en-US", opts);
+    const endStr = endDate.toLocaleDateString("en-US", { ...opts, year: "numeric" });
+    return `${startStr} – ${endStr}`;
+  }
+
+  function humanRangeSubhead(startDate, endDate) {
+    const opts = { month: "long", day: "numeric", year: "numeric" };
+    return `${startDate.toLocaleDateString("en-US", opts)} → ${endDate.toLocaleDateString("en-US", opts)}`;
+  }
+
+  function pillFor(count, bucket) {
+    if (count > 0) return `<span class="status-pill ${bucket}">${count} ${BUCKET_LABELS[bucket]}</span>`;
+    return `<span class="status-pill zero">${BUCKET_ZERO_LABELS[bucket]}</span>`;
+  }
+
+  function renderTeamRow(row) {
+    const warn = row.delivery_rate < 0.8 ? "warn" : "";
+    const pct = (row.delivery_rate * 100).toFixed(1);
+    return `<tr data-bu="${row.business_unit}">
+      <td><strong>${row.team_name}</strong></td>
+      <td><span class="pill">${row.business_unit}</span></td>
+      <td>${row.total_objectives}</td>
+      <td><div class="status-cell">
+        ${BUCKETS.map(b => pillFor(row[b], b)).join("")}
+      </div></td>
+      <td>
+        <div class="delivery-cell ${warn}">
+          <div class="bar"><div style="width: ${pct}%"></div></div>
+          <strong>${pct}%</strong>
+        </div>
+      </td>
+    </tr>`;
+  }
+
+  function refresh() {
+    const agg = computeAggregate(currentStart, currentEnd, currentBU);
+    const { totals, teams } = agg;
+
+    document.getElementById("delivery-rate").textContent = totals.objectives ? (totals.delivery_rate * 100).toFixed(1) + "%" : "–";
+    document.getElementById("delivery-bar").style.width = (totals.delivery_rate * 100).toFixed(1) + "%";
+    document.getElementById("delivery-note").textContent = totals.objectives
+      ? `${totals.done} of ${totals.objectives} objectives done.`
+      : "No objectives in range.";
+    document.getElementById("scope-teams").textContent = totals.teams;
+    document.getElementById("scope-objectives").textContent = totals.objectives;
+    BUCKETS.forEach(b => document.querySelector(`.status-num[data-role="${b}"]`).textContent = totals[b]);
+
+    const tbody = document.getElementById("teams-tbody");
+    if (teams.length === 0) {
+      tbody.innerHTML = `<tr class="empty-row"><td colspan="5">No snapshots for this range.</td></tr>`;
+    } else {
+      tbody.innerHTML = teams.map(renderTeamRow).join("");
+    }
+
+    document.getElementById("team-count-note").textContent =
+      `${totals.objectives} ${pluralize(totals.objectives, "objective", "objectives")} across ${totals.teams} ${pluralize(totals.teams, "team", "teams")}.`;
+
+    document.getElementById("range-label").textContent = humanRangeLabel(currentStart, currentEnd, currentPreset);
+    document.getElementById("page-subhead").textContent = `Team delivery, status mix, and objective risks over ${humanRangeSubhead(currentStart, currentEnd)}.`;
+    document.getElementById("page-title").textContent = "Objectives Summary";
+  }
+
+  // --- Range presets ---
+  function computePreset(preset) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    let start, end;
+    if (preset === "current-month") {
+      start = new Date(today.getFullYear(), today.getMonth(), 1);
+      end = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    } else if (preset === "last-1-month") {
+      end = today;
+      start = new Date(today); start.setMonth(start.getMonth() - 1);
+    } else if (preset === "last-3-months") {
+      end = today;
+      start = new Date(today); start.setMonth(start.getMonth() - 3);
+    } else if (preset === "last-6-months") {
+      end = today;
+      start = new Date(today); start.setMonth(start.getMonth() - 6);
+    } else if (preset === "last-1-year") {
+      end = today;
+      start = new Date(today); start.setFullYear(start.getFullYear() - 1);
+    } else if (preset === "all-time") {
+      const dates = snapshots.map(s => parseDate(s.week.target_date).getTime());
+      start = new Date(Math.min(...dates));
+      end = new Date(Math.max(...dates));
+    } else {
+      return null;
+    }
+    return { start, end };
+  }
+
+  function applyPreset(preset) {
+    const r = computePreset(preset);
+    if (!r) return;
+    currentStart = r.start;
+    currentEnd = r.end;
+    currentPreset = preset;
+    document.getElementById("range-start").value = fmtISO(r.start);
+    document.getElementById("range-end").value = fmtISO(r.end);
+    document.querySelectorAll("#range-presets button").forEach(b => b.setAttribute("aria-pressed", b.dataset.preset === preset ? "true" : "false"));
+    refresh();
+  }
+
+  // --- Wire up controls ---
+  document.getElementById("range-chip").addEventListener("click", (e) => {
+    if (e.target.id === "range-reset") return;
+    const picker = document.getElementById("range-picker");
+    const showing = !picker.hasAttribute("hidden");
+    if (showing) picker.setAttribute("hidden", ""); else picker.removeAttribute("hidden");
+    document.getElementById("range-chip").setAttribute("aria-expanded", showing ? "false" : "true");
+  });
+
+  document.getElementById("range-reset").addEventListener("click", (e) => {
+    e.stopPropagation();
+    applyPreset("current-month");
+  });
+
+  document.querySelectorAll("#range-presets button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      applyPreset(btn.dataset.preset);
+      document.getElementById("range-picker").setAttribute("hidden", "");
+      document.getElementById("range-chip").setAttribute("aria-expanded", "false");
     });
   });
+
+  document.getElementById("range-apply").addEventListener("click", () => {
+    const s = document.getElementById("range-start").value;
+    const e = document.getElementById("range-end").value;
+    if (!s || !e) return;
+    currentStart = parseDate(s);
+    currentEnd = parseDate(e);
+    currentPreset = "custom";
+    document.querySelectorAll("#range-presets button").forEach(b => b.setAttribute("aria-pressed", "false"));
+    document.getElementById("range-picker").setAttribute("hidden", "");
+    document.getElementById("range-chip").setAttribute("aria-expanded", "false");
+    refresh();
+  });
+
+  document.getElementById("range-cancel").addEventListener("click", () => {
+    document.getElementById("range-start").value = fmtISO(currentStart);
+    document.getElementById("range-end").value = fmtISO(currentEnd);
+    document.getElementById("range-picker").setAttribute("hidden", "");
+    document.getElementById("range-chip").setAttribute("aria-expanded", "false");
+  });
+
+  document.addEventListener("click", (e) => {
+    const picker = document.getElementById("range-picker");
+    if (picker.hasAttribute("hidden")) return;
+    if (picker.contains(e.target)) return;
+    if (document.getElementById("range-chip").contains(e.target)) return;
+    picker.setAttribute("hidden", "");
+    document.getElementById("range-chip").setAttribute("aria-expanded", "false");
+  });
+
+  document.querySelectorAll("#bu-filter button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentBU = btn.dataset.bu;
+      document.querySelectorAll("#bu-filter button").forEach(b => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+      refresh();
+    });
+  });
+
+  // Default preset: current month (based on the latest snapshot's month, as
+  // computed server-side via default_start/default_end).
+  refresh();
 })();
 </script>
 </body>
