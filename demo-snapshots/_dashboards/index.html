@@ -417,7 +417,7 @@ table.teams tr:last-child td { border-bottom: none; }
   const snapshots = JSON.parse(document.getElementById("snapshots-json").textContent);
   const defaultStart = "2026-07-01";
   const defaultEnd = "2026-07-31";
-  const BUILD_VERSION = "20260706125353";
+  const BUILD_VERSION = "20260706130905";
 
   const ALL_BUSINESS_UNITS = Array.from(new Set(snapshots.map(s => s.team.business_unit))).sort();
   const ALL_TEAMS = (() => {
@@ -513,6 +513,15 @@ table.teams tr:last-child td { border-bottom: none; }
 
   function bucketPill(bucket) {
     return `<span class="status-pill ${bucket}">${escapeHtml(BUCKET_LABELS[bucket] || bucket)}</span>`;
+  }
+
+  function avgProgressPct(objectives) {
+    if (!objectives || !objectives.length) return 0;
+    const total = objectives.reduce((sum, o) => {
+      const match = String(o.progress || "").match(/\d+/);
+      return sum + (match ? parseInt(match[0], 10) : 0);
+    }, 0);
+    return total / objectives.length;
   }
 
   function currentRangeParams() {
@@ -1052,14 +1061,19 @@ table.teams tr:last-child td { border-bottom: none; }
       const open = idx === 0;
       const date = parseDate(s.week.target_date);
       const dateLabel = date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-      const rate = s.totals.objectives ? (s.totals.done / s.totals.objectives * 100).toFixed(1) + "%" : "–";
+      const avg = avgProgressPct(s.objectives || []);
+      const done = s.totals.done || 0;
+      const total = s.totals.objectives || 0;
+      const meta = total
+        ? `${total} ${pluralize(total, "objective", "objectives")} · ${avg.toFixed(0)}% avg progress · ${done} done`
+        : "–";
       const section = document.createElement("section");
       section.className = "week-section";
       section.setAttribute("data-open", open ? "true" : "false");
       const header = document.createElement("div");
       header.className = "week-header";
       const hasEmail = snapshotHasEmail(s);
-      header.innerHTML = `<button type="button" class="chev" data-role="toggle" style="background:transparent;border:none;font-family:inherit;font-size:14px;color:var(--slate);cursor:pointer;">${open ? "▾" : "▸"}</button><span data-role="toggle" style="cursor:pointer;">Week of ${escapeHtml(dateLabel)}</span><span class="meta">${s.totals.objectives} ${pluralize(s.totals.objectives, "objective", "objectives")} · ${rate}</span><button type="button" class="email-chip" data-role="email" ${hasEmail ? "" : "disabled"} title="${hasEmail ? "View draft email for this week" : "Email not captured for this week"}">📧 Email</button>`;
+      header.innerHTML = `<button type="button" class="chev" data-role="toggle" style="background:transparent;border:none;font-family:inherit;font-size:14px;color:var(--slate);cursor:pointer;">${open ? "▾" : "▸"}</button><span data-role="toggle" style="cursor:pointer;">Week of ${escapeHtml(dateLabel)}</span><span class="meta">${escapeHtml(meta)}</span><button type="button" class="email-chip" data-role="email" ${hasEmail ? "" : "disabled"} title="${hasEmail ? "View draft email for this week" : "Email not captured for this week"}">📧 Email</button>`;
       header.querySelectorAll('[data-role="toggle"]').forEach(el => {
         el.addEventListener("click", () => {
           const wasOpen = section.getAttribute("data-open") === "true";
