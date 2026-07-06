@@ -260,9 +260,9 @@ table.teams tr:last-child td { border-bottom: none; }
     <div class="desc">Delivery state across the selected teams</div>
     <div class="status-inner">
       <div class="status-tile done"><div class="status-label">Done</div><div class="status-num" data-role="done">0</div></div>
-      <div class="status-tile spillover_on_track"><div class="status-label">Spillover<br>on track</div><div class="status-num" data-role="spillover_on_track">0</div></div>
-      <div class="status-tile spillover_at_risk"><div class="status-label">Spillover<br>at risk</div><div class="status-num" data-role="spillover_at_risk">0</div></div>
-      <div class="status-tile spillover_blocked"><div class="status-label">Spillover<br>blocked</div><div class="status-num" data-role="spillover_blocked">0</div></div>
+      <div class="status-tile spillover_on_track"><div class="status-label">On track</div><div class="status-num" data-role="spillover_on_track">0</div></div>
+      <div class="status-tile spillover_at_risk"><div class="status-label">At risk</div><div class="status-num" data-role="spillover_at_risk">0</div></div>
+      <div class="status-tile spillover_blocked"><div class="status-label">Delayed</div><div class="status-num" data-role="spillover_blocked">0</div></div>
       <div class="status-tile missing"><div class="status-label">Missing</div><div class="status-num" data-role="missing">0</div></div>
     </div>
   </div>
@@ -274,8 +274,8 @@ table.teams tr:last-child td { border-bottom: none; }
     <div class="subhead" id="team-count-note"></div>
   </div>
   <div class="legend">
-    <span><span class="dot" style="background:var(--red)"></span>Spillover Blocked</span>
-    <span><span class="dot" style="background:var(--amber)"></span>Spillover At Risk</span>
+    <span><span class="dot" style="background:var(--red)"></span>Delayed</span>
+    <span><span class="dot" style="background:var(--amber)"></span>At Risk</span>
     <span><span class="dot" style="background:var(--green)"></span>Done</span>
   </div>
 </div>
@@ -362,24 +362,24 @@ table.teams tr:last-child td { border-bottom: none; }
   const BUCKETS = ["done", "spillover_on_track", "spillover_at_risk", "spillover_blocked", "missing"];
   const BUCKET_LABELS = {
     done: "Done",
-    spillover_on_track: "Spillover Track",
-    spillover_at_risk: "Spillover Risk",
-    spillover_blocked: "Spillover Blocked",
+    spillover_on_track: "On Track",
+    spillover_at_risk: "At Risk",
+    spillover_blocked: "Delayed",
     missing: "Missing",
   };
   const BUCKET_ZERO_LABELS = {
     done: "0 Done",
-    spillover_on_track: "0 Track",
-    spillover_at_risk: "0 Risk",
-    spillover_blocked: "0 Blocked",
+    spillover_on_track: "0 On Track",
+    spillover_at_risk: "0 At Risk",
+    spillover_blocked: "0 Delayed",
     missing: "0 Missing",
   };
   const BUCKET_ORDER = { spillover_blocked: 0, spillover_at_risk: 1, missing: 2, spillover_on_track: 3, done: 4 };
   const STATUS_OPTIONS = [
     { id: "done", label: "Done" },
-    { id: "spillover_on_track", label: "Spillover On Track" },
-    { id: "spillover_at_risk", label: "Spillover At Risk" },
-    { id: "spillover_blocked", label: "Spillover Blocked" },
+    { id: "spillover_on_track", label: "On Track" },
+    { id: "spillover_at_risk", label: "At Risk" },
+    { id: "spillover_blocked", label: "Delayed" },
     { id: "missing", label: "Missing" },
   ];
   const PRESET_LABELS = {
@@ -394,7 +394,7 @@ table.teams tr:last-child td { border-bottom: none; }
   const snapshots = JSON.parse(document.getElementById("snapshots-json").textContent);
   const defaultStart = "2026-07-01";
   const defaultEnd = "2026-07-31";
-  const BUILD_VERSION = "20260706104844";
+  const BUILD_VERSION = "20260706120055";
 
   const ALL_BUSINESS_UNITS = Array.from(new Set(snapshots.map(s => s.team.business_unit))).sort();
   const ALL_TEAMS = (() => {
