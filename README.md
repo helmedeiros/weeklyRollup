@@ -1,10 +1,14 @@
 # Objective Weekly Rollup
 
-Weekly objective reporting helper for EM-owned objective updates.
+Weekly OKR / objective rollup tool for Engineering Managers.
 
-It collects objective Epics from Jira, parses the latest valid Leader Engineer weekly update,
-prepares the weekly Google Sheet tab, and renders a formatted HTML email with a
-plain-text fallback.
+The tool reads objective Epics from Jira, parses each Leader Engineer's weekly
+status comment, writes the normalised numbers to a per-team Google Sheet tab,
+drafts a formatted HTML email (with plain-text fallback), and can render a
+leadership dashboard from accumulated per-team JSON snapshots.
+
+**Live demo:** <https://helmedeiros.github.io/weeklyRollup/> — rendered from
+the synthetic dataset in [`demo-snapshots/`](demo-snapshots/).
 
 ## What It Does
 
@@ -21,12 +25,6 @@ plain-text fallback.
 - creates copy-pastable email output instead of sending email directly
 
 ## Local Setup
-
-Run commands from this folder:
-
-```bash
-cd skills/objective-weekly-rollup
-```
 
 Create a local team config:
 
@@ -227,6 +225,30 @@ the team-level `_Run History` tab:
 
 The weekly sheet stays human-facing; `_Run History` remains the durable source
 for recomputing these metrics later.
+
+## Leadership Dashboard
+
+The optional dashboard pipeline turns every team's weekly run into a shareable
+static page — the same layout hosted at
+<https://helmedeiros.github.io/weeklyRollup/>.
+
+Three steps, each idempotent:
+
+```bash
+# 1. Emit a per-team JSON snapshot next to the weekly run
+python3 scripts/run_rollup.py ... \
+  --team-snapshot-dir snapshots/<team-id>
+
+# 2. Roll all teams' snapshots for one ISO week into an org aggregate
+python3 scripts/aggregate_snapshots.py --week 2026-W27
+
+# 3. Render the static dashboard for that week
+python3 scripts/render_dashboard.py --week 2026-W27
+```
+
+`snapshots/` is gitignored (real data); `demo-snapshots/` ships a synthetic
+dataset so the public dashboard is safe to publish. Regenerate the demo set
+deterministically with `python3 scripts/generate_demo_snapshots.py`.
 
 ## Dry Run
 
