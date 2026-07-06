@@ -134,8 +134,8 @@
       "properties": {
         "folder_id": {
           "type": "string",
-          "const": "1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK",
-          "description": "Shared Google Drive folder where all mission rollup team sheets are stored."
+          "minLength": 1,
+          "description": "Google Drive folder that owns every team's rollup spreadsheet. Set this to the shared folder for your organisation. Runtime enforcement of a specific id is optional via WEEKLY_ROLLUP_REQUIRED_FOLDER_ID."
         },
         "file_name_pattern": {
           "type": "string",

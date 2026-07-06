@@ -48,12 +48,13 @@ run the deterministic phase with `--jira-source snapshot`.
 
 ## Team Config
 
-Every team config must set `sheet.folder_id` to
-`1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK`. The team spreadsheet must live in that
-shared folder. The sheet file name is derived from the team name via
-`sheet.file_name_pattern`; if that sheet does not exist in the folder, create it
-there, and future runs should resolve the same existing sheet before adding or
-replacing the weekly tab.
+Every team config must set `sheet.folder_id` to the Google Drive folder that
+owns your organisation's rollup spreadsheets. All teams live under the same
+folder. To enforce a specific folder id at runtime, export
+`WEEKLY_ROLLUP_REQUIRED_FOLDER_ID` in your `.env`. The sheet file name is
+derived from the team name via `sheet.file_name_pattern`; if that sheet does
+not exist in the folder, create it there, and future runs should resolve the
+same existing sheet before adding or replacing the weekly tab.
 
 Important email fields:
 

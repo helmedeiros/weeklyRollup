@@ -1208,7 +1208,7 @@ class RunRollupTest(unittest.TestCase):
         self.assertEqual(result["sheet_write"]["spreadsheet_id"], "")
         self.assertEqual(result["sheet_write"]["request"]["tab_name"], "Week 23")
         self.assertEqual(result["sheet_write"]["request"]["spreadsheet_id"], "")
-        self.assertEqual(result["sheet_write"]["request"]["folder_id"], "1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK")
+        self.assertEqual(result["sheet_write"]["request"]["folder_id"], "test-folder-id-fixture-only")
         self.assertEqual(result["sheet_write"]["request"]["file_name"], "Test Team - Mission Execution Updates")
         self.assertEqual(result["sheet_write"]["request"]["email_link"]["target"], "current_week_tab")
         self.assertEqual(result["sheet_write"]["request"]["email_link"]["tab_name"], "Week 23")

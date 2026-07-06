@@ -39,13 +39,34 @@ class ConfigValidationTest(unittest.TestCase):
 
         self.assertIn("sheet.spreadsheet_id is not supported; use sheet.folder_id and file_name_pattern", errors)
 
-    def test_wrong_sheet_folder_fails_fast(self):
+    def test_wrong_sheet_folder_fails_fast_when_required_id_is_set(self):
+        import os
+        from unittest.mock import patch
+
         config = deepcopy(self.config)
-        config["sheet"]["folder_id"] = "folder-123"
+        config["sheet"]["folder_id"] = "another-folder-id"
 
-        errors = validate_team_config(config)
+        with patch("mission_rollup.REQUIRED_SHEET_FOLDER_ID", "expected-folder-id"):
+            errors = validate_team_config(config)
 
-        self.assertIn("sheet.folder_id must be 1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK", errors)
+        self.assertTrue(
+            any("does not match the required folder id" in message for message in errors),
+            f"Expected a mismatch error in {errors}",
+        )
+
+    def test_folder_id_enforcement_is_skipped_when_env_is_unset(self):
+        from unittest.mock import patch
+
+        config = deepcopy(self.config)
+        config["sheet"]["folder_id"] = "some-other-folder"
+
+        with patch("mission_rollup.REQUIRED_SHEET_FOLDER_ID", ""):
+            errors = validate_team_config(config)
+
+        self.assertFalse(
+            any("required folder id" in message for message in errors),
+            f"No enforcement expected when required id is unset; got {errors}",
+        )
 
     def test_folder_only_sheet_config_is_valid(self):
         config = deepcopy(self.config)

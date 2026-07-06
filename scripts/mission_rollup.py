@@ -11,6 +11,7 @@ from dataclasses import dataclass, field
 from datetime import date, datetime, time, timedelta
 from html import escape
 import json
+import os
 from pathlib import Path
 import re
 from typing import Any
@@ -38,7 +39,11 @@ STATUS_RED = "Red"
 STATUS_MISSING = "Missing"
 STATUS_DONE = "Done"
 STATUS_NOT_STARTED = "Not Started"
-REQUIRED_SHEET_FOLDER_ID = "1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK"
+# When set, every team config must pin sheet.folder_id to this exact value.
+# Left blank in the tracked source so no organisation-specific folder id
+# lives in git; deployments that want the enforcement export the id via
+# WEEKLY_ROLLUP_REQUIRED_FOLDER_ID (typically alongside GOOGLE_SHEETS_MCP_URL).
+REQUIRED_SHEET_FOLDER_ID = os.environ.get("WEEKLY_ROLLUP_REQUIRED_FOLDER_ID", "")
 EMAIL_TEMPLATE_NAME = "mission-email.html"
 
 STATUS_WORDS = {
@@ -433,8 +438,11 @@ def validate_team_config(config: dict[str, Any]) -> list[str]:
     folder_id = str(get_path(config, "sheet.folder_id", "") or "").strip()
     if not folder_id:
         errors.append("Missing required config value: sheet.folder_id")
-    elif folder_id != REQUIRED_SHEET_FOLDER_ID:
-        errors.append(f"sheet.folder_id must be {REQUIRED_SHEET_FOLDER_ID}")
+    elif REQUIRED_SHEET_FOLDER_ID and folder_id != REQUIRED_SHEET_FOLDER_ID:
+        errors.append(
+            "sheet.folder_id does not match the required folder id configured in "
+            "WEEKLY_ROLLUP_REQUIRED_FOLDER_ID"
+        )
     else:
         try:
             sheet_file_name(config)

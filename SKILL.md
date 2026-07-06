@@ -52,9 +52,10 @@ or from this repository folder: `skills/mission-weekly-rollup`.
    anything:
    `python3 scripts/validate_config.py config/<team>.yaml --expect-team-id <team-id>`
    If the config is missing, invalid, or for another team, stop and ask for the
-   correct config path. The config must include `sheet.folder_id:
-   "1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK"`; the team spreadsheet must be stored
-   there.
+   correct config path. The config must include `sheet.folder_id` pointing at
+   the Google Drive folder that owns every team's rollup spreadsheet. Runtime
+   enforcement of a specific folder id is optional via
+   `WEEKLY_ROLLUP_REQUIRED_FOLDER_ID`.
 2. Run the orchestrator with any capable Jira source. The normalized Jira data
    must include epics, labels, DRI, due date, status, comments, progress, and
    the linked OKR field/property when available. The bundled `--jira-source mcp`

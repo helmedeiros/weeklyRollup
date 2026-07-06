@@ -35,7 +35,7 @@ weekly_update:
     allow_unstructured_if_confident: false
     no_update_red_after_weeks: 2
 sheet:
-  folder_id: "1-TOdt6Er1_EitTIIaalW1vyTMPxRdjcK"
+  folder_id: "test-folder-id-fixture-only"
   file_name_pattern: "{team_name} - Mission Execution Updates"
   tab_name_pattern: "Week {iso_week}"
   create_tab_if_missing: true
