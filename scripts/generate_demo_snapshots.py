@@ -1,12 +1,17 @@
 """Generate a fully synthetic team-snapshot dataset for the public dashboard.
 
 Every value here is invented for demonstration. No team names, objective
-keys, Leader Engineers, or KPIs mirror any real organisation. Re-run this script
-whenever you want to refresh the shape of the demo dataset.
+keys, Leader Engineers, or KPIs mirror any real organisation. Re-run this
+script whenever you want to refresh the shape of the demo dataset.
 
 The output layout matches ``snapshots/``: each team gets one JSON file per
-month at ``demo-snapshots/<team-id>/<YYYY>-Www.json``. Six months are emitted
-(Feb-Jul 2026) so the dashboard can demo a rolling range picker.
+month at ``demo-snapshots/<team-id>/<YYYY>-Www.json``. Six months are
+emitted (Feb-Jul 2026) so the dashboard can demo a rolling range picker.
+
+Each team has a **stable pool of objectives** with fixed keys, names, and
+leader-engineer owners. The bucket each objective sits in varies from
+month to month (deterministic per team+month seed), so the same objective
+key follows a trend across the range.
 """
 
 from __future__ import annotations
@@ -32,7 +37,6 @@ MONTH_NAME = {
 }
 
 # Baseline shape per team. (total, done, on_track, at_risk, blocked, missing)
-# Every month is a small deterministic perturbation of these.
 TEAMS = [
     ("alpha-foundations",   "Alpha Foundations",    "Platform", (8, 8, 0, 0, 0, 0)),
     ("beta-payments",       "Beta Payments Core",   "Platform", (7, 6, 1, 0, 0, 0)),
@@ -55,6 +59,9 @@ OBJECTIVE_NAMES = {
         "Golden-path SLO board",
         "Observability sampling refresh",
         "Warm-cache eviction policy",
+        "Rate-limiter fairness audit",
+        "Deprecation channel rollout",
+        "Service topology drift alarm",
     ],
     "B2C": [
         "Homepage skeleton refresh",
@@ -62,12 +69,17 @@ OBJECTIVE_NAMES = {
         "Personalised trip recommendations",
         "Purchase confirmation clarity",
         "Refund status transparency",
+        "Payment method reorder",
+        "Passenger name-change flow",
+        "Search relevance re-ranker",
+        "Loyalty perks eligibility banner",
     ],
     "B2B": [
         "Partner API rate-limit v2",
         "Onboarding self-serve wizard",
         "Compliance audit trail",
         "Partner billing reconciliation",
+        "SLA breach notifier",
     ],
     "Coverage": [
         "Provider content ingestion QA",
@@ -75,6 +87,7 @@ OBJECTIVE_NAMES = {
         "Publisher content freshness",
         "Cadence dashboard for editors",
         "Broken-image sentinel",
+        "Content lint gate",
     ],
 }
 
@@ -86,17 +99,26 @@ LEADER_ENGINEER_POOL = [
 ]
 
 
+def build_team_pool(team_id: str, business_unit: str, total: int) -> list[dict]:
+    """Return ``total`` stable objectives for a team (key/name/LE fixed for the demo)."""
+    rng = random.Random(f"pool-{team_id}")
+    titles = OBJECTIVE_NAMES[business_unit]
+    prefix = team_id.split("-")[0].upper()[:4]
+    pool = []
+    for i in range(total):
+        pool.append({
+            "key": f"M{prefix}-{100 + i}",
+            "name": titles[i % len(titles)],
+            "leader_engineer": rng.choice(LEADER_ENGINEER_POOL),
+        })
+    return pool
+
+
 def month_variant(base: tuple[int, int, int, int, int, int], month_index: int, team_id: str) -> tuple[int, int, int, int, int, int]:
     """Deterministically perturb the base bucket layout for a given month/team."""
     rng = random.Random(f"variant-{month_index}-{team_id}")
     total, done, on_track, at_risk, blocked, missing = base
-    counts = {
-        "done": done,
-        "on_track": on_track,
-        "at_risk": at_risk,
-        "blocked": blocked,
-        "missing": missing,
-    }
+    counts = {"done": done, "on_track": on_track, "at_risk": at_risk, "blocked": blocked, "missing": missing}
     moves = [
         ("done", "on_track"),
         ("done", "at_risk"),
@@ -120,6 +142,10 @@ def month_variant(base: tuple[int, int, int, int, int, int], month_index: int, t
 def generate() -> None:
     root = Path(__file__).resolve().parent.parent / "demo-snapshots"
 
+    # Pre-generate the stable objective pool for every team.
+    pools = {team_id: build_team_pool(team_id, business_unit, base_buckets[0])
+             for team_id, _, business_unit, base_buckets in TEAMS}
+
     for month_index, (year, month) in enumerate(MONTHS):
         target = date(year, month, 15)
         iso_year, iso_week, _ = target.isocalendar()
@@ -129,51 +155,45 @@ def generate() -> None:
             "target_date": target.isoformat(),
             "month_label": f"objective-{MONTH_NAME[month]}-{year}",
         }
-        # One seed per month so leader-engineer / objective-name picks stay stable.
-        random.seed(1234 + month_index)
 
         for team_id, team_name, business_unit, base_buckets in TEAMS:
-            buckets = month_variant(base_buckets, month_index, team_id)
-            total, done, on_track, at_risk, blocked, missing = buckets
+            total, done, on_track, at_risk, blocked, missing = month_variant(base_buckets, month_index, team_id)
+
+            pool = pools[team_id]
+            rng = random.Random(f"assign-{team_id}-{month_index}")
+            shuffled = list(pool)
+            rng.shuffle(shuffled)
+
+            bucket_specs = [
+                ("done", "Green", "Done", done),
+                ("spillover_on_track", "Green", "In Progress", on_track),
+                ("spillover_at_risk", "Yellow", "In Progress", at_risk),
+                ("spillover_blocked", "Red", "In Progress", blocked),
+                ("missing", "Missing", "In Progress", missing),
+            ]
 
             objectives = []
-            pool = OBJECTIVE_NAMES[business_unit]
-            counter = 100 + month_index * 10
-
-            def _make(bucket: str, objective_status: str, jira_status: str) -> dict:
-                nonlocal counter
-                counter += 1
-                title = pool[counter % len(pool)]
-                leader_engineer = random.choice(LEADER_ENGINEER_POOL)
-                key = f"M{team_id.split('-')[0].upper()[:4]}-{counter}"
-                return {
-                    "key": key,
-                    "name": title,
-                    "url": f"https://example.invalid/objectives/{key}",
-                    "leader_engineer": leader_engineer,
-                    "status": objective_status,
-                    "jira_status": jira_status,
-                    "is_done": bucket == "done",
-                    "missing_update": bucket == "missing",
-                    "effective_due_date": target.isoformat(),
-                    "due_date_overdue_days": 0,
-                    "progress": "100%" if bucket == "done" else f"{random.randint(30, 90)}%",
-                    "bucket": bucket,
-                    "hygiene_severity": "yellow" if bucket in {"spillover_at_risk", "missing"} else "info",
-                    "hygiene": [],
-                    "blockers": [],
-                }
-
-            for _ in range(done):
-                objectives.append(_make("done", "Green", "Done"))
-            for _ in range(on_track):
-                objectives.append(_make("spillover_on_track", "Green", "In Progress"))
-            for _ in range(at_risk):
-                objectives.append(_make("spillover_at_risk", "Yellow", "In Progress"))
-            for _ in range(blocked):
-                objectives.append(_make("spillover_blocked", "Red", "In Progress"))
-            for _ in range(missing):
-                objectives.append(_make("missing", "Missing", "In Progress"))
+            cursor = 0
+            for bucket, objective_status, jira_status, count in bucket_specs:
+                for _ in range(count):
+                    src = shuffled[cursor]; cursor += 1
+                    objectives.append({
+                        "key": src["key"],
+                        "name": src["name"],
+                        "url": f"https://example.invalid/objectives/{src['key']}",
+                        "leader_engineer": src["leader_engineer"],
+                        "status": objective_status,
+                        "jira_status": jira_status,
+                        "is_done": bucket == "done",
+                        "missing_update": bucket == "missing",
+                        "effective_due_date": target.isoformat(),
+                        "due_date_overdue_days": 0,
+                        "progress": "100%" if bucket == "done" else f"{rng.randint(30, 90)}%",
+                        "bucket": bucket,
+                        "hygiene_severity": "yellow" if bucket in {"spillover_at_risk", "missing"} else "info",
+                        "hygiene": [],
+                        "blockers": [],
+                    })
 
             payload = {
                 "schema_version": 1,
