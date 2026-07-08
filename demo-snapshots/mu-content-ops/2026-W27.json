@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "mu-content-ops",
     "name": "Mu Content Ops",
-    "business_unit": "Coverage"
+    "business_unit": "Coverage",
+    "jira_abbrev": "MU",
+    "github_team_slug": "mu-content-ops",
+    "repos": [
+      "omio/mu-content-ops"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,380 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "mu-content-ops",
+      "display": "Mu Content Ops"
+    },
+    "window": {
+      "from": "2026-06-29",
+      "to": "2026-07-05",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 42,
+      "prs_measured": 42,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 5.6
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1208,
+        "p99": 3440
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 4.1,
+        "p85": 7.7,
+        "p99": 12.7
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 9.2,
+        "p85": 15.5,
+        "p99": 29.7
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 3.0,
+        "p85": 5.3,
+        "p99": 10.2
+      },
+      "pr_count": 42
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "cnguyen",
+      "name": "Cai Nguyen",
+      "objective_keys": [
+        "MMU-2607-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "cnguyen",
+          "display": "Cai Nguyen"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 450,
+            "p99": 1267
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.2,
+            "p99": 6.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.8,
+            "p99": 13.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.2
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "fohno",
+      "name": "Frida Ohno",
+      "objective_keys": [
+        "MMU-2607-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "fohno",
+          "display": "Frida Ohno"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4025,
+            "p99": 11647
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.5,
+            "p85": 27.4,
+            "p99": 45.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.0,
+            "p85": 54.0,
+            "p99": 83.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.2,
+            "p85": 17.7,
+            "p99": 29.9
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "imarchetti",
+      "name": "Ines Marchetti",
+      "objective_keys": [
+        "MMU-2607-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "imarchetti",
+          "display": "Ines Marchetti"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 18,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 481,
+            "p99": 1637
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.7,
+            "p99": 6.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.2,
+            "p99": 13.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.4
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "nsardar",
+      "name": "Nya Sardar",
+      "objective_keys": [
+        "MMU-2607-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "nsardar",
+          "display": "Nya Sardar"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 18,
+          "prs_measured": 18,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 472,
+            "p99": 1499
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.4,
+            "p99": 6.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.5,
+            "p99": 14.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.8,
+            "p99": 3.2
+          },
+          "pr_count": 18
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "privas",
+      "name": "Pia Rivas",
+      "objective_keys": [
+        "MMU-2607-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "privas",
+          "display": "Pia Rivas"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 433,
+            "p99": 1471
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.1,
+            "p99": 5.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.5,
+            "p99": 14.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 2.0,
+            "p99": 3.0
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MMU-2607-01",
       "name": "Q3 2026 [July]: Publisher content freshness",
       "url": "https://example.invalid/objectives/MMU-2607-01",
       "leader_engineer": "Nya Sardar",
+      "leader_engineer_login": "nsardar",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +417,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2607-01",
+          "display": "Q3 2026 [July]: Publisher content freshness"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 478,
+            "p99": 1605
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.5,
+            "p99": 7.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.7,
+            "p99": 12.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.8,
+            "p99": 3.2
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +479,7 @@
       "name": "Q3 2026 [July]: Provider content ingestion QA",
       "url": "https://example.invalid/objectives/MMU-2607-02",
       "leader_engineer": "Pia Rivas",
+      "leader_engineer_login": "privas",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +498,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2607-02",
+          "display": "Q3 2026 [July]: Provider content ingestion QA"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 462,
+            "p99": 1366
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.9,
+            "p99": 7.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.9,
+            "p99": 12.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.0,
+            "p99": 3.3
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +560,7 @@
       "name": "Q3 2026 [July]: Cross-locale asset governance",
       "url": "https://example.invalid/objectives/MMU-2607-03",
       "leader_engineer": "Cai Nguyen",
+      "leader_engineer_login": "cnguyen",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +579,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2607-03",
+          "display": "Q3 2026 [July]: Cross-locale asset governance"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 479,
+            "p99": 1498
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.0,
+            "p99": 5.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.7,
+            "p99": 14.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.0,
+            "p99": 3.3
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +641,7 @@
       "name": "Q3 2026 [July]: Broken-image sentinel",
       "url": "https://example.invalid/objectives/MMU-2607-04",
       "leader_engineer": "Ines Marchetti",
+      "leader_engineer_login": "imarchetti",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +660,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2607-04",
+          "display": "Q3 2026 [July]: Broken-image sentinel"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 509,
+            "p99": 1529
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 4.3,
+            "p99": 6.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.4,
+            "p99": 13.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 1.8,
+            "p99": 3.8
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +722,7 @@
       "name": "Q3 2026 [July]: Legacy asset migration",
       "url": "https://example.invalid/objectives/MMU-2607-05",
       "leader_engineer": "Frida Ohno",
+      "leader_engineer_login": "fohno",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +741,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2607-05",
+          "display": "Q3 2026 [July]: Legacy asset migration"
+        },
+        "window": {
+          "from": "2026-06-29",
+          "to": "2026-07-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4029,
+            "p99": 11331
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.1,
+            "p85": 26.3,
+            "p99": 45.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.7,
+            "p85": 51.2,
+            "p99": 106.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.9,
+            "p85": 21.0,
+            "p99": 33.4
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     }
   ],

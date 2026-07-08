@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "alpha-foundations",
     "name": "Alpha Foundations",
-    "business_unit": "Platform"
+    "business_unit": "Platform",
+    "jira_abbrev": "ALPH",
+    "github_team_slug": "alpha-foundations",
+    "repos": [
+      "omio/alpha-foundations"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,319 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "alpha-foundations",
+      "display": "Alpha Foundations"
+    },
+    "window": {
+      "from": "2026-05-25",
+      "to": "2026-05-31",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 40,
+      "prs_measured": 39,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 6.2
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1668,
+        "p99": 5231
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 5.6,
+        "p85": 10.9,
+        "p99": 18.2
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 13.4,
+        "p85": 24.1,
+        "p99": 38.9
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 3.8,
+        "p85": 6.7,
+        "p99": 12.2
+      },
+      "pr_count": 39
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "kostberg",
+      "name": "Kai Ostberg",
+      "objective_keys": [
+        "MALPH-2605-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "kostberg",
+          "display": "Kai Ostberg"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4194,
+            "p99": 11859
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.4,
+            "p85": 23.4,
+            "p99": 42.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.4,
+            "p85": 55.7,
+            "p99": 89.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.8,
+            "p85": 19.3,
+            "p99": 33.3
+          },
+          "pr_count": 7
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "nsardar",
+      "name": "Nya Sardar",
+      "objective_keys": [
+        "MALPH-2605-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "nsardar",
+          "display": "Nya Sardar"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1896,
+            "p99": 5684
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.1,
+            "p85": 10.7,
+            "p99": 21.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.1,
+            "p85": 20.5,
+            "p99": 37.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 7.0,
+            "p99": 15.2
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "qyates",
+      "name": "Quinn Yates",
+      "objective_keys": [
+        "MALPH-2605-02",
+        "MALPH-2605-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "qyates",
+          "display": "Quinn Yates"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1214,
+            "p99": 3465
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 6.9,
+            "p99": 13.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 8.3,
+            "p85": 15.0,
+            "p99": 27.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 2.7,
+            "p85": 4.5,
+            "p99": 8.2
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "srowe",
+      "name": "Sana Rowe",
+      "objective_keys": [
+        "MALPH-2605-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "srowe",
+          "display": "Sana Rowe"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 473,
+            "p99": 1570
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.4,
+            "p99": 6.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 8.1,
+            "p99": 12.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 3.1
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MALPH-2605-01",
       "name": "Q2 2026 [May]: Deprecation channel rollout",
       "url": "https://example.invalid/objectives/MALPH-2605-01",
       "leader_engineer": "Sana Rowe",
+      "leader_engineer_login": "srowe",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -44,6 +356,61 @@
         "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
         "target_next_week": "Move to maintenance; capture learnings into the runbook.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2605-01",
+          "display": "Q2 2026 [May]: Deprecation channel rollout"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 489,
+            "p99": 1720
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.3,
+            "p99": 5.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.6,
+            "p85": 7.0,
+            "p99": 12.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.5,
+            "p99": 2.6
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +418,7 @@
       "name": "Q2 2026 [May]: Service topology drift alarm",
       "url": "https://example.invalid/objectives/MALPH-2605-02",
       "leader_engineer": "Quinn Yates",
+      "leader_engineer_login": "qyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +437,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "Reviewer coverage is thin the week of launch — flagging in case rollout slips."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2605-02",
+          "display": "Q2 2026 [May]: Service topology drift alarm"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1835,
+            "p99": 5481
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.4,
+            "p85": 10.8,
+            "p99": 19.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.2,
+            "p85": 22.8,
+            "p99": 45.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.3,
+            "p99": 12.3
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +499,7 @@
       "name": "Q2 2026 [May]: Golden-path SLO board",
       "url": "https://example.invalid/objectives/MALPH-2605-03",
       "leader_engineer": "Nya Sardar",
+      "leader_engineer_login": "nsardar",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +518,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2605-03",
+          "display": "Q2 2026 [May]: Golden-path SLO board"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1600,
+            "p99": 5577
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.2,
+            "p85": 12.2,
+            "p99": 21.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.7,
+            "p85": 25.3,
+            "p99": 35.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.6,
+            "p99": 11.4
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +580,7 @@
       "name": "Q2 2026 [May]: Feature flag rollout guardrails",
       "url": "https://example.invalid/objectives/MALPH-2605-04",
       "leader_engineer": "Quinn Yates",
+      "leader_engineer_login": "qyates",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -119,6 +599,61 @@
         "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
         "target_next_week": "Move to maintenance; capture learnings into the runbook.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2605-04",
+          "display": "Q2 2026 [May]: Feature flag rollout guardrails"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 526,
+            "p99": 1576
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.8,
+            "p99": 7.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 7.2,
+            "p99": 10.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.4
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +661,7 @@
       "name": "Q2 2026 [May]: Runtime resource budgets",
       "url": "https://example.invalid/objectives/MALPH-2605-05",
       "leader_engineer": "Kai Ostberg",
+      "leader_engineer_login": "kostberg",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +680,61 @@
         "done_this_week": "Discovered a regression in the smoke tests that pushed the merge back.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Design review pending from the sibling team."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2605-05",
+          "display": "Q2 2026 [May]: Runtime resource budgets"
+        },
+        "window": {
+          "from": "2026-05-25",
+          "to": "2026-05-31",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3936,
+            "p99": 11713
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.3,
+            "p85": 23.0,
+            "p99": 37.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.4,
+            "p85": 44.0,
+            "p99": 92.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.4,
+            "p85": 20.7,
+            "p99": 34.7
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     }
   ],

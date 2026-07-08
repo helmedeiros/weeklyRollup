@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "zeta-search",
     "name": "Zeta Search Discovery",
-    "business_unit": "B2C"
+    "business_unit": "B2C",
+    "jira_abbrev": "ZETA",
+    "github_team_slug": "zeta-search",
+    "repos": [
+      "omio/zeta-search"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,257 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "zeta-search",
+      "display": "Zeta Search Discovery"
+    },
+    "window": {
+      "from": "2026-04-06",
+      "to": "2026-04-12",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 31,
+      "prs_measured": 30,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 6.0
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1928,
+        "p99": 6697
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 7.0,
+        "p85": 13.8,
+        "p99": 22.1
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 15.9,
+        "p85": 30.4,
+        "p99": 51.7
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 4.9,
+        "p85": 8.9,
+        "p99": 14.8
+      },
+      "pr_count": 30
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "blarsson",
+      "name": "Bram Larsson",
+      "objective_keys": [
+        "MZETA-2604-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "blarsson",
+          "display": "Bram Larsson"
+        },
+        "window": {
+          "from": "2026-04-06",
+          "to": "2026-04-12",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 465,
+            "p99": 1599
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 4.3,
+            "p99": 7.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 6.9,
+            "p99": 13.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 1.8,
+            "p99": 3.5
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "obarone",
+      "name": "Odin Barone",
+      "objective_keys": [
+        "MZETA-2604-01",
+        "MZETA-2604-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "obarone",
+          "display": "Odin Barone"
+        },
+        "window": {
+          "from": "2026-04-06",
+          "to": "2026-04-12",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 10,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3216,
+            "p99": 10389
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 10.2,
+            "p85": 18.7,
+            "p99": 34.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 21.1,
+            "p85": 37.0,
+            "p99": 70.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 7.2,
+            "p85": 13.2,
+            "p99": 21.8
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "rdelacroix",
+      "name": "Rio Delacroix",
+      "objective_keys": [
+        "MZETA-2604-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "rdelacroix",
+          "display": "Rio Delacroix"
+        },
+        "window": {
+          "from": "2026-04-06",
+          "to": "2026-04-12",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 13,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1592,
+            "p99": 5371
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.4,
+            "p85": 11.5,
+            "p99": 22.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.8,
+            "p85": 21.8,
+            "p99": 36.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 8.1,
+            "p99": 12.2
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MZETA-2604-01",
       "name": "Q2 2026 [April]: Homepage skeleton refresh",
       "url": "https://example.invalid/objectives/MZETA-2604-01",
       "leader_engineer": "Odin Barone",
+      "leader_engineer_login": "obarone",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +294,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "A single reviewer is a bottleneck; needs a delegate."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2604-01",
+          "display": "Q2 2026 [April]: Homepage skeleton refresh"
+        },
+        "window": {
+          "from": "2026-04-06",
+          "to": "2026-04-12",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 3,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 3
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4438,
+            "p99": 15832
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.2,
+            "p85": 30.2,
+            "p99": 51.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 30.2,
+            "p85": 58.5,
+            "p99": 94.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.8,
+            "p85": 21.5,
+            "p99": 35.5
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +356,7 @@
       "name": "Q2 2026 [April]: Cart persistence across surfaces",
       "url": "https://example.invalid/objectives/MZETA-2604-02",
       "leader_engineer": "Rio Delacroix",
+      "leader_engineer_login": "rdelacroix",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +375,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2604-02",
+          "display": "Q2 2026 [April]: Cart persistence across surfaces"
+        },
+        "window": {
+          "from": "2026-04-06",
+          "to": "2026-04-12",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1702,
+            "p99": 5503
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.5,
+            "p85": 11.1,
+            "p99": 18.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.9,
+            "p85": 22.4,
+            "p99": 34.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 6.5,
+            "p99": 12.7
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +437,7 @@
       "name": "Q2 2026 [April]: Refund status transparency",
       "url": "https://example.invalid/objectives/MZETA-2604-03",
       "leader_engineer": "Odin Barone",
+      "leader_engineer_login": "obarone",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +456,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2604-03",
+          "display": "Q2 2026 [April]: Refund status transparency"
+        },
+        "window": {
+          "from": "2026-04-06",
+          "to": "2026-04-12",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1638,
+            "p99": 5256
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.5,
+            "p85": 9.9,
+            "p99": 15.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.5,
+            "p85": 21.6,
+            "p99": 46.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 6.9,
+            "p99": 11.7
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +518,7 @@
       "name": "Q2 2026 [April]: Checkout abandonment nudge",
       "url": "https://example.invalid/objectives/MZETA-2604-04",
       "leader_engineer": "Bram Larsson",
+      "leader_engineer_login": "blarsson",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +537,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2604-04",
+          "display": "Q2 2026 [April]: Checkout abandonment nudge"
+        },
+        "window": {
+          "from": "2026-04-06",
+          "to": "2026-04-12",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 467,
+            "p99": 1309
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 4.3,
+            "p99": 7.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 6.5,
+            "p99": 11.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.1
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     }
   ],

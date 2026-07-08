@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "alpha-foundations",
     "name": "Alpha Foundations",
-    "business_unit": "Platform"
+    "business_unit": "Platform",
+    "jira_abbrev": "ALPH",
+    "github_team_slug": "alpha-foundations",
+    "repos": [
+      "omio/alpha-foundations"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,380 @@
     "spillover_blocked": 0,
     "missing": 1
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "alpha-foundations",
+      "display": "Alpha Foundations"
+    },
+    "window": {
+      "from": "2026-07-27",
+      "to": "2026-08-02",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 40,
+      "prs_measured": 39,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 5.9
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1349,
+        "p99": 4214
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 4.7,
+        "p85": 8.6,
+        "p99": 15.1
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 10.7,
+        "p85": 19.9,
+        "p99": 37.9
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 3.4,
+        "p85": 6.3,
+        "p99": 10.6
+      },
+      "pr_count": 39
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "athornton",
+      "name": "Ava Thornton",
+      "objective_keys": [
+        "MALPH-2607-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "athornton",
+          "display": "Ava Thornton"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 522,
+            "p99": 1594
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.8,
+            "p99": 6.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 7.3,
+            "p99": 13.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.5,
+            "p99": 3.0
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "emarin",
+      "name": "Ellis Marín",
+      "objective_keys": [
+        "MALPH-2607-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "emarin",
+          "display": "Ellis Marín"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 18,
+          "prs_measured": 18,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 490,
+            "p99": 1638
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 4.0,
+            "p99": 7.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 6.9,
+            "p99": 15.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 2.0,
+            "p99": 3.1
+          },
+          "pr_count": 18
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "fohno",
+      "name": "Frida Ohno",
+      "objective_keys": [
+        "MALPH-2607-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "fohno",
+          "display": "Frida Ohno"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 448,
+            "p99": 1299
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.0,
+            "p99": 6.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.4,
+            "p99": 13.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 2.6
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "hvasquez",
+      "name": "Hiro Vasquez",
+      "objective_keys": [
+        "MALPH-2607-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "hvasquez",
+          "display": "Hiro Vasquez"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 513,
+            "p99": 1631
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.3,
+            "p99": 5.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 7.7,
+            "p99": 14.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.6,
+            "p99": 2.7
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "tilves",
+      "name": "Tomo Ilves",
+      "objective_keys": [
+        "MALPH-2607-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "tilves",
+          "display": "Tomo Ilves"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 2.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 5188,
+            "p99": 15984
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 18.1,
+            "p85": 31.4,
+            "p99": 64.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 38.3,
+            "p85": 61.4,
+            "p99": 111.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 13.9,
+            "p85": 22.4,
+            "p99": 49.7
+          },
+          "pr_count": 5
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MALPH-2607-01",
       "name": "Q3 2026 [July]: Observability sampling refresh",
       "url": "https://example.invalid/objectives/MALPH-2607-01",
       "leader_engineer": "Hiro Vasquez",
+      "leader_engineer_login": "hvasquez",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -44,6 +417,61 @@
         "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
         "target_next_week": "Move to maintenance; capture learnings into the runbook.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2607-01",
+          "display": "Q3 2026 [July]: Observability sampling refresh"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 471,
+            "p99": 1362
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.6,
+            "p99": 6.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.2,
+            "p99": 14.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.6,
+            "p99": 2.6
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +479,7 @@
       "name": "Q3 2026 [July]: Zero-downtime restart choreography",
       "url": "https://example.invalid/objectives/MALPH-2607-02",
       "leader_engineer": "Tomo Ilves",
+      "leader_engineer_login": "tilves",
       "status": "Missing",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +498,61 @@
         "done_this_week": "No update was captured this week.",
         "target_next_week": "Sync with the owner and file the missing update retroactively.",
         "blockers": "Update deferred; owner on PTO."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2607-02",
+          "display": "Q3 2026 [July]: Zero-downtime restart choreography"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 3,
+          "prs_measured": 2,
+          "prs_linked_to_objective": 3
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 2.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 5191,
+            "p99": 16267
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 16.4,
+            "p85": 32.1,
+            "p99": 50.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 41.2,
+            "p85": 72.4,
+            "p99": 117.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 13.7,
+            "p85": 26.3,
+            "p99": 45.3
+          },
+          "pr_count": 2
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +560,7 @@
       "name": "Q3 2026 [July]: Deprecation channel rollout",
       "url": "https://example.invalid/objectives/MALPH-2607-03",
       "leader_engineer": "Frida Ohno",
+      "leader_engineer_login": "fohno",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -94,6 +579,61 @@
         "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2607-03",
+          "display": "Q3 2026 [July]: Deprecation channel rollout"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 493,
+            "p99": 1407
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.1,
+            "p99": 5.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.5,
+            "p99": 11.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.4
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +641,7 @@
       "name": "Q3 2026 [July]: Config drift auto-repair",
       "url": "https://example.invalid/objectives/MALPH-2607-04",
       "leader_engineer": "Ava Thornton",
+      "leader_engineer_login": "athornton",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -119,6 +660,61 @@
         "done_this_week": "Closed the final ticket in the epic and archived the working doc.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2607-04",
+          "display": "Q3 2026 [July]: Config drift auto-repair"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 506,
+            "p99": 1741
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 4.0,
+            "p99": 7.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.9,
+            "p99": 12.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 2.6
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +722,7 @@
       "name": "Q3 2026 [July]: Service topology drift alarm",
       "url": "https://example.invalid/objectives/MALPH-2607-05",
       "leader_engineer": "Ellis Marín",
+      "leader_engineer_login": "emarin",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -144,6 +741,61 @@
         "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MALPH-2607-05",
+          "display": "Q3 2026 [July]: Service topology drift alarm"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 467,
+            "p99": 1563
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.8,
+            "p99": 6.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.7,
+            "p99": 12.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.5,
+            "p99": 3.2
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     }
   ],

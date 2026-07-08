@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "lambda-ingestion",
     "name": "Lambda Ingestion",
-    "business_unit": "Coverage"
+    "business_unit": "Coverage",
+    "jira_abbrev": "LAMB",
+    "github_team_slug": "lambda-ingestion",
+    "repos": [
+      "omio/lambda-ingestion"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,258 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "lambda-ingestion",
+      "display": "Lambda Ingestion"
+    },
+    "window": {
+      "from": "2026-07-13",
+      "to": "2026-07-19",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 41,
+      "prs_measured": 40,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 6.1
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1890,
+        "p99": 5759
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 5.5,
+        "p85": 9.4,
+        "p99": 16.1
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 12.4,
+        "p85": 21.9,
+        "p99": 39.6
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 4.0,
+        "p85": 6.6,
+        "p99": 14.1
+      },
+      "pr_count": 40
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "fohno",
+      "name": "Frida Ohno",
+      "objective_keys": [
+        "MLAMB-2607-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "fohno",
+          "display": "Frida Ohno"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1676,
+            "p99": 5976
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.4,
+            "p85": 9.9,
+            "p99": 17.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.9,
+            "p85": 24.2,
+            "p99": 45.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.3,
+            "p99": 13.1
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "gtomori",
+      "name": "Gali Tomori",
+      "objective_keys": [
+        "MLAMB-2607-02",
+        "MLAMB-2607-03",
+        "MLAMB-2607-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "gtomori",
+          "display": "Gali Tomori"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 959,
+            "p99": 2788
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.2,
+            "p99": 12.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 6.3,
+            "p85": 12.3,
+            "p99": 18.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 2.9,
+            "p99": 6.0
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "rdelacroix",
+      "name": "Rio Delacroix",
+      "objective_keys": [
+        "MLAMB-2607-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "rdelacroix",
+          "display": "Rio Delacroix"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 10,
+          "prs_measured": 10,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4078,
+            "p99": 13116
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 12.8,
+            "p85": 20.6,
+            "p99": 42.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 27.6,
+            "p85": 49.1,
+            "p99": 94.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.3,
+            "p85": 18.3,
+            "p99": 27.1
+          },
+          "pr_count": 10
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MLAMB-2607-01",
       "name": "Q3 2026 [July]: Broken-image sentinel",
       "url": "https://example.invalid/objectives/MLAMB-2607-01",
       "leader_engineer": "Frida Ohno",
+      "leader_engineer_login": "fohno",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +295,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2607-01",
+          "display": "Q3 2026 [July]: Broken-image sentinel"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1708,
+            "p99": 4890
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.5,
+            "p85": 9.9,
+            "p99": 18.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.3,
+            "p85": 22.5,
+            "p99": 38.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.2,
+            "p99": 13.0
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +357,7 @@
       "name": "Q3 2026 [July]: Publisher content freshness",
       "url": "https://example.invalid/objectives/MLAMB-2607-02",
       "leader_engineer": "Gali Tomori",
+      "leader_engineer_login": "gtomori",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +376,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2607-02",
+          "display": "Q3 2026 [July]: Publisher content freshness"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 455,
+            "p99": 1321
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.3,
+            "p99": 6.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 6.1,
+            "p99": 11.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 3.0
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +438,7 @@
       "name": "Q3 2026 [July]: Provider content ingestion QA",
       "url": "https://example.invalid/objectives/MLAMB-2607-03",
       "leader_engineer": "Gali Tomori",
+      "leader_engineer_login": "gtomori",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +457,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2607-03",
+          "display": "Q3 2026 [July]: Provider content ingestion QA"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 454,
+            "p99": 1466
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.5,
+            "p99": 6.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 8.1,
+            "p99": 12.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.2
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +519,7 @@
       "name": "Q3 2026 [July]: Cross-locale asset governance",
       "url": "https://example.invalid/objectives/MLAMB-2607-04",
       "leader_engineer": "Gali Tomori",
+      "leader_engineer_login": "gtomori",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +538,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": "Reviewer coverage is thin the week of launch — flagging in case rollout slips."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2607-04",
+          "display": "Q3 2026 [July]: Cross-locale asset governance"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1875,
+            "p99": 6558
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.1,
+            "p85": 9.8,
+            "p99": 17.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.0,
+            "p85": 24.3,
+            "p99": 37.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.3,
+            "p99": 12.9
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +600,7 @@
       "name": "Q3 2026 [July]: Legacy asset migration",
       "url": "https://example.invalid/objectives/MLAMB-2607-05",
       "leader_engineer": "Rio Delacroix",
+      "leader_engineer_login": "rdelacroix",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +619,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "Follow-on ticket landed late; scope grew mid-sprint."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2607-05",
+          "display": "Q3 2026 [July]: Legacy asset migration"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 3,
+          "prs_measured": 2,
+          "prs_linked_to_objective": 3
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4689,
+            "p99": 14622
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.2,
+            "p85": 26.3,
+            "p99": 38.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.8,
+            "p85": 47.3,
+            "p99": 92.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.1,
+            "p85": 17.1,
+            "p99": 29.5
+          },
+          "pr_count": 2
+        },
+        "trends": {}
       }
     }
   ],

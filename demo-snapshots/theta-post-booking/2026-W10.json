@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "theta-post-booking",
     "name": "Theta Post-Booking",
-    "business_unit": "B2C"
+    "business_unit": "B2C",
+    "jira_abbrev": "THET",
+    "github_team_slug": "theta-post-booking",
+    "repos": [
+      "omio/theta-post-booking"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,319 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "theta-post-booking",
+      "display": "Theta Post-Booking"
+    },
+    "window": {
+      "from": "2026-03-02",
+      "to": "2026-03-08",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 33,
+      "prs_measured": 32,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 5,
+        "weekly_average": 5.0
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 2309,
+        "p99": 6907
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 9.1,
+        "p85": 15.0,
+        "p99": 31.8
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 17.2,
+        "p85": 32.8,
+        "p99": 53.0
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 6.1,
+        "p85": 10.6,
+        "p99": 18.8
+      },
+      "pr_count": 32
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "dokonjo",
+      "name": "Dara Okonjo",
+      "objective_keys": [
+        "MTHET-2603-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "dokonjo",
+          "display": "Dara Okonjo"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 8,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4420,
+            "p99": 14781
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.5,
+            "p85": 27.0,
+            "p99": 43.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.8,
+            "p85": 53.1,
+            "p99": 113.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.5,
+            "p85": 17.4,
+            "p99": 30.3
+          },
+          "pr_count": 8
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "gtomori",
+      "name": "Gali Tomori",
+      "objective_keys": [
+        "MTHET-2603-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "gtomori",
+          "display": "Gali Tomori"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1745,
+            "p99": 6146
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.5,
+            "p85": 10.8,
+            "p99": 21.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.5,
+            "p85": 19.1,
+            "p99": 35.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 8.0,
+            "p99": 13.1
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "lrihanna",
+      "name": "Lena Rihanna",
+      "objective_keys": [
+        "MTHET-2603-02",
+        "MTHET-2603-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "lrihanna",
+          "display": "Lena Rihanna"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 12,
+          "prs_measured": 12,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 4.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3190,
+            "p99": 9121
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 10.1,
+            "p85": 19.9,
+            "p99": 29.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 20.5,
+            "p85": 36.2,
+            "p99": 71.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 7.3,
+            "p85": 12.2,
+            "p99": 23.8
+          },
+          "pr_count": 12
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "obarone",
+      "name": "Odin Barone",
+      "objective_keys": [
+        "MTHET-2603-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "obarone",
+          "display": "Odin Barone"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 516,
+            "p99": 1704
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.3,
+            "p99": 6.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.9,
+            "p99": 13.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 3.6
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MTHET-2603-01",
       "name": "Q1 2026 [March]: Refund status transparency",
       "url": "https://example.invalid/objectives/MTHET-2603-01",
       "leader_engineer": "Odin Barone",
+      "leader_engineer_login": "obarone",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +356,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MTHET-2603-01",
+          "display": "Q1 2026 [March]: Refund status transparency"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 450,
+            "p99": 1459
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 4.2,
+            "p99": 6.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.4,
+            "p99": 12.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 2.8
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +418,7 @@
       "name": "Q1 2026 [March]: Cart persistence across surfaces",
       "url": "https://example.invalid/objectives/MTHET-2603-02",
       "leader_engineer": "Lena Rihanna",
+      "leader_engineer_login": "lrihanna",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +437,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": "A single reviewer is a bottleneck; needs a delegate."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MTHET-2603-02",
+          "display": "Q1 2026 [March]: Cart persistence across surfaces"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4046,
+            "p99": 12664
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.1,
+            "p85": 24.6,
+            "p99": 46.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.0,
+            "p85": 51.0,
+            "p99": 91.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.4,
+            "p85": 20.7,
+            "p99": 30.7
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +499,7 @@
       "name": "Q1 2026 [March]: Homepage skeleton refresh",
       "url": "https://example.invalid/objectives/MTHET-2603-03",
       "leader_engineer": "Dara Okonjo",
+      "leader_engineer_login": "dokonjo",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +518,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "Follow-on ticket landed late; scope grew mid-sprint."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MTHET-2603-03",
+          "display": "Q1 2026 [March]: Homepage skeleton refresh"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4695,
+            "p99": 14253
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.3,
+            "p85": 28.0,
+            "p99": 51.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.0,
+            "p85": 50.0,
+            "p99": 84.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.9,
+            "p85": 19.1,
+            "p99": 33.1
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +580,7 @@
       "name": "Q1 2026 [March]: Loyalty perks eligibility banner",
       "url": "https://example.invalid/objectives/MTHET-2603-04",
       "leader_engineer": "Gali Tomori",
+      "leader_engineer_login": "gtomori",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +599,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MTHET-2603-04",
+          "display": "Q1 2026 [March]: Loyalty perks eligibility banner"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1857,
+            "p99": 5663
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.6,
+            "p85": 10.6,
+            "p99": 19.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.4,
+            "p85": 22.0,
+            "p99": 34.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 7.1,
+            "p99": 13.5
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +661,7 @@
       "name": "Q1 2026 [March]: Passenger name-change flow",
       "url": "https://example.invalid/objectives/MTHET-2603-05",
       "leader_engineer": "Lena Rihanna",
+      "leader_engineer_login": "lrihanna",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +680,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MTHET-2603-05",
+          "display": "Q1 2026 [March]: Passenger name-change flow"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1865,
+            "p99": 5552
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.5,
+            "p85": 9.7,
+            "p99": 17.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.6,
+            "p85": 24.1,
+            "p99": 43.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.4,
+            "p99": 10.8
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     }
   ],

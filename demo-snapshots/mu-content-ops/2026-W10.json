@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "mu-content-ops",
     "name": "Mu Content Ops",
-    "business_unit": "Coverage"
+    "business_unit": "Coverage",
+    "jira_abbrev": "MU",
+    "github_team_slug": "mu-content-ops",
+    "repos": [
+      "omio/mu-content-ops"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,319 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "mu-content-ops",
+      "display": "Mu Content Ops"
+    },
+    "window": {
+      "from": "2026-03-02",
+      "to": "2026-03-08",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 45,
+      "prs_measured": 45,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 6.3
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1019,
+        "p99": 3090
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 3.8,
+        "p85": 7.6,
+        "p99": 12.0
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 7.9,
+        "p85": 13.4,
+        "p99": 26.7
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 2.1,
+        "p85": 3.9,
+        "p99": 6.0
+      },
+      "pr_count": 45
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "imarchetti",
+      "name": "Ines Marchetti",
+      "objective_keys": [
+        "MMU-2603-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "imarchetti",
+          "display": "Ines Marchetti"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 18,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 505,
+            "p99": 1695
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.9,
+            "p99": 7.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.9,
+            "p99": 11.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 3.4
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "jcabrera",
+      "name": "Jules Cabrera",
+      "objective_keys": [
+        "MMU-2603-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "jcabrera",
+          "display": "Jules Cabrera"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 12,
+          "prs_measured": 11,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1714,
+            "p99": 5918
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.8,
+            "p85": 10.7,
+            "p99": 16.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.5,
+            "p85": 23.4,
+            "p99": 47.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 7.0,
+            "p99": 13.1
+          },
+          "pr_count": 11
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "kostberg",
+      "name": "Kai Ostberg",
+      "objective_keys": [
+        "MMU-2603-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "kostberg",
+          "display": "Kai Ostberg"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 490,
+            "p99": 1718
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.4,
+            "p99": 6.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.7,
+            "p99": 14.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 2.0,
+            "p99": 3.0
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "qyates",
+      "name": "Quinn Yates",
+      "objective_keys": [
+        "MMU-2603-04",
+        "MMU-2603-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "qyates",
+          "display": "Quinn Yates"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1063,
+            "p99": 3101
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.8,
+            "p99": 12.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 7.9,
+            "p85": 12.9,
+            "p99": 22.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 2.6,
+            "p85": 4.8,
+            "p99": 8.8
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MMU-2603-01",
       "name": "Q1 2026 [March]: Publisher content freshness",
       "url": "https://example.invalid/objectives/MMU-2603-01",
       "leader_engineer": "Ines Marchetti",
+      "leader_engineer_login": "imarchetti",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +356,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2603-01",
+          "display": "Q1 2026 [March]: Publisher content freshness"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 459,
+            "p99": 1302
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.7,
+            "p99": 7.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.9,
+            "p99": 12.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.2
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +418,7 @@
       "name": "Q1 2026 [March]: Broken-image sentinel",
       "url": "https://example.invalid/objectives/MMU-2603-02",
       "leader_engineer": "Jules Cabrera",
+      "leader_engineer_login": "jcabrera",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +437,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "Downstream integration test suite is flaky; may hide a regression at go-live."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2603-02",
+          "display": "Q1 2026 [March]: Broken-image sentinel"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1820,
+            "p99": 5280
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.2,
+            "p85": 11.6,
+            "p99": 20.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.3,
+            "p85": 20.9,
+            "p99": 35.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.0,
+            "p99": 13.5
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +499,7 @@
       "name": "Q1 2026 [March]: Legacy asset migration",
       "url": "https://example.invalid/objectives/MMU-2603-03",
       "leader_engineer": "Kai Ostberg",
+      "leader_engineer_login": "kostberg",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +518,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2603-03",
+          "display": "Q1 2026 [March]: Legacy asset migration"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 460,
+            "p99": 1560
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 4.3,
+            "p99": 7.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.4,
+            "p99": 12.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 1.9,
+            "p99": 3.1
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +580,7 @@
       "name": "Q1 2026 [March]: Cross-locale asset governance",
       "url": "https://example.invalid/objectives/MMU-2603-04",
       "leader_engineer": "Quinn Yates",
+      "leader_engineer_login": "qyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +599,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2603-04",
+          "display": "Q1 2026 [March]: Cross-locale asset governance"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1586,
+            "p99": 4712
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.9,
+            "p85": 11.5,
+            "p99": 19.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.7,
+            "p85": 21.7,
+            "p99": 36.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.7,
+            "p99": 13.1
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +661,7 @@
       "name": "Q1 2026 [March]: Content lint gate",
       "url": "https://example.invalid/objectives/MMU-2603-05",
       "leader_engineer": "Quinn Yates",
+      "leader_engineer_login": "qyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +680,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2603-05",
+          "display": "Q1 2026 [March]: Content lint gate"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 435,
+            "p99": 1545
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.9,
+            "p99": 6.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.5,
+            "p99": 11.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 3.1
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     }
   ],

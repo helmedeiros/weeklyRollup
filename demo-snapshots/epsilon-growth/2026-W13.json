@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "epsilon-growth",
     "name": "Epsilon Growth",
-    "business_unit": "B2C"
+    "business_unit": "B2C",
+    "jira_abbrev": "EPSI",
+    "github_team_slug": "epsilon-growth",
+    "repos": [
+      "omio/epsilon-growth"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,320 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "epsilon-growth",
+      "display": "Epsilon Growth"
+    },
+    "window": {
+      "from": "2026-03-23",
+      "to": "2026-03-29",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 44,
+      "prs_measured": 43,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 7,
+        "weekly_average": 6.9
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 668,
+        "p99": 2128
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 2.6,
+        "p85": 4.5,
+        "p99": 9.1
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 4.9,
+        "p85": 9.3,
+        "p99": 17.3
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 1.4,
+        "p85": 2.8,
+        "p99": 4.2
+      },
+      "pr_count": 43
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "emarin",
+      "name": "Ellis Marín",
+      "objective_keys": [
+        "MEPSI-2603-02",
+        "MEPSI-2603-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "emarin",
+          "display": "Ellis Marín"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 483,
+            "p99": 1374
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.8,
+            "p99": 5.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.6,
+            "p85": 5.8,
+            "p99": 10.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.0
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "jcabrera",
+      "name": "Jules Cabrera",
+      "objective_keys": [
+        "MEPSI-2603-03",
+        "MEPSI-2603-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "jcabrera",
+          "display": "Jules Cabrera"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 13,
+          "prs_measured": 12,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1052,
+            "p99": 3117
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 3.6,
+            "p85": 6.4,
+            "p99": 12.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 9.0,
+            "p85": 15.3,
+            "p99": 25.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 2.7,
+            "p85": 4.4,
+            "p99": 9.0
+          },
+          "pr_count": 12
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "qyates",
+      "name": "Quinn Yates",
+      "objective_keys": [
+        "MEPSI-2603-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "qyates",
+          "display": "Quinn Yates"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 473,
+            "p99": 1538
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.1,
+            "p99": 5.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.5,
+            "p99": 14.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.5,
+            "p99": 3.1
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "srowe",
+      "name": "Sana Rowe",
+      "objective_keys": [
+        "MEPSI-2603-06"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "srowe",
+          "display": "Sana Rowe"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 501,
+            "p99": 1526
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.6,
+            "p99": 7.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.1,
+            "p99": 14.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.6,
+            "p99": 3.2
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MEPSI-2603-01",
       "name": "Q1 2026 [March]: Payment method reorder",
       "url": "https://example.invalid/objectives/MEPSI-2603-01",
       "leader_engineer": "Quinn Yates",
+      "leader_engineer_login": "qyates",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -44,6 +357,61 @@
         "done_this_week": "Closed the final ticket in the epic and archived the working doc.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MEPSI-2603-01",
+          "display": "Q1 2026 [March]: Payment method reorder"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 524,
+            "p99": 1645
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 4.1,
+            "p99": 6.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.2,
+            "p99": 13.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.2
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +419,7 @@
       "name": "Q1 2026 [March]: Passenger name-change flow",
       "url": "https://example.invalid/objectives/MEPSI-2603-02",
       "leader_engineer": "Ellis Marín",
+      "leader_engineer_login": "emarin",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -69,6 +438,61 @@
         "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
         "target_next_week": "Move to maintenance; capture learnings into the runbook.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MEPSI-2603-02",
+          "display": "Q1 2026 [March]: Passenger name-change flow"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 474,
+            "p99": 1652
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.3,
+            "p99": 5.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.2,
+            "p99": 13.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 3.5
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +500,7 @@
       "name": "Q1 2026 [March]: Purchase confirmation clarity",
       "url": "https://example.invalid/objectives/MEPSI-2603-03",
       "leader_engineer": "Jules Cabrera",
+      "leader_engineer_login": "jcabrera",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +519,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MEPSI-2603-03",
+          "display": "Q1 2026 [March]: Purchase confirmation clarity"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1656,
+            "p99": 5048
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.6,
+            "p85": 10.2,
+            "p99": 17.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.6,
+            "p85": 23.2,
+            "p99": 40.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.2,
+            "p99": 14.2
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +581,7 @@
       "name": "Q1 2026 [March]: Search relevance re-ranker",
       "url": "https://example.invalid/objectives/MEPSI-2603-04",
       "leader_engineer": "Ellis Marín",
+      "leader_engineer_login": "emarin",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -119,6 +600,61 @@
         "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
         "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MEPSI-2603-04",
+          "display": "Q1 2026 [March]: Search relevance re-ranker"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 499,
+            "p99": 1481
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.1,
+            "p99": 5.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 8.0,
+            "p99": 14.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 2.7
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +662,7 @@
       "name": "Q1 2026 [March]: Cart persistence across surfaces",
       "url": "https://example.invalid/objectives/MEPSI-2603-05",
       "leader_engineer": "Jules Cabrera",
+      "leader_engineer_login": "jcabrera",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -144,6 +681,61 @@
         "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MEPSI-2603-05",
+          "display": "Q1 2026 [March]: Cart persistence across surfaces"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 472,
+            "p99": 1661
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.2,
+            "p99": 7.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.7,
+            "p99": 13.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 1.9,
+            "p99": 3.2
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -151,6 +743,7 @@
       "name": "Q1 2026 [March]: Checkout abandonment nudge",
       "url": "https://example.invalid/objectives/MEPSI-2603-06",
       "leader_engineer": "Sana Rowe",
+      "leader_engineer_login": "srowe",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -169,6 +762,61 @@
         "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
         "target_next_week": "Move to maintenance; capture learnings into the runbook.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MEPSI-2603-06",
+          "display": "Q1 2026 [March]: Checkout abandonment nudge"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 448,
+            "p99": 1557
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.5,
+            "p99": 5.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.7,
+            "p99": 13.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.8,
+            "p99": 3.4
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     }
   ],

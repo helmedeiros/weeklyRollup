@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "iota-partners",
     "name": "Iota Partner Portal",
-    "business_unit": "B2B"
+    "business_unit": "B2B",
+    "jira_abbrev": "IOTA",
+    "github_team_slug": "iota-partners",
+    "repos": [
+      "omio/iota-partners"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,318 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "iota-partners",
+      "display": "Iota Partner Portal"
+    },
+    "window": {
+      "from": "2026-05-11",
+      "to": "2026-05-17",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 33,
+      "prs_measured": 33,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 4,
+        "weekly_average": 4.1
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 2752,
+        "p99": 9433
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 10.0,
+        "p85": 17.8,
+        "p99": 34.1
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 21.8,
+        "p85": 36.7,
+        "p99": 69.5
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 6.5,
+        "p85": 12.0,
+        "p99": 19.4
+      },
+      "pr_count": 33
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "gtomori",
+      "name": "Gali Tomori",
+      "objective_keys": [
+        "MIOTA-2605-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "gtomori",
+          "display": "Gali Tomori"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 1.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 6317,
+            "p99": 18105
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 22.9,
+            "p85": 40.2,
+            "p99": 66.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 49.6,
+            "p85": 83.0,
+            "p99": 145.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 17.4,
+            "p85": 34.7,
+            "p99": 58.4
+          },
+          "pr_count": 3
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "jcabrera",
+      "name": "Jules Cabrera",
+      "objective_keys": [
+        "MIOTA-2605-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "jcabrera",
+          "display": "Jules Cabrera"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 515,
+            "p99": 1468
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.6,
+            "p99": 5.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 6.7,
+            "p99": 12.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.0
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "privas",
+      "name": "Pia Rivas",
+      "objective_keys": [
+        "MIOTA-2605-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "privas",
+          "display": "Pia Rivas"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 517,
+            "p99": 1771
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 4.0,
+            "p99": 7.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.9,
+            "p99": 14.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.6,
+            "p99": 3.0
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "srowe",
+      "name": "Sana Rowe",
+      "objective_keys": [
+        "MIOTA-2605-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "srowe",
+          "display": "Sana Rowe"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 4.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4438,
+            "p99": 13588
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.2,
+            "p85": 21.8,
+            "p99": 40.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 30.6,
+            "p85": 53.8,
+            "p99": 89.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.9,
+            "p85": 17.9,
+            "p99": 32.8
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MIOTA-2605-01",
       "name": "Q2 2026 [May]: Contract-tier feature gating",
       "url": "https://example.invalid/objectives/MIOTA-2605-01",
       "leader_engineer": "Sana Rowe",
+      "leader_engineer_login": "srowe",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +355,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MIOTA-2605-01",
+          "display": "Q2 2026 [May]: Contract-tier feature gating"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4196,
+            "p99": 13823
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 12.9,
+            "p85": 21.1,
+            "p99": 44.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.2,
+            "p85": 49.1,
+            "p99": 85.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.8,
+            "p85": 18.0,
+            "p99": 29.7
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +417,7 @@
       "name": "Q2 2026 [May]: Reseller webhook v3",
       "url": "https://example.invalid/objectives/MIOTA-2605-02",
       "leader_engineer": "Gali Tomori",
+      "leader_engineer_login": "gtomori",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +436,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "Awaiting security review that was pushed to next quarter."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MIOTA-2605-02",
+          "display": "Q2 2026 [May]: Reseller webhook v3"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 2,
+          "prs_measured": 1,
+          "prs_linked_to_objective": 2
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 1.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 7348,
+            "p99": 23275
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 20.9,
+            "p85": 33.4,
+            "p99": 66.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 43.8,
+            "p85": 72.2,
+            "p99": 152.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 16.3,
+            "p85": 31.4,
+            "p99": 47.4
+          },
+          "pr_count": 1
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +498,7 @@
       "name": "Q2 2026 [May]: Onboarding self-serve wizard",
       "url": "https://example.invalid/objectives/MIOTA-2605-03",
       "leader_engineer": "Jules Cabrera",
+      "leader_engineer_login": "jcabrera",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +517,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MIOTA-2605-03",
+          "display": "Q2 2026 [May]: Onboarding self-serve wizard"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 449,
+            "p99": 1322
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.3,
+            "p99": 5.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.6,
+            "p99": 11.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 1.8,
+            "p99": 3.7
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +579,7 @@
       "name": "Q2 2026 [May]: Compliance audit trail",
       "url": "https://example.invalid/objectives/MIOTA-2605-04",
       "leader_engineer": "Pia Rivas",
+      "leader_engineer_login": "privas",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +598,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MIOTA-2605-04",
+          "display": "Q2 2026 [May]: Compliance audit trail"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 438,
+            "p99": 1477
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.4,
+            "p99": 5.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.9,
+            "p99": 14.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.8,
+            "p99": 3.1
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     }
   ],

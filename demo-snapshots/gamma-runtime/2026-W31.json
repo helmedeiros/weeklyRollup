@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "gamma-runtime",
     "name": "Gamma Runtime",
-    "business_unit": "Platform"
+    "business_unit": "Platform",
+    "jira_abbrev": "GAMM",
+    "github_team_slug": "gamma-runtime",
+    "repos": [
+      "omio/gamma-runtime"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,380 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "gamma-runtime",
+      "display": "Gamma Runtime"
+    },
+    "window": {
+      "from": "2026-07-27",
+      "to": "2026-08-02",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 33,
+      "prs_measured": 33,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 6.1
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1670,
+        "p99": 4754
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 5.4,
+        "p85": 9.0,
+        "p99": 18.8
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 11.6,
+        "p85": 20.2,
+        "p99": 39.2
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 3.9,
+        "p85": 7.3,
+        "p99": 13.2
+      },
+      "pr_count": 33
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "cnguyen",
+      "name": "Cai Nguyen",
+      "objective_keys": [
+        "MGAMM-2607-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "cnguyen",
+          "display": "Cai Nguyen"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 452,
+            "p99": 1280
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 3.9,
+            "p99": 6.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.8,
+            "p99": 11.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.6,
+            "p99": 2.9
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "dokonjo",
+      "name": "Dara Okonjo",
+      "objective_keys": [
+        "MGAMM-2607-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "dokonjo",
+          "display": "Dara Okonjo"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 13,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1615,
+            "p99": 5747
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.5,
+            "p85": 12.0,
+            "p99": 21.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.0,
+            "p85": 22.6,
+            "p99": 45.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 8.4,
+            "p99": 14.5
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "jcabrera",
+      "name": "Jules Cabrera",
+      "objective_keys": [
+        "MGAMM-2607-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "jcabrera",
+          "display": "Jules Cabrera"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 12,
+          "prs_measured": 12,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1835,
+            "p99": 5467
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.5,
+            "p85": 10.1,
+            "p99": 16.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.9,
+            "p85": 20.8,
+            "p99": 42.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 7.1,
+            "p99": 12.3
+          },
+          "pr_count": 12
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "nsardar",
+      "name": "Nya Sardar",
+      "objective_keys": [
+        "MGAMM-2607-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "nsardar",
+          "display": "Nya Sardar"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 518,
+            "p99": 1555
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.5,
+            "p99": 7.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 8.4,
+            "p99": 13.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.5,
+            "p99": 2.5
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "obarone",
+      "name": "Odin Barone",
+      "objective_keys": [
+        "MGAMM-2607-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "obarone",
+          "display": "Odin Barone"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 10,
+          "prs_measured": 10,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4150,
+            "p99": 13440
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.2,
+            "p85": 25.7,
+            "p99": 44.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.8,
+            "p85": 47.3,
+            "p99": 91.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.8,
+            "p85": 19.3,
+            "p99": 30.8
+          },
+          "pr_count": 10
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MGAMM-2607-01",
       "name": "Q3 2026 [July]: Deprecation channel rollout",
       "url": "https://example.invalid/objectives/MGAMM-2607-01",
       "leader_engineer": "Jules Cabrera",
+      "leader_engineer_login": "jcabrera",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +417,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": "Downstream integration test suite is flaky; may hide a regression at go-live."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2607-01",
+          "display": "Q3 2026 [July]: Deprecation channel rollout"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1712,
+            "p99": 6061
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.1,
+            "p85": 10.3,
+            "p99": 18.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.7,
+            "p85": 23.4,
+            "p99": 35.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 6.8,
+            "p99": 13.0
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +479,7 @@
       "name": "Q3 2026 [July]: Golden-path SLO board",
       "url": "https://example.invalid/objectives/MGAMM-2607-02",
       "leader_engineer": "Odin Barone",
+      "leader_engineer_login": "obarone",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +498,61 @@
         "done_this_week": "Slipped the promised design review; rescheduling for later this week.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2607-02",
+          "display": "Q3 2026 [July]: Golden-path SLO board"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4208,
+            "p99": 12348
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.9,
+            "p85": 25.9,
+            "p99": 48.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 27.8,
+            "p85": 46.5,
+            "p99": 98.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.0,
+            "p85": 14.9,
+            "p99": 32.1
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +560,7 @@
       "name": "Q3 2026 [July]: Zero-downtime restart choreography",
       "url": "https://example.invalid/objectives/MGAMM-2607-03",
       "leader_engineer": "Nya Sardar",
+      "leader_engineer_login": "nsardar",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -94,6 +579,61 @@
         "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2607-03",
+          "display": "Q3 2026 [July]: Zero-downtime restart choreography"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 502,
+            "p99": 1518
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.6,
+            "p99": 6.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 6.7,
+            "p99": 11.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.2
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +641,7 @@
       "name": "Q3 2026 [July]: Config drift auto-repair",
       "url": "https://example.invalid/objectives/MGAMM-2607-04",
       "leader_engineer": "Dara Okonjo",
+      "leader_engineer_login": "dokonjo",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +660,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": "Adjacent team is mid-migration — could take longer to help if we hit a snag."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2607-04",
+          "display": "Q3 2026 [July]: Config drift auto-repair"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1767,
+            "p99": 5135
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.4,
+            "p85": 11.6,
+            "p99": 20.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.6,
+            "p85": 22.1,
+            "p99": 38.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.0,
+            "p99": 14.8
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +722,7 @@
       "name": "Q3 2026 [July]: Rate-limiter fairness audit",
       "url": "https://example.invalid/objectives/MGAMM-2607-05",
       "leader_engineer": "Cai Nguyen",
+      "leader_engineer_login": "cnguyen",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -144,6 +741,61 @@
         "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
         "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2607-05",
+          "display": "Q3 2026 [July]: Rate-limiter fairness audit"
+        },
+        "window": {
+          "from": "2026-07-27",
+          "to": "2026-08-02",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 471,
+            "p99": 1515
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.4,
+            "p99": 6.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 5.9,
+            "p99": 13.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 3.1
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     }
   ],

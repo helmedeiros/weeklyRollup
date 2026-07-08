@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "mu-content-ops",
     "name": "Mu Content Ops",
-    "business_unit": "Coverage"
+    "business_unit": "Coverage",
+    "jira_abbrev": "MU",
+    "github_team_slug": "mu-content-ops",
+    "repos": [
+      "omio/mu-content-ops"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,380 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "mu-content-ops",
+      "display": "Mu Content Ops"
+    },
+    "window": {
+      "from": "2026-04-20",
+      "to": "2026-04-26",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 35,
+      "prs_measured": 35,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 5,
+        "weekly_average": 4.6
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 2324,
+        "p99": 6676
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 8.7,
+        "p85": 15.4,
+        "p99": 29.1
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 18.4,
+        "p85": 36.1,
+        "p99": 61.6
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 5.8,
+        "p85": 10.2,
+        "p99": 20.4
+      },
+      "pr_count": 35
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "athornton",
+      "name": "Ava Thornton",
+      "objective_keys": [
+        "MMU-2604-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "athornton",
+          "display": "Ava Thornton"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 10,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3984,
+            "p99": 12424
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.1,
+            "p85": 24.8,
+            "p99": 46.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 30.0,
+            "p85": 50.7,
+            "p99": 85.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.9,
+            "p85": 17.9,
+            "p99": 31.7
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "hvasquez",
+      "name": "Hiro Vasquez",
+      "objective_keys": [
+        "MMU-2604-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "hvasquez",
+          "display": "Hiro Vasquez"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1841,
+            "p99": 5522
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.2,
+            "p85": 12.3,
+            "p99": 18.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.9,
+            "p85": 23.0,
+            "p99": 42.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.2,
+            "p99": 14.9
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "lrihanna",
+      "name": "Lena Rihanna",
+      "objective_keys": [
+        "MMU-2604-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "lrihanna",
+          "display": "Lena Rihanna"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 454,
+            "p99": 1274
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.9,
+            "p99": 6.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.1,
+            "p99": 11.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 1.9,
+            "p99": 3.6
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "rdelacroix",
+      "name": "Rio Delacroix",
+      "objective_keys": [
+        "MMU-2604-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "rdelacroix",
+          "display": "Rio Delacroix"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3876,
+            "p99": 13269
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.1,
+            "p85": 22.0,
+            "p99": 45.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 30.9,
+            "p85": 50.4,
+            "p99": 95.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.7,
+            "p85": 17.7,
+            "p99": 32.7
+          },
+          "pr_count": 7
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "tilves",
+      "name": "Tomo Ilves",
+      "objective_keys": [
+        "MMU-2604-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "tilves",
+          "display": "Tomo Ilves"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1851,
+            "p99": 6344
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.6,
+            "p85": 10.9,
+            "p99": 18.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.2,
+            "p85": 18.3,
+            "p99": 31.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 8.2,
+            "p99": 12.6
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MMU-2604-01",
       "name": "Q2 2026 [April]: Publisher content freshness",
       "url": "https://example.invalid/objectives/MMU-2604-01",
       "leader_engineer": "Ava Thornton",
+      "leader_engineer_login": "athornton",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +417,61 @@
         "done_this_week": "Slipped the promised design review; rescheduling for later this week.",
         "target_next_week": "Reduce scope to the top-2 use cases and land a partial fix.",
         "blockers": "A single reviewer is a bottleneck; needs a delegate."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2604-01",
+          "display": "Q2 2026 [April]: Publisher content freshness"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4210,
+            "p99": 14439
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.0,
+            "p85": 24.9,
+            "p99": 37.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.9,
+            "p85": 53.6,
+            "p99": 81.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.4,
+            "p85": 15.6,
+            "p99": 31.4
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +479,7 @@
       "name": "Q2 2026 [April]: Broken-image sentinel",
       "url": "https://example.invalid/objectives/MMU-2604-02",
       "leader_engineer": "Lena Rihanna",
+      "leader_engineer_login": "lrihanna",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +498,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2604-02",
+          "display": "Q2 2026 [April]: Broken-image sentinel"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 521,
+            "p99": 1796
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.5,
+            "p99": 6.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.2,
+            "p99": 13.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.0,
+            "p99": 3.1
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +560,7 @@
       "name": "Q2 2026 [April]: Content lint gate",
       "url": "https://example.invalid/objectives/MMU-2604-03",
       "leader_engineer": "Rio Delacroix",
+      "leader_engineer_login": "rdelacroix",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +579,61 @@
         "done_this_week": "Discovered a regression in the smoke tests that pushed the merge back.",
         "target_next_week": "Reduce scope to the top-2 use cases and land a partial fix.",
         "blockers": "Design review pending from the sibling team."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2604-03",
+          "display": "Q2 2026 [April]: Content lint gate"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4154,
+            "p99": 12859
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.3,
+            "p85": 26.4,
+            "p99": 46.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.9,
+            "p85": 44.8,
+            "p99": 84.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.4,
+            "p85": 15.5,
+            "p99": 28.0
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +641,7 @@
       "name": "Q2 2026 [April]: Cadence dashboard for editors",
       "url": "https://example.invalid/objectives/MMU-2604-04",
       "leader_engineer": "Hiro Vasquez",
+      "leader_engineer_login": "hvasquez",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +660,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "Adjacent team is mid-migration — could take longer to help if we hit a snag."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2604-04",
+          "display": "Q2 2026 [April]: Cadence dashboard for editors"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1836,
+            "p99": 5147
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.3,
+            "p85": 11.2,
+            "p99": 17.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.6,
+            "p85": 19.3,
+            "p99": 41.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.4,
+            "p99": 14.0
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +722,7 @@
       "name": "Q2 2026 [April]: Provider content ingestion QA",
       "url": "https://example.invalid/objectives/MMU-2604-05",
       "leader_engineer": "Tomo Ilves",
+      "leader_engineer_login": "tilves",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +741,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "Downstream integration test suite is flaky; may hide a regression at go-live."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MMU-2604-05",
+          "display": "Q2 2026 [April]: Provider content ingestion QA"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1604,
+            "p99": 4526
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.5,
+            "p85": 8.9,
+            "p99": 19.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.7,
+            "p85": 23.8,
+            "p99": 43.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.6,
+            "p99": 12.7
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     }
   ],

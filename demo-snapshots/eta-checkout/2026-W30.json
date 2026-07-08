@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "eta-checkout",
     "name": "Eta Checkout",
-    "business_unit": "B2C"
+    "business_unit": "B2C",
+    "jira_abbrev": "ETA",
+    "github_team_slug": "eta-checkout",
+    "repos": [
+      "omio/eta-checkout"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,380 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "eta-checkout",
+      "display": "Eta Checkout"
+    },
+    "window": {
+      "from": "2026-07-20",
+      "to": "2026-07-26",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 43,
+      "prs_measured": 42,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 6.4
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1595,
+        "p99": 4751
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 5.3,
+        "p85": 8.6,
+        "p99": 17.6
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 10.0,
+        "p85": 16.3,
+        "p99": 32.3
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 3.1,
+        "p85": 6.0,
+        "p99": 10.9
+      },
+      "pr_count": 42
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "blarsson",
+      "name": "Bram Larsson",
+      "objective_keys": [
+        "META-2607-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "blarsson",
+          "display": "Bram Larsson"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 435,
+            "p99": 1515
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.8,
+            "p99": 6.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 7.6,
+            "p99": 12.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.3
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "manders",
+      "name": "Milo Anders",
+      "objective_keys": [
+        "META-2607-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "manders",
+          "display": "Milo Anders"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4363,
+            "p99": 12442
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.5,
+            "p85": 28.8,
+            "p99": 45.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 30.3,
+            "p85": 51.2,
+            "p99": 105.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.4,
+            "p85": 17.5,
+            "p99": 31.1
+          },
+          "pr_count": 7
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "privas",
+      "name": "Pia Rivas",
+      "objective_keys": [
+        "META-2607-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "privas",
+          "display": "Pia Rivas"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1703,
+            "p99": 5326
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.0,
+            "p85": 10.7,
+            "p99": 20.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.9,
+            "p85": 21.4,
+            "p99": 37.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.7,
+            "p99": 11.9
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "rdelacroix",
+      "name": "Rio Delacroix",
+      "objective_keys": [
+        "META-2607-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "rdelacroix",
+          "display": "Rio Delacroix"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 466,
+            "p99": 1569
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.2,
+            "p99": 5.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 7.1,
+            "p99": 14.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.1
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "tilves",
+      "name": "Tomo Ilves",
+      "objective_keys": [
+        "META-2607-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "tilves",
+          "display": "Tomo Ilves"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 18,
+          "prs_measured": 18,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 523,
+            "p99": 1862
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.2,
+            "p99": 5.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 6.6,
+            "p99": 11.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.0
+          },
+          "pr_count": 18
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "META-2607-01",
       "name": "Q3 2026 [July]: Search relevance re-ranker",
       "url": "https://example.invalid/objectives/META-2607-01",
       "leader_engineer": "Bram Larsson",
+      "leader_engineer_login": "blarsson",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +417,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2607-01",
+          "display": "Q3 2026 [July]: Search relevance re-ranker"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 528,
+            "p99": 1720
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.0,
+            "p99": 6.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 6.5,
+            "p99": 12.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 1.9,
+            "p99": 3.6
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +479,7 @@
       "name": "Q3 2026 [July]: Passenger name-change flow",
       "url": "https://example.invalid/objectives/META-2607-02",
       "leader_engineer": "Milo Anders",
+      "leader_engineer_login": "manders",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +498,61 @@
         "done_this_week": "Slipped the promised design review; rescheduling for later this week.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Follow-on ticket landed late; scope grew mid-sprint."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2607-02",
+          "display": "Q3 2026 [July]: Passenger name-change flow"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3936,
+            "p99": 12490
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.7,
+            "p85": 23.3,
+            "p99": 39.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.5,
+            "p85": 49.4,
+            "p99": 100.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.3,
+            "p85": 20.6,
+            "p99": 32.5
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +560,7 @@
       "name": "Q3 2026 [July]: Purchase confirmation clarity",
       "url": "https://example.invalid/objectives/META-2607-03",
       "leader_engineer": "Pia Rivas",
+      "leader_engineer_login": "privas",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +579,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2607-03",
+          "display": "Q3 2026 [July]: Purchase confirmation clarity"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1870,
+            "p99": 5313
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.5,
+            "p85": 10.7,
+            "p99": 18.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.0,
+            "p85": 25.4,
+            "p99": 39.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.5,
+            "p99": 12.3
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +641,7 @@
       "name": "Q3 2026 [July]: Refund status transparency",
       "url": "https://example.invalid/objectives/META-2607-04",
       "leader_engineer": "Rio Delacroix",
+      "leader_engineer_login": "rdelacroix",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +660,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2607-04",
+          "display": "Q3 2026 [July]: Refund status transparency"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 527,
+            "p99": 1884
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 3.9,
+            "p99": 7.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 8.6,
+            "p99": 14.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 3.2
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +722,7 @@
       "name": "Q3 2026 [July]: Loyalty perks eligibility banner",
       "url": "https://example.invalid/objectives/META-2607-05",
       "leader_engineer": "Tomo Ilves",
+      "leader_engineer_login": "tilves",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +741,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2607-05",
+          "display": "Q3 2026 [July]: Loyalty perks eligibility banner"
+        },
+        "window": {
+          "from": "2026-07-20",
+          "to": "2026-07-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 485,
+            "p99": 1508
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.6,
+            "p99": 6.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.5,
+            "p99": 12.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.8,
+            "p99": 3.4
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     }
   ],

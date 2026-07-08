@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "kappa-enterprise",
     "name": "Kappa Enterprise Ops",
-    "business_unit": "B2B"
+    "business_unit": "B2B",
+    "jira_abbrev": "KAPP",
+    "github_team_slug": "kappa-enterprise",
+    "repos": [
+      "omio/kappa-enterprise"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,318 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "kappa-enterprise",
+      "display": "Kappa Enterprise Ops"
+    },
+    "window": {
+      "from": "2026-06-22",
+      "to": "2026-06-28",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 35,
+      "prs_measured": 34,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 5,
+        "weekly_average": 4.9
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 2925,
+        "p99": 8420
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 9.8,
+        "p85": 18.3,
+        "p99": 28.0
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 17.6,
+        "p85": 30.3,
+        "p99": 63.3
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 6.8,
+        "p85": 12.8,
+        "p99": 24.2
+      },
+      "pr_count": 34
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "blarsson",
+      "name": "Bram Larsson",
+      "objective_keys": [
+        "MKAPP-2606-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "blarsson",
+          "display": "Bram Larsson"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 440,
+            "p99": 1442
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 4.1,
+            "p99": 7.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 7.2,
+            "p99": 15.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 2.8
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "dokonjo",
+      "name": "Dara Okonjo",
+      "objective_keys": [
+        "MKAPP-2606-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "dokonjo",
+          "display": "Dara Okonjo"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1826,
+            "p99": 5173
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.1,
+            "p85": 10.9,
+            "p99": 17.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.7,
+            "p85": 23.4,
+            "p99": 43.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.5,
+            "p99": 12.9
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "fohno",
+      "name": "Frida Ohno",
+      "objective_keys": [
+        "MKAPP-2606-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "fohno",
+          "display": "Frida Ohno"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4250,
+            "p99": 13002
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.1,
+            "p85": 29.0,
+            "p99": 44.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 27.9,
+            "p85": 46.2,
+            "p99": 94.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.6,
+            "p85": 15.7,
+            "p99": 34.5
+          },
+          "pr_count": 7
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "kostberg",
+      "name": "Kai Ostberg",
+      "objective_keys": [
+        "MKAPP-2606-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "kostberg",
+          "display": "Kai Ostberg"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 10,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4189,
+            "p99": 11739
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.3,
+            "p85": 23.3,
+            "p99": 44.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.6,
+            "p85": 50.9,
+            "p99": 96.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.7,
+            "p85": 21.0,
+            "p99": 36.6
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MKAPP-2606-01",
       "name": "Q2 2026 [June]: Onboarding self-serve wizard",
       "url": "https://example.invalid/objectives/MKAPP-2606-01",
       "leader_engineer": "Bram Larsson",
+      "leader_engineer_login": "blarsson",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -44,6 +355,61 @@
         "done_this_week": "Closed the final ticket in the epic and archived the working doc.",
         "target_next_week": "Move to maintenance; capture learnings into the runbook.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2606-01",
+          "display": "Q2 2026 [June]: Onboarding self-serve wizard"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 486,
+            "p99": 1613
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 4.1,
+            "p99": 6.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.9,
+            "p99": 12.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 2.0,
+            "p99": 3.5
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +417,7 @@
       "name": "Q2 2026 [June]: Reseller webhook v3",
       "url": "https://example.invalid/objectives/MKAPP-2606-02",
       "leader_engineer": "Dara Okonjo",
+      "leader_engineer_login": "dokonjo",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +436,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2606-02",
+          "display": "Q2 2026 [June]: Reseller webhook v3"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1764,
+            "p99": 5543
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.9,
+            "p85": 10.7,
+            "p99": 20.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.4,
+            "p85": 20.3,
+            "p99": 39.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 6.5,
+            "p99": 14.0
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +498,7 @@
       "name": "Q2 2026 [June]: Compliance audit trail",
       "url": "https://example.invalid/objectives/MKAPP-2606-03",
       "leader_engineer": "Kai Ostberg",
+      "leader_engineer_login": "kostberg",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +517,61 @@
         "done_this_week": "Waiting on a dependency from an adjacent team; escalation opened.",
         "target_next_week": "Reduce scope to the top-2 use cases and land a partial fix.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2606-03",
+          "display": "Q2 2026 [June]: Compliance audit trail"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4329,
+            "p99": 13323
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.3,
+            "p85": 25.3,
+            "p99": 44.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.2,
+            "p85": 52.5,
+            "p99": 92.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.4,
+            "p85": 17.8,
+            "p99": 29.2
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +579,7 @@
       "name": "Q2 2026 [June]: Contract-tier feature gating",
       "url": "https://example.invalid/objectives/MKAPP-2606-04",
       "leader_engineer": "Frida Ohno",
+      "leader_engineer_login": "fohno",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +598,61 @@
         "done_this_week": "Scope grew after user testing; trimming to hit the reduced target.",
         "target_next_week": "Realign with the partner team and reset the delivery date.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2606-04",
+          "display": "Q2 2026 [June]: Contract-tier feature gating"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4031,
+            "p99": 13547
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.9,
+            "p85": 27.3,
+            "p99": 40.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.3,
+            "p85": 57.4,
+            "p99": 101.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.8,
+            "p85": 19.1,
+            "p99": 33.7
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     }
   ],

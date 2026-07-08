@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "gamma-runtime",
     "name": "Gamma Runtime",
-    "business_unit": "Platform"
+    "business_unit": "Platform",
+    "jira_abbrev": "GAMM",
+    "github_team_slug": "gamma-runtime",
+    "repos": [
+      "omio/gamma-runtime"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,319 @@
     "spillover_blocked": 1,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "gamma-runtime",
+      "display": "Gamma Runtime"
+    },
+    "window": {
+      "from": "2026-02-16",
+      "to": "2026-02-22",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 28,
+      "prs_measured": 28,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 5,
+        "weekly_average": 4.7
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 3621,
+        "p99": 11053
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 10.5,
+        "p85": 18.1,
+        "p99": 34.3
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 24.9,
+        "p85": 41.4,
+        "p99": 80.1
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 8.9,
+        "p85": 14.5,
+        "p99": 31.2
+      },
+      "pr_count": 28
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "dokonjo",
+      "name": "Dara Okonjo",
+      "objective_keys": [
+        "MGAMM-2602-01",
+        "MGAMM-2602-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "dokonjo",
+          "display": "Dara Okonjo"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 11,
+          "prs_measured": 11,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3778,
+            "p99": 12656
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 12.7,
+            "p85": 24.4,
+            "p99": 44.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 24.4,
+            "p85": 47.0,
+            "p99": 82.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 8.9,
+            "p85": 14.9,
+            "p99": 28.9
+          },
+          "pr_count": 11
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "emarin",
+      "name": "Ellis Marín",
+      "objective_keys": [
+        "MGAMM-2602-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "emarin",
+          "display": "Ellis Marín"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4632,
+            "p99": 16601
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.3,
+            "p85": 23.7,
+            "p99": 45.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.3,
+            "p85": 43.0,
+            "p99": 91.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.1,
+            "p85": 18.0,
+            "p99": 36.4
+          },
+          "pr_count": 7
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "hvasquez",
+      "name": "Hiro Vasquez",
+      "objective_keys": [
+        "MGAMM-2602-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "hvasquez",
+          "display": "Hiro Vasquez"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 8,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4519,
+            "p99": 14554
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.2,
+            "p85": 26.1,
+            "p99": 49.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.6,
+            "p85": 49.8,
+            "p99": 87.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.9,
+            "p85": 19.2,
+            "p99": 38.3
+          },
+          "pr_count": 8
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "jcabrera",
+      "name": "Jules Cabrera",
+      "objective_keys": [
+        "MGAMM-2602-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "jcabrera",
+          "display": "Jules Cabrera"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 13,
+          "prs_measured": 12,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1784,
+            "p99": 5974
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.1,
+            "p85": 11.8,
+            "p99": 21.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.9,
+            "p85": 20.9,
+            "p99": 33.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 7.1,
+            "p99": 13.3
+          },
+          "pr_count": 12
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MGAMM-2602-01",
       "name": "Q1 2026 [February]: Config drift auto-repair",
       "url": "https://example.invalid/objectives/MGAMM-2602-01",
       "leader_engineer": "Dara Okonjo",
+      "leader_engineer_login": "dokonjo",
       "status": "Red",
       "jira_status": "Blocked",
       "is_done": false,
@@ -44,6 +356,61 @@
         "done_this_week": "Incident on adjacent service consumed the week; work is paused.",
         "target_next_week": "Reassign to a different owner so the current one can help elsewhere.",
         "blockers": "External vendor SLA slipping; no eta."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2602-01",
+          "display": "Q1 2026 [February]: Config drift auto-repair"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 2,
+          "prs_measured": 2,
+          "prs_linked_to_objective": 2
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 1.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 7357,
+            "p99": 22330
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 22.8,
+            "p85": 39.9,
+            "p99": 80.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 48.9,
+            "p85": 91.8,
+            "p99": 144.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 15.4,
+            "p85": 28.3,
+            "p99": 53.9
+          },
+          "pr_count": 2
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +418,7 @@
       "name": "Q1 2026 [February]: Service topology drift alarm",
       "url": "https://example.invalid/objectives/MGAMM-2602-02",
       "leader_engineer": "Ellis Marín",
+      "leader_engineer_login": "emarin",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +437,61 @@
         "done_this_week": "Discovered a regression in the smoke tests that pushed the merge back.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2602-02",
+          "display": "Q1 2026 [February]: Service topology drift alarm"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4061,
+            "p99": 12866
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.5,
+            "p85": 24.6,
+            "p99": 46.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.9,
+            "p85": 48.1,
+            "p99": 84.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.5,
+            "p85": 18.7,
+            "p99": 34.0
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +499,7 @@
       "name": "Q1 2026 [February]: Feature flag rollout guardrails",
       "url": "https://example.invalid/objectives/MGAMM-2602-03",
       "leader_engineer": "Jules Cabrera",
+      "leader_engineer_login": "jcabrera",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +518,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "Adjacent team is mid-migration — could take longer to help if we hit a snag."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2602-03",
+          "display": "Q1 2026 [February]: Feature flag rollout guardrails"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1738,
+            "p99": 6222
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.2,
+            "p85": 11.7,
+            "p99": 22.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.9,
+            "p85": 21.2,
+            "p99": 40.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 8.2,
+            "p99": 12.6
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +580,7 @@
       "name": "Q1 2026 [February]: Golden-path SLO board",
       "url": "https://example.invalid/objectives/MGAMM-2602-04",
       "leader_engineer": "Hiro Vasquez",
+      "leader_engineer_login": "hvasquez",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +599,61 @@
         "done_this_week": "Waiting on a dependency from an adjacent team; escalation opened.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Follow-on ticket landed late; scope grew mid-sprint."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2602-04",
+          "display": "Q1 2026 [February]: Golden-path SLO board"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4264,
+            "p99": 12049
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.6,
+            "p85": 27.3,
+            "p99": 49.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.4,
+            "p85": 50.6,
+            "p99": 89.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.8,
+            "p85": 20.0,
+            "p99": 37.9
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +661,7 @@
       "name": "Q1 2026 [February]: Observability sampling refresh",
       "url": "https://example.invalid/objectives/MGAMM-2602-05",
       "leader_engineer": "Dara Okonjo",
+      "leader_engineer_login": "dokonjo",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +680,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MGAMM-2602-05",
+          "display": "Q1 2026 [February]: Observability sampling refresh"
+        },
+        "window": {
+          "from": "2026-02-16",
+          "to": "2026-02-22",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 464,
+            "p99": 1640
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.5,
+            "p99": 5.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.4,
+            "p99": 12.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.0
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     }
   ],

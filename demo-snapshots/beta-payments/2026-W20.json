@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "beta-payments",
     "name": "Beta Payments Core",
-    "business_unit": "Platform"
+    "business_unit": "Platform",
+    "jira_abbrev": "BETA",
+    "github_team_slug": "beta-payments",
+    "repos": [
+      "omio/beta-payments"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,381 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "beta-payments",
+      "display": "Beta Payments Core"
+    },
+    "window": {
+      "from": "2026-05-11",
+      "to": "2026-05-17",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 42,
+      "prs_measured": 41,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 5.9
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 813,
+        "p99": 2821
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 3.7,
+        "p85": 6.1,
+        "p99": 12.1
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 6.7,
+        "p85": 13.3,
+        "p99": 21.4
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 2.2,
+        "p85": 3.7,
+        "p99": 6.7
+      },
+      "pr_count": 41
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "cnguyen",
+      "name": "Cai Nguyen",
+      "objective_keys": [
+        "MBETA-2605-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "cnguyen",
+          "display": "Cai Nguyen"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 440,
+            "p99": 1491
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.2,
+            "p99": 6.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.9,
+            "p99": 13.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 3.4
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "dokonjo",
+      "name": "Dara Okonjo",
+      "objective_keys": [
+        "MBETA-2605-05",
+        "MBETA-2605-06"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "dokonjo",
+          "display": "Dara Okonjo"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1179,
+            "p99": 3345
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.5,
+            "p99": 12.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 8.7,
+            "p85": 14.1,
+            "p99": 26.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 2.6,
+            "p85": 5.1,
+            "p99": 8.1
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "fohno",
+      "name": "Frida Ohno",
+      "objective_keys": [
+        "MBETA-2605-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "fohno",
+          "display": "Frida Ohno"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 461,
+            "p99": 1597
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.5,
+            "p99": 7.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.2,
+            "p99": 14.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.4
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "lrihanna",
+      "name": "Lena Rihanna",
+      "objective_keys": [
+        "MBETA-2605-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "lrihanna",
+          "display": "Lena Rihanna"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1907,
+            "p99": 6475
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.0,
+            "p85": 11.8,
+            "p99": 20.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.4,
+            "p85": 24.0,
+            "p99": 44.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 8.3,
+            "p99": 14.8
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "nsardar",
+      "name": "Nya Sardar",
+      "objective_keys": [
+        "MBETA-2605-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "nsardar",
+          "display": "Nya Sardar"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 519,
+            "p99": 1497
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.7,
+            "p99": 6.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.7,
+            "p99": 13.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.2
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MBETA-2605-01",
       "name": "Q2 2026 [May]: Golden-path SLO board",
       "url": "https://example.invalid/objectives/MBETA-2605-01",
       "leader_engineer": "Cai Nguyen",
+      "leader_engineer_login": "cnguyen",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +418,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2605-01",
+          "display": "Q2 2026 [May]: Golden-path SLO board"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 456,
+            "p99": 1466
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.4,
+            "p99": 6.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.6,
+            "p99": 11.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.6,
+            "p99": 3.0
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +480,7 @@
       "name": "Q2 2026 [May]: Deprecation channel rollout",
       "url": "https://example.invalid/objectives/MBETA-2605-02",
       "leader_engineer": "Frida Ohno",
+      "leader_engineer_login": "fohno",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +499,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2605-02",
+          "display": "Q2 2026 [May]: Deprecation channel rollout"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 459,
+            "p99": 1419
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.7,
+            "p99": 6.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 8.3,
+            "p99": 14.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 3.2
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +561,7 @@
       "name": "Q2 2026 [May]: Zero-downtime restart choreography",
       "url": "https://example.invalid/objectives/MBETA-2605-03",
       "leader_engineer": "Nya Sardar",
+      "leader_engineer_login": "nsardar",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +580,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2605-03",
+          "display": "Q2 2026 [May]: Zero-downtime restart choreography"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 494,
+            "p99": 1581
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.2,
+            "p99": 5.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.3,
+            "p99": 12.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.8,
+            "p99": 3.5
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +642,7 @@
       "name": "Q2 2026 [May]: Warm-cache eviction policy",
       "url": "https://example.invalid/objectives/MBETA-2605-04",
       "leader_engineer": "Lena Rihanna",
+      "leader_engineer_login": "lrihanna",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +661,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "Reviewer coverage is thin the week of launch — flagging in case rollout slips."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2605-04",
+          "display": "Q2 2026 [May]: Warm-cache eviction policy"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1736,
+            "p99": 5055
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.2,
+            "p85": 11.7,
+            "p99": 17.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.2,
+            "p85": 21.1,
+            "p99": 35.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 8.3,
+            "p99": 12.5
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +723,7 @@
       "name": "Q2 2026 [May]: Observability sampling refresh",
       "url": "https://example.invalid/objectives/MBETA-2605-05",
       "leader_engineer": "Dara Okonjo",
+      "leader_engineer_login": "dokonjo",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +742,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2605-05",
+          "display": "Q2 2026 [May]: Observability sampling refresh"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 528,
+            "p99": 1624
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 3.6,
+            "p99": 7.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.8,
+            "p99": 12.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.5
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -151,6 +804,7 @@
       "name": "Q2 2026 [May]: Runtime resource budgets",
       "url": "https://example.invalid/objectives/MBETA-2605-06",
       "leader_engineer": "Dara Okonjo",
+      "leader_engineer_login": "dokonjo",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -169,6 +823,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2605-06",
+          "display": "Q2 2026 [May]: Runtime resource budgets"
+        },
+        "window": {
+          "from": "2026-05-11",
+          "to": "2026-05-17",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1647,
+            "p99": 5922
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.9,
+            "p85": 11.3,
+            "p99": 20.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.6,
+            "p85": 19.0,
+            "p99": 38.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.4,
+            "p99": 10.9
+          },
+          "pr_count": 7
+        },
+        "trends": {}
       }
     }
   ],

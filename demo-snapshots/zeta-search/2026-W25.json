@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "zeta-search",
     "name": "Zeta Search Discovery",
-    "business_unit": "B2C"
+    "business_unit": "B2C",
+    "jira_abbrev": "ZETA",
+    "github_team_slug": "zeta-search",
+    "repos": [
+      "omio/zeta-search"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,318 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "zeta-search",
+      "display": "Zeta Search Discovery"
+    },
+    "window": {
+      "from": "2026-06-15",
+      "to": "2026-06-21",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 35,
+      "prs_measured": 34,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 5,
+        "weekly_average": 5.1
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1675,
+        "p99": 6016
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 5.6,
+        "p85": 9.2,
+        "p99": 16.7
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 11.2,
+        "p85": 18.8,
+        "p99": 33.6
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 4.2,
+        "p85": 7.1,
+        "p99": 12.1
+      },
+      "pr_count": 34
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "emarin",
+      "name": "Ellis Marín",
+      "objective_keys": [
+        "MZETA-2606-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "emarin",
+          "display": "Ellis Marín"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 453,
+            "p99": 1496
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.4,
+            "p99": 5.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.4,
+            "p99": 11.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.3
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "manders",
+      "name": "Milo Anders",
+      "objective_keys": [
+        "MZETA-2606-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "manders",
+          "display": "Milo Anders"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1578,
+            "p99": 4883
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.1,
+            "p85": 10.5,
+            "p99": 19.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.6,
+            "p85": 20.8,
+            "p99": 40.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.3,
+            "p99": 14.2
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "nsardar",
+      "name": "Nya Sardar",
+      "objective_keys": [
+        "MZETA-2606-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "nsardar",
+          "display": "Nya Sardar"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 501,
+            "p99": 1514
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.6,
+            "p99": 5.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.3,
+            "p99": 13.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.0,
+            "p99": 3.4
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "srowe",
+      "name": "Sana Rowe",
+      "objective_keys": [
+        "MZETA-2606-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "srowe",
+          "display": "Sana Rowe"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4124,
+            "p99": 13763
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.0,
+            "p85": 29.2,
+            "p99": 44.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 27.5,
+            "p85": 48.6,
+            "p99": 94.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.1,
+            "p85": 15.8,
+            "p99": 30.2
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MZETA-2606-01",
       "name": "Q2 2026 [June]: Passenger name-change flow",
       "url": "https://example.invalid/objectives/MZETA-2606-01",
       "leader_engineer": "Nya Sardar",
+      "leader_engineer_login": "nsardar",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +355,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2606-01",
+          "display": "Q2 2026 [June]: Passenger name-change flow"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 461,
+            "p99": 1315
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.3,
+            "p99": 6.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.8,
+            "p99": 12.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.6,
+            "p99": 3.2
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +417,7 @@
       "name": "Q2 2026 [June]: Homepage skeleton refresh",
       "url": "https://example.invalid/objectives/MZETA-2606-02",
       "leader_engineer": "Milo Anders",
+      "leader_engineer_login": "manders",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +436,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2606-02",
+          "display": "Q2 2026 [June]: Homepage skeleton refresh"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1765,
+            "p99": 5213
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.7,
+            "p85": 9.9,
+            "p99": 16.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.5,
+            "p85": 22.7,
+            "p99": 44.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 7.9,
+            "p99": 15.4
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +498,7 @@
       "name": "Q2 2026 [June]: Personalised trip recommendations",
       "url": "https://example.invalid/objectives/MZETA-2606-03",
       "leader_engineer": "Ellis Marín",
+      "leader_engineer_login": "emarin",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +517,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2606-03",
+          "display": "Q2 2026 [June]: Personalised trip recommendations"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 485,
+            "p99": 1411
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.7,
+            "p99": 6.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 7.4,
+            "p99": 14.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 2.8
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +579,7 @@
       "name": "Q2 2026 [June]: Loyalty perks eligibility banner",
       "url": "https://example.invalid/objectives/MZETA-2606-04",
       "leader_engineer": "Sana Rowe",
+      "leader_engineer_login": "srowe",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +598,61 @@
         "done_this_week": "Waiting on a dependency from an adjacent team; escalation opened.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Follow-on ticket landed late; scope grew mid-sprint."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MZETA-2606-04",
+          "display": "Q2 2026 [June]: Loyalty perks eligibility banner"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 4.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4266,
+            "p99": 12729
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 12.7,
+            "p85": 24.2,
+            "p99": 37.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.8,
+            "p85": 53.6,
+            "p99": 96.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.8,
+            "p85": 18.5,
+            "p99": 34.0
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     }
   ],

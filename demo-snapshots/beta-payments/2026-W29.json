@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "beta-payments",
     "name": "Beta Payments Core",
-    "business_unit": "Platform"
+    "business_unit": "Platform",
+    "jira_abbrev": "BETA",
+    "github_team_slug": "beta-payments",
+    "repos": [
+      "omio/beta-payments"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,442 @@
     "spillover_blocked": 1,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "beta-payments",
+      "display": "Beta Payments Core"
+    },
+    "window": {
+      "from": "2026-07-13",
+      "to": "2026-07-19",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 26,
+      "prs_measured": 26,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 5,
+        "weekly_average": 4.6
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 3109,
+        "p99": 9420
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 9.8,
+        "p85": 16.2,
+        "p99": 29.0
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 23.2,
+        "p85": 42.8,
+        "p99": 71.7
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 6.9,
+        "p85": 12.6,
+        "p99": 20.2
+      },
+      "pr_count": 26
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "emarin",
+      "name": "Ellis Marín",
+      "objective_keys": [
+        "MBETA-2607-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "emarin",
+          "display": "Ellis Marín"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 1.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 7450,
+            "p99": 23131
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 20.6,
+            "p85": 34.5,
+            "p99": 60.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 41.5,
+            "p85": 82.7,
+            "p99": 116.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 15.9,
+            "p85": 30.1,
+            "p99": 53.0
+          },
+          "pr_count": 4
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "kostberg",
+      "name": "Kai Ostberg",
+      "objective_keys": [
+        "MBETA-2607-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "kostberg",
+          "display": "Kai Ostberg"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 13,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1788,
+            "p99": 5087
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.9,
+            "p85": 10.6,
+            "p99": 18.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.0,
+            "p85": 23.1,
+            "p99": 40.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.0,
+            "p99": 12.1
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "manders",
+      "name": "Milo Anders",
+      "objective_keys": [
+        "MBETA-2607-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "manders",
+          "display": "Milo Anders"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 10,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4609,
+            "p99": 14680
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.2,
+            "p85": 28.7,
+            "p99": 47.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.1,
+            "p85": 54.4,
+            "p99": 106.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.5,
+            "p85": 20.4,
+            "p99": 33.2
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "obarone",
+      "name": "Odin Barone",
+      "objective_keys": [
+        "MBETA-2607-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "obarone",
+          "display": "Odin Barone"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1734,
+            "p99": 5100
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.5,
+            "p85": 10.3,
+            "p99": 18.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.2,
+            "p85": 22.3,
+            "p99": 36.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 7.1,
+            "p99": 10.5
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "qyates",
+      "name": "Quinn Yates",
+      "objective_keys": [
+        "MBETA-2607-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "qyates",
+          "display": "Quinn Yates"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4437,
+            "p99": 13677
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.3,
+            "p85": 29.4,
+            "p99": 43.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.6,
+            "p85": 61.7,
+            "p99": 101.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.0,
+            "p85": 16.5,
+            "p99": 30.3
+          },
+          "pr_count": 8
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "rdelacroix",
+      "name": "Rio Delacroix",
+      "objective_keys": [
+        "MBETA-2607-06"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "rdelacroix",
+          "display": "Rio Delacroix"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 18,
+          "prs_measured": 18,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 458,
+            "p99": 1473
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 2.9,
+            "p99": 6.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 6.8,
+            "p99": 13.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.8,
+            "p99": 2.6
+          },
+          "pr_count": 18
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MBETA-2607-01",
       "name": "Q3 2026 [July]: Warm-cache eviction policy",
       "url": "https://example.invalid/objectives/MBETA-2607-01",
       "leader_engineer": "Odin Barone",
+      "leader_engineer_login": "obarone",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +479,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "Downstream integration test suite is flaky; may hide a regression at go-live."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2607-01",
+          "display": "Q3 2026 [July]: Warm-cache eviction policy"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1830,
+            "p99": 5897
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.7,
+            "p85": 10.6,
+            "p99": 16.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.4,
+            "p85": 22.3,
+            "p99": 37.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.9,
+            "p99": 13.0
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +541,7 @@
       "name": "Q3 2026 [July]: Feature flag rollout guardrails",
       "url": "https://example.invalid/objectives/MBETA-2607-02",
       "leader_engineer": "Kai Ostberg",
+      "leader_engineer_login": "kostberg",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +560,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2607-02",
+          "display": "Q3 2026 [July]: Feature flag rollout guardrails"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1574,
+            "p99": 5198
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.0,
+            "p85": 10.9,
+            "p99": 18.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.0,
+            "p85": 23.1,
+            "p99": 39.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.3,
+            "p85": 7.8,
+            "p99": 12.4
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +622,7 @@
       "name": "Q3 2026 [July]: Zero-downtime restart choreography",
       "url": "https://example.invalid/objectives/MBETA-2607-03",
       "leader_engineer": "Milo Anders",
+      "leader_engineer_login": "manders",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +641,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "Design review pending from the sibling team."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2607-03",
+          "display": "Q3 2026 [July]: Zero-downtime restart choreography"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4512,
+            "p99": 16161
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.4,
+            "p85": 22.0,
+            "p99": 40.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.2,
+            "p85": 54.6,
+            "p99": 87.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.4,
+            "p85": 17.4,
+            "p99": 32.3
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +703,7 @@
       "name": "Q3 2026 [July]: Config drift auto-repair",
       "url": "https://example.invalid/objectives/MBETA-2607-04",
       "leader_engineer": "Ellis Marín",
+      "leader_engineer_login": "emarin",
       "status": "Red",
       "jira_status": "Blocked",
       "is_done": false,
@@ -119,6 +722,61 @@
         "done_this_week": "Waiting on infra migration that was pushed to the next quarter.",
         "target_next_week": "Unblock the vendor conversation and get an ETA.",
         "blockers": "Legal sign-off outstanding."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2607-04",
+          "display": "Q3 2026 [July]: Config drift auto-repair"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 2,
+          "prs_measured": 2,
+          "prs_linked_to_objective": 2
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 1.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 6551,
+            "p99": 22736
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 20.9,
+            "p85": 37.1,
+            "p99": 72.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 47.1,
+            "p85": 79.7,
+            "p99": 160.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 14.8,
+            "p85": 29.3,
+            "p99": 53.0
+          },
+          "pr_count": 2
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +784,7 @@
       "name": "Q3 2026 [July]: Runtime resource budgets",
       "url": "https://example.invalid/objectives/MBETA-2607-05",
       "leader_engineer": "Quinn Yates",
+      "leader_engineer_login": "qyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +803,61 @@
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "A single reviewer is a bottleneck; needs a delegate."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2607-05",
+          "display": "Q3 2026 [July]: Runtime resource budgets"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4661,
+            "p99": 15439
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.3,
+            "p85": 23.5,
+            "p99": 43.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.7,
+            "p85": 52.5,
+            "p99": 100.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.7,
+            "p85": 16.2,
+            "p99": 32.5
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -151,6 +865,7 @@
       "name": "Q3 2026 [July]: Observability sampling refresh",
       "url": "https://example.invalid/objectives/MBETA-2607-06",
       "leader_engineer": "Rio Delacroix",
+      "leader_engineer_login": "rdelacroix",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -169,6 +884,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MBETA-2607-06",
+          "display": "Q3 2026 [July]: Observability sampling refresh"
+        },
+        "window": {
+          "from": "2026-07-13",
+          "to": "2026-07-19",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 438,
+            "p99": 1504
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 4.2,
+            "p99": 7.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 7.4,
+            "p99": 12.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.2,
+            "p99": 3.1
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     }
   ],

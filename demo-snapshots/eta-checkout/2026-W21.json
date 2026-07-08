@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "eta-checkout",
     "name": "Eta Checkout",
-    "business_unit": "B2C"
+    "business_unit": "B2C",
+    "jira_abbrev": "ETA",
+    "github_team_slug": "eta-checkout",
+    "repos": [
+      "omio/eta-checkout"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,380 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "eta-checkout",
+      "display": "Eta Checkout"
+    },
+    "window": {
+      "from": "2026-05-18",
+      "to": "2026-05-24",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 41,
+      "prs_measured": 41,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 6,
+        "weekly_average": 5.5
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 1880,
+        "p99": 5468
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 7.0,
+        "p85": 13.4,
+        "p99": 21.7
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 14.2,
+        "p85": 24.2,
+        "p99": 41.0
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 5.0,
+        "p85": 8.7,
+        "p99": 14.2
+      },
+      "pr_count": 41
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "athornton",
+      "name": "Ava Thornton",
+      "objective_keys": [
+        "META-2605-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "athornton",
+          "display": "Ava Thornton"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 481,
+            "p99": 1632
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.4,
+            "p99": 5.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 7.6,
+            "p99": 14.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.8,
+            "p99": 3.0
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "imarchetti",
+      "name": "Ines Marchetti",
+      "objective_keys": [
+        "META-2605-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "imarchetti",
+          "display": "Ines Marchetti"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 14,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1842,
+            "p99": 5462
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.8,
+            "p85": 10.3,
+            "p99": 18.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.2,
+            "p85": 23.1,
+            "p99": 35.9
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.9,
+            "p99": 13.1
+          },
+          "pr_count": 14
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "jcabrera",
+      "name": "Jules Cabrera",
+      "objective_keys": [
+        "META-2605-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "jcabrera",
+          "display": "Jules Cabrera"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 13,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1818,
+            "p99": 5779
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.0,
+            "p85": 10.1,
+            "p99": 19.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.1,
+            "p85": 23.2,
+            "p99": 34.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 7.9,
+            "p99": 13.0
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "manders",
+      "name": "Milo Anders",
+      "objective_keys": [
+        "META-2605-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "manders",
+          "display": "Milo Anders"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4540,
+            "p99": 12900
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.3,
+            "p85": 23.5,
+            "p99": 40.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.6,
+            "p85": 54.6,
+            "p99": 90.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.1,
+            "p85": 15.4,
+            "p99": 30.9
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "tilves",
+      "name": "Tomo Ilves",
+      "objective_keys": [
+        "META-2605-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "tilves",
+          "display": "Tomo Ilves"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 12,
+          "prs_measured": 12,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1588,
+            "p99": 4782
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.3,
+            "p85": 11.0,
+            "p99": 21.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.4,
+            "p85": 22.2,
+            "p99": 35.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.2,
+            "p85": 7.4,
+            "p99": 12.9
+          },
+          "pr_count": 12
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "META-2605-01",
       "name": "Q2 2026 [May]: Loyalty perks eligibility banner",
       "url": "https://example.invalid/objectives/META-2605-01",
       "leader_engineer": "Jules Cabrera",
+      "leader_engineer_login": "jcabrera",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +417,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2605-01",
+          "display": "Q2 2026 [May]: Loyalty perks eligibility banner"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1827,
+            "p99": 5199
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.1,
+            "p85": 11.2,
+            "p99": 17.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.3,
+            "p85": 18.8,
+            "p99": 34.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.6,
+            "p99": 12.1
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +479,7 @@
       "name": "Q2 2026 [May]: Personalised trip recommendations",
       "url": "https://example.invalid/objectives/META-2605-02",
       "leader_engineer": "Tomo Ilves",
+      "leader_engineer_login": "tilves",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +498,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": "Adjacent team is mid-migration — could take longer to help if we hit a snag."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2605-02",
+          "display": "Q2 2026 [May]: Personalised trip recommendations"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 5
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1721,
+            "p99": 5758
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 5.9,
+            "p85": 9.7,
+            "p99": 17.0
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.9,
+            "p85": 23.4,
+            "p99": 45.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.9,
+            "p99": 12.3
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +560,7 @@
       "name": "Q2 2026 [May]: Passenger name-change flow",
       "url": "https://example.invalid/objectives/META-2605-03",
       "leader_engineer": "Ines Marchetti",
+      "leader_engineer_login": "imarchetti",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +579,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2605-03",
+          "display": "Q2 2026 [May]: Passenger name-change flow"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 4.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1857,
+            "p99": 6586
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.0,
+            "p85": 10.7,
+            "p99": 20.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 11.3,
+            "p85": 22.3,
+            "p99": 39.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.9,
+            "p99": 12.3
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +641,7 @@
       "name": "Q2 2026 [May]: Homepage skeleton refresh",
       "url": "https://example.invalid/objectives/META-2605-04",
       "leader_engineer": "Milo Anders",
+      "leader_engineer_login": "manders",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +660,61 @@
         "done_this_week": "Scope grew after user testing; trimming to hit the reduced target.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Design review pending from the sibling team."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2605-04",
+          "display": "Q2 2026 [May]: Homepage skeleton refresh"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4635,
+            "p99": 14276
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.6,
+            "p85": 22.3,
+            "p99": 43.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 30.1,
+            "p85": 57.5,
+            "p99": 91.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.9,
+            "p85": 15.9,
+            "p99": 32.5
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +722,7 @@
       "name": "Q2 2026 [May]: Cart persistence across surfaces",
       "url": "https://example.invalid/objectives/META-2605-05",
       "leader_engineer": "Ava Thornton",
+      "leader_engineer_login": "athornton",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +741,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "META-2605-05",
+          "display": "Q2 2026 [May]: Cart persistence across surfaces"
+        },
+        "window": {
+          "from": "2026-05-18",
+          "to": "2026-05-24",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 434,
+            "p99": 1312
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.5,
+            "p99": 6.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 7.2,
+            "p99": 12.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.4
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     }
   ],

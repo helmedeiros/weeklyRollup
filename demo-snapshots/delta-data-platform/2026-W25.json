@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "delta-data-platform",
     "name": "Delta Data Platform",
-    "business_unit": "Platform"
+    "business_unit": "Platform",
+    "jira_abbrev": "DELT",
+    "github_team_slug": "delta-data-platform",
+    "repos": [
+      "omio/delta-data-platform"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,257 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "delta-data-platform",
+      "display": "Delta Data Platform"
+    },
+    "window": {
+      "from": "2026-06-15",
+      "to": "2026-06-21",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 37,
+      "prs_measured": 36,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 4,
+        "weekly_average": 4.2
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 2541,
+        "p99": 7164
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 8.4,
+        "p85": 15.8,
+        "p99": 27.4
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 19.0,
+        "p85": 35.9,
+        "p99": 54.6
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 6.5,
+        "p85": 12.4,
+        "p99": 19.8
+      },
+      "pr_count": 36
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "blarsson",
+      "name": "Bram Larsson",
+      "objective_keys": [
+        "MDELT-2606-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "blarsson",
+          "display": "Bram Larsson"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4028,
+            "p99": 12731
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 12.8,
+            "p85": 21.3,
+            "p99": 36.7
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 27.5,
+            "p85": 51.2,
+            "p99": 82.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.6,
+            "p85": 20.2,
+            "p99": 33.3
+          },
+          "pr_count": 7
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "cnguyen",
+      "name": "Cai Nguyen",
+      "objective_keys": [
+        "MDELT-2606-02",
+        "MDELT-2606-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "cnguyen",
+          "display": "Cai Nguyen"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 12,
+          "prs_measured": 11,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 2243,
+            "p99": 6686
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 7.8,
+            "p85": 12.9,
+            "p99": 25.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 15.2,
+            "p85": 25.7,
+            "p99": 50.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 5.9,
+            "p85": 10.2,
+            "p99": 20.0
+          },
+          "pr_count": 11
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "hvasquez",
+      "name": "Hiro Vasquez",
+      "objective_keys": [
+        "MDELT-2606-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "hvasquez",
+          "display": "Hiro Vasquez"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 13,
+          "prs_measured": 12,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1679,
+            "p99": 5732
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.5,
+            "p85": 10.8,
+            "p99": 18.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.8,
+            "p85": 23.8,
+            "p99": 41.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 6.9,
+            "p99": 12.1
+          },
+          "pr_count": 12
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MDELT-2606-01",
       "name": "Q2 2026 [June]: Deprecation channel rollout",
       "url": "https://example.invalid/objectives/MDELT-2606-01",
       "leader_engineer": "Bram Larsson",
+      "leader_engineer_login": "blarsson",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +294,61 @@
         "done_this_week": "Scope grew after user testing; trimming to hit the reduced target.",
         "target_next_week": "Focus on removing the current blocker; deprioritise nice-to-haves.",
         "blockers": "Follow-on ticket landed late; scope grew mid-sprint."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MDELT-2606-01",
+          "display": "Q2 2026 [June]: Deprecation channel rollout"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4206,
+            "p99": 12736
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.3,
+            "p85": 25.1,
+            "p99": 42.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.7,
+            "p85": 44.6,
+            "p99": 75.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.3,
+            "p85": 17.4,
+            "p99": 36.6
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +356,7 @@
       "name": "Q2 2026 [June]: Warm-cache eviction policy",
       "url": "https://example.invalid/objectives/MDELT-2606-02",
       "leader_engineer": "Cai Nguyen",
+      "leader_engineer_login": "cnguyen",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +375,61 @@
         "done_this_week": "Waiting on a dependency from an adjacent team; escalation opened.",
         "target_next_week": "Realign with the partner team and reset the delivery date.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MDELT-2606-02",
+          "display": "Q2 2026 [June]: Warm-cache eviction policy"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4016,
+            "p99": 13456
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.9,
+            "p85": 29.5,
+            "p99": 47.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.6,
+            "p85": 50.1,
+            "p99": 83.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.5,
+            "p85": 18.5,
+            "p99": 33.8
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +437,7 @@
       "name": "Q2 2026 [June]: Config drift auto-repair",
       "url": "https://example.invalid/objectives/MDELT-2606-03",
       "leader_engineer": "Cai Nguyen",
+      "leader_engineer_login": "cnguyen",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +456,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MDELT-2606-03",
+          "display": "Q2 2026 [June]: Config drift auto-repair"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 499,
+            "p99": 1515
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.8,
+            "p85": 3.2,
+            "p99": 5.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 6.6,
+            "p99": 13.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.5
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +518,7 @@
       "name": "Q2 2026 [June]: Golden-path SLO board",
       "url": "https://example.invalid/objectives/MDELT-2606-04",
       "leader_engineer": "Hiro Vasquez",
+      "leader_engineer_login": "hvasquez",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +537,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": "Adjacent team is mid-migration — could take longer to help if we hit a snag."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MDELT-2606-04",
+          "display": "Q2 2026 [June]: Golden-path SLO board"
+        },
+        "window": {
+          "from": "2026-06-15",
+          "to": "2026-06-21",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1829,
+            "p99": 6442
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.4,
+            "p85": 11.9,
+            "p99": 20.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 13.2,
+            "p85": 23.4,
+            "p99": 45.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.6,
+            "p85": 6.6,
+            "p99": 12.4
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     }
   ],

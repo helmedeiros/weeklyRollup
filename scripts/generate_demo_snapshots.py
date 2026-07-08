@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import random
+import unicodedata
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -30,6 +31,7 @@ from email_from_snapshot import (
     build_email_draft,
     synth_leader_engineer_update,
 )
+from flow_metrics import DemoFlowMetricsProvider, FlowScope, FlowWindow
 
 
 ISO_YEAR = 2026
@@ -110,6 +112,32 @@ LEADER_ENGINEER_POOL = [
     "Kai Ostberg", "Lena Rihanna", "Milo Anders", "Nya Sardar", "Odin Barone",
     "Pia Rivas", "Quinn Yates", "Rio Delacroix", "Sana Rowe", "Tomo Ilves",
 ]
+
+
+def _login(name: str) -> str:
+    """Stable GitHub-shaped login (first initial + surname), ascii-folded.
+
+    Identity contract: engineer-scope flow metrics resolve on login, never on
+    display name, so the demo keys engineers the same way the live feed will.
+    """
+    folded = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    parts = folded.lower().replace(".", "").split()
+    return f"{parts[0][0]}{parts[-1]}"
+
+
+LEADER_ENGINEER_LOGIN = {name: _login(name) for name in LEADER_ENGINEER_POOL}
+
+
+def _team_identity(team_id: str) -> dict:
+    """Real-shaped join keys (invented values) for the future live adapter."""
+    return {
+        "jira_abbrev": team_id.split("-")[0].upper()[:4],
+        "github_team_slug": team_id,
+        "repos": [f"omio/{team_id}"],
+    }
+
+
+FLOW = DemoFlowMetricsProvider()
 
 # Weighted outcome distribution: (label, weight)
 OUTCOME_WEIGHTS = [
@@ -307,19 +335,32 @@ def generate() -> None:
         week_idx = weeks_in_this_month.index(iso_week)
         due_day = _last_day(year, month).isoformat()
 
+        week_start = date.fromisocalendar(ISO_YEAR, iso_week, 1)
+        week_end = date.fromisocalendar(ISO_YEAR, iso_week, 7)
+        window = FlowWindow(
+            iso_year=ISO_YEAR,
+            iso_week=iso_week,
+            from_date=week_start.isoformat(),
+            to_date=week_end.isoformat(),
+            days=7,
+        )
+
         for team_id, team_name, business_unit, _ in TEAMS:
             cohort = cohorts[(team_id, year, month)]
 
             objectives: list[dict] = []
             totals = {b: 0 for b in ("done", "spillover_on_track", "spillover_at_risk", "spillover_blocked", "missing")}
+            engineers_seen: dict[str, dict] = {}
             for src in cohort:
                 bucket = src["buckets_by_week"][week_idx]
                 progress = src["progress_by_week"][week_idx]
+                login = LEADER_ENGINEER_LOGIN[src["leader_engineer"]]
                 obj = {
                     "key": src["key"],
                     "name": src["name"],
                     "url": f"https://example.invalid/objectives/{src['key']}",
                     "leader_engineer": src["leader_engineer"],
+                    "leader_engineer_login": login,
                     "status": _status_word(bucket),
                     "jira_status": _jira_status(bucket),
                     "is_done": bucket == "done",
@@ -334,13 +375,42 @@ def generate() -> None:
                     "blockers": [],
                 }
                 obj["update"] = synth_leader_engineer_update(obj, team_name, ISO_YEAR, iso_week)
+                obj["flow_metrics"] = FLOW.fetch(
+                    FlowScope("objective", src["key"], src["name"], (src["outcome"],)),
+                    window,
+                )
                 objectives.append(obj)
                 totals[bucket] += 1
 
+                eng = engineers_seen.setdefault(
+                    login,
+                    {"login": login, "name": src["leader_engineer"], "objective_keys": [], "_outcomes": []},
+                )
+                eng["objective_keys"].append(src["key"])
+                eng["_outcomes"].append(src["outcome"])
+
+            engineers = []
+            for login, eng in sorted(engineers_seen.items()):
+                flow = FLOW.fetch(
+                    FlowScope("engineer", login, eng["name"], tuple(eng.pop("_outcomes"))),
+                    window,
+                )
+                engineers.append({**eng, "flow_metrics": flow})
+
+            team_flow = FLOW.fetch(
+                FlowScope("team", team_id, team_name, tuple(src["outcome"] for src in cohort)),
+                window,
+            )
+
             total = sum(totals.values())
             payload = {
-                "schema_version": 3,
-                "team": {"id": team_id, "name": team_name, "business_unit": business_unit},
+                "schema_version": 4,
+                "team": {
+                    "id": team_id,
+                    "name": team_name,
+                    "business_unit": business_unit,
+                    **_team_identity(team_id),
+                },
                 "week": {
                     "iso_year": ISO_YEAR,
                     "iso_week": iso_week,
@@ -356,6 +426,8 @@ def generate() -> None:
                     "spillover_blocked": totals["spillover_blocked"],
                     "missing": totals["missing"],
                 },
+                "flow_metrics": team_flow,
+                "engineers": engineers,
                 "objectives": objectives,
             }
             draft = build_email_draft(payload)

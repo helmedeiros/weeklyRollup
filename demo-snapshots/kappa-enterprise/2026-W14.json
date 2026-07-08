@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "kappa-enterprise",
     "name": "Kappa Enterprise Ops",
-    "business_unit": "B2B"
+    "business_unit": "B2B",
+    "jira_abbrev": "KAPP",
+    "github_team_slug": "kappa-enterprise",
+    "repos": [
+      "omio/kappa-enterprise"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,318 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "kappa-enterprise",
+      "display": "Kappa Enterprise Ops"
+    },
+    "window": {
+      "from": "2026-03-30",
+      "to": "2026-04-05",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 36,
+      "prs_measured": 35,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 4,
+        "weekly_average": 4.4
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 2284,
+        "p99": 8024
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 8.7,
+        "p85": 14.4,
+        "p99": 27.4
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 15.0,
+        "p85": 24.1,
+        "p99": 45.0
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 5.5,
+        "p85": 10.7,
+        "p99": 17.0
+      },
+      "pr_count": 35
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "athornton",
+      "name": "Ava Thornton",
+      "objective_keys": [
+        "MKAPP-2604-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "athornton",
+          "display": "Ava Thornton"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4494,
+            "p99": 14106
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.8,
+            "p85": 27.0,
+            "p99": 50.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.9,
+            "p85": 55.0,
+            "p99": 88.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.3,
+            "p85": 18.0,
+            "p99": 27.5
+          },
+          "pr_count": 8
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "cnguyen",
+      "name": "Cai Nguyen",
+      "objective_keys": [
+        "MKAPP-2604-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "cnguyen",
+          "display": "Cai Nguyen"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.1
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4147,
+            "p99": 13301
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.4,
+            "p85": 23.3,
+            "p99": 44.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 28.3,
+            "p85": 45.3,
+            "p99": 88.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 9.7,
+            "p85": 15.6,
+            "p99": 33.8
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "imarchetti",
+      "name": "Ines Marchetti",
+      "objective_keys": [
+        "MKAPP-2604-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "imarchetti",
+          "display": "Ines Marchetti"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 16,
+          "prs_measured": 16,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 439,
+            "p99": 1385
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 4.1,
+            "p99": 7.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.6,
+            "p85": 6.6,
+            "p99": 11.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.3
+          },
+          "pr_count": 16
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "rdelacroix",
+      "name": "Rio Delacroix",
+      "objective_keys": [
+        "MKAPP-2604-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "rdelacroix",
+          "display": "Rio Delacroix"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 18,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 7.3
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 478,
+            "p99": 1456
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 3.9,
+            "p99": 6.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.2,
+            "p99": 12.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.5
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MKAPP-2604-01",
       "name": "Q2 2026 [April]: SLA breach notifier",
       "url": "https://example.invalid/objectives/MKAPP-2604-01",
       "leader_engineer": "Ava Thornton",
+      "leader_engineer_login": "athornton",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +355,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": "A single reviewer is a bottleneck; needs a delegate."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2604-01",
+          "display": "Q2 2026 [April]: SLA breach notifier"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4448,
+            "p99": 15107
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.7,
+            "p85": 26.9,
+            "p99": 46.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 31.4,
+            "p85": 55.8,
+            "p99": 96.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.5,
+            "p85": 17.3,
+            "p99": 37.1
+          },
+          "pr_count": 4
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +417,7 @@
       "name": "Q2 2026 [April]: Onboarding self-serve wizard",
       "url": "https://example.invalid/objectives/MKAPP-2604-02",
       "leader_engineer": "Rio Delacroix",
+      "leader_engineer_login": "rdelacroix",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +436,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2604-02",
+          "display": "Q2 2026 [April]: Onboarding self-serve wizard"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 433,
+            "p99": 1344
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.0,
+            "p85": 4.0,
+            "p99": 6.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.7,
+            "p85": 6.4,
+            "p99": 13.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 3.4
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +498,7 @@
       "name": "Q2 2026 [April]: Partner billing reconciliation",
       "url": "https://example.invalid/objectives/MKAPP-2604-03",
       "leader_engineer": "Ines Marchetti",
+      "leader_engineer_login": "imarchetti",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +517,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2604-03",
+          "display": "Q2 2026 [April]: Partner billing reconciliation"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.6
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 524,
+            "p99": 1885
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 3.5,
+            "p99": 6.8
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.4,
+            "p85": 8.5,
+            "p99": 15.5
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.0,
+            "p85": 1.9,
+            "p99": 2.9
+          },
+          "pr_count": 6
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +579,7 @@
       "name": "Q2 2026 [April]: Partner API rate-limit v2",
       "url": "https://example.invalid/objectives/MKAPP-2604-04",
       "leader_engineer": "Cai Nguyen",
+      "leader_engineer_login": "cnguyen",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +598,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "Owner is oncall this week; capacity is halved."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MKAPP-2604-04",
+          "display": "Q2 2026 [April]: Partner API rate-limit v2"
+        },
+        "window": {
+          "from": "2026-03-30",
+          "to": "2026-04-05",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 4.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 3929,
+            "p99": 11531
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 14.2,
+            "p85": 26.0,
+            "p99": 46.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 30.3,
+            "p85": 56.1,
+            "p99": 104.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.4,
+            "p85": 20.3,
+            "p99": 35.4
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     }
   ],

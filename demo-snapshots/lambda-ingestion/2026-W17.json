@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "team": {
     "id": "lambda-ingestion",
     "name": "Lambda Ingestion",
-    "business_unit": "Coverage"
+    "business_unit": "Coverage",
+    "jira_abbrev": "LAMB",
+    "github_team_slug": "lambda-ingestion",
+    "repos": [
+      "omio/lambda-ingestion"
+    ]
   },
   "week": {
     "iso_year": 2026,
@@ -20,12 +25,380 @@
     "spillover_blocked": 0,
     "missing": 0
   },
+  "flow_metrics": {
+    "contract_version": 1,
+    "source": "faked",
+    "scope": {
+      "level": "team",
+      "ref": "lambda-ingestion",
+      "display": "Lambda Ingestion"
+    },
+    "window": {
+      "from": "2026-04-20",
+      "to": "2026-04-26",
+      "days": 7
+    },
+    "coverage": {
+      "prs_total": 32,
+      "prs_measured": 32,
+      "prs_linked_to_objective": null
+    },
+    "dora": {
+      "deployment_frequency": {
+        "unit": "deploys/week",
+        "total": 4,
+        "weekly_average": 4.1
+      },
+      "lead_time": {
+        "unit": "minutes",
+        "p50": 3684,
+        "p99": 13193
+      },
+      "change_failure_rate": null,
+      "mttr": null
+    },
+    "review": {
+      "time_to_first_review": {
+        "unit": "business_hours",
+        "p50": 12.1,
+        "p85": 23.4,
+        "p99": 43.2
+      },
+      "review_to_approved": {
+        "unit": "business_hours",
+        "p50": 24.3,
+        "p85": 48.2,
+        "p99": 76.3
+      },
+      "rework_time": {
+        "unit": "business_hours",
+        "p50": 8.0,
+        "p85": 15.1,
+        "p99": 26.9
+      },
+      "pr_count": 32
+    },
+    "trends": {}
+  },
+  "engineers": [
+    {
+      "login": "emarin",
+      "name": "Ellis Marín",
+      "objective_keys": [
+        "MLAMB-2604-03"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "emarin",
+          "display": "Ellis Marín"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 15,
+          "prs_measured": 15,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 5.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1593,
+            "p99": 4547
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.0,
+            "p85": 10.3,
+            "p99": 19.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.8,
+            "p85": 25.6,
+            "p99": 41.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.5,
+            "p99": 13.8
+          },
+          "pr_count": 15
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "kostberg",
+      "name": "Kai Ostberg",
+      "objective_keys": [
+        "MLAMB-2604-01"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "kostberg",
+          "display": "Kai Ostberg"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 5,
+          "prs_measured": 4,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 2.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 5399,
+            "p99": 15868
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 18.8,
+            "p85": 33.7,
+            "p99": 63.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 36.9,
+            "p85": 73.4,
+            "p99": 103.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 13.8,
+            "p85": 25.5,
+            "p99": 45.5
+          },
+          "pr_count": 4
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "lrihanna",
+      "name": "Lena Rihanna",
+      "objective_keys": [
+        "MLAMB-2604-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "lrihanna",
+          "display": "Lena Rihanna"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 2.7
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 5231,
+            "p99": 14683
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 18.5,
+            "p85": 34.2,
+            "p99": 60.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 38.4,
+            "p85": 66.6,
+            "p99": 109.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 14.0,
+            "p85": 24.2,
+            "p99": 45.9
+          },
+          "pr_count": 7
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "qyates",
+      "name": "Quinn Yates",
+      "objective_keys": [
+        "MLAMB-2604-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "qyates",
+          "display": "Quinn Yates"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 17,
+          "prs_measured": 17,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 6,
+            "weekly_average": 6.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 437,
+            "p99": 1413
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.1,
+            "p85": 4.2,
+            "p99": 6.2
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.9,
+            "p99": 11.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.1,
+            "p85": 2.2,
+            "p99": 3.7
+          },
+          "pr_count": 17
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "tilves",
+      "name": "Tomo Ilves",
+      "objective_keys": [
+        "MLAMB-2604-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "tilves",
+          "display": "Tomo Ilves"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 9,
+          "prs_measured": 9,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 3,
+            "weekly_average": 3.2
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4533,
+            "p99": 15537
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 13.1,
+            "p85": 25.5,
+            "p99": 43.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 26.3,
+            "p85": 42.9,
+            "p99": 74.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.5,
+            "p85": 20.4,
+            "p99": 31.5
+          },
+          "pr_count": 9
+        },
+        "trends": {}
+      }
+    }
+  ],
   "objectives": [
     {
       "key": "MLAMB-2604-01",
       "name": "Q2 2026 [April]: Content lint gate",
       "url": "https://example.invalid/objectives/MLAMB-2604-01",
       "leader_engineer": "Kai Ostberg",
+      "leader_engineer_login": "kostberg",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -44,6 +417,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
         "blockers": "No owner reachable this week."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2604-01",
+          "display": "Q2 2026 [April]: Content lint gate"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 3,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 3
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 2.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 5794,
+            "p99": 18280
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 17.9,
+            "p85": 30.9,
+            "p99": 58.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 36.3,
+            "p85": 69.0,
+            "p99": 104.4
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 12.6,
+            "p85": 20.7,
+            "p99": 36.8
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -51,6 +479,7 @@
       "name": "Q2 2026 [April]: Legacy asset migration",
       "url": "https://example.invalid/objectives/MLAMB-2604-02",
       "leader_engineer": "Tomo Ilves",
+      "leader_engineer_login": "tilves",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -69,6 +498,61 @@
         "done_this_week": "Scope grew after user testing; trimming to hit the reduced target.",
         "target_next_week": "Reduce scope to the top-2 use cases and land a partial fix.",
         "blockers": "Design review pending from the sibling team."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2604-02",
+          "display": "Q2 2026 [April]: Legacy asset migration"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 4,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 4
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 3.9
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 4268,
+            "p99": 13007
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 15.2,
+            "p85": 24.9,
+            "p99": 51.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 29.9,
+            "p85": 50.6,
+            "p99": 85.7
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 10.7,
+            "p85": 19.2,
+            "p99": 31.5
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -76,6 +560,7 @@
       "name": "Q2 2026 [April]: Cross-locale asset governance",
       "url": "https://example.invalid/objectives/MLAMB-2604-03",
       "leader_engineer": "Ellis Marín",
+      "leader_engineer_login": "emarin",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -94,6 +579,61 @@
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2604-03",
+          "display": "Q2 2026 [April]: Cross-locale asset governance"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 5,
+            "weekly_average": 5.4
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1899,
+            "p99": 5731
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 6.2,
+            "p85": 10.4,
+            "p99": 20.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 12.1,
+            "p85": 20.6,
+            "p99": 39.8
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 7.2,
+            "p99": 11.1
+          },
+          "pr_count": 5
+        },
+        "trends": {}
       }
     },
     {
@@ -101,6 +641,7 @@
       "name": "Q2 2026 [April]: Provider content ingestion QA",
       "url": "https://example.invalid/objectives/MLAMB-2604-04",
       "leader_engineer": "Lena Rihanna",
+      "leader_engineer_login": "lrihanna",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -119,6 +660,61 @@
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
         "blockers": "No owner reachable this week."
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2604-04",
+          "display": "Q2 2026 [April]: Provider content ingestion QA"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 3,
+          "prs_measured": 3,
+          "prs_linked_to_objective": 3
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 2.5
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 5589,
+            "p99": 20003
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 17.5,
+            "p85": 33.0,
+            "p99": 55.1
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 40.2,
+            "p85": 74.3,
+            "p99": 132.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 11.9,
+            "p85": 19.6,
+            "p99": 38.9
+          },
+          "pr_count": 3
+        },
+        "trends": {}
       }
     },
     {
@@ -126,6 +722,7 @@
       "name": "Q2 2026 [April]: Cadence dashboard for editors",
       "url": "https://example.invalid/objectives/MLAMB-2604-05",
       "leader_engineer": "Quinn Yates",
+      "leader_engineer_login": "qyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -144,6 +741,61 @@
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
         "blockers": ""
+      },
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "objective",
+          "ref": "MLAMB-2604-05",
+          "display": "Q2 2026 [April]: Cadence dashboard for editors"
+        },
+        "window": {
+          "from": "2026-04-20",
+          "to": "2026-04-26",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 7,
+            "weekly_average": 6.8
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 525,
+            "p99": 1786
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.9,
+            "p85": 3.6,
+            "p99": 5.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 4.1,
+            "p85": 6.9,
+            "p99": 13.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 0.9,
+            "p85": 1.7,
+            "p99": 2.6
+          },
+          "pr_count": 8
+        },
+        "trends": {}
       }
     }
   ],
