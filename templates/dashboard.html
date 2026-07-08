@@ -230,6 +230,26 @@ table.teams tr:last-child td { border-bottom: none; }
 .modal-actions button:hover { border-color: var(--navy); background: #eef2ff; }
 .modal-actions .status { margin-left: auto; align-self: center; color: var(--slate); font-size: 12px; }
 .modal-frame { flex: 1; width: 100%; border: none; background: #f1f2f6; }
+/* --- Flow metrics --- */
+.flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.flow-card { background: #eef4fb; border: 1px solid #dbe5f0; border-radius: 8px; padding: 14px 16px; }
+.flow-card .num { font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+.flow-card .num.na { font-size: 14px; font-weight: 600; color: var(--slate); }
+.flow-card .label { color: var(--slate); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+.flow-card .sub { color: var(--slate); font-size: 11px; margin-top: 3px; }
+.flow-note { color: var(--slate); font-size: 12px; margin-top: 12px; }
+.flow-source { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; background: #fff4e5; color: #b45309; border: 1px solid #fed7aa; vertical-align: middle; margin-left: 8px; }
+.eng-flow-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.eng-flow-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--slate); padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.eng-flow-table td { padding: 9px 10px; border-bottom: 1px solid var(--line); color: var(--slate-strong); }
+.eng-flow-table td.tc, .eng-flow-table th.tc { text-align: right; }
+.eng-flow-table .login { color: var(--slate); font-size: 12px; }
+.obj-flow { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.obj-flow h4 { margin: 0 0 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); }
+.obj-flow-metrics { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.obj-flow-metrics .m { display: flex; flex-direction: column; }
+.obj-flow-metrics .m .mv { font-weight: 700; color: var(--navy); font-size: 15px; }
+.obj-flow-metrics .m .ml { font-size: 11px; color: var(--slate); margin-top: 2px; }
 </style>
 </head>
 <body>
@@ -326,6 +346,19 @@ table.teams tr:last-child td { border-bottom: none; }
       <div class="meta" id="detail-email-meta"></div>
     </div>
     <button class="btn-primary primary" id="detail-email-open" type="button" disabled>View email</button>
+  </div>
+
+  <div class="section-block" id="team-flow-block" hidden>
+    <h2>Engineering flow <span class="flow-source" id="team-flow-source" hidden></span></h2>
+    <p class="section-subhead" id="detail-flow-subhead"></p>
+    <div class="flow-grid" id="team-flow-grid"></div>
+    <p class="flow-note" id="team-flow-note"></p>
+  </div>
+
+  <div class="section-block" id="engineers-flow-block" hidden>
+    <h2>Flow by engineer</h2>
+    <p class="section-subhead" id="detail-eng-subhead"></p>
+    <div id="engineers-flow"></div>
   </div>
 
   <div class="section-block">
@@ -908,6 +941,100 @@ table.teams tr:last-child td { border-bottom: none; }
   }
 
   // --- Team detail view ---
+  // --- Flow metrics ---
+  function fmtHours(v) {
+    if (v === null || v === undefined) return "–";
+    return v >= 10 ? `${v.toFixed(0)}h` : `${v.toFixed(1)}h`;
+  }
+  function fmtLead(minutes) {
+    if (minutes === null || minutes === undefined) return "–";
+    const h = minutes / 60;
+    if (h < 48) return h >= 10 ? `${h.toFixed(0)}h` : `${h.toFixed(1)}h`;
+    return `${(h / 24).toFixed(1)}d`;
+  }
+  function flowSourceLabel(source) { return source === "faked" ? "demo data" : source; }
+  function flowCard(num, label, sub, isNa) {
+    return `<div class="flow-card">
+      <div class="num${isNa ? " na" : ""}">${escapeHtml(num)}</div>
+      <div class="label">${escapeHtml(label)}</div>
+      ${sub ? `<div class="sub">${escapeHtml(sub)}</div>` : ""}
+    </div>`;
+  }
+
+  function renderTeamFlow(teamSnapshots) {
+    const block = document.getElementById("team-flow-block");
+    const grid = document.getElementById("team-flow-grid");
+    const subhead = document.getElementById("detail-flow-subhead");
+    const note = document.getElementById("team-flow-note");
+    const badge = document.getElementById("team-flow-source");
+    const latest = teamSnapshots.find(s => s.flow_metrics);
+    if (!latest) { block.setAttribute("hidden", ""); return; }
+    block.removeAttribute("hidden");
+    const f = latest.flow_metrics, d = f.dora, r = f.review, cov = f.coverage;
+    const dateLabel = parseDate(latest.week.target_date)
+      .toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+    grid.innerHTML = [
+      flowCard(`${d.deployment_frequency.weekly_average}/wk`, "Deploy frequency", `${d.deployment_frequency.total} in ${f.window.days}d`),
+      flowCard(fmtLead(d.lead_time.p50), "Lead time (p50)", `p99 ${fmtLead(d.lead_time.p99)}`),
+      flowCard(fmtHours(r.time_to_first_review.p50), "Time to 1st review (p50)", `p85 ${fmtHours(r.time_to_first_review.p85)}`),
+      flowCard(fmtHours(r.review_to_approved.p50), "Review → approved (p50)", `p85 ${fmtHours(r.review_to_approved.p85)}`),
+      flowCard(fmtHours(r.rework_time.p50), "Rework (p50)", `p85 ${fmtHours(r.rework_time.p85)}`),
+      flowCard("not measured", "Change-failure rate", "incident feed not wired", true),
+      flowCard("not measured", "MTTR", "incident feed not wired", true),
+    ].join("");
+    subhead.textContent = `Week ${latest.week.iso_week} · ${dateLabel} · medians over the ${f.window.days}-day window.`;
+    badge.textContent = flowSourceLabel(f.source);
+    badge.removeAttribute("hidden");
+    note.textContent = `Coverage: ${cov.prs_measured} of ${cov.prs_total} PRs measured. Review times are Berlin business hours.`;
+  }
+
+  function renderEngineersFlow(teamSnapshots) {
+    const block = document.getElementById("engineers-flow-block");
+    const container = document.getElementById("engineers-flow");
+    const subhead = document.getElementById("detail-eng-subhead");
+    const latest = teamSnapshots.find(s => (s.engineers || []).length);
+    if (!latest) { block.setAttribute("hidden", ""); container.innerHTML = ""; return; }
+    block.removeAttribute("hidden");
+    const engs = latest.engineers.slice().sort((a, b) =>
+      b.flow_metrics.review.review_to_approved.p50 - a.flow_metrics.review.review_to_approved.p50);
+    const rows = engs.map(e => {
+      const f = e.flow_metrics;
+      return `<tr>
+        <td>${escapeHtml(e.name)} <span class="login">@${escapeHtml(e.login)}</span></td>
+        <td class="tc">${e.objective_keys.length}</td>
+        <td class="tc">${escapeHtml(fmtHours(f.review.time_to_first_review.p50))}</td>
+        <td class="tc">${escapeHtml(fmtHours(f.review.review_to_approved.p50))}</td>
+        <td class="tc">${escapeHtml(fmtHours(f.review.rework_time.p50))}</td>
+        <td class="tc">${escapeHtml(fmtLead(f.dora.lead_time.p50))}</td>
+        <td class="tc">${f.dora.deployment_frequency.weekly_average}/wk</td>
+      </tr>`;
+    }).join("");
+    container.innerHTML = `<table class="eng-flow-table">
+      <thead><tr>
+        <th>Engineer</th><th class="tc">Obj</th><th class="tc">1st review</th>
+        <th class="tc">→ approved</th><th class="tc">Rework</th><th class="tc">Lead time</th><th class="tc">Deploys</th>
+      </tr></thead>
+      <tbody>${rows}</tbody></table>`;
+    subhead.textContent = `${engs.length} ${pluralize(engs.length, "engineer", "engineers")} · slowest review→approved first · Week ${latest.week.iso_week}.`;
+  }
+
+  function renderObjectiveFlow(f) {
+    if (!f) return "";
+    const r = f.review, d = f.dora, cov = f.coverage;
+    const m = (v, label) => `<div class="m"><span class="mv">${escapeHtml(v)}</span><span class="ml">${escapeHtml(label)}</span></div>`;
+    return `<div class="obj-flow">
+      <h4>Engineering flow <span class="flow-source">${escapeHtml(flowSourceLabel(f.source))}</span></h4>
+      <div class="obj-flow-metrics">
+        ${m(fmtHours(r.time_to_first_review.p50), "Time to 1st review (p50)")}
+        ${m(fmtHours(r.review_to_approved.p50), "Review → approved (p50)")}
+        ${m(fmtHours(r.rework_time.p50), "Rework (p50)")}
+        ${m(fmtLead(d.lead_time.p50), "Lead time (p50)")}
+        ${m(`${d.deployment_frequency.weekly_average}/wk`, "Deploy frequency")}
+        ${m(`${cov.prs_measured}/${cov.prs_total}`, "PRs measured")}
+      </div>
+    </div>`;
+  }
+
   function renderTeamDetail(route) {
     const team = ALL_TEAMS.find(t => t.id === route.teamId);
     const backParams = new URLSearchParams();
@@ -922,6 +1049,8 @@ table.teams tr:last-child td { border-bottom: none; }
       document.getElementById("detail-range").textContent = "";
       document.getElementById("objectives-in-period-tbody").innerHTML = `<tr class="empty-row"><td colspan="7">Unknown team: ${escapeHtml(route.teamId)}</td></tr>`;
       document.getElementById("weekly-reports").innerHTML = "";
+      document.getElementById("team-flow-block").setAttribute("hidden", "");
+      document.getElementById("engineers-flow-block").setAttribute("hidden", "");
       return;
     }
 
@@ -939,6 +1068,8 @@ table.teams tr:last-child td { border-bottom: none; }
     document.getElementById("detail-range").textContent = humanRangeSubhead(start, end);
 
     renderEmailStrip(teamSnapshots);
+    renderTeamFlow(teamSnapshots);
+    renderEngineersFlow(teamSnapshots);
     renderObjectivesInPeriod(teamSnapshots);
     renderWeeklyReports(teamSnapshots);
   }
@@ -1114,7 +1245,7 @@ table.teams tr:last-child td { border-bottom: none; }
           <td>${escapeHtml(o.progress)}</td>
         </tr>`,
         `<tr class="week-row-detail" id="${rowId}" hidden>
-          <td colspan="6">${renderUpdatePanel(o.update)}</td>
+          <td colspan="6">${renderUpdatePanel(o.update)}${renderObjectiveFlow(o.flow_metrics)}</td>
         </tr>`,
       ];
     });
