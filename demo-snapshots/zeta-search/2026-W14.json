@@ -40,19 +40,19 @@
     },
     "coverage": {
       "prs_total": 22,
-      "prs_measured": 21,
+      "prs_measured": 19,
       "prs_linked_to_objective": null
     },
     "dora": {
       "deployment_frequency": {
         "unit": "deploys/week",
-        "total": 7,
-        "weekly_average": 7.0
+        "total": 8,
+        "weekly_average": 8.0
       },
       "lead_time": {
         "unit": "minutes",
-        "p50": 1888,
-        "p99": 5832
+        "p50": 2845,
+        "p99": 7922
       },
       "change_failure_rate": null,
       "mttr": null
@@ -60,31 +60,32 @@
     "review": {
       "time_to_first_review": {
         "unit": "business_hours",
-        "p50": 6.1,
-        "p85": 11.6,
-        "p99": 20.5
+        "p50": 7.0,
+        "p85": 13.4,
+        "p99": 22.9
       },
       "review_to_approved": {
         "unit": "business_hours",
-        "p50": 11.3,
-        "p85": 21.0,
-        "p99": 32.3
+        "p50": 17.7,
+        "p85": 31.4,
+        "p99": 55.8
       },
       "rework_time": {
         "unit": "business_hours",
-        "p50": 4.4,
-        "p85": 8.4,
-        "p99": 15.8
+        "p50": 7.5,
+        "p85": 13.2,
+        "p99": 23.8
       },
-      "pr_count": 21
+      "pr_count": 19
     },
     "trends": {}
   },
   "engineers": [
     {
-      "login": "blarsson",
-      "name": "Bram Larsson",
+      "login": "bhaas",
+      "name": "Bea Haas",
       "objective_keys": [
+        "MZETA-2604-03",
         "MZETA-2604-04"
       ],
       "flow_metrics": {
@@ -92,8 +93,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "blarsson",
-          "display": "Bram Larsson"
+          "ref": "bhaas",
+          "display": "Bea Haas"
         },
         "window": {
           "from": "2026-03-30",
@@ -101,20 +102,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
+          "prs_total": 10,
           "prs_measured": 8,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
+            "total": 4,
+            "weekly_average": 4.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 461,
-            "p99": 1367
+            "p50": 3280,
+            "p99": 8754
           },
           "change_failure_rate": null,
           "mttr": null
@@ -122,21 +123,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 1.8,
-            "p85": 3.3,
-            "p99": 5.2
+            "p50": 6.8,
+            "p85": 12.9,
+            "p99": 22.1
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.9,
-            "p85": 7.0,
-            "p99": 12.9
+            "p50": 17.4,
+            "p85": 28.3,
+            "p99": 55.3
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.8,
-            "p99": 3.1
+            "p50": 7.3,
+            "p85": 12.6,
+            "p99": 24.1
           },
           "pr_count": 8
         },
@@ -144,72 +145,10 @@
       }
     },
     {
-      "login": "obarone",
-      "name": "Odin Barone",
+      "login": "hyates",
+      "name": "Hal Yates",
       "objective_keys": [
         "MZETA-2604-01",
-        "MZETA-2604-03"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "obarone",
-          "display": "Odin Barone"
-        },
-        "window": {
-          "from": "2026-03-30",
-          "to": "2026-04-05",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 9,
-          "prs_measured": 9,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 3,
-            "weekly_average": 3.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 2857,
-            "p99": 9116
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 9.9,
-            "p85": 16.9,
-            "p99": 32.3
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 21.7,
-            "p85": 36.6,
-            "p99": 63.8
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 7.4,
-            "p85": 13.3,
-            "p99": 22.8
-          },
-          "pr_count": 9
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "rdelacroix",
-      "name": "Rio Delacroix",
-      "objective_keys": [
         "MZETA-2604-02"
       ],
       "flow_metrics": {
@@ -217,8 +156,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "rdelacroix",
-          "display": "Rio Delacroix"
+          "ref": "hyates",
+          "display": "Hal Yates"
         },
         "window": {
           "from": "2026-03-30",
@@ -226,20 +165,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 5,
-          "prs_measured": 4,
+          "prs_total": 12,
+          "prs_measured": 11,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
+            "total": 4,
+            "weekly_average": 4.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1888,
-            "p99": 5832
+            "p50": 2410,
+            "p99": 7090
           },
           "change_failure_rate": null,
           "mttr": null
@@ -247,23 +186,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.1,
-            "p85": 11.6,
-            "p99": 20.5
+            "p50": 7.2,
+            "p85": 14.0,
+            "p99": 23.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 11.3,
-            "p85": 21.0,
-            "p99": 32.3
+            "p50": 18.0,
+            "p85": 34.4,
+            "p99": 56.2
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.4,
-            "p85": 8.4,
-            "p99": 15.8
+            "p50": 7.8,
+            "p85": 13.8,
+            "p99": 23.4
           },
-          "pr_count": 4
+          "pr_count": 11
         },
         "trends": {}
       }
@@ -274,8 +213,8 @@
       "key": "MZETA-2604-01",
       "name": "Q2 2026 [April]: Homepage skeleton refresh",
       "url": "https://example.invalid/objectives/MZETA-2604-01",
-      "leader_engineer": "Odin Barone",
-      "leader_engineer_login": "obarone",
+      "leader_engineer": "Hal Yates",
+      "leader_engineer_login": "hyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -289,7 +228,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Odin Barone",
+        "author": "Hal Yates",
         "status": "Green",
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -309,20 +248,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 3,
-          "prs_measured": 3,
-          "prs_linked_to_objective": 3
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.1
+            "total": 2,
+            "weekly_average": 1.5
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 4012,
-            "p99": 13009
+            "p50": 2231,
+            "p99": 6109
           },
           "change_failure_rate": null,
           "mttr": null
@@ -330,23 +269,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 13.2,
-            "p85": 23.0,
-            "p99": 46.1
+            "p50": 6.1,
+            "p85": 11.7,
+            "p99": 19.1
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 31.0,
-            "p85": 53.3,
-            "p99": 88.5
+            "p50": 16.7,
+            "p85": 32.5,
+            "p99": 57.6
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 10.6,
-            "p85": 18.7,
-            "p99": 31.1
+            "p50": 4.8,
+            "p85": 8.7,
+            "p99": 15.1
           },
-          "pr_count": 3
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -355,8 +294,8 @@
       "key": "MZETA-2604-02",
       "name": "Q2 2026 [April]: Cart persistence across surfaces",
       "url": "https://example.invalid/objectives/MZETA-2604-02",
-      "leader_engineer": "Rio Delacroix",
-      "leader_engineer_login": "rdelacroix",
+      "leader_engineer": "Hal Yates",
+      "leader_engineer_login": "hyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -370,7 +309,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Rio Delacroix",
+        "author": "Hal Yates",
         "status": "Green",
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -390,20 +329,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 5,
-          "prs_measured": 4,
-          "prs_linked_to_objective": 5
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 1.7
+            "weekly_average": 1.5
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1888,
-            "p99": 5832
+            "p50": 2589,
+            "p99": 8072
           },
           "change_failure_rate": null,
           "mttr": null
@@ -411,23 +350,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.1,
-            "p85": 11.6,
-            "p99": 20.5
+            "p50": 8.3,
+            "p85": 16.4,
+            "p99": 28.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 11.3,
-            "p85": 21.0,
-            "p99": 32.3
+            "p50": 19.3,
+            "p85": 36.3,
+            "p99": 54.8
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.4,
-            "p85": 8.4,
-            "p99": 15.8
+            "p50": 10.8,
+            "p85": 18.8,
+            "p99": 31.8
           },
-          "pr_count": 4
+          "pr_count": 5
         },
         "trends": {}
       }
@@ -436,8 +375,8 @@
       "key": "MZETA-2604-03",
       "name": "Q2 2026 [April]: Refund status transparency",
       "url": "https://example.invalid/objectives/MZETA-2604-03",
-      "leader_engineer": "Odin Barone",
-      "leader_engineer_login": "obarone",
+      "leader_engineer": "Bea Haas",
+      "leader_engineer_login": "bhaas",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -451,7 +390,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Odin Barone",
+        "author": "Bea Haas",
         "status": "Green",
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
@@ -471,20 +410,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 6,
-          "prs_measured": 6,
-          "prs_linked_to_objective": 6
+          "prs_total": 5,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 5
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.0
+            "weekly_average": 1.6
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1702,
-            "p99": 5222
+            "p50": 2931,
+            "p99": 7817
           },
           "change_failure_rate": null,
           "mttr": null
@@ -492,23 +431,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.6,
-            "p85": 10.7,
-            "p99": 18.5
+            "p50": 6.1,
+            "p85": 12.0,
+            "p99": 20.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 12.4,
-            "p85": 20.0,
-            "p99": 39.1
+            "p50": 18.2,
+            "p85": 29.2,
+            "p99": 58.0
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.3,
-            "p85": 8.0,
-            "p99": 14.4
+            "p50": 8.9,
+            "p85": 15.4,
+            "p99": 31.0
           },
-          "pr_count": 6
+          "pr_count": 4
         },
         "trends": {}
       }
@@ -517,8 +456,8 @@
       "key": "MZETA-2604-04",
       "name": "Q2 2026 [April]: Checkout abandonment nudge",
       "url": "https://example.invalid/objectives/MZETA-2604-04",
-      "leader_engineer": "Bram Larsson",
-      "leader_engineer_login": "blarsson",
+      "leader_engineer": "Bea Haas",
+      "leader_engineer_login": "bhaas",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -532,7 +471,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Bram Larsson",
+        "author": "Bea Haas",
         "status": "Green",
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
@@ -552,20 +491,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 8,
-          "prs_linked_to_objective": 8
+          "prs_total": 5,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 5
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.0
+            "weekly_average": 1.8
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 461,
-            "p99": 1367
+            "p50": 3630,
+            "p99": 9692
           },
           "change_failure_rate": null,
           "mttr": null
@@ -573,23 +512,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 1.8,
-            "p85": 3.3,
-            "p99": 5.2
+            "p50": 7.4,
+            "p85": 13.8,
+            "p99": 23.9
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.9,
-            "p85": 7.0,
-            "p99": 12.9
+            "p50": 16.7,
+            "p85": 27.4,
+            "p99": 52.6
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.8,
-            "p99": 3.1
+            "p50": 5.8,
+            "p85": 9.8,
+            "p99": 17.2
           },
-          "pr_count": 8
+          "pr_count": 4
         },
         "trends": {}
       }
@@ -598,8 +537,8 @@
   "outputs": {
     "email": {
       "subject": "Weekly Objective Update — Zeta Search Discovery — Week 14",
-      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">4/4 objectives on track, 0 at risk, 0 missing updates, 0 not started, 0 done, 1 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Zeta Search Discovery</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Zeta Search Discovery — Week 14</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">April Objectives</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Zeta Search Discovery</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Homepage skeleton refresh (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Odin Barone</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">22%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:22%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Cart persistence across surfaces (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Rio Delacroix</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">25%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:25%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Cleared the staging soak; production rollout scheduled for early next week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Refund status transparency (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Odin Barone</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">7%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:7%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Checkout abandonment nudge (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Bram Larsson</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">18%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:18%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Prep work is done; kickoff of the customer-facing rollout starts Monday.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Ship remaining PRs; start canary rollout by Wednesday.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [April]: Homepage skeleton refresh\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">A single reviewer is a bottleneck; needs a delegate.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Odin Barone &nbsp;|&nbsp; Owner: Odin Barone &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Zeta Search Discovery<br>\n                                        Week 14\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
-      "text": "Weekly Objective Update — Zeta Search Discovery — Week 14\n\nSUMMARY\n- On track: 4/4\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 1\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q2 2026 [April]: Homepage skeleton refresh (april-2026)\nLeader Engineer: Odin Barone\nProgress: 22% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-01\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [April]: Cart persistence across surfaces (april-2026)\nLeader Engineer: Rio Delacroix\nProgress: 25% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-02\nDone this week: Cleared the staging soak; production rollout scheduled for early next week.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [April]: Refund status transparency (april-2026)\nLeader Engineer: Odin Barone\nProgress: 7% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-03\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q2 2026 [April]: Checkout abandonment nudge (april-2026)\nLeader Engineer: Bram Larsson\nProgress: 18% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-04\nDone this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.\nPlan for next week: Ship remaining PRs; start canary rollout by Wednesday.\n\nBLOCKERS / RISKS\n- [Risk] Q2 2026 [April]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.\n  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a\n\nKind Regards\nEngineering Manager"
+      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">4/4 objectives on track, 0 at risk, 0 missing updates, 0 not started, 0 done, 1 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Zeta Search Discovery</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Zeta Search Discovery — Week 14</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">April Objectives</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Zeta Search Discovery</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Homepage skeleton refresh (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Hal Yates</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">22%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:22%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Cart persistence across surfaces (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Hal Yates</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">25%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:25%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Cleared the staging soak; production rollout scheduled for early next week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Refund status transparency (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Bea Haas</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">7%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:7%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MZETA-2604-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [April]: Checkout abandonment nudge (april-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Bea Haas</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Apr</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">18%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:18%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Prep work is done; kickoff of the customer-facing rollout starts Monday.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Ship remaining PRs; start canary rollout by Wednesday.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [April]: Homepage skeleton refresh\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">A single reviewer is a bottleneck; needs a delegate.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Hal Yates &nbsp;|&nbsp; Owner: Hal Yates &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Zeta Search Discovery<br>\n                                        Week 14\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
+      "text": "Weekly Objective Update — Zeta Search Discovery — Week 14\n\nSUMMARY\n- On track: 4/4\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 1\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q2 2026 [April]: Homepage skeleton refresh (april-2026)\nLeader Engineer: Hal Yates\nProgress: 22% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-01\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [April]: Cart persistence across surfaces (april-2026)\nLeader Engineer: Hal Yates\nProgress: 25% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-02\nDone this week: Cleared the staging soak; production rollout scheduled for early next week.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [April]: Refund status transparency (april-2026)\nLeader Engineer: Bea Haas\nProgress: 7% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-03\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q2 2026 [April]: Checkout abandonment nudge (april-2026)\nLeader Engineer: Bea Haas\nProgress: 18% | Due: 30 Apr\nLink: https://example.invalid/objectives/MZETA-2604-04\nDone this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.\nPlan for next week: Ship remaining PRs; start canary rollout by Wednesday.\n\nBLOCKERS / RISKS\n- [Risk] Q2 2026 [April]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.\n  Leader Engineer: Hal Yates | Owner: Hal Yates | Days open: n/a\n\nKind Regards\nEngineering Manager"
     }
   }
 }

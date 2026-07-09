@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [March]: Publisher content freshness (march-2026)
-Leader Engineer: Ines Marchetti
+Leader Engineer: Quinn Tomori
 Progress: 26% | Due: 31 Mar
 Link: https://example.invalid/objectives/MMU-2603-01
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [March]: Broken-image sentinel (march-2026)
-Leader Engineer: Jules Cabrera
+Leader Engineer: Quinn Tomori
 Progress: 22% | Due: 31 Mar
 Link: https://example.invalid/objectives/MMU-2603-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [March]: Legacy asset migration (march-2026)
-Leader Engineer: Kai Ostberg
+Leader Engineer: Quinn Tomori
 Progress: 13% | Due: 31 Mar
 Link: https://example.invalid/objectives/MMU-2603-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [March]: Cross-locale asset governance (march-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Vin Yates
 Progress: 21% | Due: 31 Mar
 Link: https://example.invalid/objectives/MMU-2603-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [March]: Content lint gate (march-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Vin Yates
 Progress: 13% | Due: 31 Mar
 Link: https://example.invalid/objectives/MMU-2603-05
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
@@ -52,7 +52,7 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Jules Cabrera | Owner: Jules Cabrera | Days open: n/a
+  Leader Engineer: Quinn Tomori | Owner: Quinn Tomori | Days open: n/a
 
 Kind Regards
 Engineering Manager

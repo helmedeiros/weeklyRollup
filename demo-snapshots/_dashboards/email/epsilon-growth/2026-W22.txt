@@ -16,42 +16,42 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Cart persistence across surfaces (may-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Odin Ashby
 Progress: 61% | Due: 31 May
 Link: https://example.invalid/objectives/MEPSI-2605-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [AT RISK] Q2 2026 [May]: Payment method reorder (may-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Sana Volkov
 Progress: 41% | Due: 31 May
 Link: https://example.invalid/objectives/MEPSI-2605-05
 Done this week: Scope grew after user testing; trimming to hit the reduced target.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [DONE] Q2 2026 [May]: Loyalty perks eligibility banner (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Quinn Vasquez
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MEPSI-2605-01
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 [DONE] Q2 2026 [May]: Passenger name-change flow (may-2026)
-Leader Engineer: Ava Thornton
+Leader Engineer: Quinn Vasquez
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MEPSI-2605-03
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q2 2026 [May]: Checkout abandonment nudge (may-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Rio Cabrera
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MEPSI-2605-04
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q2 2026 [May]: Search relevance re-ranker (may-2026)
-Leader Engineer: Odin Barone
+Leader Engineer: Rio Cabrera
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MEPSI-2605-06
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
@@ -59,9 +59,9 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Payment method reorder: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+  Leader Engineer: Sana Volkov | Owner: Sana Volkov | Days open: n/a
 - [Risk] Q2 2026 [May]: Cart persistence across surfaces: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+  Leader Engineer: Odin Ashby | Owner: Odin Ashby | Days open: n/a
 
 Kind Regards
 Engineering Manager

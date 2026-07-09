@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Zero-downtime restart choreography (may-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Ava Anders
 Progress: 19% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-01
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Deprecation channel rollout (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Bea Sardar
 Progress: 13% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-02
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [May]: Warm-cache eviction policy (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Joss Tomori
 Progress: 18% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Feature flag rollout guardrails (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Ines Ashby
 Progress: 21% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-04
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [May]: Runtime resource budgets (may-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Ava Anders
 Progress: 28% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-05
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
@@ -52,11 +52,11 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Deprecation channel rollout: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+  Leader Engineer: Bea Sardar | Owner: Bea Sardar | Days open: n/a
 - [Risk] Q2 2026 [May]: Warm-cache eviction policy: Design review pending from the sibling team.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Joss Tomori | Owner: Joss Tomori | Days open: n/a
 - [Risk] Q2 2026 [May]: Runtime resource budgets: Design review pending from the sibling team.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+  Leader Engineer: Ava Anders | Owner: Ava Anders | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Deprecation channel rollout (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Bea Sardar
 Progress: 74% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-02
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Feature flag rollout guardrails (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Ines Ashby
 Progress: 66% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-04
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [AT RISK] Q2 2026 [May]: Warm-cache eviction policy (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Joss Tomori
 Progress: 49% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-03
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [AT RISK] Q2 2026 [May]: Runtime resource budgets (may-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Ava Anders
 Progress: 45% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-05
 Done this week: Scope grew after user testing; trimming to hit the reduced target.
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 [DONE] Q2 2026 [May]: Zero-downtime restart choreography (may-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Ava Anders
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MGAMM-2605-01
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
@@ -52,11 +52,11 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Warm-cache eviction policy: Design review pending from the sibling team.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Joss Tomori | Owner: Joss Tomori | Days open: n/a
 - [Risk] Q2 2026 [May]: Runtime resource budgets: Design review pending from the sibling team.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+  Leader Engineer: Ava Anders | Owner: Ava Anders | Days open: n/a
 - [Risk] Q2 2026 [May]: Deprecation channel rollout: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+  Leader Engineer: Bea Sardar | Owner: Bea Sardar | Days open: n/a
 
 Kind Regards
 Engineering Manager

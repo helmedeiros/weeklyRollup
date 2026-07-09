@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [February]: Partner billing reconciliation (february-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Cy Ilves
 Progress: 42% | Due: 28 Feb
 Link: https://example.invalid/objectives/MIOTA-2602-01
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [February]: Partner API rate-limit v2 (february-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Xander Okonjo
 Progress: 31% | Due: 28 Feb
 Link: https://example.invalid/objectives/MIOTA-2602-02
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Contract-tier feature gating (february-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Lena Barone
 Progress: 35% | Due: 28 Feb
 Link: https://example.invalid/objectives/MIOTA-2602-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [February]: Reseller webhook v3 (february-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Cy Ilves
 Progress: 28% | Due: 28 Feb
 Link: https://example.invalid/objectives/MIOTA-2602-04
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
@@ -45,9 +45,9 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [February]: Contract-tier feature gating: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
+  Leader Engineer: Lena Barone | Owner: Lena Barone | Days open: n/a
 - [Risk] Q1 2026 [February]: Reseller webhook v3: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+  Leader Engineer: Cy Ilves | Owner: Cy Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

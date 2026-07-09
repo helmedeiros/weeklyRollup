@@ -39,7 +39,7 @@
       "days": 7
     },
     "coverage": {
-      "prs_total": 25,
+      "prs_total": 28,
       "prs_measured": 23,
       "prs_linked_to_objective": null
     },
@@ -51,8 +51,8 @@
       },
       "lead_time": {
         "unit": "minutes",
-        "p50": 1858,
-        "p99": 5588
+        "p50": 1864,
+        "p99": 5904
       },
       "change_failure_rate": null,
       "mttr": null
@@ -60,21 +60,21 @@
     "review": {
       "time_to_first_review": {
         "unit": "business_hours",
-        "p50": 5.8,
-        "p85": 10.3,
-        "p99": 20.1
+        "p50": 5.6,
+        "p85": 9.6,
+        "p99": 17.2
       },
       "review_to_approved": {
         "unit": "business_hours",
-        "p50": 12.8,
-        "p85": 24.1,
-        "p99": 39.2
+        "p50": 10.6,
+        "p85": 19.3,
+        "p99": 35.9
       },
       "rework_time": {
         "unit": "business_hours",
-        "p50": 3.9,
-        "p85": 6.7,
-        "p99": 12.4
+        "p50": 5.3,
+        "p85": 9.6,
+        "p99": 17.5
       },
       "pr_count": 23
     },
@@ -82,8 +82,8 @@
   },
   "engineers": [
     {
-      "login": "blarsson",
-      "name": "Bram Larsson",
+      "login": "erivas",
+      "name": "Enzo Rivas",
       "objective_keys": [
         "MLAMB-2603-02"
       ],
@@ -92,8 +92,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "blarsson",
-          "display": "Bram Larsson"
+          "ref": "erivas",
+          "display": "Enzo Rivas"
         },
         "window": {
           "from": "2026-03-23",
@@ -102,7 +102,7 @@
         },
         "coverage": {
           "prs_total": 3,
-          "prs_measured": 3,
+          "prs_measured": 2,
           "prs_linked_to_objective": null
         },
         "dora": {
@@ -113,8 +113,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 5270,
-            "p99": 17928
+            "p50": 6652,
+            "p99": 21433
           },
           "change_failure_rate": null,
           "mttr": null
@@ -122,94 +122,32 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 16.6,
-            "p85": 26.8,
-            "p99": 59.7
+            "p50": 20.2,
+            "p85": 33.7,
+            "p99": 68.8
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 39.9,
-            "p85": 77.6,
-            "p99": 137.7
+            "p50": 30.8,
+            "p85": 61.6,
+            "p99": 106.0
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 12.1,
-            "p85": 23.0,
-            "p99": 36.7
+            "p50": 10.9,
+            "p85": 20.7,
+            "p99": 31.7
           },
-          "pr_count": 3
+          "pr_count": 2
         },
         "trends": {}
       }
     },
     {
-      "login": "emarin",
-      "name": "Ellis Marín",
+      "login": "ubarone",
+      "name": "Uma Barone",
       "objective_keys": [
-        "MLAMB-2603-01"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "emarin",
-          "display": "Ellis Marín"
-        },
-        "window": {
-          "from": "2026-03-23",
-          "to": "2026-03-29",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 6,
-          "prs_measured": 5,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 1830,
-            "p99": 5846
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 6.0,
-            "p85": 10.0,
-            "p99": 20.5
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 12.8,
-            "p85": 23.2,
-            "p99": 36.8
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 3.7,
-            "p85": 6.2,
-            "p99": 13.0
-          },
-          "pr_count": 5
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "hvasquez",
-      "name": "Hiro Vasquez",
-      "objective_keys": [
-        "MLAMB-2603-04",
+        "MLAMB-2603-03",
         "MLAMB-2603-05"
       ],
       "flow_metrics": {
@@ -217,8 +155,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "hvasquez",
-          "display": "Hiro Vasquez"
+          "ref": "ubarone",
+          "display": "Uma Barone"
         },
         "window": {
           "from": "2026-03-23",
@@ -226,7 +164,70 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 11,
+          "prs_total": 13,
+          "prs_measured": 11,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 4.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1022,
+            "p99": 3323
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 4.0,
+            "p85": 7.3,
+            "p99": 12.9
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 7.8,
+            "p85": 14.8,
+            "p99": 26.1
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 2.7,
+            "p85": 4.4,
+            "p99": 8.1
+          },
+          "pr_count": 11
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "ucordova",
+      "name": "Uma Cordova",
+      "objective_keys": [
+        "MLAMB-2603-01",
+        "MLAMB-2603-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "ucordova",
+          "display": "Uma Cordova"
+        },
+        "window": {
+          "from": "2026-03-23",
+          "to": "2026-03-29",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 12,
           "prs_measured": 10,
           "prs_linked_to_objective": null
         },
@@ -238,8 +239,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1127,
-            "p99": 3552
+            "p50": 1864,
+            "p99": 5904
           },
           "change_failure_rate": null,
           "mttr": null
@@ -247,85 +248,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 4.0,
-            "p85": 6.5,
-            "p99": 12.0
+            "p50": 5.6,
+            "p85": 9.6,
+            "p99": 17.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 8.8,
-            "p85": 16.2,
-            "p99": 29.5
+            "p50": 10.6,
+            "p85": 19.3,
+            "p99": 35.9
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 2.5,
-            "p85": 4.6,
-            "p99": 7.9
+            "p50": 5.3,
+            "p85": 9.6,
+            "p99": 17.5
           },
           "pr_count": 10
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "privas",
-      "name": "Pia Rivas",
-      "objective_keys": [
-        "MLAMB-2603-03"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "privas",
-          "display": "Pia Rivas"
-        },
-        "window": {
-          "from": "2026-03-23",
-          "to": "2026-03-29",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 5,
-          "prs_measured": 5,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 1887,
-            "p99": 5331
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 5.5,
-            "p85": 10.7,
-            "p99": 19.7
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 12.7,
-            "p85": 25.1,
-            "p99": 41.7
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 4.0,
-            "p85": 7.1,
-            "p99": 11.9
-          },
-          "pr_count": 5
         },
         "trends": {}
       }
@@ -336,8 +275,8 @@
       "key": "MLAMB-2603-01",
       "name": "Q1 2026 [March]: Cross-locale asset governance",
       "url": "https://example.invalid/objectives/MLAMB-2603-01",
-      "leader_engineer": "Ellis Marín",
-      "leader_engineer_login": "emarin",
+      "leader_engineer": "Uma Cordova",
+      "leader_engineer_login": "ucordova",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -351,7 +290,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Ellis Marín",
+        "author": "Uma Cordova",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -383,8 +322,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1830,
-            "p99": 5846
+            "p50": 2203,
+            "p99": 6742
           },
           "change_failure_rate": null,
           "mttr": null
@@ -392,21 +331,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.0,
-            "p85": 10.0,
-            "p99": 20.5
+            "p50": 4.9,
+            "p85": 8.2,
+            "p99": 14.4
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 12.8,
-            "p85": 23.2,
-            "p99": 36.8
+            "p50": 10.9,
+            "p85": 20.8,
+            "p99": 36.2
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 3.7,
-            "p85": 6.2,
-            "p99": 13.0
+            "p50": 6.3,
+            "p85": 11.3,
+            "p99": 20.1
           },
           "pr_count": 5
         },
@@ -417,8 +356,8 @@
       "key": "MLAMB-2603-02",
       "name": "Q1 2026 [March]: Legacy asset migration",
       "url": "https://example.invalid/objectives/MLAMB-2603-02",
-      "leader_engineer": "Bram Larsson",
-      "leader_engineer_login": "blarsson",
+      "leader_engineer": "Enzo Rivas",
+      "leader_engineer_login": "erivas",
       "status": "Missing",
       "jira_status": "In Progress",
       "is_done": false,
@@ -432,7 +371,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Bram Larsson",
+        "author": "Enzo Rivas",
         "status": "Missing",
         "done_this_week": "No update was captured this week.",
         "target_next_week": "Sync with the owner and file the missing update retroactively.",
@@ -453,19 +392,19 @@
         },
         "coverage": {
           "prs_total": 3,
-          "prs_measured": 3,
+          "prs_measured": 2,
           "prs_linked_to_objective": 3
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 1,
-            "weekly_average": 0.7
+            "weekly_average": 0.9
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 5270,
-            "p99": 17928
+            "p50": 6652,
+            "p99": 21433
           },
           "change_failure_rate": null,
           "mttr": null
@@ -473,23 +412,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 16.6,
-            "p85": 26.8,
-            "p99": 59.7
+            "p50": 20.2,
+            "p85": 33.7,
+            "p99": 68.8
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 39.9,
-            "p85": 77.6,
-            "p99": 137.7
+            "p50": 30.8,
+            "p85": 61.6,
+            "p99": 106.0
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 12.1,
-            "p85": 23.0,
-            "p99": 36.7
+            "p50": 10.9,
+            "p85": 20.7,
+            "p99": 31.7
           },
-          "pr_count": 3
+          "pr_count": 2
         },
         "trends": {}
       }
@@ -498,8 +437,8 @@
       "key": "MLAMB-2603-03",
       "name": "Q1 2026 [March]: Broken-image sentinel",
       "url": "https://example.invalid/objectives/MLAMB-2603-03",
-      "leader_engineer": "Pia Rivas",
-      "leader_engineer_login": "privas",
+      "leader_engineer": "Uma Barone",
+      "leader_engineer_login": "ubarone",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -513,7 +452,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Pia Rivas",
+        "author": "Uma Barone",
         "status": "Green",
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -533,20 +472,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 5,
+          "prs_total": 6,
           "prs_measured": 5,
-          "prs_linked_to_objective": 5
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 1.7
+            "weekly_average": 1.6
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1887,
-            "p99": 5331
+            "p50": 1466,
+            "p99": 4720
           },
           "change_failure_rate": null,
           "mttr": null
@@ -554,21 +493,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 5.5,
-            "p85": 10.7,
-            "p99": 19.7
+            "p50": 6.4,
+            "p85": 11.7,
+            "p99": 20.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 12.7,
-            "p85": 25.1,
-            "p99": 41.7
+            "p50": 11.5,
+            "p85": 22.9,
+            "p99": 38.0
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.0,
-            "p85": 7.1,
-            "p99": 11.9
+            "p50": 3.6,
+            "p85": 5.8,
+            "p99": 10.9
           },
           "pr_count": 5
         },
@@ -579,8 +518,8 @@
       "key": "MLAMB-2603-04",
       "name": "Q1 2026 [March]: Cadence dashboard for editors",
       "url": "https://example.invalid/objectives/MLAMB-2603-04",
-      "leader_engineer": "Hiro Vasquez",
-      "leader_engineer_login": "hvasquez",
+      "leader_engineer": "Uma Cordova",
+      "leader_engineer_login": "ucordova",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -594,7 +533,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Hiro Vasquez",
+        "author": "Uma Cordova",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
@@ -614,20 +553,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 5,
-          "prs_measured": 4,
-          "prs_linked_to_objective": 5
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.0
+            "weekly_average": 1.8
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1729,
-            "p99": 5554
+            "p50": 1525,
+            "p99": 5067
           },
           "change_failure_rate": null,
           "mttr": null
@@ -635,23 +574,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 5.9,
-            "p85": 9.5,
-            "p99": 18.1
+            "p50": 6.2,
+            "p85": 11.1,
+            "p99": 20.1
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 13.2,
-            "p85": 24.8,
-            "p99": 45.2
+            "p50": 10.3,
+            "p85": 17.8,
+            "p99": 35.5
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.0,
-            "p85": 7.3,
-            "p99": 12.6
+            "p50": 4.3,
+            "p85": 7.8,
+            "p99": 14.9
           },
-          "pr_count": 4
+          "pr_count": 5
         },
         "trends": {}
       }
@@ -660,8 +599,8 @@
       "key": "MLAMB-2603-05",
       "name": "Q1 2026 [March]: Provider content ingestion QA",
       "url": "https://example.invalid/objectives/MLAMB-2603-05",
-      "leader_engineer": "Hiro Vasquez",
-      "leader_engineer_login": "hvasquez",
+      "leader_engineer": "Uma Barone",
+      "leader_engineer_login": "ubarone",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -675,7 +614,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Hiro Vasquez",
+        "author": "Uma Barone",
         "status": "Green",
         "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
         "target_next_week": "Move to maintenance; capture learnings into the runbook.",
@@ -695,9 +634,9 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 6,
+          "prs_total": 7,
           "prs_measured": 6,
-          "prs_linked_to_objective": 6
+          "prs_linked_to_objective": 7
         },
         "dora": {
           "deployment_frequency": {
@@ -707,8 +646,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 525,
-            "p99": 1549
+            "p50": 579,
+            "p99": 1926
           },
           "change_failure_rate": null,
           "mttr": null
@@ -716,21 +655,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.0,
-            "p85": 3.6,
-            "p99": 5.9
+            "p50": 1.7,
+            "p85": 3.0,
+            "p99": 5.6
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 4.4,
-            "p85": 7.7,
-            "p99": 13.8
+            "p50": 4.0,
+            "p85": 6.7,
+            "p99": 14.2
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.9,
-            "p99": 3.2
+            "p50": 1.8,
+            "p85": 3.0,
+            "p99": 5.3
           },
           "pr_count": 6
         },
@@ -741,8 +680,8 @@
   "outputs": {
     "email": {
       "subject": "Weekly Objective Update — Lambda Ingestion — Week 13",
-      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">3/5 objectives on track, 0 at risk, 1 missing updates, 0 not started, 1 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Lambda Ingestion</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Lambda Ingestion — Week 13</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">March Objectives</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">3</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">2</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#64748b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Missing Updates</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Lambda Ingestion</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Cross-locale asset governance (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Ellis Marín</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">74%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:74%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Broken-image sentinel (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Pia Rivas</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">66%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:66%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Cadence dashboard for editors (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Hiro Vasquez</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">76%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:76%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f8fafc;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-02\" target=\"_blank\" style=\"color:#64748b;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Legacy asset migration (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Bram Larsson</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#e2e8f0;color:#64748b;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Missing Updates</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#64748b;font-weight:bold;margin-left:8px;\">30%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:30%;max-width:100%;height:6px;line-height:6px;background-color:#64748b;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">No update was captured this week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Sync with the owner and file the missing update retroactively.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-05\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Provider content ingestion QA (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Hiro Vasquez</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed the migration cutover; no incidents in the follow-up window.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Move to maintenance; capture learnings into the runbook.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Broken-image sentinel\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Downstream integration test suite is flaky; may hide a regression at go-live.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Pia Rivas &nbsp;|&nbsp; Owner: Pia Rivas &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #64748b;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Legacy asset migration\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">No owner reachable this week.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Bram Larsson &nbsp;|&nbsp; Owner: Bram Larsson &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Lambda Ingestion<br>\n                                        Week 13\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
-      "text": "Weekly Objective Update — Lambda Ingestion — Week 13\n\nSUMMARY\n- On track: 3/5\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 1\n- Missing updates: 1\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q1 2026 [March]: Cross-locale asset governance (march-2026)\nLeader Engineer: Ellis Marín\nProgress: 74% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Broken-image sentinel (march-2026)\nLeader Engineer: Pia Rivas\nProgress: 66% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-03\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Cadence dashboard for editors (march-2026)\nLeader Engineer: Hiro Vasquez\nProgress: 76% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-04\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[MISSING UPDATES] Q1 2026 [March]: Legacy asset migration (march-2026)\nLeader Engineer: Bram Larsson\nProgress: 30% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-02\nDone this week: No update was captured this week.\nPlan for next week: Sync with the owner and file the missing update retroactively.\n\n[DONE] Q1 2026 [March]: Provider content ingestion QA (march-2026)\nLeader Engineer: Hiro Vasquez\nProgress: 100% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-05\nDone this week: Landed the migration cutover; no incidents in the follow-up window.\nPlan for next week: Move to maintenance; capture learnings into the runbook.\n\nBLOCKERS / RISKS\n- [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.\n  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a\n- [Risk] Q1 2026 [March]: Legacy asset migration: No owner reachable this week.\n  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a\n\nKind Regards\nEngineering Manager"
+      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">3/5 objectives on track, 0 at risk, 1 missing updates, 0 not started, 1 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Lambda Ingestion</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Lambda Ingestion — Week 13</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">March Objectives</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">3</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">2</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#64748b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Missing Updates</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Lambda Ingestion</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Cross-locale asset governance (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Uma Cordova</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">74%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:74%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Broken-image sentinel (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Uma Barone</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">66%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:66%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Cadence dashboard for editors (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Uma Cordova</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">76%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:76%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f8fafc;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-02\" target=\"_blank\" style=\"color:#64748b;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Legacy asset migration (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Enzo Rivas</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#e2e8f0;color:#64748b;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Missing Updates</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#64748b;font-weight:bold;margin-left:8px;\">30%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:30%;max-width:100%;height:6px;line-height:6px;background-color:#64748b;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">No update was captured this week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Sync with the owner and file the missing update retroactively.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MLAMB-2603-05\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Provider content ingestion QA (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Uma Barone</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed the migration cutover; no incidents in the follow-up window.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Move to maintenance; capture learnings into the runbook.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Broken-image sentinel\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Downstream integration test suite is flaky; may hide a regression at go-live.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Uma Barone &nbsp;|&nbsp; Owner: Uma Barone &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #64748b;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Legacy asset migration\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">No owner reachable this week.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Enzo Rivas &nbsp;|&nbsp; Owner: Enzo Rivas &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Lambda Ingestion<br>\n                                        Week 13\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
+      "text": "Weekly Objective Update — Lambda Ingestion — Week 13\n\nSUMMARY\n- On track: 3/5\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 1\n- Missing updates: 1\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q1 2026 [March]: Cross-locale asset governance (march-2026)\nLeader Engineer: Uma Cordova\nProgress: 74% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Broken-image sentinel (march-2026)\nLeader Engineer: Uma Barone\nProgress: 66% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-03\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Cadence dashboard for editors (march-2026)\nLeader Engineer: Uma Cordova\nProgress: 76% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-04\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[MISSING UPDATES] Q1 2026 [March]: Legacy asset migration (march-2026)\nLeader Engineer: Enzo Rivas\nProgress: 30% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-02\nDone this week: No update was captured this week.\nPlan for next week: Sync with the owner and file the missing update retroactively.\n\n[DONE] Q1 2026 [March]: Provider content ingestion QA (march-2026)\nLeader Engineer: Uma Barone\nProgress: 100% | Due: 31 Mar\nLink: https://example.invalid/objectives/MLAMB-2603-05\nDone this week: Landed the migration cutover; no incidents in the follow-up window.\nPlan for next week: Move to maintenance; capture learnings into the runbook.\n\nBLOCKERS / RISKS\n- [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.\n  Leader Engineer: Uma Barone | Owner: Uma Barone | Days open: n/a\n- [Risk] Q1 2026 [March]: Legacy asset migration: No owner reachable this week.\n  Leader Engineer: Enzo Rivas | Owner: Enzo Rivas | Days open: n/a\n\nKind Regards\nEngineering Manager"
     }
   }
 }

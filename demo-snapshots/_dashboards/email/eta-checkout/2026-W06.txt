@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [February]: Personalised trip recommendations (february-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Joss Yates
 Progress: 24% | Due: 28 Feb
 Link: https://example.invalid/objectives/META-2602-01
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [February]: Refund status transparency (february-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Joss Yates
 Progress: 24% | Due: 28 Feb
 Link: https://example.invalid/objectives/META-2602-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [February]: Passenger name-change flow (february-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Hal Haas
 Progress: 25% | Due: 28 Feb
 Link: https://example.invalid/objectives/META-2602-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [February]: Cart persistence across surfaces (february-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Hal Haas
 Progress: 18% | Due: 28 Feb
 Link: https://example.invalid/objectives/META-2602-04
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Purchase confirmation clarity (february-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Hal Rihanna
 Progress: 24% | Due: 28 Feb
 Link: https://example.invalid/objectives/META-2602-05
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
@@ -52,9 +52,9 @@ Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [February]: Cart persistence across surfaces: Legal sign-off outstanding.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Hal Haas | Owner: Hal Haas | Days open: n/a
 - [Risk] Q1 2026 [February]: Purchase confirmation clarity: Update deferred; owner on PTO.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Hal Rihanna | Owner: Hal Rihanna | Days open: n/a
 
 Kind Regards
 Engineering Manager

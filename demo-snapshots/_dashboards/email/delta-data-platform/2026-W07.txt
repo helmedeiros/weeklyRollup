@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [February]: Feature flag rollout guardrails (february-2026)
-Leader Engineer: Ava Thornton
+Leader Engineer: Gwen Yates
 Progress: 41% | Due: 28 Feb
 Link: https://example.invalid/objectives/MDELT-2602-01
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Config drift auto-repair (february-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Ellis Larsson
 Progress: 43% | Due: 28 Feb
 Link: https://example.invalid/objectives/MDELT-2602-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Zero-downtime restart choreography (february-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Nya Okonjo
 Progress: 30% | Due: 28 Feb
 Link: https://example.invalid/objectives/MDELT-2602-03
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [February]: Observability sampling refresh (february-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Ellis Larsson
 Progress: 16% | Due: 28 Feb
 Link: https://example.invalid/objectives/MDELT-2602-04
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
@@ -45,9 +45,9 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [February]: Zero-downtime restart choreography: Adjacent team is mid-migration — could take longer to help if we hit a snag.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+  Leader Engineer: Nya Okonjo | Owner: Nya Okonjo | Days open: n/a
 - [Risk] Q1 2026 [February]: Observability sampling refresh: No owner reachable this week.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Ellis Larsson | Owner: Ellis Larsson | Days open: n/a
 
 Kind Regards
 Engineering Manager

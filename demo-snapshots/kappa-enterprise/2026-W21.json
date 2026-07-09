@@ -40,19 +40,19 @@
     },
     "coverage": {
       "prs_total": 18,
-      "prs_measured": 16,
+      "prs_measured": 15,
       "prs_linked_to_objective": null
     },
     "dora": {
       "deployment_frequency": {
         "unit": "deploys/week",
-        "total": 5,
-        "weekly_average": 5.0
+        "total": 6,
+        "weekly_average": 6.0
       },
       "lead_time": {
         "unit": "minutes",
-        "p50": 3433,
-        "p99": 10300
+        "p50": 3258,
+        "p99": 9396
       },
       "change_failure_rate": null,
       "mttr": null
@@ -60,30 +60,30 @@
     "review": {
       "time_to_first_review": {
         "unit": "business_hours",
-        "p50": 12.2,
-        "p85": 23.0,
-        "p99": 40.3
+        "p50": 8.1,
+        "p85": 15.6,
+        "p99": 25.7
       },
       "review_to_approved": {
         "unit": "business_hours",
-        "p50": 25.4,
-        "p85": 49.6,
-        "p99": 72.5
+        "p50": 16.2,
+        "p85": 29.1,
+        "p99": 53.3
       },
       "rework_time": {
         "unit": "business_hours",
-        "p50": 8.3,
-        "p85": 14.4,
-        "p99": 27.2
+        "p50": 5.9,
+        "p85": 9.9,
+        "p99": 16.7
       },
-      "pr_count": 16
+      "pr_count": 15
     },
     "trends": {}
   },
   "engineers": [
     {
-      "login": "athornton",
-      "name": "Ava Thornton",
+      "login": "eyates",
+      "name": "Enzo Yates",
       "objective_keys": [
         "MKAPP-2605-02"
       ],
@@ -92,8 +92,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "athornton",
-          "display": "Ava Thornton"
+          "ref": "eyates",
+          "display": "Enzo Yates"
         },
         "window": {
           "from": "2026-05-18",
@@ -101,8 +101,8 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 7,
+          "prs_total": 5,
+          "prs_measured": 4,
           "prs_linked_to_objective": null
         },
         "dora": {
@@ -113,8 +113,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 435,
-            "p99": 1286
+            "p50": 3258,
+            "p99": 9396
           },
           "change_failure_rate": null,
           "mttr": null
@@ -122,31 +122,32 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.2,
-            "p85": 3.9,
-            "p99": 6.9
+            "p50": 8.0,
+            "p85": 14.1,
+            "p99": 25.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 4.1,
-            "p85": 7.5,
-            "p99": 13.9
+            "p50": 16.2,
+            "p85": 28.6,
+            "p99": 53.3
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.8,
-            "p99": 3.2
+            "p50": 5.9,
+            "p85": 9.9,
+            "p99": 16.7
           },
-          "pr_count": 7
+          "pr_count": 4
         },
         "trends": {}
       }
     },
     {
-      "login": "hvasquez",
-      "name": "Hiro Vasquez",
+      "login": "gostberg",
+      "name": "Gali Ostberg",
       "objective_keys": [
+        "MKAPP-2605-01",
         "MKAPP-2605-03"
       ],
       "flow_metrics": {
@@ -154,8 +155,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "hvasquez",
-          "display": "Hiro Vasquez"
+          "ref": "gostberg",
+          "display": "Gali Ostberg"
         },
         "window": {
           "from": "2026-05-18",
@@ -163,20 +164,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 2,
-          "prs_measured": 1,
+          "prs_total": 8,
+          "prs_measured": 6,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 0,
-            "weekly_average": 0.0
+            "total": 2,
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 7227,
-            "p99": 20504
+            "p50": 4244,
+            "p99": 12862
           },
           "change_failure_rate": null,
           "mttr": null
@@ -184,92 +185,30 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 23.4,
-            "p85": 45.0,
-            "p99": 67.4
+            "p50": 13.4,
+            "p85": 23.9,
+            "p99": 41.8
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 44.7,
-            "p85": 78.3,
-            "p99": 130.7
+            "p50": 34.2,
+            "p85": 57.5,
+            "p99": 107.9
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 16.1,
-            "p85": 28.7,
-            "p99": 56.3
+            "p50": 16.6,
+            "p85": 27.0,
+            "p99": 54.9
           },
-          "pr_count": 1
+          "pr_count": 6
         },
         "trends": {}
       }
     },
     {
-      "login": "qyates",
-      "name": "Quinn Yates",
-      "objective_keys": [
-        "MKAPP-2605-01"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "qyates",
-          "display": "Quinn Yates"
-        },
-        "window": {
-          "from": "2026-05-18",
-          "to": "2026-05-24",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 3,
-          "prs_measured": 3,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 5239,
-            "p99": 15536
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 18.1,
-            "p85": 35.7,
-            "p99": 58.0
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 39.0,
-            "p85": 76.6,
-            "p99": 109.2
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 12.4,
-            "p85": 21.3,
-            "p99": 41.4
-          },
-          "pr_count": 3
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "tilves",
-      "name": "Tomo Ilves",
+      "login": "vohno",
+      "name": "Vin Ohno",
       "objective_keys": [
         "MKAPP-2605-04"
       ],
@@ -278,8 +217,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "tilves",
-          "display": "Tomo Ilves"
+          "ref": "vohno",
+          "display": "Vin Ohno"
         },
         "window": {
           "from": "2026-05-18",
@@ -299,8 +238,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1627,
-            "p99": 5063
+            "p50": 2255,
+            "p99": 6091
           },
           "change_failure_rate": null,
           "mttr": null
@@ -308,21 +247,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.3,
-            "p85": 10.2,
-            "p99": 22.6
+            "p50": 8.1,
+            "p85": 15.6,
+            "p99": 25.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 11.9,
-            "p85": 22.7,
-            "p99": 35.8
+            "p50": 14.6,
+            "p85": 29.1,
+            "p99": 44.1
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.3,
-            "p85": 7.6,
-            "p99": 13.1
+            "p50": 5.1,
+            "p85": 9.0,
+            "p99": 14.7
           },
           "pr_count": 5
         },
@@ -335,8 +274,8 @@
       "key": "MKAPP-2605-01",
       "name": "Q2 2026 [May]: Partner billing reconciliation",
       "url": "https://example.invalid/objectives/MKAPP-2605-01",
-      "leader_engineer": "Quinn Yates",
-      "leader_engineer_login": "qyates",
+      "leader_engineer": "Gali Ostberg",
+      "leader_engineer_login": "gostberg",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -350,7 +289,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Quinn Yates",
+        "author": "Gali Ostberg",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
@@ -370,20 +309,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 3,
-          "prs_measured": 3,
-          "prs_linked_to_objective": 3
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 0.8
+            "total": 2,
+            "weekly_average": 1.6
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 5239,
-            "p99": 15536
+            "p50": 2395,
+            "p99": 7423
           },
           "change_failure_rate": null,
           "mttr": null
@@ -391,23 +330,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 18.1,
-            "p85": 35.7,
-            "p99": 58.0
+            "p50": 7.9,
+            "p85": 13.5,
+            "p99": 23.9
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 39.0,
-            "p85": 76.6,
-            "p99": 109.2
+            "p50": 16.6,
+            "p85": 29.9,
+            "p99": 55.7
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 12.4,
-            "p85": 21.3,
-            "p99": 41.4
+            "p50": 6.5,
+            "p85": 10.9,
+            "p99": 21.3
           },
-          "pr_count": 3
+          "pr_count": 5
         },
         "trends": {}
       }
@@ -416,8 +355,8 @@
       "key": "MKAPP-2605-02",
       "name": "Q2 2026 [May]: Compliance audit trail",
       "url": "https://example.invalid/objectives/MKAPP-2605-02",
-      "leader_engineer": "Ava Thornton",
-      "leader_engineer_login": "athornton",
+      "leader_engineer": "Enzo Yates",
+      "leader_engineer_login": "eyates",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -431,7 +370,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Ava Thornton",
+        "author": "Enzo Yates",
         "status": "Green",
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
@@ -451,9 +390,9 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 7,
-          "prs_linked_to_objective": 8
+          "prs_total": 5,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 5
         },
         "dora": {
           "deployment_frequency": {
@@ -463,8 +402,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 435,
-            "p99": 1286
+            "p50": 3258,
+            "p99": 9396
           },
           "change_failure_rate": null,
           "mttr": null
@@ -472,23 +411,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.2,
-            "p85": 3.9,
-            "p99": 6.9
+            "p50": 8.0,
+            "p85": 14.1,
+            "p99": 25.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 4.1,
-            "p85": 7.5,
-            "p99": 13.9
+            "p50": 16.2,
+            "p85": 28.6,
+            "p99": 53.3
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.8,
-            "p99": 3.2
+            "p50": 5.9,
+            "p85": 9.9,
+            "p99": 16.7
           },
-          "pr_count": 7
+          "pr_count": 4
         },
         "trends": {}
       }
@@ -497,8 +436,8 @@
       "key": "MKAPP-2605-03",
       "name": "Q2 2026 [May]: SLA breach notifier",
       "url": "https://example.invalid/objectives/MKAPP-2605-03",
-      "leader_engineer": "Hiro Vasquez",
-      "leader_engineer_login": "hvasquez",
+      "leader_engineer": "Gali Ostberg",
+      "leader_engineer_login": "gostberg",
       "status": "Red",
       "jira_status": "Blocked",
       "is_done": false,
@@ -512,7 +451,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Hiro Vasquez",
+        "author": "Gali Ostberg",
         "status": "Red",
         "done_this_week": "Waiting on infra migration that was pushed to the next quarter.",
         "target_next_week": "Reassign to a different owner so the current one can help elsewhere.",
@@ -544,8 +483,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 7227,
-            "p99": 20504
+            "p50": 6094,
+            "p99": 18302
           },
           "change_failure_rate": null,
           "mttr": null
@@ -553,21 +492,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 23.4,
-            "p85": 45.0,
-            "p99": 67.4
+            "p50": 18.9,
+            "p85": 34.3,
+            "p99": 59.8
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 44.7,
-            "p85": 78.3,
-            "p99": 130.7
+            "p50": 51.9,
+            "p85": 85.1,
+            "p99": 160.2
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 16.1,
-            "p85": 28.7,
-            "p99": 56.3
+            "p50": 26.6,
+            "p85": 43.1,
+            "p99": 88.4
           },
           "pr_count": 1
         },
@@ -578,8 +517,8 @@
       "key": "MKAPP-2605-04",
       "name": "Q2 2026 [May]: Partner API rate-limit v2",
       "url": "https://example.invalid/objectives/MKAPP-2605-04",
-      "leader_engineer": "Tomo Ilves",
-      "leader_engineer_login": "tilves",
+      "leader_engineer": "Vin Ohno",
+      "leader_engineer_login": "vohno",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -593,7 +532,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Tomo Ilves",
+        "author": "Vin Ohno",
         "status": "Green",
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
@@ -621,12 +560,12 @@
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 1.6
+            "weekly_average": 1.8
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1627,
-            "p99": 5063
+            "p50": 2255,
+            "p99": 6091
           },
           "change_failure_rate": null,
           "mttr": null
@@ -634,21 +573,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.3,
-            "p85": 10.2,
-            "p99": 22.6
+            "p50": 8.1,
+            "p85": 15.6,
+            "p99": 25.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 11.9,
-            "p85": 22.7,
-            "p99": 35.8
+            "p50": 14.6,
+            "p85": 29.1,
+            "p99": 44.1
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.3,
-            "p85": 7.6,
-            "p99": 13.1
+            "p50": 5.1,
+            "p85": 9.0,
+            "p99": 14.7
           },
           "pr_count": 5
         },
@@ -659,8 +598,8 @@
   "outputs": {
     "email": {
       "subject": "Weekly Objective Update — Kappa Enterprise Ops — Week 21",
-      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">3/4 objectives on track, 1 at risk, 0 missing updates, 0 not started, 0 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Kappa Enterprise Ops</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Kappa Enterprise Ops — Week 21</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">May Objectives</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">3</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Delayed</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Blockers</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Kappa Enterprise Ops</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [May]: Partner billing reconciliation (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Quinn Yates</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">36%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:36%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [May]: Compliance audit trail (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Ava Thornton</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">72%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:72%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Prep work is done; kickoff of the customer-facing rollout starts Monday.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Ship remaining PRs; start canary rollout by Wednesday.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [May]: Partner API rate-limit v2 (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Tomo Ilves</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">61%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:61%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#fef2f2;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-03\" target=\"_blank\" style=\"color:#dc2626;text-decoration:none;font-weight:700;\">Q2 2026 [May]: SLA breach notifier (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Hiro Vasquez</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#fee2e2;color:#dc2626;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Delayed</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#dc2626;font-weight:bold;margin-left:8px;\">21%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:21%;max-width:100%;height:6px;line-height:6px;background-color:#dc2626;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Waiting on infra migration that was pushed to the next quarter.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Reassign to a different owner so the current one can help elsewhere.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #dc2626;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Blocker</span>Q2 2026 [May]: SLA breach notifier\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Infra migration blocking rollout; owner: platform.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Hiro Vasquez &nbsp;|&nbsp; Owner: Hiro Vasquez &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [May]: Partner billing reconciliation\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Update deferred; owner on PTO.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Quinn Yates &nbsp;|&nbsp; Owner: Quinn Yates &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Kappa Enterprise Ops<br>\n                                        Week 21\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
-      "text": "Weekly Objective Update — Kappa Enterprise Ops — Week 21\n\nSUMMARY\n- On track: 3/4\n- At risk: 1 (1 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q2 2026 [May]: Partner billing reconciliation (may-2026)\nLeader Engineer: Quinn Yates\nProgress: 36% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q2 2026 [May]: Compliance audit trail (may-2026)\nLeader Engineer: Ava Thornton\nProgress: 72% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-02\nDone this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.\nPlan for next week: Ship remaining PRs; start canary rollout by Wednesday.\n\n[ON TRACK] Q2 2026 [May]: Partner API rate-limit v2 (may-2026)\nLeader Engineer: Tomo Ilves\nProgress: 61% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-04\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[DELAYED] Q2 2026 [May]: SLA breach notifier (may-2026)\nLeader Engineer: Hiro Vasquez\nProgress: 21% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-03\nDone this week: Waiting on infra migration that was pushed to the next quarter.\nPlan for next week: Reassign to a different owner so the current one can help elsewhere.\n\nBLOCKERS / RISKS\n- [Blocker] Q2 2026 [May]: SLA breach notifier: Infra migration blocking rollout; owner: platform.\n  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a\n- [Risk] Q2 2026 [May]: Partner billing reconciliation: Update deferred; owner on PTO.\n  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a\n\nKind Regards\nEngineering Manager"
+      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">3/4 objectives on track, 1 at risk, 0 missing updates, 0 not started, 0 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Kappa Enterprise Ops</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Kappa Enterprise Ops — Week 21</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">May Objectives</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">3</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Delayed</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                    <td width=\"20.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#dc2626;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Blockers</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Kappa Enterprise Ops</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [May]: Partner billing reconciliation (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Gali Ostberg</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">36%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:36%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [May]: Compliance audit trail (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Enzo Yates</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">72%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:72%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Prep work is done; kickoff of the customer-facing rollout starts Monday.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Ship remaining PRs; start canary rollout by Wednesday.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [May]: Partner API rate-limit v2 (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Vin Ohno</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">61%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:61%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#fef2f2;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MKAPP-2605-03\" target=\"_blank\" style=\"color:#dc2626;text-decoration:none;font-weight:700;\">Q2 2026 [May]: SLA breach notifier (may-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Gali Ostberg</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 May</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#fee2e2;color:#dc2626;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Delayed</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#dc2626;font-weight:bold;margin-left:8px;\">21%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:21%;max-width:100%;height:6px;line-height:6px;background-color:#dc2626;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Waiting on infra migration that was pushed to the next quarter.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Reassign to a different owner so the current one can help elsewhere.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #dc2626;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Blocker</span>Q2 2026 [May]: SLA breach notifier\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Infra migration blocking rollout; owner: platform.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Gali Ostberg &nbsp;|&nbsp; Owner: Gali Ostberg &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [May]: Partner billing reconciliation\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Update deferred; owner on PTO.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Gali Ostberg &nbsp;|&nbsp; Owner: Gali Ostberg &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Kappa Enterprise Ops<br>\n                                        Week 21\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
+      "text": "Weekly Objective Update — Kappa Enterprise Ops — Week 21\n\nSUMMARY\n- On track: 3/4\n- At risk: 1 (1 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q2 2026 [May]: Partner billing reconciliation (may-2026)\nLeader Engineer: Gali Ostberg\nProgress: 36% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q2 2026 [May]: Compliance audit trail (may-2026)\nLeader Engineer: Enzo Yates\nProgress: 72% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-02\nDone this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.\nPlan for next week: Ship remaining PRs; start canary rollout by Wednesday.\n\n[ON TRACK] Q2 2026 [May]: Partner API rate-limit v2 (may-2026)\nLeader Engineer: Vin Ohno\nProgress: 61% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-04\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[DELAYED] Q2 2026 [May]: SLA breach notifier (may-2026)\nLeader Engineer: Gali Ostberg\nProgress: 21% | Due: 31 May\nLink: https://example.invalid/objectives/MKAPP-2605-03\nDone this week: Waiting on infra migration that was pushed to the next quarter.\nPlan for next week: Reassign to a different owner so the current one can help elsewhere.\n\nBLOCKERS / RISKS\n- [Blocker] Q2 2026 [May]: SLA breach notifier: Infra migration blocking rollout; owner: platform.\n  Leader Engineer: Gali Ostberg | Owner: Gali Ostberg | Days open: n/a\n- [Risk] Q2 2026 [May]: Partner billing reconciliation: Update deferred; owner on PTO.\n  Leader Engineer: Gali Ostberg | Owner: Gali Ostberg | Days open: n/a\n\nKind Regards\nEngineering Manager"
     }
   }
 }

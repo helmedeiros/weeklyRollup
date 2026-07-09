@@ -74,6 +74,24 @@ class DemoContractTest(unittest.TestCase):
         self.assertLessEqual(m["p50"], m["p85"])
         self.assertLessEqual(m["p85"], m["p99"])
 
+    def test_cross_metric_relationships_hold(self):
+        # First review and rework are legs of review->approved; lead time (a
+        # PR's whole create->deploy journey) dominates review time.
+        for outcome in ("done", "on_track", "at_risk", "blocked", "missing"):
+            b = self.provider.fetch(FlowScope("objective", "K", outcomes=(outcome,)), _window())
+            ttfr = b["review"]["time_to_first_review"]["p50"]
+            approve = b["review"]["review_to_approved"]["p50"]
+            rework = b["review"]["rework_time"]["p50"]
+            lead_hours = b["dora"]["lead_time"]["p50"] / 60
+            self.assertLessEqual(ttfr, approve, outcome)
+            self.assertLessEqual(rework, approve, outcome)
+            self.assertGreaterEqual(lead_hours, approve, outcome)
+
+    def test_health_bias_shifts_and_clamps(self):
+        self.assertGreater(FlowScope("team", "t", outcomes=("done",), health_bias=0.4).health, 0.0)
+        self.assertEqual(FlowScope("team", "t", health_bias=5.0).health, 1.0)
+        self.assertEqual(FlowScope("team", "t", outcomes=("done",), health_bias=-5.0).health, 0.0)
+
     def test_attribution_coverage_only_at_objective_scope(self):
         obj = self.provider.fetch(FlowScope("objective", "MABC-2606-01"), _window())
         team = self.provider.fetch(FlowScope("team", "eta"), _window())

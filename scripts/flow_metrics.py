@@ -89,6 +89,7 @@ class FlowScope:
     ref: str
     display: str | None = None
     outcomes: tuple[str, ...] = field(default_factory=tuple)
+    health_bias: float = 0.0  # demo-only: a team's persistent performance signature
 
     def __post_init__(self) -> None:
         if self.level not in VALID_LEVELS:
@@ -97,9 +98,10 @@ class FlowScope:
     @property
     def health(self) -> float:
         """0.0 = healthy, 1.0 = maximally struggling."""
-        if not self.outcomes:
-            return 0.3
-        return sum(_OUTCOME_HEALTH.get(o, 0.3) for o in self.outcomes) / len(self.outcomes)
+        base = 0.3 if not self.outcomes else (
+            sum(_OUTCOME_HEALTH.get(o, 0.3) for o in self.outcomes) / len(self.outcomes)
+        )
+        return max(0.0, min(1.0, base + self.health_bias))
 
 
 def build_flow_block(
@@ -255,17 +257,25 @@ class DemoFlowMetricsProvider(FlowMetricsProvider):
         rng = random.Random(f"flow|{self.source}|{scope.level}|{scope.ref}|{window.key}")
         h = scope.health
 
-        # --- code-review metrics (business hours) ---
-        ttfr = self._pcts(_lerp(2.0, 22.0, h), rng, UNIT_REVIEW)
-        approve = self._pcts(_lerp(4.0, 46.0, h), rng, UNIT_REVIEW)
-        rework = self._pcts(_lerp(1.0, 16.0, h), rng, UNIT_REVIEW)
+        # --- code-review metrics (business hours), tied by real relationships ---
+        # A PR is created, waits for a first review, goes through rework, then is
+        # approved. So first-review and rework are fractions of the full
+        # ready->approved time, never larger than it.
+        approve_p50 = _lerp(4.0, 46.0, h) * rng.uniform(0.9, 1.1)
+        approve = self._pcts(approve_p50, rng, UNIT_REVIEW)
+        ttfr = self._pcts(approve_p50 * rng.uniform(0.3, 0.6), rng, UNIT_REVIEW)
+        rework = self._pcts(approve_p50 * rng.uniform(0.25, 0.55), rng, UNIT_REVIEW)
 
         # --- DORA ---
-        lead_p50 = round(_lerp(480.0, 6800.0, h) * rng.uniform(0.9, 1.1))
+        # Lead time = PR created -> deployed, so it always dominates review time
+        # (review is a leg of it) plus a deploy-pipeline wait that grows with
+        # struggle.
+        lead_hours = approve_p50 * rng.uniform(1.6, 3.2) + _lerp(2.0, 20.0, h)
+        lead_p50 = round(lead_hours * 60)
         lead_time = {
             "unit": UNIT_LEAD_TIME,
             "p50": lead_p50,
-            "p99": round(lead_p50 * rng.uniform(2.8, 3.6)),
+            "p99": round(lead_p50 * rng.uniform(2.6, 3.4)),
         }
         deploy_hi, deploy_lo = self._DEPLOY_FREQ.get(scope.level, (6.5, 1.5))
         weekly_avg = round(_lerp(deploy_hi, deploy_lo, h) * rng.uniform(0.85, 1.15), 1)

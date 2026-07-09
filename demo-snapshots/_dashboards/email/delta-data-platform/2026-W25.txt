@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [June]: Config drift auto-repair (june-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Sana Barone
 Progress: 69% | Due: 30 Jun
 Link: https://example.invalid/objectives/MDELT-2606-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [June]: Golden-path SLO board (june-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Sana Barone
 Progress: 50% | Due: 30 Jun
 Link: https://example.invalid/objectives/MDELT-2606-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [AT RISK] Q2 2026 [June]: Deprecation channel rollout (june-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Nya Okonjo
 Progress: 31% | Due: 30 Jun
 Link: https://example.invalid/objectives/MDELT-2606-01
 Done this week: Scope grew after user testing; trimming to hit the reduced target.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [AT RISK] Q2 2026 [June]: Warm-cache eviction policy (june-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Sana Okonjo
 Progress: 30% | Due: 30 Jun
 Link: https://example.invalid/objectives/MDELT-2606-02
 Done this week: Waiting on a dependency from an adjacent team; escalation opened.
@@ -45,11 +45,11 @@ Plan for next week: Realign with the partner team and reset the delivery date.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [June]: Deprecation channel rollout: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+  Leader Engineer: Nya Okonjo | Owner: Nya Okonjo | Days open: n/a
 - [Risk] Q2 2026 [June]: Warm-cache eviction policy: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
+  Leader Engineer: Sana Okonjo | Owner: Sana Okonjo | Days open: n/a
 - [Risk] Q2 2026 [June]: Golden-path SLO board: Adjacent team is mid-migration — could take longer to help if we hit a snag.
-  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+  Leader Engineer: Sana Barone | Owner: Sana Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager

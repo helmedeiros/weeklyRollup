@@ -40,19 +40,19 @@
     },
     "coverage": {
       "prs_total": 27,
-      "prs_measured": 26,
+      "prs_measured": 24,
       "prs_linked_to_objective": null
     },
     "dora": {
       "deployment_frequency": {
         "unit": "deploys/week",
-        "total": 8,
-        "weekly_average": 8.0
+        "total": 10,
+        "weekly_average": 10.0
       },
       "lead_time": {
         "unit": "minutes",
-        "p50": 1863,
-        "p99": 5383
+        "p50": 2594,
+        "p99": 7313
       },
       "change_failure_rate": null,
       "mttr": null
@@ -60,92 +60,30 @@
     "review": {
       "time_to_first_review": {
         "unit": "business_hours",
-        "p50": 6.0,
-        "p85": 12.0,
-        "p99": 18.3
+        "p50": 8.8,
+        "p85": 15.7,
+        "p99": 27.9
       },
       "review_to_approved": {
         "unit": "business_hours",
-        "p50": 12.2,
-        "p85": 22.5,
-        "p99": 39.2
+        "p50": 16.8,
+        "p85": 29.6,
+        "p99": 49.5
       },
       "rework_time": {
         "unit": "business_hours",
-        "p50": 4.3,
-        "p85": 8.3,
-        "p99": 15.1
+        "p50": 6.8,
+        "p85": 12.4,
+        "p99": 20.6
       },
-      "pr_count": 26
+      "pr_count": 24
     },
     "trends": {}
   },
   "engineers": [
     {
-      "login": "dokonjo",
-      "name": "Dara Okonjo",
-      "objective_keys": [
-        "MALPH-2603-03"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "dokonjo",
-          "display": "Dara Okonjo"
-        },
-        "window": {
-          "from": "2026-03-02",
-          "to": "2026-03-08",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 3,
-          "prs_measured": 3,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 4344,
-            "p99": 15424
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 14.0,
-            "p85": 24.3,
-            "p99": 44.7
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 27.2,
-            "p85": 52.2,
-            "p99": 81.0
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 9.8,
-            "p85": 16.2,
-            "p99": 29.6
-          },
-          "pr_count": 3
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "emarin",
-      "name": "Ellis Marín",
+      "login": "flarsson",
+      "name": "Frida Larsson",
       "objective_keys": [
         "MALPH-2603-01"
       ],
@@ -154,70 +92,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "emarin",
-          "display": "Ellis Marín"
-        },
-        "window": {
-          "from": "2026-03-02",
-          "to": "2026-03-08",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 7,
-          "prs_measured": 6,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 442,
-            "p99": 1532
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 2.2,
-            "p85": 3.6,
-            "p99": 6.7
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 3.6,
-            "p85": 6.8,
-            "p99": 12.6
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 0.9,
-            "p85": 1.6,
-            "p99": 2.8
-          },
-          "pr_count": 6
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "imarchetti",
-      "name": "Ines Marchetti",
-      "objective_keys": [
-        "MALPH-2603-02"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "imarchetti",
-          "display": "Ines Marchetti"
+          "ref": "flarsson",
+          "display": "Frida Larsson"
         },
         "window": {
           "from": "2026-03-02",
@@ -237,8 +113,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1863,
-            "p99": 5383
+            "p50": 2856,
+            "p99": 8399
           },
           "change_failure_rate": null,
           "mttr": null
@@ -246,21 +122,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.0,
-            "p85": 12.0,
-            "p99": 18.3
+            "p50": 10.2,
+            "p85": 17.0,
+            "p99": 31.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 12.2,
-            "p85": 22.5,
-            "p99": 39.2
+            "p50": 17.0,
+            "p85": 29.5,
+            "p99": 47.8
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.3,
-            "p85": 8.3,
-            "p99": 15.1
+            "p50": 6.3,
+            "p85": 12.2,
+            "p99": 18.5
           },
           "pr_count": 5
         },
@@ -268,18 +144,18 @@
       }
     },
     {
-      "login": "jcabrera",
-      "name": "Jules Cabrera",
+      "login": "fohno",
+      "name": "Frida Ohno",
       "objective_keys": [
-        "MALPH-2603-05"
+        "MALPH-2603-03"
       ],
       "flow_metrics": {
         "contract_version": 1,
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "jcabrera",
-          "display": "Jules Cabrera"
+          "ref": "fohno",
+          "display": "Frida Ohno"
         },
         "window": {
           "from": "2026-03-02",
@@ -287,8 +163,8 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 8,
+          "prs_total": 6,
+          "prs_measured": 5,
           "prs_linked_to_objective": null
         },
         "dora": {
@@ -299,8 +175,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 494,
-            "p99": 1771
+            "p50": 2103,
+            "p99": 5609
           },
           "change_failure_rate": null,
           "mttr": null
@@ -308,30 +184,30 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.0,
-            "p85": 3.5,
-            "p99": 6.0
+            "p50": 8.7,
+            "p85": 15.3,
+            "p99": 25.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 4.1,
-            "p85": 8.2,
-            "p99": 12.4
+            "p50": 16.5,
+            "p85": 29.6,
+            "p99": 48.3
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 0.9,
-            "p85": 1.7,
-            "p99": 2.6
+            "p50": 5.8,
+            "p85": 11.5,
+            "p99": 17.7
           },
-          "pr_count": 8
+          "pr_count": 5
         },
         "trends": {}
       }
     },
     {
-      "login": "nsardar",
-      "name": "Nya Sardar",
+      "login": "lrihanna",
+      "name": "Lena Rihanna",
       "objective_keys": [
         "MALPH-2603-04"
       ],
@@ -340,8 +216,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "nsardar",
-          "display": "Nya Sardar"
+          "ref": "lrihanna",
+          "display": "Lena Rihanna"
         },
         "window": {
           "from": "2026-03-02",
@@ -349,20 +225,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 4,
+          "prs_total": 5,
           "prs_measured": 4,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.0
+            "total": 2,
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 4529,
-            "p99": 14460
+            "p50": 2331,
+            "p99": 6227
           },
           "change_failure_rate": null,
           "mttr": null
@@ -370,23 +246,86 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 13.9,
-            "p85": 22.8,
-            "p99": 39.5
+            "p50": 5.9,
+            "p85": 11.7,
+            "p99": 19.1
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 29.5,
-            "p85": 48.6,
-            "p99": 98.6
+            "p50": 15.7,
+            "p85": 25.5,
+            "p99": 50.8
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 10.9,
-            "p85": 19.8,
-            "p99": 38.6
+            "p50": 9.6,
+            "p85": 17.2,
+            "p99": 32.7
           },
           "pr_count": 4
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "nvolkov",
+      "name": "Nya Volkov",
+      "objective_keys": [
+        "MALPH-2603-02",
+        "MALPH-2603-05"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "nvolkov",
+          "display": "Nya Volkov"
+        },
+        "window": {
+          "from": "2026-03-02",
+          "to": "2026-03-08",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 11,
+          "prs_measured": 10,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 4.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 2966,
+            "p99": 9891
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 9.0,
+            "p85": 16.1,
+            "p99": 30.4
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 17.9,
+            "p85": 30.6,
+            "p99": 57.2
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 7.2,
+            "p85": 12.7,
+            "p99": 22.6
+          },
+          "pr_count": 10
         },
         "trends": {}
       }
@@ -397,8 +336,8 @@
       "key": "MALPH-2603-01",
       "name": "Q1 2026 [March]: Warm-cache eviction policy",
       "url": "https://example.invalid/objectives/MALPH-2603-01",
-      "leader_engineer": "Ellis Marín",
-      "leader_engineer_login": "emarin",
+      "leader_engineer": "Frida Larsson",
+      "leader_engineer_login": "flarsson",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -412,7 +351,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Ellis Marín",
+        "author": "Frida Larsson",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -432,20 +371,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 7,
-          "prs_measured": 6,
-          "prs_linked_to_objective": 7
+          "prs_total": 5,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 5
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.0
+            "weekly_average": 1.9
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 442,
-            "p99": 1532
+            "p50": 2856,
+            "p99": 8399
           },
           "change_failure_rate": null,
           "mttr": null
@@ -453,23 +392,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.2,
-            "p85": 3.6,
-            "p99": 6.7
+            "p50": 10.2,
+            "p85": 17.0,
+            "p99": 31.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.6,
-            "p85": 6.8,
-            "p99": 12.6
+            "p50": 17.0,
+            "p85": 29.5,
+            "p99": 47.8
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 0.9,
-            "p85": 1.6,
-            "p99": 2.8
+            "p50": 6.3,
+            "p85": 12.2,
+            "p99": 18.5
           },
-          "pr_count": 6
+          "pr_count": 5
         },
         "trends": {}
       }
@@ -478,8 +417,8 @@
       "key": "MALPH-2603-02",
       "name": "Q1 2026 [March]: Config drift auto-repair",
       "url": "https://example.invalid/objectives/MALPH-2603-02",
-      "leader_engineer": "Ines Marchetti",
-      "leader_engineer_login": "imarchetti",
+      "leader_engineer": "Nya Volkov",
+      "leader_engineer_login": "nvolkov",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -493,7 +432,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Ines Marchetti",
+        "author": "Nya Volkov",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -513,20 +452,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 5,
-          "prs_measured": 5,
-          "prs_linked_to_objective": 5
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 1.7
+            "weekly_average": 1.5
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1863,
-            "p99": 5383
+            "p50": 2461,
+            "p99": 8268
           },
           "change_failure_rate": null,
           "mttr": null
@@ -534,23 +473,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.0,
-            "p85": 12.0,
-            "p99": 18.3
+            "p50": 8.3,
+            "p85": 16.0,
+            "p99": 28.5
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 12.2,
-            "p85": 22.5,
-            "p99": 39.2
+            "p50": 18.8,
+            "p85": 32.4,
+            "p99": 58.7
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.3,
-            "p85": 8.3,
-            "p99": 15.1
+            "p50": 9.5,
+            "p85": 15.6,
+            "p99": 28.3
           },
-          "pr_count": 5
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -559,8 +498,8 @@
       "key": "MALPH-2603-03",
       "name": "Q1 2026 [March]: Zero-downtime restart choreography",
       "url": "https://example.invalid/objectives/MALPH-2603-03",
-      "leader_engineer": "Dara Okonjo",
-      "leader_engineer_login": "dokonjo",
+      "leader_engineer": "Frida Ohno",
+      "leader_engineer_login": "fohno",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -574,7 +513,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Dara Okonjo",
+        "author": "Frida Ohno",
         "status": "Green",
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
@@ -594,20 +533,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 3,
-          "prs_measured": 3,
-          "prs_linked_to_objective": 3
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.1
+            "total": 2,
+            "weekly_average": 1.9
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 4344,
-            "p99": 15424
+            "p50": 2103,
+            "p99": 5609
           },
           "change_failure_rate": null,
           "mttr": null
@@ -615,23 +554,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 14.0,
-            "p85": 24.3,
-            "p99": 44.7
+            "p50": 8.7,
+            "p85": 15.3,
+            "p99": 25.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 27.2,
-            "p85": 52.2,
-            "p99": 81.0
+            "p50": 16.5,
+            "p85": 29.6,
+            "p99": 48.3
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 9.8,
-            "p85": 16.2,
-            "p99": 29.6
+            "p50": 5.8,
+            "p85": 11.5,
+            "p99": 17.7
           },
-          "pr_count": 3
+          "pr_count": 5
         },
         "trends": {}
       }
@@ -640,8 +579,8 @@
       "key": "MALPH-2603-04",
       "name": "Q1 2026 [March]: Golden-path SLO board",
       "url": "https://example.invalid/objectives/MALPH-2603-04",
-      "leader_engineer": "Nya Sardar",
-      "leader_engineer_login": "nsardar",
+      "leader_engineer": "Lena Rihanna",
+      "leader_engineer_login": "lrihanna",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -655,7 +594,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Nya Sardar",
+        "author": "Lena Rihanna",
         "status": "Green",
         "done_this_week": "Cleared the staging soak; production rollout scheduled for early next week.",
         "target_next_week": "Ship remaining PRs; start canary rollout by Wednesday.",
@@ -675,20 +614,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 4,
+          "prs_total": 5,
           "prs_measured": 4,
-          "prs_linked_to_objective": 4
+          "prs_linked_to_objective": 5
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.2
+            "total": 2,
+            "weekly_average": 1.6
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 4529,
-            "p99": 14460
+            "p50": 2331,
+            "p99": 6227
           },
           "change_failure_rate": null,
           "mttr": null
@@ -696,21 +635,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 13.9,
-            "p85": 22.8,
-            "p99": 39.5
+            "p50": 5.9,
+            "p85": 11.7,
+            "p99": 19.1
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 29.5,
-            "p85": 48.6,
-            "p99": 98.6
+            "p50": 15.7,
+            "p85": 25.5,
+            "p99": 50.8
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 10.9,
-            "p85": 19.8,
-            "p99": 38.6
+            "p50": 9.6,
+            "p85": 17.2,
+            "p99": 32.7
           },
           "pr_count": 4
         },
@@ -721,8 +660,8 @@
       "key": "MALPH-2603-05",
       "name": "Q1 2026 [March]: Observability sampling refresh",
       "url": "https://example.invalid/objectives/MALPH-2603-05",
-      "leader_engineer": "Jules Cabrera",
-      "leader_engineer_login": "jcabrera",
+      "leader_engineer": "Nya Volkov",
+      "leader_engineer_login": "nvolkov",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -736,7 +675,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Jules Cabrera",
+        "author": "Nya Volkov",
         "status": "Green",
         "done_this_week": "Prep work is done; kickoff of the customer-facing rollout starts Monday.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -756,20 +695,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 8,
-          "prs_linked_to_objective": 8
+          "prs_total": 5,
+          "prs_measured": 4,
+          "prs_linked_to_objective": 5
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.4
+            "weekly_average": 1.8
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 494,
-            "p99": 1771
+            "p50": 3470,
+            "p99": 11514
           },
           "change_failure_rate": null,
           "mttr": null
@@ -777,23 +716,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.0,
-            "p85": 3.5,
-            "p99": 6.0
+            "p50": 9.7,
+            "p85": 16.3,
+            "p99": 32.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 4.1,
-            "p85": 8.2,
-            "p99": 12.4
+            "p50": 17.0,
+            "p85": 28.9,
+            "p99": 55.8
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 0.9,
-            "p85": 1.7,
-            "p99": 2.6
+            "p50": 4.9,
+            "p85": 9.8,
+            "p99": 16.9
           },
-          "pr_count": 8
+          "pr_count": 4
         },
         "trends": {}
       }
@@ -802,8 +741,8 @@
   "outputs": {
     "email": {
       "subject": "Weekly Objective Update — Alpha Foundations — Week 10",
-      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">5/5 objectives on track, 0 at risk, 0 missing updates, 0 not started, 0 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Alpha Foundations</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Alpha Foundations — Week 10</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">March Objectives</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">2</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Alpha Foundations</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Warm-cache eviction policy (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Ellis Marín</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">17%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:17%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Config drift auto-repair (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Ines Marchetti</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">9%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:9%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Zero-downtime restart choreography (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Dara Okonjo</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">12%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:12%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Cleared the staging soak; production rollout scheduled for early next week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Golden-path SLO board (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Nya Sardar</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">13%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:13%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Cleared the staging soak; production rollout scheduled for early next week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Ship remaining PRs; start canary rollout by Wednesday.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-05\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Observability sampling refresh (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Jules Cabrera</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">18%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:18%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Prep work is done; kickoff of the customer-facing rollout starts Monday.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Zero-downtime restart choreography\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">A single reviewer is a bottleneck; needs a delegate.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Dara Okonjo &nbsp;|&nbsp; Owner: Dara Okonjo &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Golden-path SLO board\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">A single reviewer is a bottleneck; needs a delegate.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Nya Sardar &nbsp;|&nbsp; Owner: Nya Sardar &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Alpha Foundations<br>\n                                        Week 10\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
-      "text": "Weekly Objective Update — Alpha Foundations — Week 10\n\nSUMMARY\n- On track: 5/5\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q1 2026 [March]: Warm-cache eviction policy (march-2026)\nLeader Engineer: Ellis Marín\nProgress: 17% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Config drift auto-repair (march-2026)\nLeader Engineer: Ines Marchetti\nProgress: 9% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-02\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Zero-downtime restart choreography (march-2026)\nLeader Engineer: Dara Okonjo\nProgress: 12% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-03\nDone this week: Cleared the staging soak; production rollout scheduled for early next week.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q1 2026 [March]: Golden-path SLO board (march-2026)\nLeader Engineer: Nya Sardar\nProgress: 13% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-04\nDone this week: Cleared the staging soak; production rollout scheduled for early next week.\nPlan for next week: Ship remaining PRs; start canary rollout by Wednesday.\n\n[ON TRACK] Q1 2026 [March]: Observability sampling refresh (march-2026)\nLeader Engineer: Jules Cabrera\nProgress: 18% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-05\nDone this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\nBLOCKERS / RISKS\n- [Risk] Q1 2026 [March]: Zero-downtime restart choreography: A single reviewer is a bottleneck; needs a delegate.\n  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a\n- [Risk] Q1 2026 [March]: Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.\n  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a\n\nKind Regards\nEngineering Manager"
+      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">5/5 objectives on track, 0 at risk, 0 missing updates, 0 not started, 0 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Alpha Foundations</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Alpha Foundations — Week 10</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">March Objectives</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">2</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Alpha Foundations</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Warm-cache eviction policy (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Frida Larsson</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">17%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:17%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Config drift auto-repair (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Nya Volkov</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">9%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:9%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Zero-downtime restart choreography (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Frida Ohno</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">12%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:12%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Cleared the staging soak; production rollout scheduled for early next week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Golden-path SLO board (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Lena Rihanna</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">13%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:13%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Cleared the staging soak; production rollout scheduled for early next week.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Ship remaining PRs; start canary rollout by Wednesday.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MALPH-2603-05\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q1 2026 [March]: Observability sampling refresh (march-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Nya Volkov</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 31 Mar</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">18%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:18%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Prep work is done; kickoff of the customer-facing rollout starts Monday.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Zero-downtime restart choreography\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">A single reviewer is a bottleneck; needs a delegate.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Frida Ohno &nbsp;|&nbsp; Owner: Frida Ohno &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q1 2026 [March]: Golden-path SLO board\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">A single reviewer is a bottleneck; needs a delegate.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Lena Rihanna &nbsp;|&nbsp; Owner: Lena Rihanna &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Alpha Foundations<br>\n                                        Week 10\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
+      "text": "Weekly Objective Update — Alpha Foundations — Week 10\n\nSUMMARY\n- On track: 5/5\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q1 2026 [March]: Warm-cache eviction policy (march-2026)\nLeader Engineer: Frida Larsson\nProgress: 17% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Config drift auto-repair (march-2026)\nLeader Engineer: Nya Volkov\nProgress: 9% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-02\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q1 2026 [March]: Zero-downtime restart choreography (march-2026)\nLeader Engineer: Frida Ohno\nProgress: 12% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-03\nDone this week: Cleared the staging soak; production rollout scheduled for early next week.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q1 2026 [March]: Golden-path SLO board (march-2026)\nLeader Engineer: Lena Rihanna\nProgress: 13% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-04\nDone this week: Cleared the staging soak; production rollout scheduled for early next week.\nPlan for next week: Ship remaining PRs; start canary rollout by Wednesday.\n\n[ON TRACK] Q1 2026 [March]: Observability sampling refresh (march-2026)\nLeader Engineer: Nya Volkov\nProgress: 18% | Due: 31 Mar\nLink: https://example.invalid/objectives/MALPH-2603-05\nDone this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\nBLOCKERS / RISKS\n- [Risk] Q1 2026 [March]: Zero-downtime restart choreography: A single reviewer is a bottleneck; needs a delegate.\n  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a\n- [Risk] Q1 2026 [March]: Golden-path SLO board: A single reviewer is a bottleneck; needs a delegate.\n  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a\n\nKind Regards\nEngineering Manager"
     }
   }
 }

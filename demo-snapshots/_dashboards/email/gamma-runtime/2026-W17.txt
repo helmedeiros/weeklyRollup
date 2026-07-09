@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [April]: Runtime resource budgets (april-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Ava Anders
 Progress: 83% | Due: 30 Apr
 Link: https://example.invalid/objectives/MGAMM-2604-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [April]: Service topology drift alarm (april-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Joss Tomori
 Progress: 78% | Due: 30 Apr
 Link: https://example.invalid/objectives/MGAMM-2604-03
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [April]: Deprecation channel rollout (april-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Ava Anders
 Progress: 82% | Due: 30 Apr
 Link: https://example.invalid/objectives/MGAMM-2604-04
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [April]: Feature flag rollout guardrails (april-2026)
-Leader Engineer: Jules Cabrera
+Leader Engineer: Ines Ashby
 Progress: 81% | Due: 30 Apr
 Link: https://example.invalid/objectives/MGAMM-2604-05
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [AT RISK] Q2 2026 [April]: Rate-limiter fairness audit (april-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Ines Ashby
 Progress: 44% | Due: 30 Apr
 Link: https://example.invalid/objectives/MGAMM-2604-01
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
@@ -52,7 +52,7 @@ Plan for next week: Focus on removing the current blocker; deprioritise nice-to-
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [April]: Rate-limiter fairness audit: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+  Leader Engineer: Ines Ashby | Owner: Ines Ashby | Days open: n/a
 
 Kind Regards
 Engineering Manager

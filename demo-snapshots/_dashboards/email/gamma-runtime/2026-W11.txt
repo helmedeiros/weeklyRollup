@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [March]: Service topology drift alarm (march-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Ines Ashby
 Progress: 43% | Due: 31 Mar
 Link: https://example.invalid/objectives/MGAMM-2603-01
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [March]: Zero-downtime restart choreography (march-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Ava Anders
 Progress: 43% | Due: 31 Mar
 Link: https://example.invalid/objectives/MGAMM-2603-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [March]: Observability sampling refresh (march-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Bea Sardar
 Progress: 39% | Due: 31 Mar
 Link: https://example.invalid/objectives/MGAMM-2603-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [March]: Config drift auto-repair (march-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Bea Sardar
 Progress: 40% | Due: 31 Mar
 Link: https://example.invalid/objectives/MGAMM-2603-04
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [March]: Rate-limiter fairness audit (march-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Ines Ashby
 Progress: 25% | Due: 31 Mar
 Link: https://example.invalid/objectives/MGAMM-2603-05
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
@@ -52,11 +52,11 @@ Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [March]: Observability sampling refresh: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+  Leader Engineer: Bea Sardar | Owner: Bea Sardar | Days open: n/a
 - [Risk] Q1 2026 [March]: Config drift auto-repair: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Bea Sardar | Owner: Bea Sardar | Days open: n/a
 - [Risk] Q1 2026 [March]: Rate-limiter fairness audit: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
+  Leader Engineer: Ines Ashby | Owner: Ines Ashby | Days open: n/a
 
 Kind Regards
 Engineering Manager

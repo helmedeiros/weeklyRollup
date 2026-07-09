@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q3 2026 [July]: Broken-image sentinel (july-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Enzo Rivas
 Progress: 28% | Due: 31 Jul
 Link: https://example.invalid/objectives/MLAMB-2607-01
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q3 2026 [July]: Publisher content freshness (july-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Cai Thornton
 Progress: 33% | Due: 31 Jul
 Link: https://example.invalid/objectives/MLAMB-2607-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Provider content ingestion QA (july-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Uma Barone
 Progress: 28% | Due: 31 Jul
 Link: https://example.invalid/objectives/MLAMB-2607-03
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Cross-locale asset governance (july-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Enzo Rivas
 Progress: 28% | Due: 31 Jul
 Link: https://example.invalid/objectives/MLAMB-2607-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q3 2026 [July]: Legacy asset migration (july-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Uma Cordova
 Progress: 27% | Due: 31 Jul
 Link: https://example.invalid/objectives/MLAMB-2607-05
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
@@ -52,9 +52,9 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q3 2026 [July]: Cross-locale asset governance: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
+  Leader Engineer: Enzo Rivas | Owner: Enzo Rivas | Days open: n/a
 - [Risk] Q3 2026 [July]: Legacy asset migration: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+  Leader Engineer: Uma Cordova | Owner: Uma Cordova | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [April]: Publisher content freshness (april-2026)
-Leader Engineer: Ava Thornton
+Leader Engineer: Jules Volkov
 Progress: 24% | Due: 30 Apr
 Link: https://example.invalid/objectives/MMU-2604-01
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [April]: Broken-image sentinel (april-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Quinn Tomori
 Progress: 55% | Due: 30 Apr
 Link: https://example.invalid/objectives/MMU-2604-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [April]: Content lint gate (april-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Jules Volkov
 Progress: 38% | Due: 30 Apr
 Link: https://example.invalid/objectives/MMU-2604-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [April]: Cadence dashboard for editors (april-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Jules Volkov
 Progress: 55% | Due: 30 Apr
 Link: https://example.invalid/objectives/MMU-2604-04
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [April]: Provider content ingestion QA (april-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Jules Volkov
 Progress: 42% | Due: 30 Apr
 Link: https://example.invalid/objectives/MMU-2604-05
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
@@ -52,13 +52,13 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [April]: Publisher content freshness: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+  Leader Engineer: Jules Volkov | Owner: Jules Volkov | Days open: n/a
 - [Risk] Q2 2026 [April]: Content lint gate: Design review pending from the sibling team.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+  Leader Engineer: Jules Volkov | Owner: Jules Volkov | Days open: n/a
 - [Risk] Q2 2026 [April]: Cadence dashboard for editors: Adjacent team is mid-migration — could take longer to help if we hit a snag.
-  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+  Leader Engineer: Jules Volkov | Owner: Jules Volkov | Days open: n/a
 - [Risk] Q2 2026 [April]: Provider content ingestion QA: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+  Leader Engineer: Jules Volkov | Owner: Jules Volkov | Days open: n/a
 
 Kind Regards
 Engineering Manager

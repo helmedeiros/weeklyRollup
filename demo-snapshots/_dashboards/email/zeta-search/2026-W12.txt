@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [March]: Loyalty perks eligibility banner (march-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Quinn Okonjo
 Progress: 68% | Due: 31 Mar
 Link: https://example.invalid/objectives/MZETA-2603-01
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [March]: Passenger name-change flow (march-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Quinn Okonjo
 Progress: 72% | Due: 31 Mar
 Link: https://example.invalid/objectives/MZETA-2603-02
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [March]: Search relevance re-ranker (march-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Odin Tomori
 Progress: 46% | Due: 31 Mar
 Link: https://example.invalid/objectives/MZETA-2603-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [March]: Purchase confirmation clarity (march-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Hal Yates
 Progress: 54% | Due: 31 Mar
 Link: https://example.invalid/objectives/MZETA-2603-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
@@ -45,7 +45,7 @@ Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [March]: Search relevance re-ranker: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Odin Tomori | Owner: Odin Tomori | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -39,20 +39,20 @@
       "days": 7
     },
     "coverage": {
-      "prs_total": 16,
-      "prs_measured": 15,
+      "prs_total": 27,
+      "prs_measured": 25,
       "prs_linked_to_objective": null
     },
     "dora": {
       "deployment_frequency": {
         "unit": "deploys/week",
-        "total": 4,
-        "weekly_average": 4.0
+        "total": 8,
+        "weekly_average": 8.0
       },
       "lead_time": {
         "unit": "minutes",
-        "p50": 4149,
-        "p99": 12782
+        "p50": 1174,
+        "p99": 3266
       },
       "change_failure_rate": null,
       "mttr": null
@@ -60,165 +60,40 @@
     "review": {
       "time_to_first_review": {
         "unit": "business_hours",
-        "p50": 12.9,
-        "p85": 21.0,
-        "p99": 40.6
+        "p50": 2.8,
+        "p85": 5.4,
+        "p99": 8.7
       },
       "review_to_approved": {
         "unit": "business_hours",
-        "p50": 28.1,
-        "p85": 46.5,
-        "p99": 95.7
+        "p50": 6.8,
+        "p85": 11.9,
+        "p99": 22.6
       },
       "rework_time": {
         "unit": "business_hours",
-        "p50": 10.3,
-        "p85": 19.6,
-        "p99": 29.2
+        "p50": 2.2,
+        "p85": 3.5,
+        "p99": 7.3
       },
-      "pr_count": 15
+      "pr_count": 25
     },
     "trends": {}
   },
   "engineers": [
     {
-      "login": "fohno",
-      "name": "Frida Ohno",
+      "login": "bcordova",
+      "name": "Bram Cordova",
       "objective_keys": [
-        "MIOTA-2606-03",
-        "MIOTA-2606-04"
+        "MIOTA-2606-03"
       ],
       "flow_metrics": {
         "contract_version": 1,
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "fohno",
-          "display": "Frida Ohno"
-        },
-        "window": {
-          "from": "2026-06-08",
-          "to": "2026-06-14",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 8,
-          "prs_measured": 7,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 4149,
-            "p99": 12782
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 12.9,
-            "p85": 21.0,
-            "p99": 40.6
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 28.1,
-            "p85": 46.5,
-            "p99": 95.7
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 10.3,
-            "p85": 19.6,
-            "p99": 29.2
-          },
-          "pr_count": 7
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "imarchetti",
-      "name": "Ines Marchetti",
-      "objective_keys": [
-        "MIOTA-2606-02"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "imarchetti",
-          "display": "Ines Marchetti"
-        },
-        "window": {
-          "from": "2026-06-08",
-          "to": "2026-06-14",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 2,
-          "prs_measured": 2,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 0,
-            "weekly_average": 0.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 6295,
-            "p99": 21811
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 22.8,
-            "p85": 42.5,
-            "p99": 76.6
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 47.1,
-            "p85": 81.6,
-            "p99": 166.3
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 15.8,
-            "p85": 29.4,
-            "p99": 56.8
-          },
-          "pr_count": 2
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "kostberg",
-      "name": "Kai Ostberg",
-      "objective_keys": [
-        "MIOTA-2606-01"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "kostberg",
-          "display": "Kai Ostberg"
+          "ref": "bcordova",
+          "display": "Bram Cordova"
         },
         "window": {
           "from": "2026-06-08",
@@ -238,8 +113,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1803,
-            "p99": 5112
+            "p50": 1002,
+            "p99": 2653
           },
           "change_failure_rate": null,
           "mttr": null
@@ -247,23 +122,148 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.0,
-            "p85": 10.5,
-            "p99": 19.6
+            "p50": 2.5,
+            "p85": 4.6,
+            "p99": 8.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 13.4,
-            "p85": 23.7,
-            "p99": 40.5
+            "p50": 6.3,
+            "p85": 11.4,
+            "p99": 19.2
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.3,
-            "p85": 7.5,
-            "p99": 12.1
+            "p50": 1.6,
+            "p85": 2.8,
+            "p99": 4.8
           },
           "pr_count": 6
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "jilves",
+      "name": "Jules Ilves",
+      "objective_keys": [
+        "MIOTA-2606-01",
+        "MIOTA-2606-04"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "jilves",
+          "display": "Jules Ilves"
+        },
+        "window": {
+          "from": "2026-06-08",
+          "to": "2026-06-14",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 14,
+          "prs_measured": 12,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 4,
+            "weekly_average": 4.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1174,
+            "p99": 3266
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 2.8,
+            "p85": 5.4,
+            "p99": 8.6
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 6.8,
+            "p85": 11.9,
+            "p99": 22.6
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 2.2,
+            "p85": 3.5,
+            "p99": 7.3
+          },
+          "pr_count": 12
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "lbarone",
+      "name": "Lena Barone",
+      "objective_keys": [
+        "MIOTA-2606-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "lbarone",
+          "display": "Lena Barone"
+        },
+        "window": {
+          "from": "2026-06-08",
+          "to": "2026-06-14",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 2.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 1658,
+            "p99": 4330
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 3.4,
+            "p85": 6.0,
+            "p99": 11.3
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 8.0,
+            "p85": 15.0,
+            "p99": 26.3
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 3.9,
+            "p85": 7.5,
+            "p99": 12.0
+          },
+          "pr_count": 7
         },
         "trends": {}
       }
@@ -274,8 +274,8 @@
       "key": "MIOTA-2606-01",
       "name": "Q2 2026 [June]: Partner API rate-limit v2",
       "url": "https://example.invalid/objectives/MIOTA-2606-01",
-      "leader_engineer": "Kai Ostberg",
-      "leader_engineer_login": "kostberg",
+      "leader_engineer": "Jules Ilves",
+      "leader_engineer_login": "jilves",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -289,7 +289,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Kai Ostberg",
+        "author": "Jules Ilves",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Complete the final code review and enable the feature flag globally.",
@@ -309,20 +309,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 6,
+          "prs_total": 7,
           "prs_measured": 6,
-          "prs_linked_to_objective": 6
+          "prs_linked_to_objective": 7
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 1.8
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1803,
-            "p99": 5112
+            "p50": 1109,
+            "p99": 2998
           },
           "change_failure_rate": null,
           "mttr": null
@@ -330,21 +330,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.0,
-            "p85": 10.5,
-            "p99": 19.6
+            "p50": 3.1,
+            "p85": 6.1,
+            "p99": 9.5
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 13.4,
-            "p85": 23.7,
-            "p99": 40.5
+            "p50": 7.3,
+            "p85": 13.4,
+            "p99": 25.8
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.3,
-            "p85": 7.5,
-            "p99": 12.1
+            "p50": 2.0,
+            "p85": 3.2,
+            "p99": 6.2
           },
           "pr_count": 6
         },
@@ -355,8 +355,8 @@
       "key": "MIOTA-2606-02",
       "name": "Q2 2026 [June]: Contract-tier feature gating",
       "url": "https://example.invalid/objectives/MIOTA-2606-02",
-      "leader_engineer": "Ines Marchetti",
-      "leader_engineer_login": "imarchetti",
+      "leader_engineer": "Lena Barone",
+      "leader_engineer_login": "lbarone",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -370,7 +370,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Ines Marchetti",
+        "author": "Lena Barone",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -390,20 +390,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 2,
-          "prs_measured": 2,
-          "prs_linked_to_objective": 2
+          "prs_total": 7,
+          "prs_measured": 7,
+          "prs_linked_to_objective": 7
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 0,
-            "weekly_average": 0.4
+            "total": 2,
+            "weekly_average": 2.1
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 6295,
-            "p99": 21811
+            "p50": 1658,
+            "p99": 4330
           },
           "change_failure_rate": null,
           "mttr": null
@@ -411,23 +411,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 22.8,
-            "p85": 42.5,
-            "p99": 76.6
+            "p50": 3.4,
+            "p85": 6.0,
+            "p99": 11.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 47.1,
-            "p85": 81.6,
-            "p99": 166.3
+            "p50": 8.0,
+            "p85": 15.0,
+            "p99": 26.3
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 15.8,
-            "p85": 29.4,
-            "p99": 56.8
+            "p50": 3.9,
+            "p85": 7.5,
+            "p99": 12.0
           },
-          "pr_count": 2
+          "pr_count": 7
         },
         "trends": {}
       }
@@ -436,8 +436,8 @@
       "key": "MIOTA-2606-03",
       "name": "Q2 2026 [June]: Compliance audit trail",
       "url": "https://example.invalid/objectives/MIOTA-2606-03",
-      "leader_engineer": "Frida Ohno",
-      "leader_engineer_login": "fohno",
+      "leader_engineer": "Bram Cordova",
+      "leader_engineer_login": "bcordova",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -451,7 +451,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Frida Ohno",
+        "author": "Bram Cordova",
         "status": "Green",
         "done_this_week": "Feature flag is enabled for internal cohorts; watching latency and error rate.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -471,20 +471,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 2,
-          "prs_measured": 2,
-          "prs_linked_to_objective": 2
+          "prs_total": 6,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 0,
-            "weekly_average": 0.4
+            "total": 2,
+            "weekly_average": 1.9
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 6411,
-            "p99": 20157
+            "p50": 1002,
+            "p99": 2653
           },
           "change_failure_rate": null,
           "mttr": null
@@ -492,23 +492,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 20.3,
-            "p85": 33.0,
-            "p99": 65.5
+            "p50": 2.5,
+            "p85": 4.6,
+            "p99": 8.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 44.2,
-            "p85": 72.7,
-            "p99": 153.8
+            "p50": 6.3,
+            "p85": 11.4,
+            "p99": 19.2
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 16.4,
-            "p85": 31.9,
-            "p99": 45.9
+            "p50": 1.6,
+            "p85": 2.8,
+            "p99": 4.8
           },
-          "pr_count": 2
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -517,8 +517,8 @@
       "key": "MIOTA-2606-04",
       "name": "Q2 2026 [June]: SLA breach notifier",
       "url": "https://example.invalid/objectives/MIOTA-2606-04",
-      "leader_engineer": "Frida Ohno",
-      "leader_engineer_login": "fohno",
+      "leader_engineer": "Jules Ilves",
+      "leader_engineer_login": "jilves",
       "status": "Green",
       "jira_status": "In Progress",
       "is_done": false,
@@ -532,7 +532,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Frida Ohno",
+        "author": "Jules Ilves",
         "status": "Green",
         "done_this_week": "Landed 3 of 5 PRs; last two under review with a partner team.",
         "target_next_week": "Wrap the last integration test and hand off to QA.",
@@ -552,20 +552,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 6,
-          "prs_measured": 5,
-          "prs_linked_to_objective": 6
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.1
+            "weekly_average": 1.9
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1887,
-            "p99": 5408
+            "p50": 1239,
+            "p99": 3533
           },
           "change_failure_rate": null,
           "mttr": null
@@ -573,23 +573,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 5.5,
-            "p85": 9.0,
-            "p99": 15.7
+            "p50": 2.5,
+            "p85": 4.8,
+            "p99": 7.6
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 12.0,
-            "p85": 20.3,
-            "p99": 37.6
+            "p50": 6.3,
+            "p85": 10.3,
+            "p99": 19.4
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.2,
-            "p85": 7.2,
-            "p99": 12.6
+            "p50": 2.4,
+            "p85": 3.9,
+            "p99": 8.5
           },
-          "pr_count": 5
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -598,8 +598,8 @@
   "outputs": {
     "email": {
       "subject": "Weekly Objective Update — Iota Partner Portal — Week 24",
-      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">4/4 objectives on track, 0 at risk, 0 missing updates, 0 not started, 0 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Iota Partner Portal</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Iota Partner Portal — Week 24</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">June Objectives</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">2</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Iota Partner Portal</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Partner API rate-limit v2 (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Kai Ostberg</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">42%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:42%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Contract-tier feature gating (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Ines Marchetti</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">14%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:14%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Compliance audit trail (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Frida Ohno</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">21%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:21%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: SLA breach notifier (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Frida Ohno</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">38%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:38%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [June]: Contract-tier feature gating\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Infra migration blocking rollout; owner: platform.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Ines Marchetti &nbsp;|&nbsp; Owner: Ines Marchetti &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [June]: Compliance audit trail\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Legal sign-off outstanding.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Frida Ohno &nbsp;|&nbsp; Owner: Frida Ohno &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Iota Partner Portal<br>\n                                        Week 24\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
-      "text": "Weekly Objective Update — Iota Partner Portal — Week 24\n\nSUMMARY\n- On track: 4/4\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q2 2026 [June]: Partner API rate-limit v2 (june-2026)\nLeader Engineer: Kai Ostberg\nProgress: 42% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q2 2026 [June]: Contract-tier feature gating (june-2026)\nLeader Engineer: Ines Marchetti\nProgress: 14% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-02\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [June]: Compliance audit trail (june-2026)\nLeader Engineer: Frida Ohno\nProgress: 21% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-03\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [June]: SLA breach notifier (june-2026)\nLeader Engineer: Frida Ohno\nProgress: 38% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-04\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\nBLOCKERS / RISKS\n- [Risk] Q2 2026 [June]: Contract-tier feature gating: Infra migration blocking rollout; owner: platform.\n  Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a\n- [Risk] Q2 2026 [June]: Compliance audit trail: Legal sign-off outstanding.\n  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a\n\nKind Regards\nEngineering Manager"
+      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">4/4 objectives on track, 0 at risk, 0 missing updates, 0 not started, 0 done, 2 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Iota Partner Portal</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Iota Partner Portal — Week 24</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">June Objectives</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#16a34a;\">4</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">On Track</div>\n                                    </td>\n                                    <td width=\"33.33%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">2</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Iota Partner Portal</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-01\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Partner API rate-limit v2 (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Jules Ilves</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">42%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:42%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Complete the final code review and enable the feature flag globally.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-02\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Contract-tier feature gating (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Lena Barone</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">14%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:14%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-03\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Compliance audit trail (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Bram Cordova</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">21%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:21%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Feature flag is enabled for internal cohorts; watching latency and error rate.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#f0fdf4;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MIOTA-2606-04\" target=\"_blank\" style=\"color:#16a34a;text-decoration:none;font-weight:700;\">Q2 2026 [June]: SLA breach notifier (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Jules Ilves</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dcfce7;color:#16a34a;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">On Track</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#16a34a;font-weight:bold;margin-left:8px;\">38%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:38%;max-width:100%;height:6px;line-height:6px;background-color:#16a34a;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed 3 of 5 PRs; last two under review with a partner team.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrap the last integration test and hand off to QA.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [June]: Contract-tier feature gating\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Infra migration blocking rollout; owner: platform.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Lena Barone &nbsp;|&nbsp; Owner: Lena Barone &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #16a34a;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [June]: Compliance audit trail\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Legal sign-off outstanding.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Bram Cordova &nbsp;|&nbsp; Owner: Bram Cordova &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Iota Partner Portal<br>\n                                        Week 24\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
+      "text": "Weekly Objective Update — Iota Partner Portal — Week 24\n\nSUMMARY\n- On track: 4/4\n- At risk: 0 (0 red, 0 yellow)\n- Not started: 0\n- Done: 0\n- Missing updates: 0\n- Blockers / risks: 2\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[ON TRACK] Q2 2026 [June]: Partner API rate-limit v2 (june-2026)\nLeader Engineer: Jules Ilves\nProgress: 42% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-01\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Complete the final code review and enable the feature flag globally.\n\n[ON TRACK] Q2 2026 [June]: Contract-tier feature gating (june-2026)\nLeader Engineer: Lena Barone\nProgress: 14% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-02\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [June]: Compliance audit trail (june-2026)\nLeader Engineer: Bram Cordova\nProgress: 21% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-03\nDone this week: Feature flag is enabled for internal cohorts; watching latency and error rate.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\n[ON TRACK] Q2 2026 [June]: SLA breach notifier (june-2026)\nLeader Engineer: Jules Ilves\nProgress: 38% | Due: 30 Jun\nLink: https://example.invalid/objectives/MIOTA-2606-04\nDone this week: Landed 3 of 5 PRs; last two under review with a partner team.\nPlan for next week: Wrap the last integration test and hand off to QA.\n\nBLOCKERS / RISKS\n- [Risk] Q2 2026 [June]: Contract-tier feature gating: Infra migration blocking rollout; owner: platform.\n  Leader Engineer: Lena Barone | Owner: Lena Barone | Days open: n/a\n- [Risk] Q2 2026 [June]: Compliance audit trail: Legal sign-off outstanding.\n  Leader Engineer: Bram Cordova | Owner: Bram Cordova | Days open: n/a\n\nKind Regards\nEngineering Manager"
     }
   }
 }

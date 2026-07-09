@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Zero-downtime restart choreography (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Gwen Yates
 Progress: 28% | Due: 31 May
 Link: https://example.invalid/objectives/MDELT-2605-01
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Config drift auto-repair (may-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Sana Barone
 Progress: 12% | Due: 31 May
 Link: https://example.invalid/objectives/MDELT-2605-02
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Runtime resource budgets (may-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Nya Okonjo
 Progress: 18% | Due: 31 May
 Link: https://example.invalid/objectives/MDELT-2605-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Observability sampling refresh (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Nya Okonjo
 Progress: 10% | Due: 31 May
 Link: https://example.invalid/objectives/MDELT-2605-04
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
@@ -45,9 +45,9 @@ Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+  Leader Engineer: Gwen Yates | Owner: Gwen Yates | Days open: n/a
 - [Risk] Q2 2026 [May]: Config drift auto-repair: Awaiting security review that was pushed to next quarter.
-  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
+  Leader Engineer: Sana Barone | Owner: Sana Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager

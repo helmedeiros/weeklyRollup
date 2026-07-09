@@ -111,14 +111,6 @@ OBJECTIVE_TITLES = {
     ],
 }
 
-LEADER_ENGINEER_POOL = [
-    "Ava Thornton", "Bram Larsson", "Cai Nguyen", "Dara Okonjo", "Ellis Marín",
-    "Frida Ohno", "Gali Tomori", "Hiro Vasquez", "Ines Marchetti", "Jules Cabrera",
-    "Kai Ostberg", "Lena Rihanna", "Milo Anders", "Nya Sardar", "Odin Barone",
-    "Pia Rivas", "Quinn Yates", "Rio Delacroix", "Sana Rowe", "Tomo Ilves",
-]
-
-
 def _login(name: str) -> str:
     """Stable GitHub-shaped login (first initial + surname), ascii-folded.
 
@@ -130,7 +122,54 @@ def _login(name: str) -> str:
     return f"{parts[0][0]}{parts[-1]}"
 
 
-LEADER_ENGINEER_LOGIN = {name: _login(name) for name in LEADER_ENGINEER_POOL}
+_FIRST_NAMES = [
+    "Ava", "Bram", "Cai", "Dara", "Ellis", "Frida", "Gali", "Hiro", "Ines", "Jules",
+    "Kai", "Lena", "Milo", "Nya", "Odin", "Pia", "Quinn", "Rio", "Sana", "Tomo",
+    "Uma", "Vin", "Wren", "Xander", "Yara", "Zoe", "Arlo", "Bea", "Cy", "Devi",
+    "Enzo", "Faye", "Gwen", "Hal", "Iris", "Joss",
+]
+_SURNAMES = [
+    "Thornton", "Larsson", "Nguyen", "Okonjo", "Marín", "Ohno", "Tomori", "Vasquez",
+    "Marchetti", "Cabrera", "Ostberg", "Rihanna", "Anders", "Sardar", "Barone", "Rivas",
+    "Yates", "Delacroix", "Rowe", "Ilves", "Haas", "Bright", "Cordova", "Nkemi",
+    "Pereira", "Ashby", "Volkov", "Rana",
+]
+
+
+def _build_people(count: int) -> list[str]:
+    """Deterministic pool of unique people with unique logins."""
+    rng = random.Random("people-pool")
+    people: list[str] = []
+    logins: set[str] = set()
+    while len(people) < count:
+        name = f"{rng.choice(_FIRST_NAMES)} {rng.choice(_SURNAMES)}"
+        login = _login(name)
+        if name not in people and login not in logins:
+            people.append(name)
+            logins.add(login)
+    return people
+
+
+# Each engineer belongs to exactly one team (people don't span teams in reality).
+ALL_PEOPLE = _build_people(80)
+LEADER_ENGINEER_LOGIN = {name: _login(name) for name in ALL_PEOPLE}
+
+
+def _assign_rosters(teams: list) -> dict[str, list[str]]:
+    """Give every team an exclusive, stable roster sliced from the pool."""
+    rng = random.Random("rosters")
+    rosters: dict[str, list[str]] = {}
+    idx = 0
+    for team_id, _name, _bu, _size in teams:
+        size = min(len(ALL_PEOPLE) - idx, rng.randint(4, 6))
+        rosters[team_id] = ALL_PEOPLE[idx:idx + size]
+        idx += size
+    return rosters
+
+
+def _team_health_bias(team_id: str) -> float:
+    """A team's persistent performance signature: some teams are just faster."""
+    return round(random.Random(f"bias-{team_id}").uniform(-0.12, 0.18), 3)
 
 
 def _team_identity(team_id: str) -> dict:
@@ -141,6 +180,20 @@ def _team_identity(team_id: str) -> dict:
         "repos": [f"omio/{team_id}"],
     }
 
+
+# Weekly bucket -> the outcome label that drives that week's flow health, so
+# metrics track the objective's trajectory (an epic sliding to blocked shows
+# its review times worsen week over week).
+BUCKET_TO_OUTCOME = {
+    "done": "done",
+    "spillover_on_track": "on_track",
+    "spillover_at_risk": "at_risk",
+    "spillover_blocked": "blocked",
+    "missing": "missing",
+}
+
+ROSTERS = _assign_rosters(TEAMS)
+TEAM_HEALTH_BIAS = {team_id: _team_health_bias(team_id) for team_id, *_ in TEAMS}
 
 FLOW = DemoFlowMetricsProvider()
 
@@ -220,6 +273,12 @@ def build_cohort(
     if len(picked_titles) < cohort_size:
         picked_titles += [rng.choice(titles) for _ in range(cohort_size - len(picked_titles))]
 
+    # Draw leaders from the team's own roster, with repeats allowed so some
+    # engineers own two or three epics in a month and others own none — as on a
+    # real team.
+    roster = ROSTERS[team_id]
+    lead_rng = random.Random(f"leads-{team_id}-{year}-{month}")
+
     objectives: list[dict] = []
     for i in range(cohort_size):
         outcome = weighted_choice(OUTCOME_WEIGHTS, rng)
@@ -275,7 +334,7 @@ def build_cohort(
         objectives.append({
             "key": f"M{prefix}-{yy_mm}-{i + 1:02d}",
             "name": f"Q{quarter} {year} [{month_display}]: {title}",
-            "leader_engineer": obj_rng.choice(LEADER_ENGINEER_POOL),
+            "leader_engineer": lead_rng.choice(roster),
             "outcome": outcome,
             "progress_by_week": progress_by_week,
             "buckets_by_week": buckets_by_week,
@@ -381,8 +440,16 @@ def generate() -> None:
                 }
                 obj["update"] = synth_leader_engineer_update(obj, team_name, ISO_YEAR, iso_week)
                 # The Jira key is the atomic unit: everything ladders up from it.
+                # Health follows this week's bucket (trajectory), shifted by the
+                # team's persistent performance signature.
                 obj_flow = FLOW.fetch(
-                    FlowScope("objective", src["key"], src["name"], (src["outcome"],)),
+                    FlowScope(
+                        "objective",
+                        src["key"],
+                        src["name"],
+                        (BUCKET_TO_OUTCOME.get(bucket, src["outcome"]),),
+                        health_bias=TEAM_HEALTH_BIAS[team_id],
+                    ),
                     window,
                 )
                 obj["flow_metrics"] = obj_flow

@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [March]: Cross-locale asset governance (march-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Uma Cordova
 Progress: 22% | Due: 31 Mar
 Link: https://example.invalid/objectives/MLAMB-2603-01
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [March]: Legacy asset migration (march-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Enzo Rivas
 Progress: 10% | Due: 31 Mar
 Link: https://example.invalid/objectives/MLAMB-2603-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [March]: Broken-image sentinel (march-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Uma Barone
 Progress: 26% | Due: 31 Mar
 Link: https://example.invalid/objectives/MLAMB-2603-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [March]: Cadence dashboard for editors (march-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Uma Cordova
 Progress: 17% | Due: 31 Mar
 Link: https://example.invalid/objectives/MLAMB-2603-04
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [March]: Provider content ingestion QA (march-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Uma Barone
 Progress: 20% | Due: 31 Mar
 Link: https://example.invalid/objectives/MLAMB-2603-05
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
@@ -52,9 +52,9 @@ Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [March]: Legacy asset migration: No owner reachable this week.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+  Leader Engineer: Enzo Rivas | Owner: Enzo Rivas | Days open: n/a
 - [Risk] Q1 2026 [March]: Broken-image sentinel: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Pia Rivas | Owner: Pia Rivas | Days open: n/a
+  Leader Engineer: Uma Barone | Owner: Uma Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager

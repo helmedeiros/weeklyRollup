@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Refund status transparency (may-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Ava Delacroix
 Progress: 33% | Due: 31 May
 Link: https://example.invalid/objectives/MTHET-2605-01
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Passenger name-change flow (may-2026)
-Leader Engineer: Ines Marchetti
+Leader Engineer: Dara Marín
 Progress: 23% | Due: 31 May
 Link: https://example.invalid/objectives/MTHET-2605-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Loyalty perks eligibility banner (may-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Ava Delacroix
 Progress: 33% | Due: 31 May
 Link: https://example.invalid/objectives/MTHET-2605-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Cart persistence across surfaces (may-2026)
-Leader Engineer: Ava Thornton
+Leader Engineer: Enzo Volkov
 Progress: 47% | Due: 31 May
 Link: https://example.invalid/objectives/MTHET-2605-04
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Payment method reorder (may-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Ava Delacroix
 Progress: 32% | Due: 31 May
 Link: https://example.invalid/objectives/MTHET-2605-05
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
@@ -52,13 +52,13 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Refund status transparency: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+  Leader Engineer: Ava Delacroix | Owner: Ava Delacroix | Days open: n/a
 - [Risk] Q2 2026 [May]: Passenger name-change flow: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Ines Marchetti | Owner: Ines Marchetti | Days open: n/a
+  Leader Engineer: Dara Marín | Owner: Dara Marín | Days open: n/a
 - [Risk] Q2 2026 [May]: Loyalty perks eligibility banner: Update deferred; owner on PTO.
-  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+  Leader Engineer: Ava Delacroix | Owner: Ava Delacroix | Days open: n/a
 - [Risk] Q2 2026 [May]: Payment method reorder: Design review pending from the sibling team.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+  Leader Engineer: Ava Delacroix | Owner: Ava Delacroix | Days open: n/a
 
 Kind Regards
 Engineering Manager

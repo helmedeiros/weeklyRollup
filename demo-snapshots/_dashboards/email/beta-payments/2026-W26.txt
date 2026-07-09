@@ -16,42 +16,42 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [AT RISK] Q2 2026 [June]: Zero-downtime restart choreography (june-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Rio Vasquez
 Progress: 37% | Due: 30 Jun
 Link: https://example.invalid/objectives/MBETA-2606-06
 Done this week: Scope grew after user testing; trimming to hit the reduced target.
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 [DONE] Q2 2026 [June]: Rate-limiter fairness audit (june-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Rio Vasquez
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MBETA-2606-01
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [June]: Deprecation channel rollout (june-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Wren Nkemi
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MBETA-2606-02
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [June]: Golden-path SLO board (june-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Tomo Delacroix
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MBETA-2606-03
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q2 2026 [June]: Warm-cache eviction policy (june-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Rio Vasquez
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MBETA-2606-04
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q2 2026 [June]: Runtime resource budgets (june-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Tomo Delacroix
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MBETA-2606-05
 Done this week: Closed the final ticket in the epic and archived the working doc.
@@ -59,7 +59,7 @@ Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Rio Vasquez | Owner: Rio Vasquez | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -39,7 +39,7 @@
       "days": 7
     },
     "coverage": {
-      "prs_total": 39,
+      "prs_total": 40,
       "prs_measured": 36,
       "prs_linked_to_objective": null
     },
@@ -51,8 +51,8 @@
       },
       "lead_time": {
         "unit": "minutes",
-        "p50": 493,
-        "p99": 1488
+        "p50": 755,
+        "p99": 2094
       },
       "change_failure_rate": null,
       "mttr": null
@@ -60,21 +60,21 @@
     "review": {
       "time_to_first_review": {
         "unit": "business_hours",
-        "p50": 2.0,
-        "p85": 3.6,
-        "p99": 6.1
+        "p50": 1.5,
+        "p85": 2.7,
+        "p99": 5.0
       },
       "review_to_approved": {
         "unit": "business_hours",
         "p50": 3.9,
-        "p85": 7.1,
-        "p99": 13.2
+        "p85": 7.3,
+        "p99": 12.0
       },
       "rework_time": {
         "unit": "business_hours",
-        "p50": 1.0,
-        "p85": 1.8,
-        "p99": 3.0
+        "p50": 1.5,
+        "p85": 2.7,
+        "p99": 4.9
       },
       "pr_count": 36
     },
@@ -82,195 +82,11 @@
   },
   "engineers": [
     {
-      "login": "cnguyen",
-      "name": "Cai Nguyen",
+      "login": "rvasquez",
+      "name": "Rio Vasquez",
       "objective_keys": [
-        "MBETA-2606-05"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "cnguyen",
-          "display": "Cai Nguyen"
-        },
-        "window": {
-          "from": "2026-06-22",
-          "to": "2026-06-28",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 7,
-          "prs_measured": 7,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 507,
-            "p99": 1433
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 1.8,
-            "p85": 3.6,
-            "p99": 5.2
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 3.8,
-            "p85": 7.1,
-            "p99": 11.4
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.6,
-            "p99": 3.0
-          },
-          "pr_count": 7
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "fohno",
-      "name": "Frida Ohno",
-      "objective_keys": [
-        "MBETA-2606-04"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "fohno",
-          "display": "Frida Ohno"
-        },
-        "window": {
-          "from": "2026-06-22",
-          "to": "2026-06-28",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 6,
-          "prs_measured": 5,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 483,
-            "p99": 1672
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 2.0,
-            "p85": 4.0,
-            "p99": 5.7
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 3.7,
-            "p85": 6.5,
-            "p99": 12.9
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.9,
-            "p99": 2.8
-          },
-          "pr_count": 5
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "manders",
-      "name": "Milo Anders",
-      "objective_keys": [
-        "MBETA-2606-01"
-      ],
-      "flow_metrics": {
-        "contract_version": 1,
-        "source": "faked",
-        "scope": {
-          "level": "engineer",
-          "ref": "manders",
-          "display": "Milo Anders"
-        },
-        "window": {
-          "from": "2026-06-22",
-          "to": "2026-06-28",
-          "days": 7
-        },
-        "coverage": {
-          "prs_total": 7,
-          "prs_measured": 7,
-          "prs_linked_to_objective": null
-        },
-        "dora": {
-          "deployment_frequency": {
-            "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 2.0
-          },
-          "lead_time": {
-            "unit": "minutes",
-            "p50": 493,
-            "p99": 1391
-          },
-          "change_failure_rate": null,
-          "mttr": null
-        },
-        "review": {
-          "time_to_first_review": {
-            "unit": "business_hours",
-            "p50": 2.1,
-            "p85": 3.4,
-            "p99": 6.1
-          },
-          "review_to_approved": {
-            "unit": "business_hours",
-            "p50": 4.0,
-            "p85": 7.5,
-            "p99": 14.2
-          },
-          "rework_time": {
-            "unit": "business_hours",
-            "p50": 1.1,
-            "p85": 1.8,
-            "p99": 3.9
-          },
-          "pr_count": 7
-        },
-        "trends": {}
-      }
-    },
-    {
-      "login": "srowe",
-      "name": "Sana Rowe",
-      "objective_keys": [
+        "MBETA-2606-01",
+        "MBETA-2606-04",
         "MBETA-2606-06"
       ],
       "flow_metrics": {
@@ -278,8 +94,8 @@
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "srowe",
-          "display": "Sana Rowe"
+          "ref": "rvasquez",
+          "display": "Rio Vasquez"
         },
         "window": {
           "from": "2026-06-22",
@@ -287,20 +103,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 4,
-          "prs_measured": 3,
+          "prs_total": 19,
+          "prs_measured": 17,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.0
+            "total": 5,
+            "weekly_average": 5.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 4100,
-            "p99": 13934
+            "p50": 755,
+            "p99": 1963
           },
           "change_failure_rate": null,
           "mttr": null
@@ -308,41 +124,41 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 14.1,
-            "p85": 24.6,
-            "p99": 44.3
+            "p50": 2.3,
+            "p85": 4.4,
+            "p99": 6.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 27.6,
-            "p85": 50.3,
-            "p99": 89.8
+            "p50": 4.5,
+            "p85": 7.3,
+            "p99": 13.1
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 9.6,
-            "p85": 19.1,
-            "p99": 29.3
+            "p50": 2.3,
+            "p85": 3.7,
+            "p99": 7.2
           },
-          "pr_count": 3
+          "pr_count": 17
         },
         "trends": {}
       }
     },
     {
-      "login": "tilves",
-      "name": "Tomo Ilves",
+      "login": "tdelacroix",
+      "name": "Tomo Delacroix",
       "objective_keys": [
-        "MBETA-2606-02",
-        "MBETA-2606-03"
+        "MBETA-2606-03",
+        "MBETA-2606-05"
       ],
       "flow_metrics": {
         "contract_version": 1,
         "source": "faked",
         "scope": {
           "level": "engineer",
-          "ref": "tilves",
-          "display": "Tomo Ilves"
+          "ref": "tdelacroix",
+          "display": "Tomo Delacroix"
         },
         "window": {
           "from": "2026-06-22",
@@ -350,8 +166,8 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 15,
-          "prs_measured": 14,
+          "prs_total": 14,
+          "prs_measured": 13,
           "prs_linked_to_objective": null
         },
         "dora": {
@@ -362,8 +178,8 @@
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 488,
-            "p99": 1488
+            "p50": 673,
+            "p99": 2094
           },
           "change_failure_rate": null,
           "mttr": null
@@ -371,23 +187,85 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.0,
-            "p85": 3.2,
-            "p99": 6.7
+            "p50": 1.5,
+            "p85": 2.7,
+            "p99": 4.5
+          },
+          "review_to_approved": {
+            "unit": "business_hours",
+            "p50": 3.8,
+            "p85": 6.4,
+            "p99": 12.0
+          },
+          "rework_time": {
+            "unit": "business_hours",
+            "p50": 1.2,
+            "p85": 1.9,
+            "p99": 3.7
+          },
+          "pr_count": 13
+        },
+        "trends": {}
+      }
+    },
+    {
+      "login": "wnkemi",
+      "name": "Wren Nkemi",
+      "objective_keys": [
+        "MBETA-2606-02"
+      ],
+      "flow_metrics": {
+        "contract_version": 1,
+        "source": "faked",
+        "scope": {
+          "level": "engineer",
+          "ref": "wnkemi",
+          "display": "Wren Nkemi"
+        },
+        "window": {
+          "from": "2026-06-22",
+          "to": "2026-06-28",
+          "days": 7
+        },
+        "coverage": {
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": null
+        },
+        "dora": {
+          "deployment_frequency": {
+            "unit": "deploys/week",
+            "total": 2,
+            "weekly_average": 2.0
+          },
+          "lead_time": {
+            "unit": "minutes",
+            "p50": 851,
+            "p99": 2803
+          },
+          "change_failure_rate": null,
+          "mttr": null
+        },
+        "review": {
+          "time_to_first_review": {
+            "unit": "business_hours",
+            "p50": 1.4,
+            "p85": 2.3,
+            "p99": 5.0
           },
           "review_to_approved": {
             "unit": "business_hours",
             "p50": 3.9,
-            "p85": 6.4,
-            "p99": 13.2
+            "p85": 7.7,
+            "p99": 11.1
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 0.9,
-            "p85": 1.8,
-            "p99": 2.9
+            "p50": 1.5,
+            "p85": 2.7,
+            "p99": 4.9
           },
-          "pr_count": 14
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -398,8 +276,8 @@
       "key": "MBETA-2606-01",
       "name": "Q2 2026 [June]: Rate-limiter fairness audit",
       "url": "https://example.invalid/objectives/MBETA-2606-01",
-      "leader_engineer": "Milo Anders",
-      "leader_engineer_login": "manders",
+      "leader_engineer": "Rio Vasquez",
+      "leader_engineer_login": "rvasquez",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -413,7 +291,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Milo Anders",
+        "author": "Rio Vasquez",
         "status": "Green",
         "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
         "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
@@ -433,20 +311,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 7,
-          "prs_measured": 7,
-          "prs_linked_to_objective": 7
+          "prs_total": 8,
+          "prs_measured": 8,
+          "prs_linked_to_objective": 8
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.2
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 493,
-            "p99": 1391
+            "p50": 755,
+            "p99": 1963
           },
           "change_failure_rate": null,
           "mttr": null
@@ -454,23 +332,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.1,
-            "p85": 3.4,
-            "p99": 6.1
+            "p50": 2.3,
+            "p85": 4.4,
+            "p99": 6.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 4.0,
-            "p85": 7.5,
-            "p99": 14.2
+            "p50": 3.9,
+            "p85": 6.4,
+            "p99": 12.3
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.1,
-            "p85": 1.8,
-            "p99": 3.9
+            "p50": 2.3,
+            "p85": 3.7,
+            "p99": 7.2
           },
-          "pr_count": 7
+          "pr_count": 8
         },
         "trends": {}
       }
@@ -479,8 +357,8 @@
       "key": "MBETA-2606-02",
       "name": "Q2 2026 [June]: Deprecation channel rollout",
       "url": "https://example.invalid/objectives/MBETA-2606-02",
-      "leader_engineer": "Tomo Ilves",
-      "leader_engineer_login": "tilves",
+      "leader_engineer": "Wren Nkemi",
+      "leader_engineer_login": "wnkemi",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -494,7 +372,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Tomo Ilves",
+        "author": "Wren Nkemi",
         "status": "Green",
         "done_this_week": "Wrapped the rollout to 100% and the guardrail dashboards stayed green.",
         "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
@@ -514,20 +392,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 8,
-          "prs_linked_to_objective": 8
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.3
+            "weekly_average": 1.9
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 499,
-            "p99": 1627
+            "p50": 851,
+            "p99": 2803
           },
           "change_failure_rate": null,
           "mttr": null
@@ -535,23 +413,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.1,
-            "p85": 3.4,
-            "p99": 7.4
+            "p50": 1.4,
+            "p85": 2.3,
+            "p99": 5.0
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.6,
-            "p85": 5.8,
-            "p99": 11.9
+            "p50": 3.9,
+            "p85": 7.7,
+            "p99": 11.1
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 0.9,
-            "p85": 1.8,
-            "p99": 2.7
+            "p50": 1.5,
+            "p85": 2.7,
+            "p99": 4.9
           },
-          "pr_count": 8
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -560,8 +438,8 @@
       "key": "MBETA-2606-03",
       "name": "Q2 2026 [June]: Golden-path SLO board",
       "url": "https://example.invalid/objectives/MBETA-2606-03",
-      "leader_engineer": "Tomo Ilves",
-      "leader_engineer_login": "tilves",
+      "leader_engineer": "Tomo Delacroix",
+      "leader_engineer_login": "tdelacroix",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -575,7 +453,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Tomo Ilves",
+        "author": "Tomo Delacroix",
         "status": "Green",
         "done_this_week": "Shipped the last remaining PR and confirmed the target metric moved as expected.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
@@ -595,20 +473,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 7,
+          "prs_total": 6,
           "prs_measured": 6,
-          "prs_linked_to_objective": 7
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.2
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 477,
-            "p99": 1349
+            "p50": 636,
+            "p99": 1908
           },
           "change_failure_rate": null,
           "mttr": null
@@ -616,21 +494,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 1.9,
-            "p85": 3.1,
-            "p99": 5.9
+            "p50": 1.4,
+            "p85": 2.4,
+            "p99": 4.1
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 4.2,
-            "p85": 7.0,
-            "p99": 14.5
+            "p50": 3.5,
+            "p85": 6.2,
+            "p99": 11.9
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.7,
-            "p99": 3.0
+            "p50": 1.2,
+            "p85": 1.9,
+            "p99": 3.9
           },
           "pr_count": 6
         },
@@ -641,8 +519,8 @@
       "key": "MBETA-2606-04",
       "name": "Q2 2026 [June]: Warm-cache eviction policy",
       "url": "https://example.invalid/objectives/MBETA-2606-04",
-      "leader_engineer": "Frida Ohno",
-      "leader_engineer_login": "fohno",
+      "leader_engineer": "Rio Vasquez",
+      "leader_engineer_login": "rvasquez",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -656,7 +534,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Frida Ohno",
+        "author": "Rio Vasquez",
         "status": "Green",
         "done_this_week": "Landed the migration cutover; no incidents in the follow-up window.",
         "target_next_week": "Hand off to the on-call rotation and close the epic.",
@@ -676,20 +554,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 6,
-          "prs_measured": 5,
-          "prs_linked_to_objective": 6
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 2.5
+            "weekly_average": 2.1
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 483,
-            "p99": 1672
+            "p50": 611,
+            "p99": 1721
           },
           "change_failure_rate": null,
           "mttr": null
@@ -697,23 +575,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.0,
-            "p85": 4.0,
-            "p99": 5.7
+            "p50": 1.9,
+            "p85": 3.5,
+            "p99": 6.4
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.7,
-            "p85": 6.5,
-            "p99": 12.9
+            "p50": 4.5,
+            "p85": 7.3,
+            "p99": 13.1
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.9,
-            "p99": 2.8
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 4.0
           },
-          "pr_count": 5
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -722,8 +600,8 @@
       "key": "MBETA-2606-05",
       "name": "Q2 2026 [June]: Runtime resource budgets",
       "url": "https://example.invalid/objectives/MBETA-2606-05",
-      "leader_engineer": "Cai Nguyen",
-      "leader_engineer_login": "cnguyen",
+      "leader_engineer": "Tomo Delacroix",
+      "leader_engineer_login": "tdelacroix",
       "status": "Done",
       "jira_status": "Done",
       "is_done": true,
@@ -737,7 +615,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Cai Nguyen",
+        "author": "Tomo Delacroix",
         "status": "Green",
         "done_this_week": "Closed the final ticket in the epic and archived the working doc.",
         "target_next_week": "Monitor for the next 2 weeks; no active work planned.",
@@ -757,20 +635,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 7,
+          "prs_total": 8,
           "prs_measured": 7,
-          "prs_linked_to_objective": 7
+          "prs_linked_to_objective": 8
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 2,
-            "weekly_average": 1.9
+            "weekly_average": 2.1
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 507,
-            "p99": 1433
+            "p50": 710,
+            "p99": 2280
           },
           "change_failure_rate": null,
           "mttr": null
@@ -778,21 +656,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 1.8,
-            "p85": 3.6,
-            "p99": 5.2
+            "p50": 1.7,
+            "p85": 3.0,
+            "p99": 4.9
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.8,
-            "p85": 7.1,
-            "p99": 11.4
+            "p50": 4.0,
+            "p85": 6.6,
+            "p99": 12.1
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.6,
-            "p99": 3.0
+            "p50": 1.2,
+            "p85": 1.9,
+            "p99": 3.5
           },
           "pr_count": 7
         },
@@ -803,8 +681,8 @@
       "key": "MBETA-2606-06",
       "name": "Q2 2026 [June]: Zero-downtime restart choreography",
       "url": "https://example.invalid/objectives/MBETA-2606-06",
-      "leader_engineer": "Sana Rowe",
-      "leader_engineer_login": "srowe",
+      "leader_engineer": "Rio Vasquez",
+      "leader_engineer_login": "rvasquez",
       "status": "Yellow",
       "jira_status": "In Progress",
       "is_done": false,
@@ -818,7 +696,7 @@
       "hygiene": [],
       "blockers": [],
       "update": {
-        "author": "Sana Rowe",
+        "author": "Rio Vasquez",
         "status": "Yellow",
         "done_this_week": "Scope grew after user testing; trimming to hit the reduced target.",
         "target_next_week": "Realign with the partner team and reset the delivery date.",
@@ -846,12 +724,12 @@
           "deployment_frequency": {
             "unit": "deploys/week",
             "total": 1,
-            "weekly_average": 1.0
+            "weekly_average": 1.1
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 4100,
-            "p99": 13934
+            "p50": 3976,
+            "p99": 11439
           },
           "change_failure_rate": null,
           "mttr": null
@@ -859,21 +737,21 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 14.1,
-            "p85": 24.6,
-            "p99": 44.3
+            "p50": 12.9,
+            "p85": 22.1,
+            "p99": 46.2
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 27.6,
-            "p85": 50.3,
-            "p99": 89.8
+            "p50": 26.5,
+            "p85": 46.9,
+            "p99": 78.9
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 9.6,
-            "p85": 19.1,
-            "p99": 29.3
+            "p50": 9.0,
+            "p85": 17.1,
+            "p99": 26.3
           },
           "pr_count": 3
         },
@@ -884,8 +762,8 @@
   "outputs": {
     "email": {
       "subject": "Weekly Objective Update — Beta Payments Core — Week 26",
-      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">0/6 objectives on track, 1 at risk, 0 missing updates, 0 not started, 5 done, 1 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Beta Payments Core</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Beta Payments Core — Week 26</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">6</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">June Objectives</div>\n                                    </td>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">At Risk</div>\n                                    </td>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div>\n                                    </td>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Beta Payments Core</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#fffbeb;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-06\" target=\"_blank\" style=\"color:#b45309;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Zero-downtime restart choreography (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Sana Rowe</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#fef3c7;color:#b45309;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">At Risk</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#b45309;font-weight:bold;margin-left:8px;\">37%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:37%;max-width:100%;height:6px;line-height:6px;background-color:#b45309;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Scope grew after user testing; trimming to hit the reduced target.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Realign with the partner team and reset the delivery date.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-01\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Rate-limiter fairness audit (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Milo Anders</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Monitor for the next 2 weeks; no active work planned.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-02\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Deprecation channel rollout (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Tomo Ilves</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Monitor for the next 2 weeks; no active work planned.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-03\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Golden-path SLO board (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Tomo Ilves</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Hand off to the on-call rotation and close the epic.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-04\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Warm-cache eviction policy (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Frida Ohno</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed the migration cutover; no incidents in the follow-up window.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Hand off to the on-call rotation and close the epic.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-05\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Runtime resource budgets (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Cai Nguyen</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Closed the final ticket in the epic and archived the working doc.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Monitor for the next 2 weeks; no active work planned.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #f59e0b;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [June]: Zero-downtime restart choreography\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Follow-on ticket landed late; scope grew mid-sprint.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Sana Rowe &nbsp;|&nbsp; Owner: Sana Rowe &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Beta Payments Core<br>\n                                        Week 26\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
-      "text": "Weekly Objective Update — Beta Payments Core — Week 26\n\nSUMMARY\n- On track: 0/6\n- At risk: 1 (0 red, 1 yellow)\n- Not started: 0\n- Done: 5\n- Missing updates: 0\n- Blockers / risks: 1\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[AT RISK] Q2 2026 [June]: Zero-downtime restart choreography (june-2026)\nLeader Engineer: Sana Rowe\nProgress: 37% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-06\nDone this week: Scope grew after user testing; trimming to hit the reduced target.\nPlan for next week: Realign with the partner team and reset the delivery date.\n\n[DONE] Q2 2026 [June]: Rate-limiter fairness audit (june-2026)\nLeader Engineer: Milo Anders\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-01\nDone this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\nPlan for next week: Monitor for the next 2 weeks; no active work planned.\n\n[DONE] Q2 2026 [June]: Deprecation channel rollout (june-2026)\nLeader Engineer: Tomo Ilves\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-02\nDone this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\nPlan for next week: Monitor for the next 2 weeks; no active work planned.\n\n[DONE] Q2 2026 [June]: Golden-path SLO board (june-2026)\nLeader Engineer: Tomo Ilves\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-03\nDone this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\nPlan for next week: Hand off to the on-call rotation and close the epic.\n\n[DONE] Q2 2026 [June]: Warm-cache eviction policy (june-2026)\nLeader Engineer: Frida Ohno\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-04\nDone this week: Landed the migration cutover; no incidents in the follow-up window.\nPlan for next week: Hand off to the on-call rotation and close the epic.\n\n[DONE] Q2 2026 [June]: Runtime resource budgets (june-2026)\nLeader Engineer: Cai Nguyen\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-05\nDone this week: Closed the final ticket in the epic and archived the working doc.\nPlan for next week: Monitor for the next 2 weeks; no active work planned.\n\nBLOCKERS / RISKS\n- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.\n  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a\n\nKind Regards\nEngineering Manager"
+      "html": "\n\n<div style=\"margin:0;padding:0;background-color:#f1f2f6;font-family:Verdana,sans-serif;color:#334155;\">\n    <div style=\"display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;\">0/6 objectives on track, 1 at risk, 0 missing updates, 0 not started, 5 done, 1 blockers/risks</div>\n    <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;background-color:#f1f2f6;\">\n        <tr>\n            <td align=\"center\" style=\"padding:16px 8px;\">\n                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"760\" style=\"border-collapse:collapse;width:760px;max-width:100%;background-color:#ffffff;\">\n                    <tr>\n                        <td style=\"background-color:#132968;padding:28px 28px 24px 28px;text-align:center;\">\n                            <div style=\"font-family:Verdana,sans-serif;font-size:12px;color:#cfe4ff;text-transform:uppercase;letter-spacing:2px;\">Beta Payments Core</div>\n                            <div style=\"font-family:Verdana,sans-serif;font-size:28px;font-weight:bold;color:#ffffff;padding-top:8px;\">Weekly Objective Update — Beta Payments Core — Week 26</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:18px 12px;background-color:#f8fafc;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"text-align:center;border-collapse:collapse;\">\n                                <tr>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">6</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">June Objectives</div>\n                                    </td>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">At Risk</div>\n                                    </td>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#132968;\">5</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Done</div>\n                                    </td>\n                                    <td width=\"25.00%\" style=\"text-align:center;padding:12px 5px;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:25px;font-weight:bold;color:#f59e0b;\">1</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;padding-top:4px;\">Risks</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding:22px 28px 18px 28px;font-family:Verdana,sans-serif;font-size:14px;color:#334155;line-height:1.6;\">\n                            Hi team,<br><br>\n                            Please find the latest objective health report for <strong style=\"color:#132968;\">Beta Payments Core</strong>.\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Objective Updates</span>\n                </td>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;text-align:right;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:10px;color:#94a3b8;\">Sorted by status: on track, at risk, delayed, not started, missing, done</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;\">\n                                <tr style=\"background-color:#fffbeb;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-06\" target=\"_blank\" style=\"color:#b45309;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Zero-downtime restart choreography (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Rio Vasquez</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#fef3c7;color:#b45309;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">At Risk</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#b45309;font-weight:bold;margin-left:8px;\">37%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:37%;max-width:100%;height:6px;line-height:6px;background-color:#b45309;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #e2e8f0;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Scope grew after user testing; trimming to hit the reduced target.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Realign with the partner team and reset the delivery date.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-01\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Rate-limiter fairness audit (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Rio Vasquez</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Monitor for the next 2 weeks; no active work planned.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-02\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Deprecation channel rollout (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Wren Nkemi</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Wrapped the rollout to 100% and the guardrail dashboards stayed green.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Monitor for the next 2 weeks; no active work planned.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-03\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Golden-path SLO board (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Tomo Delacroix</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Shipped the last remaining PR and confirmed the target metric moved as expected.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Hand off to the on-call rotation and close the epic.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-04\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Warm-cache eviction policy (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Rio Vasquez</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Landed the migration cutover; no incidents in the follow-up window.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Hand off to the on-call rotation and close the epic.</div>\n                                    </td>\n                                </tr>\n                                <tr style=\"background-color:#eff6ff;\">\n                                    <td width=\"32%\" style=\"padding:14px;border-right:1px solid #bfdbfe;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;\">\n                                            <a href=\"https://example.invalid/objectives/MBETA-2606-05\" target=\"_blank\" style=\"color:#2563eb;text-decoration:none;font-weight:700;\">Q2 2026 [June]: Runtime resource budgets (june-2026)</a>\n                                        </div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:7px;\">Leader Engineer: Tomo Delacroix</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;margin-top:3px;\">Due: 30 Jun</div>\n                                        <div style=\"margin-top:10px;\">\n                                            <span style=\"display:inline-block;background-color:#dbeafe;color:#2563eb;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:3px 7px;border-radius:4px;text-transform:uppercase;\">Done</span>\n                                            <span style=\"font-family:Verdana,sans-serif;font-size:12px;color:#2563eb;font-weight:bold;margin-left:8px;\">100%</span>\n                                        </div>\n                                        <div style=\"margin-top:8px;background-color:#e2e8f0;border-radius:999px;height:6px;line-height:6px;overflow:hidden;\">\n                                            <div style=\"width:100%;max-width:100%;height:6px;line-height:6px;background-color:#2563eb;border-radius:999px;\">&nbsp;</div>\n                                        </div>\n                                    </td>\n                                    <td width=\"68%\" style=\"padding:14px;border-bottom:1px solid #bfdbfe;vertical-align:top;\">\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;\">Done this week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Closed the final ticket in the epic and archived the working doc.</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#132968;text-transform:uppercase;letter-spacing:0.4px;font-weight:bold;padding-top:12px;\">Plan for next week</div>\n                                        <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:4px;\">Monitor for the next 2 weeks; no active work planned.</div>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n\n                    <tr>\n    <td style=\"padding:0 28px;\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n            <tr>\n                <td style=\"border-bottom:2px solid #132968;padding-bottom:8px;\">\n                    <span style=\"font-family:Verdana,sans-serif;font-size:16px;font-weight:bold;color:#132968;\">Blockers / Risks</span>\n                </td>\n            </tr>\n        </table>\n    </td>\n</tr>\n                    <tr>\n                        <td style=\"padding:15px 28px 24px 28px;\">\n                                <div style=\"margin-bottom:10px;padding:12px;background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #f59e0b;border-radius:5px;\">\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;font-weight:bold;line-height:1.4;\">\n<span style=\"display:inline-block;background-color:#ffffff;color:#334155;border:1px solid #e2e8f0;font-family:Verdana,sans-serif;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px;margin-right:6px;\">Risk</span>Q2 2026 [June]: Zero-downtime restart choreography\n                                    </div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.55;padding-top:5px;\">Follow-on ticket landed late; scope grew mid-sprint.</div>\n                                    <div style=\"font-family:Verdana,sans-serif;font-size:11px;color:#64748b;padding-top:7px;\">Leader Engineer: Rio Vasquez &nbsp;|&nbsp; Owner: Rio Vasquez &nbsp;|&nbsp; Days open: n/a</div>\n                                </div>\n                        </td>\n                    </tr>\n\n\n\n                    <tr>\n                        <td style=\"padding:20px 28px;background-color:#f8fafc;border-top:1px solid #e2e8f0;\">\n                            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"border-collapse:collapse;\">\n                                <tr>\n                                    <td style=\"font-family:Verdana,sans-serif;font-size:13px;color:#334155;line-height:1.5;\">\n                                        Kind Regards<br>\n                                        <strong style=\"color:#132968;\">Engineering Manager</strong>\n                                    </td>\n                                    <td align=\"right\" style=\"font-family:Verdana,sans-serif;font-size:11px;color:#94a3b8;line-height:1.5;\">\n                                        Beta Payments Core<br>\n                                        Week 26\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </td>\n        </tr>\n    </table>\n</div>",
+      "text": "Weekly Objective Update — Beta Payments Core — Week 26\n\nSUMMARY\n- On track: 0/6\n- At risk: 1 (0 red, 1 yellow)\n- Not started: 0\n- Done: 5\n- Missing updates: 0\n- Blockers / risks: 1\n\nHi team,\n\nPlease find the latest objective health report.\n\nOBJECTIVE UPDATES\nSorted by status: on track, at risk, delayed, not started, missing, done.\n\n[AT RISK] Q2 2026 [June]: Zero-downtime restart choreography (june-2026)\nLeader Engineer: Rio Vasquez\nProgress: 37% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-06\nDone this week: Scope grew after user testing; trimming to hit the reduced target.\nPlan for next week: Realign with the partner team and reset the delivery date.\n\n[DONE] Q2 2026 [June]: Rate-limiter fairness audit (june-2026)\nLeader Engineer: Rio Vasquez\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-01\nDone this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\nPlan for next week: Monitor for the next 2 weeks; no active work planned.\n\n[DONE] Q2 2026 [June]: Deprecation channel rollout (june-2026)\nLeader Engineer: Wren Nkemi\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-02\nDone this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.\nPlan for next week: Monitor for the next 2 weeks; no active work planned.\n\n[DONE] Q2 2026 [June]: Golden-path SLO board (june-2026)\nLeader Engineer: Tomo Delacroix\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-03\nDone this week: Shipped the last remaining PR and confirmed the target metric moved as expected.\nPlan for next week: Hand off to the on-call rotation and close the epic.\n\n[DONE] Q2 2026 [June]: Warm-cache eviction policy (june-2026)\nLeader Engineer: Rio Vasquez\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-04\nDone this week: Landed the migration cutover; no incidents in the follow-up window.\nPlan for next week: Hand off to the on-call rotation and close the epic.\n\n[DONE] Q2 2026 [June]: Runtime resource budgets (june-2026)\nLeader Engineer: Tomo Delacroix\nProgress: 100% | Due: 30 Jun\nLink: https://example.invalid/objectives/MBETA-2606-05\nDone this week: Closed the final ticket in the epic and archived the working doc.\nPlan for next week: Monitor for the next 2 weeks; no active work planned.\n\nBLOCKERS / RISKS\n- [Risk] Q2 2026 [June]: Zero-downtime restart choreography: Follow-on ticket landed late; scope grew mid-sprint.\n  Leader Engineer: Rio Vasquez | Owner: Rio Vasquez | Days open: n/a\n\nKind Regards\nEngineering Manager"
     }
   }
 }

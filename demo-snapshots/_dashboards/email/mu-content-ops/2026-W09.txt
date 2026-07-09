@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [February]: Legacy asset migration (february-2026)
-Leader Engineer: Jules Cabrera
+Leader Engineer: Vin Yates
 Progress: 83% | Due: 28 Feb
 Link: https://example.invalid/objectives/MMU-2602-01
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Content lint gate (february-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Kai Anders
 Progress: 75% | Due: 28 Feb
 Link: https://example.invalid/objectives/MMU-2602-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Broken-image sentinel (february-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Jules Volkov
 Progress: 64% | Due: 28 Feb
 Link: https://example.invalid/objectives/MMU-2602-05
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [DONE] Q1 2026 [February]: Publisher content freshness (february-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Jules Volkov
 Progress: 100% | Due: 28 Feb
 Link: https://example.invalid/objectives/MMU-2602-02
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q1 2026 [February]: Cadence dashboard for editors (february-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Jules Volkov
 Progress: 100% | Due: 28 Feb
 Link: https://example.invalid/objectives/MMU-2602-03
 Done this week: Closed the final ticket in the epic and archived the working doc.

@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [AT RISK] Q1 2026 [February]: Homepage skeleton refresh (february-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Odin Tomori
 Progress: 51% | Due: 28 Feb
 Link: https://example.invalid/objectives/MZETA-2602-01
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 [AT RISK] Q1 2026 [February]: Payment method reorder (february-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Bea Haas
 Progress: 41% | Due: 28 Feb
 Link: https://example.invalid/objectives/MZETA-2602-04
 Done this week: Slipped the promised design review; rescheduling for later this week.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [DONE] Q1 2026 [February]: Passenger name-change flow (february-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Odin Tomori
 Progress: 100% | Due: 28 Feb
 Link: https://example.invalid/objectives/MZETA-2602-02
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q1 2026 [February]: Cart persistence across surfaces (february-2026)
-Leader Engineer: Kai Ostberg
+Leader Engineer: Odin Tomori
 Progress: 100% | Due: 28 Feb
 Link: https://example.invalid/objectives/MZETA-2602-03
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
@@ -45,9 +45,9 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Risk] Q1 2026 [February]: Homepage skeleton refresh: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Odin Tomori | Owner: Odin Tomori | Days open: n/a
 - [Risk] Q1 2026 [February]: Payment method reorder: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Dara Okonjo | Owner: Dara Okonjo | Days open: n/a
+  Leader Engineer: Bea Haas | Owner: Bea Haas | Days open: n/a
 
 Kind Regards
 Engineering Manager
