@@ -238,7 +238,7 @@ table.teams tr:last-child td { border-bottom: none; }
 .flow-card .label { color: var(--slate); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
 .flow-card .sub { color: var(--slate); font-size: 11px; margin-top: 3px; }
 .flow-note { color: var(--slate); font-size: 12px; margin-top: 12px; }
-.flow-source { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; background: #fff4e5; color: #b45309; border: 1px solid #fed7aa; vertical-align: middle; margin-left: 8px; }
+.flow-disclaimer { font-size: 12.5px; color: #92400e; background: #fffbeb; border: 1px solid #fde68a; border-left: 3px solid #f59e0b; border-radius: 6px; padding: 10px 14px; margin: 0 0 14px; }
 .eng-flow-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .eng-flow-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--slate); padding: 8px 10px; border-bottom: 1px solid var(--line); }
 .eng-flow-table td { padding: 9px 10px; border-bottom: 1px solid var(--line); color: var(--slate-strong); }
@@ -349,7 +349,8 @@ table.teams tr:last-child td { border-bottom: none; }
   </div>
 
   <div class="section-block" id="team-flow-block" hidden>
-    <h2>Engineering flow <span class="flow-source" id="team-flow-source" hidden></span></h2>
+    <h2>Engineering flow</h2>
+    <p class="flow-disclaimer" id="flow-disclaimer" hidden>Illustrative data, not measured. These flow metrics need a real source (the engineering event store / GitHub, via <code>data-tools</code>) and the provider integration step before they can be trusted — see <code>DataToolsFlowMetricsProvider</code>. Everything else on this page reflects the actual rollup.</p>
     <p class="section-subhead" id="detail-flow-subhead"></p>
     <div class="flow-grid" id="team-flow-grid"></div>
     <p class="flow-note" id="team-flow-note"></p>
@@ -952,7 +953,6 @@ table.teams tr:last-child td { border-bottom: none; }
     if (h < 48) return h >= 10 ? `${h.toFixed(0)}h` : `${h.toFixed(1)}h`;
     return `${(h / 24).toFixed(1)}d`;
   }
-  function flowSourceLabel(source) { return source === "faked" ? "demo data" : source; }
   function flowCard(num, label, sub, isNa) {
     return `<div class="flow-card">
       <div class="num${isNa ? " na" : ""}">${escapeHtml(num)}</div>
@@ -966,7 +966,7 @@ table.teams tr:last-child td { border-bottom: none; }
     const grid = document.getElementById("team-flow-grid");
     const subhead = document.getElementById("detail-flow-subhead");
     const note = document.getElementById("team-flow-note");
-    const badge = document.getElementById("team-flow-source");
+    const disclaimer = document.getElementById("flow-disclaimer");
     const latest = teamSnapshots.find(s => s.flow_metrics);
     if (!latest) { block.setAttribute("hidden", ""); return; }
     block.removeAttribute("hidden");
@@ -983,8 +983,9 @@ table.teams tr:last-child td { border-bottom: none; }
       flowCard("not measured", "MTTR", "incident feed not wired", true),
     ].join("");
     subhead.textContent = `Week ${latest.week.iso_week} · ${dateLabel} · medians over the ${f.window.days}-day window.`;
-    badge.textContent = flowSourceLabel(f.source);
-    badge.removeAttribute("hidden");
+    // Auto-hides once a real (non-faked) source is wired in.
+    if (f.source === "faked") disclaimer.removeAttribute("hidden");
+    else disclaimer.setAttribute("hidden", "");
     note.textContent = `Coverage: ${cov.prs_measured} of ${cov.prs_total} PRs measured. Review times are Berlin business hours.`;
   }
 
@@ -1023,7 +1024,7 @@ table.teams tr:last-child td { border-bottom: none; }
     const r = f.review, d = f.dora, cov = f.coverage;
     const m = (v, label) => `<div class="m"><span class="mv">${escapeHtml(v)}</span><span class="ml">${escapeHtml(label)}</span></div>`;
     return `<div class="obj-flow">
-      <h4>Engineering flow <span class="flow-source">${escapeHtml(flowSourceLabel(f.source))}</span></h4>
+      <h4>Engineering flow</h4>
       <div class="obj-flow-metrics">
         ${m(fmtHours(r.time_to_first_review.p50), "Time to 1st review (p50)")}
         ${m(fmtHours(r.review_to_approved.p50), "Review → approved (p50)")}
