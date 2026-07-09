@@ -133,6 +133,88 @@ def build_flow_block(
     }
 
 
+def _median(values: list[float]) -> float | None:
+    vals = sorted(v for v in values if v is not None)
+    if not vals:
+        return None
+    mid = len(vals) // 2
+    if len(vals) % 2:
+        return vals[mid]
+    return (vals[mid - 1] + vals[mid]) / 2
+
+
+def _median_pcts(metrics: list[dict[str, Any]]) -> dict[str, Any]:
+    """Median each percentile across child metric blocks (median-of-medians)."""
+    unit = metrics[0]["unit"]
+    out: dict[str, Any] = {"unit": unit}
+    for p in ("p50", "p85", "p99"):
+        if p in metrics[0]:
+            out[p] = round(_median([m[p] for m in metrics]) or 0, 1)
+    return out
+
+
+def aggregate_flow_blocks(
+    children: list[dict[str, Any]],
+    *,
+    scope: FlowScope,
+    window: FlowWindow,
+    source: str,
+) -> dict[str, Any]:
+    """Roll child blocks up into one, laddering through the shared Jira key.
+
+    Everything ties back to the same epic/story identifier: an engineer's
+    block is the median across the keys they own; a team's is the median
+    across its engineers. Percentiles use median-of-medians (matching
+    data-tools); PR volume and deploy counts sum. A single-key engineer
+    therefore reads *identically* to that objective — no drift.
+    """
+    if not children:
+        raise FlowMetricsError("aggregate_flow_blocks needs at least one child block")
+
+    review = {
+        name: _median_pcts([c["review"][name] for c in children])
+        for name in ("time_to_first_review", "review_to_approved", "rework_time")
+    }
+    review["pr_count"] = sum(c["review"]["pr_count"] for c in children)
+
+    lead = [c["dora"]["lead_time"] for c in children]
+    lead_time = {
+        "unit": lead[0]["unit"],
+        "p50": round(_median([m["p50"] for m in lead]) or 0),
+        "p99": round(_median([m["p99"] for m in lead]) or 0),
+    }
+    deploys = [c["dora"]["deployment_frequency"] for c in children]
+    total_deploys = sum(m["total"] for m in deploys)
+    deploy_freq = {
+        "unit": deploys[0]["unit"],
+        "total": total_deploys,
+        "weekly_average": round(total_deploys / (window.days / 7), 1) if window.days else 0.0,
+    }
+
+    is_obj = scope.level == "objective"
+    coverage = {
+        "prs_total": sum(c["coverage"]["prs_total"] for c in children),
+        "prs_measured": sum(c["coverage"]["prs_measured"] for c in children),
+        "prs_linked_to_objective": (
+            sum(c["coverage"]["prs_linked_to_objective"] or 0 for c in children) if is_obj else None
+        ),
+    }
+
+    return build_flow_block(
+        scope=scope,
+        window=window,
+        source=source,
+        coverage=coverage,
+        dora={
+            "deployment_frequency": deploy_freq,
+            "lead_time": lead_time,
+            "change_failure_rate": None,
+            "mttr": None,
+        },
+        review=review,
+    )
+
+
 class FlowMetricsError(RuntimeError):
     """Raised when a flow-metrics provider fails."""
 
@@ -161,6 +243,13 @@ class DemoFlowMetricsProvider(FlowMetricsProvider):
         "engineer": (16, 4),
         "team": (44, 12),
     }
+    # Deploy frequency per scope level: (healthy, struggling) deploys/week.
+    # Objective atoms stay small because engineer/team totals sum from them.
+    _DEPLOY_FREQ = {
+        "objective": (2.2, 0.4),
+        "engineer": (5.0, 1.2),
+        "team": (14.0, 3.5),
+    }
 
     def fetch(self, scope: FlowScope, window: FlowWindow) -> dict[str, Any]:
         rng = random.Random(f"flow|{self.source}|{scope.level}|{scope.ref}|{window.key}")
@@ -178,7 +267,8 @@ class DemoFlowMetricsProvider(FlowMetricsProvider):
             "p50": lead_p50,
             "p99": round(lead_p50 * rng.uniform(2.8, 3.6)),
         }
-        weekly_avg = round(_lerp(6.5, 1.5, h) * rng.uniform(0.85, 1.15), 1)
+        deploy_hi, deploy_lo = self._DEPLOY_FREQ.get(scope.level, (6.5, 1.5))
+        weekly_avg = round(_lerp(deploy_hi, deploy_lo, h) * rng.uniform(0.85, 1.15), 1)
         deploy_freq = {
             "unit": UNIT_DEPLOY_FREQ,
             "total": max(0, round(weekly_avg * (window.days / 7))),

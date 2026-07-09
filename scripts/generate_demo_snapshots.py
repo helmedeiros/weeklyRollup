@@ -31,7 +31,12 @@ from email_from_snapshot import (
     build_email_draft,
     synth_leader_engineer_update,
 )
-from flow_metrics import DemoFlowMetricsProvider, FlowScope, FlowWindow
+from flow_metrics import (
+    DemoFlowMetricsProvider,
+    FlowScope,
+    FlowWindow,
+    aggregate_flow_blocks,
+)
 
 
 ISO_YEAR = 2026
@@ -375,31 +380,41 @@ def generate() -> None:
                     "blockers": [],
                 }
                 obj["update"] = synth_leader_engineer_update(obj, team_name, ISO_YEAR, iso_week)
-                obj["flow_metrics"] = FLOW.fetch(
+                # The Jira key is the atomic unit: everything ladders up from it.
+                obj_flow = FLOW.fetch(
                     FlowScope("objective", src["key"], src["name"], (src["outcome"],)),
                     window,
                 )
+                obj["flow_metrics"] = obj_flow
                 objectives.append(obj)
                 totals[bucket] += 1
 
                 eng = engineers_seen.setdefault(
                     login,
-                    {"login": login, "name": src["leader_engineer"], "objective_keys": [], "_outcomes": []},
+                    {"login": login, "name": src["leader_engineer"], "objective_keys": [], "_blocks": []},
                 )
                 eng["objective_keys"].append(src["key"])
-                eng["_outcomes"].append(src["outcome"])
+                eng["_blocks"].append(obj_flow)
 
+            # Engineer flow = median across the keys they own; team = median
+            # across its engineers (median-of-medians, like data-tools).
             engineers = []
+            engineer_blocks = []
             for login, eng in sorted(engineers_seen.items()):
-                flow = FLOW.fetch(
-                    FlowScope("engineer", login, eng["name"], tuple(eng.pop("_outcomes"))),
-                    window,
+                flow = aggregate_flow_blocks(
+                    eng.pop("_blocks"),
+                    scope=FlowScope("engineer", login, eng["name"]),
+                    window=window,
+                    source=FLOW.source,
                 )
+                engineer_blocks.append(flow)
                 engineers.append({**eng, "flow_metrics": flow})
 
-            team_flow = FLOW.fetch(
-                FlowScope("team", team_id, team_name, tuple(src["outcome"] for src in cohort)),
-                window,
+            team_flow = aggregate_flow_blocks(
+                engineer_blocks,
+                scope=FlowScope("team", team_id, team_name),
+                window=window,
+                source=FLOW.source,
             )
 
             total = sum(totals.values())

@@ -39,20 +39,20 @@
       "days": 7
     },
     "coverage": {
-      "prs_total": 34,
-      "prs_measured": 34,
+      "prs_total": 31,
+      "prs_measured": 29,
       "prs_linked_to_objective": null
     },
     "dora": {
       "deployment_frequency": {
         "unit": "deploys/week",
-        "total": 5,
-        "weekly_average": 5.3
+        "total": 9,
+        "weekly_average": 9.0
       },
       "lead_time": {
         "unit": "minutes",
-        "p50": 2453,
-        "p99": 8698
+        "p50": 1782,
+        "p99": 5701
       },
       "change_failure_rate": null,
       "mttr": null
@@ -60,23 +60,23 @@
     "review": {
       "time_to_first_review": {
         "unit": "business_hours",
-        "p50": 8.4,
-        "p85": 13.9,
-        "p99": 29.3
+        "p50": 5.8,
+        "p85": 10.4,
+        "p99": 17.5
       },
       "review_to_approved": {
         "unit": "business_hours",
-        "p50": 19.7,
-        "p85": 38.6,
-        "p99": 67.9
+        "p50": 12.8,
+        "p85": 21.1,
+        "p99": 39.4
       },
       "rework_time": {
         "unit": "business_hours",
-        "p50": 5.9,
-        "p85": 11.0,
-        "p99": 19.4
+        "p50": 3.8,
+        "p85": 6.5,
+        "p99": 12.9
       },
-      "pr_count": 34
+      "pr_count": 29
     },
     "trends": {}
   },
@@ -101,20 +101,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 17,
-          "prs_measured": 16,
+          "prs_total": 6,
+          "prs_measured": 6,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 6,
-            "weekly_average": 6.1
+            "total": 2,
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 458,
-            "p99": 1532
+            "p50": 445,
+            "p99": 1247
           },
           "change_failure_rate": null,
           "mttr": null
@@ -122,23 +122,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 1.8,
-            "p85": 3.2,
-            "p99": 5.4
+            "p50": 2.0,
+            "p85": 3.7,
+            "p99": 6.0
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.8,
-            "p85": 6.4,
-            "p99": 10.7
+            "p50": 4.0,
+            "p85": 7.1,
+            "p99": 13.4
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 0.9,
-            "p85": 1.5,
-            "p99": 2.6
+            "p50": 1.0,
+            "p85": 1.7,
+            "p99": 3.3
           },
-          "pr_count": 16
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -163,20 +163,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 8,
+          "prs_total": 4,
+          "prs_measured": 3,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 4,
-            "weekly_average": 3.5
+            "total": 1,
+            "weekly_average": 1.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 3859,
-            "p99": 11302
+            "p50": 4201,
+            "p99": 13454
           },
           "change_failure_rate": null,
           "mttr": null
@@ -184,23 +184,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 13.6,
-            "p85": 24.5,
-            "p99": 46.3
+            "p50": 14.9,
+            "p85": 25.7,
+            "p99": 49.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 27.6,
-            "p85": 46.9,
-            "p99": 87.1
+            "p50": 32.0,
+            "p85": 62.6,
+            "p99": 95.9
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 9.1,
-            "p85": 17.5,
-            "p99": 29.8
+            "p50": 10.8,
+            "p85": 20.4,
+            "p99": 33.7
           },
-          "pr_count": 8
+          "pr_count": 3
         },
         "trends": {}
       }
@@ -225,20 +225,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 4,
-          "prs_measured": 3,
+          "prs_total": 2,
+          "prs_measured": 1,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 1,
-            "weekly_average": 1.4
+            "total": 0,
+            "weekly_average": 0.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 6138,
-            "p99": 18002
+            "p50": 7034,
+            "p99": 24408
           },
           "change_failure_rate": null,
           "mttr": null
@@ -246,23 +246,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 22.2,
-            "p85": 39.5,
-            "p99": 66.9
+            "p50": 23.3,
+            "p85": 38.0,
+            "p99": 82.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 49.3,
-            "p85": 88.6,
-            "p99": 170.4
+            "p50": 47.1,
+            "p85": 86.1,
+            "p99": 152.6
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 14.8,
-            "p85": 26.4,
-            "p99": 51.1
+            "p50": 16.9,
+            "p85": 32.5,
+            "p99": 53.5
           },
-          "pr_count": 3
+          "pr_count": 1
         },
         "trends": {}
       }
@@ -287,20 +287,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 17,
-          "prs_measured": 16,
+          "prs_total": 6,
+          "prs_measured": 6,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 7,
-            "weekly_average": 7.4
+            "total": 2,
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 487,
-            "p99": 1528
+            "p50": 434,
+            "p99": 1378
           },
           "change_failure_rate": null,
           "mttr": null
@@ -308,23 +308,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 2.1,
-            "p85": 3.4,
-            "p99": 6.0
+            "p50": 2.2,
+            "p85": 3.8,
+            "p99": 6.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 3.6,
-            "p85": 6.3,
-            "p99": 10.6
+            "p50": 3.9,
+            "p85": 6.6,
+            "p99": 13.5
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 1.0,
-            "p85": 1.7,
-            "p99": 3.3
+            "p50": 1.1,
+            "p85": 2.1,
+            "p99": 3.9
           },
-          "pr_count": 16
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -349,20 +349,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 13,
-          "prs_measured": 12,
+          "prs_total": 6,
+          "prs_measured": 6,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 5,
-            "weekly_average": 4.9
+            "total": 2,
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1885,
-            "p99": 6322
+            "p50": 1684,
+            "p99": 5760
           },
           "change_failure_rate": null,
           "mttr": null
@@ -370,23 +370,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.2,
-            "p85": 11.7,
-            "p99": 18.0
+            "p50": 5.8,
+            "p85": 10.1,
+            "p99": 16.3
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 11.4,
-            "p85": 22.2,
-            "p99": 39.1
+            "p50": 12.5,
+            "p85": 20.8,
+            "p99": 35.2
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 4.2,
-            "p85": 7.5,
-            "p99": 13.0
+            "p50": 3.6,
+            "p85": 6.2,
+            "p99": 12.4
           },
-          "pr_count": 12
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -411,20 +411,20 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 14,
-          "prs_measured": 14,
+          "prs_total": 7,
+          "prs_measured": 7,
           "prs_linked_to_objective": null
         },
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 6,
-            "weekly_average": 6.0
+            "total": 2,
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
-            "p50": 1771,
-            "p99": 5378
+            "p50": 1881,
+            "p99": 5642
           },
           "change_failure_rate": null,
           "mttr": null
@@ -432,23 +432,23 @@
         "review": {
           "time_to_first_review": {
             "unit": "business_hours",
-            "p50": 6.2,
-            "p85": 11.0,
-            "p99": 20.7
+            "p50": 5.9,
+            "p85": 10.7,
+            "p99": 18.7
           },
           "review_to_approved": {
             "unit": "business_hours",
-            "p50": 12.2,
-            "p85": 24.1,
-            "p99": 35.6
+            "p50": 13.0,
+            "p85": 21.3,
+            "p99": 43.5
           },
           "rework_time": {
             "unit": "business_hours",
-            "p50": 3.8,
-            "p85": 6.3,
-            "p99": 12.0
+            "p50": 4.1,
+            "p85": 6.7,
+            "p99": 13.4
           },
-          "pr_count": 14
+          "pr_count": 7
         },
         "trends": {}
       }
@@ -501,8 +501,8 @@
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 3,
-            "weekly_average": 3.0
+            "total": 1,
+            "weekly_average": 1.0
           },
           "lead_time": {
             "unit": "minutes",
@@ -582,8 +582,8 @@
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 2,
-            "weekly_average": 1.6
+            "total": 0,
+            "weekly_average": 0.4
           },
           "lead_time": {
             "unit": "minutes",
@@ -663,8 +663,8 @@
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 6,
-            "weekly_average": 5.5
+            "total": 2,
+            "weekly_average": 1.8
           },
           "lead_time": {
             "unit": "minutes",
@@ -744,8 +744,8 @@
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 6,
-            "weekly_average": 5.7
+            "total": 2,
+            "weekly_average": 1.9
           },
           "lead_time": {
             "unit": "minutes",
@@ -825,8 +825,8 @@
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 6,
-            "weekly_average": 5.9
+            "total": 2,
+            "weekly_average": 2.0
           },
           "lead_time": {
             "unit": "minutes",
@@ -906,8 +906,8 @@
         "dora": {
           "deployment_frequency": {
             "unit": "deploys/week",
-            "total": 5,
-            "weekly_average": 5.2
+            "total": 2,
+            "weekly_average": 1.7
           },
           "lead_time": {
             "unit": "minutes",

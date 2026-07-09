@@ -14,6 +14,7 @@ from flow_metrics import (  # noqa: E402
     FlowMetricsError,
     FlowScope,
     FlowWindow,
+    aggregate_flow_blocks,
 )
 
 
@@ -104,6 +105,58 @@ class DemoContractTest(unittest.TestCase):
             healthy["dora"]["deployment_frequency"]["weekly_average"],
             struggling["dora"]["deployment_frequency"]["weekly_average"],
         )
+
+
+class AggregateFlowTest(unittest.TestCase):
+    def setUp(self):
+        self.provider = DemoFlowMetricsProvider()
+        self.window = _window()
+
+    def _obj(self, key, outcome):
+        return self.provider.fetch(FlowScope("objective", key, outcomes=(outcome,)), self.window)
+
+    def test_empty_children_raises(self):
+        with self.assertRaises(FlowMetricsError):
+            aggregate_flow_blocks([], scope=FlowScope("engineer", "x"), window=self.window, source="faked")
+
+    def test_single_key_engineer_equals_its_objective(self):
+        # The core coherence property: one owned key -> identical review timings.
+        obj = self._obj("MABC-2606-02", "at_risk")
+        eng = aggregate_flow_blocks(
+            [obj], scope=FlowScope("engineer", "aowner"), window=self.window, source="faked"
+        )
+        for name in ("time_to_first_review", "review_to_approved", "rework_time"):
+            self.assertEqual(eng["review"][name]["p50"], obj["review"][name]["p50"])
+        self.assertEqual(eng["dora"]["lead_time"]["p50"], obj["dora"]["lead_time"]["p50"])
+
+    def test_pr_counts_and_deploys_sum(self):
+        children = [self._obj("MABC-2606-01", "done"), self._obj("MABC-2606-02", "blocked")]
+        agg = aggregate_flow_blocks(
+            children, scope=FlowScope("team", "t"), window=self.window, source="faked"
+        )
+        self.assertEqual(
+            agg["coverage"]["prs_total"], sum(c["coverage"]["prs_total"] for c in children)
+        )
+        self.assertEqual(
+            agg["dora"]["deployment_frequency"]["total"],
+            sum(c["dora"]["deployment_frequency"]["total"] for c in children),
+        )
+
+    def test_percentiles_stay_ordered_after_aggregation(self):
+        children = [self._obj(f"MABC-2606-0{i}", o) for i, o in enumerate(("done", "at_risk", "blocked"), 1)]
+        agg = aggregate_flow_blocks(
+            children, scope=FlowScope("engineer", "e"), window=self.window, source="faked"
+        )
+        m = agg["review"]["review_to_approved"]
+        self.assertLessEqual(m["p50"], m["p85"])
+        self.assertLessEqual(m["p85"], m["p99"])
+
+    def test_attribution_coverage_none_above_objective_scope(self):
+        children = [self._obj("MABC-2606-01", "done")]
+        eng = aggregate_flow_blocks(
+            children, scope=FlowScope("engineer", "e"), window=self.window, source="faked"
+        )
+        self.assertIsNone(eng["coverage"]["prs_linked_to_objective"])
 
 
 class DataToolsStubTest(unittest.TestCase):
