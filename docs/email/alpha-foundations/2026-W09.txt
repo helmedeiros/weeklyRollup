@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [AT RISK] Q1 2026 [February]: Golden-path SLO board (february-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Nya Volkov
 Progress: 52% | Due: 28 Feb
 Link: https://example.invalid/objectives/MALPH-2602-04
 Done this week: Scope grew after user testing; trimming to hit the reduced target.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [AT RISK] Q1 2026 [February]: Deprecation channel rollout (february-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Nya Volkov
 Progress: 45% | Due: 28 Feb
 Link: https://example.invalid/objectives/MALPH-2602-05
 Done this week: Scope grew after user testing; trimming to hit the reduced target.
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 [DELAYED] Q1 2026 [February]: Observability sampling refresh (february-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Nya Volkov
 Progress: 12% | Due: 28 Feb
 Link: https://example.invalid/objectives/MALPH-2602-03
 Done this week: Legal review outstanding — no code path until the sign-off lands.
 Plan for next week: Unblock the vendor conversation and get an ETA.
 
 [DONE] Q1 2026 [February]: Feature flag rollout guardrails (february-2026)
-Leader Engineer: Kai Ostberg
+Leader Engineer: Frida Larsson
 Progress: 100% | Due: 28 Feb
 Link: https://example.invalid/objectives/MALPH-2602-01
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q1 2026 [February]: Config drift auto-repair (february-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Lena Rihanna
 Progress: 100% | Due: 28 Feb
 Link: https://example.invalid/objectives/MALPH-2602-02
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
@@ -52,11 +52,11 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Blocker] Q1 2026 [February]: Observability sampling refresh: Awaiting security review that was pushed to next quarter.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Nya Volkov | Owner: Nya Volkov | Days open: n/a
 - [Risk] Q1 2026 [February]: Golden-path SLO board: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+  Leader Engineer: Nya Volkov | Owner: Nya Volkov | Days open: n/a
 - [Risk] Q1 2026 [February]: Deprecation channel rollout: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Cai Nguyen | Owner: Cai Nguyen | Days open: n/a
+  Leader Engineer: Nya Volkov | Owner: Nya Volkov | Days open: n/a
 
 Kind Regards
 Engineering Manager

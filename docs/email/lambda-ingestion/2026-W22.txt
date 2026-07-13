@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [AT RISK] Q2 2026 [May]: Broken-image sentinel (may-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Cai Cordova
 Progress: 53% | Due: 31 May
 Link: https://example.invalid/objectives/MLAMB-2605-01
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 [DELAYED] Q2 2026 [May]: Legacy asset migration (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Cai Cordova
 Progress: 12% | Due: 31 May
 Link: https://example.invalid/objectives/MLAMB-2605-03
 Done this week: Incident on adjacent service consumed the week; work is paused.
 Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
 [DONE] Q2 2026 [May]: Provider content ingestion QA (may-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Uma Barone
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MLAMB-2605-02
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [May]: Publisher content freshness (may-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Cai Cordova
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MLAMB-2605-04
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [May]: Cadence dashboard for editors (may-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Cai Thornton
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MLAMB-2605-05
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
@@ -52,9 +52,9 @@ Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
 - [Blocker] Q2 2026 [May]: Legacy asset migration: Awaiting security review that was pushed to next quarter.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Cai Cordova | Owner: Cai Cordova | Days open: n/a
 - [Risk] Q2 2026 [May]: Broken-image sentinel: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+  Leader Engineer: Cai Cordova | Owner: Cai Cordova | Days open: n/a
 
 Kind Regards
 Engineering Manager

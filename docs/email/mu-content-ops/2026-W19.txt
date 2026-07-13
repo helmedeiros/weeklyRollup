@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Provider content ingestion QA (may-2026)
-Leader Engineer: Ava Thornton
+Leader Engineer: Vin Yates
 Progress: 21% | Due: 31 May
 Link: https://example.invalid/objectives/MMU-2605-01
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Cross-locale asset governance (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Kai Anders
 Progress: 12% | Due: 31 May
 Link: https://example.invalid/objectives/MMU-2605-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Content lint gate (may-2026)
-Leader Engineer: Ines Marchetti
+Leader Engineer: Quinn Tomori
 Progress: 25% | Due: 31 May
 Link: https://example.invalid/objectives/MMU-2605-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Cadence dashboard for editors (may-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Kai Anders
 Progress: 11% | Due: 31 May
 Link: https://example.invalid/objectives/MMU-2605-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [May]: Broken-image sentinel (may-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Kai Anders
 Progress: 17% | Due: 31 May
 Link: https://example.invalid/objectives/MMU-2605-05
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
@@ -52,9 +52,9 @@ Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Provider content ingestion QA: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Ava Thornton | Owner: Ava Thornton | Days open: n/a
+  Leader Engineer: Vin Yates | Owner: Vin Yates | Days open: n/a
 - [Risk] Q2 2026 [May]: Cadence dashboard for editors: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+  Leader Engineer: Kai Anders | Owner: Kai Anders | Days open: n/a
 
 Kind Regards
 Engineering Manager

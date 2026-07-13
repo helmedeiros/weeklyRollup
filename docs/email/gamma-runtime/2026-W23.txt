@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [June]: Runtime resource budgets (june-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Joss Tomori
 Progress: 22% | Due: 30 Jun
 Link: https://example.invalid/objectives/MGAMM-2606-01
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [June]: Zero-downtime restart choreography (june-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Joss Tomori
 Progress: 14% | Due: 30 Jun
 Link: https://example.invalid/objectives/MGAMM-2606-02
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [June]: Golden-path SLO board (june-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Ava Anders
 Progress: 16% | Due: 30 Jun
 Link: https://example.invalid/objectives/MGAMM-2606-03
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [June]: Observability sampling refresh (june-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Joss Tomori
 Progress: 24% | Due: 30 Jun
 Link: https://example.invalid/objectives/MGAMM-2606-04
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [June]: Feature flag rollout guardrails (june-2026)
-Leader Engineer: Odin Barone
+Leader Engineer: Ava Anders
 Progress: 12% | Due: 30 Jun
 Link: https://example.invalid/objectives/MGAMM-2606-05
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
@@ -52,11 +52,11 @@ Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [June]: Zero-downtime restart choreography: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Joss Tomori | Owner: Joss Tomori | Days open: n/a
 - [Risk] Q2 2026 [June]: Golden-path SLO board: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+  Leader Engineer: Ava Anders | Owner: Ava Anders | Days open: n/a
 - [Risk] Q2 2026 [June]: Observability sampling refresh: No owner reachable this week.
-  Leader Engineer: Frida Ohno | Owner: Frida Ohno | Days open: n/a
+  Leader Engineer: Joss Tomori | Owner: Joss Tomori | Days open: n/a
 
 Kind Regards
 Engineering Manager

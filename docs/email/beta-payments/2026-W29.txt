@@ -16,42 +16,42 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q3 2026 [July]: Warm-cache eviction policy (july-2026)
-Leader Engineer: Odin Barone
+Leader Engineer: Tomo Delacroix
 Progress: 44% | Due: 31 Jul
 Link: https://example.invalid/objectives/MBETA-2607-01
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Feature flag rollout guardrails (july-2026)
-Leader Engineer: Kai Ostberg
+Leader Engineer: Rio Vasquez
 Progress: 50% | Due: 31 Jul
 Link: https://example.invalid/objectives/MBETA-2607-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q3 2026 [July]: Zero-downtime restart choreography (july-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Wren Nkemi
 Progress: 30% | Due: 31 Jul
 Link: https://example.invalid/objectives/MBETA-2607-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Runtime resource budgets (july-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Bram Okonjo
 Progress: 35% | Due: 31 Jul
 Link: https://example.invalid/objectives/MBETA-2607-05
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q3 2026 [July]: Observability sampling refresh (july-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Bram Okonjo
 Progress: 58% | Due: 31 Jul
 Link: https://example.invalid/objectives/MBETA-2607-06
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [DELAYED] Q3 2026 [July]: Config drift auto-repair (july-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Pia Marín
 Progress: 26% | Due: 31 Jul
 Link: https://example.invalid/objectives/MBETA-2607-04
 Done this week: Waiting on infra migration that was pushed to the next quarter.
@@ -59,13 +59,13 @@ Plan for next week: Unblock the vendor conversation and get an ETA.
 
 BLOCKERS / RISKS
 - [Blocker] Q3 2026 [July]: Config drift auto-repair: Legal sign-off outstanding.
-  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+  Leader Engineer: Pia Marín | Owner: Pia Marín | Days open: n/a
 - [Risk] Q3 2026 [July]: Warm-cache eviction policy: Downstream integration test suite is flaky; may hide a regression at go-live.
-  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+  Leader Engineer: Tomo Delacroix | Owner: Tomo Delacroix | Days open: n/a
 - [Risk] Q3 2026 [July]: Zero-downtime restart choreography: Design review pending from the sibling team.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+  Leader Engineer: Wren Nkemi | Owner: Wren Nkemi | Days open: n/a
 - [Risk] Q3 2026 [July]: Runtime resource budgets: A single reviewer is a bottleneck; needs a delegate.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Bram Okonjo | Owner: Bram Okonjo | Days open: n/a
 
 Kind Regards
 Engineering Manager

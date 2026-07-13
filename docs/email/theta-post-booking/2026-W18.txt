@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [April]: Loyalty perks eligibility banner (april-2026)
-Leader Engineer: Tomo Ilves
+Leader Engineer: Ava Delacroix
 Progress: 75% | Due: 30 Apr
 Link: https://example.invalid/objectives/MTHET-2604-03
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [DONE] Q2 2026 [April]: Homepage skeleton refresh (april-2026)
-Leader Engineer: Odin Barone
+Leader Engineer: Zoe Okonjo
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MTHET-2604-01
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q2 2026 [April]: Payment method reorder (april-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Enzo Volkov
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MTHET-2604-02
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q2 2026 [April]: Personalised trip recommendations (april-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Enzo Volkov
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MTHET-2604-04
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [April]: Purchase confirmation clarity (april-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Enzo Volkov
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MTHET-2604-05
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
@@ -52,7 +52,7 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [April]: Loyalty perks eligibility banner: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Tomo Ilves | Owner: Tomo Ilves | Days open: n/a
+  Leader Engineer: Ava Delacroix | Owner: Ava Delacroix | Days open: n/a
 
 Kind Regards
 Engineering Manager

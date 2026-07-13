@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [April]: Partner billing reconciliation (april-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Lena Barone
 Progress: 60% | Due: 30 Apr
 Link: https://example.invalid/objectives/MIOTA-2604-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [DELAYED] Q2 2026 [April]: SLA breach notifier (april-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Cy Ilves
 Progress: 28% | Due: 30 Apr
 Link: https://example.invalid/objectives/MIOTA-2604-01
 Done this week: Blocked on a vendor change; ticket open with them since Tuesday.
 Plan for next week: Unblock the vendor conversation and get an ETA.
 
 [DONE] Q2 2026 [April]: Reseller webhook v3 (april-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Hiro Ashby
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MIOTA-2604-02
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [April]: Partner API rate-limit v2 (april-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Lena Barone
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MIOTA-2604-04
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
@@ -45,9 +45,9 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Blocker] Q2 2026 [April]: SLA breach notifier: Awaiting security review that was pushed to next quarter.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+  Leader Engineer: Cy Ilves | Owner: Cy Ilves | Days open: n/a
 - [Risk] Q2 2026 [April]: Partner billing reconciliation: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+  Leader Engineer: Lena Barone | Owner: Lena Barone | Days open: n/a
 
 Kind Regards
 Engineering Manager

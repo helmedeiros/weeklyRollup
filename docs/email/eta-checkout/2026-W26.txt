@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [AT RISK] Q2 2026 [June]: Passenger name-change flow (june-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Quinn Marchetti
 Progress: 50% | Due: 30 Jun
 Link: https://example.invalid/objectives/META-2606-02
 Done this week: Scope grew after user testing; trimming to hit the reduced target.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [MISSING UPDATES] Q2 2026 [June]: Search relevance re-ranker (june-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Joss Yates
 Progress: 27% | Due: 30 Jun
 Link: https://example.invalid/objectives/META-2606-04
 Done this week: Update deferred pending a decision from the steering meeting.
 Plan for next week: Sync with the owner and file the missing update retroactively.
 
 [DONE] Q2 2026 [June]: Loyalty perks eligibility banner (june-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Hal Rihanna
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/META-2606-01
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q2 2026 [June]: Checkout abandonment nudge (june-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Hal Rihanna
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/META-2606-03
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [June]: Cart persistence across surfaces (june-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Joss Yates
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/META-2606-05
 Done this week: Closed the final ticket in the epic and archived the working doc.
@@ -52,9 +52,9 @@ Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [June]: Passenger name-change flow: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Ellis Marín | Owner: Ellis Marín | Days open: n/a
+  Leader Engineer: Quinn Marchetti | Owner: Quinn Marchetti | Days open: n/a
 - [Risk] Q2 2026 [June]: Search relevance re-ranker: Update deferred; owner on PTO.
-  Leader Engineer: Milo Anders | Owner: Milo Anders | Days open: n/a
+  Leader Engineer: Joss Yates | Owner: Joss Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

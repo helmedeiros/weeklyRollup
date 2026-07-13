@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q3 2026 [July]: Warm-cache eviction policy (july-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Sana Barone
 Progress: 8% | Due: 31 Jul
 Link: https://example.invalid/objectives/MDELT-2607-01
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q3 2026 [July]: Observability sampling refresh (july-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Sana Okonjo
 Progress: 11% | Due: 31 Jul
 Link: https://example.invalid/objectives/MDELT-2607-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q3 2026 [July]: Golden-path SLO board (july-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Sana Barone
 Progress: 21% | Due: 31 Jul
 Link: https://example.invalid/objectives/MDELT-2607-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q3 2026 [July]: Config drift auto-repair (july-2026)
-Leader Engineer: Odin Barone
+Leader Engineer: Gwen Yates
 Progress: 6% | Due: 31 Jul
 Link: https://example.invalid/objectives/MDELT-2607-04
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
@@ -45,11 +45,11 @@ Plan for next week: Complete the final code review and enable the feature flag g
 
 BLOCKERS / RISKS
 - [Risk] Q3 2026 [July]: Warm-cache eviction policy: Infra migration blocking rollout; owner: platform.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Sana Barone | Owner: Sana Barone | Days open: n/a
 - [Risk] Q3 2026 [July]: Observability sampling refresh: Legal sign-off outstanding.
-  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
+  Leader Engineer: Sana Okonjo | Owner: Sana Okonjo | Days open: n/a
 - [Risk] Q3 2026 [July]: Config drift auto-repair: Update deferred; owner on PTO.
-  Leader Engineer: Odin Barone | Owner: Odin Barone | Days open: n/a
+  Leader Engineer: Gwen Yates | Owner: Gwen Yates | Days open: n/a
 
 Kind Regards
 Engineering Manager

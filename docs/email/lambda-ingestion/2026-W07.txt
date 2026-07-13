@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q1 2026 [February]: Cadence dashboard for editors (february-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Cai Cordova
 Progress: 41% | Due: 28 Feb
 Link: https://example.invalid/objectives/MLAMB-2602-01
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q1 2026 [February]: Content lint gate (february-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Enzo Rivas
 Progress: 45% | Due: 28 Feb
 Link: https://example.invalid/objectives/MLAMB-2602-02
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Broken-image sentinel (february-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Enzo Rivas
 Progress: 52% | Due: 28 Feb
 Link: https://example.invalid/objectives/MLAMB-2602-03
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q1 2026 [February]: Cross-locale asset governance (february-2026)
-Leader Engineer: Ines Marchetti
+Leader Engineer: Uma Cordova
 Progress: 51% | Due: 28 Feb
 Link: https://example.invalid/objectives/MLAMB-2602-04
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q1 2026 [February]: Legacy asset migration (february-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Cai Cordova
 Progress: 43% | Due: 28 Feb
 Link: https://example.invalid/objectives/MLAMB-2602-05
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.

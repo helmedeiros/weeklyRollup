@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q3 2026 [July]: Contract-tier feature gating (july-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Bram Cordova
 Progress: 17% | Due: 31 Jul
 Link: https://example.invalid/objectives/MIOTA-2607-01
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q3 2026 [July]: Partner API rate-limit v2 (july-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Lena Barone
 Progress: 22% | Due: 31 Jul
 Link: https://example.invalid/objectives/MIOTA-2607-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Reseller webhook v3 (july-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Jules Ilves
 Progress: 21% | Due: 31 Jul
 Link: https://example.invalid/objectives/MIOTA-2607-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Compliance audit trail (july-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Cy Ilves
 Progress: 14% | Due: 31 Jul
 Link: https://example.invalid/objectives/MIOTA-2607-04
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
@@ -45,9 +45,9 @@ Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - [Risk] Q3 2026 [July]: Reseller webhook v3: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
+  Leader Engineer: Jules Ilves | Owner: Jules Ilves | Days open: n/a
 - [Risk] Q3 2026 [July]: Compliance audit trail: Awaiting security review that was pushed to next quarter.
-  Leader Engineer: Rio Delacroix | Owner: Rio Delacroix | Days open: n/a
+  Leader Engineer: Cy Ilves | Owner: Cy Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

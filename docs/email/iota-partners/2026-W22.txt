@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [AT RISK] Q2 2026 [May]: Contract-tier feature gating (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Jules Ilves
 Progress: 38% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-01
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 [DELAYED] Q2 2026 [May]: Reseller webhook v3 (may-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Cy Ilves
 Progress: 26% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-02
 Done this week: Legal review outstanding — no code path until the sign-off lands.
 Plan for next week: Unblock the vendor conversation and get an ETA.
 
 [DONE] Q2 2026 [May]: Onboarding self-serve wizard (may-2026)
-Leader Engineer: Jules Cabrera
+Leader Engineer: Lena Barone
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-03
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 [DONE] Q2 2026 [May]: Compliance audit trail (may-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Bram Cordova
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-04
 Done this week: Closed the final ticket in the epic and archived the working doc.
@@ -45,9 +45,9 @@ Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
 - [Blocker] Q2 2026 [May]: Reseller webhook v3: Awaiting security review that was pushed to next quarter.
-  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
+  Leader Engineer: Cy Ilves | Owner: Cy Ilves | Days open: n/a
 - [Risk] Q2 2026 [May]: Contract-tier feature gating: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Jules Ilves | Owner: Jules Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

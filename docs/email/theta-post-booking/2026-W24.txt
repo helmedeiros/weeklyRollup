@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [June]: Homepage skeleton refresh (june-2026)
-Leader Engineer: Jules Cabrera
+Leader Engineer: Zoe Okonjo
 Progress: 47% | Due: 30 Jun
 Link: https://example.invalid/objectives/MTHET-2606-01
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [June]: Personalised trip recommendations (june-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Enzo Volkov
 Progress: 45% | Due: 30 Jun
 Link: https://example.invalid/objectives/MTHET-2606-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [June]: Refund status transparency (june-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Ava Delacroix
 Progress: 47% | Due: 30 Jun
 Link: https://example.invalid/objectives/MTHET-2606-03
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [June]: Checkout abandonment nudge (june-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Enzo Volkov
 Progress: 46% | Due: 30 Jun
 Link: https://example.invalid/objectives/MTHET-2606-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [June]: Search relevance re-ranker (june-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Dara Marín
 Progress: 49% | Due: 30 Jun
 Link: https://example.invalid/objectives/MTHET-2606-05
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.

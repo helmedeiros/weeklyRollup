@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Onboarding self-serve wizard (may-2026)
-Leader Engineer: Jules Cabrera
+Leader Engineer: Lena Barone
 Progress: 76% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-03
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [May]: Compliance audit trail (may-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Bram Cordova
 Progress: 77% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [AT RISK] Q2 2026 [May]: Contract-tier feature gating (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Jules Ilves
 Progress: 31% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-01
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Realign with the partner team and reset the delivery date.
 
 [DELAYED] Q2 2026 [May]: Reseller webhook v3 (may-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Cy Ilves
 Progress: 29% | Due: 31 May
 Link: https://example.invalid/objectives/MIOTA-2605-02
 Done this week: Waiting on infra migration that was pushed to the next quarter.
@@ -45,9 +45,9 @@ Plan for next week: Reassign to a different owner so the current one can help el
 
 BLOCKERS / RISKS
 - [Blocker] Q2 2026 [May]: Reseller webhook v3: Awaiting security review that was pushed to next quarter.
-  Leader Engineer: Gali Tomori | Owner: Gali Tomori | Days open: n/a
+  Leader Engineer: Cy Ilves | Owner: Cy Ilves | Days open: n/a
 - [Risk] Q2 2026 [May]: Contract-tier feature gating: Owner is oncall this week; capacity is halved.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Jules Ilves | Owner: Jules Ilves | Days open: n/a
 
 Kind Regards
 Engineering Manager

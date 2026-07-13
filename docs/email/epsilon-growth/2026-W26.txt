@@ -16,42 +16,42 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [June]: Loyalty perks eligibility banner (june-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Odin Ashby
 Progress: 62% | Due: 30 Jun
 Link: https://example.invalid/objectives/MEPSI-2606-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [June]: Search relevance re-ranker (june-2026)
-Leader Engineer: Pia Rivas
+Leader Engineer: Quinn Vasquez
 Progress: 63% | Due: 30 Jun
 Link: https://example.invalid/objectives/MEPSI-2606-06
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [AT RISK] Q2 2026 [June]: Passenger name-change flow (june-2026)
-Leader Engineer: Hiro Vasquez
+Leader Engineer: Pia Marchetti
 Progress: 39% | Due: 30 Jun
 Link: https://example.invalid/objectives/MEPSI-2606-01
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Reduce scope to the top-2 use cases and land a partial fix.
 
 [DELAYED] Q2 2026 [June]: Checkout abandonment nudge (june-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Sana Volkov
 Progress: 27% | Due: 30 Jun
 Link: https://example.invalid/objectives/MEPSI-2606-02
 Done this week: Legal review outstanding — no code path until the sign-off lands.
 Plan for next week: Pick up a related workstream while the primary path stays blocked.
 
 [DONE] Q2 2026 [June]: Payment method reorder (june-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Pia Marchetti
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MEPSI-2606-04
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [June]: Purchase confirmation clarity (june-2026)
-Leader Engineer: Odin Barone
+Leader Engineer: Pia Marchetti
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MEPSI-2606-05
 Done this week: Closed the final ticket in the epic and archived the working doc.
@@ -59,9 +59,9 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Blocker] Q2 2026 [June]: Checkout abandonment nudge: External vendor SLA slipping; no eta.
-  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
+  Leader Engineer: Sana Volkov | Owner: Sana Volkov | Days open: n/a
 - [Risk] Q2 2026 [June]: Passenger name-change flow: Design review pending from the sibling team.
-  Leader Engineer: Hiro Vasquez | Owner: Hiro Vasquez | Days open: n/a
+  Leader Engineer: Pia Marchetti | Owner: Pia Marchetti | Days open: n/a
 
 Kind Regards
 Engineering Manager

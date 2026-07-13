@@ -16,42 +16,42 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q3 2026 [July]: Purchase confirmation clarity (july-2026)
-Leader Engineer: Gali Tomori
+Leader Engineer: Quinn Vasquez
 Progress: 74% | Due: 31 Jul
 Link: https://example.invalid/objectives/MEPSI-2607-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [MISSING UPDATES] Q3 2026 [July]: Homepage skeleton refresh (july-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Odin Ashby
 Progress: 41% | Due: 31 Jul
 Link: https://example.invalid/objectives/MEPSI-2607-01
 Done this week: Owner was out; update will land in the next report.
 Plan for next week: Post an update by Friday capturing what shifted.
 
 [DONE] Q3 2026 [July]: Checkout abandonment nudge (july-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Frida Ilves
 Progress: 100% | Due: 31 Jul
 Link: https://example.invalid/objectives/MEPSI-2607-03
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q3 2026 [July]: Personalised trip recommendations (july-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Pia Marchetti
 Progress: 100% | Due: 31 Jul
 Link: https://example.invalid/objectives/MEPSI-2607-04
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q3 2026 [July]: Cart persistence across surfaces (july-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Frida Ilves
 Progress: 100% | Due: 31 Jul
 Link: https://example.invalid/objectives/MEPSI-2607-05
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Hand off to the on-call rotation and close the epic.
 
 [DONE] Q3 2026 [July]: Refund status transparency (july-2026)
-Leader Engineer: Ines Marchetti
+Leader Engineer: Quinn Vasquez
 Progress: 100% | Due: 31 Jul
 Link: https://example.invalid/objectives/MEPSI-2607-06
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
@@ -59,7 +59,7 @@ Plan for next week: Hand off to the on-call rotation and close the epic.
 
 BLOCKERS / RISKS
 - [Risk] Q3 2026 [July]: Homepage skeleton refresh: Update deferred; owner on PTO.
-  Leader Engineer: Nya Sardar | Owner: Nya Sardar | Days open: n/a
+  Leader Engineer: Odin Ashby | Owner: Odin Ashby | Days open: n/a
 
 Kind Regards
 Engineering Manager

@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q3 2026 [July]: Search relevance re-ranker (july-2026)
-Leader Engineer: Bram Larsson
+Leader Engineer: Ava Delacroix
 Progress: 19% | Due: 31 Jul
 Link: https://example.invalid/objectives/MTHET-2607-01
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Passenger name-change flow (july-2026)
-Leader Engineer: Jules Cabrera
+Leader Engineer: Enzo Volkov
 Progress: 17% | Due: 31 Jul
 Link: https://example.invalid/objectives/MTHET-2607-02
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q3 2026 [July]: Purchase confirmation clarity (july-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Dara Marín
 Progress: 11% | Due: 31 Jul
 Link: https://example.invalid/objectives/MTHET-2607-03
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q3 2026 [July]: Checkout abandonment nudge (july-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Zoe Okonjo
 Progress: 25% | Due: 31 Jul
 Link: https://example.invalid/objectives/MTHET-2607-04
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q3 2026 [July]: Loyalty perks eligibility banner (july-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Zoe Okonjo
 Progress: 20% | Due: 31 Jul
 Link: https://example.invalid/objectives/MTHET-2607-05
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
@@ -52,9 +52,9 @@ Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 BLOCKERS / RISKS
 - [Risk] Q3 2026 [July]: Search relevance re-ranker: Design review pending from the sibling team.
-  Leader Engineer: Bram Larsson | Owner: Bram Larsson | Days open: n/a
+  Leader Engineer: Ava Delacroix | Owner: Ava Delacroix | Days open: n/a
 - [Risk] Q3 2026 [July]: Checkout abandonment nudge: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Zoe Okonjo | Owner: Zoe Okonjo | Days open: n/a
 
 Kind Regards
 Engineering Manager

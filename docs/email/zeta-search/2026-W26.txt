@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [June]: Homepage skeleton refresh (june-2026)
-Leader Engineer: Milo Anders
+Leader Engineer: Hal Yates
 Progress: 79% | Due: 30 Jun
 Link: https://example.invalid/objectives/MZETA-2606-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [AT RISK] Q2 2026 [June]: Loyalty perks eligibility banner (june-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Odin Tomori
 Progress: 36% | Due: 30 Jun
 Link: https://example.invalid/objectives/MZETA-2606-04
 Done this week: Slipped the promised design review; rescheduling for later this week.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [DONE] Q2 2026 [June]: Passenger name-change flow (june-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Quinn Okonjo
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MZETA-2606-01
 Done this week: Wrapped the rollout to 100% and the guardrail dashboards stayed green.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [June]: Personalised trip recommendations (june-2026)
-Leader Engineer: Ellis Marín
+Leader Engineer: Odin Tomori
 Progress: 100% | Due: 30 Jun
 Link: https://example.invalid/objectives/MZETA-2606-03
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
@@ -45,7 +45,7 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [June]: Loyalty perks eligibility banner: Follow-on ticket landed late; scope grew mid-sprint.
-  Leader Engineer: Sana Rowe | Owner: Sana Rowe | Days open: n/a
+  Leader Engineer: Odin Tomori | Owner: Odin Tomori | Days open: n/a
 
 Kind Regards
 Engineering Manager

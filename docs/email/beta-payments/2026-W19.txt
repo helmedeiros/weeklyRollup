@@ -16,42 +16,42 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Golden-path SLO board (may-2026)
-Leader Engineer: Cai Nguyen
+Leader Engineer: Rio Vasquez
 Progress: 23% | Due: 31 May
 Link: https://example.invalid/objectives/MBETA-2605-01
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Deprecation channel rollout (may-2026)
-Leader Engineer: Frida Ohno
+Leader Engineer: Pia Marín
 Progress: 18% | Due: 31 May
 Link: https://example.invalid/objectives/MBETA-2605-02
 Done this week: Prep work is done; kickoff of the customer-facing rollout starts Monday.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [May]: Zero-downtime restart choreography (may-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Bram Okonjo
 Progress: 20% | Due: 31 May
 Link: https://example.invalid/objectives/MBETA-2605-03
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Complete the final code review and enable the feature flag globally.
 
 [ON TRACK] Q2 2026 [May]: Warm-cache eviction policy (may-2026)
-Leader Engineer: Lena Rihanna
+Leader Engineer: Bram Okonjo
 Progress: 6% | Due: 31 May
 Link: https://example.invalid/objectives/MBETA-2605-04
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Observability sampling refresh (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Rio Vasquez
 Progress: 26% | Due: 31 May
 Link: https://example.invalid/objectives/MBETA-2605-05
 Done this week: Cleared the staging soak; production rollout scheduled for early next week.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [ON TRACK] Q2 2026 [May]: Runtime resource budgets (may-2026)
-Leader Engineer: Dara Okonjo
+Leader Engineer: Pia Marín
 Progress: 11% | Due: 31 May
 Link: https://example.invalid/objectives/MBETA-2605-06
 Done this week: Landed 3 of 5 PRs; last two under review with a partner team.
@@ -59,7 +59,7 @@ Plan for next week: Wrap the last integration test and hand off to QA.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Warm-cache eviction policy: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Lena Rihanna | Owner: Lena Rihanna | Days open: n/a
+  Leader Engineer: Bram Okonjo | Owner: Bram Okonjo | Days open: n/a
 
 Kind Regards
 Engineering Manager

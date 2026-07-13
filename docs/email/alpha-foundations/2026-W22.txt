@@ -16,35 +16,35 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [ON TRACK] Q2 2026 [May]: Service topology drift alarm (may-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Nya Volkov
 Progress: 79% | Due: 31 May
 Link: https://example.invalid/objectives/MALPH-2605-02
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Ship remaining PRs; start canary rollout by Wednesday.
 
 [ON TRACK] Q2 2026 [May]: Golden-path SLO board (may-2026)
-Leader Engineer: Nya Sardar
+Leader Engineer: Nya Volkov
 Progress: 85% | Due: 31 May
 Link: https://example.invalid/objectives/MALPH-2605-03
 Done this week: Feature flag is enabled for internal cohorts; watching latency and error rate.
 Plan for next week: Wrap the last integration test and hand off to QA.
 
 [AT RISK] Q2 2026 [May]: Runtime resource budgets (may-2026)
-Leader Engineer: Kai Ostberg
+Leader Engineer: Ava Barone
 Progress: 42% | Due: 31 May
 Link: https://example.invalid/objectives/MALPH-2605-05
 Done this week: Discovered a regression in the smoke tests that pushed the merge back.
 Plan for next week: Focus on removing the current blocker; deprioritise nice-to-haves.
 
 [DONE] Q2 2026 [May]: Deprecation channel rollout (may-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Frida Larsson
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MALPH-2605-01
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 [DONE] Q2 2026 [May]: Feature flag rollout guardrails (may-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Frida Larsson
 Progress: 100% | Due: 31 May
 Link: https://example.invalid/objectives/MALPH-2605-04
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
@@ -52,9 +52,9 @@ Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 BLOCKERS / RISKS
 - [Risk] Q2 2026 [May]: Runtime resource budgets: Design review pending from the sibling team.
-  Leader Engineer: Kai Ostberg | Owner: Kai Ostberg | Days open: n/a
+  Leader Engineer: Ava Barone | Owner: Ava Barone | Days open: n/a
 - [Risk] Q2 2026 [May]: Service topology drift alarm: Reviewer coverage is thin the week of launch — flagging in case rollout slips.
-  Leader Engineer: Quinn Yates | Owner: Quinn Yates | Days open: n/a
+  Leader Engineer: Nya Volkov | Owner: Nya Volkov | Days open: n/a
 
 Kind Regards
 Engineering Manager

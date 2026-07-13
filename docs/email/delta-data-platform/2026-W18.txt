@@ -16,28 +16,28 @@ OBJECTIVE UPDATES
 Sorted by status: on track, at risk, delayed, not started, missing, done.
 
 [DONE] Q2 2026 [April]: Service topology drift alarm (april-2026)
-Leader Engineer: Sana Rowe
+Leader Engineer: Ellis Larsson
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MDELT-2604-01
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [April]: Rate-limiter fairness audit (april-2026)
-Leader Engineer: Rio Delacroix
+Leader Engineer: Sana Barone
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MDELT-2604-02
 Done this week: Shipped the last remaining PR and confirmed the target metric moved as expected.
 Plan for next week: Monitor for the next 2 weeks; no active work planned.
 
 [DONE] Q2 2026 [April]: Config drift auto-repair (april-2026)
-Leader Engineer: Ava Thornton
+Leader Engineer: Gwen Yates
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MDELT-2604-03
 Done this week: Closed the final ticket in the epic and archived the working doc.
 Plan for next week: Move to maintenance; capture learnings into the runbook.
 
 [DONE] Q2 2026 [April]: Runtime resource budgets (april-2026)
-Leader Engineer: Quinn Yates
+Leader Engineer: Gwen Yates
 Progress: 100% | Due: 30 Apr
 Link: https://example.invalid/objectives/MDELT-2604-04
 Done this week: Landed the migration cutover; no incidents in the follow-up window.
