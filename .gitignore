@@ -15,3 +15,11 @@ config/*local*.yaml
 snapshots/**/*.json
 snapshots/_aggregates/
 snapshots/_dashboards/
+
+# Rendered dashboards are build artifacts: CI renders and deploys them to
+# GitHub Pages (see .github/workflows/pages.yml). Never commit the output.
+# Source of truth is demo-snapshots/*.json + templates/dashboard.html.
+demo-snapshots/_dashboards/
+docs/index.html
+docs/email/
+/public/
