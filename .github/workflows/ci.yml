@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [main]
 
+# contents: read for checkout; pages + id-token for the deploy jobs (unused by
+# the test jobs). The deploy only runs on push to main (see the if guards).
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   python:
     name: Python tests + config validation
@@ -46,3 +53,46 @@ jobs:
 
       - name: Run jest suite
         run: npm test -- --ci
+
+  # Render + deploy the Pages dashboard, but only after tests pass and only on
+  # a push to main. On PRs the test jobs still run; build/deploy are skipped.
+  build:
+    name: Render dashboard
+    needs: [python, node]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install render deps
+        run: pip install jinja2
+
+      - name: Render dashboard from demo-snapshots
+        run: python scripts/render_dashboard.py --output-path public/index.html
+
+      - name: Disable Jekyll processing
+        run: touch public/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # One live deploy at a time; never cancel an in-flight publish.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
