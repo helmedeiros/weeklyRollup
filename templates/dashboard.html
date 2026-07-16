@@ -951,6 +951,26 @@ table.teams tr:last-child td { border-bottom: none; }
     if (h < 48) return h >= 10 ? `${h.toFixed(0)}h` : `${h.toFixed(1)}h`;
     return `${(h / 24).toFixed(1)}d`;
   }
+  function fmtPct(v) {
+    if (v === null || v === undefined) return "–";
+    return v < 0.1 ? `${(v * 100).toFixed(1)}%` : `${(v * 100).toFixed(0)}%`;
+  }
+  function fmtDur(minutes) {
+    if (minutes === null || minutes === undefined) return "–";
+    if (minutes < 90) return `${Math.round(minutes)}m`;
+    return fmtLead(minutes);
+  }
+  function cfrCard(cfr) {
+    if (!cfr || cfr.value === null)
+      return flowCard("not measured", "Change-failure rate", "no deploys in window", true);
+    return flowCard(fmtPct(cfr.value), "Change-failure rate", `~${cfr.deploys_failed} of ${cfr.deploys_total} deploys`);
+  }
+  function mttrCard(mttr) {
+    if (!mttr) return flowCard("not measured", "MTTR", "incident feed not wired", true);
+    if (mttr.incidents === 0) return flowCard("none", "MTTR", "no incidents this week");
+    const n = `${mttr.incidents} ${mttr.incidents === 1 ? "incident" : "incidents"}`;
+    return flowCard(fmtDur(mttr.p50), "MTTR (p50)", `p90 ${fmtDur(mttr.p90)} · ${n}`);
+  }
   function flowCard(num, label, sub, isNa) {
     return `<div class="flow-card">
       <div class="num${isNa ? " na" : ""}">${escapeHtml(num)}</div>
@@ -976,8 +996,8 @@ table.teams tr:last-child td { border-bottom: none; }
       flowCard(fmtHours(r.time_to_first_review.p50), "Time to 1st review (p50)", `p85 ${fmtHours(r.time_to_first_review.p85)}`),
       flowCard(fmtHours(r.review_to_approved.p50), "Review → approved (p50)", `p85 ${fmtHours(r.review_to_approved.p85)}`),
       flowCard(fmtHours(r.rework_time.p50), "Rework (p50)", `p85 ${fmtHours(r.rework_time.p85)}`),
-      flowCard("not measured", "Change-failure rate", "incident feed not wired", true),
-      flowCard("not measured", "MTTR", "incident feed not wired", true),
+      cfrCard(d.change_failure_rate),
+      mttrCard(d.mttr),
     ].join("");
     subhead.textContent = `Week ${latest.week.iso_week} · ${dateLabel} · medians over the ${f.window.days}-day window.`;
     note.textContent = `Coverage: ${cov.prs_measured} of ${cov.prs_total} PRs measured. Review times are Berlin business hours.`;
@@ -1002,12 +1022,14 @@ table.teams tr:last-child td { border-bottom: none; }
         <td class="tc">${escapeHtml(fmtHours(f.review.rework_time.p50))}</td>
         <td class="tc">${escapeHtml(fmtLead(f.dora.lead_time.p50))}</td>
         <td class="tc">${f.dora.deployment_frequency.weekly_average}/wk</td>
+        <td class="tc">${escapeHtml(fmtPct(f.dora.change_failure_rate.value))}</td>
       </tr>`;
     }).join("");
     container.innerHTML = `<table class="eng-flow-table">
       <thead><tr>
         <th>Engineer</th><th class="tc">Obj</th><th class="tc">1st review</th>
-        <th class="tc">→ approved</th><th class="tc">Rework</th><th class="tc">Lead time</th><th class="tc">Deploys</th>
+        <th class="tc">→ approved</th><th class="tc">Rework</th><th class="tc">Lead time</th>
+        <th class="tc">Deploys</th><th class="tc">CFR</th>
       </tr></thead>
       <tbody>${rows}</tbody></table>`;
     subhead.textContent = `${engs.length} ${pluralize(engs.length, "engineer", "engineers")} · slowest review→approved first · Week ${latest.week.iso_week}.`;
@@ -1025,6 +1047,7 @@ table.teams tr:last-child td { border-bottom: none; }
         ${m(fmtHours(r.rework_time.p50), "Rework (p50)")}
         ${m(fmtLead(d.lead_time.p50), "Lead time (p50)")}
         ${m(`${d.deployment_frequency.weekly_average}/wk`, "Deploy frequency")}
+        ${m(d.change_failure_rate.value === null ? "–" : `${fmtPct(d.change_failure_rate.value)} (~${d.change_failure_rate.deploys_failed}/${d.change_failure_rate.deploys_total})`, "Change-failure rate")}
         ${m(`${cov.prs_measured}/${cov.prs_total}`, "PRs measured")}
       </div>
     </div>`;

@@ -415,6 +415,7 @@ def generate() -> None:
             objectives: list[dict] = []
             totals = {b: 0 for b in ("done", "spillover_on_track", "spillover_at_risk", "spillover_blocked", "missing")}
             engineers_seen: dict[str, dict] = {}
+            week_outcomes: list[str] = []
             for src in cohort:
                 bucket = src["buckets_by_week"][week_idx]
                 progress = src["progress_by_week"][week_idx]
@@ -442,12 +443,14 @@ def generate() -> None:
                 # The Jira key is the atomic unit: everything ladders up from it.
                 # Health follows this week's bucket (trajectory), shifted by the
                 # team's persistent performance signature.
+                weekly_outcome = BUCKET_TO_OUTCOME.get(bucket, src["outcome"])
+                week_outcomes.append(weekly_outcome)
                 obj_flow = FLOW.fetch(
                     FlowScope(
                         "objective",
                         src["key"],
                         src["name"],
-                        (BUCKET_TO_OUTCOME.get(bucket, src["outcome"]),),
+                        (weekly_outcome,),
                         health_bias=TEAM_HEALTH_BIAS[team_id],
                     ),
                     window,
@@ -477,12 +480,18 @@ def generate() -> None:
                 engineer_blocks.append(flow)
                 engineers.append({**eng, "flow_metrics": flow})
 
-            team_flow = aggregate_flow_blocks(
-                engineer_blocks,
-                scope=FlowScope("team", team_id, team_name),
-                window=window,
-                source=FLOW.source,
+            # Team block: review/lead medians and pooled CFR come from the
+            # ladder; MTTR is team-direct (incidents don't ladder), so pull it
+            # from a team-scoped fetch reflecting this week's health.
+            team_scope = FlowScope(
+                "team", team_id, team_name,
+                tuple(week_outcomes),
+                health_bias=TEAM_HEALTH_BIAS[team_id],
             )
+            team_flow = aggregate_flow_blocks(
+                engineer_blocks, scope=team_scope, window=window, source=FLOW.source,
+            )
+            team_flow["dora"]["mttr"] = FLOW.fetch(team_scope, window)["dora"]["mttr"]
 
             total = sum(totals.values())
             payload = {

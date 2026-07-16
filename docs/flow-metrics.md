@@ -49,8 +49,26 @@ so the reader of this repo knows what is real and what is pending.
 3. **Switch the producer** behind a flag mirroring `--jira-source`
    (e.g. `--flow-source demo|data-tools`).
 
-Change-failure-rate and MTTR stay `null` until the incident feed is added
-upstream.
+### Change-failure rate and MTTR
+
+Both are modelled in the contract and faked in the demo, but they behave
+differently because CFR is about *changes* and MTTR is about *incidents*:
+
+- **Change-failure rate** — `{ unit: "ratio", value, deploys_total, deploys_failed }`.
+  Present at **all three scopes** (it ladders through the Jira key like deploys).
+  The rate is the source of truth; it aggregates as a **deploys-weighted mean**
+  of child rates (never a plain average, and never by summing per-slice failure
+  counts — a tiny objective slice would round to zero and erase the signal).
+  `value` is `null` when there were no deploys in the window.
+- **MTTR** — `{ unit: "minutes", p50, p90, incidents }`. **Team scope only**
+  (`null` at engineer/objective — incidents don't map to a person or an epic).
+  Generated per week directly (it doesn't ladder). On a quiet week the object is
+  present with `incidents: 0` and `p50/p90: null` — "no incidents", which is
+  different from "not measured".
+
+To make them real, the event store needs the incident pipeline: deployment
+events tagged with a failure/rollback signal (→ CFR) and `event_type='incident'`
+open→resolved timestamps (→ MTTR). See `DataToolsFlowMetricsProvider`.
 
 ## Optional display
 

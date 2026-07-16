@@ -63,10 +63,35 @@ class DemoContractTest(unittest.TestCase):
         self.assertEqual(block["review"]["review_to_approved"]["unit"], UNIT_REVIEW)
         self.assertEqual(block["review"]["time_to_first_review"]["unit"], UNIT_REVIEW)
 
-    def test_unavailable_metrics_are_none_not_zero(self):
-        block = self.provider.fetch(FlowScope("team", "eta"), _window())
-        self.assertIsNone(block["dora"]["change_failure_rate"])
-        self.assertIsNone(block["dora"]["mttr"])
+    def test_cfr_present_at_all_scopes_with_counts(self):
+        for level in ("team", "engineer", "objective"):
+            cfr = self.provider.fetch(FlowScope(level, "x", outcomes=("at_risk",)), _window())["dora"]["change_failure_rate"]
+            self.assertEqual(cfr["unit"], "ratio")
+            self.assertIn("deploys_total", cfr)
+            self.assertIn("deploys_failed", cfr)
+            if cfr["deploys_total"]:
+                self.assertTrue(0.0 <= cfr["value"] <= 0.9)  # value is the rate
+                self.assertEqual(cfr["deploys_failed"], round(cfr["deploys_total"] * cfr["value"]))
+
+    def test_mttr_is_team_scope_only(self):
+        self.assertIsNone(self.provider.fetch(FlowScope("engineer", "e"), _window())["dora"]["mttr"])
+        self.assertIsNone(self.provider.fetch(FlowScope("objective", "K"), _window())["dora"]["mttr"])
+        team_mttr = self.provider.fetch(FlowScope("team", "t", outcomes=("blocked",)), _window())["dora"]["mttr"]
+        self.assertIsNotNone(team_mttr)
+        self.assertEqual(team_mttr["unit"], "minutes")
+        self.assertIn("incidents", team_mttr)
+
+    def test_mttr_quiet_week_has_null_percentiles(self):
+        # A healthy team often has no incidents that week: object present,
+        # percentiles null, incidents 0 — not "not measured".
+        found_quiet = False
+        for wk in range(6, 32):
+            m = self.provider.fetch(FlowScope("team", "eta", outcomes=("done", "done")), _window(wk))["dora"]["mttr"]
+            if m["incidents"] == 0:
+                found_quiet = True
+                self.assertIsNone(m["p50"])
+                self.assertIsNone(m["p90"])
+        self.assertTrue(found_quiet, "expected at least one incident-free week for a healthy team")
 
     def test_review_percentiles_are_ordered(self):
         block = self.provider.fetch(FlowScope("engineer", "athornton"), _window())
@@ -175,6 +200,25 @@ class AggregateFlowTest(unittest.TestCase):
             children, scope=FlowScope("engineer", "e"), window=self.window, source="faked"
         )
         self.assertIsNone(eng["coverage"]["prs_linked_to_objective"])
+
+    def test_cfr_pools_as_deploys_weighted_mean_rate(self):
+        children = [self._obj("MABC-2606-01", "done"), self._obj("MABC-2606-02", "blocked")]
+        agg = aggregate_flow_blocks(
+            children, scope=FlowScope("engineer", "e"), window=self.window, source="faked"
+        )["dora"]["change_failure_rate"]
+        cfrs = [c["dora"]["change_failure_rate"] for c in children]
+        exp_total = sum(c["deploys_total"] for c in cfrs)
+        exp_rate = round(sum((c["value"] or 0) * c["deploys_total"] for c in cfrs) / exp_total, 4)
+        self.assertEqual(agg["deploys_total"], exp_total)
+        self.assertEqual(agg["value"], exp_rate)
+        self.assertEqual(agg["deploys_failed"], round(exp_total * exp_rate))
+
+    def test_mttr_stays_none_through_aggregation(self):
+        children = [self._obj("MABC-2606-01", "blocked")]
+        agg = aggregate_flow_blocks(
+            children, scope=FlowScope("team", "t"), window=self.window, source="faked"
+        )
+        self.assertIsNone(agg["dora"]["mttr"])
 
 
 class DataToolsStubTest(unittest.TestCase):

@@ -40,7 +40,7 @@
     },
     "coverage": {
       "prs_total": 21,
-      "prs_measured": 19,
+      "prs_measured": 18,
       "prs_linked_to_objective": null
     },
     "dora": {
@@ -54,8 +54,18 @@
         "p50": 2488,
         "p99": 7422
       },
-      "change_failure_rate": null,
-      "mttr": null
+      "change_failure_rate": {
+        "unit": "ratio",
+        "value": 0.1012,
+        "deploys_total": 8,
+        "deploys_failed": 1
+      },
+      "mttr": {
+        "unit": "minutes",
+        "p50": 77,
+        "p90": 192,
+        "incidents": 2
+      }
     },
     "review": {
       "time_to_first_review": {
@@ -76,7 +86,7 @@
         "p85": 8.8,
         "p99": 16.1
       },
-      "pr_count": 19
+      "pr_count": 18
     },
     "trends": {}
   },
@@ -116,7 +126,12 @@
             "p50": 2394,
             "p99": 7186
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.083,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
@@ -178,7 +193,12 @@
             "p50": 1993,
             "p99": 6051
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.1316,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
@@ -240,7 +260,12 @@
             "p50": 2858,
             "p99": 7748
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.0876,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
@@ -288,7 +313,7 @@
         },
         "coverage": {
           "prs_total": 5,
-          "prs_measured": 5,
+          "prs_measured": 4,
           "prs_linked_to_objective": null
         },
         "dora": {
@@ -302,7 +327,12 @@
             "p50": 2582,
             "p99": 7658
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.1026,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
@@ -324,7 +354,7 @@
             "p85": 13.1,
             "p99": 26.0
           },
-          "pr_count": 5
+          "pr_count": 4
         },
         "trends": {}
       }
@@ -385,7 +415,12 @@
             "p50": 1993,
             "p99": 6051
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.1316,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
@@ -466,7 +501,12 @@
             "p50": 2858,
             "p99": 7748
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.0876,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
@@ -533,7 +573,7 @@
         },
         "coverage": {
           "prs_total": 5,
-          "prs_measured": 5,
+          "prs_measured": 4,
           "prs_linked_to_objective": 5
         },
         "dora": {
@@ -547,7 +587,12 @@
             "p50": 2582,
             "p99": 7658
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.1026,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
@@ -569,7 +614,7 @@
             "p85": 13.1,
             "p99": 26.0
           },
-          "pr_count": 5
+          "pr_count": 4
         },
         "trends": {}
       }
@@ -628,7 +673,12 @@
             "p50": 2394,
             "p99": 7186
           },
-          "change_failure_rate": null,
+          "change_failure_rate": {
+            "unit": "ratio",
+            "value": 0.083,
+            "deploys_total": 2,
+            "deploys_failed": 0
+          },
           "mttr": null
         },
         "review": {
