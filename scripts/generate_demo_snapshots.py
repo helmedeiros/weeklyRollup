@@ -32,6 +32,7 @@ from email_from_snapshot import (
     synth_leader_engineer_update,
 )
 from flow_metrics import (
+    RELIABILITY_WEEKS,
     DemoFlowMetricsProvider,
     FlowScope,
     FlowWindow,
@@ -384,6 +385,10 @@ def generate() -> None:
     root = Path(__file__).resolve().parent.parent / "demo-snapshots"
     by_month = weeks_by_month(ISO_YEAR, FIRST_WEEK, LAST_WEEK)
 
+    # Per-team trailing history of (week_key, health, deploys) for the
+    # reliability window. Built as weeks are processed in chronological order.
+    reliability_history: dict[str, list[tuple[str, float, int]]] = {}
+
     # Pre-build every cohort so weekly snapshots just index into them.
     cohorts: dict[tuple[str, int, int], list[dict]] = {}
     for team_id, _, business_unit, cohort_size in TEAMS:
@@ -480,9 +485,10 @@ def generate() -> None:
                 engineer_blocks.append(flow)
                 engineers.append({**eng, "flow_metrics": flow})
 
-            # Team block: review/lead medians and pooled CFR come from the
-            # ladder; MTTR is team-direct (incidents don't ladder), so pull it
-            # from a team-scoped fetch reflecting this week's health.
+            # Team block: review/lead medians and deploy totals come from the
+            # ladder. CFR + MTTR are team-scoped reliability metrics over a
+            # trailing window, so they accumulate this week's deploys/health onto
+            # the team's history and read the last few weeks together.
             team_scope = FlowScope(
                 "team", team_id, team_name,
                 tuple(week_outcomes),
@@ -491,7 +497,11 @@ def generate() -> None:
             team_flow = aggregate_flow_blocks(
                 engineer_blocks, scope=team_scope, window=window, source=FLOW.source,
             )
-            team_flow["dora"]["mttr"] = FLOW.fetch(team_scope, window)["dora"]["mttr"]
+            hist = reliability_history.setdefault(team_id, [])
+            hist.append((window.key, team_scope.health, team_flow["dora"]["deployment_frequency"]["total"]))
+            cfr, mttr = FLOW.reliability(team_id, hist[-RELIABILITY_WEEKS:])
+            team_flow["dora"]["change_failure_rate"] = cfr
+            team_flow["dora"]["mttr"] = mttr
 
             total = sum(totals.values())
             payload = {

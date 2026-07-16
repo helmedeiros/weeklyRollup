@@ -49,26 +49,35 @@ so the reader of this repo knows what is real and what is pending.
 3. **Switch the producer** behind a flag mirroring `--jira-source`
    (e.g. `--flow-source demo|data-tools`).
 
-### Change-failure rate and MTTR
+### Change-failure rate and MTTR — trailing-window reliability
 
-Both are modelled in the contract and faked in the demo, but they behave
-differently because CFR is about *changes* and MTTR is about *incidents*:
+Failures and incidents are *rare events*: over a single week off ~10 deploys,
+CFR is just binary noise (0% or 12.5%) and MTTR often has no sample. That is why
+DORA measures both over a longer window. Here they are **team-scoped** and
+computed over a **trailing 4-week (~28-day) window** (`RELIABILITY_SCOPES` /
+`RELIABILITY_WEEKS`), which makes them stable, meaningful, and trend-bearing:
 
-- **Change-failure rate** — `{ unit: "ratio", value, deploys_total, deploys_failed }`.
-  Present at **all three scopes** (it ladders through the Jira key like deploys).
-  The rate is the source of truth; it aggregates as a **deploys-weighted mean**
-  of child rates (never a plain average, and never by summing per-slice failure
-  counts — a tiny objective slice would round to zero and erase the signal).
-  `value` is `null` when there were no deploys in the window.
-- **MTTR** — `{ unit: "minutes", p50, p90, incidents }`. **Team scope only**
-  (`null` at engineer/objective — incidents don't map to a person or an epic).
-  Generated per week directly (it doesn't ladder). On a quiet week the object is
-  present with `incidents: 0` and `p50/p90: null` — "no incidents", which is
-  different from "not measured".
+- **Change-failure rate** — `{ unit: "ratio", value, deploys_total, deploys_failed, window_days }`.
+  **Counts are the source of truth**: `value == deploys_failed / deploys_total`,
+  so the rate and the counts can never disagree (the "6.2% but 0 of 8" bug).
+  `null` value only if there were no deploys across the whole window.
+- **MTTR** — `{ unit: "minutes", p50, p90, incidents, window_days }`. Median and
+  p90 of incident-recovery times over the window. An incident-free window is
+  `incidents: 0` with null percentiles — "no incidents", not "not measured".
+
+Both are **team scope only** (`null` at engineer/objective — incidents map to
+neither a person nor an epic) and do **not** ladder through the key. The demo
+accumulates each week's deploys + incidents (seeded per team-week, so a week's
+events are stable across overlapping windows) and reads the last four weeks
+together. Per-week failure probability and incident rate rise with the team's
+weekly outcome health, so CFR and MTTR **follow the goal trajectory with a
+realistic lag** — a team sliding toward *blocked* sees its reliability degrade
+over the following weeks, and recover as it climbs back.
 
 To make them real, the event store needs the incident pipeline: deployment
 events tagged with a failure/rollback signal (→ CFR) and `event_type='incident'`
-open→resolved timestamps (→ MTTR). See `DataToolsFlowMetricsProvider`.
+open→resolved timestamps (→ MTTR), queried with `days≈28`. See
+`DataToolsFlowMetricsProvider`.
 
 ## Optional display
 

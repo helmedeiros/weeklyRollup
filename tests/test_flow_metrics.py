@@ -63,35 +63,13 @@ class DemoContractTest(unittest.TestCase):
         self.assertEqual(block["review"]["review_to_approved"]["unit"], UNIT_REVIEW)
         self.assertEqual(block["review"]["time_to_first_review"]["unit"], UNIT_REVIEW)
 
-    def test_cfr_present_at_all_scopes_with_counts(self):
+    def test_reliability_metrics_absent_from_fetch(self):
+        # CFR/MTTR are trailing-window team metrics composed via reliability(),
+        # not produced by a single-week fetch at any scope.
         for level in ("team", "engineer", "objective"):
-            cfr = self.provider.fetch(FlowScope(level, "x", outcomes=("at_risk",)), _window())["dora"]["change_failure_rate"]
-            self.assertEqual(cfr["unit"], "ratio")
-            self.assertIn("deploys_total", cfr)
-            self.assertIn("deploys_failed", cfr)
-            if cfr["deploys_total"]:
-                self.assertTrue(0.0 <= cfr["value"] <= 0.9)  # value is the rate
-                self.assertEqual(cfr["deploys_failed"], round(cfr["deploys_total"] * cfr["value"]))
-
-    def test_mttr_is_team_scope_only(self):
-        self.assertIsNone(self.provider.fetch(FlowScope("engineer", "e"), _window())["dora"]["mttr"])
-        self.assertIsNone(self.provider.fetch(FlowScope("objective", "K"), _window())["dora"]["mttr"])
-        team_mttr = self.provider.fetch(FlowScope("team", "t", outcomes=("blocked",)), _window())["dora"]["mttr"]
-        self.assertIsNotNone(team_mttr)
-        self.assertEqual(team_mttr["unit"], "minutes")
-        self.assertIn("incidents", team_mttr)
-
-    def test_mttr_quiet_week_has_null_percentiles(self):
-        # A healthy team often has no incidents that week: object present,
-        # percentiles null, incidents 0 — not "not measured".
-        found_quiet = False
-        for wk in range(6, 32):
-            m = self.provider.fetch(FlowScope("team", "eta", outcomes=("done", "done")), _window(wk))["dora"]["mttr"]
-            if m["incidents"] == 0:
-                found_quiet = True
-                self.assertIsNone(m["p50"])
-                self.assertIsNone(m["p90"])
-        self.assertTrue(found_quiet, "expected at least one incident-free week for a healthy team")
+            dora = self.provider.fetch(FlowScope(level, "x", outcomes=("at_risk",)), _window())["dora"]
+            self.assertIsNone(dora["change_failure_rate"])
+            self.assertIsNone(dora["mttr"])
 
     def test_review_percentiles_are_ordered(self):
         block = self.provider.fetch(FlowScope("engineer", "athornton"), _window())
@@ -201,24 +179,59 @@ class AggregateFlowTest(unittest.TestCase):
         )
         self.assertIsNone(eng["coverage"]["prs_linked_to_objective"])
 
-    def test_cfr_pools_as_deploys_weighted_mean_rate(self):
-        children = [self._obj("MABC-2606-01", "done"), self._obj("MABC-2606-02", "blocked")]
-        agg = aggregate_flow_blocks(
-            children, scope=FlowScope("engineer", "e"), window=self.window, source="faked"
-        )["dora"]["change_failure_rate"]
-        cfrs = [c["dora"]["change_failure_rate"] for c in children]
-        exp_total = sum(c["deploys_total"] for c in cfrs)
-        exp_rate = round(sum((c["value"] or 0) * c["deploys_total"] for c in cfrs) / exp_total, 4)
-        self.assertEqual(agg["deploys_total"], exp_total)
-        self.assertEqual(agg["value"], exp_rate)
-        self.assertEqual(agg["deploys_failed"], round(exp_total * exp_rate))
-
-    def test_mttr_stays_none_through_aggregation(self):
+    def test_reliability_stays_none_through_aggregation(self):
         children = [self._obj("MABC-2606-01", "blocked")]
         agg = aggregate_flow_blocks(
             children, scope=FlowScope("team", "t"), window=self.window, source="faked"
         )
+        self.assertIsNone(agg["dora"]["change_failure_rate"])
         self.assertIsNone(agg["dora"]["mttr"])
+
+
+class ReliabilityTest(unittest.TestCase):
+    def setUp(self):
+        self.provider = DemoFlowMetricsProvider()
+
+    def _weeks(self, health, deploys, n=4):
+        return [(f"2026-W{20 + i:02d}", health, deploys) for i in range(n)]
+
+    def test_cfr_value_equals_failed_over_total(self):
+        # The invariant the report violated: rate and counts can never disagree.
+        for health in (0.0, 0.3, 0.6, 1.0):
+            cfr, _ = self.provider.reliability("eta", self._weeks(health, 12))
+            self.assertEqual(cfr["value"], round(cfr["deploys_failed"] / cfr["deploys_total"], 4))
+            self.assertLessEqual(cfr["deploys_failed"], cfr["deploys_total"])
+
+    def test_window_days_reflects_trailing_weeks(self):
+        cfr, mttr = self.provider.reliability("eta", self._weeks(0.5, 10, n=4))
+        self.assertEqual(cfr["window_days"], 28)
+        self.assertEqual(mttr["window_days"], 28)
+
+    def test_struggling_team_has_higher_cfr_and_slower_mttr(self):
+        healthy_cfr, healthy_mttr = self.provider.reliability("t", self._weeks(0.0, 40))
+        rough_cfr, rough_mttr = self.provider.reliability("t", self._weeks(1.0, 40))
+        self.assertLess(healthy_cfr["value"], rough_cfr["value"])
+        self.assertGreater(rough_mttr["incidents"], healthy_mttr["incidents"])
+
+    def test_same_week_events_stable_across_overlapping_windows(self):
+        # A week's failures/incidents are identical whether seen from a window
+        # ending at W23 or W24 — trailing sums stay consistent.
+        w = [("2026-W22", 0.5, 15), ("2026-W23", 0.5, 15)]
+        first, _ = self.provider.reliability("t", w[:1])
+        both, _ = self.provider.reliability("t", w)
+        # the W22 contribution is unchanged when W23 is appended
+        self.assertEqual(both["deploys_total"] - first["deploys_total"], 15)
+
+    def test_quiet_window_has_null_percentiles(self):
+        # A healthy team with few deploys can go a whole window incident-free.
+        found = False
+        for wk in range(6, 30):
+            _, mttr = self.provider.reliability("calm", [(f"2026-W{wk:02d}", 0.0, 8)])
+            if mttr["incidents"] == 0:
+                found = True
+                self.assertIsNone(mttr["p50"])
+                self.assertIsNone(mttr["p90"])
+        self.assertTrue(found)
 
 
 class DataToolsStubTest(unittest.TestCase):

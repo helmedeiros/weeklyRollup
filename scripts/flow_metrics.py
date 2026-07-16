@@ -53,11 +53,11 @@ UNIT_DEPLOY_FREQ = "deploys/week"
 UNIT_RATIO = "ratio"                # change-failure rate: 0.0 .. 1.0
 UNIT_MTTR = "minutes"               # incident open -> resolved, calendar minutes
 
-# Scopes at which each DORA metric is meaningful. CFR is about *changes* so it
-# ladders through the Jira key like deploys; MTTR is about *incidents*, which are
-# team/service-level and never map cleanly to an engineer or an epic.
-CFR_SCOPES = ("team", "engineer", "objective")
-MTTR_SCOPES = ("team",)
+# Change-failure rate and MTTR are team/service reliability metrics measured
+# over a trailing multi-week window (failures and incidents are rare events —
+# a single week is just noise). They live at team scope only.
+RELIABILITY_SCOPES = ("team",)
+RELIABILITY_WEEKS = 4  # trailing window length, in weeks
 
 # How much each weekly outcome degrades flow health, 0.0 (best) .. 1.0 (worst).
 _OUTCOME_HEALTH = {
@@ -153,6 +153,16 @@ def _median(values: list[float]) -> float | None:
     return (vals[mid - 1] + vals[mid]) / 2
 
 
+def _percentile(sorted_vals: list[float], p: float) -> float | None:
+    """Linear-interpolated percentile of an already-sorted list."""
+    if not sorted_vals:
+        return None
+    k = (len(sorted_vals) - 1) * (p / 100)
+    lo = int(k)
+    hi = min(lo + 1, len(sorted_vals) - 1)
+    return round(sorted_vals[lo] + (sorted_vals[hi] - sorted_vals[lo]) * (k - lo))
+
+
 def _median_pcts(metrics: list[dict[str, Any]]) -> dict[str, Any]:
     """Median each percentile across child metric blocks (median-of-medians)."""
     unit = metrics[0]["unit"]
@@ -210,24 +220,9 @@ def aggregate_flow_blocks(
         ),
     }
 
-    # Change-failure rate pools as a deploys-weighted mean of child rates — a
-    # ratio never plain-averages, and summing per-slice failure counts would
-    # round each tiny slice to zero and erase the signal. MTTR does not ladder
-    # (incidents are team-level), so aggregation leaves it None; a team block
-    # gets its MTTR generated directly.
-    cfrs = [c["dora"]["change_failure_rate"] for c in children if c["dora"].get("change_failure_rate")]
-    cfr_total = sum(c["deploys_total"] for c in cfrs)
-    cfr_rate = (
-        round(sum((c["value"] or 0) * c["deploys_total"] for c in cfrs) / cfr_total, 4)
-        if cfr_total else None
-    )
-    change_failure_rate = {
-        "unit": UNIT_RATIO,
-        "value": cfr_rate,
-        "deploys_total": cfr_total,
-        "deploys_failed": round(cfr_total * cfr_rate) if cfr_rate is not None else 0,
-    }
-
+    # Reliability metrics (CFR + MTTR) are trailing-window and team-scoped; they
+    # do not ladder through the key, so aggregation leaves them None. A team
+    # block gets them injected from FlowMetricsProvider.reliability().
     return build_flow_block(
         scope=scope,
         window=window,
@@ -236,7 +231,7 @@ def aggregate_flow_blocks(
         dora={
             "deployment_frequency": deploy_freq,
             "lead_time": lead_time,
-            "change_failure_rate": change_failure_rate,
+            "change_failure_rate": None,
             "mttr": None,
         },
         review=review,
@@ -312,19 +307,6 @@ class DemoFlowMetricsProvider(FlowMetricsProvider):
             "weekly_average": weekly_avg,
         }
 
-        # Change-failure rate: the fraction of this scope's deploys that caused
-        # a failure. Healthy ~3%, struggling ~35%. The rate is the source of
-        # truth; the failed count is rounded from it, and the totals are carried
-        # so a high rate off a tiny denominator reads as the noise it is.
-        cfr_rate = round(max(0.0, min(0.9, _lerp(0.03, 0.35, h) * rng.uniform(0.7, 1.3))), 4)
-        change_failure_rate = {
-            "unit": UNIT_RATIO,
-            "value": cfr_rate if deploy_total else None,
-            "deploys_total": deploy_total,
-            "deploys_failed": round(deploy_total * cfr_rate),
-        }
-        mttr = self._mttr(scope, window.key, h)
-
         # --- coverage / PR volume ---
         healthy_total, struggling_total = self._PR_TOTALS.get(scope.level, (10, 3))
         prs_total = max(1, round(_lerp(healthy_total, struggling_total, h) * rng.uniform(0.85, 1.15)))
@@ -345,8 +327,10 @@ class DemoFlowMetricsProvider(FlowMetricsProvider):
             dora={
                 "deployment_frequency": deploy_freq,
                 "lead_time": lead_time,
-                "change_failure_rate": change_failure_rate,
-                "mttr": mttr,
+                # Reliability metrics are trailing-window and team-scoped; the
+                # demo composes them via reliability() and injects at team scope.
+                "change_failure_rate": None,
+                "mttr": None,
             },
             review={
                 "time_to_first_review": ttfr,
@@ -366,27 +350,52 @@ class DemoFlowMetricsProvider(FlowMetricsProvider):
             "p99": round(p50 * rng.uniform(2.8, 3.6), 1),
         }
 
-    @staticmethod
-    def _mttr(scope: FlowScope, window_key: str, h: float) -> dict[str, Any] | None:
-        """Incident recovery time — team scope only, and often a quiet week.
+    def reliability(
+        self,
+        team_ref: str,
+        weeks: list[tuple[str, float, int]],
+    ) -> tuple[dict[str, Any], dict[str, Any]]:
+        """Trailing-window change-failure rate + MTTR for a team.
 
-        None at engineer/objective scope (incidents aren't per-person or
-        per-epic). At team scope the object is always present, but its
-        percentiles are null when there were no incidents that week.
+        ``weeks`` is a chronological list of ``(week_key, health, deploys)`` for
+        the trailing window (most recent last). Per-week failure and incident
+        events are seeded by ``(team_ref, week_key)`` so a given week's events
+        are identical no matter which overlapping window observes them.
+
+        Counts are the source of truth: ``value == deploys_failed /
+        deploys_total`` exactly, so the rate and the counts can never disagree.
         """
-        if scope.level not in MTTR_SCOPES:
-            return None
-        rng = random.Random(f"mttr|{scope.ref}|{window_key}")
-        incidents = max(0, round(_lerp(0.2, 2.8, h) + rng.uniform(-0.5, 0.7)))
-        if incidents == 0:
-            return {"unit": UNIT_MTTR, "p50": None, "p90": None, "incidents": 0}
-        p50 = round(_lerp(25.0, 220.0, h) * rng.uniform(0.8, 1.2))
-        return {
-            "unit": UNIT_MTTR,
-            "p50": p50,
-            "p90": round(p50 * rng.uniform(1.8, 3.0)),
-            "incidents": incidents,
+        total_deploys = 0
+        total_failed = 0
+        durations: list[int] = []
+        for week_key, health, deploys in weeks:
+            rng = random.Random(f"reliability|{team_ref}|{week_key}")
+            fail_prob = _lerp(0.02, 0.30, health)
+            total_deploys += deploys
+            total_failed += sum(1 for _ in range(deploys) if rng.random() < fail_prob)
+            n_incidents = max(0, round(_lerp(0.15, 2.2, health) + rng.uniform(-0.5, 0.6)))
+            durations += [
+                round(_lerp(20.0, 240.0, health) * rng.uniform(0.6, 1.6))
+                for _ in range(n_incidents)
+            ]
+
+        window_days = 7 * len(weeks)
+        change_failure_rate = {
+            "unit": UNIT_RATIO,
+            "window_days": window_days,
+            "value": round(total_failed / total_deploys, 4) if total_deploys else None,
+            "deploys_total": total_deploys,
+            "deploys_failed": total_failed,
         }
+        durations.sort()
+        mttr = {
+            "unit": UNIT_MTTR,
+            "window_days": window_days,
+            "p50": _percentile(durations, 50),
+            "p90": _percentile(durations, 90),
+            "incidents": len(durations),
+        }
+        return change_failure_rate, mttr
 
 
 class DataToolsFlowMetricsProvider(FlowMetricsProvider):
@@ -408,13 +417,16 @@ class DataToolsFlowMetricsProvider(FlowMetricsProvider):
       delivery.rework_time.{...}                        -> review.rework_time
       (first-reviewer-action timing)                    -> review.time_to_first_review
 
-    Change-failure rate and MTTR need the incident pipeline in the event store
-    (event_type='deployment' with a failure/rollback signal, and
-    event_type='incident' open->resolved timestamps):
-      failed_deploys / total_deploys                    -> dora.change_failure_rate
-        (CFR_SCOPES: team/engineer/objective, pooled by counts)
-      median(incident resolved - opened)                -> dora.mttr
-        (MTTR_SCOPES: team only; per-week, null percentiles on a quiet week)
+    Change-failure rate and MTTR are team-scoped reliability metrics over a
+    trailing ~30-day window (RELIABILITY_SCOPES / RELIABILITY_WEEKS), fed by the
+    incident pipeline in the event store (event_type='deployment' with a
+    failure/rollback signal, and event_type='incident' open->resolved times).
+    Call the API with days~=28 and normalise:
+      failed_deploys / total_deploys (window)           -> dora.change_failure_rate
+        {value, deploys_total, deploys_failed, window_days}; value == failed/total
+      p50/p90(incident resolved - opened) (window)      -> dora.mttr
+        {p50, p90, incidents, window_days}; incidents==0 -> null percentiles
+    Both are null at engineer/objective scope.
     """
 
     source = "data-tools"

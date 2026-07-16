@@ -40,7 +40,7 @@
     },
     "coverage": {
       "prs_total": 21,
-      "prs_measured": 19,
+      "prs_measured": 18,
       "prs_linked_to_objective": null
     },
     "dora": {
@@ -56,15 +56,17 @@
       },
       "change_failure_rate": {
         "unit": "ratio",
-        "value": 0.1276,
-        "deploys_total": 6,
-        "deploys_failed": 1
+        "window_days": 28,
+        "value": 0.0714,
+        "deploys_total": 28,
+        "deploys_failed": 2
       },
       "mttr": {
         "unit": "minutes",
-        "p50": 78,
-        "p90": 212,
-        "incidents": 1
+        "window_days": 28,
+        "p50": 102,
+        "p90": 120,
+        "incidents": 4
       }
     },
     "review": {
@@ -86,7 +88,7 @@
         "p85": 7.3,
         "p99": 13.1
       },
-      "pr_count": 19
+      "pr_count": 18
     },
     "trends": {}
   },
@@ -111,8 +113,8 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 6,
-          "prs_measured": 5,
+          "prs_total": 7,
+          "prs_measured": 6,
           "prs_linked_to_objective": null
         },
         "dora": {
@@ -126,12 +128,7 @@
             "p50": 1273,
             "p99": 4193
           },
-          "change_failure_rate": {
-            "unit": "ratio",
-            "value": 0.0605,
-            "deploys_total": 2,
-            "deploys_failed": 0
-          },
+          "change_failure_rate": null,
           "mttr": null
         },
         "review": {
@@ -153,7 +150,7 @@
             "p85": 7.3,
             "p99": 13.1
           },
-          "pr_count": 5
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -178,8 +175,8 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 7,
+          "prs_total": 6,
+          "prs_measured": 5,
           "prs_linked_to_objective": null
         },
         "dora": {
@@ -193,12 +190,7 @@
             "p50": 1090,
             "p99": 3492
           },
-          "change_failure_rate": {
-            "unit": "ratio",
-            "value": 0.0466,
-            "deploys_total": 2,
-            "deploys_failed": 0
-          },
+          "change_failure_rate": null,
           "mttr": null
         },
         "review": {
@@ -220,7 +212,7 @@
             "p85": 3.4,
             "p99": 6.2
           },
-          "pr_count": 7
+          "pr_count": 5
         },
         "trends": {}
       }
@@ -246,7 +238,7 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 7,
+          "prs_total": 8,
           "prs_measured": 7,
           "prs_linked_to_objective": null
         },
@@ -261,12 +253,7 @@
             "p50": 5450,
             "p99": 17141
           },
-          "change_failure_rate": {
-            "unit": "ratio",
-            "value": 0.2758,
-            "deploys_total": 2,
-            "deploys_failed": 1
-          },
+          "change_failure_rate": null,
           "mttr": null
         },
         "review": {
@@ -349,12 +336,7 @@
             "p50": 5486,
             "p99": 17596
           },
-          "change_failure_rate": {
-            "unit": "ratio",
-            "value": 0.315,
-            "deploys_total": 1,
-            "deploys_failed": 0
-          },
+          "change_failure_rate": null,
           "mttr": null
         },
         "review": {
@@ -420,9 +402,9 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 6,
-          "prs_measured": 5,
-          "prs_linked_to_objective": 6
+          "prs_total": 7,
+          "prs_measured": 6,
+          "prs_linked_to_objective": 7
         },
         "dora": {
           "deployment_frequency": {
@@ -435,12 +417,7 @@
             "p50": 1273,
             "p99": 4193
           },
-          "change_failure_rate": {
-            "unit": "ratio",
-            "value": 0.0605,
-            "deploys_total": 2,
-            "deploys_failed": 0
-          },
+          "change_failure_rate": null,
           "mttr": null
         },
         "review": {
@@ -462,7 +439,7 @@
             "p85": 7.3,
             "p99": 13.1
           },
-          "pr_count": 5
+          "pr_count": 6
         },
         "trends": {}
       }
@@ -506,9 +483,9 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 8,
-          "prs_measured": 7,
-          "prs_linked_to_objective": 8
+          "prs_total": 6,
+          "prs_measured": 5,
+          "prs_linked_to_objective": 6
         },
         "dora": {
           "deployment_frequency": {
@@ -521,12 +498,7 @@
             "p50": 1090,
             "p99": 3492
           },
-          "change_failure_rate": {
-            "unit": "ratio",
-            "value": 0.0466,
-            "deploys_total": 2,
-            "deploys_failed": 0
-          },
+          "change_failure_rate": null,
           "mttr": null
         },
         "review": {
@@ -548,7 +520,7 @@
             "p85": 3.4,
             "p99": 6.2
           },
-          "pr_count": 7
+          "pr_count": 5
         },
         "trends": {}
       }
@@ -592,9 +564,9 @@
           "days": 7
         },
         "coverage": {
-          "prs_total": 3,
+          "prs_total": 4,
           "prs_measured": 3,
-          "prs_linked_to_objective": 3
+          "prs_linked_to_objective": 4
         },
         "dora": {
           "deployment_frequency": {
@@ -607,12 +579,7 @@
             "p50": 5415,
             "p99": 16686
           },
-          "change_failure_rate": {
-            "unit": "ratio",
-            "value": 0.2366,
-            "deploys_total": 1,
-            "deploys_failed": 0
-          },
+          "change_failure_rate": null,
           "mttr": null
         },
         "review": {
